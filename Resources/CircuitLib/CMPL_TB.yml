@@ -1,0 +1,93 @@
+kind: verilog
+module: CMPL_TB
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Wire
+        name: OUT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: INVRT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: IN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: CMPL0
+    module: CMPL
+    params:
+    -   kind: int
+        value: 12
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRT
+    -   port: None
+        node:
+            kind: slice
+            name: IN
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

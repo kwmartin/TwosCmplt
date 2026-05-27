@@ -1,0 +1,19 @@
+MULT_4BITS:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: IN
+    nbits: 20
+  - name: k
+    nbits: 4
+  - name: OUT
+    nbits: 20
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: in2
+    nbits: 20
+  - name: out
+    nbits: 20

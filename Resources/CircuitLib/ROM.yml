@@ -1,0 +1,314 @@
+kind: verilog
+module: ROM
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: int
+    name: naddr
+    value: 8
+-   kind: int
+    name: ndata
+    value: 12
+-   kind: int
+    name: depth
+    value: 256
+-   kind: str
+    name: datfile
+    value: rom0.mem
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: ADDR
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: naddr
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
+    name: DATA
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: ndata
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Reg
+        name: one
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: one
+    rvalue:
+        kind: int
+        value: 1
+    delay: 0
+-   kind: Reg
+    name: nmem
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: nmem
+    rvalue:
+        kind: sexpr
+        oper: 'BSll:'
+        args:
+        -   kind: int
+            value: 1
+        -   kind: ident
+            name: naddr
+    delay: 0
+-   kind: Reg
+    name: dfile
+    signed: 'False'
+    width:
+        kind: width
+        width:
+        -   kind: bexpr
+            oper: 'Times:'
+            args:
+            -   kind: int
+                value: 8
+            -   kind: int
+                value: 256
+        -   kind: int
+            value: 1
+    length: []
+-   kind: Integer
+    name: cnt
+    signed: integer
+    width:
+    -   kind: int
+        value: 31
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: MEM
+    signed: 'False'
+    width:
+        kind: width
+        width:
+        -   kind: bexpr
+            oper: 'BMinus:'
+            args:
+            -   kind: ident
+                name: ndata
+            -   kind: int
+                value: 1
+        -   kind: int
+            value: 0
+    length:
+    -   kind: length
+        value:
+        -   kind: int
+            value: 0
+        -   kind: bexpr
+            oper: 'BMinus:'
+            args:
+            -   kind: ident
+                name: depth
+            -   kind: int
+                value: 1
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: dfile
+        rvalue:
+            kind: ident
+            name: datfile
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'Initialed dfile to: %s, hex: %h'
+        -   kind: ident
+            name: dfile
+        -   kind: ident
+            name: dfile
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: nmem
+        rvalue:
+            kind: sexpr
+            oper: 'BSll:'
+            args:
+            -   kind: int
+                value: 1
+            -   kind: ident
+                name: naddr
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: one
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: nmem
+        rvalue:
+            kind: sexpr
+            oper: 'BSll:'
+            args:
+            -   kind: ident
+                name: one
+            -   kind: int
+                value: 7
+-   kind: initial
+    stmnts:
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: Loading data from %s
+        -   kind: ident
+            name: dfile
+    -   kind: syscall
+        name: readmemh
+        value:
+        -   kind: ident
+            name: dfile
+        -   kind: ident
+            name: MEM
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_int
+            arg:
+                kind: int
+                value: 0
+        iftrue:
+        -   kind: forst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BLessThan:'
+                args:
+                -   kind: ident
+                    name: cnt
+                -   kind: ident
+                    name: depth
+            pre:
+                kind: blckst
+                lvalue:
+                    kind: ident
+                    name: cnt
+                rvalue:
+                    kind: int
+                    value: 0
+            post:
+                kind: blckst
+                lvalue:
+                    kind: ident
+                    name: cnt
+                rvalue:
+                    kind: bexpr
+                    oper: 'BPlus:'
+                    args:
+                    -   kind: ident
+                        name: cnt
+                    -   kind: int
+                        value: 1
+            body:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'cnt: %3d, data: %03h'
+                -   kind: ident
+                    name: cnt
+                -   kind: bit
+                    name: MEM
+                    sgmnts:
+                    - cnt
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: cnt
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: bit
+            name: MEM
+            sgmnts:
+            - ADDR
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_int
+            arg:
+                kind: int
+                value: 0
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'BTime: %t, at negedge CLK: DATA: %4d'
+            -   kind: sys_rltm
+                name: realtime
+            -   kind: ident
+                name: DATA

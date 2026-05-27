@@ -1,0 +1,109 @@
+
+ po circ.cCircs.filter { $0.sync }
+ po circ.cCircs.enumerated().filter { $0.element.sync }.map { $0.offset }
+ po circ.cCircs.filter { $0.sync }.map { $0.name }
+ po circ.cCircs.map { $0.sync }
+
+ circ.module == "TFF"
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+
+        self.cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
+        self.iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
+
+        // ifelse may be an array or a single nested ifst
+        if let arr = try? c.decode([StmntYAML].self, forKey: .ifelse) {
+            self.ifelse = arr
+        } else if let single = try? c.decode(StmntYAML.self, forKey: .ifelse) {
+            self.ifelse = [single]
+        } else {
+            self.ifelse = []
+        }
+    }
+
+public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+
+    print("Decoding IfStmntYAML at path:",
+          decoder.codingPath.map { $0.stringValue }.joined(separator: "."))
+
+    self.cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
+    self.iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
+    print("  iftrue count:", iftrue.count)
+
+    // ifelse may be an array or a single nested ifst
+    if let arr = try? c.decode([StmntYAML].self, forKey: .ifelse) {
+        print("  ifelse decoded as array, count:", arr.count)
+        self.ifelse = arr
+    } else if let single = try? c.decode(StmntYAML.self, forKey: .ifelse) {
+        print("  ifelse decoded as single StmntYAML")
+        self.ifelse = [single]
+    } else {
+        print("  ifelse missing or failed to decode, defaulting to empty []")
+        self.ifelse = []
+    }
+}
+
+public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
+    iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
+    ifelse    = try c.decode([StmntYAML].self, forKey: .ifelse)
+}
+
+public struct IfStmntYAML: Decodable {
+    public let cmpr_expr: ExprYAML
+    public let iftrue: [StmntYAML]
+    public let ifelse: [StmntYAML]
+
+    private enum CodingKeys: String, CodingKey {
+        case cmpr_expr
+        case iftrue
+        case ifelse
+    }
+
+public struct IfStmntYAML: Decodable {
+    public let cmpr_expr: ExprYAML
+    public let iftrue: [StmntYAML]
+    public let ifelse: [StmntYAML]
+
+    private enum CodingKeys: String, CodingKey {
+        case cmpr_expr
+        case iftrue
+        case ifelse
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+
+        print("Decoding IfStmntYAML at path:",
+              decoder.codingPath.map { $0.stringValue }.joined(separator: "."))
+
+        self.cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
+        self.iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
+        print("  iftrue count:", iftrue.count)
+
+        if let arr = try? c.decode([StmntYAML].self, forKey: .ifelse) {
+            print("  ifelse decoded as array, count:", arr.count)
+            self.ifelse = arr
+        } else if let single = try? c.decode(StmntYAML.self, forKey: .ifelse) {
+            print("  ifelse decoded as single StmntYAML")
+            self.ifelse = [single]
+        } else {
+            print("  ifelse missing or failed to decode, defaulting to []")
+            self.ifelse = []
+        }
+    }
+}
+
+
+public init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+
+    self.cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
+    self.iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
+
+    // TEMP: make ifelse strict so we see any error
+    self.ifelse    = try c.decode([StmntYAML].self, forKey: .ifelse)
+}

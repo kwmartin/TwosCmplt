@@ -1,0 +1,81 @@
+kind: verilog
+module: DG_SW_INV
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: ST
+-   name: IN
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: ST
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Inout
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ST
+            -   kind: int
+                value: 1
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: IN
+        -   kind: int
+            value: 1'BZ
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 20.8
+        -   kind: float
+            value: 1.0

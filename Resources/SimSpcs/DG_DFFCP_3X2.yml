@@ -1,0 +1,50 @@
+Constants:
+  -   - PER
+      - 1000
+
+FinishTime: 32*PER
+
+Inputs:
+    CP: 1
+    D: 1
+    R: 1
+    VDD: 1
+    VSS: 1
+
+Clock:
+  - clkNm: CP
+    initVal: 1
+    per: PER
+    delay: 0
+
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - D
+          - 0
+      -   - R
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+  - tm: 1.6*PER
+    vls:
+      -   - R
+          - 1
+  - tm: 3.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 5.5*PER
+    vls:
+      -   - R
+          - 0
+  - tm: 6.6*PER
+    vls:
+      -   - R
+          - 1
+  - tm: 8.1*PER
+    vls:
+      -   - D
+          - 0

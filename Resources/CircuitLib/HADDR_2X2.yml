@@ -1,0 +1,126 @@
+kind: verilog
+module: HADDR_2X2
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: CIN
+-   name: A
+-   name: SUM
+-   name: COUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: CIN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: A
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: SUM
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: COUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 25.9
+    src_sgnls:
+    - CIN
+    edge: posedge
+    dst_sgnls:
+    - SUM
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 17.7
+    src_sgnls:
+    - CIN
+    edge: posedge
+    dst_sgnls:
+    - COUT
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 25.6
+    src_sgnls:
+    - A
+    edge: posedge
+    dst_sgnls:
+    - SUM
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 18.1
+    src_sgnls:
+    - A
+    edge: posedge
+    dst_sgnls:
+    - COUT
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: SUM
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: ident
+            name: CIN
+        -   kind: ident
+            name: A
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: COUT
+    rvalue:
+        kind: gt_expr
+        oper: 'BAnd:'
+        args:
+        -   kind: ident
+            name: CIN
+        -   kind: ident
+            name: A
+    delay: 0

@@ -1,0 +1,28 @@
+kind: verilog
+module: DG_DMMY
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks: null

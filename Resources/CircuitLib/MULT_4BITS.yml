@@ -1,0 +1,490 @@
+kind: verilog
+module: MULT_4BITS
+params:
+-   kind: int
+    name: nbits
+    value: 20
+-   kind: int
+    name: rshft
+    value: 7
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: k
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: in2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: out
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: in2
+    rvalue:
+        kind: sexpr
+        oper: 'BSrl:'
+        args:
+        -   kind: ident
+            name: IN
+        -   kind: int
+            value: 4
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: sexpr
+        oper: 'BSrl:'
+        args:
+        -   kind: ident
+            name: out
+        -   kind: ident
+            name: rshft
+    delay: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: k
+    -   edge: all
+        node: IN
+    stmnts:
+    -   kind: casest
+        case_cmpr:
+            kind: ident
+            name: k
+        cases:
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0000
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: int
+                        value: 0
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0001
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: ident
+                        name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0010
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: sexpr
+                        oper: 'BSll:'
+                        args:
+                        -   kind: ident
+                            name: in2
+                        -   kind: int
+                            value: 1
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0011
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 1
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0100
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: sexpr
+                        oper: 'BSll:'
+                        args:
+                        -   kind: ident
+                            name: in2
+                        -   kind: int
+                            value: 2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0101
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 2
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0110
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 2
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 1
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b0111
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BMinus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 3
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1000
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: sexpr
+                        oper: 'BSll:'
+                        args:
+                        -   kind: ident
+                            name: in2
+                        -   kind: int
+                            value: 3
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1001
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 3
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1010
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 3
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 1
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1011
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: sexpr
+                                oper: 'BSll:'
+                                args:
+                                -   kind: ident
+                                    name: in2
+                                -   kind: int
+                                    value: 3
+                            -   kind: sexpr
+                                oper: 'BSll:'
+                                args:
+                                -   kind: ident
+                                    name: in2
+                                -   kind: int
+                                    value: 1
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1100
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 3
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1101
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: sexpr
+                                oper: 'BSll:'
+                                args:
+                                -   kind: ident
+                                    name: in2
+                                -   kind: int
+                                    value: 3
+                            -   kind: sexpr
+                                oper: 'BSll:'
+                                args:
+                                -   kind: ident
+                                    name: in2
+                                -   kind: int
+                                    value: 2
+                        -   kind: ident
+                            name: in2
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1110
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BMinus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 4
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 1
+        -   kind: case_item
+            constant:
+                kind: int
+                value: 4'b1111
+            execs:
+            -   -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: out
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BMinus:'
+                        args:
+                        -   kind: sexpr
+                            oper: 'BSll:'
+                            args:
+                            -   kind: ident
+                                name: in2
+                            -   kind: int
+                                value: 4
+                        -   kind: ident
+                            name: in2

@@ -1,0 +1,253 @@
+kind: verilog
+module: TST_DVDR4
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Wire
+        name: OUT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Integer
+        name: n
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: CLK
+            rvalue:
+                kind: int
+                value: 0
+        - 'SingleStatement:'
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BGreaterEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: bexpr
+                oper: 'Times:'
+                args:
+                -   kind: int
+                    value: 128
+                -   kind: int
+                    value: 2
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: '*-* All Finished *-*'
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'AT FINISH: time is %0t'
+            -   kind: sys_tm
+                name: time
+        -   kind: syscall
+            name: finish
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: n
+        rvalue:
+            kind: bexpr
+            oper: 'BPlus:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: CLK
+        rvalue:
+            kind: uexpr
+            oper: 'Ulnot:'
+            args:
+            -   kind: ident
+                name: CLK
+-   kind: Integer
+    name: dsplyFile
+    signed: integer
+    width:
+    -   kind: int
+        value: 31
+    -   kind: int
+        value: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: dsplyFile
+        rvalue:
+            kind: syscall
+            name: fopen
+            value:
+            -   kind: str
+                value: DVDR4.out
+            -   kind: str
+                value: w
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: fdisplay
+        value:
+        -   kind: ident
+            name: dsplyFile
+        -   kind: str
+            value: ' %d'
+        -   kind: syscall
+            name: signed
+            value:
+            -   kind: ident
+                name: OUT
+-   kind: initial
+    stmnts:
+    -   kind: syscall
+        name: dumpfile
+        value:
+        -   kind: str
+            value: DVDR4_tb.vcd
+    -   kind: syscall
+        name: dumpvars
+        value:
+        -   kind: int
+            value: 0
+        -   kind: ident
+            name: TST_DVDR4
+-   kind: initial
+    stmnts:
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VDD
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VSS
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: INIT
+        rvalue:
+            kind: int
+            value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: INIT
+        rvalue:
+            kind: int
+            value: 0
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: finish
+-   kind: instance
+    name: Dvdr0
+    module: DVDR4
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

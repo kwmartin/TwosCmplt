@@ -1,0 +1,23 @@
+Constants:
+  -   - PER
+      - 1000
+FinishTime: 64*PER
+TimeSpcs:
+  - [VDD, 1]
+  - [VSS, 0]
+  - [INIT, 1]
+  - [FRQ, "34h40000000"]
+  - tm: 0.2*PER
+    vls:
+      - [INIT, 0]
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+SaveNds:
+  - name: Top.INIT
+    format: u
+  - name: Top.SINE
+    format: u
+  - name: Top.COS
+    format: u

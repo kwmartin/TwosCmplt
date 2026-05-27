@@ -1,0 +1,142 @@
+kind: verilog
+module: ENBL_BFRC
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: DP
+-   name: DN
+-   name: ENP
+-   name: ENN
+-   name: QP
+-   name: QN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: DP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ENP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ENN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ENP
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: DP
+        -   kind: int
+            value: 1'B0
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 5.8
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ENP
+            -   kind: int
+                value: 1
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: DP
+        -   kind: int
+            value: 1'B1
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 5.8
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: QP
+    delay: 0

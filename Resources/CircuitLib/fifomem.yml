@@ -1,0 +1,220 @@
+kind: verilog
+module: fifomem
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: int
+    name: DATASIZE
+    value: 4
+-   kind: int
+    name: ADDRSIZE
+    value: 4
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: wdata
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: DATASIZE
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: waddr
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: ADDRSIZE
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: raddr
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: ADDRSIZE
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: wclken
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: wfull
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: wclk
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: rdata
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: DATASIZE
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: sexpr
+        name: DEPTH
+        value:
+            kind: sexpr
+            oper: 'BSll:'
+            args:
+            -   kind: int
+                value: 1
+            -   kind: ident
+                name: ADDRSIZE
+-   -   kind: Reg
+        name: mem
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: DATASIZE
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length:
+        -   kind: length
+            value:
+            -   kind: int
+                value: 0
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: DEPTH
+                -   kind: int
+                    value: 1
+-   -   kind: Reg
+        name: i
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 0
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: DEPTH
+                -   kind: int
+                    value: 1
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: rdata
+    rvalue:
+        kind: bit
+        name: mem
+        sgmnts:
+        - raddr
+    delay: 0
+-   kind: initial
+    stmnts:
+        kind: forst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: ident
+                name: i
+            -   kind: ident
+                name: DEPTH
+        pre:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: i
+            rvalue:
+                kind: int
+                value: 0
+        post:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: i
+            rvalue:
+                kind: bexpr
+                oper: 'BPlus:'
+                args:
+                -   kind: ident
+                    name: i
+                -   kind: int
+                    value: 1
+        body:
+        -   kind: blckst
+            lvalue:
+            - point
+            -   kind: bit
+                name: mem
+                sgmnts:
+                - i
+            rvalue:
+                kind: int
+                value: 0
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: wclk
+    stmnts:
+        kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLand:'
+            args:
+            -   kind: ident
+                name: wclken
+            -   kind: uexpr
+                oper: 'Ulnot:'
+                args:
+                -   kind: ident
+                    name: wfull
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+            - point
+            -   kind: bit
+                name: mem
+                sgmnts:
+                - waddr
+            rvalue:
+                kind: ident
+                name: wdata

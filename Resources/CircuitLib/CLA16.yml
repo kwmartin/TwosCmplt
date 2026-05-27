@@ -1,0 +1,393 @@
+kind: verilog
+module: CLA16
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CI
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CO
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: G
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: P
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: S
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CI
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: C0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N380
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N397
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N503
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: AND1
+    module: AN2D2BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: P0
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: ident
+            name: P
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: NAB_C3
+    module: DG_NAB_C2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CI
+    -   port: None
+        node:
+            kind: ident
+            name: N503
+    -   port: None
+        node:
+            kind: ident
+            name: G
+    -   port: None
+        node:
+            kind: ident
+            name: N380
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV3
+    module: INV2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: N380
+    -   port: OUT
+        node:
+            kind: ident
+            name: CO
+    -   port: VCC
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: INV1
+    module: INV2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: N397
+    -   port: OUT
+        node:
+            kind: ident
+            name: G
+    -   port: VCC
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: NAB_C1
+    module: DG_NAB_C2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: G0
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: ident
+            name: G1
+    -   port: None
+        node:
+            kind: ident
+            name: N397
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CAL8_0
+    module: CLA8
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: CI
+    -   port: None
+        node:
+            kind: ident
+            name: C0
+    -   port: None
+        node:
+            kind: ident
+            name: G0
+    -   port: None
+        node:
+            kind: ident
+            name: P0
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CLA8_1
+    module: CLA8
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: ident
+            name: C0
+    -   port: None
+        node:
+            kind: ident
+            name: C1
+    -   port: None
+        node:
+            kind: ident
+            name: G1
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: AND2
+    module: AN2D2BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: P0
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: ident
+            name: N503
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

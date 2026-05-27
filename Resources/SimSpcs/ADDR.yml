@@ -1,0 +1,32 @@
+Constants:
+  -   - PER
+      - 1000
+FinishTime: 32*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - INIT
+          - 1
+      -   - CNT
+          - 0
+      -   - A
+          - 0
+  - tm: 1*PER
+    vls:
+      -   - A
+          - 1
+  - tm: 1.1*PER
+    vls:
+      -   - INIT
+          - 0
+      -   - CNT
+          - 1
+  - tm: 18.1*PER
+    vls:
+      -   - CNT
+          - 0
+Clock:
+  - clkNm: CLK
+    initVal: 0
+    per: PER
+    delay: 0

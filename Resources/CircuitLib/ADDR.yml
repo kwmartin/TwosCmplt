@@ -1,0 +1,208 @@
+kind: verilog
+module: ADDR
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: int
+    name: nbits
+    value: 8
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CI
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CO
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: P
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: S
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: G
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: D
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: ident
+                name: nbits
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: D
+    rvalue:
+        kind: bexpr
+        oper: 'BPlus:'
+        args:
+        -   kind: ident
+            name: A
+        -   kind: ident
+            name: B
+    delay: 0
+-   kind: assign
+    lvalue:
+    - lconcat
+    -   - CO
+        - S
+    rvalue:
+        kind: bexpr
+        oper: 'BPlus:'
+        args:
+        -   kind: ident
+            name: D
+        -   kind: ident
+            name: CI
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: P
+    rvalue:
+        kind: uexpr
+        oper: 'Uand:'
+        args:
+        -   kind: slice
+            name: D
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: G
+    rvalue:
+        kind: gt_expr
+        oper: 'BOr:'
+        args:
+        -   kind: bit
+            name: D
+            sgmnts:
+            - nbits
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: ident
+                name: P
+            -   kind: ident
+                name: CI
+    delay: 0
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 50.0
+    src_sgnls:
+    - A
+    - B
+    - CI
+    edge: posedge
+    dst_sgnls:
+    - S
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 60.0
+    src_sgnls:
+    - A
+    - B
+    - CI
+    edge: posedge
+    dst_sgnls:
+    - CO
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 55.0
+    src_sgnls:
+    - A
+    - B
+    - CI
+    edge: posedge
+    dst_sgnls:
+    - P
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 60.0
+    src_sgnls:
+    - A
+    - B
+    - CI
+    edge: posedge
+    dst_sgnls:
+    - G

@@ -1,0 +1,196 @@
+I an now starting to go through the simulation of a circuit using the Context struct, and it appears the over-all data structures and methods are inconsistent. This has probably occurred because code has been added at different times, and the memory has been lost between these times. The definition of Context is:
+public struct Context {
+    // Arena owner: gives access to exprs / stmts for ExprId / StmtId.
+    public var circDef: CircDef
+    public var circ: Circuit? = nil      // renamed
+    public var behavIdx: BehavBlockKind? = nil
+
+    // Codegen / execution state
+    public var block: CompiledBlock?          // optional: only set when executing
+    public var code: [Instruction]            // code buffer for codegen
+
+    // Evaluation stack and variables
+    public var stack: [Value]
+    public var vars: [String: Value]
+
+    // Collected specify timing arcs
+    public var timingArcs: [TimingArc]
+    public var simTime: Int = 0
+
+    public init(circDef: CircDef,
+                block: CompiledBlock? = nil,
+                code: [Instruction] = [],
+                stack: [Value] = [],
+                vars: [String: Value] = [:],
+                timingArcs: [TimingArc] = [],
+                simTime: Int = 0) {
+        self.circDef = circDef
+        self.block = block
+        self.code = code
+        self.stack = stack
+        self.vars = vars
+        self.timingArcs = timingArcs
+        self.simTime = simTime
+    }
+
+    // Look up instruction pointer for a label in the current compiled block.
+    public func address(for label: Label) -> Int {
+        guard let blk = block else {
+            fatalError("address(for:) called with no compiled block set")
+        }
+        guard let ip = blk.labelToIP[label] else {
+            fatalError("Unknown label: \(label)")
+        }
+        return ip
+    }
+
+    // Stack operations
+    public mutating func push(_ v: Value) {
+        stack.append(v)
+    }
+
+    public mutating func pop() -> Value {
+        stack.removeLast()
+    }
+
+    // Variable access
+    public mutating func write(_ name: String, _ v: Value) {
+        vars[name] = v
+    }
+
+    public func read(_ name: String) -> Value {
+        guard let v = vars[name] else {
+            fatalError("Read of unknown variable \(name)")
+        }
+        return v
+    }
+
+    // Syscall hook
+    public mutating func syscall(_ name: String, args: [Value]) -> Value {
+        .int(self.simTime)
+    }
+}
+
+extension Context {
+    // Low-level nod access using Circuit’s nodes / nodeLU
+    public func readNode(_ name: String) -> Value {
+        guard let ckt = circ else {
+            fatalError("readNode called with no Circuit set in Context")
+        }
+        guard let idx = ckt.nodeLU[name] else {
+            fatalError("Unknown node name \(name)")
+        }
+
+        // Special-case supplies: entries exist in nodeLU but not in nodes[]
+        if idx == 1000000 { // VSS
+            return .twoCmplt(TwoCmplt(0, nbits: 1))
+        }
+        if idx == 1000001 { // VDD
+            return .twoCmplt(TwoCmplt(1, nbits: 1))
+        }
+
+        precondition(idx >= 0 && idx < ckt.nodes.count,
+                     "nodeLU[\(name)] = \(idx) out of bounds for nodes.count \(ckt.nodes.count)")
+
+        let nod = ckt.nodes[idx]
+        return .twoCmplt(nod.node)
+    }
+
+    public mutating func writeNode(_ name: String, _ v: Value) {
+        guard let ckt = circ else {
+            fatalError("writeNode called with no Circuit set in Context")
+        }
+        guard let idx = ckt.nodeLU[name] else {
+            fatalError("Unknown node name \(name)")
+        }
+
+        let twos: TwoCmplt
+        switch v {
+        case .twoCmplt(let t):
+            twos = t
+        case .int(let i):
+            twos = TwoCmplt(i, nbits: ckt.nodes[idx].node.nbits)
+        case .real(let d):
+            twos = TwoCmplt(Int(d), nbits: ckt.nodes[idx].node.nbits)
+        case .bool(let b):
+            twos = TwoCmplt(b ? 1 : 0, nbits: ckt.nodes[idx].node.nbits)
+        }
+
+        ckt.nodes[idx].node = twos
+        ckt.nodes[idx].updTm = simTime
+    }
+}
+The problem is with the write method which writes a Value item to the array: vars: [String: Value]
+I don't see where Value items stored in vars are used in the simulation, and I don't understand or remember why you suggested this. It is used in assignToLValue which is defined in Compile.swift as:
+public func assignToLValue(_ lhs: LValueAST, rhs: Value, ctx: inout Context) {
+    switch lhs {
+    case .net(let name):
+        // Simple net assignment
+        ctx.write(name, rhs)
+
+    case .bitSelect(let name, let index):
+        // 1. Read full net value
+        let cur = ctx.read(name)
+        // 2. Modify bit at `index` in `cur` using rhs (assuming rhs is 0/1 or 1‑bit)
+        let updated = writeBit(cur, at: index, with: rhs)
+        // 3. Write back
+        ctx.write(name, updated)
+
+    case .partSelect(let name, let msb, let lsb):
+        // 1. Read full net value
+        let cur = ctx.read(name)
+        // 2. Splice rhs into bits [msb:lsb] of cur
+        let updated = writeSlice(cur, msb: msb, lsb: lsb, with: rhs)
+        // 3. Write back
+        ctx.write(name, updated)
+
+    case .indexedPartSelect(let name, let base, let width):
+        // 1. Read full net value
+        let cur = ctx.read(name)
+        // 2. Splice rhs into bits [base + width - 1 : base] (or your chosen convention)
+        let updated = writeSlice(cur, msb: base + width - 1, lsb: base, with: rhs)
+        // 3. Write back
+        ctx.write(name, updated)
+
+    case .concat(let parts):
+        // Treat rhs as a packed vector and assign slices to each part, MSB-first or LSB-first
+        var offset = 0
+        for part in parts.reversed() {
+            let w = width(of: part, ctx: ctx)     // number of bits this part occupies
+            let slice = extractSlice(rhs, msb: offset + w - 1, lsb: offset)
+            assignToLValue(part, rhs: slice, ctx: &ctx)
+            offset += w
+        }
+    }
+}
+This function is used in writeAlwysSchdl
+func writeAlwysSchdl(_ circuit: Circuit, toTm: Int) {
+    for i in circuit.alwaysStates.indices {
+        var pending = circuit.alwaysStates[i].noblk
+        var remaining: [ScheduledUpdate] = []
+
+        for upd in pending {
+            if upd.updTm <= toTm {
+                assignToLValue(upd.lvalue, rhs: upd.value, ctx: &ctx)
+            } else {
+                remaining.append(upd)
+            }
+        }
+
+        circuit.alwaysStates[i].noblk = remaining
+
+        pending = circuit.alwaysStates[i].blk
+        remaining: [ScheduledUpdate] = []
+
+        for upd in pending {
+            if upd.updTm <= toTm {
+                assignToLValue(upd.lvalue, rhs: upd.value, ctx: &ctx)
+            } else {
+                remaining.append(upd)
+            }
+        }
+
+        circuit.alwaysStates[i].blk = remaining
+    }
+}
+It seems to me this assumes that the LValue has already been stored in vars, and then updates it dependent on the matching of the LValue enum, and then stores it back in vars. I don't see how this can affect the simulation. I would have thought that updates coming from AlwaysBlcks which can be either blocking or non_blocking, should affect circuit nodes, not elements of the vars array in Context, which as far as I can tell or see, has no affect on any node values of the circuit. If there is anything else I can show to help with getting a better answer, tell me.

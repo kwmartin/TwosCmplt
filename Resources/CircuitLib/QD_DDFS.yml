@@ -1,0 +1,384 @@
+kind: verilog
+module: QD_DDFS
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 31
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R0R_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R1R_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 16
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R5R_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R0Q_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R1Q_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 16
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R5Q_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: SINE
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: COS
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: QD_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RL_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: subcirc
+    name: ACCUM0
+    module: QD_ACCUM
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: FRQ
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 31
+            -   kind: int
+                value: 0
+    -   port: R0R_SET
+        node:
+            kind: slice
+            name: R0R_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1R_SET
+        node:
+            kind: slice
+            name: R1R_SET
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: R0Q_SET
+        node:
+            kind: slice
+            name: R0Q_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1Q_SET
+        node:
+            kind: slice
+            name: R1Q_SET
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: RL_
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: QD_
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+-   kind: subcirc
+    name: SINE_LU0
+    module: Sine
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: R0_
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1SET
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+    -   port: R2SET
+        node:
+            kind: ident
+            name: VSS
+    -   port: R5SET
+        node:
+            kind: slice
+            name: R5R_SET
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: OUT
+        node:
+            kind: slice
+            name: SINE
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+-   kind: subcirc
+    name: COS_LU1
+    module: Sine
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: R0_
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1SET
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+    -   port: R2SET
+        node:
+            kind: ident
+            name: VSS
+    -   port: R5SET
+        node:
+            kind: slice
+            name: R5Q_SET
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: OUT
+        node:
+            kind: slice
+            name: COS
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0

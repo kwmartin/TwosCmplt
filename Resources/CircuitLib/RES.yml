@@ -1,0 +1,36 @@
+kind: verilog
+module: RES
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: P
+-   name: N
+decls:
+-   -   kind: Input
+        name: P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: N
+    rvalue:
+        kind: ident
+        name: P
+    delay: 0

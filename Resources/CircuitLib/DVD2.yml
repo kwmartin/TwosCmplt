@@ -1,0 +1,77 @@
+kind: verilog
+module: DVD2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: INIT
+-   name: CLK
+-   name: OUT
+decls:
+-   -   kind: Input
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: INV0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: d0
+    module: DG_DR_3X1
+    params: null
+    ports:
+    -   port: D
+        node:
+            kind: ident
+            name: INV0
+    -   port: R
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: QP
+        node:
+            kind: ident
+            name: OUT
+-   kind: gate
+    name: inv0
+    gate: not
+    ports:
+    - INV0
+    - OUT
+    delay:
+    -   kind: int
+        value: 14
+        name: None
+    -   kind: int
+        value: 10
+        name: None

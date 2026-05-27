@@ -1,0 +1,874 @@
+kind: verilog
+module: M1M_QDACCUM5
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: str
+    name: spiceprefix
+    value: X
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 33
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: RL_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: R1NR_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P0R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P1R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ADDR1R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ADDR0R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RLN_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C0R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C1R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G0R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G1R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N1156
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: ADDR0R
+    module: CLA18
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 33
+            -   kind: int
+                value: 16
+    -   port: None
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: R1R_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: C0R
+    -   port: None
+        node:
+            kind: ident
+            name: G0R
+    -   port: None
+        node:
+            kind: ident
+            name: P0R
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG0R
+    module: KM_REGS18
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: RLN_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: BUF1
+    module: DG_BUF16_1X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG1R
+    module: KM_REGS17
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: C1R
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 15
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 14
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 13
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 12
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 11
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 10
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 9
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 8
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 7
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 6
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 5
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 4
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 3
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 2
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 1
+            -   kind: bit
+                name: ADDR1R_
+                sgmnts:
+                - 0
+    -   port: None
+        node:
+            kind: slice
+            name: R1NR_
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R1R_
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: ADDR1R
+    module: CLA16
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R1R_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C1R
+    -   port: None
+        node:
+            kind: ident
+            name: G1R
+    -   port: None
+        node:
+            kind: ident
+            name: P1R
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR1R_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV1
+    module: INVD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: EXOR
+    module: XOR2D1BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: N1156
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV2
+    module: INVD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: N1156
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: BUFR_15
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_14
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_13
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_12
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_11
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_10
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_9
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_8
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_7
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_6
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_5
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_4
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_3
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_2
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: BUFR_1
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: BUFR_0
+    module: BUFFD4BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

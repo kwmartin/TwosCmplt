@@ -1,0 +1,202 @@
+kind: verilog
+module: DG_JKR_4X2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: J
+-   name: K
+-   name: R
+-   name: CP
+-   name: QP
+-   name: QN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: J
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: K
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 32.7
+    src_sgnls:
+    - CP
+    - J
+    - K
+    - R
+    edge: posedge
+    dst_sgnls:
+    - QP
+    - QN
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QP
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QN
+        rvalue:
+            kind: int
+            value: 1
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CP
+    -   edge: posedge
+        node: R
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: float
+                value: 100.0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: QP
+            rvalue:
+                kind: int
+                value: 0
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: QN
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: R
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: int
+                    value: 0
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QN
+                rvalue:
+                    kind: int
+                    value: 1
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: cndexpr
+                    args:
+                    - QP
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: K
+                    -   kind: ident
+                        name: J
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QN
+                rvalue:
+                    kind: cndexpr
+                    args:
+                    - QP
+                    -   kind: ident
+                        name: K
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: J

@@ -1,0 +1,216 @@
+kind: verilog
+module: dg_ltchr_4x1
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: d
+-   name: r
+-   name: cp
+-   name: cn
+-   name: qp
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: d
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: r
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: str
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: str
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: r
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: r
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: str
+            rvalue:
+                kind: int
+                value: 0
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: float
+                        value: 21.1
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: cp
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: cn
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: str
+                rvalue:
+                    kind: ident
+                    name: d
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: float
+                            value: 21.1
+                        -   kind: float
+                            value: 1.0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: d
+    -   edge: all
+        node: cp
+    -   edge: all
+        node: cn
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: r
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: str
+            rvalue:
+                kind: int
+                value: 0
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: float
+                        value: 21.1
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: cp
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: cn
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: str
+                rvalue:
+                    kind: ident
+                    name: d
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: float
+                            value: 21.1
+                        -   kind: float
+                            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: str
+    delay: 0

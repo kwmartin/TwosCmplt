@@ -1,0 +1,810 @@
+kind: verilog
+module: LpFrgScrmbl_10B
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: DIN9
+-   name: DIN8
+-   name: DIN7
+-   name: DIN6
+-   name: DIN5
+-   name: DIN4
+-   name: DIN3
+-   name: DIN2
+-   name: DIN1
+-   name: DIN0
+-   name: init
+-   name: clk
+-   name: DOUT9
+-   name: DOUT8
+-   name: DOUT7
+-   name: DOUT6
+-   name: DOUT5
+-   name: DOUT4
+-   name: DOUT3
+-   name: DOUT2
+-   name: DOUT1
+-   name: DOUT0
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: DIN9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN8
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DIN0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: init
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: clk
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: DOUT9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT8
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: DOUT0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: DOUT9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT8
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: DOUT0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: DIN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 9
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: din
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 9
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: DOUT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 9
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: rg
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 9
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: exnor_out
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 9
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: DIN
+    rvalue:
+        concats:
+        - DIN9
+        - DIN8
+        - DIN7
+        - DIN6
+        - DIN5
+        - DIN4
+        - DIN3
+        - DIN2
+        - DIN1
+        - DIN0
+    delay: 0
+-   kind: assign
+    lvalue:
+    - lconcat
+    -   - DOUT9
+        - DOUT8
+        - DOUT7
+        - DOUT6
+        - DOUT5
+        - DOUT4
+        - DOUT3
+        - DOUT2
+        - DOUT1
+        - DOUT0
+    rvalue:
+        kind: ident
+        name: DOUT
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 9
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: gt_expr
+                oper: 'BXor:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 9
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: bit
+                        name: rg
+                        sgmnts:
+                        - 5
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 2
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 9
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 8
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: gt_expr
+                oper: 'BXor:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 8
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: bit
+                        name: rg
+                        sgmnts:
+                        - 4
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 1
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 8
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 7
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: gt_expr
+                oper: 'BXor:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 7
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: bit
+                        name: rg
+                        sgmnts:
+                        - 3
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 0
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 7
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 6
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 9
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 6
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 6
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 5
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 8
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 5
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 5
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 4
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 7
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 4
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 4
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 3
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 6
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 3
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 2
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 5
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 2
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 2
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 1
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 4
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 1
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 1
+    delay: 0
+-   kind: assign
+    lvalue:
+    - point
+    -   kind: bit
+        name: exnor_out
+        sgmnts:
+        - 0
+    rvalue:
+        kind: gt_expr
+        oper: 'BXor:'
+        args:
+        -   kind: gt_expr
+            oper: 'BXor:'
+            args:
+            -   kind: bit
+                name: rg
+                sgmnts:
+                - 3
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: bit
+                    name: rg
+                    sgmnts:
+                    - 0
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: bit
+                name: din
+                sgmnts:
+                - 0
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: rg
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DOUT
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: din
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: init
+    stmnts:
+        kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: init
+        iftrue:
+        -   kind: assign
+            lvalue:
+                kind: ident
+                name: rg
+            rvalue:
+                kind: int
+                value: 0
+            delay: 0
+        -   kind: assign
+            lvalue:
+                kind: ident
+                name: DOUT
+            rvalue:
+                kind: int
+                value: 0
+            delay: 0
+        ifelse:
+        -   lvalue:
+                kind: ident
+                name: rg
+        -   lvalue:
+                kind: ident
+                name: DOUT
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: DIN
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: din
+        rvalue:
+            kind: ident
+            name: DIN
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: clk
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: rg
+        rvalue:
+            kind: ident
+            name: exnor_out
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: DOUT
+        rvalue:
+            kind: ident
+            name: exnor_out

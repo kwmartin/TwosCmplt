@@ -1,0 +1,211 @@
+kind: verilog
+module: DG_DLR_5X2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: L
+-   name: D1
+-   name: D2
+-   name: R
+-   name: CP
+-   name: QP
+-   name: QN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: L
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 45.5
+    src_sgnls:
+    - CP
+    - L
+    - D1
+    - D2
+    - R
+    edge: posedge
+    dst_sgnls:
+    - QP
+    - QN
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QP
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QN
+        rvalue:
+            kind: int
+            value: 1
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CP
+    -   edge: posedge
+        node: R
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: float
+                value: 100.0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: QP
+            rvalue:
+                kind: int
+                value: 0
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: QN
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: R
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: int
+                    value: 0
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QN
+                rvalue:
+                    kind: int
+                    value: 1
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: cndexpr
+                    args:
+                    - L
+                    -   kind: ident
+                        name: D2
+                    -   kind: ident
+                        name: D1
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QN
+                rvalue:
+                    kind: cndexpr
+                    args:
+                    - L
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: D2
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: D1

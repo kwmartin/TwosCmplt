@@ -1,0 +1,28 @@
+kind: verilog
+module: NMOSCAP_18
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: P
+-   name: N
+decls:
+-   -   kind: Input
+        name: P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks: null

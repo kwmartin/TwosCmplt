@@ -1,0 +1,414 @@
+kind: verilog
+module: REGS_TB
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Wire
+        name: QP
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: QN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: IN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Integer
+        name: n
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Integer
+        name: dsplyFile
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: instance
+    name: R0
+    module: REGS
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: IN
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: QP
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: slice
+            name: SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: QN
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: VCCPIN
+        node:
+            kind: ident
+            name: VCC
+    -   port: VSSPIN
+        node:
+            kind: ident
+            name: VSS
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: CLK
+            rvalue:
+                kind: int
+                value: 0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BGreaterEq:'
+                args:
+                -   kind: ident
+                    name: n
+                -   kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: int
+                        value: 80
+                    -   kind: int
+                        value: 2
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: '*-* All Finished *-*'
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'AT FINISH: time is %0t'
+                -   kind: sys_tm
+                    name: time
+            -   kind: syscall
+                name: finish
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: n
+        rvalue:
+            kind: bexpr
+            oper: 'BPlus:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: CLK
+        rvalue:
+            kind: uexpr
+            oper: 'Ulnot:'
+            args:
+            -   kind: ident
+                name: CLK
+-   kind: initial
+    stmnts:
+    -   kind: sys_frmt
+        name: timeformat
+        args:
+        -   kind: uexpr
+            oper: 'Uminus:'
+            args:
+            -   kind: int
+                value: 9
+        -   kind: int
+            value: 3
+        -   kind: str
+            value: ' ns.'
+        -   kind: int
+            value: 5
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: dsplyFile
+        rvalue:
+            kind: syscall
+            name: fopen
+            value:
+            -   kind: str
+                value: dsplyNds.out
+            -   kind: str
+                value: w
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: '     time      CLK INIT SET IN QP QN'
+    -   kind: syscall
+        name: fdisplay
+        value:
+        -   kind: ident
+            name: dsplyFile
+        -   kind: str
+            value: '     time      CLK INIT SET IN QP QN'
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: '%t     %b   %b    %h   %h  %h  %h'
+        -   kind: sys_rltm
+            name: realtime
+        -   kind: ident
+            name: CLK
+        -   kind: ident
+            name: INIT
+        -   kind: ident
+            name: SET
+        -   kind: ident
+            name: IN
+        -   kind: ident
+            name: QP
+        -   kind: ident
+            name: QN
+    -   kind: syscall
+        name: fdisplay
+        value:
+        -   kind: ident
+            name: dsplyFile
+        -   kind: str
+            value: '%t     %b   %b    %h   %h  %h  %h'
+        -   kind: sys_rltm
+            name: realtime
+        -   kind: ident
+            name: CLK
+        -   kind: ident
+            name: INIT
+        -   kind: ident
+            name: SET
+        -   kind: ident
+            name: IN
+        -   kind: ident
+            name: QP
+        -   kind: ident
+            name: QN
+-   kind: initial
+    stmnts:
+    -   kind: syscall
+        name: dumpfile
+        value:
+        -   kind: str
+            value: ndsSave.vcd
+    -   kind: syscall
+        name: dumpvars
+        value:
+        -   kind: int
+            value: 0
+        -   kind: ident
+            name: REGS
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VDD
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VSS
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: INIT
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: IN
+        rvalue:
+            kind: int
+            value: 16'h0000
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: SET
+        rvalue:
+            kind: int
+            value: 16'h4000
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: INIT
+        rvalue:
+            kind: int
+            value: 0
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: IN
+        rvalue:
+            kind: int
+            value: 16'h0880
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: IN
+        rvalue:
+            kind: int
+            value: 16'h0880
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: IN
+        rvalue:
+            kind: int
+            value: 16'hF00F
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: IN
+        rvalue:
+            kind: int
+            value: 16'h0000
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: finish

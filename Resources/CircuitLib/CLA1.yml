@@ -1,0 +1,135 @@
+kind: verilog
+module: CLA1
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: str
+    name: spiceprefix
+    value: X
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CI
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CO
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: G
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: P
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: S
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+- null
+behav_blcks:
+-   kind: instance
+    name: OR1
+    module: OR2D2BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A
+    -   port: None
+        node:
+            kind: ident
+            name: B
+    -   port: None
+        node:
+            kind: ident
+            name: P
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: AND1
+    module: DG_AND2_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A
+    -   port: None
+        node:
+            kind: ident
+            name: B
+    -   port: None
+        node:
+            kind: ident
+            name: G
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: FADDR1
+    module: FA1D2BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CI
+    -   port: None
+        node:
+            kind: ident
+            name: A
+    -   port: None
+        node:
+            kind: ident
+            name: B
+    -   port: None
+        node:
+            kind: ident
+            name: S
+    -   port: None
+        node:
+            kind: ident
+            name: CO
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

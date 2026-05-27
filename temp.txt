@@ -1,0 +1,249 @@
+That separation makes sense: static per‑type data in CircDef, dynamic per‑instance data in Circuit.
+
+Given that:
+
+Put instruction arrays for each AlwaysBlckAST in CircDef (they’re derived from the AST and identical for all instances).
+
+Put value stacks for each always block in Circuit (one per instance, per always‑block).
+
+A minimal way to reflect that:
+
+1. In CircDef: store per‑always code
+Extend your AST side (CircDef / AlwaysBlckAST) to hold compiled code only:
+
+swift
+public struct AlwaysBlckAST {
+    public let body: BlockAST
+    public var code: [Instruction] = []   // static, lives in CircDef
+}
+Compile once when you build the CircDef:
+
+swift
+public func generateAlwaysBlock(_ alwaysBlk: inout AlwaysBlckAST,
+                                ctx: inout Context) {
+    let saved = ctx.code
+    ctx.code = []
+    genBlock(alwaysBlk.body, ctx: &ctx)
+    alwaysBlk.code = ctx.code
+    ctx.code = saved
+}
+And in your generateCode(from:behav, …) pass, mutate the BehavBlckAST / AlwaysBlckAST in CircDef so each has its code filled. The important part: no stacks on this side, only code.
+
+2. In Circuit: per‑instance stacks indexed by always block
+Add, on the dynamic side:
+
+swift
+public final class Circuit {
+    // existing fields...
+    public var alwaysStacks: [[Value]] = []   // one stack per always block
+}
+When you instantiate a Circuit from a given CircDef, size alwaysStacks to match the number of always‑blocks in that CircDef:
+
+swift
+func attachBehavior(from circDef: CircDef) {
+    let alwaysCount = circDef.behav_blcks.filter {
+        if case .alwaysblck = $0 { return true }
+        return false
+    }.count
+    self.alwaysStacks = Array(repeating: [], count: alwaysCount)
+}
+(You can do this in your existing factory/init once you have the CircDef in hand.)
+
+3. At runtime: run each always using static code + per‑instance stack
+When simulating, you have:
+
+ctx.circDef → to fetch AlwaysBlckAST and its .code.
+
+ctx.circuit → to fetch alwaysStacks[i] and nodes.
+
+A runner that respects your split:
+
+swift
+public func runAlways(index: Int, ctx: inout Context) {
+    guard let circuit = ctx.circuit else {
+        fatalError("runAlways called with no Circuit")
+    }
+
+    // Find the i-th always block in the CircDef
+    var nth = 0
+    var alwaysCode: [Instruction] = []
+    for blk in ctx.circDef.behav_blcks {
+        if case .alwaysblck(let alwaysBlk) = blk {
+            if nth == index {
+                alwaysCode = alwaysBlk.code
+                break
+            }
+            nth += 1
+        }
+    }
+    precondition(!alwaysCode.isEmpty, "No code for always block \(index)")
+
+    // Use this instance’s stack for that always
+    var ip = 0
+    ctx.stack = circuit.alwaysStacks[index]
+
+    while ip < alwaysCode.count {
+        let instr = alwaysCode[ip]
+
+        switch instr.op {
+        case .loadConstReal(let d):
+            ctx.push(.real(d)); ip += 1
+        case .loadConstInt(let i):
+            ctx.push(.int(i)); ip += 1
+
+        case .loadSignal(let name):
+            let v = ctx.readNode(name)
+            ctx.push(v); ip += 1
+
+        case .storeSignal(let name):
+            let v = ctx.pop()
+            ctx.writeNode(name, v); ip += 1
+
+        case .callSyscall(let name, let argCount):
+            var args: [Value] = []
+            args.reserveCapacity(argCount)
+            for _ in 0..<argCount { args.append(ctx.pop()) }
+            args.reverse()
+            let result = ctx.syscall(name, args: args)
+            ctx.push(result); ip += 1
+
+        case .unaryOp(let uop):
+            let v = ctx.pop()
+            ctx.push(applyUnaryOp(uop, v)); ip += 1
+
+        case .binOp(let op):
+            let rhs = ctx.pop()
+            let lhs = ctx.pop()
+            ctx.push(applyBinaryOp(op, lhs, rhs)); ip += 1
+
+        case .br(let target):
+            ip = target
+
+        case .brFalse(let target):
+            let cond = ctx.pop()
+            if !asBool(cond) { ip = target } else { ip += 1 }
+        }
+    }
+
+    // Persist stack back into the circuit instance
+    circuit.alwaysStacks[index] = ctx.stack
+}
+Then your per‑tick scheduler can do:
+
+swift
+func stepCircuit(_ circuit: Circuit, ctx: inout Context) {
+    ctx.circuit = circuit
+    let count = circuit.alwaysStacks.count
+    for i in 0..<count {
+        runAlways(index: i, ctx: &ctx)
+    }
+}
+This respects your design:
+
+CircDef holds AST + code (everything invariant across instances).
+
+Circuit holds nodes + per‑always stacks + other dynamic state.
+
+Would you like to see the exact BehavBlckAST / AlwaysBlckAST mutation needed in CircDef to attach code cleanly, given your existing enum definitions?
+
+Yes
+You can attach the compiled code: [Instruction] directly to each AlwaysBlckAST inside CircDef by:
+
+Adding a code field to AlwaysBlckAST.
+
+Mutating the BehavBlckAST enum in place to fill that field.
+
+Below is a concrete pattern assuming the usual shapes.
+
+1) Extend AlwaysBlckAST with code
+swift
+public struct AlwaysBlckAST {
+    public var body: BlockAST
+    // plus whatever else you already have (sensitivity, name, etc.)
+
+    // New: static instructions for this always-block
+    public var code: [Instruction] = []
+
+    public init(body: BlockAST /*, other fields... */) {
+        self.body = body
+        self.code = []
+        // init other fields...
+    }
+}
+If you already have an init, just add code = [] there.
+
+2) Your existing BehavBlckAST enum (assumed)
+Assuming it looks roughly like:
+
+swift
+public enum BehavBlckAST {
+    case initblck(InitBlckAST)
+    case alwaysblck(AlwaysBlckAST)
+    case assgnblck(AssgnBlckAST)
+    case spcfyblck(SpcfyBlckAST)
+}
+We’ll mutate the .alwaysblck case in place.
+
+3) Compile one always-block into its code field
+Add:
+
+swift
+public func generateAlwaysBlock(_ alwaysBlk: inout AlwaysBlckAST,
+                                ctx: inout Context) {
+    // Save and clear ctx.code so we can reuse your existing gen* functions
+    let savedCode = ctx.code
+    ctx.code = []
+
+    // Emit instructions for this always block
+    genBlock(alwaysBlk.body, ctx: &ctx)
+
+    // Attach to the AST node
+    alwaysBlk.code = ctx.code
+
+    // Restore global buffer
+    ctx.code = savedCode
+}
+4) Walk behav_blcks in CircDef and fill each AlwaysBlckAST.code
+Assuming CircDef has:
+
+swift
+public struct CircDef {
+    public var behav_blcks: [BehavBlckAST]
+    // ...
+}
+Then in your top-level codegen (where you currently call generateCode(from: behav, ctx: &ctx)), mutate the enum array:
+
+swift
+public func generateCode(from behav: inout BehavAST,
+                         ctx: inout Context) {
+    for i in behav.behav_blcks.indices {
+        switch behav.behav_blcks[i] {
+
+        case .alwaysblck(var alwaysBlk):
+            // Compile this always block into its code field
+            generateAlwaysBlock(&alwaysBlk, ctx: &ctx)
+            // Write it back into the enum case
+            behav.behav_blcks[i] = .alwaysblck(alwaysBlk)
+
+        case .initblck(let initBlk):
+            generateInitBlock(initBlk, ctx: &ctx)
+
+        case .assgnblck(let assgnBlk):
+            generateAssignBlock(assgnBlk, ctx: &ctx)
+
+        case .spcfyblck(let spcfyBlk):
+            generateSpecifyBlock(spcfyBlk, ctx: &ctx)
+        }
+    }
+}
+Key points:
+
+The var binding in case .alwaysblck(var alwaysBlk) gives you a mutable copy of the AlwaysBlckAST.
+
+After calling generateAlwaysBlock(&alwaysBlk, …), you re-wrap it in .alwaysblck(alwaysBlk) and assign back into behav_blcks[i].
+
+All static code now lives on the AST node in CircDef (AlwaysBlckAST.code), and you don’t store any per-instance stacks there.
+
+From there, your Circuit can size alwaysStacks to match the number/order of .alwaysblck entries in circDef.behav_blcks, and your runtime uses alwaysBlk.code + circuit.alwaysStacks[index] as in the previous message.
+
+Would you like to also see a small helper on CircDef that returns the list of AlwaysBlckAST plus their indices, so you don’t have to re-scan behav_blcks every time you want to run an always block?

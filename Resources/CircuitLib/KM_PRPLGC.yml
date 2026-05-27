@@ -1,0 +1,145 @@
+kind: verilog
+module: KM_PRPLGC
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: D1P
+-   name: D1N
+-   name: D2P
+-   name: D2N
+-   name: OVWR
+-   name: OVAL
+-   name: OUTP
+-   name: OUTN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: D1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: OVWR
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: OVAL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUTP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: OUTN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUTP
+    rvalue:
+        kind: cndexpr
+        args:
+        - OVWR
+        -   kind: ident
+            name: OVAL
+        -   kind: gt_expr
+            oper: 'BOr:'
+            args:
+            -   kind: ident
+                name: D1P
+            -   kind: ident
+                name: D2P
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 13.0
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUTN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: cndexpr
+            args:
+            - OVWR
+            -   kind: ident
+                name: OVAL
+            -   kind: gt_expr
+                oper: 'BOr:'
+                args:
+                -   kind: ident
+                    name: D1P
+                -   kind: ident
+                    name: D2P
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 13.0
+        -   kind: float
+            value: 1.0

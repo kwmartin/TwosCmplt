@@ -1,0 +1,78 @@
+kind: verilog
+module: KM_BFR_ENBL
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: IN
+-   name: ENBL
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ENBL
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: IN
+        -   kind: int
+            value: 1'B0
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 5.8
+        -   kind: float
+            value: 1.0

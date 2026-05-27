@@ -1,0 +1,355 @@
+kind: verilog
+module: MX3X1_DIFF
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: D0P
+-   name: D0N
+-   name: D1P
+-   name: D1N
+-   name: D2P
+-   name: D2N
+-   name: S0P
+-   name: S0N
+-   name: S1P
+-   name: S1N
+-   name: S2P
+-   name: S2N
+-   name: OP
+-   name: 'ON'
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: D0P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D0N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S0P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S0N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 12.8
+    src_sgnls:
+    - D0P
+    - D0N
+    - D1P
+    - D1N
+    - D2P
+    - D2N
+    - S0P
+    - S0N
+    - S1P
+    - S1N
+    - S2P
+    - S2N
+    edge: posedge
+    dst_sgnls:
+    - OP
+    - OP
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: D0P
+    -   edge: all
+        node: D0N
+    -   edge: all
+        node: D1P
+    -   edge: all
+        node: D1N
+    -   edge: all
+        node: D2P
+    -   edge: all
+        node: D2N
+    -   edge: all
+        node: S0P
+    -   edge: all
+        node: S0N
+    -   edge: all
+        node: S1P
+    -   edge: all
+        node: S1N
+    -   edge: all
+        node: S2P
+    -   edge: all
+        node: S2N
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: S0P
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: S1P
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: S2P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: D0P
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: gt_expr
+                        oper: 'BAnd:'
+                        args:
+                        -   kind: ident
+                            name: S1P
+                        -   kind: uexpr
+                            oper: 'Unot:'
+                            args:
+                            -   kind: ident
+                                name: S0P
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: S2P
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: OUT
+                rvalue:
+                    kind: ident
+                    name: D1P
+            ifelse:
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_gate
+                    gate:
+                        kind: gt_expr
+                        oper: 'BAnd:'
+                        args:
+                        -   kind: gt_expr
+                            oper: 'BAnd:'
+                            args:
+                            -   kind: ident
+                                name: S2P
+                            -   kind: uexpr
+                                oper: 'Unot:'
+                                args:
+                                -   kind: ident
+                                    name: S0P
+                        -   kind: uexpr
+                            oper: 'Unot:'
+                            args:
+                            -   kind: ident
+                                name: S1P
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: OUT
+                    rvalue:
+                        kind: ident
+                        name: D2P
+                ifelse:
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_gate
+                        gate:
+                            kind: gt_expr
+                            oper: 'BAnd:'
+                            args:
+                            -   kind: gt_expr
+                                oper: 'BAnd:'
+                                args:
+                                -   kind: uexpr
+                                    oper: 'Unot:'
+                                    args:
+                                    -   kind: ident
+                                        name: S0P
+                                -   kind: uexpr
+                                    oper: 'Unot:'
+                                    args:
+                                    -   kind: ident
+                                        name: S1P
+                            -   kind: uexpr
+                                oper: 'Unot:'
+                                args:
+                                -   kind: ident
+                                    name: S2P
+                    iftrue:
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: OUT
+                        rvalue:
+                            kind: int
+                            value: 1'B1
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: ident
+        name: OUT
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: OP
+    delay: 0

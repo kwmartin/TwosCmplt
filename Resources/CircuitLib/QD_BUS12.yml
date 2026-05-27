@@ -1,0 +1,470 @@
+kind: verilog
+module: QD_BUS12
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: RL11
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL10
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL9
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL8
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL7
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL6
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL5
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL4
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL3
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL2
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL1
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL0
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD11
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD10
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD9
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD8
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD7
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD6
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD5
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD4
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD3
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD2
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD1
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QD0
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA11
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA10
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA9
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA8
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA7
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA6
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA5
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA4
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA3
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA2
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA1
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA0
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Integer
+        name: pout_file
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Reg
+        name: DAT_BS
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RL_BS
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: QD_BS
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: reg2
+        signed: 'True'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: reg3
+        signed: 'True'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: nmb_lns
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Integer
+        name: dat_file
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: nmb_read
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: cnt
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: RL_BS
+    rvalue:
+        concats:
+        - RL11
+        - RL10
+        - RL9
+        - RL8
+        - RL7
+        - RL6
+        - RL5
+        - RL4
+        - RL3
+        - RL2
+        - RL1
+        - RL0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QD_BS
+    rvalue:
+        concats:
+        - QD11
+        - QD10
+        - QD9
+        - QD8
+        - QD7
+        - QD6
+        - QD5
+        - QD4
+        - QD3
+        - QD2
+        - QD1
+        - QD0
+    delay: 0
+-   kind: assign
+    lvalue:
+    - lconcat
+    -   - DATA11
+        - DATA10
+        - DATA9
+        - DATA8
+        - DATA7
+        - DATA6
+        - DATA5
+        - DATA4
+        - DATA3
+        - DATA2
+        - DATA1
+        - DATA0
+    rvalue:
+        kind: ident
+        name: DAT_BS
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DAT_BS
+        rvalue:
+            kind: int
+            value: 12'hF0F
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: pout_file
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_unary
+            arg:
+                kind: uexpr
+                oper: 'Ulnot:'
+                args:
+                -   kind: ident
+                    name: pout_file
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: pout_file
+            rvalue:
+                kind: syscall
+                name: fopen
+                value:
+                -   kind: str
+                    value: qdOut.dat
+                -   kind: str
+                    value: w
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BEq:'
+                args:
+                -   kind: ident
+                    name: pout_file
+                -   kind: int
+                    value: 0
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: PrllOut.dat File could not be opened
+            -   kind: disable
+                name: file_block
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: reg2
+        rvalue:
+            kind: int
+            value: 16'hbeef
+-   kind: always
+    onlyif:
+    -   edge: posedge
+        node: CLK
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: reg2
+        rvalue:
+            kind: ident
+            name: RL_BS
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: reg3
+        rvalue:
+            kind: ident
+            name: QD_BS
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: DAT_BS
+        rvalue:
+            kind: ident
+            name: RL_BS
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BGreaterEq:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: int
+                value: 8000
+        iftrue:
+        -   kind: syscall
+            name: fdisplay
+            value:
+            -   kind: ident
+                name: pout_file
+            -   kind: str
+                value: '%5d %5d'
+            -   kind: ident
+                name: reg2
+            -   kind: ident
+                name: reg3
+        -   kind: syscall
+            name: fflush
+            value:
+            -   kind: ident
+                name: pout_file

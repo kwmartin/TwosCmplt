@@ -1,0 +1,69 @@
+kind: verilog
+module: rgstr
+params:
+-   kind: int
+    name: nbits
+    value: 8
+-   kind: int
+    name: nregs
+    value: 1
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+decls:
+- null
+behav_blcks: null

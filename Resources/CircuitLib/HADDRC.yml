@@ -1,0 +1,155 @@
+kind: verilog
+module: HADDRC
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: CIN
+-   name: A
+-   name: ZERO
+-   name: SUM
+-   name: COUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: CIN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: A
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ZERO
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: SUM
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: COUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 24.4
+    src_sgnls:
+    - CIN
+    edge: posedge
+    dst_sgnls:
+    - SUM
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 15.3
+    src_sgnls:
+    - CIN
+    edge: posedge
+    dst_sgnls:
+    - COUT
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 25.6
+    src_sgnls:
+    - A
+    edge: posedge
+    dst_sgnls:
+    - SUM
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 17.5
+    src_sgnls:
+    - A
+    edge: posedge
+    dst_sgnls:
+    - COUT
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 12.8
+    src_sgnls:
+    - ZERO
+    edge: posedge
+    dst_sgnls:
+    - SUM
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: SUM
+    rvalue:
+        kind: gt_expr
+        oper: 'BAnd:'
+        args:
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: gt_expr
+                oper: 'BXor:'
+                args:
+                -   kind: ident
+                    name: CIN
+                -   kind: ident
+                    name: A
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: ZERO
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: COUT
+    rvalue:
+        kind: gt_expr
+        oper: 'BOr:'
+        args:
+        -   kind: ident
+            name: CIN
+        -   kind: ident
+            name: A
+    delay: 0

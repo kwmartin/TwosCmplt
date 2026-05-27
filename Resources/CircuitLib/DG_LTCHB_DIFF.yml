@@ -1,0 +1,229 @@
+kind: verilog
+module: DG_LTCHB_DIFF
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: DP
+-   name: DN
+-   name: RP
+-   name: RN
+-   name: CP
+-   name: CN
+-   name: QOP
+-   name: QON
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: DP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QOP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QON
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QOP
+    rvalue:
+        kind: ident
+        name: QP
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QON
+    rvalue:
+        kind: ident
+        name: QN
+    delay: 0
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 40.0
+    src_sgnls:
+    - CP
+    - CN
+    - DP
+    - DN
+    edge: posedge
+    dst_sgnls:
+    - QOP
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 40.0
+    src_sgnls:
+    - CP
+    - CN
+    - DP
+    - DN
+    edge: posedge
+    dst_sgnls:
+    - QON
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QP
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QN
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: DP
+    -   edge: all
+        node: CP
+    -   edge: all
+        node: DN
+    -   edge: all
+        node: CN
+    -   edge: all
+        node: RP
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: RP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: QP
+            rvalue:
+                kind: int
+                value: 0
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: QN
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: CP
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: CN
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: ident
+                    name: DP
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QN
+                rvalue:
+                    kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: DP

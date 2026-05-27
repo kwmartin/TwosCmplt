@@ -1,0 +1,189 @@
+kind: verilog
+module: RGSTR
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: int
+    name: nbits
+    value: 8
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Integer
+        name: n
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Reg
+        name: D
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: D
+    delay: 1
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 30.0
+    src_sgnls:
+    - CLK
+    - IN
+    - INIT
+    - SET
+    edge: posedge
+    dst_sgnls:
+    - QP
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: D
+        rvalue:
+            kind: ident
+            name: SET
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    -   edge: posedge
+        node: INIT
+    -   edge: posedge
+        node: SET
+    -   edge: negedge
+        node: SET
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: int
+                value: 5
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: D
+            rvalue:
+                kind: ident
+                name: SET
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: n
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: INIT
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: D
+                rvalue:
+                    kind: ident
+                    name: SET
+            -   kind: blckst
+                lvalue:
+                    kind: ident
+                    name: n
+                rvalue:
+                    kind: int
+                    value: 2
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: D
+                rvalue:
+                    kind: ident
+                    name: IN
+            -   kind: blckst
+                lvalue:
+                    kind: ident
+                    name: n
+                rvalue:
+                    kind: int
+                    value: 3

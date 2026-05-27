@@ -1,0 +1,788 @@
+kind: verilog
+module: KM_REGS18
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: str
+    name: spiceprefix
+    value: X
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: CLKBF
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: CKBFR
+    module: BUFFD8BWP35HVT
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: DX__17
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__16
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__15
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__14
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__13
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__12
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__11
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__10
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__9
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__8
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__7
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__6
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__5
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__4
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__3
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__2
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: DX__1
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: instance
+    name: DX__0
+    module: DG_DX_4X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

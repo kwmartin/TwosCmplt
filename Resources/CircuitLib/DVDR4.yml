@@ -1,0 +1,306 @@
+kind: verilog
+module: DVDR4
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: AND_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: AND_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q0N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q3N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Q3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: TFF_0
+    module: TFF
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: Q0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: Q0N
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: AND0
+    module: DG_AND2_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: Q0
+    -   port: None
+        node:
+            kind: ident
+            name: Q1
+    -   port: None
+        node:
+            kind: ident
+            name: AND_0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: TFF_1
+    module: TFF
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: Q1
+    -   port: None
+        node:
+            kind: ident
+            name: Q0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: Q1N
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: TFF_2
+    module: TFF
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: Q2
+    -   port: None
+        node:
+            kind: ident
+            name: AND_0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: Q2N
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: AND1
+    module: DG_AND2_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: AND_0
+    -   port: None
+        node:
+            kind: ident
+            name: Q2
+    -   port: None
+        node:
+            kind: ident
+            name: AND_1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: TFF_3
+    module: TFF
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: Q3
+    -   port: None
+        node:
+            kind: ident
+            name: AND_1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: Q3N
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+    - select
+    -   kind: slice
+        name: OUT
+        sgmnts:
+        -   kind: int
+            value: 3
+        -   kind: int
+            value: 0
+    rvalue:
+        concats:
+        - Q3
+        - Q2
+        - Q1
+        - Q0
+    delay: 1

@@ -1,0 +1,62 @@
+kind: verilog
+module: KM_DLY_UP
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: IN
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 744.0
+    src_sgnls:
+    - IN
+    edge: posedge
+    dst_sgnls:
+    - OUT
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: ident
+        name: IN
+    delay: 0

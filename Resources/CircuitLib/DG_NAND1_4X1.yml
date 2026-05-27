@@ -1,0 +1,101 @@
+kind: verilog
+module: DG_NAND1_4X1
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: A
+-   name: B
+-   name: C
+-   name: D
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: A
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: B
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: C
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: A
+                    -   kind: ident
+                        name: B
+                -   kind: ident
+                    name: C
+            -   kind: ident
+                name: D
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 17.5
+        -   kind: float
+            value: 1.0

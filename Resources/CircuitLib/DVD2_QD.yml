@@ -1,0 +1,224 @@
+kind: verilog
+module: DVD2_QD
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: CP
+-   name: CN
+-   name: ROP
+-   name: RON
+-   name: QOP
+-   name: QON
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: ROP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: RON
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QOP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QON
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: RP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: RN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: ROP
+    rvalue:
+        kind: ident
+        name: RP
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: RON
+    rvalue:
+        kind: ident
+        name: RN
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QOP
+    rvalue:
+        kind: ident
+        name: QP
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QON
+    rvalue:
+        kind: ident
+        name: QN
+    delay: 0
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 22.0
+    src_sgnls:
+    - CP
+    - CN
+    edge: posedge
+    dst_sgnls:
+    - ROP
+    - RON
+    - QOP
+    - QON
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: RP
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: RN
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QP
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: QN
+        rvalue:
+            kind: int
+            value: 1
+-   kind: always
+    onlyif:
+    -   edge: posedge
+        node: CP
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: QP
+        rvalue:
+            kind: ident
+            name: RP
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: QN
+        rvalue:
+            kind: ident
+            name: RN
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CP
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: RP
+        rvalue:
+            kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: RP
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: RN
+        rvalue:
+            kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: RN

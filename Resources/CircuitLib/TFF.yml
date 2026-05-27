@@ -1,0 +1,197 @@
+kind: verilog
+module: TFF
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: T
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RST
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: NOR_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NOR_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: D0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: TN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: DFF_0
+    module: DG_DR_3X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: D0
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: QP
+    -   port: None
+        node:
+            kind: ident
+            name: QN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: X1
+    module: DG_NOR1_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: NOR_0
+    -   port: None
+        node:
+            kind: ident
+            name: NOR_1
+    -   port: None
+        node:
+            kind: ident
+            name: D0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: X3
+    module: DG_NOR1_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: QP
+    -   port: None
+        node:
+            kind: ident
+            name: T
+    -   port: None
+        node:
+            kind: ident
+            name: NOR_0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: X4
+    module: DG_NOR1_2X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: QN
+    -   port: None
+        node:
+            kind: ident
+            name: TN
+    -   port: None
+        node:
+            kind: ident
+            name: NOR_1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV3
+    module: DG_INV1_1X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: T
+    -   port: None
+        node:
+            kind: ident
+            name: TN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

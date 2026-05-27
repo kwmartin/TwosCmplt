@@ -1,0 +1,27 @@
+Module: DVDR4
+
+Constants:
+  PER: 1000
+
+Clock:
+- clkNm: CLK
+  per: PER
+
+FinishTime: 16*PER
+
+SaveNds:
+- name: QP
+  format: s
+- name: QN
+  format: s
+
+TimeSpcs:
+- tm: 0
+  vls:
+  - [VDD, 1]
+  - [VSS, 0]
+  - [RST, 1]
+  - [T, 1]
+- tm: PER
+  vls:
+  - [RST, 0]

@@ -1,0 +1,204 @@
+kind: verilog
+module: dg_mx_4x1
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: s3
+-   name: s2
+-   name: s1
+-   name: s0
+-   name: d3
+-   name: d2
+-   name: d1
+-   name: d0
+-   name: out
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: s3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: s2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: s1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: s0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: d3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: d2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: d1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: d0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: out
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: s0
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: d0
+        -   kind: int
+            value: 1'bz
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 19.9
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: s1
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: d1
+        -   kind: int
+            value: 1'bz
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 19.9
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: s2
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: d2
+        -   kind: int
+            value: 1'bz
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 19.9
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: s3
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: d3
+        -   kind: int
+            value: 1'bz
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 19.9
+        -   kind: float
+            value: 1.0

@@ -1,0 +1,28 @@
+kind: verilog
+module: KM_CAPN
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: ND
+-   name: VSSA
+decls:
+-   -   kind: Input
+        name: ND
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSSA
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks: null

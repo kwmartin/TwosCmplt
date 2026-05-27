@@ -1,0 +1,32 @@
+.. TwosCmplt documentation master file, created by
+   sphinx-quickstart on Sun Oct 19 08:12:21 2025.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+TwosCmplt Documentation
+=======================
+
+As an alternative to this library see:
+`Arithmetic Operations <https://www.mathworks.com/help/fixedpoint/ug/arithmetic-operations.html>`_
+Matlab's library for two's complement operations
+
+The ``TwosCmplt`` package is a set of functions and strucs intended to usefule in simulating hardware systems
+that are implemented using two's complement arithmetic. The package was ported from a Python module the author
+had previously developed. This is the author's first time using Swift, and the author is not a ``programmer``
+so the package might be ``rough around the edges``; still it could be a good starting point and with the many operations
+supported, and debugged, should save time compared to a user starting from scratch.
+
+The author only just became aware of the ``Swift`` program language as the author is predisposed against Apple (and Microsoft);
+albeit, the author many decades ago a couple of ``Next`` computers, and at that time experimented with ``Objective C``, the precursor to ``Swift``. ``Swift`` looks like an interesting language for system simulation as it is reported to be fast (compared to Python), has operator overloading, and many other nice features. The author despite only becoming aware of ``Swift`` has been
+extremely impressed by the language and intends to use it extensively in the future in application where speed is important.
+
+In porting the two's complement library from Python to Swift, the author also added ``precision`` to the library similar to how
+Matlab handles precision in it's fi library. ``Precision`` specifies how many least-signicant bits are assumed to have ``wightings`` less than 1. This part of the library is new and not yet properly debugged.
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+

@@ -1,0 +1,159 @@
+kind: verilog
+module: MULT_25P125
+params:
+-   kind: int
+    name: nbits
+    value: 20
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: in2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+    -   kind: Wire
+        name: sum
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: sum
+    rvalue:
+        kind: bexpr
+        oper: 'BPlus:'
+        args:
+        -   kind: bexpr
+            oper: 'BPlus:'
+            args:
+            -   kind: bexpr
+                oper: 'BPlus:'
+                args:
+                -   kind: sexpr
+                    oper: 'BSrl:'
+                    args:
+                    -   kind: ident
+                        name: IN
+                    -   kind: int
+                        value: 1
+                -   kind: sexpr
+                    oper: 'BSrl:'
+                    args:
+                    -   kind: ident
+                        name: IN
+                    -   kind: int
+                        value: 2
+            -   kind: sexpr
+                oper: 'BSrl:'
+                args:
+                -   kind: ident
+                    name: IN
+                -   kind: int
+                    value: 5
+        -   kind: sexpr
+            oper: 'BSrl:'
+            args:
+            -   kind: ident
+                name: IN
+            -   kind: int
+                value: 8
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: sexpr
+        oper: 'BSrl:'
+        args:
+        -   kind: ident
+            name: sum
+        -   kind: int
+            value: 0
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 30.0
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: in2
+    rvalue:
+        kind: sexpr
+        oper: 'BSrl:'
+        args:
+        -   kind: ident
+            name: IN
+        -   kind: int
+            value: 1
+    delay: 0

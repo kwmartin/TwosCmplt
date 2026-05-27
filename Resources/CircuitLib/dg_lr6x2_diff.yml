@@ -1,0 +1,241 @@
+kind: verilog
+module: dg_lr6x2_diff
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: dp
+-   name: dn
+-   name: rp
+-   name: rn
+-   name: cp
+-   name: cn
+-   name: qop
+-   name: qon
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: dp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: dn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: rp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: rn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: qop
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: qon
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qop
+    rvalue:
+        kind: ident
+        name: qp
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qon
+    rvalue:
+        kind: ident
+        name: qn
+    delay: 0
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 40.0
+    src_sgnls:
+    - cp
+    - cn
+    - dp
+    - dn
+    edge: posedge
+    dst_sgnls:
+    - qop
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 40.0
+    src_sgnls:
+    - cp
+    - cn
+    - dp
+    - dn
+    edge: posedge
+    dst_sgnls:
+    - qon
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: qp
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: qn
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: rp
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: rp
+        iftrue:
+        - 'SingleStatement:'
+        -   kind: assign
+            lvalue:
+                kind: ident
+                name: qp
+            rvalue:
+                kind: int
+                value: 0
+            delay: 0
+        -   kind: assign
+            lvalue:
+                kind: ident
+                name: qn
+            rvalue:
+                kind: int
+                value: 1
+            delay: 0
+        ifelse:
+        -   lvalue:
+                kind: ident
+                name: qp
+        -   lvalue:
+                kind: ident
+                name: qn
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: dp
+    -   edge: all
+        node: cp
+    -   edge: all
+        node: dn
+    -   edge: all
+        node: cn
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: cp
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: cn
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: qp
+            rvalue:
+                kind: ident
+                name: dp
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: qn
+            rvalue:
+                kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: dp

@@ -1,0 +1,489 @@
+kind: verilog
+module: coeffPre_TB
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Reg
+        name: K
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: Init
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: Clk
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: Out1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out2_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out3_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out4_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out5_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out6_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out7_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out8_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out9_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out10_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out11_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out12_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out13_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out14_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Out15_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Load
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: coeffPre
+    module: coeffPre
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: K
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: Init
+    -   port: None
+        node:
+            kind: ident
+            name: Clk
+    -   port: None
+        node:
+            kind: slice
+            name: Out1_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out2_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out3_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out4_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out5_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out6_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out7_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out8_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out9_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out10_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out11_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out12_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out13_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out14_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Out15_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: Load
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: Integer
+    name: n
+    signed: integer
+    width:
+    -   kind: int
+        value: 31
+    -   kind: int
+        value: 0
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: Clk
+            rvalue:
+                kind: int
+                value: 0
+        - 'SingleStatement:'
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BGreaterEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: bexpr
+                oper: 'Times:'
+                args:
+                -   kind: int
+                    value: 18
+                -   kind: int
+                    value: 2
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: '*-* All Finished *-*'
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'AT FINISH: time is %0t'
+            -   kind: sys_tm
+                name: time
+        -   kind: syscall
+            name: finish
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: n
+        rvalue:
+            kind: bexpr
+            oper: 'BPlus:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Clk
+        rvalue:
+            kind: uexpr
+            oper: 'Ulnot:'
+            args:
+            -   kind: ident
+                name: Clk
+-   kind: initial
+    stmnts:
+    -   kind: syscall
+        name: dumpfile
+        value:
+        -   kind: str
+            value: coeffpre.vcd
+    -   kind: syscall
+        name: dumpvars
+        value:
+        -   kind: int
+            value: 0
+        -   kind: ident
+            name: COEFFPRE

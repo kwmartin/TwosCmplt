@@ -1,0 +1,154 @@
+kind: verilog
+module: dg_dvd2_diff
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: cp
+-   name: cn
+-   name: qop
+-   name: qon
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: cp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: qop
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: qon
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qop
+    rvalue:
+        kind: ident
+        name: qp
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qon
+    rvalue:
+        kind: ident
+        name: qn
+    delay: 0
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 22.0
+    src_sgnls:
+    - cp
+    edge: negedge
+    dst_sgnls:
+    - qop
+    - cp
+    pth_spc: colon
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 22.0
+    src_sgnls:
+    - cn
+    edge: posedge
+    dst_sgnls:
+    - qon
+    - cn
+    pth_spc: colon
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: qp
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: qn
+        rvalue:
+            kind: int
+            value: 1
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: cp
+    -   edge: posedge
+        node: cn
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: qp
+        rvalue:
+            kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: qp
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: qn
+        rvalue:
+            kind: ident
+            name: qp

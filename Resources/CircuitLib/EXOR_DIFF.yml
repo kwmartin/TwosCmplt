@@ -1,0 +1,151 @@
+kind: verilog
+module: EXOR_DIFF
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: AP
+-   name: AN
+-   name: BP
+-   name: BN
+-   name: OP
+-   name: 'ON'
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: AP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: AN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: BP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: BN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: gt_expr
+        oper: 'BOr:'
+        args:
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: ident
+                name: AP
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: BP
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: AP
+            -   kind: ident
+                name: BP
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 7.3
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: gt_expr
+            oper: 'BOr:'
+            args:
+            -   kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: AP
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: BP
+            -   kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: AP
+                -   kind: ident
+                    name: BP
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 7.3
+        -   kind: float
+            value: 1.0

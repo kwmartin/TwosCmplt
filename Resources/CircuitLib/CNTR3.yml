@@ -1,0 +1,100 @@
+module: CNTR3
+kind: subcirc
+params:
+- name: circuit
+  kind: str
+  value: sync
+- name: nbits
+  kind: int
+  value: 3
+sense:
+  port: CLK
+  edge: fall
+inPrts:
+- CNT
+- INIT
+- CLK
+outPrts:
+- OUT
+- CO
+nodes:
+- CNT
+- INIT
+- CLK
+- T1
+- T2
+- Q0
+- Q0N
+- Q1
+- Q1N
+- Q2
+- Q2N
+- name: OUT
+  nbits: 3
+- CO
+cCircs:
+- name: jk0
+  kind: JKFF
+  inPrts:
+  - port: J
+    node: CNT
+  - port: K
+    node: CNT
+  - port: INIT
+    node: INIT
+  - port: CLK
+    node: CLK
+  outPrts:
+  - port: Q
+    node: Q0
+  - port: QN
+    node: Q0N
+- name: jk1
+  kind: JKFF
+  inPrts:
+  - port: J
+    node: T1
+  - port: K
+    node: T1
+  - port: INIT
+    node: INIT
+  - port: CLK
+    node: CLK
+  outPrts:
+  - port: Q
+    node: Q1
+  - port: QN
+    node: Q1N
+- name: jk2
+  kind: JKFF
+  inPrts:
+  - port: J
+    node: T2
+  - port: K
+    node: T2
+  - port: INIT
+    node: INIT
+  - port: CLK
+    node: CLK
+  outPrts:
+  - port: Q
+    node: Q2
+  - port: QN
+    node: Q2N
+aCircs:
+- name: and0
+  kind: and
+  inPrts: [CNT, Q0]
+  outPrts: T1
+- name: and1
+  kind: and
+  inPrts: [CNT, Q0, Q1]
+  outPrts: T2
+- name: and2
+  kind: and
+  inPrts: [CNT, T2, Q2]
+  outPrts: CO
+- name: cnct
+  kind: join
+  inPrts: [Q2, Q1, Q0]
+  outPrts: OUT

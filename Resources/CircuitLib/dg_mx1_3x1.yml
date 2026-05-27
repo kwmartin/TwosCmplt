@@ -1,0 +1,93 @@
+kind: verilog
+module: dg_mx1_3x1
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: s
+-   name: a
+-   name: b
+-   name: out
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: s
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: a
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: b
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: out
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: gt_expr
+        oper: 'BOr:'
+        args:
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: ident
+                name: s
+            -   kind: ident
+                name: a
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: s
+            -   kind: ident
+                name: b
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 18.3
+        -   kind: float
+            value: 1.0

@@ -1,0 +1,494 @@
+kind: verilog
+module: ROM_LU
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: int
+    name: NADDR
+    value: 8
+-   kind: int
+    name: NDATA
+    value: 20
+-   kind: int
+    name: DEPTH
+    value: 256
+-   kind: str
+    name: DATFILE
+    value: ROM20.DAT
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: ADDR
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: NADDR
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
+    name: DATA
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: NDATA
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Integer
+        name: nmem
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Reg
+        name: MEM
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: NDATA
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length:
+        -   kind: length
+            value:
+            -   kind: int
+                value: 0
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: DEPTH
+                -   kind: int
+                    value: 1
+-   -   kind: Integer
+        name: cnt
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Integer
+        name: file_handle
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Integer
+        name: scan_result
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Reg
+        name: temp_data
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: NDATA
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Integer
+        name: i
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: cnt
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'NADDR raw value: %d'
+        -   kind: ident
+            name: NADDR
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: nmem
+        rvalue:
+            kind: sexpr
+            oper: 'BSll:'
+            args:
+            -   kind: int
+                value: 1
+            -   kind: ident
+                name: NADDR
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'NADDR: %d, nmem: %d'
+        -   kind: ident
+            name: NADDR
+        -   kind: ident
+            name: nmem
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: nmem
+        rvalue:
+            kind: sexpr
+            oper: 'BSll:'
+            args:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 8
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'NADDR: %d, nmem: %d'
+        -   kind: ident
+            name: NADDR
+        -   kind: ident
+            name: nmem
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'Loading test data from file: %s'
+        -   kind: ident
+            name: DATFILE
+    -   kind: forst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: ident
+                name: i
+            -   kind: ident
+                name: nmem
+        pre:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: i
+            rvalue:
+                kind: int
+                value: 0
+        post:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: i
+            rvalue:
+                kind: bexpr
+                oper: 'BPlus:'
+                args:
+                -   kind: ident
+                    name: i
+                -   kind: int
+                    value: 1
+        body:
+        -   kind: blckst
+            lvalue:
+            - point
+            -   kind: bit
+                name: MEM
+                sgmnts:
+                - i
+            rvalue:
+                kind: int
+                value: 0
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: file_handle
+            rvalue:
+                kind: syscall
+                name: fopen
+                value:
+                -   kind: ident
+                    name: DATFILE
+                -   kind: str
+                    value: r
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BEq:'
+                args:
+                -   kind: ident
+                    name: file_handle
+                -   kind: int
+                    value: 0
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'ERROR: Could not open file %s for reading'
+                -   kind: ident
+                    name: DATFILE
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: Make sure the file exists and contains hex values (one
+                        per line)
+            ifelse:
+            -   kind: whlst
+                cmpr_expr:
+                    kind: cmpr_expr
+                    oper: 'BLand:'
+                    args:
+                    -   kind: uexpr
+                        oper: 'Ulnot:'
+                        args:
+                        -   kind: syscall
+                            name: feof
+                            value:
+                            -   kind: ident
+                                name: file_handle
+                    -   kind: cmpr_expr
+                        oper: 'BLessThan:'
+                        args:
+                        -   kind: ident
+                            name: cnt
+                        -   kind: ident
+                            name: nmem
+                body:
+                -   kind: blckst
+                    lvalue:
+                        kind: ident
+                        name: scan_result
+                    rvalue:
+                        kind: syscall
+                        name: fscanf
+                        value:
+                        -   kind: ident
+                            name: file_handle
+                        -   kind: str
+                            value: '%h'
+                        -   kind: ident
+                            name: temp_data
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BEq:'
+                        args:
+                        -   kind: ident
+                            name: scan_result
+                        -   kind: int
+                            value: 1
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                        - point
+                        -   kind: bit
+                            name: MEM
+                            sgmnts:
+                            - cnt
+                        rvalue:
+                            kind: ident
+                            name: temp_data
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: cnt
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: ident
+                                name: cnt
+                            -   kind: int
+                                value: 1
+                -   kind: syscall
+                    name: fclose
+                    value:
+                    -   kind: ident
+                        name: file_handle
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BEq:'
+                        args:
+                        -   kind: ident
+                            name: cnt
+                        -   kind: int
+                            value: 0
+                    iftrue:
+                    -   kind: syscall
+                        name: display
+                        value:
+                        -   kind: str
+                            value: 'WARNING: No valid data read from file %s'
+                        -   kind: ident
+                            name: DATFILE
+                    ifelse:
+                    -   kind: syscall
+                        name: display
+                        value:
+                        -   kind: str
+                            value: Successfully loaded %d samples from %s
+                        -   kind: ident
+                            name: cnt
+                        -   kind: ident
+                            name: DATFILE
+-   kind: initial
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_int
+            arg:
+                kind: int
+                value: 1
+        iftrue:
+        -   kind: forst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BLessThan:'
+                args:
+                -   kind: ident
+                    name: cnt
+                -   kind: ident
+                    name: DEPTH
+            pre:
+                kind: blckst
+                lvalue:
+                    kind: ident
+                    name: cnt
+                rvalue:
+                    kind: int
+                    value: 0
+            post:
+                kind: blckst
+                lvalue:
+                    kind: ident
+                    name: cnt
+                rvalue:
+                    kind: bexpr
+                    oper: 'BPlus:'
+                    args:
+                    -   kind: ident
+                        name: cnt
+                    -   kind: int
+                        value: 1
+            body:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'cnt: %3d, data: 0x%05h'
+                -   kind: ident
+                    name: cnt
+                -   kind: bit
+                    name: MEM
+                    sgmnts:
+                    - cnt
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: cnt
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: bit
+            name: MEM
+            sgmnts:
+            - ADDR
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_int
+            arg:
+                kind: int
+                value: 1
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'BTime: %t, at negedge CLK: DATA: 0x%5x'
+            -   kind: bexpr
+                oper: 'BDivide:'
+                args:
+                -   kind: sys_rltm
+                    name: realtime
+                -   kind: int
+                    value: 1000
+            -   kind: ident
+                name: DATA

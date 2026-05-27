@@ -1,0 +1,39 @@
+Module: DVDR4
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 40*PER
+SaveNds:
+  - name: Top.OUT
+    format: u
+  - name: Top.CLK
+    format: u
+  - name: Top.INIT
+    format: u
+  - name: Top.Dvdr0.Q0
+    format: u
+  - name: Top.Dvdr0.Q1
+    format: u
+  - name: Top.Dvdr0.Q2
+    format: u
+  - name: Top.Dvdr0.Q3
+    format: u
+  - name: Top.Dvdr0.TFF_0.QP
+    format: u
+  - name: Top.Dvdr0.TFF_0.D0
+    format: u
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0

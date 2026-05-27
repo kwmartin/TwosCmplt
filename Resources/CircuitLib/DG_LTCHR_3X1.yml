@@ -1,0 +1,186 @@
+kind: verilog
+module: DG_LTCHR_3X1
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: D
+-   name: R
+-   name: CLK
+-   name: QP
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: STR
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: STR
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: R
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: R
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STR
+            rvalue:
+                kind: int
+                value: 0
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: float
+                        value: 21.1
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: CLK
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STR
+                rvalue:
+                    kind: ident
+                    name: D
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: float
+                            value: 21.1
+                        -   kind: float
+                            value: 1.0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: D
+    -   edge: all
+        node: CLK
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: R
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STR
+            rvalue:
+                kind: int
+                value: 0
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: float
+                        value: 21.1
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: CLK
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STR
+                rvalue:
+                    kind: ident
+                    name: D
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: float
+                            value: 21.1
+                        -   kind: float
+                            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STR
+    delay: 0

@@ -1,0 +1,270 @@
+kind: verilog
+module: QD_DDFS5
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 33
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: SINE
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: COS
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: RMSN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: QD_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RL_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RMCS
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: sync
+    name: ACCUM
+    module: QD_ACCUM5
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: FRQ
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 33
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: RL_
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: QD_
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+-   kind: sync
+    name: COS_LU5
+    module: Sine5
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: R0_
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: COS
+        node:
+            kind: slice
+            name: RMSN
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: OUT
+        node:
+            kind: slice
+            name: COS
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: ROM_
+        node:
+            kind: slice
+            name: RMCS
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: SIN_LU5
+    module: Sine5
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: R0_
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: COS
+        node:
+            kind: slice
+            name: RMCS
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: OUT
+        node:
+            kind: slice
+            name: SINE
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: ROM_
+        node:
+            kind: slice
+            name: RMSN
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS

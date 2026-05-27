@@ -1,0 +1,61 @@
+# TwosCmplt
+
+@Metadata {
+    @TechnologyRoot
+}
+
+## Introduction
+
+This library is intended to simplify using Swift to model signal processing blocks
+implemented using two's complement arithmetic. Think of it a start towards extending Swift
+to System-Swift, as an alternative to System-C. The library is a port from a Python library so
+much (but not all) of the debugging has been done.
+
+The intended use of this library is that when developing a fixed-point hardware system, the system
+is first simulated at a high level, but bit-accurate, to do most of the debugging. The author
+usually does this using Python, but ideally, Swift will make the simulations much faster.
+Once the bit-accurate systems are debugged and characterized (note: we are still using Python's
+numpy and scipy's FFT's and matplotlib.pyplot for characterization, for now) at a high level, then
+they would be translated into either verilog for FPGA's or custom silicon or CUDA. The Swift realization
+would be used to help verify the hardware implementation. The fantasy is
+to eventually have genertors do the translations (aside: without dreams nothing progresses)
+
+Most functions are methods in the TwoCmplt struct
+Many signal processing systems, for example, fixed-point digital filters
+involve processing two's complement fixed-point integers of a specified bit length.
+This library makes public a large number of functions intended to be bit-point accurate
+to hardware realizations of systems that use twos-complement operations. This library was
+implemented in Swift because a) it is relatively fast, and b) supports many types that make
+using the library much cleaner, such as operator over-loading. Swift is well suited for
+fast system level simulations of digital systems. This package is currently only supported
+in linux (but should port real easily to OS)
+
+## Topics
+
+- <doc:Overview>
+- <doc:TwoComplement>
+- <doc:Introduction>
+- <doc:CoeffMlt>
+
+## A TwosCmplt Struct
+
+A TwoCmplt struct contains the value (called value, an Int) of the two's complement variable, and
+properties defining the variable. These properties describe the number of bits
+used for the variable (nbits, an Int), whether the variable is considered to be signed
+or unsigned (signed, a Bool), and the precision if it's not zero (prec, an Int). The precision
+determines how the value should be scaled when it is combined with other two's complement
+integer similar to how Matlab represents two's complement variables using it's "fi" types.
+(https://www.mathworks.com/help/fixedpoint/ug/perform-fixed-point-arithmetic.html)
+
+## Fixed Coefficient Multiplication
+
+This is one of the first examples showing the use of the Two Cmplt library.
+When doing two's complement signal processing, the mulitplication operation is expensive in terms
+of hardware size and speed. In many two's complement signal processing systems, many if not most,
+multiplications are by fixed coefficients, that either never change, or only change slowly over many
+clock periods. This library introduces a new approach for realizing fixed point multiplications that 
+is faster and requires less hardware. It is based on dividing the "signal" into nibbles of 4 bits each.
+Each nibble controls a 16 word to 1 word multiplexor. The inputs to the multipliers are multiples of the
+coefficient, or shifted right versions of multiples of the coefficients. The outputs of the multiplexors
+are added together, normally using carry-save adders (yet to be implemented - soon).
+

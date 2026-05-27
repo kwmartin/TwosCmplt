@@ -1,0 +1,130 @@
+DG_AND2_2X1:
+  instances:
+  - circIndxs: [0, 0, 1]
+    name: AND0
+  - circIndxs: [0, 0, 4]
+    name: AND1
+  nodes:
+  - A
+  - B
+  - OUT
+  - VDD
+  - VSS
+DG_DR_3X2:
+  instances:
+  - circIndxs: [0, 0, 0, 0]
+    name: DFF_0
+  - circIndxs: [0, 0, 2, 0]
+    name: DFF_0
+  - circIndxs: [0, 0, 3, 0]
+    name: DFF_0
+  - circIndxs: [0, 0, 5, 0]
+    name: DFF_0
+  nodes:
+  - D
+  - R
+  - CLK
+  - QP
+  - QN
+  - VDD
+  - VSS
+  - STATE
+DG_INV1_1X1:
+  instances:
+  - circIndxs: [0, 0, 0, 4]
+    name: INV3
+  - circIndxs: [0, 0, 2, 4]
+    name: INV3
+  - circIndxs: [0, 0, 3, 4]
+    name: INV3
+  - circIndxs: [0, 0, 5, 4]
+    name: INV3
+  nodes:
+  - IN
+  - OUT
+  - VDD
+  - VSS
+DG_NOR1_2X1:
+  instances:
+  - circIndxs: [0, 0, 0, 1]
+    name: X1
+  - circIndxs: [0, 0, 0, 2]
+    name: X3
+  - circIndxs: [0, 0, 0, 3]
+    name: X4
+  - circIndxs: [0, 0, 2, 1]
+    name: X1
+  - circIndxs: [0, 0, 2, 2]
+    name: X3
+  - circIndxs: [0, 0, 2, 3]
+    name: X4
+  - circIndxs: [0, 0, 3, 1]
+    name: X1
+  - circIndxs: [0, 0, 3, 2]
+    name: X3
+  - circIndxs: [0, 0, 3, 3]
+    name: X4
+  - circIndxs: [0, 0, 5, 1]
+    name: X1
+  - circIndxs: [0, 0, 5, 2]
+    name: X3
+  - circIndxs: [0, 0, 5, 3]
+    name: X4
+  nodes:
+  - A
+  - B
+  - OUT
+  - VDD
+  - VSS
+DVDR4:
+  instances:
+  - circIndxs: [0, 0]
+    name: Dvdr0
+  nodes:
+  - OUT
+  - INIT
+  - CLK
+  - VDD
+  - VSS
+  - AND_0
+  - AND_1
+  - Q0N
+  - Q1N
+  - Q2N
+  - Q3N
+  - Q0
+  - Q1
+  - Q2
+  - Q3
+TB_DVDR4:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - OUT
+  - VDD
+  - VSS
+  - CLK
+  - INIT
+TFF:
+  instances:
+  - circIndxs: [0, 0, 0]
+    name: TFF_0
+  - circIndxs: [0, 0, 2]
+    name: TFF_1
+  - circIndxs: [0, 0, 3]
+    name: TFF_2
+  - circIndxs: [0, 0, 5]
+    name: TFF_3
+  nodes:
+  - QP
+  - T
+  - RST
+  - QN
+  - CLK
+  - VDD
+  - VSS
+  - NOR_0
+  - NOR_1
+  - D0
+  - TN

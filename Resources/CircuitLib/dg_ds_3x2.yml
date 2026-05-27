@@ -1,0 +1,200 @@
+kind: verilog
+module: dg_ds_3x2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: d
+-   name: s
+-   name: cp
+-   name: qp
+-   name: qn
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: d
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: s
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: cp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: state
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 32.6
+    src_sgnls:
+    - cp
+    edge: negedge
+    dst_sgnls:
+    - qp
+    - d
+    pth_spc: pluscolon
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 32.6
+    src_sgnls:
+    - s
+    edge: posedge
+    dst_sgnls:
+    - qp
+-   kind: specify
+    variant: full
+    delay_expr:
+        kind: float
+        delay: 32.6
+    src_sgnls:
+    - s
+    edge: posedge
+    dst_sgnls:
+    - qn
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: state
+        rvalue:
+            kind: int
+            value: 1
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: s
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: s
+        iftrue:
+        -   kind: assign
+            lvalue:
+                kind: ident
+                name: state
+            rvalue:
+                kind: int
+                value: 1
+            delay: 0
+        ifelse:
+        -   lvalue:
+                kind: ident
+                name: state
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: cp
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: int
+                value: 200
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: state
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: s
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: state
+                rvalue:
+                    kind: int
+                    value: 1
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: state
+                rvalue:
+                    kind: ident
+                    name: d
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: state
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: state
+    delay: 0

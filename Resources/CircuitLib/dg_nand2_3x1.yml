@@ -1,0 +1,88 @@
+kind: verilog
+module: dg_nand2_3x1
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: a
+-   name: b
+-   name: c
+-   name: out
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: a
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: b
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: c
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: out
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: out
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: a
+                -   kind: ident
+                    name: b
+            -   kind: ident
+                name: c
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 10.7
+        -   kind: float
+            value: 1.0

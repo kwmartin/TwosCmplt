@@ -1,0 +1,23 @@
+DG_DR_3X1:
+  instances:
+  - circIndxs: [0, 0]
+    name: d0
+  nodes:
+  - D
+  - R
+  - CLK
+  - QP
+  - VDD
+  - VSS
+  - STATE
+DVD2:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - INIT
+  - CLK
+  - OUT
+  - INV0
+  - VDD
+  - VSS

@@ -1,0 +1,223 @@
+kind: verilog
+module: KM_SLTCH
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: D
+-   name: SN
+-   name: INIT
+-   name: CP
+-   name: CN
+-   name: QP
+-   name: QN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: SN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: STR
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STR
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STR
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: STR
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: INIT
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: STR
+        rvalue:
+            kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: SN
+        delay:
+            kind: float
+            delay:
+                kind: bexpr
+                oper: 'Times:'
+                args:
+                -   kind: float
+                    value: 34.8
+                -   kind: float
+                    value: 1.0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: D
+    -   edge: all
+        node: CP
+    -   edge: all
+        node: CN
+    -   edge: posedge
+        node: INIT
+    -   edge: all
+        node: SN
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLor:'
+            args:
+            -   kind: ident
+                name: INIT
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: SN
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STR
+            rvalue:
+                kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: SN
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: float
+                        value: 34.8
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: CP
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: CN
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STR
+                rvalue:
+                    kind: ident
+                    name: D
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: float
+                            value: 34.8
+                        -   kind: float
+                            value: 1.0

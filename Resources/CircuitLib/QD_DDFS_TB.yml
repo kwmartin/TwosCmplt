@@ -1,0 +1,241 @@
+kind: verilog
+module: QD_DDFS_TB
+params:
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Wire
+        name: SINE
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: R1R_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: R1Q_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: R5Q_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: R0Q_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: COS
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: R0R_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: FRQ
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 31
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: R5R_SET
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: subcirc
+    name: QD_DDFS0
+    module: QD_DDFS
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: FRQ
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 31
+            -   kind: int
+                value: 0
+    -   port: R0R_SET
+        node:
+            kind: slice
+            name: R0R_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1R_SET
+        node:
+            kind: slice
+            name: R1R_SET
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: R5R_SET
+        node:
+            kind: slice
+            name: R5R_SET
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: R0Q_SET
+        node:
+            kind: slice
+            name: R0Q_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: R1Q_SET
+        node:
+            kind: slice
+            name: R1Q_SET
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: R5Q_SET
+        node:
+            kind: slice
+            name: R5Q_SET
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: SINE
+        node:
+            kind: slice
+            name: SINE
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: COS
+        node:
+            kind: slice
+            name: COS
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0

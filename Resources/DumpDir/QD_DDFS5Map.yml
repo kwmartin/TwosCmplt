@@ -1,0 +1,1040 @@
+ADDR:
+  instances:
+  - circIndxs: [0, 0, 0]
+    name: ADDR0
+  - circIndxs: [0, 0, 2]
+    name: ADDR1
+  - circIndxs: [0, 1, 0]
+    name: ADDR2
+  - circIndxs: [0, 1, 6]
+    name: ADDR3
+  - circIndxs: [0, 1, 13, 2]
+    name: ADDR0
+  - circIndxs: [0, 2, 0]
+    name: ADDR2
+  - circIndxs: [0, 2, 6]
+    name: ADDR3
+  - circIndxs: [0, 2, 13, 2]
+    name: ADDR0
+  nodes:
+  - name: B
+    nbits: 8
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 8
+  - name: G
+    nbits: 1
+  - name: A
+    nbits: 8
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: D
+    nbits: 9
+CMPL:
+  instances:
+  - circIndxs: [0, 1, 2]
+    name: CMPL0
+  - circIndxs: [0, 1, 5]
+    name: CMPL1
+  - circIndxs: [0, 2, 2]
+    name: CMPL0
+  - circIndxs: [0, 2, 5]
+    name: CMPL1
+  nodes:
+  - name: INVRT
+    nbits: 1
+  - name: IN
+    nbits: 16
+  - name: OUT
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_BUF16_1X1:
+  instances:
+  - circIndxs: [0, 1, 8]
+    name: b2
+  - circIndxs: [0, 1, 9]
+    name: b1
+  - circIndxs: [0, 1, 10]
+    name: b3
+  - circIndxs: [0, 2, 8]
+    name: b2
+  - circIndxs: [0, 2, 9]
+    name: b1
+  - circIndxs: [0, 2, 10]
+    name: b3
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_BUF2_1X1:
+  instances:
+  - circIndxs: [0, 0, 8]
+    name: b1_15
+  - circIndxs: [0, 0, 9]
+    name: b1_14
+  - circIndxs: [0, 0, 10]
+    name: b1_13
+  - circIndxs: [0, 0, 11]
+    name: b1_12
+  - circIndxs: [0, 0, 12]
+    name: b1_11
+  - circIndxs: [0, 0, 13]
+    name: b1_10
+  - circIndxs: [0, 0, 14]
+    name: b1_9
+  - circIndxs: [0, 0, 15]
+    name: b1_8
+  - circIndxs: [0, 0, 16]
+    name: b1_7
+  - circIndxs: [0, 0, 17]
+    name: b1_6
+  - circIndxs: [0, 0, 18]
+    name: b1_5
+  - circIndxs: [0, 0, 19]
+    name: b1_4
+  - circIndxs: [0, 0, 20]
+    name: b1_3
+  - circIndxs: [0, 0, 21]
+    name: b1_2
+  - circIndxs: [0, 0, 22]
+    name: b1_1
+  - circIndxs: [0, 0, 23]
+    name: b1_0
+  - circIndxs: [0, 0, 25]
+    name: b2_17
+  - circIndxs: [0, 0, 26]
+    name: b2_16
+  - circIndxs: [0, 0, 27]
+    name: b2_15
+  - circIndxs: [0, 0, 28]
+    name: b2_14
+  - circIndxs: [0, 0, 29]
+    name: b2_13
+  - circIndxs: [0, 0, 30]
+    name: b2_12
+  - circIndxs: [0, 0, 31]
+    name: b2_11
+  - circIndxs: [0, 0, 32]
+    name: b2_10
+  - circIndxs: [0, 0, 33]
+    name: b2_9
+  - circIndxs: [0, 0, 34]
+    name: b2_8
+  - circIndxs: [0, 0, 35]
+    name: b2_7
+  - circIndxs: [0, 0, 36]
+    name: b2_6
+  - circIndxs: [0, 0, 37]
+    name: b2_5
+  - circIndxs: [0, 0, 38]
+    name: b2_4
+  - circIndxs: [0, 0, 39]
+    name: b2_3
+  - circIndxs: [0, 0, 40]
+    name: b2_2
+  - circIndxs: [0, 0, 41]
+    name: b2_1
+  - circIndxs: [0, 0, 42]
+    name: b2_0
+  - circIndxs: [0, 0, 43]
+    name: b3_17
+  - circIndxs: [0, 0, 44]
+    name: b3_16
+  - circIndxs: [0, 0, 45]
+    name: b3_15
+  - circIndxs: [0, 0, 46]
+    name: b3_14
+  - circIndxs: [0, 0, 47]
+    name: b3_13
+  - circIndxs: [0, 0, 48]
+    name: b3_12
+  - circIndxs: [0, 0, 49]
+    name: b3_11
+  - circIndxs: [0, 0, 50]
+    name: b3_10
+  - circIndxs: [0, 0, 51]
+    name: b3_9
+  - circIndxs: [0, 0, 52]
+    name: b3_8
+  - circIndxs: [0, 0, 53]
+    name: b3_7
+  - circIndxs: [0, 0, 54]
+    name: b3_6
+  - circIndxs: [0, 0, 55]
+    name: b3_5
+  - circIndxs: [0, 0, 56]
+    name: b3_4
+  - circIndxs: [0, 0, 57]
+    name: b3_3
+  - circIndxs: [0, 0, 58]
+    name: b3_2
+  - circIndxs: [0, 0, 59]
+    name: b3_1
+  - circIndxs: [0, 0, 60]
+    name: b3_0
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_EXOR1_2X1:
+  instances:
+  - circIndxs: [0, 0, 5]
+    name: exor1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_INV2:
+  instances:
+  - circIndxs: [0, 0, 4]
+    name: inv2
+  - circIndxs: [0, 0, 6]
+    name: inv3
+  - circIndxs: [0, 0, 7]
+    name: inv4
+  - circIndxs: [0, 0, 24]
+    name: inv1
+  - circIndxs: [0, 1, 12]
+    name: i1
+  - circIndxs: [0, 2, 12]
+    name: i1
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+MLTPLY_FINE2:
+  instances:
+  - circIndxs: [0, 1, 13]
+    name: fine_mltply
+  - circIndxs: [0, 2, 13]
+    name: fine_mltply
+  nodes:
+  - name: k
+    nbits: 8
+  - name: IN
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: OUT
+    nbits: 8
+  - name: F
+    nbits: 16
+  - name: H
+    nbits: 16
+  - name: G2
+    nbits: 1
+  - name: P2
+    nbits: 1
+  - name: CO2
+    nbits: 1
+  - name: G
+    nbits: 16
+MULT_25P125:
+  instances:
+  - circIndxs: [0, 1, 13, 0]
+    name: MLT1
+  - circIndxs: [0, 2, 13, 0]
+    name: MLT1
+  nodes:
+  - name: IN
+    nbits: 16
+  - name: OUT
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: in2
+    nbits: 16
+  - name: sum
+    nbits: 16
+MULT_4BITS:
+  instances:
+  - circIndxs: [0, 1, 13, 1]
+    name: MLT2
+  - circIndxs: [0, 1, 13, 3]
+    name: MLT3
+  - circIndxs: [0, 2, 13, 1]
+    name: MLT2
+  - circIndxs: [0, 2, 13, 3]
+    name: MLT3
+  nodes:
+  - name: IN
+    nbits: 16
+  - name: k
+    nbits: 4
+  - name: OUT
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: in2
+    nbits: 16
+  - name: out
+    nbits: 16
+QD_ACCUM5:
+  instances:
+  - circIndxs: [0, 0]
+    name: ACCUM
+  nodes:
+  - name: FRQ
+    nbits: 34
+  - name: INIT
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: RL_
+    nbits: 18
+  - name: QD_
+    nbits: 18
+  - name: ADDR0R
+    nbits: 18
+  - name: CLKB
+    nbits: 1
+  - name: CLKN
+    nbits: 1
+  - name: R1NR
+    nbits: 17
+  - name: PR0
+    nbits: 1
+  - name: PR1
+    nbits: 1
+  - name: QD__
+    nbits: 18
+  - name: R1R
+    nbits: 17
+  - name: RLN_
+    nbits: 18
+  - name: ADDR1R
+    nbits: 16
+  - name: RL__
+    nbits: 18
+  - name: C0R
+    nbits: 1
+  - name: C1R
+    nbits: 1
+  - name: net1
+    nbits: 1
+  - name: GR0
+    nbits: 1
+  - name: GR1
+    nbits: 1
+QD_DDFS5:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: FRQ
+    nbits: 34
+  - name: INIT
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: SINE
+    nbits: 16
+  - name: COS
+    nbits: 16
+  - name: RMSN
+    nbits: 16
+  - name: QD_
+    nbits: 18
+  - name: RL_
+    nbits: 18
+  - name: RMCS
+    nbits: 16
+REGS:
+  instances:
+  - circIndxs: [0, 0, 1]
+    name: RR0
+  - circIndxs: [0, 0, 3]
+    name: RR1
+  - circIndxs: [0, 1, 1]
+    name: R0
+  - circIndxs: [0, 1, 4]
+    name: R5
+  - circIndxs: [0, 1, 7]
+    name: R6
+  - circIndxs: [0, 1, 11]
+    name: R1
+  - circIndxs: [0, 1, 14]
+    name: R3
+  - circIndxs: [0, 2, 1]
+    name: R0
+  - circIndxs: [0, 2, 4]
+    name: R5
+  - circIndxs: [0, 2, 7]
+    name: R6
+  - circIndxs: [0, 2, 11]
+    name: R1
+  - circIndxs: [0, 2, 14]
+    name: R3
+  nodes:
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: IN
+    nbits: 8
+  - name: QN
+    nbits: 8
+  - name: QP
+    nbits: 8
+  - name: SET
+    nbits: 8
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: D
+    nbits: 8
+ROM:
+  instances:
+  - circIndxs: [0, 1, 3]
+    name: ROM0
+  - circIndxs: [0, 2, 3]
+    name: ROM0
+  nodes:
+  - name: ADDR
+    nbits: 8
+  - name: INIT
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: DATA
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: one
+    nbits: 1
+  - name: nmem
+    nbits: 1
+  - name: dfile
+    nbits: 2048
+  - name: MEM[0]
+    nbits: 16
+  - name: MEM[1]
+    nbits: 16
+  - name: MEM[2]
+    nbits: 16
+  - name: MEM[3]
+    nbits: 16
+  - name: MEM[4]
+    nbits: 16
+  - name: MEM[5]
+    nbits: 16
+  - name: MEM[6]
+    nbits: 16
+  - name: MEM[7]
+    nbits: 16
+  - name: MEM[8]
+    nbits: 16
+  - name: MEM[9]
+    nbits: 16
+  - name: MEM[10]
+    nbits: 16
+  - name: MEM[11]
+    nbits: 16
+  - name: MEM[12]
+    nbits: 16
+  - name: MEM[13]
+    nbits: 16
+  - name: MEM[14]
+    nbits: 16
+  - name: MEM[15]
+    nbits: 16
+  - name: MEM[16]
+    nbits: 16
+  - name: MEM[17]
+    nbits: 16
+  - name: MEM[18]
+    nbits: 16
+  - name: MEM[19]
+    nbits: 16
+  - name: MEM[20]
+    nbits: 16
+  - name: MEM[21]
+    nbits: 16
+  - name: MEM[22]
+    nbits: 16
+  - name: MEM[23]
+    nbits: 16
+  - name: MEM[24]
+    nbits: 16
+  - name: MEM[25]
+    nbits: 16
+  - name: MEM[26]
+    nbits: 16
+  - name: MEM[27]
+    nbits: 16
+  - name: MEM[28]
+    nbits: 16
+  - name: MEM[29]
+    nbits: 16
+  - name: MEM[30]
+    nbits: 16
+  - name: MEM[31]
+    nbits: 16
+  - name: MEM[32]
+    nbits: 16
+  - name: MEM[33]
+    nbits: 16
+  - name: MEM[34]
+    nbits: 16
+  - name: MEM[35]
+    nbits: 16
+  - name: MEM[36]
+    nbits: 16
+  - name: MEM[37]
+    nbits: 16
+  - name: MEM[38]
+    nbits: 16
+  - name: MEM[39]
+    nbits: 16
+  - name: MEM[40]
+    nbits: 16
+  - name: MEM[41]
+    nbits: 16
+  - name: MEM[42]
+    nbits: 16
+  - name: MEM[43]
+    nbits: 16
+  - name: MEM[44]
+    nbits: 16
+  - name: MEM[45]
+    nbits: 16
+  - name: MEM[46]
+    nbits: 16
+  - name: MEM[47]
+    nbits: 16
+  - name: MEM[48]
+    nbits: 16
+  - name: MEM[49]
+    nbits: 16
+  - name: MEM[50]
+    nbits: 16
+  - name: MEM[51]
+    nbits: 16
+  - name: MEM[52]
+    nbits: 16
+  - name: MEM[53]
+    nbits: 16
+  - name: MEM[54]
+    nbits: 16
+  - name: MEM[55]
+    nbits: 16
+  - name: MEM[56]
+    nbits: 16
+  - name: MEM[57]
+    nbits: 16
+  - name: MEM[58]
+    nbits: 16
+  - name: MEM[59]
+    nbits: 16
+  - name: MEM[60]
+    nbits: 16
+  - name: MEM[61]
+    nbits: 16
+  - name: MEM[62]
+    nbits: 16
+  - name: MEM[63]
+    nbits: 16
+  - name: MEM[64]
+    nbits: 16
+  - name: MEM[65]
+    nbits: 16
+  - name: MEM[66]
+    nbits: 16
+  - name: MEM[67]
+    nbits: 16
+  - name: MEM[68]
+    nbits: 16
+  - name: MEM[69]
+    nbits: 16
+  - name: MEM[70]
+    nbits: 16
+  - name: MEM[71]
+    nbits: 16
+  - name: MEM[72]
+    nbits: 16
+  - name: MEM[73]
+    nbits: 16
+  - name: MEM[74]
+    nbits: 16
+  - name: MEM[75]
+    nbits: 16
+  - name: MEM[76]
+    nbits: 16
+  - name: MEM[77]
+    nbits: 16
+  - name: MEM[78]
+    nbits: 16
+  - name: MEM[79]
+    nbits: 16
+  - name: MEM[80]
+    nbits: 16
+  - name: MEM[81]
+    nbits: 16
+  - name: MEM[82]
+    nbits: 16
+  - name: MEM[83]
+    nbits: 16
+  - name: MEM[84]
+    nbits: 16
+  - name: MEM[85]
+    nbits: 16
+  - name: MEM[86]
+    nbits: 16
+  - name: MEM[87]
+    nbits: 16
+  - name: MEM[88]
+    nbits: 16
+  - name: MEM[89]
+    nbits: 16
+  - name: MEM[90]
+    nbits: 16
+  - name: MEM[91]
+    nbits: 16
+  - name: MEM[92]
+    nbits: 16
+  - name: MEM[93]
+    nbits: 16
+  - name: MEM[94]
+    nbits: 16
+  - name: MEM[95]
+    nbits: 16
+  - name: MEM[96]
+    nbits: 16
+  - name: MEM[97]
+    nbits: 16
+  - name: MEM[98]
+    nbits: 16
+  - name: MEM[99]
+    nbits: 16
+  - name: MEM[100]
+    nbits: 16
+  - name: MEM[101]
+    nbits: 16
+  - name: MEM[102]
+    nbits: 16
+  - name: MEM[103]
+    nbits: 16
+  - name: MEM[104]
+    nbits: 16
+  - name: MEM[105]
+    nbits: 16
+  - name: MEM[106]
+    nbits: 16
+  - name: MEM[107]
+    nbits: 16
+  - name: MEM[108]
+    nbits: 16
+  - name: MEM[109]
+    nbits: 16
+  - name: MEM[110]
+    nbits: 16
+  - name: MEM[111]
+    nbits: 16
+  - name: MEM[112]
+    nbits: 16
+  - name: MEM[113]
+    nbits: 16
+  - name: MEM[114]
+    nbits: 16
+  - name: MEM[115]
+    nbits: 16
+  - name: MEM[116]
+    nbits: 16
+  - name: MEM[117]
+    nbits: 16
+  - name: MEM[118]
+    nbits: 16
+  - name: MEM[119]
+    nbits: 16
+  - name: MEM[120]
+    nbits: 16
+  - name: MEM[121]
+    nbits: 16
+  - name: MEM[122]
+    nbits: 16
+  - name: MEM[123]
+    nbits: 16
+  - name: MEM[124]
+    nbits: 16
+  - name: MEM[125]
+    nbits: 16
+  - name: MEM[126]
+    nbits: 16
+  - name: MEM[127]
+    nbits: 16
+  - name: MEM[128]
+    nbits: 16
+  - name: MEM[129]
+    nbits: 16
+  - name: MEM[130]
+    nbits: 16
+  - name: MEM[131]
+    nbits: 16
+  - name: MEM[132]
+    nbits: 16
+  - name: MEM[133]
+    nbits: 16
+  - name: MEM[134]
+    nbits: 16
+  - name: MEM[135]
+    nbits: 16
+  - name: MEM[136]
+    nbits: 16
+  - name: MEM[137]
+    nbits: 16
+  - name: MEM[138]
+    nbits: 16
+  - name: MEM[139]
+    nbits: 16
+  - name: MEM[140]
+    nbits: 16
+  - name: MEM[141]
+    nbits: 16
+  - name: MEM[142]
+    nbits: 16
+  - name: MEM[143]
+    nbits: 16
+  - name: MEM[144]
+    nbits: 16
+  - name: MEM[145]
+    nbits: 16
+  - name: MEM[146]
+    nbits: 16
+  - name: MEM[147]
+    nbits: 16
+  - name: MEM[148]
+    nbits: 16
+  - name: MEM[149]
+    nbits: 16
+  - name: MEM[150]
+    nbits: 16
+  - name: MEM[151]
+    nbits: 16
+  - name: MEM[152]
+    nbits: 16
+  - name: MEM[153]
+    nbits: 16
+  - name: MEM[154]
+    nbits: 16
+  - name: MEM[155]
+    nbits: 16
+  - name: MEM[156]
+    nbits: 16
+  - name: MEM[157]
+    nbits: 16
+  - name: MEM[158]
+    nbits: 16
+  - name: MEM[159]
+    nbits: 16
+  - name: MEM[160]
+    nbits: 16
+  - name: MEM[161]
+    nbits: 16
+  - name: MEM[162]
+    nbits: 16
+  - name: MEM[163]
+    nbits: 16
+  - name: MEM[164]
+    nbits: 16
+  - name: MEM[165]
+    nbits: 16
+  - name: MEM[166]
+    nbits: 16
+  - name: MEM[167]
+    nbits: 16
+  - name: MEM[168]
+    nbits: 16
+  - name: MEM[169]
+    nbits: 16
+  - name: MEM[170]
+    nbits: 16
+  - name: MEM[171]
+    nbits: 16
+  - name: MEM[172]
+    nbits: 16
+  - name: MEM[173]
+    nbits: 16
+  - name: MEM[174]
+    nbits: 16
+  - name: MEM[175]
+    nbits: 16
+  - name: MEM[176]
+    nbits: 16
+  - name: MEM[177]
+    nbits: 16
+  - name: MEM[178]
+    nbits: 16
+  - name: MEM[179]
+    nbits: 16
+  - name: MEM[180]
+    nbits: 16
+  - name: MEM[181]
+    nbits: 16
+  - name: MEM[182]
+    nbits: 16
+  - name: MEM[183]
+    nbits: 16
+  - name: MEM[184]
+    nbits: 16
+  - name: MEM[185]
+    nbits: 16
+  - name: MEM[186]
+    nbits: 16
+  - name: MEM[187]
+    nbits: 16
+  - name: MEM[188]
+    nbits: 16
+  - name: MEM[189]
+    nbits: 16
+  - name: MEM[190]
+    nbits: 16
+  - name: MEM[191]
+    nbits: 16
+  - name: MEM[192]
+    nbits: 16
+  - name: MEM[193]
+    nbits: 16
+  - name: MEM[194]
+    nbits: 16
+  - name: MEM[195]
+    nbits: 16
+  - name: MEM[196]
+    nbits: 16
+  - name: MEM[197]
+    nbits: 16
+  - name: MEM[198]
+    nbits: 16
+  - name: MEM[199]
+    nbits: 16
+  - name: MEM[200]
+    nbits: 16
+  - name: MEM[201]
+    nbits: 16
+  - name: MEM[202]
+    nbits: 16
+  - name: MEM[203]
+    nbits: 16
+  - name: MEM[204]
+    nbits: 16
+  - name: MEM[205]
+    nbits: 16
+  - name: MEM[206]
+    nbits: 16
+  - name: MEM[207]
+    nbits: 16
+  - name: MEM[208]
+    nbits: 16
+  - name: MEM[209]
+    nbits: 16
+  - name: MEM[210]
+    nbits: 16
+  - name: MEM[211]
+    nbits: 16
+  - name: MEM[212]
+    nbits: 16
+  - name: MEM[213]
+    nbits: 16
+  - name: MEM[214]
+    nbits: 16
+  - name: MEM[215]
+    nbits: 16
+  - name: MEM[216]
+    nbits: 16
+  - name: MEM[217]
+    nbits: 16
+  - name: MEM[218]
+    nbits: 16
+  - name: MEM[219]
+    nbits: 16
+  - name: MEM[220]
+    nbits: 16
+  - name: MEM[221]
+    nbits: 16
+  - name: MEM[222]
+    nbits: 16
+  - name: MEM[223]
+    nbits: 16
+  - name: MEM[224]
+    nbits: 16
+  - name: MEM[225]
+    nbits: 16
+  - name: MEM[226]
+    nbits: 16
+  - name: MEM[227]
+    nbits: 16
+  - name: MEM[228]
+    nbits: 16
+  - name: MEM[229]
+    nbits: 16
+  - name: MEM[230]
+    nbits: 16
+  - name: MEM[231]
+    nbits: 16
+  - name: MEM[232]
+    nbits: 16
+  - name: MEM[233]
+    nbits: 16
+  - name: MEM[234]
+    nbits: 16
+  - name: MEM[235]
+    nbits: 16
+  - name: MEM[236]
+    nbits: 16
+  - name: MEM[237]
+    nbits: 16
+  - name: MEM[238]
+    nbits: 16
+  - name: MEM[239]
+    nbits: 16
+  - name: MEM[240]
+    nbits: 16
+  - name: MEM[241]
+    nbits: 16
+  - name: MEM[242]
+    nbits: 16
+  - name: MEM[243]
+    nbits: 16
+  - name: MEM[244]
+    nbits: 16
+  - name: MEM[245]
+    nbits: 16
+  - name: MEM[246]
+    nbits: 16
+  - name: MEM[247]
+    nbits: 16
+  - name: MEM[248]
+    nbits: 16
+  - name: MEM[249]
+    nbits: 16
+  - name: MEM[250]
+    nbits: 16
+  - name: MEM[251]
+    nbits: 16
+  - name: MEM[252]
+    nbits: 16
+  - name: MEM[253]
+    nbits: 16
+  - name: MEM[254]
+    nbits: 16
+  - name: MEM[255]
+    nbits: 16
+Sine5:
+  instances:
+  - circIndxs: [0, 1]
+    name: COS_LU5
+  - circIndxs: [0, 2]
+    name: SIN_LU5
+  nodes:
+  - name: R0_
+    nbits: 18
+  - name: COS
+    nbits: 16
+  - name: INIT
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: OUT
+    nbits: 16
+  - name: ROM_
+    nbits: 16
+  - name: ADDR3_
+    nbits: 16
+  - name: R5_
+    nbits: 16
+  - name: FINE
+    nbits: 8
+  - name: R3_
+    nbits: 8
+  - name: CLK1
+    nbits: 1
+  - name: CLK2
+    nbits: 1
+  - name: CLK3
+    nbits: 1
+  - name: R5N
+    nbits: 16
+  - name: R1N
+    nbits: 1
+  - name: R2N
+    nbits: 1
+  - name: R_1
+    nbits: 1
+  - name: R_2
+    nbits: 1
+  - name: R0N_
+    nbits: 1
+  - name: CMPL0_
+    nbits: 16
+  - name: OUTN
+    nbits: 16
+  - name: G2
+    nbits: 1
+  - name: G3
+    nbits: 1
+  - name: P2
+    nbits: 1
+  - name: P3
+    nbits: 1
+  - name: CMPL1_
+    nbits: 16
+  - name: ADDR2_
+    nbits: 16
+  - name: CO2
+    nbits: 1
+  - name: CO3
+    nbits: 1
+  - name: R3N
+    nbits: 8

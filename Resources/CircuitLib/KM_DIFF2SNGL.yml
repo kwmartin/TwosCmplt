@@ -1,0 +1,91 @@
+kind: verilog
+module: KM_DIFF2SNGL
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: INP
+-   name: INN
+-   name: PD
+-   name: IBIAS
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: INP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: INN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: PD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: IBIAS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: gt_expr
+        oper: 'BAnd:'
+        args:
+        -   kind: uexpr
+            oper: 'Unot:'
+            args:
+            -   kind: ident
+                name: PD
+        -   kind: ident
+            name: INP
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: int
+            value: 120
+        -   kind: float
+            value: 1.0

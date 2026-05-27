@@ -1,0 +1,33 @@
+IfStmnt:
+  cmpr:
+    node: R
+
+  trueblck:
+    stmnts:
+      - kind: noblckst
+        noblckst:
+          lhs: STATE
+          rhs:
+            int: 0
+
+      - kind: ifst
+        ifst:
+          cmpr:
+            node: READY
+          trueblck:
+            stmnts:
+              - kind: noblckst
+                noblckst:
+                  lhs: FLAG
+                  rhs:
+                    int: 1
+          falseblck:
+            stmnts: []
+
+  falseblck:
+    stmnts:
+      - kind: noblckst
+        noblckst:
+          lhs: STATE
+          rhs:
+            node: D

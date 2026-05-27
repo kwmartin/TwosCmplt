@@ -1,0 +1,13 @@
+{
+    "editor.fontSize": 12,
+    "editor.inlineSuggest.enabled": false,
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+    },
+    "lldb.launch.initCommands": [
+    "command source ${env:HOME}/.lldbinit"
+    ],
+    "python.analysis.exclude": ["**"],
+}

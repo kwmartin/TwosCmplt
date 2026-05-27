@@ -1,0 +1,50 @@
+\hypertarget{structCoeffMlt}{}\doxysection{Coeff\+Mlt Struct Reference}
+\label{structCoeffMlt}\index{CoeffMlt@{CoeffMlt}}
+
+
+Contains properties and functions used to implement fixed coefficient multiplication.  
+
+
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+public let \mbox{\hyperlink{structCoeffMlt_a278b669816f89c9aa2a6bce4b10fadd6}{nbits}}\+: Int = 20 public var nmb\+Nibls\+: Int public var coeffs\+: \mbox{[}\mbox{\hyperlink{structTwoCmplt}{Two\+Cmplt}}\mbox{]} = \mbox{[}$\,$\mbox{]} public var shifts\+: \mbox{[}Int\mbox{]} = \mbox{[}$\,$\mbox{]} public var bits\+: \mbox{[}(Int
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains properties and functions used to implement fixed coefficient multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nbits} & the nbits used for the summation and storing the coefficients \\
+\hline
+{\em coeffs} & an array of \mbox{\hyperlink{structTwoCmplt}{Two\+Cmplt}} structs for storing k$\ast$coeff, k = 0,..,15 \\
+\hline
+{\em shifts} & an array of tuples used for shifting coeffs depending on which nibble \\
+\hline
+{\em bits} & an array of tuples used in selecting the nibbles from the signal \\
+\hline
+{\em nibbles} & the nibble values, included for clarity but not really needed \\
+\hline
+{\em ready} & a Bool value to indicate a set of coeffs has been loaded \\
+\hline
+{\em sync} & a Bool that is high once each 16 signal values that can be used for synchronizing the updating of the coefficients. The input to the uploading block is changed when sync just goes to false \\
+\hline
+{\em k} & the indic used in the coefficient update block \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structCoeffMlt_a278b669816f89c9aa2a6bce4b10fadd6}\label{structCoeffMlt_a278b669816f89c9aa2a6bce4b10fadd6}} 
+\index{CoeffMlt@{CoeffMlt}!nbits@{nbits}}
+\index{nbits@{nbits}!CoeffMlt@{CoeffMlt}}
+\doxysubsubsection{\texorpdfstring{nbits}{nbits}}
+{\footnotesize\ttfamily -\/ (public let) nbits\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Sources/\+Shared\+Types/\mbox{\hyperlink{SharedTypes_2CoeffMltply_8swift}{Coeff\+Mltply.\+swift}}\end{DoxyCompactItemize}

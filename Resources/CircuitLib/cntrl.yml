@@ -1,0 +1,29 @@
+kind: verilog
+module: cntrl
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+- null
+behav_blcks:
+-   kind: initial
+    stmnts:
+        kind: sys_frmt
+        name: timeformat
+        args:
+        -   kind: uexpr
+            oper: 'Uminus:'
+            args:
+            -   kind: int
+                value: 14
+        -   kind: int
+            value: 5
+        -   kind: str
+            value: ps
+        -   kind: int
+            value: 4

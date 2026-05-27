@@ -1,0 +1,59 @@
+kind: verilog
+module: DG_INV4
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: IN
+-   name: OUT
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: gate
+    name: inv1
+    gate: not
+    ports:
+    - OUT
+    - IN
+    delay:
+    -   kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 11.8
+        -   kind: float
+            value: 1.0
+        name: None

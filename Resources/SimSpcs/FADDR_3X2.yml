@@ -1,0 +1,44 @@
+Constants:
+- [PER, 1000]
+
+FinishTime: 12*PER
+
+TimeSpcs:
+- tm: 0
+  vls:
+  - [A, 0]
+  - [B, 0]
+  - [B, 0]
+- tm: 1.1*PER
+  vls:
+  - [A, 1]
+- tm: 2.1*PER
+  vls:
+  - [A, 0]
+  - [B, 1]
+- tm: 3.1*PER
+  vls:
+  - [B, 1]
+- tm: 4.1*PER
+  vls:
+  - [A, 0]
+  - [B, 0]
+  - [CIN, 1]
+- tm: 5.1*PER
+  vls:
+  - [A, 1]
+- tm: 6.1*PER
+  vls:
+  - [A, 0]
+  - [B, 1]
+- tm: 7.1*PER
+  vls:
+  - [B, 1]
+- tm: 8.1*PER
+  vls:
+  - [A, 0]
+  - [B, 0]
+  - [CIN, 0]
+- tm: 9.1*PER
+  vls:
+  - [A, 1]

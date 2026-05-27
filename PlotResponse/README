@@ -1,0 +1,19 @@
+1) Insure you can run uv. You might need to do something like: >sudo pip3 install uv. This is not recommended:
+   a better solution is to go to the documentation for uv and install it properly.
+2) Run: >uv pip install -r requirements.txt. Hopefully this works on your machine.
+3) Run: >source .venv/bin/activate. You might also need to run: >uv install PyQt6. This is required because
+   anal_functs.py currently includes a plot routine that uses pyqtgraph. This is not currently
+   being used and we really should delete it, but pyqtgraph is a reasonbabl alternative to
+   matplotlib, and the included routine will save time if you want to try it out.
+4) anal_functs.py is an early effort to supply a general purpose plotting script. It is
+   intended to be useful for plotting spectrums of complexoids, impulse responses of filters
+   (both real and complex), also to just plot two waveforms (possibly complex) for comparison
+   during debut (for example comparing a python simulation output to swift simulation output.
+   Examples:
+   a) to view the spectral response of a signal having a period of 16 samples:
+      > python3 anal_functs.py Osc4.dat -p 16 --lims -20 110
+   b) to view the impulse responses from a number of filters:
+      > python3 anal_functs.py CmplxFltr5a.dat CmplxFltr5b.dat CmplxFltr5c.dat CmplxFltr5d.dat --lims -40 35
+   c) to compare two data waveforms (exactly two files must be specified - if complex, each file has two columns)
+      > python3 anal_functs.py -d CmplxFltr5c.dat Fltr5c.dat 
+   d) to plot multiple filter responses, just specify multiple data files after specifying --lims options

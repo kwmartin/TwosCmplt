@@ -1,0 +1,98 @@
+kind: verilog
+module: DG_PRPB
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: A3
+-   name: A2
+-   name: A1
+-   name: A0
+-   name: P
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Input
+        name: A3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: A2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: A1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: A0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: P
+    rvalue:
+        kind: gt_expr
+        oper: 'BAnd:'
+        args:
+        -   kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: A0
+                -   kind: ident
+                    name: A1
+            -   kind: ident
+                name: A2
+        -   kind: ident
+            name: A3
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 9.0
+        -   kind: float
+            value: 1.0

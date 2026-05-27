@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "swift: Build Debug CoeffMltplyExample",
+      "type": "shell",
+      "command": "swift",
+      "args": [
+        "build",
+        "-c", "debug",
+        "-Xswiftc", "-Onone"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+		{
+			"label": "swift-build-debug",
+			"type": "shell",
+			"command": "swift",
+			"args": [
+			"build",
+			"-c", "debug"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+    {
+      "label": "Swift build to log",
+      "type": "shell",
+      "command": "swift build 2>&1 | tee swift-build.log",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$swiftc"
+    },
+
+  ]
+}

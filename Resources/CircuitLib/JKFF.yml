@@ -1,0 +1,38 @@
+module: JKFF
+kind: subcirc
+inPrts:
+- port: J
+- port: K
+- port: INIT
+- port: CLK
+sense:
+  port: CLK
+  edge: fall
+delay:
+  fixed: 40
+  outcap: 30
+outPrts:
+- Q
+- QN
+nodes:
+- J
+- K
+- INIT
+- CLK
+- D
+- Q
+- QN
+sCircs:
+- name: reg
+  kind: dpf
+  inPrts: [D, INIT, CLK]
+  outPrts: Q
+aCircs:
+- name: jkq
+  kind: jkq
+  inPrts: [J, K, Q]
+  outPrts: D
+- name: inv0
+  kind: inv
+  inPrts: [Q]
+  outPrts: QN

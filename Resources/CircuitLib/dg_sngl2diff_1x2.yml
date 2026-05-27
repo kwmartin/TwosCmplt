@@ -1,0 +1,99 @@
+kind: verilog
+module: dg_sngl2diff_1x2
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: in
+-   name: qp
+-   name: qn
+-   name: vdd
+-   name: vss
+decls:
+-   -   kind: Input
+        name: in
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: in
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: int
+            value: 20
+        -   kind: float
+            value: 1.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: in
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: int
+            value: 20
+        -   kind: float
+            value: 1.0

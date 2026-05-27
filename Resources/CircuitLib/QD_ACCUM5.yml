@@ -1,0 +1,1933 @@
+kind: verilog
+module: QD_ACCUM5
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 33
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RL_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QD_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 17
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: ADDR0R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CLKN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: R1NR
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: PR0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PR1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QD__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RLN_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ADDR1R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RL__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C0R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C1R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: GR0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: GR1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: ADDR0
+    module: ADDR
+    params:
+    -   kind: int
+        value: 18
+        name: nbits
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 33
+            -   kind: int
+                value: 16
+    -   port: B
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: bit
+            name: R1R
+            sgmnts:
+            - 16
+    -   port: CO
+        node:
+            kind: ident
+            name: C0R
+    -   port: G
+        node:
+            kind: ident
+            name: GR0
+    -   port: P
+        node:
+            kind: ident
+            name: PR0
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR0R
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: RR0
+    module: REGS
+    params:
+    -   kind: int
+        value: 18
+        name: nbits
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR0R
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: RL__
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: QN
+        node:
+            kind: slice
+            name: RLN_
+            sgmnts:
+            -   kind: int
+                value: 17
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: ADDR1
+    module: ADDR
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: R1R
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: CO
+        node:
+            kind: ident
+            name: C1R
+    -   port: G
+        node:
+            kind: ident
+            name: GR1
+    -   port: P
+        node:
+            kind: ident
+            name: PR1
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR1R
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: RR1
+    module: REGS
+    params:
+    -   kind: int
+        value: 17
+        name: nbits
+    ports:
+    -   port: IN
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: C1R
+            -   kind: slice
+                name: ADDR1R
+                sgmnts:
+                -   kind: int
+                    value: 15
+                -   kind: int
+                    value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: R1R
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VSS
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: QN
+        node:
+            kind: slice
+            name: R1NR
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: inv2
+    module: DG_INV2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CLKN
+    -   port: OUT
+        node:
+            kind: ident
+            name: CLKB
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: exor1
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: net1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: inv3
+    module: DG_INV2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: net1
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 17
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: inv4
+    module: DG_INV2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 16
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 16
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_15
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 15
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 15
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_14
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 14
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 14
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_13
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 13
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 13
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_12
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 12
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 12
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_11
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 11
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 11
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_10
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 10
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 10
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_9
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 9
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 9
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_8
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 8
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 8
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_7
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 7
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 7
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_6
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 6
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 6
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_5
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 5
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 5
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_4
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 4
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 4
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_3
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 3
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 3
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_2
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 2
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 2
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_1
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 1
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 1
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b1_0
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 0
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: inv1
+    module: DG_INV2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CLK
+    -   port: OUT
+        node:
+            kind: ident
+            name: CLKN
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_17
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 17
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 17
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_16
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 16
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 16
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_15
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 15
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 15
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_14
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 14
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 14
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_13
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 13
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 13
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_12
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 12
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 12
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_11
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 11
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 11
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_10
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 10
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 10
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_9
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 9
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 9
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_8
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 8
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 8
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_7
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 7
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 7
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_6
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 6
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 6
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_5
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 5
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 5
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_4
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 4
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 4
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_3
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 3
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 3
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_2
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 2
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 2
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_1
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 1
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 1
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b2_0
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: QD__
+            sgmnts:
+            - 0
+    -   port: OUT
+        node:
+            kind: bit
+            name: QD_
+            sgmnts:
+            - 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_17
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 17
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 17
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_16
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 16
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 16
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_15
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 15
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 15
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_14
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 14
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 14
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_13
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 13
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 13
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_12
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 12
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 12
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_11
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 11
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 11
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_10
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 10
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 10
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_9
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 9
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 9
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_8
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 8
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 8
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_7
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 7
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 7
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_6
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 6
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 6
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_5
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 5
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 5
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_4
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 4
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 4
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_3
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 3
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 3
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_2
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 2
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 2
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_1
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 1
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 1
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: b3_0
+    module: DG_BUF2_1X1
+    params: null
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: RL__
+            sgmnts:
+            - 0
+    -   port: OUT
+        node:
+            kind: bit
+            name: RL_
+            sgmnts:
+            - 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS

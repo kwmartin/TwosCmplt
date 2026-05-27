@@ -1,0 +1,13 @@
+Constants:
+  -   - PER
+      - 1000
+FinishTime: 32*PER
+Clock:
+  - clkNm: CLK
+    initVal: 0
+    per: PER
+    delay: 0
+  - clkNm: CLK2
+    initVal: 1
+    per: 4*PER
+    delay: 2*PER

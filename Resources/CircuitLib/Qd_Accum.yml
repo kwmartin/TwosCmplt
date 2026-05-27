@@ -1,0 +1,569 @@
+kind: verilog
+module: Qd_Accum
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R0R_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R0Q_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
+    name: RL_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: QD_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO0Q
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO0R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO1Q
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO1R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ADDR1Q_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ADDR0R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ADDR0Q_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ADDR1R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1Q_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: sync
+    name: R1R
+    module: regstr
+    params:
+    -   kind: int
+        value: 5
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CO1R
+            -   kind: slice
+                name: ADDR1R_
+                sgmnts:
+                -   kind: int
+                    value: 3
+                -   kind: int
+                    value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+    -   port: QP
+        node:
+            kind: slice
+            name: R1R_
+            sgmnts:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+-   kind: sync
+    name: R0R
+    module: rgstr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: slice
+            name: R0R_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+-   kind: async
+    name: ADDR0R
+    module: addr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 19
+            -   kind: int
+                value: 4
+    -   port: CI
+        node:
+            kind: bit
+            name: R1R_
+            sgmnts:
+            - 4
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO0R
+-   kind: async
+    name: ADDR1R
+    module: addr
+    params:
+    -   kind: int
+        value: 4
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR1R_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: R1R_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO1R
+-   kind: sync
+    name: R1Q
+    module: regstr
+    params:
+    -   kind: int
+        value: 5
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CO1Q
+            -   kind: slice
+                name: ADDR1Q_
+                sgmnts:
+                -   kind: int
+                    value: 3
+                -   kind: int
+                    value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+    -   port: QP
+        node:
+            kind: slice
+            name: R1Q_
+            sgmnts:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+-   kind: sync
+    name: R0Q
+    module: rgstr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR0Q_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: slice
+            name: R0Q_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+-   kind: async
+    name: ADDR0Q
+    module: addr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 19
+            -   kind: int
+                value: 4
+    -   port: CI
+        node:
+            kind: bit
+            name: R1Q_
+            sgmnts:
+            - 4
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR0Q_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: QD_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO0Q
+-   kind: async
+    name: ADDR1Q
+    module: addr
+    params:
+    -   kind: int
+        value: 4
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: S
+        node:
+            kind: slice
+            name: ADDR1Q_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: R1Q_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO1Q
+-   kind: instance
+    name: X1
+    module: DG_BUF20_1X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

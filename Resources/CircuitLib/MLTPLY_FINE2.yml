@@ -1,0 +1,338 @@
+kind: verilog
+module: MLTPLY_FINE2
+params:
+-   kind: int
+    name: nbits
+    value: 20
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: k
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: nbits
+        -   kind: int
+            value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: F
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: H
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: G2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MLT1
+    module: MULT_25P125
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: IN
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    -   port: OUT
+        node:
+            kind: slice
+            name: G
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MLT2
+    module: MULT_4BITS
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: int
+        value: 7
+        name: rshft
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: G
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    -   port: k
+        node:
+            kind: slice
+            name: k
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 4
+    -   port: OUT
+        node:
+            kind: slice
+            name: H
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: ADDR0
+    module: ADDR
+    params:
+    -   kind: int
+        value: 8
+        name: nbits
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: H
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: F
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: CO
+        node:
+            kind: ident
+            name: CO2
+    -   port: G
+        node:
+            kind: ident
+            name: G2
+    -   port: P
+        node:
+            kind: ident
+            name: P2
+    -   port: S
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MLT3
+    module: MULT_4BITS
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: int
+        value: 11
+        name: rshft
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: G
+            sgmnts:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+    -   port: k
+        node:
+            kind: slice
+            name: k
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: OUT
+        node:
+            kind: slice
+            name: F
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS

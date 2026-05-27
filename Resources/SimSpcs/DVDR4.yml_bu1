@@ -1,0 +1,24 @@
+Module: DVDR4
+
+Constants:
+  PER: 1000
+
+Clock:
+- clkNm: CLK
+  per: PER
+
+FinishTime: 128*PER
+
+SaveNds:
+- name: OUT
+  format: s
+
+TimeSpcs:
+- tm: 0
+  vls:
+  - [VDD, 1]
+  - [VSS, 0]
+  - [INIT, 1]
+- tm: PER
+  vls:
+  - [INIT, 0]

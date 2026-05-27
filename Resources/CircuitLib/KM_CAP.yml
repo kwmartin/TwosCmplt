@@ -1,0 +1,28 @@
+kind: verilog
+module: KM_CAP
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: ND1
+-   name: ND2
+decls:
+-   -   kind: Input
+        name: ND1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ND2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks: null

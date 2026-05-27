@@ -1,0 +1,213 @@
+kind: verilog
+module: dffTB
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Integer
+        name: n
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Integer
+        name: file1
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: syscall
+        name: dumpfile
+        value:
+        -   kind: str
+            value: dumpfile.vcd
+    -   kind: syscall
+        name: dumpvars
+        value:
+        -   kind: int
+            value: 0
+        -   kind: ident
+            name: tstDFF
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: file1
+        rvalue:
+            kind: syscall
+            name: fopen
+            value:
+            -   kind: str
+                value: out1.vcd
+            -   kind: str
+                value: w
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VDD
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: VSS
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: d
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: init
+        rvalue:
+            kind: int
+            value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: init
+        rvalue:
+            kind: int
+            value: 0
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: d
+        rvalue:
+            kind: int
+            value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: d
+        rvalue:
+            kind: int
+            value: 0
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: finish
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: clk
+            rvalue:
+                kind: int
+                value: 0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BGreaterEq:'
+                args:
+                -   kind: ident
+                    name: n
+                -   kind: int
+                    value: 32
+            iftrue:
+            -   kind: syscall
+                name: finish
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: n
+        rvalue:
+            kind: bexpr
+            oper: 'BPlus:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: int
+                value: 1
+    - 'SingleStatement:'
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: clk
+        rvalue:
+            kind: uexpr
+            oper: 'Ulnot:'
+            args:
+            -   kind: ident
+                name: clk
+-   kind: always
+    onlyif:
+    -   - all
+        - null
+    stmnts:
+    - 'SingleStatement:'
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: '%01b %01b %01b %01b %01b %01b %01b'
+        -   kind: ident
+            name: clk
+        -   kind: ident
+            name: init
+        -   kind: ident
+            name: d
+        -   kind: ident
+            name: nr0
+        -   kind: ident
+            name: nr1
+        -   kind: ident
+            name: qp
+        -   kind: ident
+            name: qn
+    -   kind: syscall
+        name: fdisplay
+        value:
+        -   kind: ident
+            name: file1
+        -   kind: str
+            value: '%01b %01b %01b %01b %01b %01b %01b'
+        -   kind: ident
+            name: clk
+        -   kind: ident
+            name: init
+        -   kind: ident
+            name: d
+        -   kind: ident
+            name: nr0
+        -   kind: ident
+            name: nr1
+        -   kind: ident
+            name: qp
+        -   kind: ident
+            name: qn
