@@ -1,4 +1,4 @@
-** TwosCmplt Library: Some Parts are Usable
+## TwosCmplt Library: Some Parts are Usable
 
 This started as a port of my personal Python Library for doing TwosCmplt operations to Swift to see
 if Swift was a good language; might have been a real mistake. Some good, a lot bad. Still, once I got
