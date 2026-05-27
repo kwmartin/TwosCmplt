@@ -1188,14 +1188,16 @@ public final class Circuit {
             self.initialized = true
         }
 
+        // Latest input-arrival time: used in both the initial assign run and the
+        // post-always-block re-run so that accumulated upstream delays propagate
+        // through the full combinational chain (e.g. CMPL after ADDR, H/F after MLT1).
+        let inputTm = self.kind == "verilog"
+            ? self.iPrts.reduce(tm) { max($0, self.nodes[$1.intlIndx].updTm) }
+            : tm
+
         if self.kind == "verilog" {
             if !self.assgnStates.isEmpty {
                 ctx.circ = self
-                // Use the latest input-arrival time as the base for output timestamps.
-                // A downstream module in a combinational chain (e.g. CMPL after ADDR)
-                // receives inputs that already carry the upstream delay in their updTm.
-                // Using tm (parent eval time) would ignore that accumulated delay.
-                let inputTm = self.iPrts.reduce(tm) { max($0, self.nodes[$1.intlIndx].updTm) }
                 ctx.simTime = inputTm
                 self.runAllAssignBlcks(ctx: &ctx)
             }
@@ -1264,13 +1266,13 @@ public final class Circuit {
             }
             if !self.alwysStk.isEmpty {
                 ctx.circ = self
-                ctx.simTime = tm
+                ctx.simTime = inputTm
                 self.simVrlgAlwys(ctx: &ctx)
                 self.alwysStk = []
             }
 
             if !self.assgnStates.isEmpty {
-                self.self.runAllAssignBlcks(ctx: &ctx)
+                self.runAllAssignBlcks(ctx: &ctx)
             }
 
         }
@@ -1488,7 +1490,7 @@ extension Circuit {
             self.runAllInitBlcks(ctx: &ctx)
         }
         if !self.assgnStates.isEmpty {
-            self.self.runAllAssignBlcks(ctx: &ctx)
+            self.runAllAssignBlcks(ctx: &ctx)
         }
 
         precondition(ctx.stack.count == startDepth,
