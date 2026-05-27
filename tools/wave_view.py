@@ -161,7 +161,9 @@ class RowLabel(QLabel):
 # ---------------------------------------------------------------------------
 
 class WaveformCanvas(QWidget):
-    cursor_moved = Signal(object)   # emits float (seconds) or None
+    cursor_moved = Signal(object)       # emits float (seconds) or None
+    cursor_moved_pu = Signal(object)    # emits float (period units) or None
+    marker_changed = Signal(object)     # emits float (period units) or None
     view_changed = Signal(float, float)   # left_time, major_grid_px
     label_width_changed = Signal(int)     # label_panel_width
 
@@ -213,6 +215,10 @@ class WaveformCanvas(QWidget):
         self.zero_line_pen = QPen(QColor("#888888"), 1.0)
         self.one_line_pen  = QPen(QColor("#007777"), 1.0)
         self.cursor_pen = QPen(QColor("#ffd166"), 1, Qt.DashLine)
+        self.marker_pen = QPen(QColor("#ef4444"), 2, Qt.SolidLine)
+
+        self._marker_t: float | None = None
+        self._dragging_marker: bool = False
 
         self.waves: list[WaveRow] = []
         self.selected_waves: set = set()
@@ -879,6 +885,15 @@ class WaveformCanvas(QWidget):
         self.last_mouse_pos = pos
         self.press_pos = pos
         self.press_moved = False
+        ctrl = bool(event.modifiers() & Qt.ControlModifier)
+        if (event.button() == Qt.LeftButton and ctrl
+                and self._marker_t is not None
+                and pos.x() >= self.waveform_left_x()):
+            mx = self.time_to_x(self._marker_t)
+            if abs(pos.x() - mx) <= 8:
+                self._dragging_marker = True
+                self.setCursor(Qt.SizeHorCursor)
+                return
         if event.button() == Qt.LeftButton and pos.x() >= self.waveform_left_x():
             self.press_wave = self.wave_at(pos)
             self.panning = True
@@ -891,14 +906,22 @@ class WaveformCanvas(QWidget):
             if (pos - self.press_pos).manhattanLength() > self.click_drag_threshold:
                 self.press_moved = True
 
+        if self._dragging_marker and pos.x() >= self.waveform_left_x():
+            self._marker_t = max(self.startTm, min(self.finishTm, self.x_to_time(pos.x())))
+            self.marker_changed.emit(self._marker_t)
+            self.update()
+            return
+
         if pos.x() >= self.waveform_left_x():
             self._cursor_t = self.x_to_time(pos.x())
             t_s = self._cursor_t * self._period_s if self._period_s > 0 else None
             self.cursor_moved.emit(t_s)
+            self.cursor_moved_pu.emit(self._cursor_t)
         else:
             if self._cursor_t is not None:
                 self._cursor_t = None
                 self.cursor_moved.emit(None)
+                self.cursor_moved_pu.emit(None)
 
         if self.panning:
             dx = pos.x() - self.last_mouse_pos.x()
@@ -916,6 +939,11 @@ class WaveformCanvas(QWidget):
         self.update()
 
     def mouseReleaseEvent(self, event: QMouseEvent):
+        if self._dragging_marker:
+            self._dragging_marker = False
+            self.unsetCursor()
+            return
+
         if self.panning:
             self.panning = False
             self.unsetCursor()
@@ -939,6 +967,7 @@ class WaveformCanvas(QWidget):
         if self._cursor_t is not None:
             self._cursor_t = None
             self.cursor_moved.emit(None)
+            self.cursor_moved_pu.emit(None)
             self.update()
         super().leaveEvent(event)
 
@@ -1018,6 +1047,7 @@ class WaveformCanvas(QWidget):
         self.draw_grid(painter)
         self.draw_waves(painter)
         self.draw_axis(painter)
+        self.draw_marker(painter)
         self.draw_cursor(painter)
 
     def draw_grid(self, painter: QPainter):
@@ -1126,9 +1156,23 @@ class WaveformCanvas(QWidget):
             return f"0b{val:0{wave.nbits}b}"
         return hex(val)  # default: hex
 
+    def drop_marker_at_cursor(self):
+        """Drop the marker at the current cursor position (last known mouse location)."""
+        if self._cursor_t is not None:
+            self._marker_t = self._cursor_t
+            self.marker_changed.emit(self._marker_t)
+            self.update()
+
     def contextMenuEvent(self, event: QContextMenuEvent):
         pos = event.pos()
         if pos.x() < self.waveform_left_x():
+            return
+        if event.modifiers() & Qt.ControlModifier:
+            t = self.x_to_time(pos.x())
+            self._marker_t = max(self.startTm, min(self.finishTm, t))
+            self._cursor_t = self._marker_t
+            self.marker_changed.emit(self._marker_t)
+            self.update()
             return
         wave = self.wave_at(pos)
         if not isinstance(wave, DigitalWaveRow) or wave.nbits <= 1:
@@ -1249,6 +1293,19 @@ class WaveformCanvas(QWidget):
         painter.drawLine(QPointF(x, y_top), QPointF(x, y_bottom))
         painter.restore()
 
+    def draw_marker(self, painter: QPainter):
+        if self._marker_t is None:
+            return
+        x = self.time_to_x(self._marker_t)
+        if x < self.waveform_left_x() or x > self.waveform_right_x():
+            return
+        y_top    = float(self.top_margin)
+        y_bottom = float(self.height() - self.hbar.height())
+        painter.save()
+        painter.setPen(self.marker_pen)
+        painter.drawLine(QPointF(x, y_top), QPointF(x, y_bottom))
+        painter.restore()
+
 
 # ---------------------------------------------------------------------------
 # Digital-only window
@@ -1342,7 +1399,7 @@ def display_digital(sim_path: "Path | None" = None) -> None:
 
 def display_analog() -> None:
     """Not implemented in this copy — analog modules are not available here."""
-    raise NotImplementedError("display_analog is not available in the PlotResponse copy of wave_view.py")
+    raise NotImplementedError("display_analog is not available in the tools copy of wave_view.py")
 
 
 if __name__ == "__main__":

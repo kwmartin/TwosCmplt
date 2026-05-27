@@ -197,7 +197,7 @@ func CircuitSim () {
         X0 = X0in
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/oversmpl.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/oversmpl.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"

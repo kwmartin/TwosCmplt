@@ -3,7 +3,7 @@ import importlib
 from pathlib import Path
 import yaml
 
-# Project root: two levels up from this file (lib/ → PlotResponse/ → project root)
+# Project root: two levels up from this file (lib/ → tools/ → project root)
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 from ruyaml import YAML
 from ruyaml.representer import RoundTripRepresenter

@@ -331,7 +331,7 @@ func SimFltr3A (_ coeff: Int){
         States[i] = (X[0].toInt(), X[1].toInt(), X[2].toInt())
     }
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/fltr3a.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3a.dat"
 
     let fp = fopen(path, "w")
     if fp != nil {
@@ -345,7 +345,7 @@ func SimFltr3A (_ coeff: Int){
         print("Error opening file for writing.")
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states_3a.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states_3a.dat"
 
     let fp2 = fopen(path2, "w")
     if fp2 != nil {
@@ -408,7 +408,7 @@ func SimFltr3B (_ coeff: Int){
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/fltr3b.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3b.dat"
 
     let fp = fopen(path, "w")
     if fp != nil {
@@ -422,7 +422,7 @@ func SimFltr3B (_ coeff: Int){
         print("Error opening file for writing.")
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states_3b.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states_3b.dat"
 
     let fp2 = fopen(path2, "w")
     if fp2 != nil {
@@ -576,7 +576,7 @@ func simFilter(
     print("Input.cnt: \(input.count), nds.count: \(nds.count)")
     dbPrnt("Out: ", nds[oprDct["OUT", default: []][1]])
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/fltr3d.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3d.dat"
 
     let fp = fopen(path, "w")
     if fp != nil {
@@ -590,7 +590,7 @@ func simFilter(
         print("Error opening file for writing.")
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states_3d.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states_3d.dat"
 
     let fp2 = fopen(path2, "w")
     if fp2 != nil {

@@ -22,7 +22,7 @@ prserving the filter shape. One filter has poles only and the other
 has a finite transmission zero. The filter examples are first given
 as "hard-wired" and secondly where the structures and coefficients
 are read from a yaml file. When they are simulated with an impulse
-response, their outputs are placed in ../PlotResponse which
+response, their outputs are placed in ../tools which
 contains a Python file that will plot the FFT of the impulse response.
 
 ## See Also

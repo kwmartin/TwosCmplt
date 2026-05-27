@@ -160,7 +160,7 @@ func simFilter(
     print("Input.cnt: \(input.count), nds.count: \(nds.count)")
     dbPrnt("Out: ", nds[oprDct["OUT", default: []][1]])
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/fltr3d.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3d.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             // Write the string and add a newline
@@ -169,7 +169,7 @@ func simFilter(
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states_3d.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states_3d.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             // Write the string and add a newline

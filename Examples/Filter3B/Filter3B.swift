@@ -57,7 +57,7 @@ func Filter3B (){
         States[i] = (X[0].toInt(), X[1].toInt(), X[2].toInt())
     }
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/fltr3b.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3b.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"
@@ -65,7 +65,7 @@ func Filter3B (){
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states_3b.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states_3b.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             let line = "\(String(format: "%d", val.0)) \(String(format: "%d", val.1)) \(String(format: "%d", val.2))\n"

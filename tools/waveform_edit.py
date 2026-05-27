@@ -231,6 +231,7 @@ class WaveformCanvas(QWidget):
     selection_changed = Signal()
     waves_changed = Signal()
     view_changed = Signal(float, float)   # left_time, major_grid_px
+    cursor_moved_pu = Signal(object)      # emits float (period units) or None
 
     def __init__(self):
         super().__init__()
@@ -935,6 +936,11 @@ class WaveformCanvas(QWidget):
             if (pos - self.press_pos).manhattanLength() > self.click_drag_threshold:
                 self.press_moved = True
 
+        if pos.x() >= self.waveform_left_x():
+            self.cursor_moved_pu.emit(self.x_to_time(pos.x()))
+        else:
+            self.cursor_moved_pu.emit(None)
+
         if self.dragging_wave is not None:
             handle, index = self.selected_handle
             t = self.x_to_time(pos.x())
@@ -988,6 +994,10 @@ class WaveformCanvas(QWidget):
         self.press_pos = None
         self.press_wave = None
         self.press_moved = False
+
+    def leaveEvent(self, event):
+        self.cursor_moved_pu.emit(None)
+        super().leaveEvent(event)
 
     def wheelEvent(self, event: QWheelEvent):
         if event.modifiers() & Qt.ControlModifier:

@@ -59,7 +59,7 @@ func simCmplxFltr1A (_ coeff: (Int, Int), nbits: Int){
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxFltr1a.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxFltr1a.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<8192 {
             // Write the string and add a newline

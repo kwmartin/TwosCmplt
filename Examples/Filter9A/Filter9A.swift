@@ -98,7 +98,7 @@ func Filter3C (_ coeff: Int){
         }
 
     }
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/fltr9a.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr9a.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"
@@ -106,7 +106,7 @@ func Filter3C (_ coeff: Int){
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/states9a.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states9a.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             let line = "\(String(format: "%d", val.0)) \(String(format: "%d", val.1)) \(String(format: "%d", val.2))\n"

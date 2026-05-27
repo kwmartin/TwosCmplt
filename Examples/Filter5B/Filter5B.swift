@@ -85,7 +85,7 @@ func Filter5B (){
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/fltr5b.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr5b.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             // Write the string and add a newline
@@ -94,7 +94,7 @@ func Filter5B (){
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/states5b.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states5b.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             // Write the string and add a newline

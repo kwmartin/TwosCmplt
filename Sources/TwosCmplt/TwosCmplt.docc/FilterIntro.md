@@ -16,7 +16,7 @@ a constant or changes only slowly. The multiplication is realized using the stru
 Filter3A.swift found in Examples/Filter3A/ in the main project directory. Note the other
 examples are also all under Examples from the main project directory. Additional documentation
 on the Examples can be found in ExamplesDoc/ExamplesDoc.docc. Some of the examples write their
-impulse response into the PlotResponse directory. The FFT magnitude of the impulse response can
+impulse response into the tools directory. The FFT magnitude of the impulse response can
 be displayed (and optionally saved to a png or pdf file) using python3 anal_functs <example_name.dat>
 
 Another illustrative example is:

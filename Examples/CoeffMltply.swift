@@ -141,7 +141,7 @@ func SimFltr3A (_ coeff: Int){
     }
     print("k1Shift: \(k1Shift)")
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/output.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/output.dat"
 
     let fp = fopen(path, "w")
     if fp != nil {
@@ -155,7 +155,7 @@ func SimFltr3A (_ coeff: Int){
         print("Error opening file for writing.")
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/PlotResponse/states.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states.dat"
 
     let fp2 = fopen(path2, "w")
     if fp2 != nil {
@@ -215,7 +215,7 @@ func SimFltr3B (_ coeff: Int){
     }
     print("k2Shift: \(k2Shift)")
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/output.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/output.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"

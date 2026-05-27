@@ -76,7 +76,7 @@ func Filter5A (){
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/fltr5a.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr5a.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"
@@ -84,7 +84,7 @@ func Filter5A (){
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/states5a.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states5a.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             let line = "\(String(format: "%d", val.0)) \(String(format: "%d", val.1)) \(String(format: "%d", val.2)) \(String(format: "%d", val.3)) \(String(format: "%d", val.4)) \(String(format: "%d", val.5))\n"

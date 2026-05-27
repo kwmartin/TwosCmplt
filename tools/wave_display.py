@@ -163,6 +163,8 @@ class DisplayWindow(QMainWindow):
         self.setWindowTitle("Waveform Display")
         self.resize(1280, 760)
         self._current_circuit: Optional[str] = None
+        self._cursor_t_pu: Optional[float] = None
+        self._marker_t_pu: Optional[float] = None
         self._build_ui()
         self._build_menu()
 
@@ -208,6 +210,12 @@ class DisplayWindow(QMainWindow):
         start_act.setShortcuts([QKeySequence("Ctrl+0"), QKeySequence("Ctrl+B")])
         start_act.triggered.connect(self._pan_to_start)
         zoom_menu.addAction(start_act)
+
+        markers_menu = self.menuBar().addMenu("Markers")
+
+        drop_act = QAction("Drop Marker\tCtrl+Right-Click", self)
+        drop_act.triggered.connect(self.viewer.drop_marker_at_cursor)
+        markers_menu.addAction(drop_act)
 
         help_menu = self.menuBar().addMenu("Help")
 
@@ -327,6 +335,9 @@ class DisplayWindow(QMainWindow):
         self.editor.view_changed.connect(self.viewer.apply_view)
         self.viewer.view_changed.connect(self.editor.apply_view)
         self.viewer.label_width_changed.connect(self._sync_label_width)
+        self.editor.cursor_moved_pu.connect(self._on_cursor_pu)
+        self.viewer.cursor_moved_pu.connect(self._on_cursor_pu)
+        self.viewer.marker_changed.connect(self._on_marker_changed)
 
         vsplit.setStretchFactor(0, 0)  # top pane: fixed size
         vsplit.setStretchFactor(1, 1)  # bottom pane: absorbs resize
@@ -343,6 +354,10 @@ class DisplayWindow(QMainWindow):
             b.setToolTip(tip)
             b.clicked.connect(sig)
             btn_row.addWidget(b)
+        self._pos_label = QLabel()
+        self._pos_label.setFont(QFont("monospace", 9))
+        self._pos_label.setStyleSheet("color: #60a5fa; padding-left: 12px;")
+        btn_row.addWidget(self._pos_label)
         btn_row.addStretch()
         root_vbox.addLayout(btn_row)
 
@@ -378,6 +393,29 @@ class DisplayWindow(QMainWindow):
                 self.viewer._rebuild_label_widgets()
                 self.viewer.refresh_label_layout()
                 self.viewer.update()
+
+    def _on_cursor_pu(self, t_pu):
+        self._cursor_t_pu = t_pu
+        self._update_pos_label()
+
+    def _on_marker_changed(self, t_pu):
+        self._marker_t_pu = t_pu
+        self._update_pos_label()
+
+    def _update_pos_label(self):
+        c = self._cursor_t_pu
+        m = self._marker_t_pu
+        if m is not None and c is not None:
+            delta = c - m
+            self._pos_label.setText(
+                f"Marker: {m:.2f}    Pos: {c:.2f}    Δ: {delta:+.2f} per"
+            )
+        elif m is not None:
+            self._pos_label.setText(f"Marker: {m:.2f}")
+        elif c is not None:
+            self._pos_label.setText(f"Pos: {c:.2f}")
+        else:
+            self._pos_label.setText("")
 
     def get_editor_yaml(self) -> dict:
         return self.editor.build_yaml_dict()
@@ -864,7 +902,7 @@ class WaveDisplay(QMainWindow):
         self._tree.addTopLevelItem(root_item)
         self._tree_map[root_key] = root_item
         self._add_children(root_item, root_key)
-        self._tree.expandAll()
+        root_item.setExpanded(True)   # show direct children; deeper levels collapsed
 
     def _make_item(self, key: CircKey) -> QTreeWidgetItem:
         item = QTreeWidgetItem([self._hierarchy[key]["name"]])

@@ -51,7 +51,7 @@ func CmplxShift(_ inFreq: Double, _ freqShft: Double) {
 
         print("InR: \(InR.toInt()), InQ: \(InQ.toInt()), OutR: \(OutR.toInt()), OutQ: \(OutQ.toInt()), shftCs: \(shftCs), shftSn: \(shftSn), ")
     }
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxMltply.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxMltply.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<N {
             // Write the string and add a newline

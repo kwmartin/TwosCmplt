@@ -119,7 +119,7 @@ func simCmplxFltr (_ coeff: (Int, Int), nbits: Int, filename: String){
 
     let cwd = FileManager.default.currentDirectoryPath
 
-    let path = "\(cwd)/PlotResponse/\(filename).dat"
+    let path = "\(cwd)/tools/\(filename).dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<1024 {
             // Write the string and add a newline
@@ -127,7 +127,7 @@ func simCmplxFltr (_ coeff: (Int, Int), nbits: Int, filename: String){
             fputs(line, fp)
         }
     }
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxFltr5B_states.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxFltr5B_states.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             let line = "\(String(format: "%d", val.0)) \(String(format: "%d", val.1)) \(String(format: "%d", val.2)) \(String(format: "%d", val.3))\n"

@@ -83,7 +83,7 @@ func SimOsc2 (_ coeff: Int, N: Int) {
     }
     _ = Out
 
-    let path = "/home/Dropbox/programming/Swift/PlotResponse/Osc2.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/Osc2.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             // Write the string and add a newline

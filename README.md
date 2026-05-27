@@ -16,6 +16,6 @@ If you find something interesting, let me know and maybe I can find some time to
 
 This was also my first project where I heavily used AI, starting with Perplexity, and now mostly Claude. I can't afford Copilot, and haven't gotten around to Gemini yet, I'm allergic to Open AI. If you want to try and get something to work, try it out, and then ask claude to help getting it to work. I could never have done the yaml decoding (and still can't properly do it) without their help. I use Perplexity almost 100% of the time to replace Google Search
 
-Again, let me know what you find interesting. Once I get the simulator (and viewer in PlotResponse/wave_display.py) working properly, I plan on looking into some ideas on minimizing power by switching to a low supply dynamically for blocks that don't need speed - just some ideas).
+Again, let me know what you find interesting. Once I get the simulator (and viewer in tools/wave_display.py) working properly, I plan on looking into some ideas on minimizing power by switching to a low supply dynamically for blocks that don't need speed - just some ideas).
 
 As an aside, where I found AI truly excels is in making GUIs. I personally prefer PySide6 as I have previous experience with it, and since it's Python based should be easy to port especially if you use AI to help do the port. The Python uses a uv based Virtual Environment.

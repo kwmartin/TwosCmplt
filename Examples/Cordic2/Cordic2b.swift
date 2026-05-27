@@ -197,7 +197,7 @@ func SimDDFS2b (freq: UInt, N: Int) {
     }
 
     //
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/Cordic2b.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/Cordic2b.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<N {
             // Write the string and add a newline

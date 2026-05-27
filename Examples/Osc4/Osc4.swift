@@ -122,7 +122,7 @@ func SimOsc4 (coeff: Int, N: Int, accum: Int) {
         ()
       }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/Osc4.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/Osc4.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<N {
             // Write the string and add a newline

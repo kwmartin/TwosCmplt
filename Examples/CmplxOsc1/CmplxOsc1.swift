@@ -38,7 +38,7 @@ func simCmplxOsc1 (_ coeff: (Int, Int), nbits: Int, N: Int) {
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxOsc1.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxOsc1.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<N {
             // Write the string and add a newline

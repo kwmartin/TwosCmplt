@@ -96,7 +96,7 @@ func simCmplxFltr3E (_ coeff: (Int, Int), nbits: Int){
         Xq[3] = XIq[3]
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxFltr3e.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxFltr3e.dat"
     withFile(path, mode: "w") { fp in
         for i in 0..<8192 {
             // Write the string and add a newline
@@ -105,7 +105,7 @@ func simCmplxFltr3E (_ coeff: (Int, Int), nbits: Int){
         }
      }
 
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/CmplxFltr3e_states.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/CmplxFltr3e_states.dat"
     withFile(path2, mode: "w") { fp in
         for val in States {
             // Write the string and add a newline

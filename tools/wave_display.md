@@ -25,11 +25,11 @@ When a circuit name is given on the command line, the circuit is built and simul
 
 ### Selector Window
 
-The selector window (`wave_display.py`) lets you navigate the circuit hierarchy, choose which nodes to display, and control the simulation.
+The selector window lets you navigate the circuit hierarchy, choose which nodes to display, and control the simulation.
 
 #### Circuit Hierarchy Tree (left pane)
 
-Clicking a node in the tree selects that sub-circuit and populates the right pane with its node names.
+Clicking a node in the tree selects that sub-circuit and populates the right pane with its node names. When a circuit is first loaded, the tree opens showing the top-level circuit and its direct sub-circuits. Deeper levels are hidden until you click the expand arrow on an item.
 
 #### Node Checkboxes (right pane)
 
@@ -71,7 +71,7 @@ The Waveform Display window opens automatically after a simulation or when you c
 
 The top pane shows the input signals defined in the circuit's spec file (e.g., CLK, INIT). These waveforms are **fully editable**: you can add, delete, and move transition edges. VDD and VSS power rails are never shown here because they never change.
 
-Editing operations (same as the standalone waveform editor):
+Editing operations:
 
 | Action | Method |
 |---|---|
@@ -88,9 +88,35 @@ The edited input waveforms are used when you click **Simulate** (in either windo
 
 The bottom pane shows all simulation output signals: Clock signals, TimeSpcs inputs, SaveNds signals, and any nodes selected in the hierarchy tree. The signals appear in the order specified by the spec file, with checkbox-selected nodes appended.
 
-Waveforms can be **selected** by clicking their labels and **reordered** using the Wave menu or keyboard shortcuts. The display order is **preserved across re-simulations** — moving a waveform up or down is persistent until you close the window.
+Waveforms can be **selected** by clicking their labels and **reordered** using the Wave menu or keyboard shortcuts. The display order is **preserved across re-simulations**.
 
-Bus signals (nbits > 1) are displayed in hexadecimal.
+Bus signals (nbits > 1) are displayed in the format set by right-clicking the signal (Hex, Decimal, Signed Decimal, or Binary). Right-clicking a 1-bit signal has no effect.
+
+#### Status Bar (bottom row)
+
+A position readout appears to the right of the **Simulate** and **Save Inputs** buttons. It shows the current mouse position in period units while the cursor is inside either waveform pane:
+
+```
+Pos: 5.23
+```
+
+When a marker is dropped, the readout expands to show the marker position, the live cursor position, and the delta between them:
+
+```
+Marker: 3.00    Pos: 5.23    Δ: +2.23 per
+```
+
+#### Markers
+
+A **marker** is a fixed vertical reference line (solid red) that can be dropped anywhere on the output waveform pane. Use it to measure time intervals between two points.
+
+| Action | How |
+|---|---|
+| Drop / move marker | **Ctrl + Right-click** at the desired position (also available from the **Markers** menu) |
+| Drag marker to new position | **Ctrl + Left-drag** on or near the marker line (within ~8 px) |
+| Drop marker from menu | **Markers → Drop Marker** — drops at the current cursor position |
+
+The live cursor (dashed yellow) continues to move as you move the mouse. The delta in the status bar always reads **cursor − marker**.
 
 #### Buttons
 
@@ -103,7 +129,8 @@ Bus signals (nbits > 1) are displayed in hexadecimal.
 
 | Item | Shortcut | Action |
 |---|---|---|
-| Close | Ctrl+W | Close the Waveform Display window. The window state (wave order, editor contents) is preserved — re-simulating or clicking Display reopens it with the same layout and updated values. |
+| Save Inputs | Ctrl+S | Write edited input waveforms to the spec file. |
+| Close | Ctrl+W | Close the Waveform Display window. |
 
 #### Wave Menu
 
@@ -117,8 +144,14 @@ Bus signals (nbits > 1) are displayed in hexadecimal.
 
 | Item | Shortcut | Action |
 |---|---|---|
-| Full | Ctrl+F | Zoom both panes to show periods 0–10. |
+| Full | Ctrl+F | Zoom both panes to show the full waveform. |
 | Pan to Start | Ctrl+0 or Ctrl+B | Scroll both panes back to time 0. |
+
+#### Markers Menu
+
+| Item | Action |
+|---|---|
+| Drop Marker | Drop a marker at the current cursor position (same as Ctrl+Right-click). |
 
 #### Help Menu
 
@@ -172,11 +205,12 @@ TimeSpcs:
 5. **Select more nodes**: In the selector window, navigate the tree, check additional nodes, and click **Add**. New waveforms are appended to the bottom of the output pane.
 6. **Reorder**: Select a waveform label and use Ctrl+Up / Ctrl+Down to move it. The order persists through subsequent simulations.
 7. **Navigate time**: Use Ctrl+G to jump to a specific period, Ctrl+F to zoom full, or Ctrl+0 / Ctrl+B to pan to time 0. Pan with click-and-drag; zoom with Ctrl+scroll.
-8. **Save**: Click **Save** or **Save Inputs** to write the current input waveforms and node selection permanently to the spec file.
+8. **Measure timing**: Ctrl+Right-click to drop a marker; the status bar shows the delta from the marker to the live cursor as you move the mouse.
+9. **Save**: Click **Save** or **Save Inputs** to write the current input waveforms and node selection permanently to the spec file.
 
 ---
 
 ### License
 
-This project is licensed under the MIT License.  
-You may obtain a copy of the License at: <https://opensource.org/licenses/MIT>.
+This project is licensed under the Apache License 2.0.  
+See `LICENSE.txt` in the repository root, or: <https://www.apache.org/licenses/LICENSE-2.0>.

@@ -58,7 +58,7 @@ func Filter3E (){
 
     }
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/fltr3e.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3e.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"
@@ -66,7 +66,7 @@ func Filter3E (){
         }
     }
 
-    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/states3e.dat"
+    let path2 = "/home/Dropbox/programming/Swift/TwosCmplt/tools/states3e.dat"
 
     withFile(path2, mode: "w") { fp in
         for val in States {

@@ -46,7 +46,7 @@ func Filter3A (_ coeff: Int) {
     _ = In
     _ = Out
 
-    let path = "/home/Dropbox/programming/Swift/TwosCmplt/PlotResponse/fltr3a.dat"
+    let path = "/home/Dropbox/programming/Swift/TwosCmplt/tools/fltr3a.dat"
     withFile(path, mode: "w") { fp in
         for val in Out {
             let line = "\(val.toInt())\n"
