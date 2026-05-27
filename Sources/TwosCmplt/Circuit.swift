@@ -1191,7 +1191,7 @@ public final class Circuit {
         // Latest input-arrival time: used in both the initial assign run and the
         // post-always-block re-run so that accumulated upstream delays propagate
         // through the full combinational chain (e.g. CMPL after ADDR, H/F after MLT1).
-        let inputTm = self.kind == "verilog"
+        let inputTm = (self.kind == "verilog" && !self.sync)
             ? self.iPrts.reduce(tm) { max($0, self.nodes[$1.intlIndx].updTm) }
             : tm
 
