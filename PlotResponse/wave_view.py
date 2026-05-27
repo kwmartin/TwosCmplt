@@ -163,6 +163,7 @@ class RowLabel(QLabel):
 class WaveformCanvas(QWidget):
     cursor_moved = Signal(object)   # emits float (seconds) or None
     view_changed = Signal(float, float)   # left_time, major_grid_px
+    label_width_changed = Signal(int)     # label_panel_width
 
     def __init__(self):
         super().__init__()
@@ -173,8 +174,8 @@ class WaveformCanvas(QWidget):
         self._label_full_width = 150
         self._label_hscroll = 0
         self.right_margin = 20
-        self.top_margin = 20
-        self.bottom_margin = 40
+        self.top_margin = 30
+        self.bottom_margin = 8
         self.track_height = 38
         self.track_gap = 3
         self.axis_gap = 20
@@ -572,7 +573,7 @@ class WaveformCanvas(QWidget):
         if not self.waves:
             return self.top_margin + self.bottom_margin
         last_y = self.row_y(len(self.waves) - 1)
-        return int(last_y + self.track_height + self.axis_gap + 30 + self.bottom_margin)
+        return int(last_y + self.track_height + self.bottom_margin)
 
     def row_y(self, index: int) -> int:
         return self.top_margin + index * (self.track_height + self.track_gap)
@@ -598,9 +599,7 @@ class WaveformCanvas(QWidget):
         return self.row_y(index) - self.y_offset()
 
     def axis_y(self) -> int:
-        if not self.waves:
-            return self.top_margin + self.axis_gap - self.y_offset()
-        return self.row_y(len(self.waves) - 1) + self.track_height + self.axis_gap - self.y_offset()
+        return 8  # fixed: always visible at top regardless of vertical scroll
 
     def wave_rect(self, index: int) -> QRectF:
         return QRectF(
@@ -704,6 +703,7 @@ class WaveformCanvas(QWidget):
         self.waves.insert(indices[-1], above)
         self.refresh_label_layout()
         self.update()
+        self._scroll_to_show_index(indices[0] - 1)
 
     def move_selection_down(self):
         indices = self._selected_indices()
@@ -713,6 +713,33 @@ class WaveformCanvas(QWidget):
         self.waves.insert(indices[0], below)
         self.refresh_label_layout()
         self.update()
+        self._scroll_to_show_index(indices[-1] + 1)
+
+    def delete_selected_waves(self):
+        if not self.selected_waves:
+            return
+        for wave in list(self.selected_waves):
+            if wave in self.waves:
+                self.waves.remove(wave)
+            lbl = self.label_widgets.pop(wave, None)
+            if lbl:
+                lbl.deleteLater()
+        self.selected_waves.clear()
+        self.update_scrollbars()
+        self.refresh_label_layout()
+        self.update()
+
+    def _scroll_to_show_index(self, index: int):
+        """Scroll vbar so the wave at index is within the visible area."""
+        if index < 0 or index >= len(self.waves):
+            return
+        y = self.row_y(index)
+        y_off = self.vbar.value()
+        viewport_h = self.height() - self.hbar.height()
+        if y - y_off < self.top_margin:
+            self.vbar.setValue(max(0, y - self.top_margin))
+        elif y + self.track_height - y_off > viewport_h:
+            self.vbar.setValue(max(0, y + self.track_height - viewport_h))
 
     def refresh_label_layout(self):
         sbw = self.style().pixelMetric(QStyle.PixelMetric.PM_ScrollBarExtent)
@@ -756,6 +783,7 @@ class WaveformCanvas(QWidget):
             self.label_hbar.setRange(0, needed - max_allowed)
             self.label_hbar.setPageStep(max(1, max_allowed // 4))
             self.label_hbar.show()
+        self.label_width_changed.emit(self.label_panel_width)
 
     def _on_label_hscroll(self, value: int):
         self._label_hscroll = value
@@ -922,6 +950,22 @@ class WaveformCanvas(QWidget):
             return
         self._cursor_t = t_s / self._period_s
         self.update()
+
+    def keyPressEvent(self, event):
+        if event.modifiers() & Qt.ControlModifier:
+            if event.key() == Qt.Key_D:
+                self.delete_selected_waves()
+                event.accept()
+                return
+            if event.key() == Qt.Key_Up:
+                self.move_selection_up()
+                event.accept()
+                return
+            if event.key() == Qt.Key_Down:
+                self.move_selection_down()
+                event.accept()
+                return
+        super().keyPressEvent(event)
 
     def wheelEvent(self, event: QWheelEvent):
         if event.modifiers() & Qt.ControlModifier:
@@ -1163,6 +1207,11 @@ class WaveformCanvas(QWidget):
 
     def draw_axis(self, painter: QPainter):
         axis_y = self.axis_y()
+        # Fill ruler background to cover grid lines and any waveforms scrolled into the ruler zone
+        painter.fillRect(
+            QRectF(self.waveform_left_x(), 0, self.waveform_width(), self.top_margin),
+            QColor("#11161c"),
+        )
         painter.setPen(self.frame_pen)
         painter.drawLine(
             QPointF(self.waveform_left_x(), axis_y),
@@ -1193,7 +1242,7 @@ class WaveformCanvas(QWidget):
         x = self.time_to_x(self._cursor_t)
         if x < self.waveform_left_x() or x > self.waveform_right_x():
             return
-        y_top    = float(self.top_margin - self.y_offset())
+        y_top    = float(self.top_margin)
         y_bottom = float(self.height() - self.hbar.height())
         painter.save()
         painter.setPen(self.cursor_pen)

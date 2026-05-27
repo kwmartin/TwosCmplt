@@ -1191,8 +1191,13 @@ public final class Circuit {
         if self.kind == "verilog" {
             if !self.assgnStates.isEmpty {
                 ctx.circ = self
-                ctx.simTime = tm
-                self.self.runAllAssignBlcks(ctx: &ctx)
+                // Use the latest input-arrival time as the base for output timestamps.
+                // A downstream module in a combinational chain (e.g. CMPL after ADDR)
+                // receives inputs that already carry the upstream delay in their updTm.
+                // Using tm (parent eval time) would ignore that accumulated delay.
+                let inputTm = self.iPrts.reduce(tm) { max($0, self.nodes[$1.intlIndx].updTm) }
+                ctx.simTime = inputTm
+                self.runAllAssignBlcks(ctx: &ctx)
             }
         }
 

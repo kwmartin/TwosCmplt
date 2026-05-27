@@ -268,6 +268,31 @@ class DisplayWindow(QMainWindow):
             vis = canvas.visible_time_span()
             canvas.show_range(period - vis / 2, period + vis / 2)
 
+    def _sync_label_width(self, width: int):
+        """Keep the editor label panel the same width as the viewer's dynamic label panel."""
+        self.editor.label_panel_width = width
+        self.editor.refresh_label_layout()
+        self.editor.update()
+
+    def _adjust_splitter(self):
+        """Size the top pane to fit editor content, capped at 30% of window height."""
+        total = self._vsplit.height()
+        if total <= 0:
+            return
+        label_overhead = 24  # approx height of the "Input Waveforms" label + spacing
+        canvas_h = self.editor.content_height() + self.editor.hbar.height()
+        needed = label_overhead + canvas_h
+        max_h = int(0.30 * self.height())
+        top_h = max(60, min(needed, max_h))
+        bot_h = max(0, total - top_h - self._vsplit.handleWidth())
+        self._vsplit.setSizes([top_h, bot_h])
+
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        sizes = self._vsplit.sizes()
+        if sizes and sizes[0] > int(0.30 * self.height()):
+            self._adjust_splitter()
+
     def _build_ui(self):
         central = QWidget()
         self.setCentralWidget(central)
@@ -301,8 +326,12 @@ class DisplayWindow(QMainWindow):
 
         self.editor.view_changed.connect(self.viewer.apply_view)
         self.viewer.view_changed.connect(self.editor.apply_view)
+        self.viewer.label_width_changed.connect(self._sync_label_width)
 
+        vsplit.setStretchFactor(0, 0)  # top pane: fixed size
+        vsplit.setStretchFactor(1, 1)  # bottom pane: absorbs resize
         vsplit.setSizes([240, 480])
+        self._vsplit = vsplit
         root_vbox.addWidget(vsplit, stretch=1)
 
         btn_row = QHBoxLayout()
@@ -332,6 +361,7 @@ class DisplayWindow(QMainWindow):
             self.editor.rebuild_waves_from_specs()
             self.editor.refresh_label_layout()
             self.editor.update()
+            QTimer.singleShot(0, self._adjust_splitter)
         except Exception:
             pass
 
@@ -352,6 +382,33 @@ class DisplayWindow(QMainWindow):
     def get_editor_yaml(self) -> dict:
         return self.editor.build_yaml_dict()
 
+    def apply_viewer_order(self, names: List[str]):
+        """Reorder viewer waves to match a saved name list (best-effort)."""
+        by_label = {w.label_text: w for w in self.viewer.waves}
+        reordered = [by_label.pop(n) for n in names if n in by_label]
+        reordered.extend(by_label.values())
+        if reordered:
+            self.viewer.waves = reordered
+            self.viewer._rebuild_label_widgets()
+            self.viewer.refresh_label_layout()
+            self.viewer.update()
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_A and (event.modifiers() & Qt.ControlModifier):
+            main = getattr(self, "_main_win", None)
+            if main is not None:
+                main.activateWindow()
+                main.raise_()
+            event.accept()
+            return
+        super().keyPressEvent(event)
+
+    def closeEvent(self, event):
+        main = getattr(self, "_main_win", None)
+        if main is not None:
+            main._save_wave_state()
+        super().closeEvent(event)
+
 
 # ── Main window ───────────────────────────────────────────────────────────────
 
@@ -366,6 +423,7 @@ class WaveDisplay(QMainWindow):
         self._map: dict                          = {}
         self._hierarchy: Dict[CircKey, dict]     = {}
         self._selection: Dict[CircKey, Set[int]] = {}
+        self._signal_order: List[Tuple[CircKey, int]] = []  # ordered list of selected signals
         self._current_key: Optional[CircKey]     = None
         self._node_cbs: List[QCheckBox]          = []
         self._circuit_name: Optional[str]            = None
@@ -540,6 +598,7 @@ class WaveDisplay(QMainWindow):
         self._rebuild(self._circuit_name)
 
     def closeEvent(self, event):
+        self._save_wave_state()
         if self._display_win is not None:
             self._display_win.close()
         super().closeEvent(event)
@@ -619,11 +678,18 @@ class WaveDisplay(QMainWindow):
                         canvas_data[k] = v
                 canvas_data["TimeSpcs"] = _merge_time_spcs(perm_ts, editor_ts)
                 save_nds = self._build_save_nds()
-                if not save_nds:
-                    # Selection lost (key mismatch after rebuild vs. simulate); fall back to
-                    # permanent spec's SaveNds so the simulator still saves output nodes.
-                    save_nds = canvas_data.get("SaveNds", [])
-                canvas_data["SaveNds"] = save_nds
+                perm_save_nds = canvas_data.get("SaveNds", [])
+                # Always include permanent SaveNds so the simulator outputs them too.
+                dynamic_names: Set[str] = {
+                    nd.get("name", "") if isinstance(nd, dict) else str(nd)
+                    for nd in save_nds
+                }
+                merged = list(save_nds) + [
+                    nd for nd in perm_save_nds
+                    if (nd.get("name", "") if isinstance(nd, dict) else str(nd))
+                    not in dynamic_names
+                ]
+                canvas_data["SaveNds"] = merged if merged else perm_save_nds
                 fd, tmp_path = tempfile.mkstemp(suffix=".yml", prefix="wd_spec_")
                 os.close(fd)
                 wrt_yml(tmp_path, canvas_data)
@@ -700,6 +766,7 @@ class WaveDisplay(QMainWindow):
         # Drop selections whose circuit keys no longer exist in the new hierarchy
         valid_keys = set(self._hierarchy.keys())
         self._selection = {k: v for k, v in self._selection.items() if k in valid_keys}
+        self._signal_order = [(k, i) for k, i in self._signal_order if k in valid_keys]
         self._current_key = None
         self._node_cbs.clear()
         self._populate_tree()
@@ -737,14 +804,17 @@ class WaveDisplay(QMainWindow):
         subprocess.Popen(args)
 
     def _build_save_nds(self) -> list:
-        """Return a SaveNds list from the current checkbox selection."""
+        """Return a SaveNds list from the current selection in click order."""
         save_nds = []
-        for key, indices in self._selection.items():
+        seen: Set[str] = set()
+        for key, idx in self._signal_order:
             node_names = self._hierarchy.get(key, {}).get("node_names", [])
             path_str   = ".".join(self._path_parts(key))
-            for idx in sorted(indices):
-                if idx < len(node_names):
-                    save_nds.append({"name": path_str + "." + node_names[idx], "format": "u"})
+            if idx < len(node_names):
+                name = path_str + "." + node_names[idx]
+                if name not in seen:
+                    save_nds.append({"name": name, "format": "u"})
+                    seen.add(name)
         return save_nds
 
     def _save_spec(self):
@@ -846,9 +916,26 @@ class WaveDisplay(QMainWindow):
         saved = self._selection.get(key, set())
         for i, name in enumerate(self._hierarchy[key]["node_names"]):
             cb = QCheckBox(name)
+            cb.blockSignals(True)
             cb.setChecked(i in saved)
+            cb.blockSignals(False)
+            cb.stateChanged.connect(lambda state, n=i: self._on_cb_state_changed(n, state))
             self._node_vbox.addWidget(cb)
             self._node_cbs.append(cb)
+
+    def _on_cb_state_changed(self, idx: int, state: int):
+        key = self._current_key
+        if key is None:
+            return
+        entry = (key, idx)
+        if state:  # Qt.Checked == 2, Unchecked == 0
+            if entry not in self._signal_order:
+                self._signal_order.append(entry)
+        else:
+            try:
+                self._signal_order.remove(entry)
+            except ValueError:
+                pass
 
     def _checked_indices(self) -> Set[int]:
         return {i for i, cb in enumerate(self._node_cbs) if cb.isChecked()}
@@ -866,6 +953,7 @@ class WaveDisplay(QMainWindow):
     def _save(self):
         if self._current_key is None:
             return
+        # _signal_order is maintained in real-time via _on_cb_state_changed; just sync _selection.
         checked = self._checked_indices()
         if checked:
             self._selection[self._current_key] = checked
@@ -875,24 +963,65 @@ class WaveDisplay(QMainWindow):
     def _add(self):
         if self._current_key is not None:
             self._selection.setdefault(self._current_key, set()).update(self._checked_indices())
+            # _signal_order already updated in real-time via _on_cb_state_changed
             self._populate_nodes(self._current_key)
         self._display()
 
     def _remove(self):
         if self._current_key is not None:
-            remaining = self._selection.get(self._current_key, set()) - self._checked_indices()
+            to_rm = self._checked_indices() & self._selection.get(self._current_key, set())
+            remaining = self._selection.get(self._current_key, set()) - to_rm
             if remaining:
                 self._selection[self._current_key] = remaining
             else:
                 self._selection.pop(self._current_key, None)
+            for idx in sorted(to_rm):
+                try:
+                    self._signal_order.remove((self._current_key, idx))
+                except ValueError:
+                    pass
             self._populate_nodes(self._current_key)
         self._display()
 
     def _remove_all(self):
         if self._current_key is not None:
+            for idx in list(self._selection.get(self._current_key, set())):
+                try:
+                    self._signal_order.remove((self._current_key, idx))
+                except ValueError:
+                    pass
             self._selection.pop(self._current_key, None)
             self._populate_nodes(self._current_key)
         self._display()
+
+    # ── Display state persistence ─────────────────────────────────────────────
+
+    def _state_path(self) -> "Optional[Path]":
+        if not self._circuit_name:
+            return None
+        dump_dir = Path(self._cfg.get("directories", {}).get("dumpDir", ""))
+        return dump_dir / f"{self._circuit_name}_wave_state.yml"
+
+    def _save_wave_state(self, viewer_waves: "Optional[list]" = None):
+        path = self._state_path()
+        if path is None:
+            return
+        waves = viewer_waves if viewer_waves is not None else (
+            [w.label_text for w in self._display_win.viewer.waves]
+            if self._display_win is not None else []
+        )
+        wrt_yml(str(path), {"viewer_order": waves})
+
+    def _load_wave_state(self) -> "Optional[List[str]]":
+        path = self._state_path()
+        if path is None or not path.exists():
+            return None
+        data = rd_yml(str(path))
+        if isinstance(data, dict):
+            order = data.get("viewer_order")
+            if isinstance(order, list):
+                return [str(n) for n in order]
+        return None
 
     # ── Display ───────────────────────────────────────────────────────────────
 
@@ -925,6 +1054,7 @@ class WaveDisplay(QMainWindow):
         first_display = self._display_win is None
         if first_display:
             self._display_win = DisplayWindow()
+            self._display_win._main_win = self
             self._display_win.simulate_clicked.connect(self._simulate)
             self._display_win.save_clicked.connect(self._save_spec)
         self._display_win.show()
@@ -941,6 +1071,16 @@ class WaveDisplay(QMainWindow):
 
         if signals:
             self._display_win.load_outputs(signals)
+            # On the very first display, restore saved viewer order only when there
+            # is no live click order — if the user has selected nodes, _collect_all_signals
+            # already returned them in click order so apply_viewer_order would override it.
+            if first_display and not self._signal_order:
+                saved = self._load_wave_state()
+                if saved:
+                    self._display_win.apply_viewer_order(saved)
+
+        # Persist current viewer order
+        self._save_wave_state()
 
         self._display_win.raise_()
         if not signals:
@@ -1046,9 +1186,18 @@ class WaveDisplay(QMainWindow):
                 if r:
                     _add(root_name + "." + nm, r[0], r[1])
 
-        # 2. TimeSpcs input signals (excluding clocks)
+        # 2. TimeSpcs input signals (excluding clocks) — both flat and dict entries
         ts_seen: Set[str] = set()
         for entry in spec.get("TimeSpcs", []):
+            if isinstance(entry, (list, tuple)) and len(entry) >= 1:
+                # flat [name, value] initial-value entry
+                nm = str(entry[0])
+                if nm not in clk_names and nm not in ts_seen:
+                    ts_seen.add(nm)
+                    r = _short(nm)
+                    if r:
+                        _add(root_name + "." + nm, r[0], r[1])
+                continue
             if not isinstance(entry, dict):
                 continue
             for item in entry.get("vls", []):
@@ -1070,13 +1219,12 @@ class WaveDisplay(QMainWindow):
             if r:
                 _add(full_name, r[0], r[1])
 
-        # 4. Checkbox-selected signals not already included
-        for key, indices in self._selection.items():
+        # 4. Checkbox-selected signals in click order
+        for key, idx in self._signal_order:
             node_names = self._hierarchy.get(key, {}).get("node_names", [])
             path_str   = ".".join(self._path_parts(key))
-            for idx in sorted(indices):
-                if idx < len(node_names):
-                    _add(path_str + "." + node_names[idx], key, idx)
+            if idx < len(node_names):
+                _add(path_str + "." + node_names[idx], key, idx)
 
         # Build final dict in display order, pulling data from chngs_index.
         # Signals with no recorded changes (e.g. stuck outputs) appear as flat zero,

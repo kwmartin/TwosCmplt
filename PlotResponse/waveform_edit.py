@@ -8,13 +8,17 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from PySide6.QtCore import QPoint, QPointF, QRectF, Qt, Signal
-from PySide6.QtGui import QAction, QColor, QFont, QKeySequence, QMouseEvent, QPainter, QPen, QWheelEvent
+from PySide6.QtGui import (
+    QAction, QColor, QContextMenuEvent, QFont, QFontMetrics,
+    QKeySequence, QMouseEvent, QPainter, QPen, QWheelEvent,
+)
 from PySide6.QtWidgets import (
     QApplication,
     QFileDialog,
     QLabel,
     QLineEdit,
     QMainWindow,
+    QMenu,
     QMessageBox,
     QScrollBar,
     QStyle,
@@ -62,6 +66,31 @@ def fmt_tm_expr(t: float, per_name: str = "PER") -> int | str:
     if abs(t - round(t)) < 1e-9:
         return f"{int(round(t))}*{per_name}"
     return f"{t:.1f}*{per_name}"
+
+
+def _parse_int_value(value) -> int:
+    """Parse an integer value, handling TwosCmplt 'Nbits_h_hexdigits' format."""
+    if isinstance(value, int):
+        return value
+    s = str(value).strip()
+    if 'h' in s:
+        return int(s.split('h', 1)[1], 16)
+    return int(s, 0)
+
+
+def _parse_bus_value(value) -> tuple[int, int]:
+    """Parse a value, returning (int_value, nbits). Handles 'Nbits_h_hexdigits' format."""
+    if isinstance(value, int):
+        return value, 1
+    s = str(value).strip()
+    if 'h' in s:
+        parts = s.split('h', 1)
+        try:
+            nbits = int(parts[0])
+        except ValueError:
+            nbits = 1
+        return int(parts[1], 16), nbits
+    return int(s, 0), 1
 
 
 def build_constants_map(constants_list) -> dict[str, float]:
@@ -189,10 +218,13 @@ class ClockWaveRow(WaveRow):
 
 
 class DigitalWaveRow(WaveRow):
-    def __init__(self, label_text: str, segments: list[Segment], editable: bool):
+    def __init__(self, label_text: str, segments: list[Segment], editable: bool,
+                 nbits: int = 1):
         super().__init__(label_text)
         self.segments = segments
         self.editable = editable
+        self.nbits = nbits
+        self.fmt: str = "hex"
 
 
 class WaveformCanvas(QWidget):
@@ -207,8 +239,8 @@ class WaveformCanvas(QWidget):
 
         self.label_panel_width = 150
         self.right_margin = 20
-        self.top_margin = 20
-        self.bottom_margin = 40
+        self.top_margin = 30
+        self.bottom_margin = 8
         self.track_height = 38
         self.track_gap = 3
         self.axis_gap = 20
@@ -288,15 +320,17 @@ class WaveformCanvas(QWidget):
         self.rebuild_waves_from_specs()
 
     def _preserve_nonclock_waves(self):
-        self._preserved_nonclock_waves = [
-            DigitalWaveRow(
-                wave.label_text,
-                [Segment(seg.start, seg.end, seg.value) for seg in wave.segments],
-                editable=wave.editable,
-            )
-            for wave in self.waves
-            if isinstance(wave, DigitalWaveRow)
-        ]
+        self._preserved_nonclock_waves = []
+        for wave in self.waves:
+            if isinstance(wave, DigitalWaveRow):
+                dw = DigitalWaveRow(
+                    wave.label_text,
+                    [Segment(seg.start, seg.end, seg.value) for seg in wave.segments],
+                    editable=wave.editable,
+                    nbits=wave.nbits,
+                )
+                dw.fmt = wave.fmt
+                self._preserved_nonclock_waves.append(dw)
 
     def reconstruct_digital_waves_from_timespcs(self, dct: dict) -> list[DigitalWaveRow]:
         timespcs = dct.get("TimeSpcs", [])
@@ -305,6 +339,7 @@ class WaveformCanvas(QWidget):
 
         transitions_by_signal: dict[str, list[tuple[float, int]]] = {}
         signal_order: list[str] = []
+        nbits_by_signal: dict[str, int] = {}
 
         clock_names = {str(clk.get("clkNm")) for clk in self.clock_specs if isinstance(clk, dict)}
 
@@ -316,12 +351,13 @@ class WaveformCanvas(QWidget):
                     if sig_name in clock_names:
                         continue
                     try:
-                        sig_val = int(entry[1])
+                        sig_val, sig_nbits = _parse_bus_value(entry[1])
                     except (ValueError, TypeError):
                         continue
                     if sig_name not in transitions_by_signal:
                         transitions_by_signal[sig_name] = []
                         signal_order.append(sig_name)
+                    nbits_by_signal[sig_name] = sig_nbits
                     existing = transitions_by_signal[sig_name]
                     if not any(abs(t) < 1e-9 for t, _ in existing):
                         existing.append((0.0, sig_val))
@@ -381,7 +417,8 @@ class WaveformCanvas(QWidget):
             if not segments:
                 continue
 
-            wave = DigitalWaveRow(sig_name, segments, editable=True)
+            nb = nbits_by_signal.get(sig_name, 1)
+            wave = DigitalWaveRow(sig_name, segments, editable=(nb == 1), nbits=nb)
             self.normalize_segments(wave)
             waves.append(wave)
 
@@ -455,7 +492,7 @@ class WaveformCanvas(QWidget):
         if not self.waves:
             return self.top_margin + self.bottom_margin
         last_y = self.row_y(len(self.waves) - 1)
-        return int(last_y + self.track_height + self.axis_gap + 30 + self.bottom_margin)
+        return int(last_y + self.track_height + self.bottom_margin)
 
     def row_y(self, index: int) -> int:
         return self.top_margin + index * (self.track_height + self.track_gap)
@@ -481,9 +518,7 @@ class WaveformCanvas(QWidget):
         return self.row_y(index) - self.y_offset()
 
     def axis_y(self) -> int:
-        if not self.waves:
-            return self.top_margin + self.axis_gap - self.y_offset()
-        return self.row_y(len(self.waves) - 1) + self.track_height + self.axis_gap - self.y_offset()
+        return 8  # fixed: always visible at top regardless of vertical scroll
 
     def next_default_signal_name(self) -> str:
         while True:
@@ -991,6 +1026,18 @@ class WaveformCanvas(QWidget):
             self.vbar.setValue(self.vbar.value() - delta)
 
     def keyPressEvent(self, event):
+        if event.key() == Qt.Key_D and (event.modifiers() & Qt.ControlModifier):
+            self.delete_selected_wave()
+            event.accept()
+            return
+        if event.key() == Qt.Key_Up and (event.modifiers() & Qt.ControlModifier):
+            self.move_selection_up()
+            event.accept()
+            return
+        if event.key() == Qt.Key_Down and (event.modifiers() & Qt.ControlModifier):
+            self.move_selection_down()
+            event.accept()
+            return
         if event.key() == Qt.Key_A and not (event.modifiers() & Qt.ControlModifier):
             self.current_action_key = "a"
             event.accept()
@@ -1015,6 +1062,92 @@ class WaveformCanvas(QWidget):
             event.accept()
             return
         super().keyReleaseEvent(event)
+
+    def _fmt_bus_value(self, val: int, wave: DigitalWaveRow) -> str:
+        fmt = wave.fmt
+        if fmt == "dec":
+            return str(val)
+        if fmt == "sdec":
+            if val >= (1 << (wave.nbits - 1)):
+                val -= (1 << wave.nbits)
+            return str(val)
+        if fmt == "bin":
+            return f"0b{val:0{wave.nbits}b}"
+        return hex(val)
+
+    def _draw_bus_segments(self, painter: QPainter, wave: DigitalWaveRow,
+                           rect: QRectF, y_high: float, y_low: float):
+        SLANT = 5
+        BUS_TEXT_PT = 10
+        font = painter.font()
+        font.setPointSize(BUS_TEXT_PT)
+        painter.setFont(font)
+        fm = painter.fontMetrics()
+
+        for idx, s in enumerate(wave.segments):
+            t1 = max(s.start, self.startTm)
+            t2 = min(s.end, self.finishTm)
+            if t2 <= t1:
+                continue
+            x1 = self.time_to_x(t1)
+            x2 = self.time_to_x(t2)
+            painter.drawLine(QPointF(x1, y_high), QPointF(x2, y_high))
+            painter.drawLine(QPointF(x1, y_low),  QPointF(x2, y_low))
+
+            vis_x1 = max(x1, float(self.waveform_left_x()))
+            vis_x2 = min(x2, float(self.waveform_right_x()))
+            seg_px = vis_x2 - vis_x1
+            text = self._fmt_bus_value(s.value, wave)
+            tw = fm.horizontalAdvance(text)
+            if seg_px >= tw + 6:
+                display = text
+            elif seg_px >= fm.horizontalAdvance("...") + 4:
+                display = "..."
+            elif seg_px >= fm.horizontalAdvance("..") + 4:
+                display = ".."
+            elif seg_px >= fm.horizontalAdvance(".") + 4:
+                display = "."
+            else:
+                display = ""
+
+            if display:
+                tx = (vis_x1 + vis_x2) / 2.0 - fm.horizontalAdvance(display) / 2.0
+                ty = y_low - 3
+                painter.save()
+                painter.setPen(self.text_pen)
+                painter.setFont(font)
+                painter.drawText(QPointF(tx, ty), display)
+                painter.restore()
+
+        for i in range(1, len(wave.segments)):
+            edge_t = wave.segments[i].start
+            if edge_t < self.startTm or edge_t > self.finishTm:
+                continue
+            xv = self.time_to_x(edge_t)
+            painter.drawLine(QPointF(xv - SLANT, y_high), QPointF(xv + SLANT, y_low))
+            painter.drawLine(QPointF(xv - SLANT, y_low),  QPointF(xv + SLANT, y_high))
+
+    def contextMenuEvent(self, event: QContextMenuEvent):
+        pos = event.pos()
+        if pos.x() < self.waveform_left_x():
+            return
+        wave = self.wave_at(pos)
+        if not isinstance(wave, DigitalWaveRow) or wave.nbits <= 1:
+            return
+        menu = QMenu(self)
+        formats = [("Hex",            "hex"),
+                   ("Decimal",        "dec"),
+                   ("Signed Decimal", "sdec"),
+                   ("Binary",         "bin")]
+        for label, fmt in formats:
+            act = menu.addAction(label)
+            act.setCheckable(True)
+            act.setChecked(wave.fmt == fmt)
+            act.setData(fmt)
+        chosen = menu.exec(event.globalPos())
+        if chosen is not None:
+            wave.fmt = chosen.data()
+            self.update()
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -1104,33 +1237,41 @@ class WaveformCanvas(QWidget):
                 painter.drawLine(QPointF(self.time_to_x(prev_t), prev_y), QPointF(x_end, prev_y))
 
             elif isinstance(wave, DigitalWaveRow):
-                for idx, s in enumerate(wave.segments):
-                    t1 = max(s.start, self.startTm)
-                    t2 = min(s.end, self.finishTm)
-                    if t2 <= t1:
-                        continue
+                if wave.nbits > 1:
+                    self._draw_bus_segments(painter, wave, rect, y_high, y_low)
+                else:
+                    for idx, s in enumerate(wave.segments):
+                        t1 = max(s.start, self.startTm)
+                        t2 = min(s.end, self.finishTm)
+                        if t2 <= t1:
+                            continue
 
-                    x1 = self.time_to_x(t1)
-                    x2 = self.time_to_x(t2)
-                    y = y_high if s.value else y_low
-                    painter.drawLine(QPointF(x1, y), QPointF(x2, y))
+                        x1 = self.time_to_x(t1)
+                        x2 = self.time_to_x(t2)
+                        y = y_high if s.value else y_low
+                        painter.drawLine(QPointF(x1, y), QPointF(x2, y))
 
-                    if idx > 0 and self.startTm <= s.start <= self.finishTm:
-                        prev = wave.segments[idx - 1]
-                        py = y_high if prev.value else y_low
-                        xv = self.time_to_x(s.start)
-                        painter.drawLine(QPointF(xv, py), QPointF(xv, y))
+                        if idx > 0 and self.startTm <= s.start <= self.finishTm:
+                            prev = wave.segments[idx - 1]
+                            py = y_high if prev.value else y_low
+                            xv = self.time_to_x(s.start)
+                            painter.drawLine(QPointF(xv, py), QPointF(xv, y))
 
-                    if wave.editable and idx < len(wave.segments) - 1 and self.startTm <= s.end <= self.finishTm:
-                        xv = self.time_to_x(s.end)
-                        painter.save()
-                        painter.setPen(Qt.NoPen)
-                        painter.setBrush(self.handle_overlay_brush)
-                        painter.drawRect(QRectF(xv - 3, rect.top(), 6, self.track_height))
-                        painter.restore()
+                        if wave.editable and idx < len(wave.segments) - 1 and self.startTm <= s.end <= self.finishTm:
+                            xv = self.time_to_x(s.end)
+                            painter.save()
+                            painter.setPen(Qt.NoPen)
+                            painter.setBrush(self.handle_overlay_brush)
+                            painter.drawRect(QRectF(xv - 3, rect.top(), 6, self.track_height))
+                            painter.restore()
 
     def draw_axis(self, painter: QPainter):
         axis_y = self.axis_y()
+        # Fill ruler background to cover grid lines and any waveforms scrolled into the ruler zone
+        painter.fillRect(
+            QRectF(self.waveform_left_x(), 0, self.waveform_width(), self.top_margin),
+            QColor("#11161c"),
+        )
         painter.setPen(self.frame_pen)
         painter.drawLine(
             QPointF(self.waveform_left_x(), axis_y),
@@ -1204,6 +1345,8 @@ class WaveformCanvas(QWidget):
                 continue
             if not wave.segments:
                 continue
+            if wave.nbits > 1:
+                continue  # bus waves preserved from permanent spec via _merge_time_spcs
 
             self.normalize_segments(wave)
 
