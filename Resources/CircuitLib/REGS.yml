@@ -92,6 +92,22 @@ decls:
             value: 31
         -   kind: int
             value: 0
+-   -   kind: Reg
+        name: D
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: bexpr
+                oper: 'BMinus:'
+                args:
+                -   kind: ident
+                    name: nbits
+                -   kind: int
+                    value: 1
+            -   kind: int
+                value: 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -104,22 +120,6 @@ behav_blcks:
         -   kind: ident
             name: QP
     delay: 0
--   kind: Reg
-    name: D
-    signed: 'False'
-    width:
-        kind: width
-        width:
-        -   kind: bexpr
-            oper: 'BMinus:'
-            args:
-            -   kind: ident
-                name: nbits
-            -   kind: int
-                value: 1
-        -   kind: int
-            value: 0
-    length: []
 -   kind: assign
     lvalue:
         kind: ident
@@ -127,20 +127,14 @@ behav_blcks:
     rvalue:
         kind: ident
         name: D
-    delay: 1
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 30.0
-    src_sgnls:
-    - CLK
-    - IN
-    - INIT
-    - SET
-    edge: posedge
-    dst_sgnls:
-    - QP
+    delay:
+        kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 30.0
+        -   kind: float
+            value: 1.0
 -   kind: initial
     stmnts:
     -   kind: blckst

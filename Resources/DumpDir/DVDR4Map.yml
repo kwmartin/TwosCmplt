@@ -1,0 +1,168 @@
+DG_AND2_2X1:
+  instances:
+  - circIndxs: [0, 1]
+    name: AND0
+  - circIndxs: [0, 4]
+    name: AND1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_DR_3X2:
+  instances:
+  - circIndxs: [0, 0, 0]
+    name: DFF_0
+  - circIndxs: [0, 2, 0]
+    name: DFF_0
+  - circIndxs: [0, 3, 0]
+    name: DFF_0
+  - circIndxs: [0, 5, 0]
+    name: DFF_0
+  nodes:
+  - name: D
+    nbits: 1
+  - name: R
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: STATE
+    nbits: 1
+DG_INV1_1X1:
+  instances:
+  - circIndxs: [0, 0, 4]
+    name: INV3
+  - circIndxs: [0, 2, 4]
+    name: INV3
+  - circIndxs: [0, 3, 4]
+    name: INV3
+  - circIndxs: [0, 5, 4]
+    name: INV3
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_NOR1_2X1:
+  instances:
+  - circIndxs: [0, 0, 1]
+    name: X1
+  - circIndxs: [0, 0, 2]
+    name: X3
+  - circIndxs: [0, 0, 3]
+    name: X4
+  - circIndxs: [0, 2, 1]
+    name: X1
+  - circIndxs: [0, 2, 2]
+    name: X3
+  - circIndxs: [0, 2, 3]
+    name: X4
+  - circIndxs: [0, 3, 1]
+    name: X1
+  - circIndxs: [0, 3, 2]
+    name: X3
+  - circIndxs: [0, 3, 3]
+    name: X4
+  - circIndxs: [0, 5, 1]
+    name: X1
+  - circIndxs: [0, 5, 2]
+    name: X3
+  - circIndxs: [0, 5, 3]
+    name: X4
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DVDR4:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: OUT
+    nbits: 4
+  - name: INIT
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: AND_0
+    nbits: 1
+  - name: AND_1
+    nbits: 1
+  - name: Q0N
+    nbits: 1
+  - name: Q1N
+    nbits: 1
+  - name: Q2N
+    nbits: 1
+  - name: Q3N
+    nbits: 1
+  - name: Q0
+    nbits: 1
+  - name: Q1
+    nbits: 1
+  - name: Q2
+    nbits: 1
+  - name: Q3
+    nbits: 1
+TFF:
+  instances:
+  - circIndxs: [0, 0]
+    name: TFF_0
+  - circIndxs: [0, 2]
+    name: TFF_1
+  - circIndxs: [0, 3]
+    name: TFF_2
+  - circIndxs: [0, 5]
+    name: TFF_3
+  nodes:
+  - name: QP
+    nbits: 1
+  - name: T
+    nbits: 1
+  - name: RST
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: NOR_0
+    nbits: 1
+  - name: NOR_1
+    nbits: 1
+  - name: D0
+    nbits: 1
+  - name: TN
+    nbits: 1

@@ -19,3 +19,6 @@ This was also my first project where I heavily used AI, starting with Perplexity
 Again, let me know what you find interesting. Once I get the simulator (and viewer in tools/wave_display.py) working properly, I plan on looking into some ideas on minimizing power by switching to a low supply dynamically for blocks that don't need speed - just some ideas).
 
 As an aside, where I found AI truly excels is in making GUIs. I personally prefer PySide6 as I have previous experience with it, and since it's Python based should be easy to port especially if you use AI to help do the port. The Python uses a uv based Virtual Environment.
+
+#### Updates:
+5/27/2026: Worked on wave_display.py in tools directory. It's getting functional. Updated help for it, added a dropmarker and tracking, and persistent order. Also, many bugs in simulator fixed and just achieved bit level matching of one of my quadrature (i.e. complex) QD_DDFS's so it bit matches my iVerilog simulation of it. Finally, the generalized yaml production for hierarchical blocks based on verilog still needs to refactored in form its directory. To Do.
