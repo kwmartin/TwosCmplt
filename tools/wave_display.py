@@ -373,7 +373,7 @@ class DisplayWindow(QMainWindow):
             btn_row.addWidget(b)
         self._pos_label = QLabel()
         self._pos_label.setFont(QFont("monospace", 9))
-        self._pos_label.setStyleSheet("color: #60a5fa; padding-left: 12px;")
+        self._pos_label.setStyleSheet("color: #ff0000; padding-left: 12px;")
         btn_row.addWidget(self._pos_label)
         btn_row.addStretch()
         root_vbox.addLayout(btn_row)
@@ -425,12 +425,12 @@ class DisplayWindow(QMainWindow):
         if m is not None and c is not None:
             delta = c - m
             self._pos_label.setText(
-                f"Marker: {m:.2f}    Pos: {c:.2f}    Δ: {delta:+.2f} per"
+                f"Marker: {m:.3f}    Pos: {c:.3f}    Δ: {delta:+.3f} per"
             )
         elif m is not None:
-            self._pos_label.setText(f"Marker: {m:.2f}")
+            self._pos_label.setText(f"Marker: {m:.3f}")
         elif c is not None:
-            self._pos_label.setText(f"Pos: {c:.2f}")
+            self._pos_label.setText(f"Pos: {c:.3f}")
         else:
             self._pos_label.setText("")
 

@@ -1040,7 +1040,7 @@ class WaveformCanvas(QWidget):
                 return
             factor = 1.15 if angle > 0 else (1.0 / 1.15)
             old_major = self.major_grid_px
-            proposed_major = max(20.0, min(800.0, old_major * factor))
+            proposed_major = max(20.0, min(1600.0, old_major * factor))
             min_major = self.waveform_width() / max(0.1, (self.finishTm - self.startTm))
             new_major = max(min_major, proposed_major)
             if abs(new_major - old_major) < 0.01:
