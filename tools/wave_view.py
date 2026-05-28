@@ -166,6 +166,7 @@ class WaveformCanvas(QWidget):
     marker_changed = Signal(object)     # emits float (period units) or None
     view_changed = Signal(float, float)   # left_time, major_grid_px
     label_width_changed = Signal(int)     # label_panel_width
+    waves_deleted = Signal(list)          # list of deleted label_text strings
 
     def __init__(self):
         super().__init__()
@@ -189,6 +190,7 @@ class WaveformCanvas(QWidget):
         self.minor_divisions = 4
         self.min_segment_time = 0.1
         self._initial_range_applied = False
+        self._initial_visible_time: float = 10.0
 
         self.base_yaml_path: Path | None = None
         self.save_dir: Path | None = None
@@ -222,6 +224,7 @@ class WaveformCanvas(QWidget):
 
         self.waves: list[WaveRow] = []
         self.selected_waves: set = set()
+        self._anchor_wave: WaveRow | None = None
 
         self.label_widgets: dict[WaveRow, RowLabel] = {}
         self.panning = False
@@ -533,6 +536,8 @@ class WaveformCanvas(QWidget):
         self.finishTm = finish
         self._preserved_nonclock_waves = waves
         self.waves = list(waves)
+        self.selected_waves = set()
+        self._anchor_wave = None
         self._rebuild_label_widgets()
         self.left_time = 0.0
         self.clamp_left_time()
@@ -563,7 +568,8 @@ class WaveformCanvas(QWidget):
         super().showEvent(event)
         if not self._initial_range_applied and self.width() > 50:
             self._update_label_panel_width()
-            self.show_range(0.0, min(10.0, self.finishTm))
+            self._initial_visible_time = min(10.0, self.finishTm)
+            self.show_range(0.0, self._initial_visible_time)
             self._initial_range_applied = True
 
     def waveform_left_x(self) -> int:
@@ -628,7 +634,10 @@ class WaveformCanvas(QWidget):
     # View control
 
     def zoom_full(self):
-        self.show_range(0.0, min(10.0, self.finishTm))
+        visible = self._initial_visible_time
+        center_t = self._cursor_t if self._cursor_t is not None else (self.left_time + self.visible_time_span() / 2)
+        t0 = center_t - visible / 2
+        self.show_range(t0, t0 + visible)
 
     def pan_to_start(self):
         self.left_time = 0.0
@@ -679,9 +688,20 @@ class WaveformCanvas(QWidget):
         self._apply_selection(wave, add=bool(modifiers & Qt.ShiftModifier))
 
     def _apply_selection(self, wave: WaveRow, add: bool):
-        if add:
+        if add and self._anchor_wave is not None and self._anchor_wave in self.waves:
+            # Range select from anchor to clicked wave (inclusive)
+            anchor_idx = self.waves.index(self._anchor_wave)
+            wave_idx = self.waves.index(wave) if wave in self.waves else -1
+            if wave_idx >= 0:
+                lo = min(anchor_idx, wave_idx)
+                hi = max(anchor_idx, wave_idx)
+                self.selected_waves = set(self.waves[lo:hi + 1])
+            else:
+                self.selected_waves.add(wave)
+        elif add:
             self.selected_waves.add(wave)
         else:
+            self._anchor_wave = wave
             self.selected_waves = {wave}
         self._update_label_selection_styles()
         self.update()
@@ -724,6 +744,9 @@ class WaveformCanvas(QWidget):
     def delete_selected_waves(self):
         if not self.selected_waves:
             return
+        deleted_labels = [w.label_text for w in self.selected_waves]
+        if self._anchor_wave in self.selected_waves:
+            self._anchor_wave = None
         for wave in list(self.selected_waves):
             if wave in self.waves:
                 self.waves.remove(wave)
@@ -734,6 +757,7 @@ class WaveformCanvas(QWidget):
         self.update_scrollbars()
         self.refresh_label_layout()
         self.update()
+        self.waves_deleted.emit(deleted_labels)
 
     def _scroll_to_show_index(self, index: int):
         """Scroll vbar so the wave at index is within the visible area."""
@@ -956,6 +980,7 @@ class WaveformCanvas(QWidget):
                     self._apply_selection(self.press_wave, add=shift)
                 elif not shift:
                     self.selected_waves.clear()
+                    self._anchor_wave = None
                     self._update_label_selection_styles()
                     self.update()
 
@@ -994,6 +1019,13 @@ class WaveformCanvas(QWidget):
                 self.move_selection_down()
                 event.accept()
                 return
+        if event.key() == Qt.Key_Escape:
+            self.selected_waves.clear()
+            self._anchor_wave = None
+            self._update_label_selection_styles()
+            self.update()
+            event.accept()
+            return
         super().keyPressEvent(event)
 
     def wheelEvent(self, event: QWheelEvent):

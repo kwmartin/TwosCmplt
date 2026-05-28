@@ -165,6 +165,7 @@ class DisplayWindow(QMainWindow):
         self._current_circuit: Optional[str] = None
         self._cursor_t_pu: Optional[float] = None
         self._marker_t_pu: Optional[float] = None
+        self._main_win = None
         self._build_ui()
         self._build_menu()
 
@@ -174,6 +175,11 @@ class DisplayWindow(QMainWindow):
         save_act.setShortcut(QKeySequence("Ctrl+S"))
         save_act.triggered.connect(self.save_clicked)
         file_menu.addAction(save_act)
+        file_menu.addSeparator()
+        goto_sel_act = QAction("Goto Select", self)
+        goto_sel_act.setShortcut(QKeySequence("Ctrl+H"))
+        goto_sel_act.triggered.connect(self._goto_selector)
+        file_menu.addAction(goto_sel_act)
         file_menu.addSeparator()
         close_act = QAction("Close", self)
         close_act.setShortcut(QKeySequence("Ctrl+W"))
@@ -191,6 +197,11 @@ class DisplayWindow(QMainWindow):
         down_act.setShortcut(QKeySequence("Ctrl+Down"))
         down_act.triggered.connect(self.viewer.move_selection_down)
         wave_menu.addAction(down_act)
+
+        delete_act = QAction("Delete", self)
+        delete_act.setShortcut(QKeySequence("Ctrl+D"))
+        delete_act.triggered.connect(self.viewer.delete_selected_waves)
+        wave_menu.addAction(delete_act)
 
         wave_menu.addSeparator()
 
@@ -251,6 +262,12 @@ class DisplayWindow(QMainWindow):
                 "See Help → Help for full documentation."
             ),
         )
+
+    def _goto_selector(self):
+        if self._main_win is not None:
+            self._main_win.show()
+            self._main_win.raise_()
+            self._main_win.activateWindow()
 
     def _goto(self):
         dlg = _GoToDialog(self)
@@ -979,8 +996,12 @@ class WaveDisplay(QMainWindow):
         return {i for i, cb in enumerate(self._node_cbs) if cb.isChecked()}
 
     def _select_all(self):
-        for cb in self._node_cbs:
-            cb.setChecked(True)
+        if self._current_key is None:
+            return
+        node_names = self._hierarchy[self._current_key]["node_names"]
+        for i, cb in enumerate(self._node_cbs):
+            if not _is_power_rail(node_names[i]):
+                cb.setChecked(True)
 
     def _clear_nodes(self):
         for cb in self._node_cbs:
@@ -1031,6 +1052,52 @@ class WaveDisplay(QMainWindow):
             self._selection.pop(self._current_key, None)
             self._populate_nodes(self._current_key)
         self._display()
+
+    def _on_waves_deleted(self, deleted_labels: list):
+        """Called when viewer waves are deleted; delegates to sync helper."""
+        self._sync_selection_to_viewer()
+
+    def _sync_selection_to_viewer(self):
+        """Remove from _selection/_signal_order any entries whose wave is absent from the viewer.
+
+        Call this whenever the viewer's wave list changes (signals added or removed).
+        """
+        if self._display_win is None:
+            return
+        viewer_labels = {w.label_text for w in self._display_win.viewer.waves}
+
+        # Find _signal_order entries with no matching wave in the viewer
+        to_remove = []
+        for key, idx in list(self._signal_order):
+            node_names = self._hierarchy.get(key, {}).get("node_names", [])
+            if idx < len(node_names):
+                path_str = ".".join(self._path_parts(key))
+                label = path_str + "." + node_names[idx]
+                if label not in viewer_labels:
+                    to_remove.append((key, idx))
+
+        if not to_remove:
+            return
+
+        affected_keys: set = set()
+        for entry in to_remove:
+            key, idx = entry
+            try:
+                self._signal_order.remove(entry)
+            except ValueError:
+                pass
+            if key in self._selection:
+                self._selection[key].discard(idx)
+                if not self._selection[key]:
+                    self._selection.pop(key)
+            affected_keys.add(key)
+
+        if self._current_key in affected_keys:
+            saved = self._selection.get(self._current_key, set())
+            for i, cb in enumerate(self._node_cbs):
+                cb.blockSignals(True)
+                cb.setChecked(i in saved)
+                cb.blockSignals(False)
 
     # ── Display state persistence ─────────────────────────────────────────────
 
@@ -1095,6 +1162,7 @@ class WaveDisplay(QMainWindow):
             self._display_win._main_win = self
             self._display_win.simulate_clicked.connect(self._simulate)
             self._display_win.save_clicked.connect(self._save_spec)
+            self._display_win.viewer.waves_deleted.connect(self._on_waves_deleted)
         self._display_win.show()
         if first_display:
             _center_on_screen(self._display_win)
@@ -1116,6 +1184,7 @@ class WaveDisplay(QMainWindow):
                 saved = self._load_wave_state()
                 if saved:
                     self._display_win.apply_viewer_order(saved)
+            self._sync_selection_to_viewer()
 
         # Persist current viewer order
         self._save_wave_state()
