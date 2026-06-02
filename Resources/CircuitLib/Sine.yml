@@ -3,7 +3,7 @@ module: Sine
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: subcirc
 -   kind: Int
     name: delay
     value: 5
@@ -18,7 +18,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: R1SET
+    name: R1_SET
     direct: 'Input:'
     signed: 'False'
     width:
@@ -27,11 +27,11 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: R2SET
+    name: R2_SET
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: R5SET
+    name: R4_SET
     direct: 'Input:'
     signed: 'False'
     width:
@@ -56,7 +56,7 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: OUT
+    name: O_
     direct: 'Output:'
     signed: 'False'
     width:
@@ -88,14 +88,21 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
-        name: CLKB
+        name: CLK1
         signed: 'False'
         width:
         - 0
         - 0
         length: []
 -   -   kind: Wire
-        name: CLKN
+        name: CLK2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CLK3
         signed: 'False'
         width:
         - 0
@@ -113,7 +120,32 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
+        name: R1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
         name: R2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: R0N_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 15
+        length: []
+-   -   kind: Wire
+        name: R_1
         signed: 'False'
         width:
         - 0
@@ -235,13 +267,16 @@ decls:
                 value: 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: ADDR2
     module: ADDR
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: A
         node:
@@ -312,13 +347,16 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
-    name: R2
+-   kind: sync
+    name: R0
     module: REGS
     params:
     -   kind: int
         value: 1
         name: nbits
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: IN
         node:
@@ -333,7 +371,7 @@ behav_blcks:
     -   port: QP
         node:
             kind: ident
-            name: R_2
+            name: R_1
     -   port: SET
         node:
             kind: ident
@@ -341,11 +379,11 @@ behav_blcks:
     -   port: CLK
         node:
             kind: ident
-            name: CLKB
+            name: CLK2
     -   port: QN
         node:
             kind: ident
-            name: R2N
+            name: R1N
     -   port: VDD
         node:
             kind: ident
@@ -354,14 +392,23 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: async
     name: CMPL0
     module: CMPL
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: async
+        name: circuit
     ports:
+    -   port: INVRT
+        node:
+            kind: bit
+            name: R0_
+            sgmnts:
+            - 14
     -   port: IN
         node:
             kind: slice
@@ -371,12 +418,6 @@ behav_blcks:
                 value: 13
             -   kind: int
                 value: 2
-    -   port: INVRT
-        node:
-            kind: bit
-            name: R0_
-            sgmnts:
-            - 14
     -   port: OUT
         node:
             kind: slice
@@ -394,7 +435,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: async
     name: ROM0
     module: ROM
     params:
@@ -410,6 +451,9 @@ behav_blcks:
     -   kind: str
         value: rom0.mem
         name: datfile
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: ADDR
         node:
@@ -427,7 +471,7 @@ behav_blcks:
     -   port: CLK
         node:
             kind: ident
-            name: CLKB
+            name: CLK3
     -   port: DATA
         node:
             kind: slice
@@ -445,7 +489,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: async
     name: ROM1
     module: ROM
     params:
@@ -461,6 +505,9 @@ behav_blcks:
     -   kind: str
         value: rom1.mem
         name: datfile
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: ADDR
         node:
@@ -487,7 +534,7 @@ behav_blcks:
     -   port: CLK
         node:
             kind: ident
-            name: CLKB
+            name: CLK3
     -   port: DATA
         node:
             kind: slice
@@ -505,75 +552,26 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
-    name: inv1
-    module: DG_INV2
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: CLK
-    -   port: None
-        node:
-            kind: ident
-            name: CLKN
-    -   port: None
-        node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: instance
-    name: inv2
-    module: DG_INV2
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: CLKN
-    -   port: None
-        node:
-            kind: ident
-            name: CLKB
-    -   port: None
-        node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: instance
+-   kind: sync
     name: R5
     module: REGS
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: IN
         node:
-            kind: concat
+            kind: slice
+            name: CMPL1_
             sgmnts:
-            -   kind: ident
-                name: R2N
-            -   kind: slice
-                name: CMPL1_
-                sgmnts:
-                -   kind: int
-                    value: 10
-                -   kind: int
-                    value: 0
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
     -   port: INIT
         node:
             kind: ident
@@ -599,7 +597,7 @@ behav_blcks:
     -   port: CLK
         node:
             kind: ident
-            name: CLKB
+            name: CLK
     -   port: QN
         node:
             kind: slice
@@ -617,14 +615,23 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: async
     name: CMPL1
     module: CMPL
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: async
+        name: circuit
     ports:
+    -   port: INVRT
+        node:
+            kind: bit
+            name: R0_
+            sgmnts:
+            - 15
     -   port: IN
         node:
             kind: slice
@@ -634,10 +641,6 @@ behav_blcks:
                 value: 11
             -   kind: int
                 value: 0
-    -   port: INVRT
-        node:
-            kind: ident
-            name: R_2
     -   port: OUT
         node:
             kind: slice
@@ -655,13 +658,16 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: async
     name: ADDR3
     module: ADDR
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: A
         node:
@@ -677,7 +683,7 @@ behav_blcks:
             kind: concat
             sgmnts:
             -   kind: ident
-                name: VDD
+                name: VSS
             -   kind: ident
                 name: VSS
             -   kind: ident
@@ -702,10 +708,8 @@ behav_blcks:
                 name: VSS
     -   port: CI
         node:
-            kind: bit
-            name: R5N
-            sgmnts:
-            - 11
+            kind: ident
+            name: R_1
     -   port: CO
         node:
             kind: ident
@@ -735,13 +739,16 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: R6
     module: REGS
     params:
     -   kind: int
         value: 12
         name: nbits
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: IN
         node:
@@ -796,7 +803,7 @@ behav_blcks:
     -   port: CLK
         node:
             kind: ident
-            name: CLKB
+            name: CLK
     -   port: QN
         node:
             kind: slice
@@ -807,6 +814,149 @@ behav_blcks:
             -   kind: int
                 value: 0
     -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: b1
+    module: DG_BUF2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CLK
+    -   port: OUT
+        node:
+            kind: ident
+            name: CLK1
+    -   port: VCC
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: b3
+    module: DG_BUF2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CLK2
+    -   port: OUT
+        node:
+            kind: ident
+            name: CLK3
+    -   port: VCC
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: b2
+    module: DG_BUF2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CLK1
+    -   port: OUT
+        node:
+            kind: ident
+            name: CLK2
+    -   port: VCC
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: R1
+    module: REGS
+    params:
+    -   kind: int
+        value: 1
+        name: nbits
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: R_1
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: ident
+            name: R_2
+    -   port: SET
+        node:
+            kind: ident
+            name: R2SET
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK1
+    -   port: QN
+        node:
+            kind: ident
+            name: R2N
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: inv1
+    module: INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: bit
+            name: R0_
+            sgmnts:
+            - 15
+    -   port: OUT
+        node:
+            kind: bit
+            name: R0N_
+            sgmnts:
+            - 15
+    -   port: VCC
         node:
             kind: ident
             name: VDD

@@ -3,7 +3,7 @@ module: Qd_DDFS
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: subcirc
 -   kind: Int
     name: delay
     value: 5
@@ -134,7 +134,7 @@ behav_blcks:
     module: Qd_Accum
     params:
     -   kind: str
-        value: sync
+        value: subcirc
         name: circuit
     ports:
     -   port: FRQ
@@ -198,12 +198,12 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
--   kind: subcirc
+-   kind: subcircq
     name: SINE1
     module: Sine
     params:
     -   kind: str
-        value: sync
+        value: subcircq
         name: circuit
     ports:
     -   port: R0_
@@ -267,7 +267,7 @@ behav_blcks:
     module: Sine
     params:
     -   kind: str
-        value: sync
+        value: subcirc
         name: circuit
     ports:
     -   port: R0_

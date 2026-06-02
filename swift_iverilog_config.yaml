@@ -1,0 +1,34 @@
+project:
+  name: TwosCmplt
+  buildDir: .build
+  docsDir: docs
+
+paths:
+  project: /home/Dropbox/programming/Swift/TwosCmplt/
+  sources: Sources
+  scripts: Scripts
+
+directories:
+  dumpDir: /home/Dropbox/programming/Swift/TwosCmplt/Resources/DumpDir/
+  vcdDir: /home/Dropbox/programming/Swift/TwosCmplt/Resources/VCDFiles/
+  modDir: /home/Dropbox/programming/Swift/TwosCmplt/Resources/ModFiles/
+  circLib: /home/Dropbox/programming/Swift/TwosCmplt/Resources/CircuitLib/
+  specsLib: /home/Dropbox/programming/Swift/TwosCmplt/Resources/IVerilogSpcs/
+
+
+fileNames:
+  nodeChngs: nodeChngs.json
+  python: /home/Dropbox/programming/Python/lib/venv/bin/python3
+  vcdScript: /home/Dropbox/programming/Swift/TwosCmplt/tools/write_vcd.py
+  generateSpcs: /home/martin/.xschem/verilogParse/wave_edit.py
+  displayProgram: /home/Dropbox/programming/Swift/TwosCmplt/tools/wave_view.py
+  displayTable: waveData
+  simRunner: /home/martin/.xschem/verilogParse/iverilog_runner.sh
+
+technology:
+  inv4delay: 6
+  cap2ps: 0.6
+
+buildNew: false
+
+period: 1000

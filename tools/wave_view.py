@@ -480,9 +480,10 @@ class WaveformCanvas(QWidget):
             self._load_sim_entries(entries)
 
     def load_signals(self, signals: dict) -> None:
-        """Load from {name: {nbits, changes}} dict; times are already in period units."""
+        """Load from {name: {nbits, changes[, format]}} dict; times are already in period units."""
         entries = [
-            {"signal": name, "nbits": data.get("nbits", 1), "changes": data.get("changes", [])}
+            {"signal": name, "nbits": data.get("nbits", 1),
+             "changes": data.get("changes", []), "format": data.get("format", "hex")}
             for name, data in signals.items()
         ]
         self._load_sim_entries(entries)
@@ -521,7 +522,9 @@ class WaveformCanvas(QWidget):
             for i, (t, v) in enumerate(tvs):
                 end = tvs[i + 1][0] if i + 1 < len(tvs) else max_tm
                 segments.append(Segment(t, end, v))
-            waves.append(DigitalWaveRow(sig_name, segments, nbits=nbits))
+            row = DigitalWaveRow(sig_name, segments, nbits=nbits)
+            row.fmt = entry.get("format", "hex")
+            waves.append(row)
 
         if not waves:
             return

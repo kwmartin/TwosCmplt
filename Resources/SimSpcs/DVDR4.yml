@@ -1,7 +1,6 @@
 Constants:
-  -   - PER
-      - 1000
-FinishTime: 32*PER
+    PER: 1000
+FinishTime: 64*PER
 Inputs:
     CLK: 1
     INIT: 1
@@ -9,19 +8,17 @@ Inputs:
     VSS: 1
 Clock:
   - clkNm: CLK
-    initVal: 0
     per: PER
-    delay: 0
 TimeSpcs:
   - tm: 0
     vls:
-      -   - INIT
-          - 1
-      -   - VDD
-          - 1
-      -   - VSS
-          - 0
-  - tm: 0.3*PER
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+  - tm: PER
     vls:
-      -   - INIT
-          - 0
+      - [INIT, 0]
+SaveNds:
+  - name: OUT
+    format: h

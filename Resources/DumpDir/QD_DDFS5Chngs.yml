@@ -5,16 +5,16 @@
   nbits: 1
   capac: 2
 - circIndxs: [0]
-  nodeIndx: 0
-  value: 1073741824
-  updTm: 0
-  nbits: 34
-  capac: 2
-- circIndxs: [0]
   nodeIndx: 1
   value: 1
   updTm: 0
   nbits: 1
+  capac: 2
+- circIndxs: [0]
+  nodeIndx: 0
+  value: 1073741824
+  updTm: 0
+  nbits: 34
   capac: 2
 - circIndxs: [0, 0]
   nodeIndx: 0
@@ -4247,21 +4247,9 @@
   nbits: 16
   capac: 2
 - circIndxs: [0]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
-- circIndxs: [0]
   nodeIndx: 2
   value: 1
   updTm: 500
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 0]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
   nbits: 1
   capac: 2
 - circIndxs: [0, 0]
@@ -4294,12 +4282,6 @@
   updTm: 500
   nbits: 1
   capac: 2
-- circIndxs: [0, 0, 3]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 0, 4]
   nodeIndx: 0
   value: 0
@@ -4324,18 +4306,6 @@
   updTm: 500
   nbits: 1
   capac: 2
-- circIndxs: [0, 0, 1]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 1]
-  nodeIndx: 2
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 1]
   nodeIndx: 3
   value: 1
@@ -4364,18 +4334,6 @@
   nodeIndx: 0
   value: 1
   updTm: 500
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 1, 7]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 1, 3]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
   nbits: 1
   capac: 2
 - circIndxs: [0, 1, 3]
@@ -4408,22 +4366,10 @@
   updTm: 519
   nbits: 1
   capac: 2
-- circIndxs: [0, 1, 11]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 1, 1]
   nodeIndx: 0
   value: 1
   updTm: 538
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 1, 1]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
   nbits: 1
   capac: 2
 - circIndxs: [0, 1, 9]
@@ -4450,28 +4396,10 @@
   updTm: 538
   nbits: 1
   capac: 2
-- circIndxs: [0, 1, 14]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 1, 4]
   nodeIndx: 0
   value: 1
   updTm: 500
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 1, 4]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 2]
-  nodeIndx: 2
-  value: 0
-  updTm: 200
   nbits: 1
   capac: 2
 - circIndxs: [0, 2]
@@ -4504,18 +4432,6 @@
   updTm: 500
   nbits: 1
   capac: 2
-- circIndxs: [0, 2, 7]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 2, 3]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 2, 3]
   nodeIndx: 2
   value: 1
@@ -4546,22 +4462,10 @@
   updTm: 519
   nbits: 1
   capac: 2
-- circIndxs: [0, 2, 11]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 2, 1]
   nodeIndx: 0
   value: 1
   updTm: 538
-  nbits: 1
-  capac: 2
-- circIndxs: [0, 2, 1]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
   nbits: 1
   capac: 2
 - circIndxs: [0, 2, 9]
@@ -4588,26 +4492,26 @@
   updTm: 538
   nbits: 1
   capac: 2
-- circIndxs: [0, 2, 14]
-  nodeIndx: 1
-  value: 0
-  updTm: 200
-  nbits: 1
-  capac: 2
 - circIndxs: [0, 2, 4]
   nodeIndx: 0
   value: 1
   updTm: 500
   nbits: 1
   capac: 2
-- circIndxs: [0, 2, 4]
+- circIndxs: [0]
   nodeIndx: 1
   value: 0
-  updTm: 200
+  updTm: 1000
   nbits: 1
   capac: 2
 - circIndxs: [0]
   nodeIndx: 2
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 0]
+  nodeIndx: 1
   value: 0
   updTm: 1000
   nbits: 1
@@ -4642,6 +4546,12 @@
   updTm: 1000
   nbits: 1
   capac: 2
+- circIndxs: [0, 0, 3]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
 - circIndxs: [0, 0, 4]
   nodeIndx: 0
   value: 1
@@ -4662,6 +4572,12 @@
   capac: 2
 - circIndxs: [0, 0, 1]
   nodeIndx: 0
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 0, 1]
+  nodeIndx: 1
   value: 0
   updTm: 1000
   nbits: 1
@@ -4685,6 +4601,12 @@
   nbits: 18
   capac: 2
 - circIndxs: [0, 1]
+  nodeIndx: 2
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 1]
   nodeIndx: 3
   value: 0
   updTm: 1000
@@ -4710,6 +4632,18 @@
   capac: 2
 - circIndxs: [0, 1, 7]
   nodeIndx: 0
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 1, 7]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 1, 3]
+  nodeIndx: 1
   value: 0
   updTm: 1000
   nbits: 1
@@ -4744,10 +4678,22 @@
   updTm: 1019
   nbits: 1
   capac: 2
+- circIndxs: [0, 1, 11]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
 - circIndxs: [0, 1, 1]
   nodeIndx: 0
   value: 0
   updTm: 1038
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 1, 1]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
   nbits: 1
   capac: 2
 - circIndxs: [0, 1, 9]
@@ -4774,8 +4720,26 @@
   updTm: 1038
   nbits: 1
   capac: 2
+- circIndxs: [0, 1, 14]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
 - circIndxs: [0, 1, 4]
   nodeIndx: 0
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 1, 4]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2]
+  nodeIndx: 2
   value: 0
   updTm: 1000
   nbits: 1
@@ -4806,6 +4770,18 @@
   capac: 2
 - circIndxs: [0, 2, 7]
   nodeIndx: 0
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2, 7]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2, 3]
+  nodeIndx: 1
   value: 0
   updTm: 1000
   nbits: 1
@@ -4852,6 +4828,12 @@
   updTm: 1019
   nbits: 1
   capac: 2
+- circIndxs: [0, 2, 11]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
 - circIndxs: [0, 2, 0]
   nodeIndx: 6
   value: 32759
@@ -4895,6 +4877,12 @@
   nbits: 1
   capac: 2
 - circIndxs: [0, 2, 1]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2, 1]
   nodeIndx: 8
   value: 1
   updTm: 1000
@@ -4934,6 +4922,12 @@
   nodeIndx: 0
   value: 0
   updTm: 1038
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2, 14]
+  nodeIndx: 1
+  value: 0
+  updTm: 1000
   nbits: 1
   capac: 2
 - circIndxs: [0, 2, 14]
@@ -4980,6 +4974,12 @@
   capac: 2
 - circIndxs: [0, 2, 4]
   nodeIndx: 0
+  value: 0
+  updTm: 1000
+  nbits: 1
+  capac: 2
+- circIndxs: [0, 2, 4]
+  nodeIndx: 1
   value: 0
   updTm: 1000
   nbits: 1

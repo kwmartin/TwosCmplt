@@ -1275,13 +1275,22 @@ class WaveDisplay(QMainWindow):
 
         ordered: List[str] = []
         name_to_ck: Dict[str, Tuple[CircKey, int]] = {}
-        seen: Set[str] = set()
+        name_to_fmt: Dict[str, str] = {}
+        seen_names: Set[str] = set()
+        seen_ck: Set[Tuple[CircKey, int]] = set()   # dedup by node, not just display name
 
-        def _add(display_name: str, key: CircKey, idx: int):
-            if display_name not in seen and not _is_power_rail(display_name):
+        # SaveNds format codes → wave_view fmt strings
+        _fmt_map = {"h": "hex", "d": "dec", "s": "sdec", "b": "bin", "u": "dec"}
+
+        def _add(display_name: str, key: CircKey, idx: int, fmt: str = "hex"):
+            ck = (key, idx)
+            if display_name not in seen_names and ck not in seen_ck \
+                    and not _is_power_rail(display_name):
                 ordered.append(display_name)
-                name_to_ck[display_name] = (key, idx)
-                seen.add(display_name)
+                name_to_ck[display_name] = ck
+                name_to_fmt[display_name] = fmt
+                seen_names.add(display_name)
+                seen_ck.add(ck)
 
         # 1. Clock signals
         clk_names: Set[str] = set()
@@ -1317,16 +1326,19 @@ class WaveDisplay(QMainWindow):
                     if r:
                         _add(root_name + "." + nm, r[0], r[1])
 
-        # 3. SaveNds signals
+        # 3. SaveNds signals — use format from spec; dedup by (key, idx) so a bare
+        #    name like "SINE" and a path-prefixed prior selection "Top.SINE" don't
+        #    both appear for the same underlying node.
         for nd in spec.get("SaveNds", []):
             full_name = nd.get("name", "") if isinstance(nd, dict) else str(nd)
+            fmt_code  = nd.get("format", "h") if isinstance(nd, dict) else "h"
             if not full_name:
                 continue
             r = _path(full_name)
             if r:
-                _add(full_name, r[0], r[1])
+                _add(full_name, r[0], r[1], fmt=_fmt_map.get(fmt_code, "hex"))
 
-        # 4. Checkbox-selected signals in click order
+        # 4. Checkbox-selected signals in click order — skip nodes already added above.
         for key, idx in self._signal_order:
             node_names = self._hierarchy.get(key, {}).get("node_names", [])
             path_str   = ".".join(self._path_parts(key))
@@ -1340,12 +1352,13 @@ class WaveDisplay(QMainWindow):
         for name in ordered:
             key, idx = name_to_ck[name]
             ck = (key, idx)
+            fmt = name_to_fmt.get(name, "hex")
             if ck in chngs_index:
-                signals[name] = chngs_index[ck]
+                signals[name] = dict(chngs_index[ck], format=fmt)
             else:
                 node_nbits = self._hierarchy.get(key, {}).get("node_nbits", [])
                 nbits = node_nbits[idx] if idx < len(node_nbits) else 1
-                signals[name] = {"nbits": nbits, "changes": [[0, 0]]}
+                signals[name] = {"nbits": nbits, "changes": [[0, 0]], "format": fmt}
 
         return signals
 
