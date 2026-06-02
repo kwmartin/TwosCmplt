@@ -1,6 +1,9 @@
 kind: verilog
 module: DVDR4
 params:
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

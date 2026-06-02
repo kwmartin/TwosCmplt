@@ -515,8 +515,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                 initializeCmpCnts(circ)
             }
 
-            let id = ObjectIdentifier(circ)
-            // print("Circ ID: \(id)")
+            // print("Circ ID: \(ObjectIdentifier(circ))")
 
             circ.index = index + circuit.cCircs.count
             circ.indexs = getIndxs(circ)
@@ -575,8 +574,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                 initializeCmpCnts(circ)
             }
 
-            let id = ObjectIdentifier(circ)
-            // print("Circ ID: \(id)")
+            // print("Circ ID: \(ObjectIdentifier(circ))")
 
             // Fill in the hierarchy
             for i in circ.aCircs.indices {

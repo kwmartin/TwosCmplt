@@ -596,7 +596,7 @@ public func initializeCmpCnts(_ circ: Circuit) {
         let evalDupStr = Dictionary(circ.evalOrder.map { ($0, 1) }, uniquingKeysWith: +).filter { $0.value > 1 }.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
         let cmpDupStr = cmpRefDups.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
         let sortDupStr = sortArryDups.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
-        let msg = "Evaluation order not determined for '\(circ.module)' evalOrder=\(circ.evalOrder.count) cmpRefs=\(circ.cmpRefs.count)\n  cCircs: [\(cCircInfo)]\n  extra in evalOrder: [\(extraRefs)]\n  missing from evalOrder: [\(missingRefs)]\n  evalOrder dups: [\(evalDupStr)]\n  cmpRefs dups: [\(cmpDupStr)]\n  sortArry dups: [\(sortDupStr)]\nmaybe a verilog parameter circuit=sync needs to be added"
+        let msg = "Evaluation order not determined for '\(circ.module)' evalOrder=\(circ.evalOrder.count) cmpRefs=\(circ.cmpRefs.count)\n  cCircs: [\(cCircInfo)]\n  aCircs: [\(aCircInfo)]\n  sCircs: [\(sCircInfo)]\n  extra in evalOrder: [\(extraRefs)]\n  missing from evalOrder: [\(missingRefs)]\n  evalOrder dups: [\(evalDupStr)]\n  cmpRefs dups: [\(cmpDupStr)]\n  sortArry dups: [\(sortDupStr)]\nmaybe a verilog parameter circuit=sync needs to be added"
         preconditionFailure(msg)
     }
     precondition(circ.evalOrder.count == circ.cmpRefs.count,
