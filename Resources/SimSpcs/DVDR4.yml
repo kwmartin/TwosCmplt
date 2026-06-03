@@ -16,9 +16,10 @@ TimeSpcs:
       - [VDD, 1]
       - [VSS, 0]
       - [INIT, 1]
-  - tm: PER
+  - tm: 0.4*PER
     vls:
-      - [INIT, 0]
+      -   - INIT
+          - 0
 SaveNds:
   - name: OUT
     format: h

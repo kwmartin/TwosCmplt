@@ -10,6 +10,10 @@ TB_DVDR4:
       - CLK
       - VDD
       - VSS
+      - name: dsplyFile
+        nbits: 32
+      - name: n
+        nbits: 32
 DVDR4:
     instances:
       - circIndxs:
@@ -23,6 +27,16 @@ DVDR4:
       - CLK
       - VDD
       - VSS
+      - Q3N
+      - Q3
+      - Q2N
+      - Q2
+      - Q1N
+      - Q1
+      - Q0N
+      - Q0
+      - AND_1
+      - AND_0
 TFF:
     instances:
       - circIndxs:
@@ -53,6 +67,10 @@ TFF:
       - CLK
       - VDD
       - VSS
+      - TN
+      - NOR_1
+      - NOR_0
+      - D0
 DG_DR_3X2:
     instances:
       - circIndxs:
@@ -87,6 +105,7 @@ DG_DR_3X2:
       - QN
       - VDD
       - VSS
+      - STATE
 DG_NOR1_2X1:
     instances:
       - circIndxs:

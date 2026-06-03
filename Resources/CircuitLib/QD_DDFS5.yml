@@ -97,7 +97,7 @@ decls:
                 value: 0
         length: []
 behav_blcks:
--   kind: sync
+-   kind: subcirc
     name: ACCUM
     module: QD_ACCUM5
     params:
@@ -148,7 +148,7 @@ behav_blcks:
                 value: 17
             -   kind: int
                 value: 0
--   kind: sync
+-   kind: subcirc
     name: COS_LU5
     module: Sine5
     params:
@@ -208,7 +208,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: sync
+-   kind: subcirc
     name: SIN_LU5
     module: Sine5
     params:

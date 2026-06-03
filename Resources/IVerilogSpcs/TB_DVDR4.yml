@@ -1,26 +1,28 @@
-module: DVDR4
+Name: Top
 Constants:
-    PER: 1
+  -   - PER
+      - 1
+FinishTime: 64*PER
+Inputs:
+    CLK: 1
+    INIT: 1
+SaveNds:
+  - name: OUT
+    format: h
 Clock:
   - clkNm: CLK
     per: PER
-FinishTime: 64*PER
+    initVal: 0
 TimeSpcs:
-  - tm: 0.0
+  - tm: 0
     vls:
+      -   - VSS
+          - 0
+      -   - VDD
+          - 1
       -   - INIT
           - 1
   - tm: 0.4*PER
     vls:
       -   - INIT
           - 0
-Signals:
-    CLK: 1
-    INIT: 1
-SaveNds:
-  - name: TB_DVDR4.OUT
-    format: u
-  - name: TB_DVDR4.INIT
-    format: u
-  - name: TB_DVDR4.CLK
-    format: u
