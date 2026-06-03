@@ -1,0 +1,31 @@
+directories:
+    stage_1_verilog_sources:
+      - /home/martin/.xschem/dig_lib/
+      - /home/martin/.xschem/proj_lib/
+      - /home/martin/.xschem/ver_lib/
+      - /home/martin/.xschem/simulations/
+    stage_2_ast_modules: /home/martin/.xschem/ast_modules/
+    stage_3_mod_modules: /home/martin/.xschem/mod_modules/
+    stage_4_circuit_lib: /home/Dropbox/programming/Swift/TwosCmplt/Resources/CircuitLib/
+    stage_5_unl_modules: /home/martin/.xschem/unl_modules/
+modules:
+    DVDR4:
+        verilog: /home/martin/.xschem/ver_lib/DVDR4.v
+        timestamps:
+            verilog: 1780494952.5158703
+            ast: 1780498873.0488985
+            mod: 1780498874.3609095
+            circuit_lib: 1780498875.7259207
+            unl: 1780498875.7349207
+        hashes:
+            verilog: 3e53555ad626987c722ad001723578a1ae44f3259c33814d8f466f8e71e3b923
+    DG_NAND2_4X1:
+        verilog: /home/martin/.xschem/ver_lib/DG_NAND2_4X1.v
+        timestamps:
+            verilog: 1779997934.7569036
+            ast: 1780506018.0732262
+            mod: 1780506019.3532372
+            circuit_lib: 1780506020.599248
+            unl: 1780506020.602248
+        hashes:
+            verilog: 791112e7bfd6b60187f9eae44ed48a2fa5e6e39c50201a9726eda04230462281
