@@ -342,7 +342,7 @@ class DisplayWindow(QMainWindow):
         bv = QVBoxLayout(bot)
         bv.setContentsMargins(0, 0, 0, 0)
         bv.setSpacing(2)
-        bot_lbl = QLabel("Output Waveforms")
+        bot_lbl = QLabel("Waveforms")
         bot_lbl.setFont(QFont("monospace", 9))
         bv.addWidget(bot_lbl)
         self.viewer = ViewCanvas()
@@ -401,6 +401,17 @@ class DisplayWindow(QMainWindow):
         """Replace output waveforms, preserving any user-defined display order."""
         saved_order = [w.label_text for w in self.viewer.waves]
         self.viewer.load_signals(signals)
+        # Extend viewer time range to match the spec's FinishTime so the display
+        # doesn't clip at the last simulation event when the circuit goes quiet.
+        editor_finish = getattr(self.editor, 'finishTm', 0.0)
+        if editor_finish > self.viewer.finishTm:
+            self.viewer.finishTm = editor_finish
+            for w in self.viewer.waves:
+                if w.segments:
+                    w.segments[-1].end = editor_finish
+            self.viewer.clamp_left_time()
+            self.viewer.update_scrollbars()
+            self.viewer.update()
         if saved_order:
             by_label = {w.label_text: w for w in self.viewer.waves}
             reordered = [by_label.pop(lbl) for lbl in saved_order if lbl in by_label]
