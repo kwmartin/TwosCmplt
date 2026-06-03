@@ -181,6 +181,16 @@ class DisplayWindow(QMainWindow):
         goto_sel_act.triggered.connect(self._goto_selector)
         file_menu.addAction(goto_sel_act)
         file_menu.addSeparator()
+        print_menu = file_menu.addMenu("Print")
+        print_pdf_act = QAction("Print to PDF…\tCtrl+P", self)
+        print_pdf_act.triggered.connect(self.print_to_pdf)
+        print_menu.addAction(print_pdf_act)
+        QShortcut(QKeySequence("Ctrl+P"), self).activated.connect(self.print_to_pdf)
+        print_act = QAction("Print…", self)
+        print_act.triggered.connect(self.print_waveform)
+        print_menu.addAction(print_act)
+
+        file_menu.addSeparator()
         close_act = QAction("Close", self)
         close_act.setShortcut(QKeySequence("Ctrl+W"))
         close_act.triggered.connect(self.close)
@@ -262,6 +272,65 @@ class DisplayWindow(QMainWindow):
                 "See Help → Help for full documentation."
             ),
         )
+
+    def print_to_pdf(self):
+        from PySide6.QtGui import QPdfWriter, QPageLayout, QPageSize, QPainter, QPixmap
+        from PySide6.QtCore import QMarginsF
+        path, _ = QFileDialog.getSaveFileName(
+            self, "Save as PDF",
+            str(Path.home() / f"{self._current_circuit or 'waveform'}.pdf"),
+            "PDF Files (*.pdf)",
+        )
+        if not path:
+            return
+        if not path.lower().endswith('.pdf'):
+            path += '.pdf'
+        editor_pix = self.editor._make_print_pixmap()
+        viewer_pix = self.viewer._make_print_pixmap()
+        w = max(editor_pix.width(), viewer_pix.width())
+        combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
+        combined.fill(Qt.white)
+        p = QPainter(combined)
+        p.drawPixmap(0, 0, editor_pix)
+        p.drawPixmap(0, editor_pix.height(), viewer_pix)
+        p.end()
+        writer = QPdfWriter(path)
+        layout = QPageLayout(
+            QPageSize(QPageSize.PageSizeId.Letter),
+            QPageLayout.Orientation.Landscape,
+            QMarginsF(10, 10, 10, 10),
+            QPageLayout.Unit.Millimeter,
+        )
+        writer.setPageLayout(layout)
+        writer.setResolution(150)
+        p = QPainter(writer)
+        pr = p.viewport()
+        scaled = combined.scaled(int(pr.width() * 0.9), int(pr.height() * 0.9), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        p.drawPixmap((pr.width() - scaled.width()) // 2, (pr.height() - scaled.height()) // 2, scaled)
+        p.end()
+        self.statusBar().showMessage(f"Saved PDF {path}", 5000)
+
+    def print_waveform(self):
+        from PySide6.QtPrintSupport import QPrinter, QPrintDialog
+        from PySide6.QtGui import QPageLayout, QPainter, QPixmap
+        editor_pix = self.editor._make_print_pixmap()
+        viewer_pix = self.viewer._make_print_pixmap()
+        w = max(editor_pix.width(), viewer_pix.width())
+        combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
+        combined.fill(Qt.white)
+        p = QPainter(combined)
+        p.drawPixmap(0, 0, editor_pix)
+        p.drawPixmap(0, editor_pix.height(), viewer_pix)
+        p.end()
+        printer = QPrinter(QPrinter.PrinterMode.HighResolution)
+        printer.setPageOrientation(QPageLayout.Orientation.Landscape)
+        if QPrintDialog(printer, self).exec() != QDialog.Accepted:
+            return
+        p = QPainter(printer)
+        pr = p.viewport()
+        scaled = combined.scaled(int(pr.width() * 0.9), int(pr.height() * 0.9), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        p.drawPixmap((pr.width() - scaled.width()) // 2, (pr.height() - scaled.height()) // 2, scaled)
+        p.end()
 
     def _goto_selector(self):
         if self._main_win is not None:

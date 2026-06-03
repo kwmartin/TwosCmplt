@@ -1112,7 +1112,8 @@ class WaveformCanvas(QWidget):
             rect = self.wave_rect(i)
 
             if wave in self.selected_waves:
-                painter.fillRect(rect, QColor("#1e3a5f"))
+                bg = QColor("#dbeafe") if getattr(self, '_print_mode', False) else QColor("#1e3a5f")
+                painter.fillRect(rect, bg)
 
             y_high = rect.top() + self.track_height * 0.25
             y_low  = rect.top() + self.track_height * 0.75
@@ -1287,9 +1288,10 @@ class WaveformCanvas(QWidget):
     def draw_axis(self, painter: QPainter):
         axis_y = self.axis_y()
         # Fill ruler background to cover grid lines and any waveforms scrolled into the ruler zone
+        ruler_bg = Qt.white if getattr(self, '_print_mode', False) else QColor("#11161c")
         painter.fillRect(
             QRectF(self.waveform_left_x(), 0, self.waveform_width(), self.top_margin),
-            QColor("#11161c"),
+            ruler_bg,
         )
         painter.setPen(self.frame_pen)
         painter.drawLine(
@@ -1340,6 +1342,54 @@ class WaveformCanvas(QWidget):
         painter.setPen(self.marker_pen)
         painter.drawLine(QPointF(x, y_top), QPointF(x, y_bottom))
         painter.restore()
+
+    def _make_print_pixmap(self):
+        from PySide6.QtGui import QPixmap as _QPixmap
+        orig = {k: getattr(self, k) for k in (
+            'wave_pen', 'frame_pen',
+            'major_grid_pen', 'minor_grid_pen',
+            'text_pen', 'tick_pen', 'axis_text_pen',
+            'zero_line_pen', 'one_line_pen',
+        )}
+        self.wave_pen           = QPen(QColor("#000080"), 2.0)
+        self.frame_pen          = QPen(QColor("#1e4d7a"), 1.0)
+        self.major_grid_pen     = QPen(QColor("#94a3b8"), 1)
+        self.minor_grid_pen     = QPen(QColor("#cbd5e1"), 1)
+        self.text_pen           = QPen(QColor("#1e293b"))
+        self.tick_pen           = QPen(QColor("#1e293b"), 1)
+        self.axis_text_pen      = QPen(QColor("#0f172a"))
+        self.zero_line_pen      = QPen(QColor("#64748b"), 1.0)
+        self.one_line_pen       = QPen(QColor("#0f766e"), 1.0)
+        self._print_mode = True
+        try:
+            pix = _QPixmap(self.size())
+            pix.fill(Qt.white)
+            p = QPainter(pix)
+            p.setRenderHint(QPainter.RenderHint.Antialiasing)
+            self.draw_grid(p)
+            self.draw_waves(p)
+            self.draw_axis(p)
+            # Draw signal labels (overlay QLabel widgets, not painted by canvas)
+            font = p.font()
+            font.setPointSize(11)
+            p.setFont(font)
+            p.setPen(self.text_pen)
+            for i, wave in enumerate(self.waves):
+                vy = self.viewport_row_y(i)
+                label_rect = QRectF(4, vy, self.label_panel_width - 8, self.track_height)
+                p.drawText(label_rect, Qt.AlignLeft | Qt.AlignVCenter, wave.label_text)
+            # Divider between label panel and waveform area
+            p.setPen(self.frame_pen)
+            p.drawLine(
+                QPointF(self.waveform_left_x(), 0),
+                QPointF(self.waveform_left_x(), self.height() - self.hbar.height()),
+            )
+            p.end()
+        finally:
+            for k, v in orig.items():
+                setattr(self, k, v)
+            self._print_mode = False
+        return pix
 
 
 # ---------------------------------------------------------------------------
