@@ -1,0 +1,52 @@
+DG_DLUX_7X2:
+  instances:
+  - circIndxs: [0, 0]
+    name: DLUX
+  nodes:
+  - name: U
+    nbits: 1
+  - name: L
+    nbits: 1
+  - name: LI
+    nbits: 1
+  - name: D
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: D0
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+TST_DLUX_7X2:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: U
+    nbits: 1
+  - name: L
+    nbits: 1
+  - name: LI
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: Q0
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1

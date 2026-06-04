@@ -1,0 +1,56 @@
+TB_TST_DLUX_7X2:
+    instances:
+      - circIndxs:
+          - 0
+        name: TB_TST_DLUX_7X2
+    nodes:
+      - U
+      - L
+      - LI
+      - INIT
+      - Q0
+      - CLK
+      - QP
+      - QN
+      - VDD
+      - VSS
+      - name: dsplyFile
+        nbits: 32
+      - name: n
+        nbits: 32
+TST_DLUX_7X2:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+        name: TST_DLUX_7X2
+    nodes:
+      - U
+      - L
+      - LI
+      - INIT
+      - Q0
+      - CLK
+      - QP
+      - QN
+      - VDD
+      - VSS
+DG_DLUX_7X2:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+          - 0
+        name: DLUX
+    nodes:
+      - U
+      - L
+      - LI
+      - D
+      - INIT
+      - D0
+      - CLK
+      - QP
+      - QN
+      - VDD
+      - VSS

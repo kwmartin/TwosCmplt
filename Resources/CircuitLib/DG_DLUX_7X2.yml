@@ -151,6 +151,8 @@ behav_blcks:
         node: CLK
     -   edge: posedge
         node: INIT
+    -   edge: all
+        node: D0
     stmnts:
     -   kind: ifst
         cmpr_expr:
@@ -210,10 +212,12 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - U
+                    -   kind: ident
+                        name: U
                     -   kind: cndexpr
                         args:
-                        - L
+                        -   kind: ident
+                            name: L
                         -   kind: ident
                             name: LI
                         -   kind: ident
@@ -227,10 +231,12 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - U
+                    -   kind: ident
+                        name: U
                     -   kind: cndexpr
                         args:
-                        - L
+                        -   kind: ident
+                            name: L
                         -   kind: uexpr
                             oper: 'Unot:'
                             args:

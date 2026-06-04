@@ -179,8 +179,8 @@ class WaveformCanvas(QWidget):
         self.right_margin = 20
         self.top_margin = 30
         self.bottom_margin = 8
-        self.track_height = 38
-        self.track_gap = 3
+        self.track_height = 27
+        self.track_gap = 4
         self.axis_gap = 20
 
         self.startTm = 0.0
@@ -216,6 +216,7 @@ class WaveformCanvas(QWidget):
         self.axis_text_pen = QPen(QColor("#d7e3f4"))
         self.zero_line_pen = QPen(QColor("#888888"), 1.0)
         self.one_line_pen  = QPen(QColor("#007777"), 1.0)
+        self.row_sep_pen   = QPen(QColor("#4a7090"), 1)
         self.cursor_pen = QPen(QColor("#ffd166"), 1, Qt.DashLine)
         self.marker_pen = QPen(QColor("#ef4444"), 2, Qt.SolidLine)
 
@@ -981,11 +982,6 @@ class WaveformCanvas(QWidget):
                 shift = bool(event.modifiers() & Qt.ShiftModifier)
                 if self.press_wave is not None:
                     self._apply_selection(self.press_wave, add=shift)
-                elif not shift:
-                    self.selected_waves.clear()
-                    self._anchor_wave = None
-                    self._update_label_selection_styles()
-                    self.update()
 
         self.press_pos = None
         self.press_wave = None
@@ -1119,6 +1115,9 @@ class WaveformCanvas(QWidget):
             y_low  = rect.top() + self.track_height * 0.75
 
             painter.save()
+            painter.setPen(self.row_sep_pen)
+            sep_y = rect.bottom() + self.track_gap * 0.5
+            painter.drawLine(QPointF(rect.left(), sep_y), QPointF(rect.right(), sep_y))
             painter.setPen(self.zero_line_pen)
             painter.drawLine(QPointF(rect.left(), y_low),  QPointF(rect.right(), y_low))
             painter.setPen(self.one_line_pen)

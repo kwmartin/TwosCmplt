@@ -51,8 +51,9 @@ CircKey = Tuple[int, ...]
 def _merge_time_spcs(perm_ts: list, editor_ts: list) -> list:
     """Merge permanent TimeSpcs with editor-managed entries.
 
-    Flat [name, value] entries from perm_ts whose signal name is NOT managed
-    by the editor are kept at the front.  Editor {tm, vls} entries follow.
+    Signals managed by the editor come from editor_ts.  Non-editor signals
+    (e.g. VDD, VSS) are preserved from perm_ts — both flat [name, val] entries
+    and the non-editor vls items inside dict entries.
     """
     editor_names: Set[str] = set()
     for entry in editor_ts:
@@ -60,11 +61,21 @@ def _merge_time_spcs(perm_ts: list, editor_ts: list) -> list:
             for item in entry.get("vls", []):
                 if isinstance(item, (list, tuple)) and len(item) >= 1:
                     editor_names.add(str(item[0]))
-    preserved = [
-        e for e in perm_ts
-        if isinstance(e, (list, tuple)) and len(e) >= 1
-        and str(e[0]) not in editor_names
-    ]
+
+    preserved: list = []
+    for entry in perm_ts:
+        if isinstance(entry, dict):
+            non_editor_vls = [
+                item for item in entry.get("vls", [])
+                if isinstance(item, (list, tuple)) and len(item) >= 1
+                and str(item[0]) not in editor_names
+            ]
+            if non_editor_vls:
+                preserved.append({"tm": entry.get("tm", 0), "vls": non_editor_vls})
+        elif isinstance(entry, (list, tuple)) and len(entry) >= 1:
+            if str(entry[0]) not in editor_names:
+                preserved.append(entry)
+
     return preserved + list(editor_ts)
 
 
@@ -463,8 +474,10 @@ class DisplayWindow(QMainWindow):
             self.editor.refresh_label_layout()
             self.editor.update()
             QTimer.singleShot(0, self._adjust_splitter)
-        except Exception:
-            pass
+        except Exception as e:
+            import traceback
+            print(f"[wave_display] load_spec failed for {circuit_name}: {e}")
+            traceback.print_exc()
 
     def load_outputs(self, signals: dict):
         """Replace output waveforms, preserving any user-defined display order."""
@@ -542,18 +555,21 @@ class DisplayWindow(QMainWindow):
         main = getattr(self, "_main_win", None)
         if main is not None:
             main._save_wave_state()
+            main.close()
         super().closeEvent(event)
 
 
 # ── Main window ───────────────────────────────────────────────────────────────
 
 class WaveDisplay(QMainWindow):
-    def __init__(self, config_path: str, circuit_name: Optional[str] = None):
+    def __init__(self, config_path: str, circuit_name: Optional[str] = None,
+                 spec_path: Optional[str] = None):
         super().__init__()
         self.setWindowTitle("Wave Display")
 
         self._cfg: dict                          = rd_yml(config_path) or {}
         self._config_path: str                   = str(Path(config_path).resolve())
+        self._spec_path: Optional[str]           = str(Path(spec_path).resolve()) if spec_path else None
         self._chngs: list                        = []
         self._map: dict                          = {}
         self._hierarchy: Dict[CircKey, dict]     = {}
@@ -735,8 +751,10 @@ class WaveDisplay(QMainWindow):
     def closeEvent(self, event):
         self._save_wave_state()
         if self._display_win is not None:
+            self._display_win._main_win = None  # prevent re-entry
             self._display_win.close()
         super().closeEvent(event)
+        QApplication.instance().quit()
 
     def _rebuild(self, circuit_name: str):
         runner = self._cfg.get("fileNames", {}).get("simRunner", "")
@@ -751,7 +769,10 @@ class WaveDisplay(QMainWindow):
         self._rebuild_proc.finished.connect(
             lambda code, _status: self._on_rebuild_done(circuit_name, code)
         )
-        self._rebuild_proc.start(runner, [circuit_name, self._config_path, "--rebuild"])
+        args = [circuit_name, self._config_path, "--rebuild"]
+        if self._spec_path and Path(self._spec_path).exists():
+            args += ["--spec", self._spec_path]
+        self._rebuild_proc.start(runner, args)
 
     def _on_rebuild_done(self, circuit_name: str, exit_code: int):
         self._progress.setVisible(False)
@@ -778,6 +799,7 @@ class WaveDisplay(QMainWindow):
             self._current_key = None
             self._node_cbs.clear()
             self._populate_tree()
+            self._restore_wave_state()
             self.statusBar().showMessage(
                 f"Ready — {circuit_name}  (click Simulate to re-run)"
             )
@@ -905,6 +927,13 @@ class WaveDisplay(QMainWindow):
         self._current_key = None
         self._node_cbs.clear()
         self._populate_tree()
+        # Re-select the root item so the node checkbox panel shows the saved
+        # selection instead of appearing blank after every re-simulation.
+        if self._hierarchy:
+            root_key = min(self._hierarchy, key=lambda k: len(k))
+            root_item = self._tree_map.get(root_key)
+            if root_item is not None:
+                self._tree.setCurrentItem(root_item)
         self.statusBar().showMessage(f"Ready — {circuit_name}")
         if self._display_win is not None:
             self._display_win.statusBar().showMessage(f"Ready — {circuit_name}")
@@ -957,8 +986,12 @@ class WaveDisplay(QMainWindow):
         self._save()
         if not self._circuit_name:
             return
-        specs_lib = Path(self._cfg.get("directories", {}).get("specsLib", ""))
-        spec_file = specs_lib / f"{self._circuit_name}.yml"
+        # Save to _spec_path when available; fall back to specsLib.
+        if self._spec_path and Path(self._spec_path).exists():
+            spec_file = Path(self._spec_path)
+        else:
+            specs_lib = Path(self._cfg.get("directories", {}).get("specsLib", ""))
+            spec_file = specs_lib / f"{self._circuit_name}.yml"
         if not spec_file.exists():
             self.statusBar().showMessage(
                 f"No spec file for {self._circuit_name} — nothing to save"
@@ -985,6 +1018,14 @@ class WaveDisplay(QMainWindow):
             save_nds = spec_data.get("SaveNds", [])
         spec_data["SaveNds"] = save_nds
         wrt_yml(str(spec_file), spec_data)
+
+        # Sync back to spcsDir (xschem/modules) so Run TB stays in sync.
+        spcs_dir = self._cfg.get("directories", {}).get("spcsDir", "")
+        if spcs_dir:
+            spcs_file = Path(spcs_dir) / f"{self._circuit_name}.yml"
+            if spcs_file.exists():
+                wrt_yml(str(spcs_file), spec_data)
+
         self.statusBar().showMessage(f"Saved spec for {self._circuit_name}")
 
     # ── Tree ─────────────────────────────────────────────────────────────────
@@ -1195,7 +1236,20 @@ class WaveDisplay(QMainWindow):
             [w.label_text for w in self._display_win.viewer.waves]
             if self._display_win is not None else []
         )
-        wrt_yml(str(path), {"viewer_order": waves})
+        selection_data = [
+            {"key": list(k), "indices": sorted(v)}
+            for k, v in self._selection.items()
+        ]
+        signal_order_data = [
+            {"key": list(k), "idx": i}
+            for k, i in self._signal_order
+        ]
+        wrt_yml(str(path), {
+            "viewer_order":  waves,
+            "selection":     selection_data,
+            "signal_order":  signal_order_data,
+            "current_key":   list(self._current_key) if self._current_key else None,
+        })
 
     def _load_wave_state(self) -> "Optional[List[str]]":
         path = self._state_path()
@@ -1207,6 +1261,44 @@ class WaveDisplay(QMainWindow):
             if isinstance(order, list):
                 return [str(n) for n in order]
         return None
+
+    def _restore_wave_state(self):
+        """Restore checkbox selection from the saved wave state file."""
+        path = self._state_path()
+        if path is None or not path.exists():
+            return
+        data = rd_yml(str(path))
+        if not isinstance(data, dict):
+            return
+
+        # Restore _selection
+        for entry in data.get("selection", []):
+            key = tuple(entry.get("key", []))
+            indices = set(entry.get("indices", []))
+            if key in self._hierarchy and indices:
+                self._selection[key] = indices
+
+        # Restore _signal_order
+        for entry in data.get("signal_order", []):
+            key = tuple(entry.get("key", []))
+            idx = entry.get("idx")
+            if key in self._hierarchy and idx is not None:
+                pair = (key, idx)
+                if pair not in self._signal_order:
+                    self._signal_order.append(pair)
+
+        # Restore _current_key and update tree + checkboxes
+        ck_raw = data.get("current_key")
+        if ck_raw:
+            ck = tuple(ck_raw)
+            if ck in self._hierarchy:
+                self._current_key = ck
+                item = self._tree_map.get(ck)
+                if item is not None:
+                    self._tree.blockSignals(True)
+                    self._tree.setCurrentItem(item)
+                    self._tree.blockSignals(False)
+                self._populate_nodes(ck)
 
     # ── Display ───────────────────────────────────────────────────────────────
 
@@ -1247,10 +1339,15 @@ class WaveDisplay(QMainWindow):
         if first_display:
             _center_on_screen(self._display_win)
 
-        # Load spec into editable inputs (skipped if circuit hasn't changed)
+        # Load spec into editable inputs (skipped if circuit hasn't changed).
+        # Prefer the --spec path (same file the simulation used) over specsLib so
+        # the editor always shows exactly what was simulated.
         if self._circuit_name:
-            specs_lib = Path(self._cfg.get("directories", {}).get("specsLib", ""))
-            spec_file = specs_lib / f"{self._circuit_name}.yml"
+            if self._spec_path and Path(self._spec_path).exists():
+                spec_file = Path(self._spec_path)
+            else:
+                specs_lib = Path(self._cfg.get("directories", {}).get("specsLib", ""))
+                spec_file = specs_lib / f"{self._circuit_name}.yml"
             if spec_file.exists():
                 self._display_win.load_spec(spec_file, self._circuit_name)
             self._display_win.setWindowTitle(f"Waveform Display — {self._circuit_name}")
@@ -1415,6 +1512,13 @@ class WaveDisplay(QMainWindow):
             if not full_name:
                 continue
             r = _path(full_name)
+            if r is None:
+                # Bare name didn't resolve — try with root prefix so the display
+                # name matches what section 4 (checkbox selection) produces.
+                prefixed = root_name + "." + full_name
+                r = _path(prefixed)
+                if r:
+                    full_name = prefixed
             if r:
                 _add(full_name, r[0], r[1], fmt=_fmt_map.get(fmt_code, "hex"))
 
@@ -1475,10 +1579,11 @@ def main():
     ap = argparse.ArgumentParser(description="Wave Display Interface")
     ap.add_argument("circuit", nargs="?", help="Circuit name, e.g. TB_DVDR4")
     ap.add_argument("--config", default=str(PROJECT_ROOT / "Config.yaml"), help="Path to Config.yaml")
+    ap.add_argument("--spec", default=None, help="Spec file to use for simulation (overrides specsLib)")
     args = ap.parse_args()
 
     app = QApplication(sys.argv)
-    win = WaveDisplay(args.config, args.circuit)
+    win = WaveDisplay(args.config, args.circuit, spec_path=args.spec)
     win.show()
     _center_on_screen(win)
     sys.exit(app.exec())

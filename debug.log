@@ -1,597 +1,1256 @@
-12:40:38.749 DbgLggr(64): open(url:), === Log opened: /home/Dropbox/programming/Swift/TwosCmplt/debug.log ===
-12:40:38.750 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.VDD, value: 1
-12:40:38.750 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.750 Circuit(1481): simVrlgInits(ctx:), = module: DG_NAND2_4X1,name: Top
-12:40:38.750 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.750 Circuit(754): saveChng(_:indx:), = Time: 17, node: Top.OUT, value: 1
-12:40:38.750 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.750 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.750 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.750 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.750 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.750 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.750 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 0
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 2000, node: Top.D, value: 1
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 2000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 4000, node: Top.C, value: 1
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 4000, node: Top.D, value: 0
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 4000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 6000, node: Top.D, value: 1
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 6000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 8000, node: Top.B, value: 1
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 8000, node: Top.C, value: 0
-12:40:38.751 Circuit(754): saveChng(_:indx:), = Time: 8000, node: Top.D, value: 0
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.751 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.751 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 8000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 10000, node: Top.D, value: 1
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 10000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 12000, node: Top.C, value: 1
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 12000, node: Top.D, value: 0
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 12000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 14000, node: Top.D, value: 1
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 14000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.A, value: 1
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.B, value: 0
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.C, value: 0
-12:40:38.752 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.D, value: 0
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.752 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.752 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 16000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 18000, node: Top.D, value: 1
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 18000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 20000, node: Top.C, value: 1
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 20000, node: Top.D, value: 0
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 20000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 22000, node: Top.D, value: 1
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 22000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 24000, node: Top.B, value: 1
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 24000, node: Top.C, value: 0
-12:40:38.753 Circuit(754): saveChng(_:indx:), = Time: 24000, node: Top.D, value: 0
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.753 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.753 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 24000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 26000, node: Top.D, value: 1
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 26000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 28000, node: Top.C, value: 1
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 28000, node: Top.D, value: 0
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 28000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 30000, node: Top.D, value: 1
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 30017, node: Top.OUT, value: 0
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 30000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.A, value: 0
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.B, value: 0
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.C, value: 0
-12:40:38.754 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.D, value: 0
-12:40:38.754 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.754 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 32017, node: Top.OUT, value: 1
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 32000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 34000, node: Top.D, value: 1
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 34000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 36000, node: Top.C, value: 1
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 36000, node: Top.D, value: 0
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 36000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 38000, node: Top.D, value: 1
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 38000
-12:40:38.755 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 40000, node: Top.B, value: 1
-12:40:38.755 Circuit(754): saveChng(_:indx:), = Time: 40000, node: Top.C, value: 0
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 40000, node: Top.D, value: 0
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 40000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 42000, node: Top.D, value: 1
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 42000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 44000, node: Top.C, value: 1
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 44000, node: Top.D, value: 0
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 44000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 46000, node: Top.D, value: 1
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 46000
-12:40:38.756 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.A, value: 1
-12:40:38.756 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.B, value: 0
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.C, value: 0
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.D, value: 0
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 48000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 50000, node: Top.D, value: 1
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 50000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 52000, node: Top.C, value: 1
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 52000, node: Top.D, value: 0
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 52000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(754): saveChng(_:indx:), = Time: 54000, node: Top.D, value: 1
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.757 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 54000
-12:40:38.757 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 56000, node: Top.B, value: 1
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 56000, node: Top.C, value: 0
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 56000, node: Top.D, value: 0
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 56000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 58000, node: Top.D, value: 1
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 58000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 60000, node: Top.C, value: 1
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 60000, node: Top.D, value: 0
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 60000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 62000, node: Top.D, value: 1
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(754): saveChng(_:indx:), = Time: 62017, node: Top.OUT, value: 0
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.758 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.758 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
-12:40:38.759 Circuit(1138): eval(async:tm:), = DG_NAND2_4X1, name: Top, tm: 62000
-12:40:38.759 Sim(1308): run(ctx:), = DG_NAND2_4X1, name: Top
+17:12:39.860 DbgLggr(64): open(url:), === Log opened: /home/Dropbox/programming/Swift/TwosCmplt/debug.log ===
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.VDD, value: 1
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.INIT, value: 1
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.U, value: 1
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.L, value: 1
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.LI, value: 1
+17:12:39.861 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 0
+17:12:39.861 Circuit(1481): simVrlgInits(ctx:), = module: DG_DLUX_7X2,name: DLUX
+17:12:39.861 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 46, node: Top.DLUX.QN, value: 1
+17:12:39.861 Circuit(1481): simVrlgInits(ctx:), = module: TST_DLUX_7X2,name: Top
+17:12:39.861 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.861 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 0
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.DLUX.U, value: 1
+17:12:39.861 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.DLUX.L, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.DLUX.LI, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.DLUX.INIT, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 0, node: Top.DLUX.VDD, value: 1
+17:12:39.862 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.862 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 46, node: Top.QN, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 200, node: Top.INIT, value: 0
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 500, node: Top.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 500
+17:12:39.862 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 46, node: Top.DLUX.D, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 200, node: Top.DLUX.INIT, value: 0
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 500, node: Top.DLUX.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 500
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1000, node: Top.CLK, value: 0
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 1000
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 1000
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1000, node: Top.DLUX.CLK, value: 0
+17:12:39.862 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.862 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1046, node: Top.DLUX.QP, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1046, node: Top.DLUX.QN, value: 0
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1046, node: Top.QP, value: 1
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1046, node: Top.QN, value: 0
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 1000
+17:12:39.862 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 1000
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1046, node: Top.DLUX.D, value: 0
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1500, node: Top.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 1500
+17:12:39.862 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 1500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 1500, node: Top.DLUX.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 1500
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 1500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 2000, node: Top.CLK, value: 0
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 2000
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 2000
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 2000, node: Top.DLUX.CLK, value: 0
+17:12:39.862 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.862 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 2000
+17:12:39.862 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 2000
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 2500, node: Top.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 2500
+17:12:39.862 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 2500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 2500, node: Top.DLUX.CLK, value: 1
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 2500
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 2500
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 3000, node: Top.CLK, value: 0
+17:12:39.862 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 3000
+17:12:39.862 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.862 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 3000
+17:12:39.862 Circuit(754): saveChng(_:indx:), = Time: 3000, node: Top.DLUX.CLK, value: 0
+17:12:39.862 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.862 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 3000
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 3000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 3500, node: Top.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 3500
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 3500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 3500, node: Top.DLUX.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 3500
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 3500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 4000, node: Top.CLK, value: 0
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 4000
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 4000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 4000, node: Top.DLUX.CLK, value: 0
+17:12:39.863 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.863 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 4000
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 4000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 4500, node: Top.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 4500
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 4500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 4500, node: Top.DLUX.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 4500
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 4500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 5000, node: Top.CLK, value: 0
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 5000
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 5000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 5000, node: Top.DLUX.CLK, value: 0
+17:12:39.863 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.863 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 5000
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 5000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 5500, node: Top.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 5500
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 5500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 5500, node: Top.DLUX.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 5500
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 5500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6000, node: Top.CLK, value: 0
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 6000
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 6000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6000, node: Top.DLUX.CLK, value: 0
+17:12:39.863 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.863 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 6000
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 6000
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6100, node: Top.L, value: 0
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6500, node: Top.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 6500
+17:12:39.863 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 6500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6100, node: Top.DLUX.L, value: 0
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 6500, node: Top.DLUX.CLK, value: 1
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 6500
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 6500
+17:12:39.863 Circuit(754): saveChng(_:indx:), = Time: 7000, node: Top.CLK, value: 0
+17:12:39.863 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 7000
+17:12:39.863 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.863 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 7000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7000, node: Top.DLUX.CLK, value: 0
+17:12:39.864 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.864 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7046, node: Top.DLUX.QP, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7046, node: Top.DLUX.QN, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7046, node: Top.QP, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7046, node: Top.QN, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 7000
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 7000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7046, node: Top.DLUX.D, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7500, node: Top.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 7500
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 7500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 7500, node: Top.DLUX.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 7500
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 7500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8000, node: Top.CLK, value: 0
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 8000
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 8000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8000, node: Top.DLUX.CLK, value: 0
+17:12:39.864 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.864 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8046, node: Top.DLUX.QP, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8046, node: Top.DLUX.QN, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8046, node: Top.QP, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8046, node: Top.QN, value: 0
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 8000
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 8000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8046, node: Top.DLUX.D, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8500, node: Top.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 8500
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 8500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 8500, node: Top.DLUX.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 8500
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 8500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9000, node: Top.CLK, value: 0
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 9000
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 9000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9000, node: Top.DLUX.CLK, value: 0
+17:12:39.864 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.864 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9046, node: Top.DLUX.QP, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9046, node: Top.DLUX.QN, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9046, node: Top.QP, value: 0
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9046, node: Top.QN, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 9000
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 9000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9046, node: Top.DLUX.D, value: 1
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9500, node: Top.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 9500
+17:12:39.864 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 9500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 9500, node: Top.DLUX.CLK, value: 1
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 9500
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 9500
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 10000, node: Top.CLK, value: 0
+17:12:39.864 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 10000
+17:12:39.864 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.864 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 10000
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 10000, node: Top.DLUX.CLK, value: 0
+17:12:39.864 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.864 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.864 Circuit(754): saveChng(_:indx:), = Time: 10046, node: Top.DLUX.QP, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10046, node: Top.DLUX.QN, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10046, node: Top.QP, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10046, node: Top.QN, value: 0
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 10000
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 10000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10046, node: Top.DLUX.D, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10500, node: Top.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 10500
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 10500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 10500, node: Top.DLUX.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 10500
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 10500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11000, node: Top.CLK, value: 0
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 11000
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 11000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11000, node: Top.DLUX.CLK, value: 0
+17:12:39.865 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.865 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11046, node: Top.DLUX.QP, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11046, node: Top.DLUX.QN, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11046, node: Top.QP, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11046, node: Top.QN, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 11000
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 11000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11046, node: Top.DLUX.D, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11500, node: Top.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 11500
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 11500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 11500, node: Top.DLUX.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 11500
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 11500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12000, node: Top.CLK, value: 0
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 12000
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 12000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12000, node: Top.DLUX.CLK, value: 0
+17:12:39.865 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.865 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12046, node: Top.DLUX.QP, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12046, node: Top.DLUX.QN, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12046, node: Top.QP, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12046, node: Top.QN, value: 0
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 12000
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 12000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12046, node: Top.DLUX.D, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12500, node: Top.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 12500
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 12500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 12500, node: Top.DLUX.CLK, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 12500
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 12500
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13000, node: Top.CLK, value: 0
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 13000
+17:12:39.865 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 13000
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13000, node: Top.DLUX.CLK, value: 0
+17:12:39.865 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.865 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13046, node: Top.DLUX.QP, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13046, node: Top.DLUX.QN, value: 1
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13046, node: Top.QP, value: 0
+17:12:39.865 Circuit(754): saveChng(_:indx:), = Time: 13046, node: Top.QN, value: 1
+17:12:39.865 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 13000
+17:12:39.865 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.865 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 13000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 13046, node: Top.DLUX.D, value: 1
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 13500, node: Top.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 13500
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 13500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 13500, node: Top.DLUX.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 13500
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 13500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14000, node: Top.CLK, value: 0
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 14000
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 14000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14000, node: Top.DLUX.CLK, value: 0
+17:12:39.866 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.866 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14046, node: Top.DLUX.QP, value: 1
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14046, node: Top.DLUX.QN, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14046, node: Top.QP, value: 1
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14046, node: Top.QN, value: 0
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 14000
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 14000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14046, node: Top.DLUX.D, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14500, node: Top.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 14500
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 14500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 14500, node: Top.DLUX.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 14500
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 14500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15000, node: Top.CLK, value: 0
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 15000
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 15000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15000, node: Top.DLUX.CLK, value: 0
+17:12:39.866 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.866 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15046, node: Top.DLUX.QP, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15046, node: Top.DLUX.QN, value: 1
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15046, node: Top.QP, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15046, node: Top.QN, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 15000
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 15000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15046, node: Top.DLUX.D, value: 1
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15100, node: Top.U, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15500, node: Top.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 15500
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 15500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15100, node: Top.DLUX.U, value: 0
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 15500, node: Top.DLUX.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 15500
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 15500
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.CLK, value: 0
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 16000
+17:12:39.866 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 16000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 16000, node: Top.DLUX.CLK, value: 0
+17:12:39.866 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.866 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 16000
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 16000
+17:12:39.866 Circuit(754): saveChng(_:indx:), = Time: 16500, node: Top.CLK, value: 1
+17:12:39.866 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 16500
+17:12:39.866 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.866 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 16500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 16500, node: Top.DLUX.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 16500
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 16500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 17000, node: Top.CLK, value: 0
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 17000
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 17000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 17000, node: Top.DLUX.CLK, value: 0
+17:12:39.867 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.867 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 17000
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 17000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 17500, node: Top.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 17500
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 17500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 17500, node: Top.DLUX.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 17500
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 17500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 18000, node: Top.CLK, value: 0
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 18000
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 18000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 18000, node: Top.DLUX.CLK, value: 0
+17:12:39.867 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.867 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 18000
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 18000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 18500, node: Top.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 18500
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 18500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 18500, node: Top.DLUX.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 18500
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 18500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 19000, node: Top.CLK, value: 0
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 19000
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 19000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 19000, node: Top.DLUX.CLK, value: 0
+17:12:39.867 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.867 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 19000
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 19000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 19500, node: Top.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 19500
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 19500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 19500, node: Top.DLUX.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 19500
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 19500
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 20000, node: Top.CLK, value: 0
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 20000
+17:12:39.867 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 20000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 20000, node: Top.DLUX.CLK, value: 0
+17:12:39.867 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.867 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 20000
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 20000
+17:12:39.867 Circuit(754): saveChng(_:indx:), = Time: 20500, node: Top.CLK, value: 1
+17:12:39.867 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 20500
+17:12:39.867 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.867 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 20500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 20500, node: Top.DLUX.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 20500
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 20500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 21000, node: Top.CLK, value: 0
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 21000
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 21000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 21000, node: Top.DLUX.CLK, value: 0
+17:12:39.868 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.868 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 21000
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 21000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 21500, node: Top.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 21500
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 21500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 21500, node: Top.DLUX.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 21500
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 21500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 22000, node: Top.CLK, value: 0
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 22000
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 22000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 22000, node: Top.DLUX.CLK, value: 0
+17:12:39.868 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.868 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 22000
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 22000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 22500, node: Top.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 22500
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 22500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 22500, node: Top.DLUX.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 22500
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 22500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 23000, node: Top.CLK, value: 0
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 23000
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 23000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 23000, node: Top.DLUX.CLK, value: 0
+17:12:39.868 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.868 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 23000
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 23000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 23500, node: Top.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 23500
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 23500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 23500, node: Top.DLUX.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 23500
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 23500
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 24000, node: Top.CLK, value: 0
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 24000
+17:12:39.868 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 24000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 24000, node: Top.DLUX.CLK, value: 0
+17:12:39.868 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.868 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 24000
+17:12:39.868 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.868 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 24000
+17:12:39.868 Circuit(754): saveChng(_:indx:), = Time: 24500, node: Top.CLK, value: 1
+17:12:39.868 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 24500
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 24500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 24500, node: Top.DLUX.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 24500
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 24500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 25000, node: Top.CLK, value: 0
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 25000
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 25000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 25000, node: Top.DLUX.CLK, value: 0
+17:12:39.869 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.869 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 25000
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 25000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 25500, node: Top.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 25500
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 25500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 25500, node: Top.DLUX.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 25500
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 25500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 26000, node: Top.CLK, value: 0
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 26000
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 26000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 26000, node: Top.DLUX.CLK, value: 0
+17:12:39.869 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.869 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 26000
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 26000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 26500, node: Top.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 26500
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 26500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 26500, node: Top.DLUX.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 26500
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 26500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 27000, node: Top.CLK, value: 0
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 27000
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 27000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 27000, node: Top.DLUX.CLK, value: 0
+17:12:39.869 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.869 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 27000
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 27000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 27500, node: Top.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 27500
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 27500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 27500, node: Top.DLUX.CLK, value: 1
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 27500
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 27500
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 28000, node: Top.CLK, value: 0
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 28000
+17:12:39.869 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 28000
+17:12:39.869 Circuit(754): saveChng(_:indx:), = Time: 28000, node: Top.DLUX.CLK, value: 0
+17:12:39.869 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.869 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.869 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 28000
+17:12:39.869 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.869 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 28000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 28500, node: Top.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 28500
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 28500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 28500, node: Top.DLUX.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 28500
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 28500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 29000, node: Top.CLK, value: 0
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 29000
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 29000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 29000, node: Top.DLUX.CLK, value: 0
+17:12:39.870 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.870 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 29000
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 29000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 29500, node: Top.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 29500
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 29500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 29500, node: Top.DLUX.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 29500
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 29500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 30000, node: Top.CLK, value: 0
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 30000
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 30000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 30000, node: Top.DLUX.CLK, value: 0
+17:12:39.870 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.870 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 30000
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 30000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 30500, node: Top.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 30500
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 30500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 30500, node: Top.DLUX.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 30500
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 30500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 31000, node: Top.CLK, value: 0
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 31000
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 31000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 31000, node: Top.DLUX.CLK, value: 0
+17:12:39.870 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.870 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 31000
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 31000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 31500, node: Top.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 31500
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 31500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 31500, node: Top.DLUX.CLK, value: 1
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 31500
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 31500
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.CLK, value: 0
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 32000
+17:12:39.870 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 32000
+17:12:39.870 Circuit(754): saveChng(_:indx:), = Time: 32000, node: Top.DLUX.CLK, value: 0
+17:12:39.870 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.870 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.870 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 32000
+17:12:39.870 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.870 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 32000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 32500, node: Top.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 32500
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 32500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 32500, node: Top.DLUX.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 32500
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 32500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 33000, node: Top.CLK, value: 0
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 33000
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 33000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 33000, node: Top.DLUX.CLK, value: 0
+17:12:39.871 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.871 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 33000
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 33000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 33500, node: Top.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 33500
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 33500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 33500, node: Top.DLUX.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 33500
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 33500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 34000, node: Top.CLK, value: 0
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 34000
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 34000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 34000, node: Top.DLUX.CLK, value: 0
+17:12:39.871 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.871 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 34000
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 34000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 34500, node: Top.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 34500
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 34500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 34500, node: Top.DLUX.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 34500
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 34500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 35000, node: Top.CLK, value: 0
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 35000
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 35000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 35000, node: Top.DLUX.CLK, value: 0
+17:12:39.871 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.871 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 35000
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 35000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 35500, node: Top.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 35500
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 35500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 35500, node: Top.DLUX.CLK, value: 1
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 35500
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 35500
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 36000, node: Top.CLK, value: 0
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 36000
+17:12:39.871 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 36000
+17:12:39.871 Circuit(754): saveChng(_:indx:), = Time: 36000, node: Top.DLUX.CLK, value: 0
+17:12:39.871 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.871 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.871 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 36000
+17:12:39.871 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.871 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 36000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 36500, node: Top.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 36500
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 36500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 36500, node: Top.DLUX.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 36500
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 36500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 37000, node: Top.CLK, value: 0
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 37000
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 37000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 37000, node: Top.DLUX.CLK, value: 0
+17:12:39.872 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.872 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 37000
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 37000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 37500, node: Top.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 37500
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 37500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 37500, node: Top.DLUX.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 37500
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 37500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 38000, node: Top.CLK, value: 0
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 38000
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 38000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 38000, node: Top.DLUX.CLK, value: 0
+17:12:39.872 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.872 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 38000
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 38000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 38500, node: Top.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 38500
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 38500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 38500, node: Top.DLUX.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 38500
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 38500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 39000, node: Top.CLK, value: 0
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 39000
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 39000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 39000, node: Top.DLUX.CLK, value: 0
+17:12:39.872 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.872 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 39000
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 39000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 39500, node: Top.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 39500
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 39500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 39500, node: Top.DLUX.CLK, value: 1
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 39500
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 39500
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 40000, node: Top.CLK, value: 0
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 40000
+17:12:39.872 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 40000
+17:12:39.872 Circuit(754): saveChng(_:indx:), = Time: 40000, node: Top.DLUX.CLK, value: 0
+17:12:39.872 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.872 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.872 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 40000
+17:12:39.872 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.872 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 40000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 40500, node: Top.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 40500
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 40500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 40500, node: Top.DLUX.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 40500
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 40500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 41000, node: Top.CLK, value: 0
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 41000
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 41000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 41000, node: Top.DLUX.CLK, value: 0
+17:12:39.873 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.873 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 41000
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 41000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 41500, node: Top.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 41500
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 41500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 41500, node: Top.DLUX.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 41500
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 41500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 42000, node: Top.CLK, value: 0
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 42000
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 42000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 42000, node: Top.DLUX.CLK, value: 0
+17:12:39.873 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.873 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 42000
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 42000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 42500, node: Top.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 42500
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 42500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 42500, node: Top.DLUX.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 42500
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 42500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 43000, node: Top.CLK, value: 0
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 43000
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 43000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 43000, node: Top.DLUX.CLK, value: 0
+17:12:39.873 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.873 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 43000
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 43000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 43500, node: Top.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 43500
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 43500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 43500, node: Top.DLUX.CLK, value: 1
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 43500
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 43500
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 44000, node: Top.CLK, value: 0
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 44000
+17:12:39.873 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.873 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 44000
+17:12:39.873 Circuit(754): saveChng(_:indx:), = Time: 44000, node: Top.DLUX.CLK, value: 0
+17:12:39.873 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.873 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.873 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 44000
+17:12:39.873 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 44000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 44500, node: Top.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 44500
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 44500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 44500, node: Top.DLUX.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 44500
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 44500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 45000, node: Top.CLK, value: 0
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 45000
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 45000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 45000, node: Top.DLUX.CLK, value: 0
+17:12:39.874 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.874 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 45000
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 45000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 45500, node: Top.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 45500
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 45500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 45500, node: Top.DLUX.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 45500
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 45500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 46000, node: Top.CLK, value: 0
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 46000
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 46000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 46000, node: Top.DLUX.CLK, value: 0
+17:12:39.874 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.874 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 46000
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 46000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 46500, node: Top.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 46500
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 46500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 46500, node: Top.DLUX.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 46500
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 46500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 47000, node: Top.CLK, value: 0
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 47000
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 47000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 47000, node: Top.DLUX.CLK, value: 0
+17:12:39.874 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.874 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 47000
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 47000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 47500, node: Top.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 47500
+17:12:39.874 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 47500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 47500, node: Top.DLUX.CLK, value: 1
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 47500
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 47500
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.CLK, value: 0
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 48000
+17:12:39.874 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.874 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 48000
+17:12:39.874 Circuit(754): saveChng(_:indx:), = Time: 48000, node: Top.DLUX.CLK, value: 0
+17:12:39.874 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.874 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.874 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 48000
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 48000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 48500, node: Top.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 48500
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 48500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 48500, node: Top.DLUX.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 48500
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 48500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 49000, node: Top.CLK, value: 0
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 49000
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 49000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 49000, node: Top.DLUX.CLK, value: 0
+17:12:39.875 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.875 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 49000
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 49000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 49500, node: Top.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 49500
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 49500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 49500, node: Top.DLUX.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 49500
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 49500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 50000, node: Top.CLK, value: 0
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 50000
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 50000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 50000, node: Top.DLUX.CLK, value: 0
+17:12:39.875 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.875 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 50000
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 50000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 50500, node: Top.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 50500
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 50500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 50500, node: Top.DLUX.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 50500
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 50500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 51000, node: Top.CLK, value: 0
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 51000
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 51000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 51000, node: Top.DLUX.CLK, value: 0
+17:12:39.875 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.875 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 51000
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 51000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 51500, node: Top.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 51500
+17:12:39.875 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 51500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 51500, node: Top.DLUX.CLK, value: 1
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 51500
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 51500
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 52000, node: Top.CLK, value: 0
+17:12:39.875 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 52000
+17:12:39.875 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.875 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 52000
+17:12:39.875 Circuit(754): saveChng(_:indx:), = Time: 52000, node: Top.DLUX.CLK, value: 0
+17:12:39.875 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.875 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 52000
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 52000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 52500, node: Top.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 52500
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 52500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 52500, node: Top.DLUX.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 52500
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 52500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 53000, node: Top.CLK, value: 0
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 53000
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 53000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 53000, node: Top.DLUX.CLK, value: 0
+17:12:39.876 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.876 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 53000
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 53000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 53500, node: Top.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 53500
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 53500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 53500, node: Top.DLUX.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 53500
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 53500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 54000, node: Top.CLK, value: 0
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 54000
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 54000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 54000, node: Top.DLUX.CLK, value: 0
+17:12:39.876 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.876 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 54000
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 54000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 54500, node: Top.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 54500
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 54500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 54500, node: Top.DLUX.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 54500
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 54500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 55000, node: Top.CLK, value: 0
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 55000
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 55000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 55000, node: Top.DLUX.CLK, value: 0
+17:12:39.876 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.876 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 55000
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 55000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 55500, node: Top.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 55500
+17:12:39.876 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 55500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 55500, node: Top.DLUX.CLK, value: 1
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 55500
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 55500
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 56000, node: Top.CLK, value: 0
+17:12:39.876 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 56000
+17:12:39.876 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.876 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 56000
+17:12:39.876 Circuit(754): saveChng(_:indx:), = Time: 56000, node: Top.DLUX.CLK, value: 0
+17:12:39.876 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.877 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 56000
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 56000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 56500, node: Top.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 56500
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 56500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 56500, node: Top.DLUX.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 56500
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 56500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 57000, node: Top.CLK, value: 0
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 57000
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 57000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 57000, node: Top.DLUX.CLK, value: 0
+17:12:39.877 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.877 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 57000
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 57000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 57500, node: Top.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 57500
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 57500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 57500, node: Top.DLUX.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 57500
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 57500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 58000, node: Top.CLK, value: 0
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 58000
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 58000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 58000, node: Top.DLUX.CLK, value: 0
+17:12:39.877 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.877 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 58000
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 58000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 58500, node: Top.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 58500
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 58500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 58500, node: Top.DLUX.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 58500
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 58500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 59000, node: Top.CLK, value: 0
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 59000
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 59000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 59000, node: Top.DLUX.CLK, value: 0
+17:12:39.877 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.877 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 59000
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 59000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 59500, node: Top.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 59500
+17:12:39.877 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 59500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 59500, node: Top.DLUX.CLK, value: 1
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 59500
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 59500
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 60000, node: Top.CLK, value: 0
+17:12:39.877 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 60000
+17:12:39.877 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.877 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 60000
+17:12:39.877 Circuit(754): saveChng(_:indx:), = Time: 60000, node: Top.DLUX.CLK, value: 0
+17:12:39.877 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.878 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 60000
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 60000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 60500, node: Top.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 60500
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 60500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 60500, node: Top.DLUX.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 60500
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 60500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 61000, node: Top.CLK, value: 0
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 61000
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 61000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 61000, node: Top.DLUX.CLK, value: 0
+17:12:39.878 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.878 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 61000
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 61000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 61500, node: Top.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 61500
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 61500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 61500, node: Top.DLUX.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 61500
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 61500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 62000, node: Top.CLK, value: 0
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 62000
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 62000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 62000, node: Top.DLUX.CLK, value: 0
+17:12:39.878 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.878 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 62000
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 62000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 62500, node: Top.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 62500
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 62500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 62500, node: Top.DLUX.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 62500
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 62500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 63000, node: Top.CLK, value: 0
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 63000
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 63000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 63000, node: Top.DLUX.CLK, value: 0
+17:12:39.878 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.878 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 63000
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 63000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 63500, node: Top.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 63500
+17:12:39.878 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 63500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 63500, node: Top.DLUX.CLK, value: 1
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 63500
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 63500
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 64000, node: Top.CLK, value: 0
+17:12:39.878 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.878 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.878 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
+17:12:39.878 Circuit(754): saveChng(_:indx:), = Time: 64000, node: Top.DLUX.CLK, value: 0
+17:12:39.879 Circuit(1503): simVrlgAlwys(ctx:), = module: DG_DLUX_7X2, name: DLUX
+17:12:39.879 Sim(1308): run(ctx:), = DG_DLUX_7X2, name: DLUX
+17:12:39.879 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.879 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.879 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
+17:12:39.879 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.879 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.879 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
+17:12:39.879 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.879 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.879 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
+17:12:39.879 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.879 Circuit(1243): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.879 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
+17:12:39.879 Circuit(1138): eval(async:tm:), = TST_DLUX_7X2, name: Top, tm: 64000
+17:12:39.879 Circuit(1217): eval(async:tm:), In: Top, evaluating vCirc[0]
+17:12:39.879 Circuit(1138): eval(async:tm:), = DG_DLUX_7X2, name: DLUX, tm: 64000
 
 === Debug timing summary ===
 location                             
 ----------------------------------------------------
-Circuit:1138                        2.537   41.1%
-Sim:1308                            2.439   39.5%
-Circuit:754                         0.611    9.9%
-DbgLggr:64                          0.581    9.4%
-Circuit:1481                        0.010    0.2%
-TOTAL                               6.179 ms
+Circuit:1138                        4.640   38.9%
+Circuit:754                         3.096   25.9%
+Circuit:1217                        1.177    9.9%
+Circuit:1243                        1.160    9.7%
+DbgLggr:64                          0.667    5.6%
+Sim:1308                            0.610    5.1%
+Circuit:1503                        0.570    4.8%
+Circuit:1481                        0.021    0.2%
+TOTAL                              11.940 ms
 ============================
