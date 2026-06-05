@@ -235,7 +235,8 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - l
+                    -   kind: ident
+                        name: l
                     -   kind: ident
                         name: d2
                     -   kind: ident
@@ -247,7 +248,8 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - l
+                    -   kind: ident
+                        name: l
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:

@@ -3,7 +3,7 @@ module: KM_MXDIFF_5X1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -356,27 +356,97 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: DP0
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
                     oper: 'BAnd:'
                     args:
                     -   kind: gt_expr
                         oper: 'BAnd:'
                         args:
-                        -   kind: gt_expr
-                            oper: 'BAnd:'
+                        -   kind: ident
+                            name: SP1
+                        -   kind: uexpr
+                            oper: 'Unot:'
+                            args:
+                            -   kind: ident
+                                name: SP0
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP2
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: PDP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP1
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: gt_expr
+                        oper: 'BAnd:'
+                        args:
+                        -   kind: ident
+                            name: SP2
+                        -   kind: uexpr
+                            oper: 'Unot:'
                             args:
                             -   kind: ident
                                 name: SP1
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: SP0
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP3
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: PDP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP2
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: gt_expr
+                        oper: 'BAnd:'
+                        args:
+                        -   kind: ident
+                            name: SP3
                         -   kind: uexpr
                             oper: 'Unot:'
                             args:
@@ -386,145 +456,70 @@ behav_blcks:
                         oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: PDP
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: DP1
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_gate
-                    gate:
-                        kind: gt_expr
+                            name: SP4
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: PDP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP3
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: gt_expr
                         oper: 'BAnd:'
                         args:
-                        -   kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: ident
-                                    name: SP2
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP1
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: SP3
+                        -   kind: ident
+                            name: SP4
                         -   kind: uexpr
                             oper: 'Unot:'
                             args:
                             -   kind: ident
-                                name: PDP
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: OUT
-                    rvalue:
-                        kind: ident
-                        name: DP2
-                ifelse:
-                -   kind: ifst
-                    cmpr_expr:
-                        kind: cmpr_gate
-                        gate:
-                            kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: gt_expr
-                                    oper: 'BAnd:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP3
-                                    -   kind: uexpr
-                                        oper: 'Unot:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP2
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP4
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: PDP
-                    iftrue:
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: OUT
-                        rvalue:
-                            kind: ident
-                            name: DP3
-                    ifelse:
-                    -   kind: ifst
-                        cmpr_expr:
-                            kind: cmpr_gate
-                            gate:
-                                kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: gt_expr
-                                    oper: 'BAnd:'
-                                    args:
-                                    -   kind: gt_expr
-                                        oper: 'BAnd:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP4
-                                        -   kind: uexpr
-                                            oper: 'Unot:'
-                                            args:
-                                            -   kind: ident
-                                                name: SP3
-                                    -   kind: uexpr
-                                        oper: 'Unot:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP0
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: PDP
-                        iftrue:
-                        -   kind: noblckst
-                            lvalue:
-                                kind: ident
-                                name: OUT
-                            rvalue:
-                                kind: ident
-                                name: DP4
-                        ifelse:
-                        -   kind: ifst
-                            cmpr_expr:
-                                kind: cmpr_ident
-                                node: PDP
-                            iftrue:
-                            -   kind: noblckst
-                                lvalue:
-                                    kind: ident
-                                    name: OUT
-                                rvalue:
-                                    kind: int
-                                    value: 1'B0
+                                name: SP3
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP0
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: PDP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP4
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: PDP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: int
+                value: 1'B0
 -   kind: assign
     lvalue:
         kind: ident

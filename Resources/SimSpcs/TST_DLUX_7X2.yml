@@ -15,18 +15,22 @@ TimeSpcs:
       - [LI, 0]
       - [U, 0]
       - [Q0, 1]
-  - tm: 1.1*PER
+  - tm: 0.2*PER
     vls:
       -   - INIT
           - 0
-  - tm: 6.1*PER
+  - tm: 3.1*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 7.1*PER
     vls:
       -   - L
           - 0
   - tm: 15.1*PER
     vls:
       -   - U
-          - 0
+          - 1
 SaveNds:
   - name: QP
     format: b

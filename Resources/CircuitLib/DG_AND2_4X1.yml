@@ -3,7 +3,7 @@ module: DG_AND2_4X1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -88,11 +88,4 @@ behav_blcks:
                 name: C
         -   kind: ident
             name: D
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 12.5
-        -   kind: float
-            value: 1.0
+    delay: 12.5

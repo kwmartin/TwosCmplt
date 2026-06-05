@@ -3,7 +3,7 @@ module: NMOSCAP_18
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5

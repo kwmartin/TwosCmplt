@@ -125,14 +125,7 @@ behav_blcks:
                 value: 0
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: int
-                        value: 20
-                    -   kind: float
-                        value: 1.0
+                delay: 20.0
         -   kind: noblckst
             lvalue:
                 kind: ident
@@ -142,14 +135,7 @@ behav_blcks:
                 value: 1
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: int
-                        value: 20
-                    -   kind: float
-                        value: 1.0
+                delay: 20.0
         ifelse:
         -   kind: noblckst
             lvalue:
@@ -160,14 +146,7 @@ behav_blcks:
                 name: D
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: int
-                        value: 75
-                    -   kind: float
-                        value: 1.0
+                delay: 75.0
         -   kind: noblckst
             lvalue:
                 kind: ident
@@ -180,11 +159,4 @@ behav_blcks:
                     name: D
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: int
-                        value: 75
-                    -   kind: float
-                        value: 1.0
+                delay: 75.0

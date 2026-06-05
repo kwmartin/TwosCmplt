@@ -1,6 +1,9 @@
 kind: verilog
 module: Qd_DDFS_TB
 params:
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -110,7 +113,7 @@ behav_blcks:
     module: Qd_DDFS
     params:
     -   kind: str
-        value: subcirc
+        value: sync
         name: circuit
     ports:
     -   port: FRQ

@@ -1,12 +1,12 @@
 kind: verilog
 module: RGSTR
 params:
--   kind: str
-    name: circuit
-    value: sync
 -   kind: int
     name: nbits
     value: 8
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

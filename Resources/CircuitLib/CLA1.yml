@@ -2,11 +2,11 @@ kind: verilog
 module: CLA1
 params:
 -   kind: str
-    name: circuit
-    value: async
--   kind: str
     name: spiceprefix
     value: X
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -52,7 +52,7 @@ decls:
 behav_blcks:
 -   kind: instance
     name: OR1
-    module: OR2D2BWP35HVT
+    module: DG_OR2_1X1
     params: null
     ports:
     -   port: None
@@ -102,7 +102,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: FADDR1
-    module: FA1D2BWP35HVT
+    module: FADDR_1X1
     params: null
     ports:
     -   port: None

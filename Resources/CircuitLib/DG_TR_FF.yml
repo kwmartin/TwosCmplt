@@ -168,7 +168,8 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - T
+                    -   kind: ident
+                        name: T
                     -   kind: ident
                         name: QN
                     -   kind: ident
@@ -180,7 +181,8 @@ behav_blcks:
                 rvalue:
                     kind: cndexpr
                     args:
-                    - T
+                    -   kind: ident
+                        name: T
                     -   kind: ident
                         name: QP
                     -   kind: ident

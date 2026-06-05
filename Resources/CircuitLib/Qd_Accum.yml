@@ -3,7 +3,10 @@ module: Qd_Accum
 params:
 -   kind: str
     name: circuit
-    value: subcirc
+    value: sync
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

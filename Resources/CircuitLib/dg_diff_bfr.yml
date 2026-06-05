@@ -3,7 +3,7 @@ module: dg_diff_bfr
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -65,14 +65,7 @@ behav_blcks:
     rvalue:
         kind: ident
         name: dp
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 20
-        -   kind: float
-            value: 1.0
+    delay: 20.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -80,11 +73,4 @@ behav_blcks:
     rvalue:
         kind: ident
         name: dn
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 20
-        -   kind: float
-            value: 1.0
+    delay: 20.0

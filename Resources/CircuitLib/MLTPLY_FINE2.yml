@@ -6,7 +6,7 @@ params:
     value: 20
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -35,14 +35,6 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: OUT
     direct: 'Output:'
     signed: 'False'
@@ -51,6 +43,14 @@ io_ports:
         value: 7
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls:
 -   -   kind: Wire
         name: F
@@ -117,18 +117,15 @@ decls:
                 value: 0
         length: []
 behav_blcks:
--   kind: async
+-   kind: instance
     name: MLT1
     module: MULT_25P125
     params:
     -   kind: int
         value: 16
-        name: nbits
-    -   kind: str
-        value: async
-        name: circuit
+        name: None
     ports:
-    -   port: IN
+    -   port: None
         node:
             kind: slice
             name: IN
@@ -142,7 +139,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: OUT
+    -   port: None
         node:
             kind: slice
             name: G
@@ -156,29 +153,26 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: VDD
+    -   port: None
         node:
             kind: ident
             name: VDD
-    -   port: VSS
+    -   port: None
         node:
             kind: ident
             name: VSS
--   kind: async
+-   kind: instance
     name: MLT2
     module: MULT_4BITS
     params:
     -   kind: int
         value: 16
-        name: nbits
+        name: None
     -   kind: int
         value: 7
-        name: rshft
-    -   kind: str
-        value: async
-        name: circuit
+        name: None
     ports:
-    -   port: IN
+    -   port: None
         node:
             kind: slice
             name: G
@@ -192,7 +186,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: k
+    -   port: None
         node:
             kind: slice
             name: k
@@ -201,7 +195,7 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
-    -   port: OUT
+    -   port: None
         node:
             kind: slice
             name: H
@@ -215,11 +209,11 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: VDD
+    -   port: None
         node:
             kind: ident
             name: VDD
-    -   port: VSS
+    -   port: None
         node:
             kind: ident
             name: VSS
@@ -282,21 +276,18 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: async
+-   kind: instance
     name: MLT3
     module: MULT_4BITS
     params:
     -   kind: int
         value: 16
-        name: nbits
+        name: None
     -   kind: int
         value: 11
-        name: rshft
-    -   kind: str
-        value: async
-        name: circuit
+        name: None
     ports:
-    -   port: IN
+    -   port: None
         node:
             kind: slice
             name: G
@@ -310,7 +301,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: k
+    -   port: None
         node:
             kind: slice
             name: k
@@ -319,7 +310,7 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: OUT
+    -   port: None
         node:
             kind: slice
             name: F
@@ -328,11 +319,11 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: VDD
+    -   port: None
         node:
             kind: ident
             name: VDD
-    -   port: VSS
+    -   port: None
         node:
             kind: ident
             name: VSS

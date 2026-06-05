@@ -1,6 +1,9 @@
 kind: verilog
 module: DLUX_7X2_TB
 params:
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

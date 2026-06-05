@@ -3,7 +3,7 @@ module: CLK_SLCT3
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -186,29 +186,28 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: D1P
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
-                    oper: 'BAnd:'
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: S2P
+                -   kind: uexpr
+                    oper: 'Unot:'
                     args:
                     -   kind: ident
-                        name: S2P
-                    -   kind: uexpr
-                        oper: 'Unot:'
-                        args:
-                        -   kind: ident
-                            name: S1P
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: D2P
+                        name: S1P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: D2P
 -   kind: assign
     lvalue:
         kind: ident

@@ -1,9 +1,6 @@
 kind: verilog
 module: ROM_LU
 params:
--   kind: str
-    name: circuit
-    value: sync
 -   kind: int
     name: NADDR
     value: 8
@@ -16,6 +13,9 @@ params:
 -   kind: str
     name: DATFILE
     value: ROM20.DAT
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

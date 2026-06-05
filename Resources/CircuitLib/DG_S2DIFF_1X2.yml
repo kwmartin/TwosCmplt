@@ -3,7 +3,7 @@ module: DG_S2DIFF_1X2
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -71,14 +71,7 @@ behav_blcks:
     rvalue:
         kind: ident
         name: IN
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 20
-        -   kind: float
-            value: 1.0
+    delay: 20.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -89,11 +82,4 @@ behav_blcks:
         args:
         -   kind: ident
             name: IN
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 20
-        -   kind: float
-            value: 1.0
+    delay: 20.0

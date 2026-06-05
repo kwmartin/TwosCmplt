@@ -3,7 +3,7 @@ module: KM_MX_1_8X1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -488,223 +488,216 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: DP0
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
                     oper: 'BAnd:'
                     args:
-                    -   kind: gt_expr
-                        oper: 'BAnd:'
+                    -   kind: ident
+                        name: SP1
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP0
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP2
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP1
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP2
+                    -   kind: uexpr
+                        oper: 'Unot:'
                         args:
                         -   kind: ident
                             name: SP1
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: SP0
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP3
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP2
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP3
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:
                         -   kind: ident
                             name: SP2
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: DP1
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_gate
-                    gate:
-                        kind: gt_expr
-                        oper: 'BAnd:'
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP4
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP3
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP4
+                    -   kind: uexpr
+                        oper: 'Unot:'
                         args:
-                        -   kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: ident
-                                name: SP2
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: SP1
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: SP3
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: OUT
-                    rvalue:
-                        kind: ident
-                        name: DP2
-                ifelse:
-                -   kind: ifst
-                    cmpr_expr:
-                        kind: cmpr_gate
-                        gate:
-                            kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: ident
-                                    name: SP3
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP2
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: SP4
-                    iftrue:
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: OUT
-                        rvalue:
-                            kind: ident
-                            name: DP3
-                    ifelse:
-                    -   kind: ifst
-                        cmpr_expr:
-                            kind: cmpr_gate
-                            gate:
-                                kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: gt_expr
-                                    oper: 'BAnd:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP4
-                                    -   kind: uexpr
-                                        oper: 'Unot:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP3
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: SP5
-                        iftrue:
-                        -   kind: noblckst
-                            lvalue:
-                                kind: ident
-                                name: OUT
-                            rvalue:
-                                kind: ident
-                                name: DP4
-                        ifelse:
-                        -   kind: ifst
-                            cmpr_expr:
-                                kind: cmpr_gate
-                                gate:
-                                    kind: gt_expr
-                                    oper: 'BAnd:'
-                                    args:
-                                    -   kind: gt_expr
-                                        oper: 'BAnd:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP5
-                                        -   kind: uexpr
-                                            oper: 'Unot:'
-                                            args:
-                                            -   kind: ident
-                                                name: SP4
-                                    -   kind: uexpr
-                                        oper: 'Unot:'
-                                        args:
-                                        -   kind: ident
-                                            name: SP6
-                            iftrue:
-                            -   kind: noblckst
-                                lvalue:
-                                    kind: ident
-                                    name: OUT
-                                rvalue:
-                                    kind: ident
-                                    name: DP5
-                            ifelse:
-                            -   kind: ifst
-                                cmpr_expr:
-                                    kind: cmpr_gate
-                                    gate:
-                                        kind: gt_expr
-                                        oper: 'BAnd:'
-                                        args:
-                                        -   kind: gt_expr
-                                            oper: 'BAnd:'
-                                            args:
-                                            -   kind: ident
-                                                name: SP6
-                                            -   kind: uexpr
-                                                oper: 'Unot:'
-                                                args:
-                                                -   kind: ident
-                                                    name: SP5
-                                        -   kind: uexpr
-                                            oper: 'Unot:'
-                                            args:
-                                            -   kind: ident
-                                                name: SP7
-                                iftrue:
-                                -   kind: noblckst
-                                    lvalue:
-                                        kind: ident
-                                        name: OUT
-                                    rvalue:
-                                        kind: ident
-                                        name: DP6
-                                ifelse:
-                                -   kind: ifst
-                                    cmpr_expr:
-                                        kind: cmpr_gate
-                                        gate:
-                                            kind: gt_expr
-                                            oper: 'BAnd:'
-                                            args:
-                                            -   kind: gt_expr
-                                                oper: 'BAnd:'
-                                                args:
-                                                -   kind: ident
-                                                    name: SP7
-                                                -   kind: uexpr
-                                                    oper: 'Unot:'
-                                                    args:
-                                                    -   kind: ident
-                                                        name: SP6
-                                            -   kind: uexpr
-                                                oper: 'Unot:'
-                                                args:
-                                                -   kind: ident
-                                                    name: SP0
-                                    iftrue:
-                                    -   kind: noblckst
-                                        lvalue:
-                                            kind: ident
-                                            name: OUT
-                                        rvalue:
-                                            kind: ident
-                                            name: DP7
+                        -   kind: ident
+                            name: SP3
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP5
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP4
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP5
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP4
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP6
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP5
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP6
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP5
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP7
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP6
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: SP7
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP6
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP0
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: DP7
 -   kind: assign
     lvalue:
         kind: ident

@@ -3,7 +3,7 @@ module: DG_BSMX8
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -329,7 +329,8 @@ behav_blcks:
     rvalue:
         kind: cndexpr
         args:
-        - SLCT
+        -   kind: ident
+            name: SLCT
         -   concats:
             - A7
             - A6

@@ -1,0 +1,745 @@
+kind: verilog
+module: coeffPre
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: K
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: Init
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: Clk
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
+    name: Out1_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out2_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out3_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out4_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out5_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out6_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out7_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out8_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out9_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out10_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out11_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out12_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out13_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out14_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Out15_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: Load
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Reg
+        name: state
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: sum
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: delt_k
+        signed: 'True'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: upd_val
+        signed: 'True'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: delt_k
+    rvalue:
+        kind: sexpr
+        oper: 'BSrl:'
+        args:
+        -   kind: ident
+            name: K
+        -   kind: int
+            value: 4
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: upd_val
+    rvalue:
+        kind: bexpr
+        oper: 'BMinus:'
+        args:
+        -   kind: ident
+            name: sum
+        -   kind: ident
+            name: delt_k
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: state
+        rvalue:
+            kind: int
+            value: 4'b0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out1_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out2_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out3_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out4_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out5_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out6_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out7_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out8_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out9_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out10_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out11_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out12_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out13_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out14_
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Out15_
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: posedge
+        node: Clk
+    -   edge: posedge
+        node: Init
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: int
+                value: 50
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: state
+            rvalue:
+                kind: int
+                value: 4'b0
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: sum
+            rvalue:
+                kind: ident
+                name: upd_val
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: Init
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: state
+                rvalue:
+                    kind: int
+                    value: 4'b0
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: sum
+                rvalue:
+                    kind: ident
+                    name: upd_val
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: state
+                rvalue:
+                    kind: bexpr
+                    oper: 'BMinus:'
+                    args:
+                    -   kind: ident
+                        name: state
+                    -   kind: int
+                        value: 1
+-   kind: always
+    onlyif:
+    -   edge: posedge
+        node: Clk
+    stmnts:
+    -   -   kind: casest
+            case_cmpr:
+                kind: ident
+                name: state
+            cases:
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0000
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: K
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Load
+                            rvalue:
+                                kind: int
+                                value: 1
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0001
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out1_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0010
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out2_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0011
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out3_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0100
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out4_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0101
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out5_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0110
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out6_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b0111
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out7_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1000
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out8_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1001
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out9_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1010
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out10_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1011
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out11_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1100
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out12_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1101
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out13_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1110
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out14_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+            -   kind: case_item
+                constant:
+                    kind: int
+                    value: 4'b1111
+                execs:
+                -   -   -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Out15_
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: sum
+                            rvalue:
+                                kind: ident
+                                name: upd_val
+                        -   kind: noblckst
+                            lvalue:
+                                kind: ident
+                                name: Load
+                            rvalue:
+                                kind: int
+                                value: 0

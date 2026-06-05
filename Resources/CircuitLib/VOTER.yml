@@ -3,7 +3,7 @@ module: VOTER
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -96,14 +96,7 @@ behav_blcks:
                 name: NEG1
         -   kind: ident
             name: NEG2
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 40
-        -   kind: float
-            value: 1.0
+    delay: 40.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -129,11 +122,4 @@ behav_blcks:
                     name: NEG1
             -   kind: ident
                 name: NEG2
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 40
-        -   kind: float
-            value: 1.0
+    delay: 40.0

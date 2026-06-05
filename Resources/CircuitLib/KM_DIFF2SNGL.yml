@@ -3,7 +3,7 @@ module: KM_DIFF2SNGL
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -81,11 +81,4 @@ behav_blcks:
                 name: PD
         -   kind: ident
             name: INP
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 120
-        -   kind: float
-            value: 1.0
+    delay: 120.0

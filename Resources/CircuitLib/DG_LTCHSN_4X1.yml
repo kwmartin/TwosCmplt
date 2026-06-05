@@ -121,14 +121,7 @@ behav_blcks:
                 value: 1
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: float
-                        value: 22.9
-                    -   kind: float
-                        value: 1.0
+                delay: 22.9
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -154,14 +147,7 @@ behav_blcks:
                     name: D
                 delay:
                     kind: float
-                    delay:
-                        kind: bexpr
-                        oper: 'Times:'
-                        args:
-                        -   kind: float
-                            value: 22.9
-                        -   kind: float
-                            value: 1.0
+                    delay: 22.9
 -   kind: always
     onlyif:
     -   edge: all
@@ -190,14 +176,7 @@ behav_blcks:
                 value: 1
             delay:
                 kind: float
-                delay:
-                    kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: float
-                        value: 22.9
-                    -   kind: float
-                        value: 1.0
+                delay: 22.9
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -223,14 +202,7 @@ behav_blcks:
                     name: D
                 delay:
                     kind: float
-                    delay:
-                        kind: bexpr
-                        oper: 'Times:'
-                        args:
-                        -   kind: float
-                            value: 22.9
-                        -   kind: float
-                            value: 1.0
+                    delay: 22.9
 -   kind: assign
     lvalue:
         kind: ident

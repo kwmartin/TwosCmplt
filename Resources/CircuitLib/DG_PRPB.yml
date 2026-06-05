@@ -3,7 +3,7 @@ module: DG_PRPB
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -88,11 +88,4 @@ behav_blcks:
                 name: A2
         -   kind: ident
             name: A3
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 9.0
-        -   kind: float
-            value: 1.0
+    delay: 9.0

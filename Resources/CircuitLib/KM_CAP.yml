@@ -3,7 +3,7 @@ module: KM_CAP
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5

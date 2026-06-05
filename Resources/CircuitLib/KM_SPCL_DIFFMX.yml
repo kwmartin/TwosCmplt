@@ -3,7 +3,7 @@ module: KM_SPCL_DIFFMX
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -123,14 +123,7 @@ behav_blcks:
                         name: SP
                 -   kind: ident
                     name: BP
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 11.6
-        -   kind: float
-            value: 1.0
+    delay: 11.6
 -   kind: assign
     lvalue:
         kind: ident
@@ -164,11 +157,4 @@ behav_blcks:
                         name: BP
         -   kind: ident
             name: AP
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 11.6
-        -   kind: float
-            value: 1.0
+    delay: 11.6

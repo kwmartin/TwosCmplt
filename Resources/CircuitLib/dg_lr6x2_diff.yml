@@ -3,7 +3,7 @@ module: dg_lr6x2_diff
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5

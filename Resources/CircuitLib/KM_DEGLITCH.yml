@@ -191,66 +191,63 @@ behav_blcks:
                 rvalue:
                     kind: int
                     value: 1
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_gate
-                    gate:
-                        kind: gt_expr
-                        oper: 'BAnd:'
-                        args:
-                        -   kind: ident
-                            name: RIN
-                        -   kind: ident
-                            name: QIP
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: RSTATE
-                    rvalue:
-                        kind: int
-                        value: 0
-                ifelse:
-                -   kind: ifst
-                    cmpr_expr:
-                        kind: cmpr_gate
-                        gate:
-                            kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: ident
-                                name: QIP
-                            -   kind: ident
-                                name: RIP
-                    iftrue:
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: QSTATE
-                        rvalue:
-                            kind: int
-                            value: 1
-                    ifelse:
-                    -   kind: ifst
-                        cmpr_expr:
-                            kind: cmpr_gate
-                            gate:
-                                kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: ident
-                                    name: QIN
-                                -   kind: ident
-                                    name: RIN
-                        iftrue:
-                        -   kind: noblckst
-                            lvalue:
-                                kind: ident
-                                name: QSTATE
-                            rvalue:
-                                kind: int
-                                value: 0
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: RIN
+                    -   kind: ident
+                        name: QIP
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: RSTATE
+                rvalue:
+                    kind: int
+                    value: 0
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: QIP
+                    -   kind: ident
+                        name: RIP
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QSTATE
+                rvalue:
+                    kind: int
+                    value: 1
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: QIN
+                    -   kind: ident
+                        name: RIN
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QSTATE
+                rvalue:
+                    kind: int
+                    value: 0
 -   kind: assign
     lvalue:
         kind: ident

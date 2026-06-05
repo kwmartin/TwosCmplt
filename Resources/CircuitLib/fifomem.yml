@@ -1,15 +1,15 @@
 kind: verilog
 module: fifomem
 params:
--   kind: str
-    name: circuit
-    value: sync
 -   kind: int
     name: DATASIZE
     value: 4
 -   kind: int
     name: ADDRSIZE
     value: 4
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

@@ -3,7 +3,7 @@ module: dg_nor2_2x1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -65,11 +65,4 @@ behav_blcks:
                 name: a
             -   kind: ident
                 name: b
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 12.9
-        -   kind: float
-            value: 1.0
+    delay: 12.9

@@ -3,7 +3,7 @@ module: KM_ENBL_BFRB
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -84,14 +84,7 @@ behav_blcks:
             name: DP
         -   kind: int
             value: 1'B0
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 5.8
-        -   kind: float
-            value: 1.0
+    delay: 5.8
 -   kind: assign
     lvalue:
         kind: ident
@@ -113,14 +106,7 @@ behav_blcks:
                 name: DP
         -   kind: int
             value: 1'B1
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 5.8
-        -   kind: float
-            value: 1.0
+    delay: 5.8
 -   kind: assign
     lvalue:
         kind: ident

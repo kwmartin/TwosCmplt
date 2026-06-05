@@ -2,8 +2,11 @@ kind: verilog
 module: CLA10
 params:
 -   kind: str
+    name: spiceprefix
+    value: X
+-   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -52,16 +55,11 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: B
+    name: VDD
     direct: 'Input:'
     signed: 'False'
-    width:
-    -   kind: int
-        value: 9
-    -   kind: int
-        value: 0
 -   kind: Wire
-    name: CI
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:

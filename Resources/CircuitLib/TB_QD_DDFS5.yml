@@ -1,6 +1,9 @@
 kind: verilog
 module: TB_QD_DDFS5
 params:
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5

@@ -3,7 +3,7 @@ module: CLOCK_SLCT
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -230,60 +230,58 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: AP
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
                     oper: 'BAnd:'
                     args:
-                    -   kind: gt_expr
-                        oper: 'BAnd:'
-                        args:
-                        -   kind: ident
-                            name: SBP
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: SAP
+                    -   kind: ident
+                        name: SBP
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: E0P
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: BP
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_gate
-                    gate:
-                        kind: gt_expr
-                        oper: 'BAnd:'
-                        args:
-                        -   kind: ident
-                            name: E0P
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: FSTP
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: OUT
-                    rvalue:
-                        kind: int
-                        value: 1'B0
+                            name: SAP
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: E0P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: BP
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: E0P
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: FSTP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: int
+                value: 1'B0
 -   kind: assign
     lvalue:
         kind: ident

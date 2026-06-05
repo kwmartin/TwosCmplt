@@ -6,7 +6,7 @@ params:
     value: 20
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -136,14 +136,7 @@ behav_blcks:
             name: sum
         -   kind: int
             value: 0
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 30.0
-        -   kind: float
-            value: 1.0
+    delay: 30.0
 -   kind: assign
     lvalue:
         kind: ident

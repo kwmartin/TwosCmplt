@@ -3,7 +3,7 @@ module: dg_mx_4x1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -116,14 +116,7 @@ behav_blcks:
             name: d0
         -   kind: int
             value: 1'bz
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 19.9
-        -   kind: float
-            value: 1.0
+    delay: 19.9
 -   kind: assign
     lvalue:
         kind: ident
@@ -142,14 +135,7 @@ behav_blcks:
             name: d1
         -   kind: int
             value: 1'bz
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 19.9
-        -   kind: float
-            value: 1.0
+    delay: 19.9
 -   kind: assign
     lvalue:
         kind: ident
@@ -168,14 +154,7 @@ behav_blcks:
             name: d2
         -   kind: int
             value: 1'bz
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 19.9
-        -   kind: float
-            value: 1.0
+    delay: 19.9
 -   kind: assign
     lvalue:
         kind: ident
@@ -194,11 +173,4 @@ behav_blcks:
             name: d3
         -   kind: int
             value: 1'bz
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 19.9
-        -   kind: float
-            value: 1.0
+    delay: 19.9

@@ -3,7 +3,7 @@ module: KM_BUF_HYST
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -49,11 +49,4 @@ behav_blcks:
     rvalue:
         kind: ident
         name: IN
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 19.1
-        -   kind: float
-            value: 1.0
+    delay: 19.1

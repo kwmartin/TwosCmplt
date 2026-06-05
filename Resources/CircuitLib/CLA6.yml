@@ -3,10 +3,7 @@ module: CLA6
 params:
 -   kind: str
     name: circuit
-    value: async
--   kind: str
-    name: spiceprefix
-    value: X
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -55,11 +52,16 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: VDD
+    name: B
     direct: 'Input:'
     signed: 'False'
+    width:
+    -   kind: int
+        value: 5
+    -   kind: int
+        value: 0
 -   kind: Wire
-    name: VSS
+    name: CI
     direct: 'Input:'
     signed: 'False'
 decls:

@@ -42,13 +42,13 @@ modules:
     TST_DLUX_7X2:
         verilog: /home/martin/.xschem/simulations/TST_DLUX_7X2.v
         timestamps:
-            verilog: 1780607877.0863333
-            ast: 1780607892.3854575
-            mod: 1780607894.073471
-            circuit_lib: 1780607895.4694824
-            unl: 1780607895.4744825
+            verilog: 1780691757.8951056
+            ast: 1780691798.5215008
+            mod: 1780691799.8415136
+            circuit_lib: 1780691801.2505274
+            unl: 1780691801.2545273
         hashes:
-            verilog: 79d6182cf7acd720dfdc5a52e60a57b374e36908747a9b37e38a9717f7140853
+            verilog: b42cc45a263e8ae1d60b4381e39f8c096c17918f613f6c442c9767bd2200edbe
     DG_DLUX_7X2:
         verilog: /home/martin/.xschem/ver_lib/DG_DLUX_7X2.v
         timestamps:
@@ -59,3 +59,93 @@ modules:
             unl: 1780593613.6367934
         hashes:
             verilog: 73edc2af904d082a73f130c3d0cc0a9349067bce078a578f084f3ec8a7c5cde0
+    REGS_TB:
+        verilog: /home/martin/.xschem/proj_lib/regs_tb.v
+        timestamps:
+            verilog: 1777320032.3752084
+            ast: 1780685652.1701517
+            mod: 1780685653.4891622
+            circuit_lib: 1780685654.8711734
+            unl: 1780685654.8851736
+        hashes:
+            verilog: 77d417f27183ed840844efc37b99ed4fffcffbbb2dd236379a28468dee59d980
+    QD_ACCUM5:
+        verilog: /home/martin/.xschem/ver_lib/QD_ACCUM5.v
+        timestamps:
+            verilog: 1779998915.6215298
+            ast: 1780685141.223957
+            mod: 1780685142.5599682
+            circuit_lib: 1780685144.1099813
+            unl: 1780685144.1419816
+        hashes:
+            verilog: 3396a5d30ed0590308f64696f495914bc3ecee66f8cfc143255f26552b25d698
+    MLTPLY_FINE2:
+        verilog: /home/martin/.xschem/ver_lib/MLTPLY_FINE2.v
+        timestamps:
+            verilog: 1779998915.6215298
+            ast: 1780685425.1133082
+            mod: 1780685426.450319
+            circuit_lib: 1780685427.8533306
+            unl: 1780685427.8633306
+        hashes:
+            verilog: a8533102b6ec1e976ce8d26b30de256f3f3a51fe395969aea36f6d0969663487
+    DG_DLUSR_7X2:
+        verilog: /home/martin/.xschem/ver_lib/DG_DLUSR_7X2.v
+        timestamps:
+            verilog: 1780686046.4083085
+            ast: 1780686849.452475
+            mod: 1780686851.1934874
+            circuit_lib: 1780686852.693498
+            unl: 1780686852.7064981
+        hashes:
+            verilog: 64c83c6dc8a2d646176bb44a1f166d2f854a23b2852c84417f5124e638aeff41
+    TST_DLUSR_7X2:
+        verilog: /home/martin/.xschem/simulations/TST_DLUSR_7X2.v
+        timestamps:
+            verilog: 1780690988.2085435
+            ast: 1780691005.2077692
+            mod: 1780691006.5197864
+            circuit_lib: 1780691007.8728042
+            unl: 1780691007.8768044
+        hashes:
+            verilog: 4bbb4ecfab07d0ea0be023766965aafeccc3fed192582d6ebd79fdb60b31e329
+    DLUSR_7X2:
+        verilog: /home/martin/.xschem/ver_lib/DLUSR_7X2.v
+        timestamps:
+            verilog: 1780685729.0127704
+            ast: 1780686944.602156
+            mod: 1780686945.9251654
+            circuit_lib: 1780686947.4461765
+            unl: 1780686947.4581766
+        hashes:
+            verilog: 5a9e1861e0caf9c952f27bd5d0a45617a9cd91a4606233014a26103282d60f97
+    coeffPre:
+        verilog: /home/martin/.xschem/ver_lib/coeffPre.v
+        timestamps:
+            verilog: 1780686528.108128
+            ast: 1780687483.456152
+            mod: 1780687484.790162
+            circuit_lib: 1780687486.1571724
+            unl: 1780687486.1771727
+        hashes:
+            verilog: 22e3c0cddc623aa8018747e1e56cbb9b40e02f65390152007ea7a464259e5d10
+    coeffPre_TB:
+        verilog: /home/martin/.xschem/proj_lib/TB_coeffPre.v
+        timestamps:
+            verilog: 1737844087.4042652
+            ast: 1780687487.430182
+            mod: 1780687488.7471921
+            circuit_lib: 1780687490.1272025
+            unl: 1780687490.1372025
+        hashes:
+            verilog: 01023a338f15ab251a9c2886359330bbe22cbbd41f2490320a86a0e9b3f0e6b9
+    DG_LTCHSN_6X1:
+        verilog: /home/martin/.xschem/proj_lib/diglib28_vl.v
+        timestamps:
+            verilog: 1779104622.4502368
+            ast: 1780688428.0083907
+            mod: 1780688438.5954723
+            circuit_lib: 1780688447.9795449
+            unl: 1780688447.9835448
+        hashes:
+            verilog: 66be31ed1add99ba835977ee557cb6f4a256b54b664d8fcd261540d49af99ad3

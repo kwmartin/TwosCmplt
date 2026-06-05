@@ -1,12 +1,12 @@
 kind: verilog
 module: addr
 params:
--   kind: str
-    name: circuit
-    value: async
 -   kind: int
     name: nbits
     value: 8
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -44,10 +44,6 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: CO
-    direct: 'Output:'
-    signed: 'False'
--   kind: Wire
     name: S
     direct: 'Output:'
     signed: 'False'
@@ -61,6 +57,10 @@ io_ports:
             value: 1
     -   kind: int
         value: 0
+-   kind: Wire
+    name: CO
+    direct: 'Output:'
+    signed: 'False'
 -   kind: Wire
     name: VDD
     direct: 'Input:'

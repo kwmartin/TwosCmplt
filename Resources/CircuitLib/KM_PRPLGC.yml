@@ -3,7 +3,7 @@ module: KM_PRPLGC
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -97,7 +97,8 @@ behav_blcks:
     rvalue:
         kind: cndexpr
         args:
-        - OVWR
+        -   kind: ident
+            name: OVWR
         -   kind: ident
             name: OVAL
         -   kind: gt_expr
@@ -107,14 +108,7 @@ behav_blcks:
                 name: D1P
             -   kind: ident
                 name: D2P
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 13.0
-        -   kind: float
-            value: 1.0
+    delay: 13.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -125,7 +119,8 @@ behav_blcks:
         args:
         -   kind: cndexpr
             args:
-            - OVWR
+            -   kind: ident
+                name: OVWR
             -   kind: ident
                 name: OVAL
             -   kind: gt_expr
@@ -135,11 +130,4 @@ behav_blcks:
                     name: D1P
                 -   kind: ident
                     name: D2P
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 13.0
-        -   kind: float
-            value: 1.0
+    delay: 13.0

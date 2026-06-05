@@ -1,12 +1,12 @@
 kind: verilog
 module: REGS
 params:
--   kind: str
-    name: circuit
-    value: sync
 -   kind: int
     name: nbits
     value: 8
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -127,14 +127,7 @@ behav_blcks:
     rvalue:
         kind: ident
         name: D
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 30.0
-        -   kind: float
-            value: 1.0
+    delay: 30.0
 -   kind: initial
     stmnts:
     -   kind: blckst

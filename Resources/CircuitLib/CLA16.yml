@@ -3,7 +3,7 @@ module: CLA16
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -131,7 +131,7 @@ decls:
 behav_blcks:
 -   kind: instance
     name: AND1
-    module: AN2D2BWP35HVT
+    module: DG_AND2_2X1
     params: null
     ports:
     -   port: None
@@ -368,7 +368,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: AND2
-    module: AN2D2BWP35HVT
+    module: DG_AND2_2X1
     params: null
     ports:
     -   port: None

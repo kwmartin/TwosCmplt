@@ -3,7 +3,7 @@ module: KM_MXB4_3X1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -83,11 +83,4 @@ behav_blcks:
                 name: SN
             -   kind: ident
                 name: B
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 18.2
-        -   kind: float
-            value: 1.0
+    delay: 18.2

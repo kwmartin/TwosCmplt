@@ -1,0 +1,435 @@
+kind: verilog
+module: DLUSR_7X2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: U
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: L
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: LI
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: I_D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: U
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: I_D
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: L_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: IP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: DIN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N439
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N511
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: S2D
+    module: DG_SNGL2DIFF_1X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L_1
+    -   port: None
+        node:
+            kind: ident
+            name: QP
+    -   port: None
+        node:
+            kind: ident
+            name: QN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: INV_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: MX1
+    module: DG_MXN2_3X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: ident
+            name: LI
+    -   port: None
+        node:
+            kind: ident
+            name: D
+    -   port: None
+        node:
+            kind: ident
+            name: DIN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: MX2
+    module: DG_MXN2_3X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: U
+    -   port: None
+        node:
+            kind: ident
+            name: DIN
+    -   port: None
+        node:
+            kind: ident
+            name: N511
+    -   port: None
+        node:
+            kind: ident
+            name: N439
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L_1
+    -   port: None
+        node:
+            kind: ident
+            name: N511
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: LO
+    module: DG_LTCHSN_6X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: N439
+    -   port: None
+        node:
+            kind: ident
+            name: SN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: IP
+            -   kind: ident
+                name: IN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: L_0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV_3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: INV_4
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: IP
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: INV_5
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: I_D
+    -   port: None
+        node:
+            kind: ident
+            name: SN
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: L1
+    module: DG_LTCHSN_6X1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L_0
+    -   port: None
+        node:
+            kind: ident
+            name: SN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: IP
+            -   kind: ident
+                name: IN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CN
+            -   kind: ident
+                name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: L_1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

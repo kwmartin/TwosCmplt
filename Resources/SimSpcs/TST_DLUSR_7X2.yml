@@ -1,0 +1,26 @@
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [L, 0]
+      - [LI, 0]
+      - [U, 1]
+      - [I_D, 0]
+  - tm: 0.2*PER
+    vls:
+      -   - INIT
+          - 0
+SaveNds:
+  - name: QP
+    format: b
+  - name: QN
+    format: b

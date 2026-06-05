@@ -2,11 +2,11 @@ kind: verilog
 module: M1M_QDACCUM5
 params:
 -   kind: str
-    name: circuit
-    value: sync
--   kind: str
     name: spiceprefix
     value: X
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -461,7 +461,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV1
-    module: INVD4BWP35HVT
+    module: DG_INV4_1X1
     params: null
     ports:
     -   port: None
@@ -486,7 +486,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: EXOR
-    module: XOR2D1BWP35HVT
+    module: DG_EXOR1_1X1
     params: null
     ports:
     -   port: None
@@ -515,7 +515,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV2
-    module: INVD4BWP35HVT
+    module: DG_INV4_1X1
     params: null
     ports:
     -   port: None
@@ -538,7 +538,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: BUFR_15
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -559,7 +559,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_14
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -580,7 +580,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_13
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -601,7 +601,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_12
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -622,7 +622,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_11
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -643,7 +643,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_10
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -664,7 +664,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_9
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -685,7 +685,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_8
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -706,7 +706,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_7
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -727,7 +727,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_6
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -748,7 +748,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_5
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -769,7 +769,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_4
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -790,7 +790,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_3
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -811,7 +811,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_2
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -832,7 +832,7 @@ behav_blcks:
             name: VSS
 -   kind: instance
     name: BUFR_1
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None
@@ -853,7 +853,7 @@ behav_blcks:
             name: VDD
 -   kind: instance
     name: BUFR_0
-    module: BUFFD4BWP35HVT
+    module: DG_BUF4_1X1
     params: null
     ports:
     -   port: None

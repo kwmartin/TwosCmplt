@@ -3,7 +3,7 @@ module: REGS_TB
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -180,36 +180,35 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 0
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_expr
-                oper: 'BGreaterEq:'
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BGreaterEq:'
+            args:
+            -   kind: ident
+                name: n
+            -   kind: bexpr
+                oper: 'Times:'
                 args:
-                -   kind: ident
-                    name: n
-                -   kind: bexpr
-                    oper: 'Times:'
-                    args:
-                    -   kind: int
-                        value: 80
-                    -   kind: int
-                        value: 2
-            iftrue:
-            -   kind: syscall
-                name: display
-                value:
-                -   kind: str
-                    value: '*-* All Finished *-*'
-            -   kind: syscall
-                name: display
-                value:
-                -   kind: str
-                    value: 'AT FINISH: time is %0t'
-                -   kind: sys_tm
-                    name: time
-            -   kind: syscall
-                name: finish
+                -   kind: int
+                    value: 80
+                -   kind: int
+                    value: 2
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: '*-* All Finished *-*'
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'AT FINISH: time is %0t'
+            -   kind: sys_tm
+                name: time
+        -   kind: syscall
+            name: finish
     -   kind: blckst
         lvalue:
             kind: ident

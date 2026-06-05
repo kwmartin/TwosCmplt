@@ -1,0 +1,156 @@
+DG_DLUSR_7X2:
+  instances:
+  - circIndxs: [0, 0]
+    name: DLUSR1
+  nodes:
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: D
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: L
+    nbits: 1
+  - name: LI
+    nbits: 1
+  - name: U
+    nbits: 1
+  - name: I_D
+    nbits: 1
+  - name: L_0
+    nbits: 1
+  - name: L_1
+    nbits: 1
+  - name: CN
+    nbits: 1
+  - name: CP
+    nbits: 1
+  - name: IN
+    nbits: 1
+  - name: IP
+    nbits: 1
+  - name: SN
+    nbits: 1
+  - name: DIN
+    nbits: 1
+  - name: N439
+    nbits: 1
+  - name: N511
+    nbits: 1
+DG_INV2_1X1:
+  instances:
+  - circIndxs: [0, 0, 1]
+    name: INV_0
+  - circIndxs: [0, 0, 2]
+    name: INV_1
+  - circIndxs: [0, 0, 5]
+    name: INV_2
+  - circIndxs: [0, 0, 7]
+    name: INV_3
+  - circIndxs: [0, 0, 8]
+    name: INV_4
+  - circIndxs: [0, 0, 9]
+    name: INV_5
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_LTCHSN_6X1:
+  instances:
+  - circIndxs: [0, 0, 6]
+    name: LO
+  - circIndxs: [0, 0, 10]
+    name: L1
+  nodes:
+  - name: D
+    nbits: 1
+  - name: SN
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: INITN
+    nbits: 1
+  - name: CP
+    nbits: 1
+  - name: CN
+    nbits: 1
+  - name: QP
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: STR
+    nbits: 1
+DG_MXN2_3X1:
+  instances:
+  - circIndxs: [0, 0, 3]
+    name: MX1
+  - circIndxs: [0, 0, 4]
+    name: MX2
+  nodes:
+  - name: S
+    nbits: 1
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_SNGL2DIFF_1X2:
+  instances:
+  - circIndxs: [0, 0, 0]
+    name: S2D
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUTP
+    nbits: 1
+  - name: OUTN
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+TST_DLUSR_7X2:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: L
+    nbits: 1
+  - name: LI
+    nbits: 1
+  - name: U
+    nbits: 1
+  - name: I_D
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1

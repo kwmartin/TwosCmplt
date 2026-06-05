@@ -3,7 +3,7 @@ module: dg_buf8_1x1
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5

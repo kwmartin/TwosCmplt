@@ -3,7 +3,7 @@ module: DG_NAB_C2
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -78,11 +78,4 @@ behav_blcks:
                     name: B
             -   kind: ident
                 name: C
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 18.7
-        -   kind: float
-            value: 1.0
+    delay: 18.7

@@ -2,11 +2,11 @@ kind: verilog
 module: KM_REGS18
 params:
 -   kind: str
-    name: circuit
-    value: sync
--   kind: str
     name: spiceprefix
     value: X
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -65,7 +65,7 @@ decls:
 behav_blcks:
 -   kind: instance
     name: CKBFR
-    module: BUFFD8BWP35HVT
+    module: DG_BUF8_1X1
     params: null
     ports:
     -   port: None

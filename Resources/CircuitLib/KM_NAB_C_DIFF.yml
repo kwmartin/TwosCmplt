@@ -3,7 +3,7 @@ module: KM_NAB_C_DIFF
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -110,14 +110,7 @@ behav_blcks:
                     name: BP
             -   kind: ident
                 name: CP
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 11.7
-        -   kind: float
-            value: 1.0
+    delay: 11.7
 -   kind: assign
     lvalue:
         kind: ident
@@ -135,11 +128,4 @@ behav_blcks:
                 name: BP
         -   kind: ident
             name: CP
-    delay:
-        kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: float
-            value: 11.7
-        -   kind: float
-            value: 1.0
+    delay: 11.7

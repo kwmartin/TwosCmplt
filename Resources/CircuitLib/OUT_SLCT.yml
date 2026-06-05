@@ -3,7 +3,7 @@ module: OUT_SLCT
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -216,84 +216,81 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: D1P
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
                     oper: 'BAnd:'
                     args:
-                    -   kind: gt_expr
-                        oper: 'BAnd:'
+                    -   kind: ident
+                        name: S2P
+                    -   kind: uexpr
+                        oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: S2P
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: S0P
+                            name: S0P
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: S1P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: D2P
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: S0P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: int
+                value: 1'B0
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: S0P
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:
                         -   kind: ident
                             name: S1P
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: D2P
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_ident
-                    node: S0P
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: OUT
-                    rvalue:
-                        kind: int
-                        value: 1'B0
-                ifelse:
-                -   kind: ifst
-                    cmpr_expr:
-                        kind: cmpr_gate
-                        gate:
-                            kind: gt_expr
-                            oper: 'BAnd:'
-                            args:
-                            -   kind: gt_expr
-                                oper: 'BAnd:'
-                                args:
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: S0P
-                                -   kind: uexpr
-                                    oper: 'Unot:'
-                                    args:
-                                    -   kind: ident
-                                        name: S1P
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: S2P
-                    iftrue:
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: OUT
-                        rvalue:
-                            kind: int
-                            value: 1'B1
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: S2P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: int
+                value: 1'B1
 -   kind: assign
     lvalue:
         kind: ident

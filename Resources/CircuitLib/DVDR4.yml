@@ -1,6 +1,9 @@
 kind: verilog
 module: DVDR4
 params:
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -129,12 +132,12 @@ behav_blcks:
             name: CLK
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: AND0
     module: DG_AND2_2X1
@@ -154,12 +157,12 @@ behav_blcks:
             name: AND_0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: TFF_1
     module: TFF
@@ -187,12 +190,12 @@ behav_blcks:
             name: CLK
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: TFF_2
     module: TFF
@@ -220,12 +223,12 @@ behav_blcks:
             name: CLK
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: AND1
     module: DG_AND2_2X1
@@ -245,12 +248,12 @@ behav_blcks:
             name: AND_1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: TFF_3
     module: TFF
@@ -278,12 +281,12 @@ behav_blcks:
             name: CLK
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: assign
     lvalue:
     - select
