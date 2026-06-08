@@ -2,6 +2,9 @@ kind: verilog
 module: DLUX_7X2
 params:
 -   kind: str
+    name: spiceprefix
+    value: X
+-   kind: str
     name: circuit
     value: sync
 -   kind: Int
@@ -45,14 +48,28 @@ io_ports:
     direct: 'Output:'
     signed: 'False'
 -   kind: Wire
-    name: U
+    name: VDD
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: Q0
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:
+-   -   kind: Wire
+        name: L_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Wire
         name: CN
         signed: 'False'
@@ -76,20 +93,6 @@ decls:
         length: []
 -   -   kind: Wire
         name: IP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: L0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: L1
         signed: 'False'
         width:
         - 0
@@ -135,7 +138,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L1
+            name: L_1
     -   port: None
         node:
             kind: ident
@@ -269,7 +272,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L1
+            name: L_1
     -   port: None
         node:
             kind: ident
@@ -314,7 +317,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L0
+            name: L_0
     -   port: None
         node:
             kind: concat
@@ -403,7 +406,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L0
+            name: L_0
     -   port: None
         node:
             kind: ident
@@ -427,7 +430,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L1
+            name: L_1
     -   port: None
         node:
             kind: concat
