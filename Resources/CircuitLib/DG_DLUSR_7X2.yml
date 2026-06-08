@@ -294,20 +294,20 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: IP
-            -   kind: ident
-                name: IN
+            kind: ident
+            name: IP
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: CP
-            -   kind: ident
-                name: CN
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
     -   port: None
         node:
             kind: ident
@@ -407,20 +407,20 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: IP
-            -   kind: ident
-                name: IN
+            kind: ident
+            name: IP
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: CN
-            -   kind: ident
-                name: CP
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: CP
     -   port: None
         node:
             kind: ident

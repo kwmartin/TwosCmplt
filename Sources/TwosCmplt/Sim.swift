@@ -779,14 +779,9 @@ public struct Context {
     }
 
     public mutating func evalGate(_ name: String, args: [Value]) -> Value {
-        let ints: [Int] = args.map { arg in
-            guard case let .int(i) = arg else {
-                fatalError("evalGate(and): expected .int, got \(arg)")
-            }
-            return i
-        }
+        let ints: [Int] = args.map { $0.asInt }
         switch name {
-        case "and":
+        case "and", "BAnd:", "BLand:":
 
             var result = 0x1
             for i in ints {
@@ -794,7 +789,7 @@ public struct Context {
             }
             return .int(result)
 
-        case "nand":
+        case "nand", "BNand:":
 
             var result = 0x1
             for i in ints {
@@ -803,7 +798,7 @@ public struct Context {
             result = result == 0x1 ? 0 : 0x1
             return .int(result)
 
-        case "or":
+        case "or", "BOr:", "BLor:":
 
             var result = 0x0
             for i in ints {
@@ -811,7 +806,7 @@ public struct Context {
             }
             return .int(result)
 
-        case "nor":
+        case "nor", "BNor:":
 
             var result = 0x0
             for i in ints {
@@ -820,7 +815,7 @@ public struct Context {
             result = result == 0x1 ? 0 : 0x1
             return .int(result)
 
-        case "xor":
+        case "xor", "BXor:":
 
             var result = 0x0
             for i in ints {
@@ -828,7 +823,7 @@ public struct Context {
             }
             return .int(result)
 
-        case "xnor":
+        case "xnor", "BXnor:":
 
             var result = 0x0
             for i in ints {

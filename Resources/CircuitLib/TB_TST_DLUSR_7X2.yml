@@ -1,0 +1,127 @@
+kind: verilog
+module: TB_TST_DLUSR_7X2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports: []
+decls:
+-   -   kind: Wire
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: INIT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: L
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: LI
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: U
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: I_D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: TST_DLUSR_7X2
+    module: TST_DLUSR_7X2
+    params: null
+    ports:
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLK
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: L
+        node:
+            kind: ident
+            name: L
+    -   port: LI
+        node:
+            kind: ident
+            name: LI
+    -   port: U
+        node:
+            kind: ident
+            name: U
+    -   port: I_D
+        node:
+            kind: ident
+            name: I_D
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+    -   port: QP
+        node:
+            kind: ident
+            name: QP
+    -   port: QN
+        node:
+            kind: ident
+            name: QN
