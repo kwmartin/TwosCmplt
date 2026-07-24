@@ -116,7 +116,7 @@ behav_blcks:
         node: CP
     -   edge: all
         node: CN
-    -   edge: all
+    -   edge: posedge
         node: INIT
     stmnts:
     -   kind: ifst

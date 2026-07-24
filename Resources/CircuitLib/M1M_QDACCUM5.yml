@@ -2,11 +2,11 @@ kind: verilog
 module: M1M_QDACCUM5
 params:
 -   kind: str
-    name: circuit
-    value: async
--   kind: str
     name: spiceprefix
     value: X
+-   kind: str
+    name: circuit
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -896,4 +896,3 @@ behav_blcks:
             sgmnts:
             - 0
     delay: 0
-

@@ -4,261 +4,77 @@ viewer_order:
   - Top.FRQ
   - QD_
   - RL_
-  - Top.ACCM0.ADDR0R.A
-  - Top.ACCM0.ADDR0R.B
-  - Top.ACCM0.ADDR0R.CI
-  - Top.ACCM0.ADDR0R.CO
-  - Top.ACCM0.ADDR0R.G
-  - Top.ACCM0.ADDR0R.P
-  - Top.ACCM0.ADDR0R.S
-  - Top.ACCM0.ADDR0R.C0
-  - Top.ACCM0.ADDR0R.C1
-  - Top.ACCM0.ADDR0R.G0
-  - Top.ACCM0.ADDR0R.G1
-  - Top.ACCM0.ADDR0R.P0
-  - Top.ACCM0.ADDR0R.P1
-  - Top.ACCM0.ADDR0R.N380
-  - Top.ACCM0.ADDR0R.N397
-  - Top.ACCM0.ADDR0R.N503
-  - Top.ACCM0.ADDR0R.CLA8_1.A
-  - Top.ACCM0.ADDR0R.CLA8_1.B
-  - Top.ACCM0.ADDR0R.CLA8_1.CI
-  - Top.ACCM0.ADDR0R.CLA8_1.CO
-  - Top.ACCM0.ADDR0R.CLA8_1.G
-  - Top.ACCM0.ADDR0R.CLA8_1.P
-  - Top.ACCM0.ADDR0R.CLA8_1.S
-  - Top.ACCM0.ADDR0R.CLA8_1.C0
-  - Top.ACCM0.ADDR0R.CLA8_1.C1
-  - Top.ACCM0.ADDR0R.CLA8_1.G0
-  - Top.ACCM0.ADDR0R.CLA8_1.G1
-  - Top.ACCM0.ADDR0R.CLA8_1.P0
-  - Top.ACCM0.ADDR0R.CLA8_1.P1
-  - Top.ACCM0.ADDR0R.CLA8_1.N380
-  - Top.ACCM0.ADDR0R.CLA8_1.N397
-  - Top.ACCM0.ADDR0R.CLA8_1.N503
+  - Top.ACCM0.CLK
+  - Top.ACCM0.ADDR0R_
+  - Top.ACCM0.R1R_
+  - Top.ACCM0.ADDR1R_
+  - Top.ACCM0.P1R
+  - Top.ACCM0.P0R
+  - Top.ACCM0.CLKB
+  - Top.ACCM0.R1NR_
+  - Top.ACCM0.RL_
+  - Top.ACCM0.QD_
+  - Top.ACCM0.INIT
 selection:
   - key:
       - 0
       - 0
-      - 0
     indices:
       - 0
-      - 1
       - 2
       - 3
       - 4
-      - 5
-      - 6
+      - 7
+      - 8
       - 9
       - 10
       - 11
       - 12
       - 13
-      - 14
-      - 15
-      - 16
-      - 17
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    indices:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 9
-      - 10
-      - 11
-      - 12
-      - 13
-      - 14
-      - 15
-      - 16
-      - 17
 signal_order:
   - key:
       - 0
       - 0
-      - 0
     idx: 0
   - key:
-      - 0
-      - 0
-      - 0
-    idx: 1
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 2
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 3
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 4
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 5
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 6
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 9
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 10
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 11
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 12
-  - key:
-      - 0
       - 0
       - 0
     idx: 13
   - key:
       - 0
       - 0
-      - 0
-    idx: 14
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 15
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 16
-  - key:
-      - 0
-      - 0
-      - 0
-    idx: 17
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 0
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 1
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 2
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 3
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 4
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 5
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 6
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 9
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 10
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
-    idx: 11
-  - key:
-      - 0
-      - 0
-      - 0
-      - 6
     idx: 12
   - key:
       - 0
       - 0
-      - 0
-      - 6
-    idx: 13
+    idx: 11
   - key:
       - 0
       - 0
-      - 0
-      - 6
-    idx: 14
+    idx: 10
   - key:
       - 0
       - 0
-      - 0
-      - 6
-    idx: 15
+    idx: 9
   - key:
       - 0
       - 0
-      - 0
-      - 6
-    idx: 16
+    idx: 8
   - key:
       - 0
       - 0
+    idx: 7
+  - key:
       - 0
-      - 6
-    idx: 17
+      - 0
+    idx: 4
+  - key:
+      - 0
+      - 0
+    idx: 3
+  - key:
+      - 0
+      - 0
+    idx: 2
 current_key:
   - 0
-  - 0
-  - 0
-  - 6

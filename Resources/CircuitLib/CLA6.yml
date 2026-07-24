@@ -2,6 +2,9 @@ kind: verilog
 module: CLA6
 params:
 -   kind: str
+    name: spiceprefix
+    value: X
+-   kind: str
     name: circuit
     value: async
 -   kind: str
