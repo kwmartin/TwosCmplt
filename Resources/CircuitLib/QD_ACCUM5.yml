@@ -492,11 +492,11 @@ behav_blcks:
         name: VSSPIN
         value: VSS
     ports:
-    -   port: A
+    -   port: IN
         node:
             kind: ident
             name: CLK
-    -   port: Z
+    -   port: OUT
         node:
             kind: ident
             name: CLKN
@@ -514,11 +514,11 @@ behav_blcks:
         name: VSSPIN
         value: VSS
     ports:
-    -   port: A
+    -   port: IN
         node:
             kind: ident
             name: CLKN
-    -   port: Z
+    -   port: OUT
         node:
             kind: ident
             name: CLKB
@@ -568,11 +568,11 @@ behav_blcks:
         name: VSSPIN
         value: VSS
     ports:
-    -   port: A
+    -   port: IN
         node:
             kind: ident
             name: net1
-    -   port: Z
+    -   port: OUT
         node:
             kind: bit
             name: QD_
@@ -592,13 +592,13 @@ behav_blcks:
         name: VSSPIN
         value: VSS
     ports:
-    -   port: A
+    -   port: IN
         node:
             kind: bit
             name: RL_
             sgmnts:
             - 16
-    -   port: Z
+    -   port: OUT
         node:
             kind: bit
             name: QD_
@@ -621,7 +621,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 15
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -646,7 +646,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 14
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -671,7 +671,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 13
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -696,7 +696,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 12
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -721,7 +721,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 11
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -746,7 +746,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 10
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -771,7 +771,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 9
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -796,7 +796,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 8
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -821,7 +821,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 7
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -846,7 +846,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 6
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -871,7 +871,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 5
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -896,7 +896,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 4
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -921,7 +921,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 3
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -946,7 +946,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 2
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -971,7 +971,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 1
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -996,7 +996,7 @@ behav_blcks:
             name: QD_
             sgmnts:
             - 0
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
