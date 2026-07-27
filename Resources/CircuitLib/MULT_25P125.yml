@@ -6,6 +6,9 @@ params:
     value: 20
 -   kind: str
     name: circuit
+    value: async
+-   kind: str
+    name: circuit
     value: sync
 -   kind: Int
     name: delay

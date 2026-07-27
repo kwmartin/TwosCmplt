@@ -2,11 +2,11 @@ kind: verilog
 module: M1M_QDACCUM5
 params:
 -   kind: str
-    name: spiceprefix
-    value: X
--   kind: str
     name: circuit
     value: sync
+-   kind: str
+    name: spiceprefix
+    value: X
 -   kind: Int
     name: delay
     value: 5
@@ -166,6 +166,17 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Wire
+        name: __concat_REG1R_2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 0
+        length: []
 behav_blcks:
 -   kind: instance
     name: ADDR0R
@@ -309,74 +320,8 @@ behav_blcks:
             name: INIT
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: C1R
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 15
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 14
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 13
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 12
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 11
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 10
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 9
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 8
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 7
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 6
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 5
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 4
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 3
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 2
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 1
-            -   kind: bit
-                name: ADDR1R_
-                sgmnts:
-                - 0
+            kind: ident
+            name: __concat_REG1R_2
     -   port: None
         node:
             kind: slice
@@ -461,8 +406,11 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV1
-    module: DG_INV4_1X1
-    params: null
+    module: DG_INV4
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -486,7 +434,7 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: EXOR
-    module: DG_EXOR1_1X1
+    module: DG_EXOR1_2X1
     params: null
     ports:
     -   port: None
@@ -515,8 +463,11 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV2
-    module: DG_INV4_1X1
-    params: null
+    module: DG_INV4
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -872,3 +823,76 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_REG1R_2
+    rvalue:
+        concats:
+        -   kind: ident
+            name: C1R
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: ADDR1R_
+            sgmnts:
+            - 0
+    delay: 0

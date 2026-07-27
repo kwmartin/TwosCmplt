@@ -83,7 +83,7 @@ behav_blcks:
     dst_sgnls:
     - QP
     - CP
-    pth_spc: pluscolon
+    pth_spc: colon
 -   kind: specify
     variant: full
     delay_expr:
@@ -95,7 +95,7 @@ behav_blcks:
     dst_sgnls:
     - QN
     - CN
-    pth_spc: minuscolon
+    pth_spc: colon
 -   kind: initial
     stmnts:
     -   kind: blckst

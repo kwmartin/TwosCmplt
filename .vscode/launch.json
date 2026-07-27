@@ -1003,12 +1003,12 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": ["QD_DDFS5", "Config.yaml"],
+            "args": ["TST_ACCUM3", "Config.yaml"],
             "cwd": "${workspaceFolder:TwosCmplt}",
             "name": "Debug SimRun",
             "target": "SimRun",
             "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug SimRun"
+            "preLaunchTask": "swift-build-debug"
         },
         {
             "type": "swift",

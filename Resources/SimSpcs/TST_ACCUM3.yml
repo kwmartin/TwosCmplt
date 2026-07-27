@@ -1,0 +1,23 @@
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 128*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [FRQ, '0x40000000']
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0
+SaveNds:
+  - name: QD_
+    format: h
+  - name: RL_
+    format: h

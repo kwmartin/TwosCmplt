@@ -268,94 +268,97 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: D1P
-    -   kind: ifst
-        cmpr_expr:
-            kind: cmpr_gate
-            gate:
-                kind: gt_expr
-                oper: 'BAnd:'
-                args:
-                -   kind: gt_expr
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
                     oper: 'BAnd:'
                     args:
                     -   kind: gt_expr
                         oper: 'BAnd:'
                         args:
-                        -   kind: ident
-                            name: S2P
+                        -   kind: gt_expr
+                            oper: 'BAnd:'
+                            args:
+                            -   kind: ident
+                                name: S2P
+                            -   kind: uexpr
+                                oper: 'Unot:'
+                                args:
+                                -   kind: ident
+                                    name: S1P
                         -   kind: uexpr
                             oper: 'Unot:'
                             args:
                             -   kind: ident
-                                name: S1P
+                                name: S3P
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: S3P
-                -   kind: uexpr
-                    oper: 'Unot:'
-                    args:
-                    -   kind: ident
-                        name: RP
-        iftrue:
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: OUT
-            rvalue:
-                kind: ident
-                name: D2P
-    -   kind: ifst
-        cmpr_expr:
-            kind: cmpr_gate
-            gate:
-                kind: gt_expr
-                oper: 'BAnd:'
-                args:
-                -   kind: gt_expr
-                    oper: 'BAnd:'
-                    args:
-                    -   kind: gt_expr
+                            name: RP
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: OUT
+                rvalue:
+                    kind: ident
+                    name: D2P
+            ifelse:
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_gate
+                    gate:
+                        kind: gt_expr
                         oper: 'BAnd:'
                         args:
-                        -   kind: ident
-                            name: S3P
+                        -   kind: gt_expr
+                            oper: 'BAnd:'
+                            args:
+                            -   kind: gt_expr
+                                oper: 'BAnd:'
+                                args:
+                                -   kind: ident
+                                    name: S3P
+                                -   kind: uexpr
+                                    oper: 'Unot:'
+                                    args:
+                                    -   kind: ident
+                                        name: S1P
+                            -   kind: uexpr
+                                oper: 'Unot:'
+                                args:
+                                -   kind: ident
+                                    name: S2P
                         -   kind: uexpr
                             oper: 'Unot:'
                             args:
                             -   kind: ident
-                                name: S1P
-                    -   kind: uexpr
-                        oper: 'Unot:'
-                        args:
-                        -   kind: ident
-                            name: S2P
-                -   kind: uexpr
-                    oper: 'Unot:'
-                    args:
-                    -   kind: ident
-                        name: RP
-        iftrue:
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: OUT
-            rvalue:
-                kind: ident
-                name: D3P
-    -   kind: ifst
-        cmpr_expr:
-            kind: cmpr_ident
-            node: RP
-        iftrue:
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: OUT
-            rvalue:
-                kind: int
-                value: 1'B0
+                                name: RP
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: OUT
+                    rvalue:
+                        kind: ident
+                        name: D3P
+                ifelse:
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_ident
+                        node: RP
+                    iftrue:
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: OUT
+                        rvalue:
+                            kind: int
+                            value: 1'B0
 -   kind: assign
     lvalue:
         kind: ident

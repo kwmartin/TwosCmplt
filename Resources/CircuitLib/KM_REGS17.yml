@@ -2,11 +2,11 @@ kind: verilog
 module: KM_REGS17
 params:
 -   kind: str
+    name: circuit
+    value: async
+-   kind: str
     name: spiceprefix
     value: X
--   kind: str
-    name: circuit
-    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -85,8 +85,8 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: instance
-    name: DX__16
-    module: DG_DX_4X2
+    name: DR__16
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -99,10 +99,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -124,8 +120,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__15
-    module: DG_DX_4X2
+    name: DR__15
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -138,10 +134,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -163,8 +155,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__14
-    module: DG_DX_4X2
+    name: DR__14
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -177,10 +169,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -202,8 +190,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__13
-    module: DG_DX_4X2
+    name: DR__13
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -216,10 +204,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -241,8 +225,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__12
-    module: DG_DX_4X2
+    name: DR__12
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -255,10 +239,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -280,8 +260,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__11
-    module: DG_DX_4X2
+    name: DR__11
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -294,10 +274,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -319,8 +295,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__10
-    module: DG_DX_4X2
+    name: DR__10
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -333,10 +309,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -358,8 +330,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__9
-    module: DG_DX_4X2
+    name: DR__9
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -372,10 +344,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -397,8 +365,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__8
-    module: DG_DX_4X2
+    name: DR__8
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -411,10 +379,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -436,8 +400,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__7
-    module: DG_DX_4X2
+    name: DR__7
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -450,10 +414,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -475,8 +435,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__6
-    module: DG_DX_4X2
+    name: DR__6
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -489,10 +449,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -514,8 +470,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__5
-    module: DG_DX_4X2
+    name: DR__5
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -528,10 +484,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -553,8 +505,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__4
-    module: DG_DX_4X2
+    name: DR__4
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -567,10 +519,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -592,8 +540,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__3
-    module: DG_DX_4X2
+    name: DR__3
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -606,10 +554,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -631,8 +575,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__2
-    module: DG_DX_4X2
+    name: DR__2
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -645,10 +589,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -670,8 +610,8 @@ behav_blcks:
             kind: ident
             name: VDD
 -   kind: instance
-    name: DX__1
-    module: DG_DX_4X2
+    name: DR__1
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -684,10 +624,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident
@@ -709,8 +645,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: instance
-    name: DX__0
-    module: DG_DX_4X2
+    name: DR__0
+    module: DG_DR_3X2
     params: null
     ports:
     -   port: None
@@ -723,10 +659,6 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
     -   port: None
         node:
             kind: ident

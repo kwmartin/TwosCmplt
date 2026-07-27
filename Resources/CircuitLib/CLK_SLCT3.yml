@@ -186,28 +186,29 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: D1P
-    -   kind: ifst
-        cmpr_expr:
-            kind: cmpr_gate
-            gate:
-                kind: gt_expr
-                oper: 'BAnd:'
-                args:
-                -   kind: ident
-                    name: S2P
-                -   kind: uexpr
-                    oper: 'Unot:'
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
                     args:
                     -   kind: ident
-                        name: S1P
-        iftrue:
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: OUT
-            rvalue:
-                kind: ident
-                name: D2P
+                        name: S2P
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: S1P
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: OUT
+                rvalue:
+                    kind: ident
+                    name: D2P
 -   kind: assign
     lvalue:
         kind: ident

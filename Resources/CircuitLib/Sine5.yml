@@ -21,14 +21,6 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: INIT
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: CLK
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: COS
     direct: 'Input:'
     signed: 'False'
@@ -37,6 +29,22 @@ io_ports:
         value: 15
     -   kind: int
         value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 -   kind: Wire
     name: OUT
     direct: 'Output:'
@@ -55,14 +63,6 @@ io_ports:
         value: 15
     -   kind: int
         value: 0
--   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
 decls:
 -   -   kind: Wire
         name: ADDR3_
@@ -296,31 +296,45 @@ behav_blcks:
                 value: 0
     -   port: B
         node:
-            kind: concat
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: ident
+            name: VSS
+    -   port: B
+        node:
+            kind: slice
+            name: FINE
             sgmnts:
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: ident
-                name: VSS
-            -   kind: slice
-                name: FINE
-                sgmnts:
-                -   kind: int
-                    value: 7
-                -   kind: int
-                    value: 0
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
     -   port: CI
         node:
             kind: ident
@@ -436,10 +450,6 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: MODEL
-        node:
-            kind: ident
-            name: DG_CMPL
 -   kind: instance
     name: ROM0
     module: ROM
@@ -618,10 +628,6 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: MODEL
-        node:
-            kind: ident
-            name: DG_CMPL
 -   kind: instance
     name: ADDR3
     module: ADDR
@@ -808,7 +814,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK1
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -829,7 +835,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK3
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -850,7 +856,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK2
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -903,13 +909,13 @@ behav_blcks:
     module: DG_INV2
     params: null
     ports:
-    -   port: A
+    -   port: IN
         node:
             kind: bit
             name: R0_
             sgmnts:
             - 17
-    -   port: Z
+    -   port: OUT
         node:
             kind: bit
             name: R0N_

@@ -61,11 +61,11 @@ io_ports:
         value: 0
 -   kind: Wire
     name: VDD
-    direct: 'Inout:'
+    direct: 'Input:'
     signed: 'False'
 -   kind: Wire
     name: VSS
-    direct: 'Inout:'
+    direct: 'Input:'
     signed: 'False'
 decls:
 - null

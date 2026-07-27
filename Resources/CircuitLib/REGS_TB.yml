@@ -150,11 +150,11 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: VCCPIN
+    -   port: VDD
         node:
             kind: ident
             name: VCC
-    -   port: VSSPIN
+    -   port: VSS
         node:
             kind: ident
             name: VSS

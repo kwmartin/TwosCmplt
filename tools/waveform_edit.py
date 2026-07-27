@@ -382,7 +382,10 @@ class WaveformCanvas(QWidget):
             for item in vls:
                 if isinstance(item, (list, tuple)) and len(item) == 2:
                     sig_name = str(item[0])
-                    sig_val = int(item[1])
+                    try:
+                        sig_val, sig_nbits = _parse_bus_value(item[1])
+                    except (ValueError, TypeError):
+                        continue
 
                     if sig_name in clock_names:
                         continue
@@ -391,6 +394,7 @@ class WaveformCanvas(QWidget):
                         transitions_by_signal[sig_name] = []
                         signal_order.append(sig_name)
 
+                    nbits_by_signal[sig_name] = sig_nbits
                     transitions_by_signal[sig_name].append((tm, sig_val))
 
         waves: list[DigitalWaveRow] = []

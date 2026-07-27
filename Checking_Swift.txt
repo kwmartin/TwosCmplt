@@ -1,0 +1,98 @@
+---
+Step 1 — Refresh the unified netlist and CircuitLib copy
+
+The circuit parameter you just added to the symbol files flows into the Verilog netlist, which flows into the .unl file, which gets copied to CircuitLib/ for Swift. Refresh everything:
+
+cd /home/martin/.xschem/verilogParse
+
+# Run the full pipeline for TST_ACCUM3
+# (You need the venv that has ruyaml)
+/home/Dropbox/programming/Python/lib/venv/bin/python3 ver2Unified.py /home/martin/.xschem/simulations/TST_ACCUM3.v
+
+If you don’t have ruyaml in the venv, install it first:
+/home/Dropbox/programming/Python/lib/venv/bin/pip install ruyaml
+
+Alternatively, run the pipeline via gen_verilog_tb.py GUI:
+/home/Dropbox/programming/Python/lib/venv/bin/python3 gen_verilog_tb.py
+# load TST_ACCUM3, click "Run Pipeline"
+
+---
+Step 2 — Verify the CircuitLib entry has circuit=async|sync
+
+Check that the .unl-to-CircuitLib copy picked up the new parameter:
+
+grep -A2 'circuit' /home/Dropbox/programming/Swift/TwosCmplt/Resources/CircuitLib/TST_ACCUM3.yml
+
+You should see something like:
+params:
+-   kind: str
+    name: circuit
+
+If it’s missing, run parse_mod.py manually:
+/home/Dropbox/programming/Python/lib/venv/bin/python3 parse_mod.py /home/martin/.xschem/mod_modules/TST_ACCUM3.mod
+
+---
+Step 3 — Re-run Swift simulation directly
+
+The Swift SimRun binary exists and the config is wired up. Run it from the terminal:
+
+cd /home/Dropbox/programming/Swift/TwosCmplt
+
+# The command gen_verilog_tb.py uses internally:
+.build/debug/SimRun TST_ACCUM3 Config.yaml --spec /home/martin/.xschem/modules/TST_ACCUM3.yml
+
+Success indicators:
+- No crash / no Swift runtime error
+- Resources/DumpDir/TST_ACCUM3Map.yml and TST_ACCUM3Chngs.yml are updated to the current timestamp
+- TST_ACCUM3Chngs.yml is non-empty (should be ~1–2 MB for this design)
+
+---
+Step 4 — Verify with the Swift waveform viewer
+
+If SimRun succeeded, open the Swift viewer:
+
+/home/Dropbox/programming/Python/lib/venv/bin/python3 \
+    /home/Dropbox/programming/Swift/TwosCmplt/tools/wave_display.py \
+    TST_ACCUM3 --config Config.yaml --spec /home/martin/.xschem/modules/TST_ACCUM3.yml
+
+Or use the Native viewer (also works with Swift output):
+cd /home/martin/.xschem/verilogParse
+/home/Dropbox/programming/Python/lib/venv/bin/python3 \
+    /home/Dropbox/programming/Swift/TwosCmplt/tools/wave_display.py \
+    TST_ACCUM3 --config Config.yaml --spec /home/martin/.xschem/modules/TST_ACCUM3.yml
+
+---
+Step 5 — What to check if it fails
+
+┌─────────────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────────────┐
+│         Symptom         │           Likely cause           │                                 Fix                                  │
+├─────────────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ SimRun crashes or       │ Spec file format mismatch        │ Open ~/.xschem/modules/TST_ACCUM3.yml in wave_edit.py and re-save;   │
+│ prints YAML decode      │ between Python and Swift         │ ensure Constants is a dict (not list of lists)                       │
+│ error                   │                                  │                                                                      │
+├─────────────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ SimRun says “module not │ TST_ACCUM3.yml missing from      │ Re-run parse_mod.py                                                  │
+│  found”                 │ CircuitLib/                      │                                                                      │
+├─────────────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ Empty Chngs.yml (0      │ No active nodes in the circuit,  │ Check the spec FinishTime and TimeSpcs                               │
+│ bytes) or only headers  │ or FinishTime too short          │                                                                      │
+├─────────────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ Swift viewer shows no   │ wave_state.yml stale or SaveNds  │ In wave_edit.py, mark signals to save, then re-save the spec         │
+│ signals                 │ missing                          │                                                                      │
+└─────────────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────────────┘
+
+---
+Quick one-liner to test
+
+If you just want to know “does it run?” without opening GUIs:
+
+cd /home/Dropbox/programming/Swift/TwosCmplt
+.build/debug/SimRun TST_ACCUM3 Config.yaml --spec /home/martin/.xschem/modules/TST_ACCUM3.yml && \
+    ls -lh Resources/DumpDir/TST_ACCUM3Chngs.yml
+
+If the filesize is ~1.4 MB and the timestamp is now, it worked.
+
+---
+Want me to actually run that command for you right now? I can execute SimRun and report the output.
+
+✻ Brewed for 3m 0s

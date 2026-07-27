@@ -1,0 +1,83 @@
+kind: verilog
+module: BUF6_1X1
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: N0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: INV0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: N0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: INV1
+    module: DG_INV6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: None
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: N0
+    -   port: None
+        node:
+            kind: ident
+            name: OUT
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

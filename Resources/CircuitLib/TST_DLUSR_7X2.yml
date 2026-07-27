@@ -56,48 +56,47 @@ behav_blcks:
     module: DG_DLUSR_7X2
     params: null
     ports:
-    -   port: U
+    -   port: None
         node:
             kind: ident
             name: U
-    -   port: L
+    -   port: None
         node:
             kind: ident
             name: L
-    -   port: LI
+    -   port: None
         node:
             kind: ident
             name: LI
-    -   port: D
+    -   port: None
         node:
             kind: ident
             name: QN
-    -   port: INIT
+    -   port: None
         node:
             kind: ident
             name: INIT
-    -   port: I_D
+    -   port: None
         node:
             kind: ident
             name: I_D
-    -   port: CLK
+    -   port: None
         node:
             kind: ident
             name: CLK
-    -   port: QP
+    -   port: None
         node:
             kind: ident
             name: QP
-    -   port: QN
+    -   port: None
         node:
             kind: ident
             name: QN
-    -   port: VDD
+    -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: VSS
-        node:
-            kind: ident
-            name: VSS
-
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

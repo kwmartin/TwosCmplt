@@ -3,7 +3,7 @@ module: DG_INV8
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5

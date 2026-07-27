@@ -236,7 +236,7 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: R1SET
+    -   port: R1_SET
         node:
             kind: concat
             sgmnts:
@@ -264,11 +264,11 @@ behav_blcks:
                 name: VSS
             -   kind: ident
                 name: VSS
-    -   port: R2SET
+    -   port: R2_SET
         node:
             kind: ident
             name: VSS
-    -   port: R5SET
+    -   port: R4_SET
         node:
             kind: slice
             name: R5R_SET
@@ -293,7 +293,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: OUT
+    -   port: O_
         node:
             kind: slice
             name: SINE
@@ -319,7 +319,7 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: R1SET
+    -   port: R1_SET
         node:
             kind: concat
             sgmnts:
@@ -347,11 +347,11 @@ behav_blcks:
                 name: VSS
             -   kind: ident
                 name: VSS
-    -   port: R2SET
+    -   port: R2_SET
         node:
             kind: ident
             name: VSS
-    -   port: R5SET
+    -   port: R4_SET
         node:
             kind: slice
             name: R5Q_SET
@@ -376,7 +376,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: OUT
+    -   port: O_
         node:
             kind: slice
             name: COS

@@ -334,9 +334,27 @@ public enum RValueYAML: Decodable {
         case concats
     }
 
+    // Cheap presence-only probe, used to fast-path the common (non-concat) case
+    // below without triggering ExprYAML's own decode twice.
+    private enum KindProbeKeys: String, CodingKey {
+        case kind
+    }
+
     public init(from decoder: Decoder) throws {
-        print("🔍 RValueYAML decode at:", decoder.codingPath.map(\.stringValue).joined(separator: " -> "))
-        
+        // print("🔍 RValueYAML decode at:", decoder.codingPath.map(\.stringValue).joined(separator: " -> "))
+
+        // 0) Fast path: an ordinary kind-tagged expression (the overwhelming
+        // common case for every non-concat assign/always rvalue) has a `kind`
+        // key and should go straight to ExprYAML -- probing for `concats`
+        // first would always throw keyNotFound for these (there's no such
+        // key on a kind-tagged node), get caught below, and only then fall
+        // through to the same ExprYAML decode reached here directly.
+        if let probe = try? decoder.container(keyedBy: KindProbeKeys.self),
+           probe.contains(.kind) {
+            self = .expr(try ExprYAML(from: decoder))
+            return
+        }
+
         // 1) Try keyed container
         if let keyed = try? decoder.container(keyedBy: CodingKeys.self) {
             // print("✓ Got keyed container, allKeys:", keyed.allKeys.map(\.stringValue))
@@ -344,26 +362,26 @@ public enum RValueYAML: Decodable {
             // Try [String]
             do {
                 let names = try keyed.decode([String].self, forKey: .concats)
-                print("✓ Decoded concats as [String]:", names)
+                // print("✓ Decoded concats as [String]:", names)
                 let exprs = names.map { ExprYAML.ident($0) }
                 // print("✓ Mapped to ExprYAML.ident:", exprs)
                 self = .concat(exprs)
                 return
             } catch {
-                print("✗ Failed [String] decode:", error)
+                // print("✗ Failed [String] decode:", error)
             }
-            
+
             // Try [ExprYAML]
             do {
                 let exprs = try keyed.decode([ExprYAML].self, forKey: .concats)
-                print("✓ Decoded concats as [ExprYAML]")
+                // print("✓ Decoded concats as [ExprYAML]")
                 self = .concat(exprs)
                 return
             } catch {
-                print("✗ Failed [ExprYAML] decode:", error)
+                // print("✗ Failed [ExprYAML] decode:", error)
             }
         } else {
-            print("✗ No keyed container")
+            // print("✗ No keyed container")
         }
 
         // 2) Try bare array

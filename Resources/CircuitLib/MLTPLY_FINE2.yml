@@ -35,6 +35,14 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Reg
     name: OUT
     direct: 'Output:'
     signed: 'False'
@@ -43,14 +51,6 @@ io_ports:
         value: 7
     -   kind: int
         value: 0
--   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
 decls:
 -   -   kind: Wire
         name: F

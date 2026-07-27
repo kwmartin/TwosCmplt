@@ -1173,6 +1173,25 @@ public final class Circuit {
             }
         }
 
+        // TEMPORARY DEBUG TRACE -- root-causing ADDR0R oscillation (remove after diagnosis)
+        if self.indexs.starts(with: [0, 0, 0]) {
+            let inVals = self.iPrts.map { "\($0.port)=\(self.nodes[$0.intlIndx].node.value)@\(self.nodes[$0.intlIndx].updTm)" }.joined(separator: ",")
+            print("[DBGTRACE-IN] name=\(self.name) module=\(self.module) indexs=\(self.indexs) async=\(async) tm=\(tm) sync=\(self.sync) in=[\(inVals)]")
+        }
+        if self.indexs == [0, 0, 0] {
+            let order = evalOrder.map { cmp -> String in
+                switch cmp.kind {
+                case .vCirc: return "vCirc[\(cmp.index)]=\(cCircs[cmp.index].name)(sync=\(cCircs[cmp.index].sync))"
+                case .cCirc: return "cCirc[\(cmp.index)]=\(cCircs[cmp.index].name)(sync=\(cCircs[cmp.index].sync))"
+                case .aCirc: return "aCirc[\(cmp.index)]=\(aCircs[cmp.index].name)"
+                case .sCirc: return "sCirc[\(cmp.index)]"
+                case .oPrt:  return "oPrt[\(cmp.index)]"
+                default:     return "\(cmp.kind)[\(cmp.index)]"
+                }
+            }.joined(separator: " | ")
+            print("[DBGTRACE-ORDER] \(self.name) evalOrder = \(order)")
+        }
+
         if self.kind == "verilog" && self.initialized == false {
             for (i, circ) in cCircs.enumerated() {
                 let cDef = circ.instanceCircDef ?? Glbls.circDef(for: cCircs[i].module)!
@@ -1285,6 +1304,12 @@ public final class Circuit {
             default:
                 break
             }
+        }
+
+        // TEMPORARY DEBUG TRACE -- root-causing ADDR0R oscillation (remove after diagnosis)
+        if self.indexs.starts(with: [0, 0, 0]) {
+            let outVals = self.oPrts.map { "\($0.port)=\(self.nodes[$0.intlIndx].node.value)@\(self.nodes[$0.intlIndx].updTm)" }.joined(separator: ",")
+            print("[DBGTRACE-OUT] name=\(self.name) module=\(self.module) indexs=\(self.indexs) tm=\(tm) out=[\(outVals)]")
         }
 
         if self.parent != nil {

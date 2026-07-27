@@ -1,0 +1,1480 @@
+CLA1:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 5, 5, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 5, 5, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 5, 6, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 6, 5, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 6, 5, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 6, 6, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 0, 6, 6, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 5, 5, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 5, 5, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 5, 6, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 5, 6, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 6, 5, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 6, 5, 6, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 6, 6, 5, 2]
+    name: CLA1_1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 1]
+    name: CLA1_0
+  - circIndxs: [0, 0, 4, 6, 6, 6, 2]
+    name: CLA1_1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+CLA10:
+  instances:
+  - circIndxs: [0, 0, 0, 5]
+    name: CAL8_0
+  nodes:
+  - name: A
+    nbits: 10
+  - name: B
+    nbits: 10
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 10
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: N380
+    nbits: 1
+  - name: N397
+    nbits: 1
+  - name: N503
+    nbits: 1
+CLA16:
+  instances:
+  - circIndxs: [0, 0, 4]
+    name: ADDR1R
+  nodes:
+  - name: A
+    nbits: 16
+  - name: B
+    nbits: 16
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 16
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: N380
+    nbits: 1
+  - name: N397
+    nbits: 1
+  - name: N503
+    nbits: 1
+CLA18:
+  instances:
+  - circIndxs: [0, 0, 0]
+    name: ADDR0R
+  nodes:
+  - name: A
+    nbits: 18
+  - name: B
+    nbits: 18
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 18
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: N380
+    nbits: 1
+  - name: N397
+    nbits: 1
+  - name: N503
+    nbits: 1
+CLA2:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 0, 5, 5, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 0, 5, 6, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 0, 6, 5, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 0, 6, 5, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 0, 6, 6, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 0, 6, 6, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 4, 5, 5, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 4, 5, 5, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 4, 5, 6, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 4, 5, 6, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 4, 6, 5, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 4, 6, 5, 6]
+    name: CLA2_1
+  - circIndxs: [0, 0, 4, 6, 6, 5]
+    name: CLA2_0
+  - circIndxs: [0, 0, 4, 6, 6, 6]
+    name: CLA2_1
+  nodes:
+  - name: A
+    nbits: 2
+  - name: B
+    nbits: 2
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 2
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: CON
+    nbits: 1
+  - name: C_0
+    nbits: 1
+  - name: C_1
+    nbits: 1
+  - name: N397
+    nbits: 1
+CLA4:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5]
+    name: CLA6_0
+  - circIndxs: [0, 0, 0, 5, 6, 6]
+    name: CLA4_1
+  - circIndxs: [0, 0, 0, 6, 5]
+    name: CLA8_0
+  - circIndxs: [0, 0, 0, 6, 6]
+    name: CLA8_1
+  - circIndxs: [0, 0, 4, 5, 5]
+    name: CLA8_0
+  - circIndxs: [0, 0, 4, 5, 6]
+    name: CLA8_1
+  - circIndxs: [0, 0, 4, 6, 5]
+    name: CLA8_0
+  - circIndxs: [0, 0, 4, 6, 6]
+    name: CLA8_1
+  nodes:
+  - name: A
+    nbits: 4
+  - name: B
+    nbits: 4
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 4
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: GN
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: CON
+    nbits: 1
+CLA6:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 6]
+    name: CLA4_1
+  nodes:
+  - name: A
+    nbits: 6
+  - name: B
+    nbits: 6
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 6
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: N380
+    nbits: 1
+  - name: N397
+    nbits: 1
+CLA8:
+  instances:
+  - circIndxs: [0, 0, 0, 6]
+    name: CLA8_1
+  - circIndxs: [0, 0, 4, 5]
+    name: CAL8_0
+  - circIndxs: [0, 0, 4, 6]
+    name: CLA8_1
+  nodes:
+  - name: A
+    nbits: 8
+  - name: B
+    nbits: 8
+  - name: CI
+    nbits: 1
+  - name: CO
+    nbits: 1
+  - name: G
+    nbits: 1
+  - name: P
+    nbits: 1
+  - name: S
+    nbits: 8
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: C0
+    nbits: 1
+  - name: C1
+    nbits: 1
+  - name: G0
+    nbits: 1
+  - name: G1
+    nbits: 1
+  - name: P0
+    nbits: 1
+  - name: P1
+    nbits: 1
+  - name: N380
+    nbits: 1
+  - name: N397
+    nbits: 1
+  - name: N503
+    nbits: 1
+DG_AND2_2X1:
+  instances:
+  - circIndxs: [0, 0, 0, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 5, 7]
+    name: AND2
+  - circIndxs: [0, 0, 0, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 0, 6, 7]
+    name: AND2
+  - circIndxs: [0, 0, 0, 7]
+    name: AND2
+  - circIndxs: [0, 0, 4, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 5, 7]
+    name: AND2
+  - circIndxs: [0, 0, 4, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 0]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 1, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 2, 1]
+    name: AND1
+  - circIndxs: [0, 0, 4, 6, 7]
+    name: AND2
+  - circIndxs: [0, 0, 4, 7]
+    name: AND2
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_BUF16_1X1:
+  instances:
+  - circIndxs: [0, 0, 1, 0]
+    name: CKBFR
+  - circIndxs: [0, 0, 2]
+    name: BUF1
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_BUF4_1X1:
+  instances:
+  - circIndxs: [0, 0, 8]
+    name: BUFR_15
+  - circIndxs: [0, 0, 9]
+    name: BUFR_14
+  - circIndxs: [0, 0, 10]
+    name: BUFR_13
+  - circIndxs: [0, 0, 11]
+    name: BUFR_12
+  - circIndxs: [0, 0, 12]
+    name: BUFR_11
+  - circIndxs: [0, 0, 13]
+    name: BUFR_10
+  - circIndxs: [0, 0, 14]
+    name: BUFR_9
+  - circIndxs: [0, 0, 15]
+    name: BUFR_8
+  - circIndxs: [0, 0, 16]
+    name: BUFR_7
+  - circIndxs: [0, 0, 17]
+    name: BUFR_6
+  - circIndxs: [0, 0, 18]
+    name: BUFR_5
+  - circIndxs: [0, 0, 19]
+    name: BUFR_4
+  - circIndxs: [0, 0, 20]
+    name: BUFR_3
+  - circIndxs: [0, 0, 21]
+    name: BUFR_2
+  - circIndxs: [0, 0, 22]
+    name: BUFR_1
+  - circIndxs: [0, 0, 23]
+    name: BUFR_0
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_BUF8_1X1:
+  instances:
+  - circIndxs: [0, 0, 3, 0]
+    name: CKBFR
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_DR_3X2:
+  instances:
+  - circIndxs: [0, 0, 1, 1]
+    name: DR__17
+  - circIndxs: [0, 0, 1, 2]
+    name: DR__16
+  - circIndxs: [0, 0, 1, 3]
+    name: DR__15
+  - circIndxs: [0, 0, 1, 4]
+    name: DR__14
+  - circIndxs: [0, 0, 1, 5]
+    name: DR__13
+  - circIndxs: [0, 0, 1, 6]
+    name: DR__12
+  - circIndxs: [0, 0, 1, 7]
+    name: DR__11
+  - circIndxs: [0, 0, 1, 8]
+    name: DR__10
+  - circIndxs: [0, 0, 1, 9]
+    name: DR__9
+  - circIndxs: [0, 0, 1, 10]
+    name: DR__8
+  - circIndxs: [0, 0, 1, 11]
+    name: DR__7
+  - circIndxs: [0, 0, 1, 12]
+    name: DR__6
+  - circIndxs: [0, 0, 1, 13]
+    name: DR__5
+  - circIndxs: [0, 0, 1, 14]
+    name: DR__4
+  - circIndxs: [0, 0, 1, 15]
+    name: DR__3
+  - circIndxs: [0, 0, 1, 16]
+    name: DR__2
+  - circIndxs: [0, 0, 1, 17]
+    name: DR__1
+  - circIndxs: [0, 0, 1, 18]
+    name: DR__0
+  - circIndxs: [0, 0, 3, 1]
+    name: DR__16
+  - circIndxs: [0, 0, 3, 2]
+    name: DR__15
+  - circIndxs: [0, 0, 3, 3]
+    name: DR__14
+  - circIndxs: [0, 0, 3, 4]
+    name: DR__13
+  - circIndxs: [0, 0, 3, 5]
+    name: DR__12
+  - circIndxs: [0, 0, 3, 6]
+    name: DR__11
+  - circIndxs: [0, 0, 3, 7]
+    name: DR__10
+  - circIndxs: [0, 0, 3, 8]
+    name: DR__9
+  - circIndxs: [0, 0, 3, 9]
+    name: DR__8
+  - circIndxs: [0, 0, 3, 10]
+    name: DR__7
+  - circIndxs: [0, 0, 3, 11]
+    name: DR__6
+  - circIndxs: [0, 0, 3, 12]
+    name: DR__5
+  - circIndxs: [0, 0, 3, 13]
+    name: DR__4
+  - circIndxs: [0, 0, 3, 14]
+    name: DR__3
+  - circIndxs: [0, 0, 3, 15]
+    name: DR__2
+  - circIndxs: [0, 0, 3, 16]
+    name: DR__1
+  - circIndxs: [0, 0, 3, 17]
+    name: DR__0
+  nodes:
+  - name: D
+    nbits: 1
+  - name: R
+    nbits: 1
+  - name: CLK
+    nbits: 1
+  - name: QP
+    nbits: 1
+  - name: QN
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: STATE
+    nbits: 1
+DG_EXOR1_2X1:
+  instances:
+  - circIndxs: [0, 0, 6]
+    name: EXOR
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_INV2_1X1:
+  instances:
+  - circIndxs: [0, 0, 0, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 5, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 5, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 6, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 6, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 5, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 5, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 6, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 0, 6, 6, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 5, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 5, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 6, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 5, 6, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 5, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 5, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 5, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 5, 6, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 6, 2]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 6, 3]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 6, 5, 4]
+    name: INV1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 3]
+    name: INV3
+  - circIndxs: [0, 0, 4, 6, 6, 6, 4]
+    name: INV1
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_INV4:
+  instances:
+  - circIndxs: [0, 0, 5]
+    name: INV1
+  - circIndxs: [0, 0, 7]
+    name: INV2
+  nodes:
+  - name: IN
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_NAB_C2:
+  instances:
+  - circIndxs: [0, 0, 0, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 5, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 5, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 5, 6, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 6, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 0, 6, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 5, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 5, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 5, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 6, 5, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 6, 1]
+    name: NAB_C3
+  - circIndxs: [0, 0, 4, 6, 6, 4]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 5]
+    name: NAB_C1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 5]
+    name: NAB_C1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: C
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_NA_BCD:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 6]
+    name: GT_1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 6]
+    name: GT_1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: C
+    nbits: 1
+  - name: D
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+DG_OR2_2X1:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 2, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 1, 0]
+    name: OR1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 2, 0]
+    name: OR1
+  nodes:
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: OUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+FADDR_3X2:
+  instances:
+  - circIndxs: [0, 0, 0, 5, 5, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 5, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 5, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 5, 6, 6, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 5, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 5, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 6, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 0, 6, 6, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 5, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 5, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 6, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 5, 6, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 5, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 5, 6, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 6, 5, 2, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 1, 2]
+    name: FADDR1
+  - circIndxs: [0, 0, 4, 6, 6, 6, 2, 2]
+    name: FADDR1
+  nodes:
+  - name: CIN
+    nbits: 1
+  - name: A
+    nbits: 1
+  - name: B
+    nbits: 1
+  - name: SUM
+    nbits: 1
+  - name: COUT
+    nbits: 1
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+KM_REGS17:
+  instances:
+  - circIndxs: [0, 0, 3]
+    name: REG1R
+  nodes:
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: IN_
+    nbits: 17
+  - name: QN
+    nbits: 17
+  - name: QP
+    nbits: 17
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: CLKBF
+    nbits: 1
+KM_REGS18:
+  instances:
+  - circIndxs: [0, 0, 1]
+    name: REG0R
+  nodes:
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: IN_
+    nbits: 18
+  - name: QN
+    nbits: 18
+  - name: QP
+    nbits: 18
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: CLKBF
+    nbits: 1
+M1M_QDACCUM5:
+  instances:
+  - circIndxs: [0, 0]
+    name: ACCM0
+  nodes:
+  - name: CLK
+    nbits: 1
+  - name: FRQ
+    nbits: 34
+  - name: INIT
+    nbits: 1
+  - name: QD_
+    nbits: 18
+  - name: RL_
+    nbits: 18
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: R1NR_
+    nbits: 17
+  - name: CLKB
+    nbits: 1
+  - name: P0R
+    nbits: 1
+  - name: P1R
+    nbits: 1
+  - name: ADDR1R_
+    nbits: 16
+  - name: R1R_
+    nbits: 17
+  - name: ADDR0R_
+    nbits: 18
+  - name: RLN_
+    nbits: 18
+  - name: C0R
+    nbits: 1
+  - name: C1R
+    nbits: 1
+  - name: G0R
+    nbits: 1
+  - name: G1R
+    nbits: 1
+  - name: N1156
+    nbits: 1
+  - name: __concat_REG1R_2
+    nbits: 17
+TST_ACCUM3:
+  instances:
+  - circIndxs: [0]
+    name: Top
+  nodes:
+  - name: QD_
+    nbits: 18
+  - name: RL_
+    nbits: 18
+  - name: VDD
+    nbits: 1
+  - name: VSS
+    nbits: 1
+  - name: FRQ
+    nbits: 34
+  - name: CLK
+    nbits: 1
+  - name: INIT
+    nbits: 1
+  - name: RL_10
+    nbits: 1
+  - name: RL_11
+    nbits: 1
+  - name: RL_12
+    nbits: 1
+  - name: RL_13
+    nbits: 1
+  - name: RL_14
+    nbits: 1
+  - name: RL_15
+    nbits: 1
+  - name: RL_16
+    nbits: 1
+  - name: RL_17
+    nbits: 1
+  - name: RL_0
+    nbits: 1
+  - name: RL_1
+    nbits: 1
+  - name: RL_2
+    nbits: 1
+  - name: RL_3
+    nbits: 1
+  - name: RL_4
+    nbits: 1
+  - name: RL_5
+    nbits: 1
+  - name: RL_6
+    nbits: 1
+  - name: RL_7
+    nbits: 1
+  - name: RL_8
+    nbits: 1
+  - name: RL_9
+    nbits: 1
+  - name: FRQ10
+    nbits: 1
+  - name: FRQ11
+    nbits: 1
+  - name: FRQ12
+    nbits: 1
+  - name: FRQ13
+    nbits: 1
+  - name: FRQ14
+    nbits: 1
+  - name: FRQ15
+    nbits: 1
+  - name: FRQ16
+    nbits: 1
+  - name: FRQ17
+    nbits: 1
+  - name: FRQ18
+    nbits: 1
+  - name: FRQ19
+    nbits: 1
+  - name: FRQ20
+    nbits: 1
+  - name: FRQ21
+    nbits: 1
+  - name: FRQ22
+    nbits: 1
+  - name: FRQ23
+    nbits: 1
+  - name: FRQ24
+    nbits: 1
+  - name: FRQ25
+    nbits: 1
+  - name: FRQ26
+    nbits: 1
+  - name: FRQ27
+    nbits: 1
+  - name: FRQ28
+    nbits: 1
+  - name: FRQ29
+    nbits: 1
+  - name: FRQ30
+    nbits: 1
+  - name: FRQ31
+    nbits: 1
+  - name: FRQ32
+    nbits: 1
+  - name: FRQ33
+    nbits: 1
+  - name: QD_10
+    nbits: 1
+  - name: QD_11
+    nbits: 1
+  - name: QD_12
+    nbits: 1
+  - name: QD_13
+    nbits: 1
+  - name: QD_14
+    nbits: 1
+  - name: QD_15
+    nbits: 1
+  - name: QD_16
+    nbits: 1
+  - name: QD_17
+    nbits: 1
+  - name: FRQ0
+    nbits: 1
+  - name: FRQ1
+    nbits: 1
+  - name: FRQ2
+    nbits: 1
+  - name: FRQ3
+    nbits: 1
+  - name: FRQ4
+    nbits: 1
+  - name: FRQ5
+    nbits: 1
+  - name: FRQ6
+    nbits: 1
+  - name: FRQ7
+    nbits: 1
+  - name: FRQ8
+    nbits: 1
+  - name: FRQ9
+    nbits: 1
+  - name: QD_0
+    nbits: 1
+  - name: QD_1
+    nbits: 1
+  - name: QD_2
+    nbits: 1
+  - name: QD_3
+    nbits: 1
+  - name: QD_4
+    nbits: 1
+  - name: QD_5
+    nbits: 1
+  - name: QD_6
+    nbits: 1
+  - name: QD_7
+    nbits: 1
+  - name: QD_8
+    nbits: 1
+  - name: QD_9
+    nbits: 1

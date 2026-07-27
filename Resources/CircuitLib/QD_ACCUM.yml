@@ -490,17 +490,17 @@ behav_blcks:
     ports:
     -   port: IN
         node:
-            kind: concat
+            kind: ident
+            name: C1R
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR1R
             sgmnts:
-            -   kind: ident
-                name: C1R
-            -   kind: slice
-                name: ADDR1R
-                sgmnts:
-                -   kind: int
-                    value: 15
-                -   kind: int
-                    value: 0
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
     -   port: INIT
         node:
             kind: ident
@@ -734,17 +734,17 @@ behav_blcks:
     ports:
     -   port: IN
         node:
-            kind: concat
+            kind: ident
+            name: C1Q
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR1Q
             sgmnts:
-            -   kind: ident
-                name: C1Q
-            -   kind: slice
-                name: ADDR1Q
-                sgmnts:
-                -   kind: int
-                    value: 15
-                -   kind: int
-                    value: 0
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
     -   port: INIT
         node:
             kind: ident

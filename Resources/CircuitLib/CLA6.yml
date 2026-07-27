@@ -4,6 +4,9 @@ params:
 -   kind: str
     name: circuit
     value: sync
+-   kind: str
+    name: spiceprefix
+    value: X
 -   kind: Int
     name: delay
     value: 5
@@ -52,16 +55,11 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: B
+    name: VDD
     direct: 'Input:'
     signed: 'False'
-    width:
-    -   kind: int
-        value: 5
-    -   kind: int
-        value: 0
 -   kind: Wire
-    name: CI
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:
@@ -178,46 +176,52 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV3
-    module: INV2_1X1
-    params: null
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
-    -   port: IN
+    -   port: None
         node:
             kind: ident
             name: N380
-    -   port: OUT
+    -   port: None
         node:
             kind: ident
             name: CO
-    -   port: VCC
+    -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: VSS
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: INV1
-    module: INV2_1X1
-    params: null
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
-    -   port: IN
+    -   port: None
         node:
             kind: ident
             name: N397
-    -   port: OUT
+    -   port: None
         node:
             kind: ident
             name: G
-    -   port: VCC
+    -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: VSS
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
     name: NAB_C1
     module: DG_NAB_C2
