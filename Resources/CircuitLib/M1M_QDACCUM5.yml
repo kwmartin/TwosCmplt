@@ -3,7 +3,7 @@ module: M1M_QDACCUM5
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: str
     name: spiceprefix
     value: X
@@ -409,7 +409,7 @@ behav_blcks:
     module: DG_INV4
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -466,7 +466,7 @@ behav_blcks:
     module: DG_INV4
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -896,3 +896,4 @@ behav_blcks:
             sgmnts:
             - 0
     delay: 0
+

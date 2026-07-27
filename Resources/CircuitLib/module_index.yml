@@ -1,4 +1,4 @@
-generated: '2026-06-07T17:35:31+00:00'
+generated: '2026-07-27T21:10:10+00:00'
 modules:
     BUF_BIAS_VAMS:
         directory: proj_lib
@@ -97,6 +97,11 @@ modules:
         directory: proj_lib
         file_name: diglib28_vl.v
         clean: true
+    DG_DER_3X2:
+        directory: proj_lib
+        file_name: diglib28_vl.v
+        clean: false
+        stale_reason: 'missing: mod, circuit_lib, unl'
     DG_DFFCP_3X2:
         directory: proj_lib
         file_name: diglib28_vl.v
@@ -128,7 +133,8 @@ modules:
     DG_DLUSR_7X2:
         directory: ver_lib
         file_name: DG_DLUSR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     DG_DLUS_6X2:
         directory: proj_lib
         file_name: diglib28_vl.v
@@ -136,7 +142,8 @@ modules:
     DG_DLUX_7X2:
         directory: proj_lib
         file_name: diglib28_vl.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     DG_DMMY:
         directory: proj_lib
         file_name: diglib28_vl.v
@@ -147,8 +154,9 @@ modules:
         clean: true
     DG_DR_3X1:
         directory: proj_lib
-        file_name: dg_dr_3x1.v
-        clean: true
+        file_name: __dg_dr_3x1_vpp.v
+        clean: false
+        stale_reason: 'missing: ast'
     DG_DR_3X2:
         directory: proj_lib
         file_name: diglib28_vl.v
@@ -352,7 +360,8 @@ modules:
     DG_LTCHSN_6X1:
         directory: proj_lib
         file_name: diglib28_vl.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     DG_LTCHS_3X1:
         directory: dig_lib
         file_name: dg_ltchs_3x1.v
@@ -521,6 +530,11 @@ modules:
         directory: proj_lib
         file_name: diglib28_vl.v
         clean: true
+    DG_SE2DIFF_1X2:
+        directory: proj_lib
+        file_name: diglib28_vl.v
+        clean: false
+        stale_reason: 'missing: mod, circuit_lib, unl'
     DG_SNGL2DIFF_1X2:
         directory: proj_lib
         file_name: diglib28_vl.v
@@ -561,10 +575,20 @@ modules:
         directory: proj_lib
         file_name: diglib28_vl.v
         clean: true
+    DG_TR_3X2:
+        directory: proj_lib
+        file_name: diglib28_vl.v
+        clean: false
+        stale_reason: 'missing: mod, circuit_lib, unl'
     DG_TR_FF:
         directory: proj_lib
         file_name: diglib28_vl.v
         clean: true
+    DG_TS_3X2:
+        directory: proj_lib
+        file_name: diglib28_vl.v
+        clean: false
+        stale_reason: 'missing: mod, circuit_lib, unl'
     DLUSR_7X2:
         directory: ver_lib
         file_name: DLUSR_7X2.v
@@ -764,7 +788,8 @@ modules:
     TST_DLUSR_7X2:
         directory: ver_lib
         file_name: TST_DLUSR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     TST_DVDR4:
         directory: ver_lib
         file_name: TST_DVDR4.v
@@ -1190,6 +1215,16 @@ modules:
         file_name: tstDFF.v
         clean: true
 duplicates:
+  - BUF_BIAS_VAMS
+  - CAP1
+  - CAPLD_DIFF
+  - CAPLD_IN
+  - CAPLD_OUT
+  - CAP_LD2
+  - CLK_SLCT
+  - CLK_SLCT2
+  - CLK_SLCT3
+  - CLOCK_SLCT
   - DG_AND2_2X1
   - DG_AND2_3X1
   - DG_AND2_4X1
@@ -1232,6 +1267,7 @@ duplicates:
   - DG_EMX_4X1
   - DG_EXNOR1_2X1
   - DG_EXOR1_2X1
+  - DG_HV2LV
   - DG_INV
   - DG_INV1
   - DG_INV16
@@ -1258,6 +1294,7 @@ duplicates:
   - DG_JKS_5X2
   - DG_LR6X2_DIFF
   - DG_LR_DIFF
+  - DG_LTCHB_DIFF
   - DG_LTCHR_3X1
   - DG_LTCHR_4X1
   - DG_LTCHR_DIFF
@@ -1267,6 +1304,7 @@ duplicates:
   - DG_LTCHS_3X1
   - DG_LTCHS_4X1
   - DG_LTCH_3X1
+  - DG_LV2HV
   - DG_L_DIFF
   - DG_MX1_3X1
   - DG_MX2_3X1
@@ -1304,6 +1342,7 @@ duplicates:
   - DG_RG_3X1
   - DG_S2DIFF_1X2
   - DG_SNGL2DIFF_1X2
+  - DG_SW_INV
   - DG_TDR_5X2
   - DG_TDR_6X2
   - DG_TDUR_6X2
@@ -1314,15 +1353,47 @@ duplicates:
   - DG_TL_FF
   - DG_TR_FF
   - DVD2
+  - DVD2_QD
+  - ENBL_BFRC
+  - EXOR_DIFF
   - FADDR_3X2
   - HADDRA
   - HADDRB
   - HADDRC
   - HADDR_2X2
+  - KM_AND2_DIFF
+  - KM_BFR_ENBL
+  - KM_BUF_HYST
+  - KM_CAP
+  - KM_CAPN
   - KM_DEGLITCH
+  - KM_DIFF2SNGL
+  - KM_DLY
+  - KM_DLY_UP
+  - KM_DRQ_DIFF
   - KM_DVD2Q_DIFF
   - KM_EMX_4X1
+  - KM_ENBL_BFR
+  - KM_ENBL_BFRB
+  - KM_MXB4_3X1
+  - KM_MXDIFF_5X1
+  - KM_MX_1_8X1
+  - KM_MX_DIFF
+  - KM_NAB_C2
+  - KM_NAB_C_DIFF
+  - KM_NAND2_DIFF
+  - KM_NA_BC_BD
+  - KM_NOR2_DIFF
+  - KM_OR2_DIFF
+  - KM_PRPLGC
+  - KM_SLTCH
+  - KM_SPCL_DIFFMX
+  - MX3X1_DIFF
+  - NMOSCAP_18
+  - OUT_SLCT
   - QD_DDFS5
+  - RES
+  - VOTER
   - dg_and2_2x1
   - dg_and2_3x1
   - dg_and2_4x1
