@@ -113,8 +113,6 @@ behav_blcks:
         node: CLK
     -   edge: posedge
         node: INIT
-    -   edge: all
-        node: D0
     stmnts:
     -   kind: ifst
         cmpr_expr:

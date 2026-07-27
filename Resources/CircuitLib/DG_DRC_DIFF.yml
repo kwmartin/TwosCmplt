@@ -161,10 +161,11 @@ behav_blcks:
                 rvalue:
                     kind: int
                     value: 0
-    -   kind: noblckst
-        lvalue:
-            kind: ident
-            name: QP
-        rvalue:
-            kind: ident
-            name: DP
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: QP
+                rvalue:
+                    kind: ident
+                    name: DP

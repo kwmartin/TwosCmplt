@@ -2,11 +2,8 @@ kind: verilog
 module: CLA6
 params:
 -   kind: str
-    name: spiceprefix
-    value: X
--   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: str
     name: spiceprefix
     value: X
@@ -182,7 +179,7 @@ behav_blcks:
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: async
+        value: sync
         name: None
     ports:
     -   port: None
@@ -206,7 +203,7 @@ behav_blcks:
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: async
+        value: sync
         name: None
     ports:
     -   port: None
@@ -366,4 +363,3 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
-
