@@ -1,5 +1,5 @@
 kind: verilog
-module: DG_DR_DIFF
+module: DG_DER_3X2
 params:
 -   kind: str
     name: circuit
@@ -8,25 +8,16 @@ params:
     name: delay
     value: 5
 io_ports:
--   name: DP
--   name: DN
+-   name: D
 -   name: R
--   name: CP
--   name: CN
+-   name: CLK
 -   name: QP
 -   name: QN
 -   name: VDD
 -   name: VSS
 decls:
 -   -   kind: Input
-        name: DP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: DN
+        name: D
         signed: 'False'
         width:
         - 0
@@ -40,14 +31,7 @@ decls:
         - 0
         length: []
     -   kind: Input
-        name: CP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: CN
+        name: CLK
         signed: 'False'
         width:
         - 0
@@ -82,20 +66,75 @@ decls:
         - 0
         length: []
 -   -   kind: Reg
-        name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QN
+        name: STATE
         signed: 'False'
         width:
         - 0
         - 0
         length: []
 behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: STATE
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    -   edge: posedge
+        node: R
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: float
+                value: 100.0
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STATE
+            rvalue:
+                kind: int
+                value: 0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: R
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STATE
+                rvalue:
+                    kind: int
+                    value: 0
+            ifelse:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STATE
+                rvalue:
+                    kind: ident
+                    name: D
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
 -   kind: assign
     lvalue:
         kind: ident
@@ -105,59 +144,5 @@ behav_blcks:
         oper: 'Unot:'
         args:
         -   kind: ident
-            name: QP
+            name: STATE
     delay: 0
--   kind: initial
-    stmnts:
-    -   kind: blckst
-        lvalue:
-            kind: ident
-            name: QP
-        rvalue:
-            kind: int
-            value: 0
--   kind: always
-    onlyif:
-    -   edge: negedge
-        node: CP
-    -   edge: posedge
-        node: R
-    stmnts:
-    -   kind: ifst
-        cmpr_expr:
-            kind: cmpr_ident
-            node: R
-        iftrue:
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: QP
-            rvalue:
-                kind: int
-                value: 0
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_expr
-                oper: 'BLessThan:'
-                args:
-                -   kind: sys_tm
-                    name: time
-                -   kind: float
-                    value: 100.0
-            iftrue:
-            -   kind: blckst
-                lvalue:
-                    kind: ident
-                    name: QP
-                rvalue:
-                    kind: int
-                    value: 0
-            ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QP
-                rvalue:
-                    kind: ident
-                    name: DP

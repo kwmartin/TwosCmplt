@@ -58,46 +58,6 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 22.6
-    src_sgnls:
-    - CIN
-    edge: posedge
-    dst_sgnls:
-    - SUM
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 12.5
-    src_sgnls:
-    - CIN
-    edge: posedge
-    dst_sgnls:
-    - COUT
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 23.7
-    src_sgnls:
-    - A
-    edge: posedge
-    dst_sgnls:
-    - SUM
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 13.4
-    src_sgnls:
-    - A
-    edge: posedge
-    dst_sgnls:
-    - COUT
 -   kind: assign
     lvalue:
         kind: ident

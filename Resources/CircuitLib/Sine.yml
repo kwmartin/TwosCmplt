@@ -3,10 +3,7 @@ module: Sine
 params:
 -   kind: str
     name: circuit
-    value: sync
--   kind: str
-    name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -410,49 +407,6 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: async
-    name: CMPL0
-    module: CMPL
-    params:
-    -   kind: int
-        value: 12
-        name: nbits
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: INVRT
-        node:
-            kind: bit
-            name: R0_
-            sgmnts:
-            - 14
-    -   port: IN
-        node:
-            kind: slice
-            name: R0_
-            sgmnts:
-            -   kind: int
-                value: 13
-            -   kind: int
-                value: 2
-    -   port: OUT
-        node:
-            kind: slice
-            name: CMPL0_
-            sgmnts:
-            -   kind: int
-                value: 11
-            -   kind: int
-                value: 0
-    -   port: VDD
-        node:
-            kind: ident
-            name: VDD
-    -   port: VSS
-        node:
-            kind: ident
-            name: VSS
--   kind: async
     name: ROM0
     module: ROM
     params:
@@ -619,49 +573,6 @@ behav_blcks:
         node:
             kind: slice
             name: R5N
-            sgmnts:
-            -   kind: int
-                value: 11
-            -   kind: int
-                value: 0
-    -   port: VDD
-        node:
-            kind: ident
-            name: VDD
-    -   port: VSS
-        node:
-            kind: ident
-            name: VSS
--   kind: async
-    name: CMPL1
-    module: CMPL
-    params:
-    -   kind: int
-        value: 12
-        name: nbits
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: INVRT
-        node:
-            kind: bit
-            name: R0_
-            sgmnts:
-            - 15
-    -   port: IN
-        node:
-            kind: slice
-            name: ADDR2_
-            sgmnts:
-            -   kind: int
-                value: 11
-            -   kind: int
-                value: 0
-    -   port: OUT
-        node:
-            kind: slice
-            name: CMPL1_
             sgmnts:
             -   kind: int
                 value: 11
@@ -854,7 +765,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK1
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -878,7 +789,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK3
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -902,7 +813,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK2
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -953,26 +864,24 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
-    name: I2
+-   kind: async
+    name: i1
     module: DG_INV2
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
-    -   port: None
+    -   port: A
         node:
             kind: bit
             name: R0_
             sgmnts:
             - 15
-    -   port: None
+    -   port: Z
         node:
             kind: bit
             name: R0N_
             sgmnts:
             - 15
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
+

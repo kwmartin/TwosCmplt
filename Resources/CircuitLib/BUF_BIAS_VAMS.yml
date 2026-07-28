@@ -1,0 +1,139 @@
+kind: verilog
+module: BUF_BIAS_VAMS
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: PD
+    direct: Input
+-   name: RT0
+    direct: Input
+-   name: RT1
+    direct: Input
+-   name: RT2
+    direct: Input
+-   name: RT3
+    direct: Input
+-   name: RT4
+    direct: Input
+-   name: RT5
+    direct: Input
+-   name: RT6
+    direct: Input
+-   name: IBS0
+    direct: Input
+-   name: IBS1
+    direct: Input
+-   name: VBN
+    direct: Input
+-   name: VBP
+    direct: Input
+-   name: VDDA
+    direct: Input
+-   name: VSSA
+    direct: Input
+decls:
+-   -   kind: Input
+        name: PD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: RT6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: IBS0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: IBS1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VBN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VBP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDDA
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSSA
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks: null
+

@@ -1,5 +1,5 @@
 kind: verilog
-module: DG_TLDR_5X2
+module: DG_TR_3X2
 params:
 -   kind: str
     name: circuit
@@ -8,8 +8,6 @@ params:
     name: delay
     value: 5
 io_ports:
--   name: L
--   name: D
 -   name: T
 -   name: R
 -   name: CP
@@ -19,20 +17,6 @@ io_ports:
 -   name: VSS
 decls:
 -   -   kind: Input
-        name: L
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: D
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
         name: T
         signed: 'False'
         width:
@@ -172,17 +156,11 @@ behav_blcks:
                     kind: cndexpr
                     args:
                     -   kind: ident
-                        name: L
+                        name: T
                     -   kind: ident
-                        name: D
-                    -   kind: cndexpr
-                        args:
-                        -   kind: ident
-                            name: T
-                        -   kind: ident
-                            name: QN
-                        -   kind: ident
-                            name: QP
+                        name: QN
+                    -   kind: ident
+                        name: QP
             -   kind: noblckst
                 lvalue:
                     kind: ident
@@ -191,17 +169,8 @@ behav_blcks:
                     kind: cndexpr
                     args:
                     -   kind: ident
-                        name: L
-                    -   kind: uexpr
-                        oper: 'Unot:'
-                        args:
-                        -   kind: ident
-                            name: D
-                    -   kind: cndexpr
-                        args:
-                        -   kind: ident
-                            name: T
-                        -   kind: ident
-                            name: QP
-                        -   kind: ident
-                            name: QN
+                        name: T
+                    -   kind: ident
+                        name: QP
+                    -   kind: ident
+                        name: QN

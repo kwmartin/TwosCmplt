@@ -1,29 +1,29 @@
 kind: verilog
-module: DG_DVD2_DIFF
+module: DG_SE2DIFF_1X2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
--   name: CP
--   name: CN
--   name: QP
--   name: QN
+-   name: IN
+-   name: ENBL
+-   name: OUTP
+-   name: OUTN
 -   name: VDD
 -   name: VSS
 decls:
 -   -   kind: Input
-        name: CP
+        name: IN
         signed: 'False'
         width:
         - 0
         - 0
         length: []
     -   kind: Input
-        name: CN
+        name: ENBL
         signed: 'False'
         width:
         - 0
@@ -44,71 +44,72 @@ decls:
         - 0
         length: []
 -   -   kind: Output
-        name: QP
+        name: OUTP
         signed: 'False'
         width:
         - 0
         - 0
         length: []
     -   kind: Output
-        name: QN
+        name: OUTN
         signed: 'False'
         width:
         - 0
         - 0
         length: []
--   -   kind: Reg
-        name: QP
+-   -   kind: Wire
+        name: OUTP
         signed: 'False'
         width:
         - 0
         - 0
         length: []
-    -   kind: Reg
-        name: QN
+    -   kind: Wire
+        name: OUTN
         signed: 'False'
         width:
         - 0
         - 0
         length: []
 behav_blcks:
--   kind: initial
-    stmnts:
-    -   kind: blckst
-        lvalue:
-            kind: ident
-            name: QP
-        rvalue:
-            kind: int
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUTP
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ENBL
+            -   kind: int
+                value: 1
+        -   kind: ident
+            name: IN
+        -   kind: int
             value: 0
-    -   kind: blckst
-        lvalue:
-            kind: ident
-            name: QN
-        rvalue:
-            kind: int
-            value: 1
--   kind: always
-    onlyif:
-    -   edge: negedge
-        node: CP
-    -   edge: posedge
-        node: CN
-    stmnts:
-    -   kind: noblckst
-        lvalue:
-            kind: ident
-            name: QP
-        rvalue:
-            kind: uexpr
+    delay: 20.0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUTN
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: ENBL
+            -   kind: int
+                value: 1
+        -   kind: uexpr
             oper: 'Unot:'
             args:
             -   kind: ident
-                name: QP
-    -   kind: noblckst
-        lvalue:
-            kind: ident
-            name: QN
-        rvalue:
-            kind: ident
-            name: QP
+                name: IN
+        -   kind: int
+            value: 1
+    delay: 20.0

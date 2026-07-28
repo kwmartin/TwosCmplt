@@ -123,6 +123,11 @@ public enum RegTyp: Int, Sendable, Hashable {
     case dpf=0, dpr=1, dnf=2, dnr=3, d0pf=4, d0pr=5, d0nf=6, d0nr=7
 }
 
+public enum NdKind {
+    case simple
+    case slice
+}
+
 public enum SEdge {
     case rise
     case fall

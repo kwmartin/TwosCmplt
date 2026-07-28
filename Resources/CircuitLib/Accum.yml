@@ -1,0 +1,305 @@
+kind: verilog
+module: Accum
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: FRQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R0_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: R0_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: R1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ADDR1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CO0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ADDR0_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: ADDR0
+    module: addr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 19
+            -   kind: int
+                value: 4
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: QP
+        node:
+            kind: slice
+            name: ADDR0_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: R0_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO0
+-   kind: async
+    name: ADDR1
+    module: addr
+    params:
+    -   kind: int
+        value: 4
+        name: nbits
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: A
+        node:
+            kind: slice
+            name: FRQ
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CI
+        node:
+            kind: ident
+            name: VSS
+    -   port: QP
+        node:
+            kind: slice
+            name: ADDR1_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: B
+        node:
+            kind: slice
+            name: R1_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CO
+        node:
+            kind: ident
+            name: CO1
+-   kind: sync
+    name: R0
+    module: rgstr
+    params:
+    -   kind: int
+        value: 16
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR0_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+    -   port: QP
+        node:
+            kind: slice
+            name: R0_
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: SET
+        node:
+            kind: slice
+            name: R0_SET
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+-   kind: sync
+    name: R2
+    module: regstr
+    params:
+    -   kind: int
+        value: 5
+        name: nbits
+    -   kind: int
+        value: 1
+        name: nregs
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: IN
+        node:
+            kind: ident
+            name: CO1
+    -   port: IN
+        node:
+            kind: slice
+            name: ADDR1_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: CLK
+        node:
+            kind: ident
+            name: CLKB
+    -   port: QP
+        node:
+            kind: slice
+            name: R1_
+            sgmnts:
+            -   kind: int
+                value: 4
+            -   kind: int
+                value: 0
+    -   port: INIT
+        node:
+            kind: ident
+            name: INIT
+-   kind: gate
+    name: BUF1
+    gate: buf
+    ports:
+    - CLK
+    - CLKB
+    delay:
+    -   kind: str
+        value: async
+        name: circuit
+

@@ -96,21 +96,6 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 45.5
-    src_sgnls:
-    - CP
-    - L
-    - D1
-    - D2
-    - R
-    edge: posedge
-    dst_sgnls:
-    - QP
-    - QN
 -   kind: initial
     stmnts:
     -   kind: blckst
