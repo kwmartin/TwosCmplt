@@ -9,6 +9,7 @@ Overview of TwosCmplt library. Will fill in once docc is working.
 ## Topics
 
 - <doc:Filters>
+- <doc:CircDef>
 
 ## Twos's Complement Integers
 

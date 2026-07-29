@@ -170,9 +170,8 @@ public indirect enum ExprYAML: Decodable {
             self = .select(name: name, args: args)
 
         case .concat:
-            let name  = try c.decode(String.self,   forKey: .name)
             let concats = try c.decode([ExprYAML].self, forKey: .concats)
-            self = .select(name: name, args: concats)
+            self = .concat(args: concats)
 
         case .sys_tm:
             let name  = try c.decode(String.self,   forKey: .name)
@@ -2150,14 +2149,7 @@ public struct AssgnBody {
 
 public struct ConcatStmntAST {
     public let node: String
-    public let concats: [SingleConcatAST]
-}
-
-public struct SingleConcatAST {
-    public let lvalue: LValueAST
-    public let lwidth: Int = 1
-    public let rvalue: ExprId
-    public let delay: Double?
+    public let concats: [AssgnAST]
 }
 
 public struct CaseItemAST {
@@ -2181,9 +2173,11 @@ public struct CaseStmntAST {
 
 
 extension SingleConcatYAML {
-    func toAST(in circ: inout CircDef) -> SingleConcatAST {
-        SingleConcatAST(
-            lvalue: lhs.toAST(),
+    func toAST(in circ: inout CircDef) -> AssgnAST {
+        let lhsAST = lhs.toAST()
+        return AssgnAST(
+            lvalue: lhsAST,
+            lwidth: lhsAST.Lwidth(in: circ),
             rvalue: rhs.toExprId(in: &circ),
             delay: 0.0
         )

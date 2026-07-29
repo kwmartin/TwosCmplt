@@ -137,6 +137,53 @@ func lvalueBaseName(_ lv: LValueAST) -> String {
     }
 }
 
+// Like lvalueBaseName, but decomposes a .concat target into every node name
+// it writes, rather than collapsing it to a single placeholder. Used to
+// build a continuous assign's write set for Kahn's-algorithm scheduling
+// (see CircDef.md).
+func lvalueBaseNames(_ lv: LValueAST) -> [String] {
+    switch lv {
+    case .net(let name),
+         .bitSelect(let name, _),
+         .partSelect(let name, _, _),
+         .indexedPartSelect(let name, _, _):
+        return [name]
+    case .concat(let parts):
+        return parts.flatMap { lvalueBaseNames($0) }
+    }
+}
+
+// Collects every node name referenced anywhere in an expression tree — used
+// to build a continuous assign's read set for Kahn's-algorithm scheduling
+// (see CircDef.md). Recurses through every Expr case that can nest further
+// ExprIds; a .select's own bound expressions are walked too, in case a
+// bound is itself an expression referencing other nodes (e.g. a
+// parameterized slice).
+func referencedNodeNames(_ id: ExprId, in circDef: CircDef) -> Set<String> {
+    var names: Set<String> = []
+    func walk(_ id: ExprId) {
+        switch circDef.expr(for: id) {
+        case .int, .real:
+            break
+        case .node(let name):
+            names.insert(name)
+        case .select(let name, let args):
+            names.insert(name)
+            for a in args { walk(a) }
+        case .unary(_, let arg):
+            walk(arg)
+        case .binary(_, let args),
+             .gate(_, let args),
+             .syscall(_, let args),
+             .cndtn(let args),
+             .concat(let args):
+            for a in args { walk(a) }
+        }
+    }
+    walk(id)
+    return names
+}
+
 public func delayExprToNumber(_ d: DelayExpr) -> Number {
     switch d {
     case .float(let v):
@@ -245,8 +292,10 @@ public func evalExpr(_ id: ExprId, ctx: inout Context) -> Value {
         return ctx.syscall("gate_\(op)", args: argValues)
 
     case .select(let name, let args):
-        let argValues = args.map { evalExpr($0, ctx: &ctx) }
-        return ctx.syscall("select_\(name)", args: argValues)
+        precondition(args.count == 2, "select expects 2 args (msb, lsb)")
+        let msb = evalExpr(args[0], ctx: &ctx).asInt
+        let lsb = evalExpr(args[1], ctx: &ctx).asInt
+        return .twoCmplt(ctx.getSelect(name, msb: msb, lsb: lsb))
 
     case .concat(let args):
         let argValues = args.map { evalExpr($0, ctx: &ctx) }
@@ -1015,12 +1064,9 @@ public func genAssignStmt(_ ast: AssgnAST,
 
     let expr = ctx.circDef.getExpr(ast.rvalue)
     genExpr(expr, ctx: &ctx)
-    if case .net(let nd_nm) = ast.lvalue {
-        ctx.code.append(
-            Instruction(op: .storeSignal(nd_nm)))
-    } else {
-        print("Not a net name")
-    }
+    let delay: Int = Int(ast.delay ?? 0.0)
+    ctx.code.append(
+        Instruction(op: .assgn(ast.lvalue, delay)))
 }
 
 func width(of lhs: LValueAST, ctx: Context) -> Int {
@@ -1102,11 +1148,17 @@ func extractSlice(_ v: Value, msb: Int, lsb: Int) -> TwoCmplt {
 }
 
 public func genConcatStmt(_ ast: ConcatStmntAST, ctx: inout Context) {
+    // Purely bytecode-emitting, mirroring genAssgnStmtCode/genAssignStmt:
+    // genExpr only appends Instructions to ctx.code at this (codegen) point —
+    // it never pushes onto ctx.stack, the *runtime* value stack — so calling
+    // ctx.pop() here (as this used to) popped from an empty stack. Emitting a
+    // .assgn opcode per part and letting the VM's setLeftNet handle the write
+    // at execution time avoids that entirely.
     for single in ast.concats {
-        let rhsExpr = ctx.circDef.expr(for: single.rvalue)   // ExprId → Expr
-        genExpr(rhsExpr, ctx: &ctx)                       // leaves Value on stack
-        let rhsVal = ctx.pop()
-        assignToLValue(single.lvalue, rhs: rhsVal, tm: ctx.simTime, ctx: &ctx)
+        let rhsExpr = ctx.circDef.expr(for: single.rvalue)
+        genExpr(rhsExpr, ctx: &ctx)
+        let delay: Int = Int(single.delay ?? 0.0)
+        ctx.code.append(Instruction(op: .assgn(single.lvalue, delay)))
     }
 }
 

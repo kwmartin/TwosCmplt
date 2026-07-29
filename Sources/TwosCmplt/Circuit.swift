@@ -123,7 +123,7 @@ public enum RegTyp: Int, Sendable, Hashable {
     case dpf=0, dpr=1, dnf=2, dnr=3, d0pf=4, d0pr=5, d0nf=6, d0nr=7
 }
 
-public enum NdKind {
+public enum NdKind: Equatable {
     case simple
     case slice
 }
@@ -193,16 +193,6 @@ public typealias BusArray = [BusElem]
 
 public typealias StrArray = [String]
 
-public enum Buss {
-    case int(bit: Int)
-    case uint(uint: (Int, Int))
-    case twoCmplt(node: TwoCmplt)
-    case twoBit(bit: (TwoCmplt, Int))
-    case twoSlice(slice: (TwoCmplt, Int, Int))
-}
-
-public typealias BussArray = [Buss]
-
 public struct Sgmnt: Decodable {
     let node: String
     let width: (Int, Int)
@@ -255,7 +245,6 @@ public struct PortDef: Decodable {
     public var nbits: Int
     public var intlIndx: Int
     public var extlIndx: Int
-    public var sgmnts: [Sgmnt]?
     // Non-nil when this output port drives a single bit of the parent's multi-bit node.
     // Propagation must merge only this bit rather than overwrite the whole node.
     public var extlBitIndex: Int?
@@ -264,7 +253,6 @@ public struct PortDef: Decodable {
         case port
         case node
         case nbits
-        case sgmnts
         // no keys for intlIndx / extlIndx / extlBitIndex → they stay internal
     }
 
@@ -274,7 +262,6 @@ public struct PortDef: Decodable {
         nbits: Int = 1,
         intlIndx: Int = 1_000_000,
         extlIndx: Int = 1_000_000,
-        sgmnts: [Sgmnt]? = nil,
         extlBitIndex: Int? = nil
     ) {
         self.port = port
@@ -282,7 +269,6 @@ public struct PortDef: Decodable {
         self.nbits = nbits
         self.intlIndx = intlIndx
         self.extlIndx = extlIndx
-        self.sgmnts = sgmnts
         self.extlBitIndex = extlBitIndex
     }
 
@@ -292,13 +278,11 @@ public struct PortDef: Decodable {
         let port   = try c.decode(String.self, forKey: .port)
         let node   = try c.decode(String.self, forKey: .node)
         let nbits  = try c.decodeIfPresent(Int.self, forKey: .nbits) ?? 1
-        let sgmnts = try c.decodeIfPresent([Sgmnt].self, forKey: .sgmnts)
 
         // internal indices are *not* decoded from YAML
         self.port = port
         self.node = node
         self.nbits = nbits
-        self.sgmnts = sgmnts
         self.intlIndx = 1_000_000
         self.extlIndx = 1_000_000
         self.extlBitIndex = nil
@@ -396,6 +380,7 @@ public enum CmpType: Sendable {
     case cCirc
     case iPrt
     case oPrt
+    case assgnBlk
 }
 
 public struct Cmp {
@@ -478,6 +463,14 @@ public func makeCmpRefs(_ circ: Circuit) {
         }
         circ.refCnts[ref] = 0
     }
+
+    for (i, _) in circ.assgnBlkWrites.enumerated() {
+        let ref = CmpRef(kind: .assgnBlk, index: i)
+        if !circ.cmpRefs.contains(ref) {
+            circ.cmpRefs.append(ref)
+        }
+        circ.refCnts[ref] = 0
+    }
 }
 
 
@@ -523,6 +516,12 @@ public func makeCmpRefs(_ circ: Circuit) {
         for prtDef in circ.oPrts {
             if !(circ.parent == nil) {
                 outRefs.append(circ.parent!.nodes[prtDef.extlIndx].nodeDrvr)
+            }
+        }
+    case .assgnBlk:
+        for indx in circ.assgnBlkWrites[ref.index] {
+            for rf in circ.nodes[indx].nodeSinks {
+                outRefs.append(rf)
             }
         }
     default:
@@ -764,17 +763,6 @@ public func saveChng(_ circ: Circuit, indx: Int) {
     Glbls.allChngs.append((ndStr, (nd.updTm, nd.node.value)))
 }
 
-public func setOutNd(_ circ: Circuit, indx: Int) {
-    let intNd = circ.nodes[circ.oPrts[indx].intlIndx]
-    let extlIndx = circ.oPrts[indx].extlIndx
-    var extNd = circ.parent!.nodes[circ.oPrts[indx].extlIndx]
-    if extNd.node.value != intNd.node.value {
-        extNd.node.value = intNd.node.value
-        extNd.updTm = intNd.updTm + circ.delay.fixed
-        saveChng(circ, indx: extlIndx)
-    }
-}
-
 // Per-always-block runtime state, per Circuit instance
 public struct AlwaysState {
     public var chngWtchs: [SensWatch]?          // nodes edges/changes that trigger eval
@@ -831,6 +819,13 @@ public final class Circuit {
     var sCircs: [Reg] = []
     var vCircs: [Circuit] = []
     var cCircs: [Circuit] = []
+    // Per-continuous-assign write/read node indices, index i corresponding to
+    // circDef.assgnBlcks[i] (i is "the Nth .assgnblck encountered in
+    // self.behav" — see CircDef.md). Populated by CircDef.toCircuit() so
+    // .assgnBlk CmpRefs can be scheduled via Kahn's algorithm like any other
+    // component, instead of running unconditionally every timestep.
+    var assgnBlkWrites: [[Int]] = []
+    var assgnBlkReads: [[Int]] = []
     weak var parent: Circuit? = nil
     weak var head: Circuit? = nil
     var cmpRefs: [CmpRef] = []
@@ -1219,13 +1214,9 @@ public final class Circuit {
             ? self.iPrts.reduce(tm) { max($0, self.nodes[$1.intlIndx].updTm) }
             : tm
 
-        if self.kind == "verilog" {
-            if !self.assgnStates.isEmpty {
-                ctx.circ = self
-                ctx.simTime = inputTm
-                self.runAllAssignBlcks(ctx: &ctx)
-            }
-        }
+        // Continuous assigns (kind .assgnBlk) are dispatched below, via
+        // evalOrder in Kahn's-algorithm order, alongside gates/instances —
+        // not run unconditionally here. See CircDef.md.
 
         if async == true {
             for cmp in evalOrder {
@@ -1247,6 +1238,11 @@ public final class Circuit {
                     // print("In: \(self.name), evaluating cCirc[\(cmp.index)] with name: \(cCircs[cmp.index].name)")
                     dbg("In: \(self.name), evaluating cCirc[\(cmp.index)] with name: \(cCircs[cmp.index].name)")
                     cCircs[cmp.index].eval(async: true, tm: tm)
+                case .assgnBlk:
+                    dbg("In: \(self.name), evaluating assgnBlk[\(cmp.index)]")
+                    ctx.circ = self
+                    ctx.simTime = inputTm
+                    self.runAssignBlck(cmp.index, ctx: &ctx)
                 default:
                     // print("not .aCirc or .cCirc, skipping")
                     break
@@ -1277,6 +1273,10 @@ public final class Circuit {
                     // print("In: \(self.name), evaluating cCirc[\(cmp.index)] with name: \(cCircs[cmp.index].name)")
                     dbg("In: \(self.name), evaluating cCirc[\(cmp.index)] with name: \(cCircs[cmp.index].name)")
                     cCircs[cmp.index].eval(async: false, tm: tm)
+                case .assgnBlk:
+                    // Continuous assigns are combinational/async-only,
+                    // like .aCirc — not re-evaluated on the sync pass.
+                    dbg("In: \(self.name), not evaluating assgnBlk[\(cmp.index)] (async only)")
                 default:
                     // print("not .sCirc or .vCirc or .cCirc, skipping")
                     break
@@ -1294,11 +1294,8 @@ public final class Circuit {
                 self.simVrlgAlwys(ctx: &ctx)
                 self.alwysStk = []
             }
-
-            if !self.assgnStates.isEmpty {
-                self.runAllAssignBlcks(ctx: &ctx)
-            }
-
+            // Assigns are no longer re-run here after always-blocks fire —
+            // see the note above the main evalOrder dispatch loop.
         }
 
         for cmp in evalOrder {
@@ -1347,8 +1344,7 @@ public final class Circuit {
                     node: name,
                     nbits: nbits,
                     intlIndx: intlIndx,
-                    extlIndx: extlIndx,
-                    sgmnts: []
+                    extlIndx: extlIndx
                     )
 
                 return prtDef
@@ -1361,15 +1357,12 @@ public final class Circuit {
                 }
             }
 
-        case let .segmented(pName, segments):
-            var sgs: [Sgmnt] = []
-            var wdth: (Int, Int)
-            for seg in segments {
-                wdth = circSeg(name: seg.node, seg: seg.width, circuit: circuit)
-                let sg = Sgmnt(node: seg.node, width: wdth)
-                sgs.append(sg)
-            }
-            return PortDef(port: pName, node: "", nbits: 0, extlIndx: -1, sgmnts: sgs)
+        case .segmented:
+            // Segmented (multi-slice) sub-circuit boundary port connections are not
+            // supported: no circuit in the library uses this today, and the PortDef
+            // this used to produce (node: "", nbits: 0, extlIndx: -1) was never a
+            // usable value — nothing downstream ever read it.
+            preconditionFailure("resolveCircPort: segmented sub-circuit port connections are not supported")
 
         default: preconditionFailure("Only .node or .segmented enums allowed fof Circuit Cmps")
 
@@ -1519,9 +1512,11 @@ extension Circuit {
         if !self.initStates.isEmpty {
             self.runAllInitBlcks(ctx: &ctx)
         }
-        if !self.assgnStates.isEmpty {
-            self.runAllAssignBlcks(ctx: &ctx)
-        }
+        // Continuous assigns no longer run here unconditionally — they're
+        // dispatched via evalOrder (Kahn's-algorithm order) in eval(),
+        // which runs immediately after simVrlgInits within the same first
+        // eval() call, so the initial values still get established before
+        // anything else in that call reads them.
 
         precondition(ctx.stack.count == startDepth,
                     "Stack leak")
@@ -1535,8 +1530,13 @@ extension Circuit {
 
         let startDepth = ctx.stack.count
 
-        // runAllInitBlcks(on: &circuit, ctx: &ctx)
-        if !ctx.circDef.assgnBlcks.isEmpty { self.runAllAssignBlcks(ctx: &ctx) } // Currently this should be empty
+        // Continuous assigns are no longer re-run here after always-blocks
+        // fire: a node written by an always block never gets a structural
+        // nodeDrvr (setNode doesn't set one), so any assign reading it is
+        // already treated like a sync-driven dependency by
+        // initializeCmpCnts — no ref-count edge, "stale until next
+        // trigger" semantics — rather than being force-refreshed. See
+        // CircDef.md.
 
         for alwysIndx in self.alwysStk {
             self.runAlwysBlck(alwysIndx, ctx: &ctx)
@@ -1550,18 +1550,22 @@ extension Circuit {
 }
 
 extension Circuit {
-    func runAllAssignBlcks(ctx: inout Context) {
+    // Runs a single continuous-assign block's already-compiled bytecode.
+    // Called from evalOrder dispatch (Kahn's-algorithm order) at the
+    // .assgnBlk case, once per assign, instead of runAllAssignBlcks'
+    // former "run every assign, unconditionally, in declaration order"
+    // sweep — see CircDef.md for why.
+    func runAssignBlck(_ i: Int, ctx: inout Context) {
         let def = ctx.circDef
-        for (i, assgnBlk) in def.assgnBlcks.enumerated() {
-            ctx.behavIdx = BehavBlockKind.assgnBlock(i)
-            let savedCode  = ctx.code
-            let savedStack = ctx.stack
-            ctx.code  = assgnBlk.code
-            ctx.stack = []
-            run(ctx: &ctx)
-            ctx.code  = savedCode
-            ctx.stack = savedStack
-        }
+        let assgnBlk = def.assgnBlcks[i]
+        ctx.behavIdx = BehavBlockKind.assgnBlock(i)
+        let savedCode  = ctx.code
+        let savedStack = ctx.stack
+        ctx.code  = assgnBlk.code
+        ctx.stack = []
+        run(ctx: &ctx)
+        ctx.code  = savedCode
+        ctx.stack = savedStack
     }
 }
 

@@ -289,11 +289,8 @@ let package = Package(
             name: "Cordic1",
             dependencies: ["TwosCmplt", "Yams", "ExamplesShared"],
             path: "Examples/Cordic1",
-            exclude: [
-                "Resources/rotations.dat"
-            ],
             resources: [
-                .process("../Resources/rotations.dat")
+                .process("Resources/rotations.dat")
             ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency=targeted")

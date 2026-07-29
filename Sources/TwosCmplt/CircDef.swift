@@ -1241,6 +1241,35 @@ public extension CircDef {
             }
         }
 
+        // Wire each continuous-assign block into Kahn's-algorithm scheduling,
+        // the same way instance/gate components already are — see
+        // CircDef.md. Must use self.behav (not circDef.assgnBlcks, which
+        // isn't populated until self.Compile(circ) runs further below) and
+        // must count assign blocks the same way copyBehav() does (one
+        // counter increment per .assgnblck entry in self.behav, matching
+        // circDef.assgnBlcks' eventual array order) so CmpRef indices line
+        // up with circDef.assgnBlcks[i] once it's populated.
+        for blk in self.behav {
+            guard case .assgnblck(let assgnBlckAST) = blk else { continue }
+
+            var writeIndices: [Int] = []
+            var readIndices: [Int] = []
+            for assgn in assgnBlckAST.body.assgns {
+                writeIndices += lvalueBaseNames(assgn.lvalue).compactMap { circ.nodeLU[$0] }
+                readIndices += referencedNodeNames(assgn.rvalue, in: self).compactMap { circ.nodeLU[$0] }
+            }
+
+            let ref = CmpRef(kind: .assgnBlk, index: circ.assgnBlkWrites.count)
+            circ.assgnBlkWrites.append(writeIndices)
+            circ.assgnBlkReads.append(readIndices)
+            for idx in writeIndices {
+                circ.nodes[idx].nodeDrvr = ref
+            }
+            for idx in readIndices {
+                circ.nodes[idx].nodeSinks.append(ref)
+            }
+        }
+
         let slots = self.gateSlots()
         circ.aCircs.reserveCapacity(circ.aCircs.count + slots.count)
 

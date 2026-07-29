@@ -8,6 +8,7 @@ public struct Nod {
     public var nodeDrvr: CmpRef = .none
     public var nodeSinks: [CmpRef] = []
     public var capac: Int = 2
+    public var kind: NdKind = .simple
 
     /**
      * Initialize a Nod struct.

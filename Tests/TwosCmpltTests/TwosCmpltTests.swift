@@ -9,6 +9,7 @@
 // }
 
 import XCTest
+import SharedTypes
 import TwosCmplt
 
 // filepath: Tests/TwosCmpltPackageTests/TwosCmpltPackageTests.swift

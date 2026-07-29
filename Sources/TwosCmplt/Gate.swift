@@ -1,46 +1,5 @@
 import SharedTypes
 
-
-/*
- * busConcat constructs a TwoCmplt from a Node struct
- *
- * - Paramater nodes: an array of Bus enums defined in Bus.swift
- *
- * -returns: TwoCmplt formed Bus enum; usually 1 or a few bits from Bus enum
- */
-public func busConcat(_ nodes: BussArray) -> TwoCmplt {
-    var out: TwoCmplt = TwoCmplt(0, nbits:0)
-    for bus in nodes {
-        switch bus {
-        case .int(let bit):
-            out.nbits += 1
-            out = (out<<1) | bit
-            // print("out \(out.value)")
-        case .uint(let uint):
-            let sz = uint.1
-            out.nbits += sz
-            out = (out<<sz) | uint.0
-            // print("out \(out.value)")
-        case .twoCmplt(let node):
-            let sz = node.nbits
-            out.nbits += sz
-            out = (out<<sz) | node
-            // print("out \(out.value)")
-        case .twoBit(let bit):
-            let bt = (bit.0.value>>bit.1) & 1
-            out.nbits += 1
-            out = (out<<1) | bt
-            // print("out \(out.value)")
-        case .twoSlice(let slice):
-            let sz = slice.1 - slice.2 + 1
-            out.nbits += sz
-            out = (out<<sz) | (slice.0.value>>slice.2) & ((1<<sz) - 1)
-            // print("out \(out.value)")
-        }
-    }
-    return out
-}
-
 public struct Gate {
     let kind: Kind
     var name: String = ""
@@ -143,12 +102,12 @@ public struct Gate {
 
         case .seg:
             let bs = self.circuit.nodes[self.inps[0]]
-            var outVal = 0
             let nd = bs.node
             updTm = bs.updTm > updTm ? bs.updTm : updTm
-            for i in 0..<nd.nbits {
-                outVal = (outVal << 1) | ((nd.value >> i) & 1)
+            guard let (msb, lsb) = self.seg else {
+                preconditionFailure("Missing seg range for .seg gate")
             }
+            let outVal = nd.selBits(n1: msb, n2: lsb).value
             outNd = self.circuit.nodes[self.outs[0]]
             if outNd.node.value != outVal {
                 self.circuit.setNode(outNd.name, val: outVal, tm: updTm + self.delay)

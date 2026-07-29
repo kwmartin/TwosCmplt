@@ -573,6 +573,7 @@ public func shw_ordr(_ hierarchicalName: String) {
         case .sCirc:        return current.sCircs[ref.index].name
         case .vCirc, .cCirc: return current.cCircs[ref.index].name
         case .oPrt:         return current.oPrts[ref.index].port
+        case .assgnBlk:     return "assign[\(ref.index)]"
         case .iPrt, .none:  return nil
         }
     }

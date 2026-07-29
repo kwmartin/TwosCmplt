@@ -88,24 +88,15 @@ struct GateConfig: Sendable {
 
             do {
                 guard let parsed = try Yams.load(yaml: yamlString) as? [String: Any],
-                    let kindStrRaw = parsed["kind"] as? String,
+                    let kindStr = parsed["kind"] as? String,
                     let ninps = parsed["ninps"] as? Int
                 else {
                     print("YAML missing required fields or invalid types in \(fileNm)")
                     continue
                 }
 
-                // Normalize kind string for legacy join3/join4 configs
-                let kindStr: String
-                switch kindStrRaw {
-                case "join3", "join4":
-                    kindStr = "join"
-                default:
-                    kindStr = kindStrRaw
-                }
-
                 guard let kind = Kind(rawValue: kindStr) else {
-                    print("Unknown gate kind '\(kindStrRaw)' in \(fileNm)")
+                    print("Unknown gate kind '\(kindStr)' in \(fileNm)")
                     continue
                 }
 

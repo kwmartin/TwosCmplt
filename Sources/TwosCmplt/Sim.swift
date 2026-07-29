@@ -1007,9 +1007,39 @@ public func writeNd(_ ckt: Circuit, _ name: String, _ v: Value, updTm: Int) {
     ckt.setNode(name, val: twos.value, tm: updTm)
 }
 
+// Shared bit/slice-write arithmetic for .bitSelect/.partSelect/.indexedPartSelect,
+// used by both assignToLValue and setLeftNet. The two callers previously
+// duplicated this arithmetic identically; the only real difference between
+// them is how each computes the write timestamp (an absolute tm vs. a delay
+// relative to ctx.simTime) and how strictly each checks the node exists
+// first — both of those remain the caller's own responsibility.
+private func applySliceWrite(_ lhs: LValueAST, val: Int, updTm: Int, ctx: inout Context) {
+    switch lhs {
+    case .bitSelect(let name, let n1):
+        var tc = ctx.readNode(name).node
+        let newval = tc.setBit(val & 1, n1: n1).value
+        ctx.circ!.setNode(name, val: newval, tm: updTm)
+
+    case .partSelect(let name, let n1, let n2):
+        var tc = ctx.readNode(name).node
+        let nbits = n1 - n2 + 1
+        let msk = (1 << nbits) - 1
+        let newval = tc.setBits(val & msk, n1: n1, n2: n2).value
+        ctx.circ!.setNode(name, val: newval, tm: updTm)
+
+    case .indexedPartSelect(let name, let n2, let nbits):
+        let n1 = n2 + nbits - 1
+        var tc = ctx.readNode(name).node
+        let msk = (1 << nbits) - 1
+        let newval = tc.setBits(val & msk, n1: n1, n2: n2).value
+        ctx.circ!.setNode(name, val: newval, tm: updTm)
+
+    case .net, .concat:
+        preconditionFailure("applySliceWrite only handles bitSelect/partSelect/indexedPartSelect")
+    }
+}
+
 public func assignToLValue(_ lhs: LValueAST, rhs: Value, tm: Int, ctx: inout Context) {
-    var nd: SmallNod
-    var tcvar: TwoCmplt
     var time: Int = tm
     if time >= ctx.simTime {
         ctx.simTime = time
@@ -1024,45 +1054,19 @@ public func assignToLValue(_ lhs: LValueAST, rhs: Value, tm: Int, ctx: inout Con
         } else {
             ctx.vars[name] = .int(val)
         }
-    case .bitSelect(let name, let n1):
-        if ctx.circ?.nodeLU[name] != nil {
-            nd = ctx.readNode(name)
-            tcvar = nd.node
-            time = nd.updTm
-        } else {
-            preconditionFailure("Node \(name) must be present")
-        }
-        let bit = (rhs.asInt)&0x1
-        let newval = tcvar.setBit(bit, n1: n1).value
-        ctx.circ!.setNode(name, val: newval, tm: time)
 
-    case .partSelect(let name, let n1, let n2):
-        if ctx.circ?.nodeLU[name] != nil {
-            nd = ctx.readNode(name)
-            tcvar = nd.node
-            time = nd.updTm
-        } else {
+    case .bitSelect(let name, _):
+        guard ctx.circ?.nodeLU[name] != nil else {
             preconditionFailure("Node \(name) must be present")
         }
-        let nbits = n1 - n2 + 1
-        let msk = ((1<<nbits) - 1)
-        let slc = (rhs.asInt)&msk
-        let newval = tcvar.setBits(slc, n1: n1, n2: n2).value
-        ctx.circ!.setNode(name, val: newval, tm: tm)
+        time = ctx.readNode(name).updTm
+        applySliceWrite(lhs, val: rhs.asInt, updTm: time, ctx: &ctx)
 
-    case .indexedPartSelect(let name, let n2, let nbits):
-        if ctx.circ?.nodeLU[name] != nil {
-            nd = ctx.readNode(name)
-            tcvar = nd.node
-            time = nd.updTm
-        } else {
+    case .partSelect(let name, _, _), .indexedPartSelect(let name, _, _):
+        guard ctx.circ?.nodeLU[name] != nil else {
             preconditionFailure("Node \(name) must be present")
         }
-        let n1 = n2 + nbits - 1
-        let msk = ((1<<nbits) - 1)
-        let slc = (rhs.asInt)&msk
-        let newval = tcvar.setBits(slc, n1: n1, n2: n2).value
-        ctx.circ!.setNode(name, val: newval, tm: tm)
+        applySliceWrite(lhs, val: rhs.asInt, updTm: tm, ctx: &ctx)
 
     case .concat(let parts):
         let totalVal = rhs.asInt
@@ -1269,23 +1273,8 @@ public func setLeftNet(lvalue: LValueAST,
             ctx.vars[name] = .int(val)
         }
 
-    case .bitSelect(let name, let index):
-        var tc = ctx.readNode(name).node
-        let newval = tc.setBit(val & 1, n1: index).value
-        ctx.circ!.setNode(name, val: newval, tm: updTm)
-
-    case .partSelect(let name, let msb, let lsb):
-        var tc = ctx.readNode(name).node
-        let nbits = msb - lsb + 1
-        let msk = (1 << nbits) - 1
-        let newval = tc.setBits(val & msk, n1: msb, n2: lsb).value
-        ctx.circ!.setNode(name, val: newval, tm: updTm)
-
-    case .indexedPartSelect(let name, let base, let width):
-        var tc = ctx.readNode(name).node
-        let msk = (1 << width) - 1
-        let newval = tc.setBits(val & msk, n1: base + width - 1, n2: base).value
-        ctx.circ!.setNode(name, val: newval, tm: updTm)
+    case .bitSelect, .partSelect, .indexedPartSelect:
+        applySliceWrite(lvalue, val: val, updTm: updTm, ctx: &ctx)
 
     case .concat(let parts):
         var offset = parts.reduce(0) { $0 + $1.Lwidth(in: ctx.circDef) }

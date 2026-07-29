@@ -27,9 +27,12 @@ func addSeg(name: String, seg: (Int, Int), circuit: Circuit) -> Int {
     let value = TwoCmplt(0, nbits: nbits)
     let indx = circuit.nodes.count
     let ndNm = name + "_\(indx)"
-    let outNd = Nod(name: ndNm, value:value)
+    var outNd = Nod(name: ndNm, value:value)
+    outNd.kind = .slice
     circuit.nodes.append(outNd)
+    circuit.nodeLU[ndNm] = indx
     let inNd = circuit.nodeLU[name]!
+    let gindx = circuit.aCircs.count
     let segGt = Gate(
         seg: seg,
         circuit: circuit,
@@ -37,6 +40,12 @@ func addSeg(name: String, seg: (Int, Int), circuit: Circuit) -> Int {
         outs: [indx]
         )
     circuit.aCircs.append(segGt)
+    // Record the .seg gate as this node's driver and as a sink of its source
+    // node, exactly like MakeCircuit's aCircs loop does for ordinary gates —
+    // without this, initializeCmpCnts has no dependency edge telling the
+    // scheduler anything reading this slice must wait for the .seg gate.
+    circuit.nodes[indx].nodeDrvr = CmpRef(kind: .aCirc, index: gindx)
+    circuit.nodes[inNd].nodeSinks.append(CmpRef(kind: .aCirc, index: gindx))
     return indx
 }
 
@@ -46,9 +55,12 @@ func circSeg(name: String, seg: (Int, Int), circuit: Circuit) -> (Int, Int) {
     let value = TwoCmplt(0, nbits: nbits)
     let indx = circuit.nodes.count
     let ndNm = name + "_\(indx)"
-    let outNd = Nod(name: ndNm, value:value)
+    var outNd = Nod(name: ndNm, value:value)
+    outNd.kind = .slice
     circuit.nodes.append(outNd)
+    circuit.nodeLU[ndNm] = indx
     let inNd = circuit.nodeLU[name]!
+    let gindx = circuit.aCircs.count
     let segGt = Gate(
         seg: seg,
         circuit: circuit,
@@ -56,7 +68,48 @@ func circSeg(name: String, seg: (Int, Int), circuit: Circuit) -> (Int, Int) {
         outs: [indx]
         )
     circuit.aCircs.append(segGt)
+    circuit.nodes[indx].nodeDrvr = CmpRef(kind: .aCirc, index: gindx)
+    circuit.nodes[inNd].nodeSinks.append(CmpRef(kind: .aCirc, index: gindx))
     return (indx, nbits)
+}
+
+// Synthesizes a real concat/join gate for ≥2 slice segments that must be
+// combined into one value before use (Option B: a port fed by exactly one
+// slice wires directly with no gate; ≥2 slices get a real .join gate here).
+// The output node's nbits is the sum of the inputs' nbits by construction,
+// satisfying the "sum of slice widths equals the concat output width"
+// invariant.
+func addJoin(segIndices: [Int], circuit: Circuit) -> Int {
+    precondition(segIndices.count >= 2, "addJoin requires at least 2 segments to concatenate")
+
+    let nbits = segIndices.reduce(0) { $0 + circuit.nodes[$1].node.nbits }
+    let value = TwoCmplt(0, nbits: nbits)
+    let indx = circuit.nodes.count
+    let ndNm = "join_\(indx)"
+    var outNd = Nod(name: ndNm, value: value)
+    outNd.kind = .simple
+    circuit.nodes.append(outNd)
+    circuit.nodeLU[ndNm] = indx
+
+    let gindx = circuit.aCircs.count
+    let joinGt = Gate(
+        kind: .join,
+        name: ndNm,
+        ninps: segIndices.count,
+        index: gindx,
+        circuit: circuit,
+        inps: segIndices,
+        outs: [indx],
+        delay: 1
+        )
+    circuit.aCircs.append(joinGt)
+
+    circuit.nodes[indx].nodeDrvr = CmpRef(kind: .aCirc, index: gindx)
+    for idx in segIndices {
+        circuit.nodes[idx].nodeSinks.append(CmpRef(kind: .aCirc, index: gindx))
+    }
+
+    return indx
 }
 
 func inPort2Indxs(port: Port, circuit: Circuit) -> [Int] {
@@ -75,9 +128,16 @@ func inPort2Indxs(port: Port, circuit: Circuit) -> [Int] {
         }
 
     case let .segmented(_, segments):
-        return segments.map { seg in
+        let segIndices = segments.map { seg in
             addSeg(name: seg.node, seg: seg.width, circuit: circuit)
         }
+        // Option B: a port fed by exactly one segment wires that slice
+        // directly (no gate); a port fed by ≥2 segments must be joined into
+        // one combined value first, via a real .join gate.
+        if segIndices.count <= 1 {
+            return segIndices
+        }
+        return [addJoin(segIndices: segIndices, circuit: circuit)]
 
     case let .arry(strArray):
         // Assuming StrArray == [String] and you want [Int]
@@ -207,8 +267,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                     node: name,
                     nbits: 1,
                     intlIndx: extlIndx,
-                    extlIndx: intlIndx,
-                    sgmnts: []
+                    extlIndx: intlIndx
                     )
 
                 circuit.nodes[intlIndx].nodeDrvr = CmpRef(kind: .iPrt, index: prtIndx)
@@ -232,8 +291,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                         node: name,
                         nbits: nbits,
                         intlIndx: intlIndx,
-                        extlIndx: extlIndx,
-                        sgmnts: []
+                        extlIndx: extlIndx
                         )
 
                     circuit.nodes[intlIndx].nodeDrvr = CmpRef(kind: .iPrt, index: prtIndx)
@@ -255,8 +313,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                         node: port,
                         nbits: 1,
                         intlIndx: intlIndx,
-                        extlIndx: extlIndx,
-                        sgmnts: []
+                        extlIndx: extlIndx
                         )
 
                     circuit.nodes[intlIndx].nodeDrvr = CmpRef(kind: .iPrt, index: prtIndx)
@@ -298,8 +355,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                     node: name,
                     nbits: 1,
                     intlIndx: intlIndx,
-                    extlIndx: extlIndx,
-                    sgmnts: []
+                    extlIndx: extlIndx
                     )
 
                 oprtDefs.append(prtDef)
@@ -321,8 +377,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                         node: name,
                         nbits: nbits,
                         intlIndx: intlIndx,
-                        extlIndx: extlIndx,
-                        sgmnts: []
+                        extlIndx: extlIndx
                         )
 
                     oprtDefs.append(prtDef)
@@ -344,8 +399,7 @@ public func MakeCircuit(_ circModule: String, circDct: [String: ArryVal], circui
                         node: port,
                         nbits: 1,
                         intlIndx: intlIndx,
-                        extlIndx: extlIndx,
-                        sgmnts: []
+                        extlIndx: extlIndx
                         )
 
                     oprtDefs.append(prtDef)
