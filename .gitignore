@@ -4,3 +4,15 @@ __pycache__/
 *.pyc
 *.pyo
 .codegraph/daemon.pid
+
+# Generated build/run outputs
+debug.log
+swift-build.log
+output.dat
+swiftly-x86_64.tar.gz
+
+# Generated simulation plot/dump outputs
+PlotResponse/
+Resources/DumpDir/
+tools/*.dat
+tools/*.mat
