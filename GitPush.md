@@ -55,3 +55,13 @@ Avoid it when:
 - The script stages **all** changes (`git add -A`), including untracked files and deletions.
 - The default commit message `"work"` is not descriptive. Prefer `-m` with a meaningful message.
 - If the upstream branch does not exist yet, the script pushes with `-u` to set the upstream tracking branch.
+
+## Session workflow
+
+```bash
+./git-start.sh          # at the beginning of a session
+# ... do your work ...
+./git-sync.sh -m "Meaningful message"   # at the end of a session
+```
+
+`git-start.sh` fetches remote state, shows what changed, and only rebases after asking. `git-sync.sh` stages, commits, integrates, and pushes.
