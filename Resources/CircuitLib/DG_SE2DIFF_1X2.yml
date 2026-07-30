@@ -29,6 +29,48 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Input
+        name: IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUTP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: OUTN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -79,45 +121,3 @@ behav_blcks:
         -   kind: int
             value: 1
     delay: 20.0
--   kind: Input
-    name: IN
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: ENBL
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VDD
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VSS
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: OUTP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: OUTN
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []

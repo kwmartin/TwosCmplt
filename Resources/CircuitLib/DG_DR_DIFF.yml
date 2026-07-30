@@ -25,6 +25,76 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Input
+        name: DP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: DN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: R
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -37,76 +107,6 @@ behav_blcks:
         -   kind: ident
             name: QP
     delay: 0
--   kind: Input
-    name: DP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: DN
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: R
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: CP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: CN
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: QP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: QN
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VDD
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VSS
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Reg
-    name: QP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
 -   kind: initial
     stmnts:
     -   kind: blckst

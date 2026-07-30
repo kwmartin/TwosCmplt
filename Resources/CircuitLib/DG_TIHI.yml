@@ -12,7 +12,27 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
-- null
+-   -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -22,24 +42,3 @@ behav_blcks:
         kind: int
         value: 1
     delay: 0
--   kind: Input
-    name: VDD
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VSS
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: OUT
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []

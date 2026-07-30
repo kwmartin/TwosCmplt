@@ -15,7 +15,55 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
-- null
+-   -   kind: Input
+        name: D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: STR
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -25,55 +73,6 @@ behav_blcks:
         kind: ident
         name: STR
     delay: 0
--   kind: Input
-    name: D
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: S
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: CLK
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Output
-    name: QP
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VDD
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Input
-    name: VSS
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
--   kind: Reg
-    name: STR
-    signed: 'False'
-    width:
-    - 0
-    - 0
-    length: []
 -   kind: initial
     stmnts:
     -   kind: blckst

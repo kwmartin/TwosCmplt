@@ -1,4 +1,4 @@
-generated: '2026-07-28T15:42:24+00:00'
+generated: '2026-07-30T21:52:57+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -355,7 +355,8 @@ modules:
     DG_LTCHSN_6X1:
         directory: verilogParse/lib/std28_lib
         file_name: diglib28_vl.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     DG_LTCHS_3X1:
         directory: dig_lib
         file_name: dg_ltchs_3x1.v
