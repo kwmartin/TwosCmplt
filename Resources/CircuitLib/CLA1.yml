@@ -47,13 +47,13 @@ io_ports:
 decls:
 - null
 behav_blcks:
--   kind: instance
+-   kind: async
     name: OR1
     module: DG_OR2_2X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -75,13 +75,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: AND1
     module: DG_AND2_2X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -103,13 +103,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: FADDR1
     module: FADDR_3X2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:

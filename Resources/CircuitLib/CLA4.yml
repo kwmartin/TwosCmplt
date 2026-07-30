@@ -117,13 +117,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: AND1
     module: DG_AND2_2X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -145,13 +145,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: NAB_C3
     module: DG_NAB_C2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -177,13 +177,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV3
     module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -201,13 +201,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV1
     module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -225,13 +225,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: NAB_C1
     module: DG_NAB_C2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -257,13 +257,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: CLA2_0
     module: CLA2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -316,13 +316,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: CLA2_1
     module: CLA2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:

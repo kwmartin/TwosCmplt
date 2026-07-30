@@ -60,13 +60,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: CKBFR
     module: DG_BUF16_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -84,13 +84,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: sync
     name: DR__17
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -122,13 +122,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__16
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -160,13 +160,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__15
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -198,13 +198,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__14
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -236,13 +236,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__13
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -274,13 +274,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__12
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -312,13 +312,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__11
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -350,13 +350,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__10
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -388,13 +388,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__9
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -426,13 +426,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__8
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -464,13 +464,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__7
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -502,13 +502,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__6
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -540,13 +540,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__5
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -578,13 +578,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__4
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -616,13 +616,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__3
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -654,13 +654,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__2
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -692,13 +692,13 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
--   kind: instance
+-   kind: sync
     name: DR__1
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -730,13 +730,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
--   kind: instance
+-   kind: sync
     name: DR__0
     module: DG_DR_3X2
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:

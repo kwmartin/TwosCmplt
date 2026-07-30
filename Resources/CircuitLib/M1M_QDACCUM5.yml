@@ -236,13 +236,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: sync
     name: REG0R
     module: KM_REGS18
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -287,13 +287,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF1
     module: DG_BUF16_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -311,13 +311,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: sync
     name: REG1R
     module: KM_REGS17
     params:
     -   kind: str
         value: sync
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -357,13 +357,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: ADDR1R
     module: CLA16
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -416,13 +416,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV1
     module: DG_INV4
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -444,13 +444,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: EXOR
     module: DG_EXOR1_2X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -476,13 +476,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV2
     module: DG_INV4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -502,13 +502,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF16
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -530,13 +530,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF2
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -558,13 +558,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF3
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -586,13 +586,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF4
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -614,13 +614,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF5
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -642,13 +642,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF6
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -670,13 +670,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF7
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -698,13 +698,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF8
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -726,13 +726,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF9
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -754,13 +754,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF10
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -782,13 +782,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF11
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -810,13 +810,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF12
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -838,13 +838,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF13
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -866,13 +866,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF14
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -894,13 +894,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF15
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -922,13 +922,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: BUF17
     module: DG_BUF4_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
