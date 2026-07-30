@@ -1199,7 +1199,11 @@ public extension CircDef {
                                 cir.oPrts[idx].port = prt_nm
                                 cir.oPrts[idx].intlIndx = cir.nodeLU[prt_nm]!
                                 cir.oPrts[idx].extlIndx = circ.nodeLU[baseName(nd_nm)]!
-                                cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+                                if let range = parseBitRange(nd_nm) {
+                                    cir.oPrts[idx].extlBitRange = range
+                                } else {
+                                    cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+                                }
                                 wiredPortNames.insert(prt_nm)
                             } else {
                                 print("ERROR in '\(inst.name)' of '\(inst.module)': '\(prt_nm)' not found in oPrts")

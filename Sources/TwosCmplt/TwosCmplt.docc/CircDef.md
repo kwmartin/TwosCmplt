@@ -600,3 +600,118 @@ investigation) has **no** continuous assigns at all — its entire
 `COS_LU5`/`SIN_LU5` pipeline is built from structural instances — so this
 phase has no bearing on that investigation either way; confirmed its test
 output is byte-for-byte unchanged.
+
+## Part 5 — `RL_` stuck at 0 in `TST_ACCUM3`: multi-bit output-port slices were never wired correctly
+
+### The bug
+
+`TST_ACCUM3` never advanced its accumulator: `RL_` (an 18-bit register,
+`M1M_QDACCUM5`'s `REG0R`/`KM_REGS18`) stayed at its reset value `0` for an
+entire simulation run, even though its feedback adder (`ADDR0R`, module
+`CLA18`) received a genuinely nonzero input (`A = FRQ[33:16] = 16384` for
+`FRQ = 0x40000000`). Since `QD_` is purely combinational from `RL_`, it
+also appeared frozen — this is what `debug_utilities.md`/earlier sessions
+observed as "`RL_` never appears in `chngs.out`."
+
+Two plausible hypotheses from prior sessions — a wrong `circuit=sync`/
+`async` module parameter somewhere in the `M1M_QDACCUM5 → KM_REGS18 →
+DG_DR_3X2` chain, and the pre-existing `.vCirc` async/sync dispatch
+asymmetry in `Circuit.eval()` — were both directly checked against the
+real `Resources/CircuitLib/*.yml` files and the xschem `.sym` library, and
+both checked out correct. Runtime tracing (temporarily instrumenting
+`Circuit.eval()`, since removed) then isolated the actual fault: `CLA18`'s
+sum output (`S`) stayed `0` no matter what `A`/`B` were. `CLA18` is a
+carry-lookahead adder built from a hierarchy of smaller adders — `CLA18 →
+CLA8 + CLA10 → CLA4 → CLA2` — and at every level, two sibling instances
+each drive a different **slice** of the parent's own wider `S` bus, e.g.
+(`CLA4.yml`):
+
+```yaml
+-   name: CLA2_0
+    module: CLA2
+    ports:
+    - ...
+    -   port: None
+        node: { kind: slice, name: S, sgmnts: [1, 0] }   # drives S[1:0]
+-   name: CLA2_1
+    module: CLA2
+    ports:
+    - ...
+    -   port: None
+        node: { kind: slice, name: S, sgmnts: [3, 2] }   # drives S[3:2]
+```
+
+An isolated test confirmed the leaf-level `CLA2` instances themselves
+compute correctly (e.g. given `A=1`, correctly output `S=1`), but that
+correct value never survived being written back into the parent's `S`
+node. The cause was in the output-port wiring in `CircDef.toCircuit()`
+(`CircDef.swift`, the `isOutput` branch of the instance-port-wiring loop):
+
+```swift
+cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+```
+
+`parseSingleBitIndex` correctly returns `nil` for a range like `"S[1:0]"`
+(it only recognizes single-bit indices like `"S[3]"`) — but `PortDef`
+(`Circuit.swift`) had no representation for a multi-bit range at all, only
+`extlBitIndex: Int?`. So a range connection fell through to the same case
+as a whole-node connection, and the propagation code at the tail of
+`Circuit.eval()` did:
+
+```swift
+self.parent!.setNode(prt.node, val: nd.node.value, tm: nd.updTm)
+```
+
+— an unmasked, unshifted overwrite of the **entire** parent `S` node with
+just this one child's own (unshifted) value. With two siblings each doing
+this for the same base name (`baseName("S[1:0]")` and `baseName("S[3:2]")`
+both collapse to `"S"`), each eval pass's result was simply clobbered by
+whichever sibling happened to be evaluated last in `evalOrder` — not
+combined, and not bit-shifted into its correct position even when it
+wasn't. This is a distinct, deeper bug than anything Part 1-4 touched:
+those phases were explicitly scoped to the *native* (`kind: subcirc`)
+format's slice/join handling; this is the analogous gap in the
+*Verilog-derived* (`kind: verilog`) format's instance **output**-port
+wiring — input-side slice extraction (`Circuit.eval()`'s `iPrts` handling)
+was already correct and unaffected.
+
+### The fix
+
+- `PortDef` (`Circuit.swift`) gained `extlBitRange: (msb: Int, lsb: Int)?`,
+  alongside the existing single-bit `extlBitIndex: Int?`.
+- A new `parseBitRange(_:)` helper (`Utilities.swift`, next to
+  `parseSingleBitIndex`) parses `"S[3:2]"`-style ranges.
+- `CircDef.toCircuit()`'s output-port wiring now tries `parseBitRange`
+  first, falling back to `parseSingleBitIndex` for true single-bit
+  connections.
+- A new `Circuit.setNodeBits(_:msb:lsb:val:tm:)` (mirroring the existing
+  `setNodeBit`) merges a value into a bit range of a node, preserving the
+  node's other bits — the multi-bit counterpart of `setNodeBit`.
+- `Circuit.eval()`'s tail-of-function output-port propagation now checks
+  `extlBitRange` first, then `extlBitIndex`, then falls back to a full
+  `setNode` overwrite (unchanged for genuinely whole-node connections).
+
+### Verification
+
+- `CLA18IsolationTest` (new, permanent): loads `CLA18` directly via
+  `genCirc`, drives `A=16384, B=0, CI=0`, and asserts `S == 16384` —
+  fails against the old code, passes after the fix.
+- `TSTACCUM3RegressionTest` (updated): its old expected values
+  (`QD_ == 0x30000` at `updTm=12`) described the *bug*, not correct
+  behavior, and needed updating. After the fix, `RL_` genuinely updates
+  throughout the run (asserted via `rl.updTm > 0`). `QD_`'s final value is
+  still `0x30000`, but now at `updTm=128011` (continuously updating, not
+  frozen) — this specific final value is a coincidence of the test's own
+  parameters (`FRQ=0x40000000` increments `RL_` by `16384` per clock, and
+  `128 clocks * 16384 = 2^21`, an exact multiple of `RL_`'s width `2^18`,
+  so `RL_` wraps back to exactly `0` right at this run's finish time), not
+  evidence the bug is still present.
+- Full `swift test`: all pass except the pre-existing, unrelated
+  `QDDFS5FineMltplyTests` failure (that circuit's `Sine5`/`COS_LU5` stuck-
+  at-zero issue does not involve multi-bit output-port slices anywhere in
+  its own structure, and this fix did not change its behavior).
+- The `.vCirc` async/sync dispatch asymmetry documented in earlier
+  investigation notes is still real (the `async == true` branch still
+  ignores a child's own `circ.sync`), but is now confirmed **not** to be
+  the cause of this bug — left as-is, no fix attempted, since it wasn't
+  shown to cause any observed incorrect behavior.
