@@ -4,9 +4,6 @@ params:
 -   kind: str
     name: circuit
     value: async
--   kind: str
-    name: spiceprefix
-    value: X
 -   kind: Int
     name: delay
     value: 5
@@ -66,7 +63,10 @@ behav_blcks:
 -   kind: instance
     name: CKBFR
     module: DG_BUF8_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -87,7 +87,10 @@ behav_blcks:
 -   kind: instance
     name: DR__16
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -122,7 +125,10 @@ behav_blcks:
 -   kind: instance
     name: DR__15
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -157,7 +163,10 @@ behav_blcks:
 -   kind: instance
     name: DR__14
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -192,7 +201,10 @@ behav_blcks:
 -   kind: instance
     name: DR__13
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -227,7 +239,10 @@ behav_blcks:
 -   kind: instance
     name: DR__12
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -262,7 +277,10 @@ behav_blcks:
 -   kind: instance
     name: DR__11
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -297,7 +315,10 @@ behav_blcks:
 -   kind: instance
     name: DR__10
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -332,7 +353,10 @@ behav_blcks:
 -   kind: instance
     name: DR__9
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -367,7 +391,10 @@ behav_blcks:
 -   kind: instance
     name: DR__8
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -402,7 +429,10 @@ behav_blcks:
 -   kind: instance
     name: DR__7
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -437,7 +467,10 @@ behav_blcks:
 -   kind: instance
     name: DR__6
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -472,7 +505,10 @@ behav_blcks:
 -   kind: instance
     name: DR__5
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -507,7 +543,10 @@ behav_blcks:
 -   kind: instance
     name: DR__4
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -542,7 +581,10 @@ behav_blcks:
 -   kind: instance
     name: DR__3
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -577,7 +619,10 @@ behav_blcks:
 -   kind: instance
     name: DR__2
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -612,7 +657,10 @@ behav_blcks:
 -   kind: instance
     name: DR__1
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -647,7 +695,10 @@ behav_blcks:
 -   kind: instance
     name: DR__0
     module: DG_DR_3X2
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:

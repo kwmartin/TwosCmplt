@@ -3,10 +3,7 @@ module: M1M_QDACCUM5
 params:
 -   kind: str
     name: circuit
-    value: sync
--   kind: str
-    name: spiceprefix
-    value: X
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -178,10 +175,13 @@ decls:
                 value: 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: ADDR0R
     module: CLA18
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -239,7 +239,10 @@ behav_blcks:
 -   kind: instance
     name: REG0R
     module: KM_REGS18
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -287,7 +290,10 @@ behav_blcks:
 -   kind: instance
     name: BUF1
     module: DG_BUF16_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -308,7 +314,10 @@ behav_blcks:
 -   kind: instance
     name: REG1R
     module: KM_REGS17
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: None
     ports:
     -   port: None
         node:
@@ -351,7 +360,10 @@ behav_blcks:
 -   kind: instance
     name: ADDR1R
     module: CLA16
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -409,7 +421,7 @@ behav_blcks:
     module: DG_INV4
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -435,7 +447,10 @@ behav_blcks:
 -   kind: instance
     name: EXOR
     module: DG_EXOR1_2X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -463,10 +478,10 @@ behav_blcks:
                 name: VSS
 -   kind: instance
     name: INV2
-    module: DG_INV4
+    module: DG_INV4_1X1
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -488,9 +503,12 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: instance
-    name: BUFR_15
+    name: BUF16
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -506,12 +524,19 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_14
+    name: BUF2
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -527,12 +552,19 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_13
+    name: BUF3
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -548,12 +580,19 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_12
+    name: BUF4
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -569,12 +608,19 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_11
+    name: BUF5
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -590,12 +636,19 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_10
+    name: BUF6
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -611,12 +664,19 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_9
+    name: BUF7
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -632,12 +692,19 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_8
+    name: BUF8
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -653,12 +720,19 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_7
+    name: BUF9
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -674,12 +748,19 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_6
+    name: BUF10
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -695,12 +776,19 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_5
+    name: BUF11
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -716,12 +804,19 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_4
+    name: BUF12
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -737,12 +832,19 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_3
+    name: BUF13
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -758,12 +860,19 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_2
+    name: BUF14
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -779,12 +888,19 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_1
+    name: BUF15
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -800,12 +916,19 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: instance
-    name: BUFR_0
+    name: BUF17
     module: DG_BUF4_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -821,8 +944,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: assign
     lvalue:
         kind: ident

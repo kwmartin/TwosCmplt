@@ -3,10 +3,7 @@ module: CLA16
 params:
 -   kind: str
     name: circuit
-    value: sync
--   kind: str
-    name: spiceprefix
-    value: X
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -130,7 +127,10 @@ behav_blcks:
 -   kind: instance
     name: AND1
     module: DG_AND2_2X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -155,7 +155,10 @@ behav_blcks:
 -   kind: instance
     name: NAB_C3
     module: DG_NAB_C2
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -186,7 +189,7 @@ behav_blcks:
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -210,7 +213,7 @@ behav_blcks:
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: sync
+        value: async
         name: None
     ports:
     -   port: None
@@ -232,7 +235,10 @@ behav_blcks:
 -   kind: instance
     name: NAB_C1
     module: DG_NAB_C2
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -261,7 +267,10 @@ behav_blcks:
 -   kind: instance
     name: CAL8_0
     module: CLA8
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -317,7 +326,10 @@ behav_blcks:
 -   kind: instance
     name: CLA8_1
     module: CLA8
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:
@@ -373,7 +385,10 @@ behav_blcks:
 -   kind: instance
     name: AND2
     module: DG_AND2_2X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: None
     ports:
     -   port: None
         node:

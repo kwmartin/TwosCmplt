@@ -1,8 +1,8 @@
 directories:
     stage_1_verilog_sources:
       - /home/martin/.xschem/dig_lib/
-      - /home/martin/.xschem/proj_lib/
-      - /home/martin/.xschem/ver_lib/
+      - /home/martin/.xschem/verilogParse/lib/std28_lib/
+      - /home/martin/.xschem/verilogParse/ver_lib/
       - /home/martin/.xschem/simulations/
     stage_2_ast_modules: /home/martin/.xschem/ast_modules/
     stage_3_mod_modules: /home/martin/.xschem/mod_modules/
@@ -170,15 +170,15 @@ modules:
         hashes:
             verilog: aa7191ed7d1e6f7188fc759c73c7bb983987870f33c4faebf7695236ff5c0b84
     TST_ACCUM3:
-        verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_ACCUM3/verilog/TST_ACCUM3.v
+        verilog: /home/martin/.xschem/simulations/TST_ACCUM3.v
         timestamps:
-            verilog: 1784837951.1007078
-            ast: 1784837952.7787094
-            mod: 1784837955.6857123
-            circuit_lib: 1784837958.578715
-            unl: 1784837958.582715
+            verilog: 1785409883.1136162
+            ast: 1785412002.381819
+            mod: 1785412005.1768537
+            circuit_lib: 1785412007.6078837
+            unl: 1785412007.6108837
         hashes:
-            verilog: 40bb8527d443197bfd0fb82db018774bfe405211f602027273aa1f908a3171df
+            verilog: 88e91412b75cb33226c06709214c28a3900b86bcb8c6a90b5eb7a1b1c683c7fd
     QD_DDFS5:
         verilog: /home/martin/IC_Design/Verilog/QD_DDFS5.v
         timestamps:
@@ -189,3 +189,13 @@ modules:
             unl: 1784807875.8675268
         hashes:
             verilog: 365cdb4b226804b68c7eff28acf458a15f555812c2e247f73f8be21d42e7254d
+    CLA18:
+        verilog: /home/martin/.xschem/simulations/CLA18.v
+        timestamps:
+            verilog: 1785411747.53167
+            ast: 1785411768.2929258
+            mod: 1785411770.897958
+            circuit_lib: 1785411772.7959814
+            unl: 1785411772.8069816
+        hashes:
+            verilog: 0a339a7ebba03b96c6bd8976b426153884e0a1b7869c26740e9c0aa6b02abc0e
