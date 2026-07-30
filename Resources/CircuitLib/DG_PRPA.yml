@@ -17,62 +17,7 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
--   -   kind: Input
-        name: A3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: B0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: P
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
+- null
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -102,3 +47,59 @@ behav_blcks:
         -   kind: ident
             name: A3
     delay: 12.3
+-   kind: Input
+    name: A3
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: A2
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: A1
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: A0
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: B0
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VDD
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VSS
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: P
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []

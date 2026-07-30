@@ -3,7 +3,7 @@ module: TB_TST_DLUSR_7X2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5

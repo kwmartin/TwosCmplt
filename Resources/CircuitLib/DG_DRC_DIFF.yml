@@ -19,83 +19,6 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
--   -   kind: Input
-        name: DP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: DN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: RP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: RN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: CP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: CN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: QN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Reg
-        name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Wire
         name: QN
         signed: 'False'
@@ -115,6 +38,83 @@ behav_blcks:
         -   kind: ident
             name: QP
     delay: 0
+-   kind: Input
+    name: DP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: DN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: RP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: RN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: CP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: CN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: QP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: QN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VDD
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VSS
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Reg
+    name: QP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
 -   kind: initial
     stmnts:
     -   kind: blckst

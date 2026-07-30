@@ -3,7 +3,7 @@ module: TST_DLUX_7X2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -56,47 +56,48 @@ behav_blcks:
     module: DG_DLUX_7X2
     params: null
     ports:
-    -   port: None
+    -   port: U
         node:
             kind: ident
             name: U
-    -   port: None
+    -   port: L
         node:
             kind: ident
             name: L
-    -   port: None
+    -   port: LI
         node:
             kind: ident
             name: LI
-    -   port: None
+    -   port: D
         node:
             kind: ident
             name: QN
-    -   port: None
+    -   port: INIT
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: Q0
         node:
             kind: ident
             name: Q0
-    -   port: None
+    -   port: CLK
         node:
             kind: ident
             name: CLK
-    -   port: None
+    -   port: QP
         node:
             kind: ident
             name: QP
-    -   port: None
+    -   port: QN
         node:
             kind: ident
             name: QN
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+

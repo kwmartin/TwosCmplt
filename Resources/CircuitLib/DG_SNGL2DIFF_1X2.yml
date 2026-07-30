@@ -14,41 +14,6 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
--   -   kind: Input
-        name: IN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: OUTP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: OUTN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Wire
         name: OUTP
         signed: 'False'
@@ -64,6 +29,14 @@ decls:
         - 0
         length: []
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: P
+    rvalue:
+        kind: ident
+        name: IN
+    delay: 0.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -83,3 +56,38 @@ behav_blcks:
         -   kind: ident
             name: IN
     delay: 20.0
+-   kind: Input
+    name: IN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VDD
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VSS
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: OUTP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: OUTN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []

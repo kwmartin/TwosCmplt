@@ -16,63 +16,83 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
--   -   kind: Input
-        name: D
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: S
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: CLK
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: QN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Reg
-        name: STATE
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
+- null
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STATE
+    delay: 0
+-   kind: Input
+    name: D
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: S
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: CLK
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: QP
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Output
+    name: QN
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VDD
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Input
+    name: VSS
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
+-   kind: Reg
+    name: STATE
+    signed: 'False'
+    width:
+    - 0
+    - 0
+    length: []
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -127,22 +147,3 @@ behav_blcks:
                 rvalue:
                     kind: ident
                     name: D
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QP
-    rvalue:
-        kind: ident
-        name: STATE
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QN
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: STATE
-    delay: 0
