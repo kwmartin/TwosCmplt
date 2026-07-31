@@ -9,11 +9,11 @@ params:
     value: 5
 io_ports:
 -   kind: Wire
-    name: QP
+    name: QP1
     direct: 'Output:'
     signed: 'False'
 -   kind: Wire
-    name: QN
+    name: QN1
     direct: 'Output:'
     signed: 'False'
 -   kind: Wire
@@ -49,55 +49,107 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 decls:
-- null
+-   -   kind: Wire
+        name: QN2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
--   kind: instance
-    name: DLUX
-    module: DG_DLUX_7X2
-    params: null
+-   kind: async
+    name: INV_IDL
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
-    -   port: U
+    -   port: None
         node:
             kind: ident
-            name: U
-    -   port: L
+            name: QP1
+    -   port: None
         node:
             kind: ident
-            name: L
-    -   port: LI
+            name: QN2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLD
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 5F
+        name: value
+    ports:
+    -   port: None
         node:
             kind: ident
-            name: LI
-    -   port: D
-        node:
-            kind: ident
-            name: QN
-    -   port: INIT
-        node:
-            kind: ident
-            name: INIT
-    -   port: Q0
-        node:
-            kind: ident
-            name: Q0
-    -   port: CLK
-        node:
-            kind: ident
-            name: CLK
-    -   port: QP
-        node:
-            kind: ident
-            name: QP
-    -   port: QN
-        node:
-            kind: ident
-            name: QN
-    -   port: VDD
-        node:
-            kind: ident
-            name: VDD
-    -   port: VSS
+            name: QN2
+    -   port: None
         node:
             kind: ident
             name: VSS
+-   kind: sync
+    name: X1
+    module: DG_DLUX_7X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: U
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: ident
+            name: LI
+    -   port: None
+        node:
+            kind: ident
+            name: QN1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: Q0
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: QP1
+    -   port: None
+        node:
+            kind: ident
+            name: QN1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 

@@ -1293,10 +1293,10 @@ public extension CircDef {
 
         setNodeRefs(circ)
         // Initialize evalOrder if needed, is probably always needed
-        if circ.evalOrder.isEmpty {
+        if circ.evalOrder.isEmpty && !(circ.module == "CAP") {
             initializeCmpCnts(circ)
         }
-        precondition(!circ.evalOrder.isEmpty, "Circuit must have a non-empty evalOrder")
+        precondition(!circ.evalOrder.isEmpty || circ.module == "CAP", "Circuit must have a non-empty evalOrder")
 
         let id = ObjectIdentifier(circ)
         _ = id

@@ -48,8 +48,7 @@ io_ports:
     name: VSS
     direct: 'Input:'
     signed: 'False'
-decls:
-- null
+decls: []
 behav_blcks:
 -   kind: instance
     name: DLUSR
@@ -92,11 +91,11 @@ behav_blcks:
         node:
             kind: ident
             name: QN
-    -   port: VDD
+    -   port: U
         node:
             kind: ident
             name: VDD
-    -   port: VSS
+    -   port: I_D
         node:
             kind: ident
             name: VSS
