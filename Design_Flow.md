@@ -48,7 +48,14 @@ When **Run Simulation** is pressed in Digital mode, `_on_run_dispatch()` calls `
 
 ### 3.2 Run the Verilog → CircuitLib pipeline
 
-`_on_run_verilog()` then runs the `verilogParse` pipeline as a subprocess so the generated Verilog is converted into the YAML that Swift consumes:
+`_on_run_verilog()` runs the `verilogParse` pipeline at most once per meaningful
+change. It first checks `Resources/CircuitLib/pipeline_deps.yml`, which records the
+Verilog netlist content hash and the combined hash of the three parser scripts
+(`parse_verilog.py`, `parse_ast.py`, `parse_mod.py`). If the dependency manifest
+reports the outputs as up to date, the pipeline is skipped.
+
+When it does run, the pipeline converts the generated Verilog into the YAML that
+Swift consumes:
 
 ```
 parse_verilog.py  TST_DES_3X2.v   →  TST_DES_3X2.ast
@@ -56,17 +63,21 @@ parse_ast.py      TST_DES_3X2.ast →  TST_DES_3X2.mod
 parse_mod.py      TST_DES_3X2.mod →  CircuitLib/TST_DES_3X2.yml  +  unl_modules/TST_DES_3X2.unl
 ```
 
-This is the same `run_pipeline()` used by `gen_verilog_tb.py`. The pipeline also updates `CircuitLib/pipeline_deps.yml` with mtimes and SHA-256 hashes.
+The same dependency-aware `run_pipeline_if_needed()` helper is used by
+`gen_verilog_tb.py`, so opening the review dialog no longer re-runs the pipeline
+when the source is unchanged.
 
 ### 3.3 First-time setup: review dialog
 
 If no authoritative specs file exists under `Resources/SimSpcs/<module>.yml` (Swift)
-or `Resources/IVerilogSpcs/<module>.yml` (iVerilog), `_on_run_verilog()` launches
-`gen_verilog_tb.py` in a subprocess, which:
+or `Resources/IVerilogSpcs/<module>.yml` (iVerilog), `_on_run_verilog()` ensures the
+pipeline is up to date and then launches `gen_verilog_tb.py --review-only` in a
+subprocess. The `--review-only` path:
 
-1. Runs the pipeline again (redundant with the pipeline run above, but separate subprocess).
-2. Loads the `.unl` file, classifies ports (clocks / resets / data / outputs / power), and opens a PySide6 **Run Generated Settings** dialog.
-3. On **Generate** or dialog close, writes the specs file that matches the selected
+1. Loads the existing `.unl` file.
+2. Classifies ports (clocks / resets / data / outputs / power).
+3. Opens the PySide6 **Run Generated Settings** dialog.
+4. On **Generate** or dialog close, writes the specs file that matches the selected
    simulator:
    - `simulator: Swift`  → `Resources/SimSpcs/<module>.yml`
    - `simulator: iVerilog` → `Resources/IVerilogSpcs/<module>.yml`
@@ -80,6 +91,9 @@ survive.
 If a legacy `~/.xschem/modules/<module>.yml` exists and the new authoritative file
 does not, `run_sim_ui.py` copies it to the new location before checking for the
 review dialog, so existing configurations keep working without forcing re-entry.
+
+To force a pipeline re-run regardless of the dependency manifest, delete
+`CircuitLib/pipeline_deps.yml` or touch the generated Verilog netlist.
 
 ### 3.4 Subsequent runs: dispatch by simulator
 
@@ -195,7 +209,11 @@ and by `wave_edit.py` / `wave_display.py` when saving.
    `sync_all_specs()`, `wave_edit.py`, `wave_display.py`, and **Gen Inputs** now
    merge `TimeSpcs` per-signal, preserving manual edits on untouched signals.
 
-3. **Redundant pipeline runs.** `run_sim_ui.py` runs `parse_verilog → parse_ast → parse_mod` once, then `gen_verilog_tb.py` runs it again when opening the review dialog.
+3. ✅ **Redundant pipeline runs.** Resolved in 9.5: `gen_verilog_tb.py` uses
+   `run_pipeline_if_needed()` backed by `CircuitLib/pipeline_deps.yml`, and
+   `run_sim_ui.py` calls `--ensure-pipeline` once followed by `--review-only`
+   for the review dialog. The pipeline now runs at most once per schematic or
+   parser-script change.
 
 4. **No periodic/repeating input primitive.** `TimeSpcs` is a flat list of time/value pairs. To create a repeating pattern (e.g. a serial bit stream), the user must either add many entries manually or write a Python helper to expand the pattern before simulation.
 
