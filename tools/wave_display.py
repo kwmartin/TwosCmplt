@@ -1000,6 +1000,11 @@ class WaveDisplay(QMainWindow):
 
         # Start from the full existing spec to preserve fields the editor doesn't manage.
         spec_data = rd_yml(str(spec_file)) or {}
+        if not spec_data.get('generated', False):
+            msg = f"skipped {spec_file} — file lacks generated:true marker (manual edits preserved)"
+            print(f'[wave_display] {msg}')
+            self.statusBar().showMessage(msg, 6000)
+            return
         if self._display_win is not None:
             try:
                 editor_data = self._display_win.get_editor_yaml()

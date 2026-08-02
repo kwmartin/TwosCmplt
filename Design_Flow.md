@@ -248,10 +248,19 @@ and waveform-editor saves.
 
 ### 9.2 Protect manual edits
 
-Per-signal merge (Phase 1) already protects most manual edits: only signals that
-the automatic tool explicitly touches are overwritten. If further protection is
-needed, add a content-hash or `generated:` marker to auto-generated specs files
-so `sync_all_specs()` can detect manual edits and warn before overwriting them.
+**Implemented:** Auto-generated specs files carry a top-level `generated: true`
+marker. Any file that lacks this marker is treated as hand-edited and is **never**
+overwritten by the generator, `sync_all_specs()`, or the waveform editors. This
+protects:
+
+- `TimeSpcs` entries on signals the generator does not touch (per-signal merge).
+- All shared global sections (`Constants`, `Clock`, `FinishTime`, `SaveNds`).
+
+To overwrite a hand-edited file, either:
+
+- Delete it and let the generator recreate it with `generated: true`, or
+- Run `gen_verilog_tb.py` with `--force`, or
+- Add `generated: true` to the file manually.
 
 ### 9.3 Periodic / repeating input signals
 
