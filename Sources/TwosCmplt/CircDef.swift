@@ -255,10 +255,22 @@ public func makeCircDef(_ mdlNm: String, circ: Circuit? = nil) -> CircDef? {
     Glbls.register(circDF)
 
     for blk in circDF.behav_blcks {
-        if case .instncblck(let inst)   = blk { _ = makeCircDef(inst.module) }
-        if case .subcircblck(let inst)  = blk { _ = makeCircDef(inst.module) }
-        if case .asyncblck(let inst)    = blk { _ = makeCircDef(inst.module) }
-        if case .syncblck(let inst)     = blk { _ = makeCircDef(inst.module) }
+        let depModule: String?
+        switch blk {
+        case .instncblck(let inst):  depModule = inst.module
+        case .subcircblck(let inst): depModule = inst.module
+        case .asyncblck(let inst):    depModule = inst.module
+        case .syncblck(let inst):     depModule = inst.module
+        default:                      depModule = nil
+        }
+        if let dep = depModule {
+            guard makeCircDef(dep) != nil else {
+                preconditionFailure(
+                    "Module '\(mdlNm)' depends on '\(dep)', but makeCircDef returned nil. " +
+                    "Check that Resources/CircuitLib/\(dep).yml exists and is valid."
+                )
+            }
+        }
     }
     return circDF
 }
@@ -591,26 +603,36 @@ extension CircDef {
 
 extension CircDef {
     public func toInPrtsArryVal() -> ArryVal {
+        var seen = Set<String>()
         var elems: [ArryElem] = []
         for p in io_ports where p.direct?.hasPrefix("Input") == true {
-            elems.append(.string(p.name))
+            if seen.insert(p.name).inserted {
+                elems.append(.string(p.name))
+            }
         }
         for group in decls {
             for d in group where d.kind == "Input" {
-                elems.append(.string(d.name))
+                if seen.insert(d.name).inserted {
+                    elems.append(.string(d.name))
+                }
             }
         }
         return .arry(elems)
     }
 
     public func toOutPrtsArryVal() -> ArryVal {
+        var seen = Set<String>()
         var elems: [ArryElem] = []
         for p in io_ports where p.direct?.hasPrefix("Output") == true {
-            elems.append(.string(p.name))
+            if seen.insert(p.name).inserted {
+                elems.append(.string(p.name))
+            }
         }
         for group in decls {
             for d in group where d.kind == "Output" {
-                elems.append(.string(d.name))
+                if seen.insert(d.name).inserted {
+                    elems.append(.string(d.name))
+                }
             }
         }
         return .arry(elems)
@@ -1029,7 +1051,14 @@ public extension CircDef {
             default: continue
             }
             do {
-                var crDf = Glbls.circDef(for: inst.module)!
+                guard var crDf = Glbls.circDef(for: inst.module) else {
+                    preconditionFailure(
+                        "Instance '\(inst.name)' in module '\(self.module)' references " +
+                        "subcircuit '\(inst.module)', but no CircDef is registered for it. " +
+                        "Ensure '\(inst.module).yml' exists in Resources/CircuitLib and " +
+                        "was loaded by makeCircDef()."
+                    )
+                }
                 // Apply instance-level parameter overrides before building the circuit.
                 // Positional params (name == "None") are applied in declaration order;
                 // named params are matched by name.
@@ -1199,7 +1228,11 @@ public extension CircDef {
                                 cir.oPrts[idx].port = prt_nm
                                 cir.oPrts[idx].intlIndx = cir.nodeLU[prt_nm]!
                                 cir.oPrts[idx].extlIndx = circ.nodeLU[baseName(nd_nm)]!
-                                cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+                                if let range = parseBitRange(nd_nm) {
+                                    cir.oPrts[idx].extlBitRange = range
+                                } else {
+                                    cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+                                }
                                 wiredPortNames.insert(prt_nm)
                             } else {
                                 print("ERROR in '\(inst.name)' of '\(inst.module)': '\(prt_nm)' not found in oPrts")
@@ -1292,7 +1325,14 @@ public extension CircDef {
         if circ.evalOrder.isEmpty {
             initializeCmpCnts(circ)
         }
-        precondition(!circ.evalOrder.isEmpty, "Circuit must have a non-empty evalOrder")
+        if circ.evalOrder.isEmpty && !circ.cmpRefs.isEmpty {
+            let cmpInfo = circ.cmpRefs.map { "\($0.kind)[\($0.index)]" }.joined(separator: ", ")
+            preconditionFailure(
+                "Circuit '\(circ.module)' has empty evalOrder but non-empty cmpRefs=[\(cmpInfo)] — " +
+                "evaluation order could not be determined for one or more components"
+            )
+        }
+        // A circuit with no components (e.g. a passive stub like CAP) is allowed to have an empty evalOrder.
 
         let id = ObjectIdentifier(circ)
         _ = id

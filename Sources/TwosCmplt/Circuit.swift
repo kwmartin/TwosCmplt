@@ -248,12 +248,18 @@ public struct PortDef: Decodable {
     // Non-nil when this output port drives a single bit of the parent's multi-bit node.
     // Propagation must merge only this bit rather than overwrite the whole node.
     public var extlBitIndex: Int?
+    // Non-nil when this output port drives a multi-bit slice (e.g. "S[3:2]") of the
+    // parent's wider node — as happens when sibling instances each drive a different
+    // slice of the same bus (e.g. CLA2_0/CLA2_1 each driving half of CLA4's own S).
+    // Propagation must merge only this range, shifted into place, not overwrite the
+    // whole node.
+    public var extlBitRange: (msb: Int, lsb: Int)?
 
     private enum CodingKeys: String, CodingKey {
         case port
         case node
         case nbits
-        // no keys for intlIndx / extlIndx / extlBitIndex → they stay internal
+        // no keys for intlIndx / extlIndx / extlBitIndex / extlBitRange → they stay internal
     }
 
     public init(
@@ -262,7 +268,8 @@ public struct PortDef: Decodable {
         nbits: Int = 1,
         intlIndx: Int = 1_000_000,
         extlIndx: Int = 1_000_000,
-        extlBitIndex: Int? = nil
+        extlBitIndex: Int? = nil,
+        extlBitRange: (msb: Int, lsb: Int)? = nil
     ) {
         self.port = port
         self.node = node
@@ -270,6 +277,7 @@ public struct PortDef: Decodable {
         self.intlIndx = intlIndx
         self.extlIndx = extlIndx
         self.extlBitIndex = extlBitIndex
+        self.extlBitRange = extlBitRange
     }
 
     public init(from decoder: Decoder) throws {
@@ -286,6 +294,7 @@ public struct PortDef: Decodable {
         self.intlIndx = 1_000_000
         self.extlIndx = 1_000_000
         self.extlBitIndex = nil
+        self.extlBitRange = nil
     }
 }
 
@@ -731,7 +740,12 @@ public func setNodeRefs(_ circ: Circuit) {
             if nd == "VDD" || nd == "VSS" {
                 continue
             } else {
-                let idx = circ.nodeLU[nd]!
+                guard let idx = circ.nodeLU[nd] else {
+                    preconditionFailure(
+                        "Child '\(ccirc.module)' output port '\(prt.port)' is wired to parent node '\(nd)', " +
+                        "but that node is not in parent '\(circ.module)' nodeLU"
+                    )
+                }
                 if circ.nodes[idx].nodeDrvr.kind == .none {
                     if ccirc.kind == "verilog" {
                         circ.nodes[idx].nodeDrvr = (CmpRef(kind: .vCirc, index: cindx))
@@ -938,7 +952,10 @@ public final class Circuit {
         }
         circuit.kind = typ
 
-        precondition(!circuit.evalOrder.isEmpty, "Circuit must have a none-empty evalOrder")
+        if circuit.evalOrder.isEmpty && !circuit.cmpRefs.isEmpty {
+            preconditionFailure("Circuit '\(circuit.module)' has empty evalOrder but non-empty cmpRefs — evaluation order could not be determined")
+        }
+        // Circuits with no components (e.g. passive stubs) may legitimately have an empty evalOrder.
 
         if circuit.parms.contains(Parm(name: "circuit", value: .str("sync"))) {
             circuit.sync = true
@@ -1130,6 +1147,47 @@ public final class Circuit {
         }
     }
 
+    // Merges `val` into bits [msb:lsb] of node `ndNm`, preserving the node's other
+    // bits — the multi-bit-slice counterpart of setNodeBit(_:bitIndex:bitVal:tm:),
+    // used when an output port drives a range (e.g. "S[3:2]") of a wider parent node.
+    func setNodeBits(_ ndNm: String, msb: Int, lsb: Int, val: Int, tm: Int) {
+        guard let ndIndx = self.nodeLU[ndNm] else {
+            preconditionFailure("Node not found: '\(ndNm)' in circuit '\(self.module)'")
+        }
+        let width = msb - lsb + 1
+        let mask = ((1 << width) - 1) << lsb
+        let oldVal = self.nodes[ndIndx].node.value
+        let newVal = (oldVal & ~mask) | ((val << lsb) & mask)
+        if oldVal != newVal {
+            self.nodes[ndIndx].prevValue = oldVal
+            self.nodes[ndIndx].node.value = newVal
+            self.nodes[ndIndx].updTm = tm
+            let wtch = self.snstvLU[ndIndx]
+            if wtch != nil {
+                switch wtch!.edge {
+                case .posedge:
+                    if wtch!.value == 0 && newVal == 1 {
+                        self.alwysStk.append(wtch!.alwysIndx)
+                    }
+                case .negedge:
+                    if wtch!.value == 1 && newVal == 0 {
+                        self.alwysStk.append(wtch!.alwysIndx)
+                    }
+                case .all:
+                    if (wtch!.value ^ newVal) != 0 {
+                        self.alwysStk.append(wtch!.alwysIndx)
+                    }
+                case .level:
+                    if (wtch!.value ^ newVal) != 0 {
+                        self.alwysStk.append(wtch!.alwysIndx)
+                    }
+                }
+                self.snstvLU[ndIndx]!.value = newVal
+            }
+            saveChng(self, indx: ndIndx)
+        }
+    }
+
     func eval(async: Bool, tm: Int) {
         // first set all input nodes, and then evaluate Cmps in order
         // set previously at init
@@ -1171,25 +1229,6 @@ public final class Circuit {
                 }
                 self.setNode(prt.port, val: portVal, tm: extlNd.updTm)
             }
-        }
-
-        // TEMPORARY DEBUG TRACE -- root-causing ADDR0R oscillation (remove after diagnosis)
-        if self.indexs.starts(with: [0, 0, 0]) {
-            let inVals = self.iPrts.map { "\($0.port)=\(self.nodes[$0.intlIndx].node.value)@\(self.nodes[$0.intlIndx].updTm)" }.joined(separator: ",")
-            print("[DBGTRACE-IN] name=\(self.name) module=\(self.module) indexs=\(self.indexs) async=\(async) tm=\(tm) sync=\(self.sync) in=[\(inVals)]")
-        }
-        if self.indexs == [0, 0, 0] {
-            let order = evalOrder.map { cmp -> String in
-                switch cmp.kind {
-                case .vCirc: return "vCirc[\(cmp.index)]=\(cCircs[cmp.index].name)(sync=\(cCircs[cmp.index].sync))"
-                case .cCirc: return "cCirc[\(cmp.index)]=\(cCircs[cmp.index].name)(sync=\(cCircs[cmp.index].sync))"
-                case .aCirc: return "aCirc[\(cmp.index)]=\(aCircs[cmp.index].name)"
-                case .sCirc: return "sCirc[\(cmp.index)]"
-                case .oPrt:  return "oPrt[\(cmp.index)]"
-                default:     return "\(cmp.kind)[\(cmp.index)]"
-                }
-            }.joined(separator: " | ")
-            print("[DBGTRACE-ORDER] \(self.name) evalOrder = \(order)")
         }
 
         if self.kind == "verilog" && self.initialized == false {
@@ -1308,16 +1347,12 @@ public final class Circuit {
             }
         }
 
-        // TEMPORARY DEBUG TRACE -- root-causing ADDR0R oscillation (remove after diagnosis)
-        if self.indexs.starts(with: [0, 0, 0]) {
-            let outVals = self.oPrts.map { "\($0.port)=\(self.nodes[$0.intlIndx].node.value)@\(self.nodes[$0.intlIndx].updTm)" }.joined(separator: ",")
-            print("[DBGTRACE-OUT] name=\(self.name) module=\(self.module) indexs=\(self.indexs) tm=\(tm) out=[\(outVals)]")
-        }
-
         if self.parent != nil {
             for prt in self.oPrts {
                 let nd = self.nodes[prt.intlIndx]
-                if let bitIdx = prt.extlBitIndex {
+                if let range = prt.extlBitRange {
+                    self.parent!.setNodeBits(prt.node, msb: range.msb, lsb: range.lsb, val: nd.node.value, tm: nd.updTm)
+                } else if let bitIdx = prt.extlBitIndex {
                     self.parent!.setNodeBit(prt.node, bitIndex: bitIdx, bitVal: nd.node.value, tm: nd.updTm)
                 } else {
                     self.parent!.setNode(prt.node, val: nd.node.value, tm: nd.updTm)
