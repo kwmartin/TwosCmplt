@@ -14,5 +14,17 @@ swiftly-x86_64.tar.gz
 # Generated simulation plot/dump outputs
 PlotResponse/
 Resources/DumpDir/
+Resources/VCDFiles/
 tools/*.dat
 tools/*.mat
+
+# Debug dumps written by Utilities.swift's shw_chngs/shw_outs/shw_ordr/chk_stpHld
+# (chngs.out/order.out/timing.out are fixed names; *.chngs/*.outs/*.ord are
+# per-circuit-named dumps from older/manual invocations) — all rewritten on
+# every simulation run, never meant to be committed.
+chngs.out
+order.out
+timing.out
+*.chngs
+*.outs
+*.ord

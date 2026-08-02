@@ -3,7 +3,7 @@ module: BUF6_1X1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -33,13 +33,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: INV0
     module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -57,13 +57,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV1
     module: DG_INV6_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -81,3 +81,4 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
+

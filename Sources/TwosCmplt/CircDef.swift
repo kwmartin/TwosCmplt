@@ -1322,7 +1322,7 @@ public extension CircDef {
 
         setNodeRefs(circ)
         // Initialize evalOrder if needed, is probably always needed
-        if circ.evalOrder.isEmpty {
+        if circ.evalOrder.isEmpty && !(circ.module == "CAP") {
             initializeCmpCnts(circ)
         }
         if circ.evalOrder.isEmpty && !circ.cmpRefs.isEmpty {

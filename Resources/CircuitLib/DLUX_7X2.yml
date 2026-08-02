@@ -3,7 +3,7 @@ module: DLUX_7X2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -124,13 +124,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: S2D
     module: DG_SNGL2DIFF_1X2
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -152,58 +152,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
-    name: INV_0
-    module: DG_INV2_1X1
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: CLK
-    -   port: None
-        node:
-            kind: ident
-            name: CN
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: instance
-    name: INV_1
-    module: DG_INV2_1X1
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: CN
-    -   port: None
-        node:
-            kind: ident
-            name: CP
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: instance
+-   kind: async
     name: MX1
     module: DG_MXN1_3X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -229,10 +184,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: MX2
     module: DG_MXN1_3X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -258,13 +216,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV_2
     module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -282,10 +240,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: sync
     name: LO
     module: DG_LTCHSN_6X1
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: None
         node:
@@ -297,20 +258,20 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: ident
-            name: IP
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: IP
+            -   kind: ident
+                name: IN
     -   port: None
         node:
-            kind: ident
-            name: IN
-    -   port: None
-        node:
-            kind: ident
-            name: CP
-    -   port: None
-        node:
-            kind: ident
-            name: CN
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: CN
     -   port: None
         node:
             kind: ident
@@ -323,61 +284,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
-    name: INV_3
-    module: DG_INV2_1X1
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: IN
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: instance
-    name: INV_4
-    module: DG_INV2_1X1
-    params:
-    -   kind: str
-        value: async
-        name: None
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: IN
-    -   port: None
-        node:
-            kind: ident
-            name: IP
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: instance
+-   kind: async
     name: INV_5
     module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
-        name: None
+        name: circuit
     ports:
     -   port: None
         node:
@@ -395,10 +308,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: sync
     name: L1
     module: DG_LTCHSN_6X1
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: None
         node:
@@ -410,16 +326,44 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: ident
-            name: IP
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: IP
+            -   kind: ident
+                name: IN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CN
+            -   kind: ident
+                name: CP
     -   port: None
         node:
             kind: ident
-            name: IN
+            name: L_1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: S1
+    module: DG_SNGL2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CLK
     -   port: None
         node:
             kind: ident
@@ -427,7 +371,35 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: L_1
+            name: CN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: S2
+    module: DG_SNGL2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: IP
+    -   port: None
+        node:
+            kind: ident
+            name: IN
     -   port: None
         node:
             kind: concat
