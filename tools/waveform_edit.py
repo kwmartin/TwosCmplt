@@ -16,6 +16,7 @@ from PySide6.QtGui import (
 from PySide6.QtWidgets import (
     QApplication,
     QDialog,
+    QDialogButtonBox,
     QFileDialog,
     QHBoxLayout,
     QLabel,
@@ -25,6 +26,7 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QPushButton,
     QScrollBar,
+    QSpinBox,
     QStyle,
     QTextEdit,
     QVBoxLayout,
@@ -747,6 +749,59 @@ class WaveformCanvas(QWidget):
         self.update()
         self.waves_changed.emit()
 
+    def set_repeating_pattern(self, parent: QWidget | None = None) -> bool:
+        """Open the periodic-pattern editor and repeat the result to finishTm.
+
+        Returns True if a pattern was applied, False otherwise.
+        """
+        target = self.selected_wave
+        if not isinstance(target, DigitalWaveRow) or not target.editable:
+            QMessageBox.information(
+                parent or self.window(),
+                "No editable wave selected",
+                "Select an editable input waveform before setting a repeating pattern.",
+            )
+            return False
+
+        dlg = PeriodicPatternDialog(
+            target.label_text,
+            target.nbits,
+            self.finishTm,
+            parent=parent or self.window(),
+        )
+        if dlg.exec() != QDialog.Accepted:
+            return False
+
+        pattern = dlg.get_pattern()
+        if pattern is None:
+            return False
+
+        period_segments, period_length = pattern
+        if period_length <= 0:
+            return False
+
+        self._push_undo()
+        repeated: list[Segment] = []
+        k = 0
+        while k * period_length < self.finishTm:
+            offset = k * period_length
+            for s in period_segments:
+                start = offset + s.start
+                end = offset + s.end
+                if start >= self.finishTm:
+                    break
+                end = min(end, self.finishTm)
+                if end > start:
+                    repeated.append(Segment(start, end, s.value))
+            k += 1
+
+        target.segments = repeated
+        self.normalize_segments(target)
+        self.update()
+        self.refresh_label_layout()
+        self.waves_changed.emit()
+        return True
+
     def _open_value_dialog(self, wave: DigitalWaveRow, seg_index: int):
         self.current_action_key = None
         dlg = ValueEditDialog(
@@ -1420,21 +1475,36 @@ class WaveformCanvas(QWidget):
         if pos.x() < self.waveform_left_x():
             return
         wave = self.wave_at(pos)
-        if not isinstance(wave, DigitalWaveRow) or wave.nbits <= 1:
+        if not isinstance(wave, DigitalWaveRow) or not wave.editable:
             return
+
+        self.select_wave(wave)
+
         menu = QMenu(self)
-        formats = [("Hex",            "hex"),
-                   ("Decimal",        "dec"),
-                   ("Signed Decimal", "sdec"),
-                   ("Binary",         "bin")]
-        for label, fmt in formats:
-            act = menu.addAction(label)
-            act.setCheckable(True)
-            act.setChecked(wave.fmt == fmt)
-            act.setData(fmt)
+        repeat_act = menu.addAction("Set Repeating Pattern…")
+        repeat_act.setData("repeat")
+
+        if wave.nbits > 1:
+            menu.addSeparator()
+            fmt_menu = menu.addMenu("Format")
+            formats = [("Hex",            "hex"),
+                       ("Decimal",        "dec"),
+                       ("Signed Decimal", "sdec"),
+                       ("Binary",         "bin")]
+            for label, fmt in formats:
+                act = fmt_menu.addAction(label)
+                act.setCheckable(True)
+                act.setChecked(wave.fmt == fmt)
+                act.setData(fmt)
+
         chosen = menu.exec(event.globalPos())
-        if chosen is not None:
-            wave.fmt = chosen.data()
+        if chosen is None:
+            return
+        data = chosen.data()
+        if data == "repeat":
+            self.set_repeating_pattern()
+        elif data in ("hex", "dec", "sdec", "bin"):
+            wave.fmt = data
             self.update()
 
     def paintEvent(self, event):
@@ -1820,6 +1890,149 @@ class WaveformCanvas(QWidget):
         return None
 
 
+class PeriodicPatternDialog(QDialog):
+    """Dialog to edit one period of a waveform and return the repeating unit."""
+
+    DEFAULT_PERIOD_COUNT = 8
+
+    def __init__(
+        self,
+        signal_name: str,
+        nbits: int,
+        finish_tm: float,
+        parent: QWidget | None = None,
+    ):
+        super().__init__(parent)
+        self.setWindowTitle(f"Periodic Pattern — {signal_name}")
+        self.resize(960, 420)
+
+        self.signal_name = signal_name
+        self.nbits = nbits
+        self.sim_finish_tm = finish_tm
+        self.period_count = self.DEFAULT_PERIOD_COUNT
+
+        self._build_ui()
+        self._reset_canvas_to_period(self.period_count)
+
+    def _build_ui(self):
+        self.setStyleSheet(
+            "QDialog { background:#11161c; }"
+            "QLabel  { color:#d7e3f4; }"
+            "QSpinBox { background:#1b2430; color:#d7e3f4;"
+            "           border:1px solid #344454; padding:4px; }"
+            "QPushButton { background:#1b2430; color:#d7e3f4;"
+            "              border:1px solid #344454; padding:4px 14px; }"
+            "QPushButton:hover { background:#2a3a50; }"
+        )
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(8)
+        layout.setContentsMargins(8, 8, 8, 8)
+
+        top = QHBoxLayout()
+        top.addWidget(QLabel(f"Signal: <b>{self.signal_name}</b>"))
+        top.addStretch()
+
+        top.addWidget(QLabel("CLK periods per input period:"))
+        self._spin = QSpinBox()
+        self._spin.setRange(1, 256)
+        self._spin.setValue(self.period_count)
+        self._spin.valueChanged.connect(self._on_period_count_changed)
+        top.addWidget(self._spin)
+        layout.addLayout(top)
+
+        info = QLabel(
+            "Edit one period below. The pattern will repeat to fill the simulation finish time."
+        )
+        info.setWordWrap(True)
+        info.setStyleSheet("color:#7a95b0; font-size:11px;")
+        layout.addWidget(info)
+
+        self.canvas = WaveformCanvas()
+        self.canvas.setMinimumHeight(220)
+        layout.addWidget(self.canvas, stretch=1)
+
+        self._btn_box = QDialogButtonBox(
+            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        )
+        self._btn_box.accepted.connect(self.accept)
+        self._btn_box.rejected.connect(self.reject)
+        layout.addWidget(self._btn_box)
+
+    def _default_period_segments(self, period_count: int) -> list[Segment]:
+        return [
+            Segment(0.0, 1.0, 1),
+            Segment(1.0, float(period_count), 0),
+        ]
+
+    def _reset_canvas_to_period(self, period_count: int):
+        self.period_count = period_count
+        period_length = float(period_count)
+
+        self.canvas.constants_list = [["PER", 1.0]]
+        self.canvas.constants_map = {"PER": 1.0}
+        self.canvas.finish_time_expr = f"{period_count}*PER"
+        self.canvas.finishTm = period_length
+        self.canvas.startTm = 0.0
+        self.canvas.clock_specs = [
+            {"clkNm": "CLK", "initVal": 0, "per": "PER", "delay": 0}
+        ]
+        self.canvas._preserved_nonclock_waves = [
+            DigitalWaveRow(
+                self.signal_name,
+                self._default_period_segments(period_count),
+                editable=True,
+                nbits=self.nbits,
+            )
+        ]
+        self.canvas._initial_range_applied = False
+        self.canvas.rebuild_waves_from_specs()
+        self.canvas.left_time = 0.0
+        self.canvas.clamp_left_time()
+        self.canvas.update_scrollbars()
+        self.canvas.refresh_label_layout()
+        self.canvas.show_range(0.0, min(10.0, period_length))
+        self.canvas.update()
+
+    def _on_period_count_changed(self, value: int):
+        new_length = float(value)
+        old_length = self.canvas.finishTm
+
+        self.canvas.finishTm = new_length
+        self.canvas.finish_time_expr = f"{value}*PER"
+
+        for wave in self.canvas.waves:
+            if not isinstance(wave, DigitalWaveRow) or not wave.editable:
+                continue
+            kept: list[Segment] = []
+            for s in wave.segments:
+                if s.start >= new_length:
+                    continue
+                end = min(s.end, new_length)
+                if end > s.start:
+                    kept.append(Segment(s.start, end, s.value))
+            if not kept:
+                kept = self._default_period_segments(value)
+            wave.segments = kept
+            self.canvas.normalize_segments(wave)
+
+        self.canvas.update_scrollbars()
+        self.canvas.refresh_label_layout()
+        self.canvas.show_range(0.0, min(10.0, new_length))
+        self.canvas.update()
+
+        if new_length != old_length:
+            self.canvas.waves_changed.emit()
+
+    def get_pattern(self) -> tuple[list[Segment], float] | None:
+        """Return (one-period segments, period length) or None if no editable wave."""
+        for wave in self.canvas.waves:
+            if isinstance(wave, DigitalWaveRow) and wave.editable:
+                self.canvas.normalize_segments(wave)
+                return [Segment(s.start, s.end, s.value) for s in wave.segments], self.canvas.finishTm
+        return None
+
+
 class MainWindow(QMainWindow):
     def __init__(self, output_base_name: str | None = None):
         super().__init__()
@@ -1982,6 +2195,13 @@ class MainWindow(QMainWindow):
 
         waves_menu.addSeparator()
 
+        self.repeat_action = QAction("Set Repeating Pattern…", self)
+        self.repeat_action.triggered.connect(self.editor.set_repeating_pattern)
+        self.repeat_action.setEnabled(False)
+        waves_menu.addAction(self.repeat_action)
+
+        waves_menu.addSeparator()
+
         self.move_up_action = QAction("Move Up", self)
         self.move_up_action.setShortcut(QKeySequence("Ctrl+Up"))
         self.move_up_action.triggered.connect(self.editor.move_selection_up)
@@ -2013,7 +2233,11 @@ class MainWindow(QMainWindow):
         enabled = self.editor.selected_wave is not None
         self.delete_action.setEnabled(enabled)
         is_digital = isinstance(self.editor.selected_wave, DigitalWaveRow)
+        is_editable_digital = (
+            is_digital and getattr(self.editor.selected_wave, "editable", False)
+        )
         self.duplicate_action.setEnabled(is_digital)
+        self.repeat_action.setEnabled(is_editable_digital)
         self.move_up_action.setEnabled(is_digital)
         self.move_down_action.setEnabled(is_digital)
 

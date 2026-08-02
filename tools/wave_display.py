@@ -38,7 +38,7 @@ from PySide6.QtWidgets import (
 
 from help_viewer import MarkdownHelpWindow
 from lib.glbls import rd_yml, wrt_yml, PROJECT_ROOT
-from waveform_edit import WaveformCanvas as EditableCanvas
+from waveform_edit import DigitalWaveRow, WaveformCanvas as EditableCanvas
 from wave_view import WaveformCanvas as ViewCanvas
 
 getTmpltStr = lambda s, tbl: Template(s).substitute(tblNm=tbl)
@@ -242,6 +242,13 @@ class DisplayWindow(QMainWindow):
 
         wave_menu.addSeparator()
 
+        repeat_act = QAction("Set Repeating Pattern…", self)
+        repeat_act.triggered.connect(self._on_set_repeating_pattern)
+        wave_menu.addAction(repeat_act)
+        self._repeat_menu_act = repeat_act
+
+        wave_menu.addSeparator()
+
         goto_act = QAction("Go To…", self)
         goto_act.setShortcut(QKeySequence("Ctrl+G"))
         goto_act.triggered.connect(self._goto)
@@ -372,6 +379,15 @@ class DisplayWindow(QMainWindow):
             if p is not None:
                 self._center_at(p)
 
+    def _on_set_repeating_pattern(self):
+        self.editor.set_repeating_pattern(parent=self)
+
+    def _update_repeat_enabled(self):
+        sw = self.editor.selected_wave
+        enabled = isinstance(sw, DigitalWaveRow) and getattr(sw, "editable", False)
+        self._repeat_btn.setEnabled(enabled)
+        self._repeat_menu_act.setEnabled(enabled)
+
     def _zoom_full(self):
         self.editor.zoom_full()
         self.viewer.zoom_full()
@@ -431,6 +447,7 @@ class DisplayWindow(QMainWindow):
         top_lbl.setFont(QFont("monospace", 9))
         tv.addWidget(top_lbl)
         self.editor = EditableCanvas()
+        self.editor.selection_changed.connect(self._update_repeat_enabled)
         tv.addWidget(self.editor, stretch=1)
         vsplit.addWidget(top)
 
@@ -467,6 +484,14 @@ class DisplayWindow(QMainWindow):
             b.setToolTip(tip)
             b.clicked.connect(sig)
             btn_row.addWidget(b)
+
+        repeat_btn = QPushButton("Repeat Pattern")
+        repeat_btn.setToolTip("Make the selected input signal repeat a periodic pattern")
+        repeat_btn.clicked.connect(self._on_set_repeating_pattern)
+        repeat_btn.setEnabled(False)
+        btn_row.addWidget(repeat_btn)
+        self._repeat_btn = repeat_btn
+
         self._pos_label = QLabel()
         self._pos_label.setFont(QFont("monospace", 9))
         self._pos_label.setStyleSheet("color: #ff0000; padding-left: 12px;")

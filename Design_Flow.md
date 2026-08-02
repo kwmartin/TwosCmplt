@@ -215,7 +215,11 @@ and by `wave_edit.py` / `wave_display.py` when saving.
    for the review dialog. The pipeline now runs at most once per schematic or
    parser-script change.
 
-4. **No periodic/repeating input primitive.** `TimeSpcs` is a flat list of time/value pairs. To create a repeating pattern (e.g. a serial bit stream), the user must either add many entries manually or write a Python helper to expand the pattern before simulation.
+4. ✅ **No periodic/repeating input primitive.** Resolved in 9.3: both
+   `waveform_edit.py` and `wave_display.py` provide a **Set Repeating Pattern…**
+   dialog. The user edits one period (default 8 CLK periods, 1 for the first
+   period and 0 for the rest) with the same waveform canvas; on accept, the
+   edited period is tiled to fill `FinishTime`.
 
 5. **Multiple waveform editors.** `waveform_edit.py`, `wave_edit.py`, and the editable pane in `wave_display.py` have overlapping but not identical behavior. Documentation points to different files depending on which entry point was used.
 
@@ -282,20 +286,27 @@ To overwrite a hand-edited file, either:
 
 ### 9.3 Periodic / repeating input signals
 
-Extend the spec YAML or the editors with a repeating-pattern primitive, e.g.:
+✅ **Implemented:** A **Set Repeating Pattern…** dialog is available in both the
+standalone editor (`wave_edit.py` / `wave_display.py --edit`) and the Swift
+waveform viewer (`wave_display.py`).
 
-```yaml
-TimeSpcs:
-  - tm: 0
-    repeat:
-      every: PER
-      times: 16
-      pattern: [0, 1, 0, 1]
-    vls:
-      - [DATA, $pattern]
-```
+Behavior:
 
-This could be expanded by a small Python preprocessor before simulation, or supported natively by the Swift simulator.
+- The dialog opens with one editable period whose length is a configurable
+  number of CLK periods (default 8, range 1–256).
+- The default waveform is high (`1`) for the first CLK period and low (`0`)
+  for the remaining CLK periods.
+- The user edits the period with the same point-and-drag / add-edge / value-edit
+  gestures already supported by the waveform canvas.
+- Changing the period-count spin box immediately rescales the x-axis; existing
+  edges are preserved and truncated/extended to the new period length.
+- On accept, the edited period is tiled from time `0` to `FinishTime`, replacing
+  the selected input signal's `TimeSpcs` entries.
+- The action is reachable from the **Wave** menu, a toolbar button, and the
+  right-click context menu on an editable digital wave.
+
+The simulator itself still receives a flat `TimeSpcs` list; the expansion
+happens inside the editor before saving.
 
 ### 9.4 Unify the waveform editors
 
