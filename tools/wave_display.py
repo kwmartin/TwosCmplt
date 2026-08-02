@@ -1019,12 +1019,19 @@ class WaveDisplay(QMainWindow):
         spec_data["SaveNds"] = save_nds
         wrt_yml(str(spec_file), spec_data)
 
-        # Sync back to spcsDir (xschem/modules) so Run TB stays in sync.
+        # Sync back to the iVerilog specs directory so iVerilog runs stay in sync.
         spcs_dir = self._cfg.get("directories", {}).get("spcsDir", "")
         if spcs_dir:
             spcs_file = Path(spcs_dir) / f"{self._circuit_name}.yml"
             if spcs_file.exists():
-                wrt_yml(str(spcs_file), spec_data)
+                spcs_data = rd_yml(str(spcs_file)) or {}
+                perm_ts = spcs_data.get("TimeSpcs", [])
+                editor_ts = spec_data.get("TimeSpcs", [])
+                for k, v in spec_data.items():
+                    if k != "TimeSpcs":
+                        spcs_data[k] = v
+                spcs_data["TimeSpcs"] = _merge_time_spcs(perm_ts, editor_ts)
+                wrt_yml(str(spcs_file), spcs_data)
 
         self.statusBar().showMessage(f"Saved spec for {self._circuit_name}")
 
