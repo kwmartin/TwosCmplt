@@ -207,6 +207,22 @@ class DisplayWindow(QMainWindow):
         close_act.triggered.connect(self.close)
         file_menu.addAction(close_act)
 
+        edit_menu = self.menuBar().addMenu("Edit")
+
+        undo_act = QAction("Undo\tCtrl+Z", self)
+        undo_act.triggered.connect(self.editor.undo)
+        edit_menu.addAction(undo_act)
+
+        redo_act = QAction("Redo\tCtrl+Y", self)
+        redo_act.triggered.connect(self.editor.redo)
+        edit_menu.addAction(redo_act)
+
+        edit_menu.addSeparator()
+
+        dup_act = QAction("Duplicate\tCtrl+Shift+D", self)
+        dup_act.triggered.connect(self.editor.duplicate_selected_wave)
+        edit_menu.addAction(dup_act)
+
         wave_menu = self.menuBar().addMenu("Wave")
 
         up_act = QAction("Move Up", self)
@@ -529,6 +545,32 @@ class DisplayWindow(QMainWindow):
 
     def get_editor_yaml(self) -> dict:
         return self.editor.build_yaml_dict()
+
+    def save_editor_yaml(self, spec_path: Path) -> None:
+        """Save edited input waveforms back to a spec file.
+
+        Mirrors the merge/safety rules used by the selector-window save path:
+        preserves manual edits on files that lack generated:true.
+        """
+        spec_data = rd_yml(str(spec_path)) or {}
+        if not spec_data.get('generated', False):
+            msg = f"skipped {spec_path} — file lacks generated:true marker (manual edits preserved)"
+            print(f'[wave_display] {msg}')
+            self.statusBar().showMessage(msg, 6000)
+            return
+        try:
+            editor_data = self.get_editor_yaml()
+        except Exception as exc:
+            self.statusBar().showMessage(f"Failed to read editor state: {exc}")
+            return
+        perm_ts = spec_data.get("TimeSpcs", [])
+        editor_ts = editor_data.get("TimeSpcs", [])
+        for k, v in editor_data.items():
+            if k != "TimeSpcs":
+                spec_data[k] = v
+        spec_data["TimeSpcs"] = _merge_time_spcs(perm_ts, editor_ts)
+        wrt_yml(str(spec_path), spec_data)
+        self.statusBar().showMessage(f"Saved {spec_path}", 5000)
 
     def apply_viewer_order(self, names: List[str]):
         """Reorder viewer waves to match a saved name list (best-effort)."""
@@ -1584,6 +1626,43 @@ class WaveDisplay(QMainWindow):
         return getTmpltStr("\n".join(lines) + "\n", table_name)
 
 
+# ── Standalone editor entry point ─────────────────────────────────────────────
+
+def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optional[str] = None):
+    """Open only the editable waveform pane for a circuit, without simulating."""
+    cfg = rd_yml(config_path) or {}
+    if spec_path:
+        spec_file = Path(spec_path).resolve()
+    else:
+        specs_lib = Path(cfg.get("directories", {}).get("specsLib", ""))
+        spec_file = specs_lib / f"{circuit_name}.yml"
+
+    if not spec_file.exists():
+        QMessageBox.critical(
+            None,
+            "No spec file",
+            f"Spec file not found:\n{spec_file}\n\n"
+            "Generate it first (e.g. with gen_verilog_tb.py), then re-run with --edit.",
+        )
+        sys.exit(1)
+
+    app = QApplication(sys.argv)
+    win = DisplayWindow()
+    win.setWindowTitle(f"Waveform Editor — {circuit_name}")
+    win.load_spec(spec_file, circuit_name)
+    win.simulate_clicked.connect(
+        lambda: QMessageBox.information(
+            win,
+            "Simulate",
+            "To simulate, close this editor and run wave_display.py normally.",
+        )
+    )
+    win.save_clicked.connect(lambda: win.save_editor_yaml(spec_file))
+    win.show()
+    _center_on_screen(win)
+    sys.exit(app.exec())
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
@@ -1592,7 +1671,14 @@ def main():
     ap.add_argument("circuit", nargs="?", help="Circuit name, e.g. TB_DVDR4")
     ap.add_argument("--config", default=str(PROJECT_ROOT / "Config.yaml"), help="Path to Config.yaml")
     ap.add_argument("--spec", default=None, help="Spec file to use for simulation (overrides specsLib)")
+    ap.add_argument("--edit", action="store_true", help="Open the standalone waveform editor for the given circuit")
     args = ap.parse_args()
+
+    if args.edit:
+        if not args.circuit:
+            ap.error("--edit requires a circuit name")
+        _run_standalone_editor(args.config, args.circuit, spec_path=args.spec)
+        return
 
     app = QApplication(sys.argv)
     win = WaveDisplay(args.config, args.circuit, spec_path=args.spec)

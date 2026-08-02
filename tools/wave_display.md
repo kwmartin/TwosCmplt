@@ -8,7 +8,10 @@
 
 ```
 wave_display.py <CircuitName> [--config /path/to/Config.yaml]
+wave_display.py --edit <CircuitName> [--config /path/to/Config.yaml] [--spec /path/to/spec.yml]
 ```
+
+The `--edit` mode opens only the editable waveform pane for a circuit, without requiring a simulation. It is the entry point used by the legacy `wave_edit.py` launcher and by the **Edit Sigs** button in `gen_verilog_tb.py`.
 
 `Config.yaml` defaults to `../Config.yaml` relative to the script. The relevant keys are:
 
@@ -77,6 +80,10 @@ Editing operations:
 |---|---|
 | Add an edge | Hold **Shift** and click, or hold the **a** key and click |
 | Delete an edge | Hold **Ctrl** and click the edge, or hold the **d** key and click the edge |
+| Set segment value (multi-bit) | Hold **v** and click the segment, then enter a Python integer literal |
+| Invert a 1-bit waveform | Hold **t** and click the waveform |
+| Duplicate selected signal | **Ctrl+Shift+D** |
+| Undo / Redo | **Ctrl+Z** / **Ctrl+Y** |
 | Pan horizontally | Click and drag |
 | Zoom | Ctrl + scroll wheel (zooms around the cursor position) |
 
@@ -221,7 +228,11 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 | a (hold) + click | Add a transition edge at the clicked time |
 | Ctrl + click edge | Delete the edge at the clicked position |
 | d (hold) + click edge | Delete the edge at the clicked position |
-| Escape | Cancel the held **a** or **d** action key |
+| v (hold) + click segment | Open the **Set Segment Value** dialog for that segment |
+| t (hold) + click waveform | Invert all values of a 1-bit waveform |
+| Ctrl+Shift+D | Duplicate the selected signal |
+| Ctrl+Z / Ctrl+Y | Undo / Redo |
+| Escape | Cancel the held **a**, **d**, **v**, or **t** action key |
 
 ---
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import math
 import re
 import string
@@ -7,19 +8,22 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from PySide6.QtCore import QPoint, QPointF, QRectF, Qt, Signal
+from PySide6.QtCore import QEvent, QPoint, QPointF, QRectF, Qt, Signal
 from PySide6.QtGui import (
     QAction, QColor, QContextMenuEvent, QFont, QFontMetrics,
     QKeySequence, QMouseEvent, QPainter, QPen, QWheelEvent,
 )
 from PySide6.QtWidgets import (
     QApplication,
+    QDialog,
     QFileDialog,
+    QHBoxLayout,
     QLabel,
     QLineEdit,
     QMainWindow,
     QMenu,
     QMessageBox,
+    QPushButton,
     QScrollBar,
     QStyle,
     QTextEdit,
@@ -184,6 +188,101 @@ class LabelEdit(QLineEdit):
             self._set_normal_style()
 
 
+class ValueEditDialog(QDialog):
+    """Dialog to set the value of a multi-bit segment (or promote a 1-bit signal)."""
+
+    def __init__(self, signal_name: str, current_value: int, nbits: int, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Set Segment Value")
+        self.setModal(True)
+        self.result_value: int | None = None
+        self.result_nbits: int | None = None
+
+        self.setStyleSheet(
+            "QDialog { background:#11161c; }"
+            "QLabel  { color:#d7e3f4; }"
+            "QLineEdit { background:#1b2430; color:#d7e3f4;"
+            "            border:1px solid #344454; padding:4px; }"
+            "QPushButton { background:#1b2430; color:#d7e3f4;"
+            "              border:1px solid #344454; padding:4px 14px; }"
+            "QPushButton:hover { background:#2a3a50; }"
+        )
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(8)
+
+        lbl = QLabel(
+            f"Signal: <b>{signal_name}</b>  —  current: {hex(current_value)}  "
+            f"({nbits} bit{'s' if nbits != 1 else ''})"
+        )
+        lbl.setStyleSheet("color:#d7e3f4;")
+        layout.addWidget(lbl)
+
+        hint = QLabel("Enter value: decimal, 0b…, 0x…, or 0o…")
+        hint.setStyleSheet("color:#7a95b0; font-size:11px;")
+        layout.addWidget(hint)
+
+        self._edit = QLineEdit()
+        self._edit.installEventFilter(self)
+        self._edit.setFocus()
+        layout.addWidget(self._edit)
+
+        self._err_lbl = QLabel("")
+        self._err_lbl.setStyleSheet("color:#ff6b6b; font-size:11px;")
+        layout.addWidget(self._err_lbl)
+
+        btn_row = QHBoxLayout()
+        enter_btn = QPushButton("Enter")
+        cancel_btn = QPushButton("Cancel")
+        enter_btn.setDefault(True)
+        btn_row.addWidget(enter_btn)
+        btn_row.addWidget(cancel_btn)
+        layout.addLayout(btn_row)
+
+        enter_btn.clicked.connect(self._accept)
+        cancel_btn.clicked.connect(self.reject)
+        self._edit.returnPressed.connect(self._accept)
+
+    def eventFilter(self, obj, event):
+        if (
+            obj is self._edit
+            and event.type() == QEvent.Type.KeyPress
+            and event.key() == Qt.Key_V
+            and not (event.modifiers() & Qt.ControlModifier)
+        ):
+            return True
+        return super().eventFilter(obj, event)
+
+    def _accept(self):
+        text = self._edit.text().strip()
+        try:
+            value = int(text, 0)
+            if value < 0:
+                raise ValueError("value must be non-negative")
+            nbits = self._bits_from_literal(text)
+            self.result_value = value
+            self.result_nbits = nbits
+            self.accept()
+        except ValueError as exc:
+            self._err_lbl.setText(str(exc))
+
+    @staticmethod
+    def _bits_from_literal(s: str) -> int:
+        s = s.strip()
+        lo = s.lower()
+        if lo.startswith("0b"):
+            digits = lo[2:]
+            return max(1, len(digits)) if digits else 1
+        if lo.startswith("0x"):
+            digits = lo[2:]
+            return max(1, len(digits) * 4) if digits else 4
+        if lo.startswith("0o"):
+            digits = lo[2:]
+            return max(1, len(digits) * 3) if digits else 3
+        val = int(s, 0)
+        return max(1, val.bit_length())
+
+
 class WaveRow:
     def __init__(self, label_text: str):
         self.label_text = label_text
@@ -236,6 +335,7 @@ class DigitalWaveRow(WaveRow):
 class WaveformCanvas(QWidget):
     selection_changed = Signal()
     waves_changed = Signal()
+    undo_changed = Signal()
     view_changed = Signal(float, float)   # left_time, major_grid_px
     cursor_moved_pu = Signal(object)      # emits float (period units) or None
 
@@ -301,6 +401,9 @@ class WaveformCanvas(QWidget):
         self.click_drag_threshold = 6
         self._syncing: bool = False
 
+        self._undo_stack: list = []
+        self._redo_stack: list = []
+
         self.hbar = QScrollBar(Qt.Horizontal, self)
         self.vbar = QScrollBar(Qt.Vertical, self)
         self.hbar.valueChanged.connect(self._on_hscroll)
@@ -340,6 +443,48 @@ class WaveformCanvas(QWidget):
                 )
                 dw.fmt = wave.fmt
                 self._preserved_nonclock_waves.append(dw)
+
+    # ------------------------------------------------------------------ undo/redo
+
+    def _snapshot(self) -> dict:
+        self.sync_clock_specs_from_waves()
+        self._preserve_nonclock_waves()
+        return {
+            "waves": copy.deepcopy(self._preserved_nonclock_waves),
+            "clock_specs": copy.deepcopy(self.clock_specs),
+        }
+
+    def _restore_snapshot(self, snap: dict):
+        self._preserved_nonclock_waves = snap["waves"]
+        self.clock_specs = snap["clock_specs"]
+        self.rebuild_waves_from_specs()
+        self.update_scrollbars()
+        self.refresh_label_layout()
+        self.update()
+        self.waves_changed.emit()
+
+    def _push_undo(self):
+        self._undo_stack.append(self._snapshot())
+        if len(self._undo_stack) > 100:
+            self._undo_stack.pop(0)
+        self._redo_stack.clear()
+        self.undo_changed.emit()
+
+    def undo(self):
+        if not self._undo_stack:
+            return
+        self._redo_stack.append(self._snapshot())
+        snap = self._undo_stack.pop()
+        self._restore_snapshot(snap)
+        self.undo_changed.emit()
+
+    def redo(self):
+        if not self._redo_stack:
+            return
+        self._undo_stack.append(self._snapshot())
+        snap = self._redo_stack.pop()
+        self._restore_snapshot(snap)
+        self.undo_changed.emit()
 
     def reconstruct_digital_waves_from_timespcs(self, dct: dict) -> list[DigitalWaveRow]:
         timespcs = dct.get("TimeSpcs", [])
@@ -549,6 +694,7 @@ class WaveformCanvas(QWidget):
         return DigitalWaveRow(label, segments, editable=True)
 
     def add_wave(self):
+        self._push_undo()
         wave = self.create_default_added_wave()
         self.waves.append(wave)
         self.update_scrollbars()
@@ -559,9 +705,7 @@ class WaveformCanvas(QWidget):
     def delete_selected_wave(self):
         if self.selected_wave is None:
             return
-#         if isinstance(self.selected_wave, ClockWaveRow):
-#             return
-
+        self._push_undo()
         wave = self.selected_wave
         self.selected_wave = None
 
@@ -578,6 +722,48 @@ class WaveformCanvas(QWidget):
         self.selection_changed.emit()
         self.waves_changed.emit()
 
+    def duplicate_selected_wave(self):
+        if not isinstance(self.selected_wave, DigitalWaveRow):
+            return
+        original = self.selected_wave
+        self._push_undo()
+        new_wave = DigitalWaveRow(
+            original.label_text + "_copy",
+            [Segment(s.start, s.end, s.value) for s in original.segments],
+            editable=True,
+            nbits=original.nbits,
+        )
+        new_wave.fmt = original.fmt
+        nonclock = [w for w in self.waves if isinstance(w, DigitalWaveRow) and w.editable]
+        if original in nonclock:
+            nonclock.insert(nonclock.index(original) + 1, new_wave)
+        else:
+            nonclock.append(new_wave)
+        self._preserved_nonclock_waves = nonclock
+        self.rebuild_waves_from_specs()
+        self.update_scrollbars()
+        self.refresh_label_layout()
+        self.select_wave(new_wave)
+        self.update()
+        self.waves_changed.emit()
+
+    def _open_value_dialog(self, wave: DigitalWaveRow, seg_index: int):
+        self.current_action_key = None
+        dlg = ValueEditDialog(
+            wave.label_text,
+            wave.segments[seg_index].value,
+            wave.nbits,
+            self.window(),
+        )
+        if dlg.exec() == QDialog.Accepted and dlg.result_value is not None:
+            self._push_undo()
+            wave.segments[seg_index].value = dlg.result_value
+            wave.nbits = dlg.result_nbits
+            self.clear_selection()
+            self.normalize_segments(wave)
+            self.update()
+            self.waves_changed.emit()
+
     def _selected_indices(self) -> list:
         return sorted(i for i, w in enumerate(self.waves) if w in self.selected_waves)
 
@@ -585,6 +771,7 @@ class WaveformCanvas(QWidget):
         indices = self._selected_indices()
         if not indices or indices[0] == 0:
             return
+        self._push_undo()
         above = self.waves.pop(indices[0] - 1)
         self.waves.insert(indices[-1], above)
         self.refresh_label_layout()
@@ -595,6 +782,7 @@ class WaveformCanvas(QWidget):
         indices = self._selected_indices()
         if not indices or indices[-1] >= len(self.waves) - 1:
             return
+        self._push_undo()
         below = self.waves.pop(indices[-1] + 1)
         self.waves.insert(indices[0], below)
         self.refresh_label_layout()
@@ -820,15 +1008,21 @@ class WaveformCanvas(QWidget):
 
         for i, seg in enumerate(wave.segments):
             if seg.start < t < seg.end:
+                self._push_undo()
                 old_end = seg.end
                 old_value = seg.value
                 seg.end = t
-                new_value = 1 - old_value
-                wave.segments.insert(i + 1, Segment(t, old_end, new_value))
-                for j in range(i + 2, len(wave.segments)):
-                    wave.segments[j].value = 1 - wave.segments[j - 1].value
+                if wave.nbits == 1:
+                    new_value = 1 - old_value
+                    wave.segments.insert(i + 1, Segment(t, old_end, new_value))
+                    for j in range(i + 2, len(wave.segments)):
+                        wave.segments[j].value = 1 - wave.segments[j - 1].value
+                else:
+                    new_value = old_value + 1
+                    wave.segments.insert(i + 1, Segment(t, old_end, new_value))
                 self.normalize_segments(wave)
                 self.update()
+                self.waves_changed.emit()
                 return
 
     def delete_edge(self, wave: DigitalWaveRow, edge_index: int):
@@ -836,7 +1030,7 @@ class WaveformCanvas(QWidget):
             return
         if edge_index <= 0 or edge_index >= len(wave.segments):
             return
-
+        self._push_undo()
         left = wave.segments[edge_index - 1]
         current = wave.segments[edge_index]
         left.end = current.end
@@ -847,6 +1041,7 @@ class WaveformCanvas(QWidget):
 
         self.normalize_segments(wave)
         self.update()
+        self.waves_changed.emit()
 
     def move_edge_in_wave(self, wave: DigitalWaveRow, index: int, handle: int, new_t: float):
         new_t = self.snap_time_01(new_t)
@@ -915,8 +1110,17 @@ class WaveformCanvas(QWidget):
                     self.press_wave = None
                     return
 
+                if self.current_action_key == "v":
+                    for idx, seg in enumerate(wave.segments):
+                        if seg.start <= clicked_t <= seg.end:
+                            self._open_value_dialog(wave, idx)
+                            break
+                    self.press_wave = None
+                    return
+
                 handle, index = self.handle_at(wave, pos.x(), pos.y())
                 if handle != NO_HANDLE:
+                    self._push_undo()
                     self.dragging_wave = wave
                     self.selected_handle = (handle, index)
                     self.setCursor(Qt.SplitHCursor)
@@ -1011,11 +1215,13 @@ class WaveformCanvas(QWidget):
             self.setCursor(Qt.ArrowCursor)
 
         if did_click_clock:
+            self._push_undo()
             self.press_wave.toggle_start_value()
             self.update()
             self.waves_changed.emit()
 
         if did_toggle_digital:
+            self._push_undo()
             self.press_wave.toggle_start_value()
             self.update()
             self.waves_changed.emit()
@@ -1065,15 +1271,28 @@ class WaveformCanvas(QWidget):
             self.vbar.setValue(self.vbar.value() - delta)
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key_D and (event.modifiers() & Qt.ControlModifier):
+        ctrl = bool(event.modifiers() & Qt.ControlModifier)
+        if event.key() == Qt.Key_Z and ctrl:
+            self.undo()
+            event.accept()
+            return
+        if event.key() == Qt.Key_Y and ctrl:
+            self.redo()
+            event.accept()
+            return
+        if event.key() == Qt.Key_D and ctrl and (event.modifiers() & Qt.ShiftModifier):
+            self.duplicate_selected_wave()
+            event.accept()
+            return
+        if event.key() == Qt.Key_D and ctrl:
             self.delete_selected_wave()
             event.accept()
             return
-        if event.key() == Qt.Key_Up and (event.modifiers() & Qt.ControlModifier):
+        if event.key() == Qt.Key_Up and ctrl:
             self.move_selection_up()
             event.accept()
             return
-        if event.key() == Qt.Key_Down and (event.modifiers() & Qt.ControlModifier):
+        if event.key() == Qt.Key_Down and ctrl:
             self.move_selection_down()
             event.accept()
             return
@@ -1081,11 +1300,11 @@ class WaveformCanvas(QWidget):
             self._shift_held = True
             event.accept()
             return
-        if event.key() == Qt.Key_A and not (event.modifiers() & Qt.ControlModifier):
+        if event.key() == Qt.Key_A and not ctrl:
             self.current_action_key = "a"
             event.accept()
             return
-        if event.key() == Qt.Key_D and not (event.modifiers() & Qt.ControlModifier):
+        if event.key() == Qt.Key_D and not ctrl:
             self.current_action_key = "d"
             event.accept()
             return
@@ -1093,8 +1312,13 @@ class WaveformCanvas(QWidget):
             self.current_action_key = "t"
             event.accept()
             return
+        if event.key() == Qt.Key_V and not ctrl:
+            self.current_action_key = "v"
+            event.accept()
+            return
         if event.key() == Qt.Key_Escape:
             self.clear_selection()
+            self.current_action_key = None
             event.accept()
             return
         super().keyPressEvent(event)
@@ -1118,6 +1342,10 @@ class WaveformCanvas(QWidget):
             event.accept()
             return
         if event.key() == Qt.Key_T and self.current_action_key == "t":
+            self.current_action_key = None
+            event.accept()
+            return
+        if event.key() == Qt.Key_V and self.current_action_key == "v":
             self.current_action_key = None
             event.accept()
             return
@@ -1632,7 +1860,9 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central)
 
         self.editor.selection_changed.connect(self._update_delete_enabled)
+        self.editor.undo_changed.connect(self._update_undo_enabled)
         self._update_delete_enabled()
+        self._update_undo_enabled()
 
         try:
             self.editor.load_base_yaml_for_output(self.output_base_name)
@@ -1640,6 +1870,15 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Base YAML load failed", str(exc))
 
     def save_yaml(self):
+        errors = self.editor._validate_waves()
+        if errors:
+            reply = QMessageBox.question(
+                self, "Validation warnings",
+                "Warnings:\n" + "\n".join(errors) + "\n\nSave anyway?",
+                QMessageBox.Yes | QMessageBox.No,
+            )
+            if reply != QMessageBox.Yes:
+                return
         data = self.editor.build_yaml_dict()
 
         base_dir = Path(sys.argv[0]).resolve().parent
@@ -1712,6 +1951,18 @@ class MainWindow(QMainWindow):
         self.close_action.triggered.connect(self.close)
         file_menu.addAction(self.close_action)
 
+        edit_menu = self.menuBar().addMenu("Edit")
+
+        self.undo_action = QAction("Undo\tCtrl+Z", self)
+        self.undo_action.triggered.connect(self.editor.undo)
+        self.undo_action.setEnabled(False)
+        edit_menu.addAction(self.undo_action)
+
+        self.redo_action = QAction("Redo\tCtrl+Y", self)
+        self.redo_action.triggered.connect(self.editor.redo)
+        self.redo_action.setEnabled(False)
+        edit_menu.addAction(self.redo_action)
+
         waves_menu = self.menuBar().addMenu("Waves")
 
         self.add_action = QAction("Add", self)
@@ -1723,6 +1974,11 @@ class MainWindow(QMainWindow):
         self.delete_action.setShortcut(QKeySequence("Ctrl+D"))
         self.delete_action.triggered.connect(self.editor.delete_selected_wave)
         waves_menu.addAction(self.delete_action)
+
+        self.duplicate_action = QAction("Duplicate\tCtrl+Shift+D", self)
+        self.duplicate_action.triggered.connect(self.editor.duplicate_selected_wave)
+        self.duplicate_action.setEnabled(False)
+        waves_menu.addAction(self.duplicate_action)
 
         waves_menu.addSeparator()
 
@@ -1754,9 +2010,16 @@ class MainWindow(QMainWindow):
         help_menu.addAction(self.about_action)
 
     def _update_delete_enabled(self):
- #        enabled = self.editor.selected_wave is not None and not isinstance(self.editor.selected_wave, ClockWaveRow)
         enabled = self.editor.selected_wave is not None
         self.delete_action.setEnabled(enabled)
+        is_digital = isinstance(self.editor.selected_wave, DigitalWaveRow)
+        self.duplicate_action.setEnabled(is_digital)
+        self.move_up_action.setEnabled(is_digital)
+        self.move_down_action.setEnabled(is_digital)
+
+    def _update_undo_enabled(self):
+        self.undo_action.setEnabled(bool(self.editor._undo_stack))
+        self.redo_action.setEnabled(bool(self.editor._redo_stack))
 
 
 if __name__ == "__main__":
