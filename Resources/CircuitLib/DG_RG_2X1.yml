@@ -28,14 +28,7 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Output
-        name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
+    -   kind: Input
         name: VDD
         signed: 'False'
         width:
@@ -49,6 +42,13 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Reg
         name: STATE
         signed: 'False'
@@ -57,6 +57,14 @@ decls:
         - 0
         length: []
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -96,11 +104,3 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: D
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QP
-    rvalue:
-        kind: ident
-        name: STATE
-    delay: 0

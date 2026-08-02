@@ -3,10 +3,7 @@ module: CLA2
 params:
 -   kind: str
     name: circuit
-    value: sync
--   kind: str
-    name: spiceprefix
-    value: X
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -120,10 +117,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: async
     name: AND1
     module: DG_AND2_2X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -145,10 +145,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: CLA1_0
     module: CLA1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -192,10 +195,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: CLA1_1
     module: CLA1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -239,13 +245,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV3
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: sync
-        name: None
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -263,13 +269,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: INV1
     module: DG_INV2_1X1
     params:
     -   kind: str
-        value: sync
-        name: None
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -287,10 +293,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: NAB_C1
     module: DG_NAB_C2
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:
@@ -316,10 +325,13 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: instance
+-   kind: async
     name: GT_1
     module: DG_NA_BCD
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:

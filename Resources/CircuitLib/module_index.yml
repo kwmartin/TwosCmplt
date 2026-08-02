@@ -1,4 +1,4 @@
-generated: '2026-07-28T15:42:24+00:00'
+generated: '2026-08-02T11:38:24+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -8,6 +8,11 @@ modules:
         directory: verilogParse/ver_lib
         file_name: BUF_BIAS_VAMS.v
         clean: true
+    CAP:
+        directory: verilogParse/ver_lib
+        file_name: CAP.v
+        clean: false
+        stale_reason: 'missing: circuit_lib'
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -44,533 +49,543 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLOCK_SLCT.v
         clean: true
-    DG_AND2_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+    CMPL:
+        directory: verilogParse/ver_lib
+        file_name: Qd_DDFS_TB.v
         clean: true
+    DG_AND2_2X1:
+        directory: verilogParse/ver_lib
+        file_name: DG_AND2_2X1.v
+        clean: false
+        stale_reason: verilog content changed
     DG_AND2_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_AND2_3X1.v
         clean: true
     DG_AND2_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_AND2_4X1.v
         clean: true
     DG_AND4_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_AND4_2X1.v
         clean: true
     DG_AND4_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_AND4_3X1.v
         clean: true
     DG_AND4_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_AND4_4X1.v
         clean: true
     DG_BSMX8:
         directory: dig_lib
         file_name: DG_BSMX8.v
         clean: true
     DG_BUF16_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF16_1X1.v
         clean: true
     DG_BUF1_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF1_1X1.v
         clean: true
     DG_BUF20_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF20_1X1.v
         clean: true
     DG_BUF2_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF2_1X1.v
         clean: true
     DG_BUF4_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF4_1X1.v
         clean: true
     DG_BUF6_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF6_1X1.v
         clean: true
     DG_BUF8_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_BUF8_1X1.v
         clean: true
     DG_DER_3X2:
+        directory: verilogParse/ver_lib
+        file_name: DG_DER_3X2.v
+        clean: true
+    DG_DES_3X2:
         directory: verilogParse/lib/std28_lib
         file_name: diglib28_vl.v
         clean: true
     DG_DFFCP_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DFFCP_3X2.v
         clean: true
     DG_DFFR_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DFFR_3X2.v
         clean: true
     DG_DFFR_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DFFR_4X2.v
         clean: true
     DG_DFLP_R_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DFLP_R_3X1.v
         clean: true
     DG_DIFF_BFR:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DIFF_BFR.v
         clean: true
     DG_DLR_5X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DLR_5X2.v
         clean: true
     DG_DLUR_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DLUR_6X2.v
         clean: true
     DG_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUSR_7X2.v
         clean: true
     DG_DLUS_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DLUS_6X2.v
         clean: true
     DG_DLUX_7X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DLUX_7X2.v
         clean: true
     DG_DMMY:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DMMY.v
         clean: true
     DG_DRC_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DRC_DIFF.v
         clean: true
     DG_DR_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DR_3X1.v
         clean: true
     DG_DR_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DR_3X2.v
         clean: true
     DG_DR_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DR_4X1.v
         clean: true
     DG_DR_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DR_4X2.v
         clean: true
     DG_DR_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DR_DIFF.v
         clean: true
     DG_DS_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DS_3X2.v
         clean: true
     DG_DS_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DS_4X2.v
         clean: true
     DG_DUR_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DUR_4X2.v
         clean: true
     DG_DUX_5X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DUX_5X2.v
         clean: true
     DG_DVD2_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DVD2_2X1.v
         clean: true
     DG_DVD2_DIFF:
-        directory: dig_lib
-        file_name: dg_dvd2_diff.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DVD2_DIFF.v
         clean: true
     DG_DX_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DX_4X2.v
         clean: true
     DG_D_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_D_3X2.v
         clean: true
     DG_D_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_D_DIFF.v
         clean: true
     DG_EMX_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_EMX_4X1.v
         clean: true
     DG_EXNOR1_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_EXNOR1_2X1.v
         clean: true
     DG_EXOR1_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_EXOR1_2X1.v
         clean: true
     DG_HV2LV:
         directory: verilogParse/ver_lib
         file_name: DG_HV2LV.v
         clean: true
     DG_INV:
-        directory: dig_lib
-        file_name: dg_inv1_1x1.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV.v
         clean: true
     DG_INV1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV1.v
         clean: true
     DG_INV16:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV16.v
         clean: true
     DG_INV16_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV16_1X1.v
         clean: true
     DG_INV1_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV1_1X1.v
         clean: true
     DG_INV2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV2.v
         clean: true
     DG_INV20:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV20.v
         clean: true
     DG_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV20_1X1.v
         clean: true
     DG_INV2_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV2_1X1.v
         clean: true
     DG_INV4:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV4.v
         clean: true
     DG_INV4_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV4_1X1.v
         clean: true
     DG_INV6:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV6.v
         clean: true
     DG_INV6_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV6_1X1.v
         clean: true
     DG_INV8:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV8.v
         clean: true
     DG_INV8_1X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_INV8_1X1.v
         clean: true
     DG_JKDR_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKDR_6X2.v
         clean: true
     DG_JKDS_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKDS_6X2.v
         clean: true
     DG_JKDUR_7X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKDUR_7X2.v
         clean: true
     DG_JKDUS_7X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKDUS_7X2.v
         clean: true
     DG_JKDUX_8X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKDUX_8X2.v
         clean: true
     DG_JKR_4X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKR_4X2.v
         clean: true
     DG_JKR_5X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKR_5X2.v
         clean: true
     DG_JKS_4X2:
-        directory: dig_lib
-        file_name: dg_jks_4x2.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKS_4X2.v
         clean: true
     DG_JKS_5X2:
-        directory: dig_lib
-        file_name: dg_jks_5x2.v
+        directory: verilogParse/ver_lib
+        file_name: DG_JKS_5X2.v
         clean: true
     DG_LR6X2_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LR6X2_DIFF.v
         clean: true
     DG_LR_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LR_DIFF.v
         clean: true
     DG_LTCHB_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHB_DIFF.v
         clean: true
     DG_LTCHR_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHR_3X1.v
         clean: true
     DG_LTCHR_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHR_4X1.v
         clean: true
     DG_LTCHR_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHR_DIFF.v
         clean: true
     DG_LTCHSN_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHSN_4X1.v
         clean: true
     DG_LTCHSN_5X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHSN_5X1.v
         clean: true
     DG_LTCHSN_6X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
-        clean: true
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHSN_6X1.v
+        clean: false
+        stale_reason: verilog content changed
     DG_LTCHS_3X1:
-        directory: dig_lib
-        file_name: dg_ltchs_3x1.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHS_3X1.v
         clean: true
     DG_LTCHS_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCHS_4X1.v
         clean: true
     DG_LTCH_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_LTCH_3X1.v
         clean: true
     DG_LV2HV:
         directory: verilogParse/ver_lib
         file_name: DG_LV2HV.v
         clean: true
     DG_L_DIFF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_L_DIFF.v
         clean: true
     DG_MX1_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MX1_3X1.v
         clean: true
     DG_MX2_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MX2_3X1.v
         clean: true
     DG_MX4_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MX4_3X1.v
         clean: true
     DG_MXN1_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MXN1_3X1.v
         clean: true
     DG_MXN2_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MXN2_3X1.v
         clean: true
     DG_MX_4X1:
-        directory: dig_lib
-        file_name: dg_mx_4X1.v
+        directory: verilogParse/ver_lib
+        file_name: DG_MX_4X1.v
         clean: true
     DG_NABC_ABD:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NABC_ABD.v
         clean: true
     DG_NAB_AC:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAB_AC.v
         clean: true
     DG_NAB_AC_BC:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAB_AC_BC.v
         clean: true
     DG_NAB_C2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAB_C2.v
         clean: true
     DG_NAB_CDA_CDB:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAB_CDA_CDB.v
         clean: true
     DG_NAC_AD_BC_BD:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAC_AD_BC_BD.v
         clean: true
     DG_NAND1_2X1:
-        directory: dig_lib
-        file_name: dg_nand1_2x1.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND1_2X1.v
         clean: true
     DG_NAND1_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND1_3X1.v
         clean: true
     DG_NAND1_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND1_4X1.v
         clean: true
     DG_NAND2_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND2_2X1.v
         clean: true
     DG_NAND2_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND2_3X1.v
         clean: true
     DG_NAND2_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NAND2_4X1.v
         clean: true
     DG_NA_BC:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NA_BC.v
         clean: true
     DG_NA_BCD:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NA_BCD.v
         clean: true
     DG_NA_BC_BD:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NA_BC_BD.v
         clean: true
     DG_NOR1_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NOR1_2X1.v
         clean: true
     DG_NOR1_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NOR1_3X1.v
         clean: true
     DG_NOR2_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_NOR2_2X1.v
         clean: true
     DG_OR2_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_OR2_2X1.v
         clean: true
     DG_OR2_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_OR2_3X1.v
         clean: true
     DG_OR4_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_OR4_2X1.v
         clean: true
     DG_OR4_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_OR4_3X1.v
         clean: true
     DG_PRGT4:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_PRGT4.v
         clean: true
     DG_PRPA:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_PRPA.v
         clean: true
     DG_PRPB:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_PRPB.v
         clean: true
     DG_PRPF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_PRPF.v
         clean: true
     DG_RG_2X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_RG_2X1.v
         clean: true
     DG_RG_3X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_RG_3X1.v
         clean: true
     DG_S2DIFF_1X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_S2DIFF_1X2.v
         clean: true
     DG_SE2DIFF_1X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_SE2DIFF_1X2.v
         clean: true
     DG_SNGL2DIFF_1X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_SNGL2DIFF_1X2.v
         clean: true
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
         clean: true
     DG_TDR_5X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TDR_5X2.v
         clean: true
     DG_TDR_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TDR_6X2.v
         clean: true
     DG_TDUR_6X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TDUR_6X2.v
         clean: true
     DG_TDUX_7X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TDUX_7X2.v
         clean: true
     DG_TIHI:
-        directory: dig_lib
-        file_name: dg_tihi.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TIHI.v
         clean: true
     DG_TILO:
-        directory: dig_lib
-        file_name: dg_tilo.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TILO.v
         clean: true
     DG_TLDR_5X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TLDR_5X2.v
         clean: true
     DG_TL_FF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TL_FF.v
         clean: true
     DG_TR_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TR_3X2.v
         clean: true
     DG_TR_FF:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TR_FF.v
         clean: true
     DG_TS_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_TS_3X2.v
         clean: true
     DLUSR_7X2:
         directory: verilogParse/ver_lib
@@ -593,24 +608,24 @@ modules:
         file_name: EXOR_DIFF.v
         clean: true
     FADDR_3X2:
-        directory: dig_lib
-        file_name: faddr_3x2.v
+        directory: verilogParse/ver_lib
+        file_name: FADDR_3X2.v
         clean: true
     HADDRA:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: HADDRA.v
         clean: true
     HADDRB:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: HADDRB.v
         clean: true
     HADDRC:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: HADDRC.v
         clean: true
     HADDR_2X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: HADDR_2X2.v
         clean: true
     KM_AND2_DIFF:
         directory: verilogParse/ver_lib
@@ -657,8 +672,8 @@ modules:
         file_name: KM_DVD2Q_DIFF.v
         clean: true
     KM_EMX_4X1:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: KM_EMX_4X1.v
         clean: true
     KM_ENBL_BFR:
         directory: verilogParse/ver_lib
@@ -752,13 +767,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: Qd_DDFS_TB.v
         clean: true
+    Qd_DDFS_TB:
+        directory: verilogParse/ver_lib
+        file_name: Qd_DDFS_TB.v
+        clean: true
     RES:
         directory: verilogParse/ver_lib
         file_name: RES.v
         clean: true
     Sine:
         directory: verilogParse/ver_lib
-        file_name: sine.v
+        file_name: Qd_DDFS_TB.v
         clean: true
     Sine5:
         directory: verilogParse/ver_lib
@@ -771,7 +790,8 @@ modules:
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
@@ -1177,136 +1197,8 @@ modules:
         file_name: dg_tr_ff.v
         clean: true
 duplicates:
-  - DG_AND2_2X1
-  - DG_AND2_3X1
-  - DG_AND2_4X1
-  - DG_AND4_2X1
-  - DG_AND4_3X1
-  - DG_AND4_4X1
   - DG_BSMX8
-  - DG_BUF16_1X1
-  - DG_BUF1_1X1
-  - DG_BUF20_1X1
-  - DG_BUF2_1X1
-  - DG_BUF4_1X1
-  - DG_BUF6_1X1
-  - DG_BUF8_1X1
-  - DG_DFFCP_3X2
-  - DG_DFFR_3X2
-  - DG_DFFR_4X2
-  - DG_DFLP_R_3X1
-  - DG_DIFF_BFR
-  - DG_DLR_5X2
-  - DG_DLUR_6X2
-  - DG_DLUS_6X2
-  - DG_DLUX_7X2
-  - DG_DMMY
-  - DG_DRC_DIFF
-  - DG_DR_3X1
-  - DG_DR_3X2
-  - DG_DR_4X1
-  - DG_DR_4X2
-  - DG_DR_DIFF
-  - DG_DS_3X2
-  - DG_DS_4X2
-  - DG_DUR_4X2
-  - DG_DUX_5X2
-  - DG_DVD2_2X1
-  - DG_DVD2_DIFF
-  - DG_DX_4X2
-  - DG_D_3X2
-  - DG_D_DIFF
-  - DG_EMX_4X1
-  - DG_EXNOR1_2X1
-  - DG_EXOR1_2X1
-  - DG_INV
-  - DG_INV1
-  - DG_INV16
-  - DG_INV16_1X1
-  - DG_INV1_1X1
-  - DG_INV2
-  - DG_INV20
-  - DG_INV20_1X1
-  - DG_INV2_1X1
-  - DG_INV4
-  - DG_INV4_1X1
-  - DG_INV6
-  - DG_INV6_1X1
-  - DG_INV8
-  - DG_INV8_1X1
-  - DG_JKDR_6X2
-  - DG_JKDS_6X2
-  - DG_JKDUR_7X2
-  - DG_JKDUS_7X2
-  - DG_JKDUX_8X2
-  - DG_JKR_4X2
-  - DG_JKR_5X2
-  - DG_JKS_4X2
-  - DG_JKS_5X2
-  - DG_LR6X2_DIFF
-  - DG_LR_DIFF
-  - DG_LTCHR_3X1
-  - DG_LTCHR_4X1
-  - DG_LTCHR_DIFF
-  - DG_LTCHSN_4X1
-  - DG_LTCHSN_5X1
-  - DG_LTCHSN_6X1
-  - DG_LTCHS_3X1
-  - DG_LTCHS_4X1
-  - DG_LTCH_3X1
-  - DG_L_DIFF
-  - DG_MX1_3X1
-  - DG_MX2_3X1
-  - DG_MX4_3X1
-  - DG_MXN1_3X1
-  - DG_MXN2_3X1
-  - DG_MX_4X1
-  - DG_NABC_ABD
-  - DG_NAB_AC
-  - DG_NAB_AC_BC
-  - DG_NAB_C2
-  - DG_NAB_CDA_CDB
-  - DG_NAC_AD_BC_BD
-  - DG_NAND1_2X1
-  - DG_NAND1_3X1
-  - DG_NAND1_4X1
-  - DG_NAND2_2X1
-  - DG_NAND2_3X1
-  - DG_NAND2_4X1
-  - DG_NA_BC
-  - DG_NA_BCD
-  - DG_NA_BC_BD
-  - DG_NOR1_2X1
-  - DG_NOR1_3X1
-  - DG_NOR2_2X1
-  - DG_OR2_2X1
-  - DG_OR2_3X1
-  - DG_OR4_2X1
-  - DG_OR4_3X1
-  - DG_PRGT4
-  - DG_PRPA
-  - DG_PRPB
-  - DG_PRPF
-  - DG_RG_2X1
-  - DG_RG_3X1
-  - DG_S2DIFF_1X2
-  - DG_SNGL2DIFF_1X2
-  - DG_TDR_5X2
-  - DG_TDR_6X2
-  - DG_TDUR_6X2
-  - DG_TDUX_7X2
-  - DG_TIHI
-  - DG_TILO
-  - DG_TLDR_5X2
-  - DG_TL_FF
-  - DG_TR_FF
-  - FADDR_3X2
-  - HADDRA
-  - HADDRB
-  - HADDRC
-  - HADDR_2X2
   - KM_DVD2Q_DIFF
-  - KM_EMX_4X1
   - QD_DDFS5
   - Qd_Accum
-  - Qd_DDFS
+  - Sine

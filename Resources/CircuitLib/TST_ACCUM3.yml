@@ -543,10 +543,13 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: instance
+-   kind: subcirc
     name: ACCM0
     module: M1M_QDACCUM5
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
     -   port: None
         node:
@@ -585,3 +588,4 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
+

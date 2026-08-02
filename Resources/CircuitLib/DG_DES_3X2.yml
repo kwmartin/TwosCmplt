@@ -1,5 +1,5 @@
 kind: verilog
-module: DG_DS_3X2
+module: DG_DES_3X2
 params:
 -   kind: str
     name: circuit
@@ -9,12 +9,19 @@ params:
     value: 5
 io_ports:
 -   name: D
+    direct: Input
 -   name: S
+    direct: Input
 -   name: CLK
+    direct: Input
 -   name: QP
+    direct: Output
 -   name: QN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: D
@@ -146,3 +153,4 @@ behav_blcks:
                 rvalue:
                     kind: ident
                     name: D
+

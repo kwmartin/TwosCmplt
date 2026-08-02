@@ -354,6 +354,19 @@ public func parseSingleBitIndex(_ node: String) -> Int? {
     return bit
 }
 
+// Returns (msb, lsb) for range names like "S[3:2]". Returns nil for single-bit
+// indices like "S[3]" or plain names without brackets.
+public func parseBitRange(_ node: String) -> (msb: Int, lsb: Int)? {
+    guard let lo = node.firstIndex(of: "["),
+          let hi = node.lastIndex(of: "]"),
+          lo < hi else { return nil }
+    let inner = String(node[node.index(after: lo)..<hi])
+    guard let colon = inner.firstIndex(of: ":"),
+          let msb = Int(inner[..<colon]),
+          let lsb = Int(inner[inner.index(after: colon)...]) else { return nil }
+    return (msb, lsb)
+}
+
 extension URL {
     public func file(_ name: String, ext: String) -> URL {
         self.appendingPathComponent(name).appendingPathExtension(ext)

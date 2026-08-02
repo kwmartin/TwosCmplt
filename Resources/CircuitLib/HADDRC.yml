@@ -37,6 +37,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: SUM
         signed: 'False'
@@ -46,20 +60,6 @@ decls:
         length: []
     -   kind: Output
         name: COUT
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
         signed: 'False'
         width:
         - 0

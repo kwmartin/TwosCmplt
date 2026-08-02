@@ -18,6 +18,13 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
+-   -   kind: Wire
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: DP
         signed: 'False'
@@ -53,6 +60,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: QP
         signed: 'False'
@@ -67,29 +88,8 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: QP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QN
         signed: 'False'
         width:
         - 0

@@ -1,0 +1,81 @@
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, 0]
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0
+      -   - D
+          - 1
+  - tm: 2000
+    vls:
+      -   - D
+          - '0x2'
+  - tm: 3000
+    vls:
+      -   - D
+          - '0x3'
+  - tm: 4000
+    vls:
+      -   - D
+          - '0x4'
+  - tm: 5000
+    vls:
+      -   - D
+          - '0x5'
+  - tm: 6000
+    vls:
+      -   - D
+          - '0x6'
+  - tm: 7000
+    vls:
+      -   - D
+          - '0x7'
+  - tm: 8000
+    vls:
+      -   - D
+          - '0x8'
+  - tm: 9000
+    vls:
+      -   - D
+          - '0x9'
+  - tm: 10000
+    vls:
+      -   - D
+          - '0xa'
+  - tm: 11000
+    vls:
+      -   - D
+          - '0xb'
+  - tm: 12000
+    vls:
+      -   - D
+          - '0xc'
+  - tm: 13000
+    vls:
+      -   - D
+          - '0xd'
+  - tm: 14000
+    vls:
+      -   - D
+          - '0xe'
+  - tm: 15000
+    vls:
+      -   - D
+          - '0xf'
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
