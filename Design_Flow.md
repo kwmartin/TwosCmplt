@@ -299,15 +299,31 @@ This could be expanded by a small Python preprocessor before simulation, or supp
 
 ### 9.4 Unify the waveform editors
 
-`wave_edit.py` and the editable pane in `wave_display.py` already share the same canvas code (`waveform_edit.py`). Decide whether the standalone editor is the entry point or whether all editing happens inside `wave_display.py` after a first simulation.
+✅ **Implemented:** `TwosCmplt/tools/wave_display.py` is the canonical editor.
+`verilogParse/wave_edit.py` is now a backward-compatible launcher that opens
+`wave_display.py --edit`, so both the **Edit Sigs** button and direct
+`wave_display.py` use the same editing code.
 
 ### 9.5 Remove redundant pipeline invocations
 
-`run_sim_ui.py` and `gen_verilog_tb.py` both call `run_pipeline()`. A single subprocess call that returns the paths and then opens the dialog would remove the duplicate work.
+✅ **Implemented:** `gen_verilog_tb.py` uses `run_pipeline_if_needed()` backed by
+`Resources/CircuitLib/pipeline_deps.yml`, and `run_sim_ui.py` calls
+`--ensure-pipeline` once followed by `--review-only` for the review dialog. The
+pipeline now runs at most once per schematic or parser-script change.
 
 ### 9.6 Make `ngui` digital mode more discoverable
 
-Consider remembering the last-used mode per project, or defaulting to Digital when the symbol lives in a digital library (`std28_lib`, `dig_lib`).
+✅ **Implemented:** `run_sim_ui.py` now chooses the initial Mode with a layered
+fallback:
+
+1. Per-symbol saved mode (e.g. `symbols/TST_DES_3X2/mode`).
+2. Global saved mode (`main/mode`).
+3. Digital-library heuristic: if the resolved `.sym` file lives under
+   `std28_lib`, `dig_lib`, `std_dig_lib`, or `ver_lib`, default to `Digital`.
+4. Otherwise default to `Analog`.
+
+When the user changes the Mode combo, the per-symbol setting is updated so the
+next launch remembers the choice.
 
 ---
 
