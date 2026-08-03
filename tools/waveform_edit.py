@@ -2442,7 +2442,6 @@ class MainWindow(QMainWindow):
         self.help_action.setShortcut(QKeySequence("F1"))
         self.help_action.triggered.connect(self.show_help)
         help_menu.addAction(self.help_action)
-        QShortcut(QKeySequence("F1"), self).activated.connect(self.show_help)
 
         self.about_action = QAction("About", self)
         self.about_action.triggered.connect(self.show_about)

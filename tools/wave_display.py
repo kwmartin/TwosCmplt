@@ -283,7 +283,6 @@ class DisplayWindow(QMainWindow):
         help_act.setShortcut(QKeySequence("F1"))
         help_act.triggered.connect(self._show_help)
         help_menu.addAction(help_act)
-        QShortcut(QKeySequence("F1"), self).activated.connect(self._show_help)
 
         about_act = QAction("About", self)
         about_act.triggered.connect(self._show_about)
@@ -728,7 +727,6 @@ class WaveDisplay(QMainWindow):
         help_act.setShortcut(QKeySequence("F1"))
         help_act.triggered.connect(self._show_help)
         help_menu.addAction(help_act)
-        QShortcut(QKeySequence("F1"), self).activated.connect(self._show_help)
         about_act = QAction("About", self)
         about_act.triggered.connect(self._show_about)
         help_menu.addAction(about_act)
