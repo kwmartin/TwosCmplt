@@ -590,11 +590,13 @@ class DisplayWindow(QMainWindow):
     def get_editor_yaml(self) -> dict:
         return self.editor.build_yaml_dict()
 
-    def save_editor_yaml(self, spec_path: Path) -> None:
+    def save_editor_yaml(self, spec_path: Path, cfg: Optional[dict] = None) -> None:
         """Save edited input waveforms back to a spec file.
 
         Mirrors the merge/safety rules used by the selector-window save path:
         preserves manual edits on files that lack generated:true.
+        If a config dict is supplied, also sync the shared sections to the
+        iVerilog specs directory (spcsDir) so iVerilog simulations see the edits.
         """
         spec_data = rd_yml(str(spec_path)) or {}
         if not spec_data.get('generated', False):
@@ -615,6 +617,29 @@ class DisplayWindow(QMainWindow):
         spec_data["TimeSpcs"] = _merge_time_spcs(perm_ts, editor_ts)
         wrt_yml(str(spec_path), spec_data)
         self.statusBar().showMessage(f"Saved {spec_path}", 5000)
+
+        if cfg:
+            self._sync_editor_yaml_to_iverilog(spec_path, cfg)
+
+    def _sync_editor_yaml_to_iverilog(self, spec_path: Path, cfg: dict) -> None:
+        """Propagate saved input waveforms to the iVerilog specs directory."""
+        spcs_dir = cfg.get("directories", {}).get("spcsDir", "")
+        if not spcs_dir:
+            return
+        spcs_file = Path(spcs_dir) / spec_path.name
+        if not spcs_file.exists():
+            return
+        src_data = rd_yml(str(spec_path)) or {}
+        dst_data = rd_yml(str(spcs_file)) or {}
+        if not dst_data.get('generated', False):
+            return
+        perm_ts = dst_data.get("TimeSpcs", [])
+        editor_ts = src_data.get("TimeSpcs", [])
+        for k, v in src_data.items():
+            if k != "TimeSpcs":
+                dst_data[k] = v
+        dst_data["TimeSpcs"] = _merge_time_spcs(perm_ts, editor_ts)
+        wrt_yml(str(spcs_file), dst_data)
 
     def apply_viewer_order(self, names: List[str]):
         """Reorder viewer waves to match a saved name list (best-effort)."""
@@ -1713,7 +1738,7 @@ def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optio
             "To simulate, close this editor and run wave_display.py normally.",
         )
     )
-    win.save_clicked.connect(lambda: win.save_editor_yaml(spec_file))
+    win.save_clicked.connect(lambda: win.save_editor_yaml(spec_file, cfg))
     win.show()
     _center_on_screen(win)
     sys.exit(app.exec())
