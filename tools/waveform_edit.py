@@ -11,7 +11,7 @@ from pathlib import Path
 from PySide6.QtCore import QEvent, QPoint, QPointF, QRectF, Qt, Signal
 from PySide6.QtGui import (
     QAction, QColor, QContextMenuEvent, QFont, QFontMetrics,
-    QKeySequence, QMouseEvent, QPainter, QPen, QWheelEvent,
+    QKeySequence, QMouseEvent, QPainter, QPen, QShortcut, QWheelEvent,
 )
 from PySide6.QtWidgets import (
     QApplication,
@@ -27,7 +27,6 @@ from PySide6.QtWidgets import (
     QPushButton,
     QRadioButton,
     QScrollBar,
-    QShortcut,
     QSpinBox,
     QStyle,
     QTextEdit,
