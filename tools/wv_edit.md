@@ -8,6 +8,51 @@ Both programs are written in Python and require Python 3.12 or later. A `require
 
 ---
 
+### Waveform Editor Keyboard Shortcuts
+
+| Shortcut | Action |
+|---|---|
+| F1 | Open this help window |
+| Ctrl+O | Open a different base YAML spec file |
+| Ctrl+S | Save the current input waveforms |
+| Ctrl+Q | Close the editor |
+| Ctrl+A | Add a new input signal |
+| Ctrl+D | Delete the selected input signal |
+| Ctrl+Shift+D | Duplicate the selected input signal |
+| Ctrl+Up | Move selected signal up one position |
+| Ctrl+Down | Move selected signal down one position |
+| Ctrl+Z / Ctrl+Y | Undo / Redo |
+| Ctrl+F | Zoom full — reset zoom, centered at the cursor |
+
+#### Editing waveforms
+
+| Shortcut | Action |
+|---|---|
+| Shift + click | Add a transition edge at the clicked time |
+| a (hold) + click | Add a transition edge at the clicked time |
+| Ctrl + click edge | Delete the edge at the clicked position |
+| d (hold) + click edge | Delete the edge at the clicked position |
+| v (hold) + click segment | Open **Set Segment Value** for that segment |
+| t (hold) + click waveform | Invert all values of a 1-bit waveform |
+| Escape | Cancel the held **a**, **d**, **v**, or **t** action key |
+
+#### Zoom and pan
+
+| Shortcut | Action |
+|---|---|
+| Click + drag | Pan the waveform horizontally |
+| Ctrl + scroll up | Zoom in around the cursor |
+| Ctrl + scroll down | Zoom out around the cursor |
+
+#### Generating patterns
+
+| Shortcut | Action |
+|---|---|
+| (menu / toolbar / right-click) | Generate Counting Sequence… |
+| (menu / toolbar / right-click) | Set Repeating Pattern… |
+
+---
+
 ### Calling the Signal Editor
 
 From the Swift/TwosCmplt tree:
