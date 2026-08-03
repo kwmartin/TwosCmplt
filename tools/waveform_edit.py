@@ -352,7 +352,7 @@ class WaveformCanvas(QWidget):
         super().__init__()
         self.setMouseTracking(True)
         self.setFocusPolicy(Qt.StrongFocus)
-        self._last_period_patterns: dict[str, tuple[list[Segment], float]] = {}
+        self._last_period_patterns: dict[str, tuple[list[Segment], float, int]] = {}
 
         self.label_panel_width = 150
         self.right_margin = 20
@@ -789,17 +789,25 @@ class WaveformCanvas(QWidget):
         if pattern is None:
             return False
 
-        self._last_period_patterns[target.label_text] = pattern
-
-        period_segments, period_length = pattern
+        period_segments, period_length, delay_periods = pattern
         if period_length <= 0:
             return False
 
+        self._last_period_patterns[target.label_text] = (period_segments, period_length, delay_periods)
+
         self._push_undo()
         repeated: list[Segment] = []
+        init_val = _mask_to_nbits(period_segments[0].value if period_segments else 0, nbits)
+        delay_end = delay_periods * period_length
+
+        if delay_end > 0:
+            end = min(delay_end, self.finishTm)
+            if end > 0:
+                repeated.append(Segment(0.0, end, init_val))
+
         k = 0
-        while k * period_length < self.finishTm:
-            offset = k * period_length
+        while delay_end + k * period_length < self.finishTm:
+            offset = delay_end + k * period_length
             for s in period_segments:
                 start = offset + s.start
                 val = _mask_to_nbits(s.value, nbits)
@@ -2038,10 +2046,20 @@ class PeriodicPatternDialog(QDialog):
         self._spin.setValue(self.period_count)
         self._spin.valueChanged.connect(self._on_period_count_changed)
         top.addWidget(self._spin)
+
+        top.addWidget(QLabel("Pattern delay (CLK periods):"))
+        self._delay_spin = QSpinBox()
+        self._delay_spin.setRange(0, 256)
+        self._delay_spin.setValue(0)
+        self._delay_spin.setToolTip(
+            "Keep the initial value for this many clock periods before the first repeating period."
+        )
+        top.addWidget(self._delay_spin)
         layout.addLayout(top)
 
         info = QLabel(
-            "Edit one period below. The pattern will repeat to fill the simulation finish time."
+            "Edit one period below. The pattern will repeat to fill the simulation finish time.\n"
+            "If Pattern delay is non-zero, the initial value is held for that many clock periods first."
         )
         info.setWordWrap(True)
         info.setStyleSheet("color:#7a95b0; font-size:11px;")
@@ -2154,12 +2172,16 @@ class PeriodicPatternDialog(QDialog):
         if new_length != old_length:
             self.canvas.waves_changed.emit()
 
-    def get_pattern(self) -> tuple[list[Segment], float] | None:
-        """Return (one-period segments, period length) or None if no editable wave."""
+    def get_pattern(self) -> tuple[list[Segment], float, int] | None:
+        """Return (one-period segments, period length, delay_periods) or None if no editable wave."""
         for wave in self.canvas.waves:
             if isinstance(wave, DigitalWaveRow) and wave.editable:
                 self.canvas.normalize_segments(wave)
-                return [Segment(s.start, s.end, s.value) for s in wave.segments], self.canvas.finishTm
+                return (
+                    [Segment(s.start, s.end, s.value) for s in wave.segments],
+                    self.canvas.finishTm,
+                    self._delay_spin.value(),
+                )
         return None
 
 

@@ -153,8 +153,9 @@ Use **Waves → Generate Counting Sequence…** to create a counter-style input 
 #### Set Repeating Pattern
 
 1. Set **CLK periods per input period** (default `8`, range `1–256`). The x-axis updates immediately.
-2. Edit the period with the same gestures as the main editor.
-3. Click **OK** to tile the period from time `0` to `FinishTime`.
+2. Set **Pattern delay** (default `0`, range `0–256`). This many clock periods keep the signal at its initial value before the first repeating period begins. Use it when a reset or idle interval is needed at the start of the run.
+3. Edit the period with the same gestures as the main editor.
+4. Click **OK** to tile the period from time `0` to `FinishTime`.
 
 The default pattern is high for the first CLK period and low for the remaining CLK periods.
 
