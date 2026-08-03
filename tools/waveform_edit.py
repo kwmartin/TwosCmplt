@@ -352,6 +352,7 @@ class WaveformCanvas(QWidget):
         super().__init__()
         self.setMouseTracking(True)
         self.setFocusPolicy(Qt.StrongFocus)
+        self._last_period_patterns: dict[str, tuple[list[Segment], float]] = {}
 
         self.label_panel_width = 150
         self.right_margin = 20
@@ -775,11 +776,13 @@ class WaveformCanvas(QWidget):
 
         nbits = self._signal_nbits.get(target.label_text, target.nbits)
         target.nbits = nbits
+        last_pattern = self._last_period_patterns.get(target.label_text)
         dlg = PeriodicPatternDialog(
             target.label_text,
             nbits,
             self.finishTm,
             parent=parent or self.window(),
+            last_pattern=last_pattern,
         )
         if dlg.exec() != QDialog.Accepted:
             return False
@@ -787,6 +790,8 @@ class WaveformCanvas(QWidget):
         pattern = dlg.get_pattern()
         if pattern is None:
             return False
+
+        self._last_period_patterns[target.label_text] = pattern
 
         period_segments, period_length = pattern
         if period_length <= 0:
@@ -1226,7 +1231,7 @@ class WaveformCanvas(QWidget):
 
                 key_add_mode = self.current_action_key == "a"
                 key_del_mode = self.current_action_key == "d"
-                mod_add_mode = bool(event.modifiers() & Qt.AltModifier)
+                mod_add_mode = bool(event.modifiers() & (Qt.AltModifier | Qt.ShiftModifier))
                 mod_del_mode = bool(event.modifiers() & Qt.ControlModifier)
 
                 add_mode = key_add_mode or mod_add_mode
@@ -1992,6 +1997,7 @@ class PeriodicPatternDialog(QDialog):
         nbits: int,
         finish_tm: float,
         parent: QWidget | None = None,
+        last_pattern: tuple[list[Segment], float] | None = None,
     ):
         super().__init__(parent)
         self.setWindowTitle(f"Periodic Pattern — {signal_name}")
@@ -2001,6 +2007,7 @@ class PeriodicPatternDialog(QDialog):
         self.nbits = nbits
         self.sim_finish_tm = finish_tm
         self.period_count = self.DEFAULT_PERIOD_COUNT
+        self._last_pattern = last_pattern
 
         self._build_ui()
         self._reset_canvas_to_period(self.period_count)
@@ -2015,6 +2022,9 @@ class PeriodicPatternDialog(QDialog):
             "              border:1px solid #344454; padding:4px 14px; }"
             "QPushButton:hover { background:#2a3a50; }"
         )
+
+        close_shortcut = QShortcut(QKeySequence("Ctrl+W"), self)
+        close_shortcut.activated.connect(self.reject)
 
         layout = QVBoxLayout(self)
         layout.setSpacing(8)
@@ -2066,9 +2076,30 @@ class PeriodicPatternDialog(QDialog):
             Segment(1.0, float(period_count), 0),
         ]
 
+    def _scale_segments_to_length(
+        self, segments: list[Segment], old_length: float, new_length: float
+    ) -> list[Segment]:
+        if old_length <= 0 or new_length <= 0 or not segments:
+            return self._default_period_segments(int(new_length))
+        scale = new_length / old_length
+        scaled = [Segment(s.start * scale, s.end * scale, s.value) for s in segments]
+        if scaled[0].start > 0:
+            scaled.insert(0, Segment(0.0, scaled[0].start, scaled[0].value))
+        scaled[-1] = Segment(scaled[-1].start, new_length, scaled[-1].value)
+        return scaled
+
     def _reset_canvas_to_period(self, period_count: int):
         self.period_count = period_count
         period_length = float(period_count)
+
+        if self._last_pattern is not None:
+            last_segments, last_length = self._last_pattern
+            if last_length == period_length:
+                initial_segments = [Segment(s.start, s.end, s.value) for s in last_segments]
+            else:
+                initial_segments = self._scale_segments_to_length(last_segments, last_length, period_length)
+        else:
+            initial_segments = self._default_period_segments(period_count)
 
         self.canvas.constants_list = [["PER", 1.0]]
         self.canvas.constants_map = {"PER": 1.0}
@@ -2081,7 +2112,7 @@ class PeriodicPatternDialog(QDialog):
         self.canvas._preserved_nonclock_waves = [
             DigitalWaveRow(
                 self.signal_name,
-                self._default_period_segments(period_count),
+                initial_segments,
                 editable=True,
                 nbits=self.nbits,
             )
