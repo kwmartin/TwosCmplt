@@ -437,8 +437,6 @@ class WaveformCanvas(QWidget):
         self.clock_specs = [{"clkNm": "CLK", "initVal": 0, "per": "PER", "delay": 0}]
         self._preserved_nonclock_waves = [
             DigitalWaveRow("INIT", [Segment(0.0, 1.1, 1), Segment(1.1, self.finishTm, 0)], editable=True),
-            DigitalWaveRow("CNT", [Segment(0.0, 1.2, 0), Segment(1.2, 18.1, 1), Segment(18.1, self.finishTm, 0)], editable=True),
-            DigitalWaveRow("A", [Segment(0.0, self.finishTm, 0)], editable=True),
         ]
         self.rebuild_waves_from_specs()
 
