@@ -1,0 +1,98 @@
+module: TST_DES_3X2
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: '0'
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - D
+          - 0
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0
+      -   - D
+          - 1
+  - tm: 2000
+    vls:
+      -   - D
+          - 0
+  - tm: 3000
+    vls:
+      -   - D
+          - 1
+  - tm: 4000
+    vls:
+      -   - D
+          - 0
+  - tm: 5000
+    vls:
+      -   - D
+          - 1
+  - tm: 6000
+    vls:
+      -   - D
+          - 0
+  - tm: 7000
+    vls:
+      -   - D
+          - 1
+  - tm: 8000
+    vls:
+      -   - D
+          - 0
+  - tm: 9000
+    vls:
+      -   - D
+          - 1
+  - tm: 10000
+    vls:
+      -   - D
+          - 0
+  - tm: 11000
+    vls:
+      -   - D
+          - 1
+  - tm: 12000
+    vls:
+      -   - D
+          - 0
+  - tm: 13000
+    vls:
+      -   - D
+          - 1
+  - tm: 14000
+    vls:
+      -   - D
+          - 0
+  - tm: 15000
+    vls:
+      -   - D
+          - 1
+Signals:
+    CLK: 1
+    INIT: 1
+    D: 1
+Classifications:
+    CLK: clocks
+    INIT: resets
+    D: data_inputs
+    QP1: outputs
+    QN1: outputs
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
