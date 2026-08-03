@@ -11,7 +11,7 @@ wave_display.py <CircuitName> [--config /path/to/Config.yaml]
 wave_display.py --edit <CircuitName> [--config /path/to/Config.yaml] [--spec /path/to/spec.yml]
 ```
 
-The `--edit` mode opens only the editable waveform pane for a circuit, without requiring a simulation. It is the entry point used by the legacy `wave_edit.py` launcher and by the **Edit Sigs** button in `gen_verilog_tb.py`.
+The `--edit` mode opens only the editable waveform pane for a circuit, without requiring a simulation. It is the canonical entry point used by the legacy `wave_edit.py` launcher and by the **Edit Sigs** button in `gen_verilog_tb.py`. Since 9.4, all editing uses the same `wave_display.py` canvas, so behavior is identical whether you launch via `--edit`, from `wave_edit.py`, or from the Swift waveform viewer after a simulation.
 
 `Config.yaml` defaults to `../Config.yaml` relative to the script. The relevant keys are:
 
@@ -49,6 +49,8 @@ Each checkbox corresponds to a node in the currently selected sub-circuit. Check
 | **Remove** | Remove the checked nodes from the output display. |
 | **Remove All** | Clear the saved selection for the currently displayed sub-circuit. |
 
+> **Note on pipeline runs (9.5):** The first time you simulate a freshly-generated or modified Verilog netlist, the `verilogParse` pipeline (Verilog → AST → module dict → CircuitLib YAML) runs automatically. On subsequent runs the pipeline is skipped if neither the generated Verilog nor the parser scripts have changed, so opening the waveform editor or review dialog no longer causes redundant re-parsing.
+
 #### File Menu
 
 | Item | Shortcut | Action |
@@ -83,6 +85,7 @@ Editing operations:
 | Set segment value (multi-bit) | Hold **v** and click the segment, then enter a Python integer literal |
 | Invert a 1-bit waveform | Hold **t** and click the waveform |
 | Duplicate selected signal | **Ctrl+Shift+D** |
+| Set repeating pattern | **Wave → Set Repeating Pattern…** or **Repeat Pattern** button |
 | Undo / Redo | **Ctrl+Z** / **Ctrl+Y** |
 | Pan horizontally | Click and drag |
 | Zoom | Ctrl + scroll wheel (zooms around the cursor position) |
@@ -101,7 +104,7 @@ The bottom pane shows all simulation output signals: Clock signals, TimeSpcs inp
 
 **Removing from display**: Press **Ctrl+D** (or use Wave → Delete) to remove all selected waveforms from the output display. If multiple waveforms are selected, all are deleted at once. When waveforms are deleted, the corresponding node checkboxes in the Selector window are automatically unchecked. This does not modify the spec file.
 
-Bus signals (nbits > 1) are displayed in the format set by right-clicking the signal (Hex, Decimal, Signed Decimal, or Binary). Right-clicking a 1-bit signal has no effect.
+Bus signals (nbits > 1) are displayed in the format set by right-clicking the signal (Hex, Decimal, Signed Decimal, or Binary). Right-clicking an editable 1-bit or multi-bit signal shows the context menu, which includes **Set Repeating Pattern…**.
 
 #### Status Bar (bottom row)
 
@@ -135,6 +138,22 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 |---|---|
 | **Simulate** | Same as the Simulate button in the selector window. |
 | **Save Inputs** | Same as the Save button in the selector window — writes edited inputs and node selection to the spec file. |
+| **Repeat Pattern** | Open the periodic-pattern editor for the selected input signal. |
+
+#### Repeating / Periodic Input Patterns
+
+Use **Wave → Set Repeating Pattern…** or the **Repeat Pattern** button to create a tiled input waveform (9.3). The dialog is available only when a single editable digital input signal is selected.
+
+In the dialog:
+
+1. Set **CLK periods per input period** (default `8`, range `1–256`). The x-axis resizes immediately when you change this value.
+2. Edit the period with the same canvas gestures as the main editor:
+   - Add/remove edges (**Shift+click** or hold **a**/**d** + click).
+   - Set multi-bit segment values (**v** + click).
+   - Invert 1-bit waveforms (**t** + click).
+3. Click **OK** to tile the edited period from time `0` to `FinishTime`, replacing the selected signal's `TimeSpcs` entries.
+
+The default pattern is high (`1`) for the first CLK period and low (`0`) for the rest, which is convenient for pulsed reset or strobe-style inputs.
 
 #### File Menu
 
@@ -151,6 +170,7 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 | Move Up | Ctrl+Up | Move the selected output waveform(s) up one position. |
 | Move Down | Ctrl+Down | Move the selected output waveform(s) down one position. |
 | Delete | Ctrl+D | Remove all selected waveform(s) from the display and uncheck them in the Selector. |
+| Set Repeating Pattern… | | Open the periodic-pattern editor for the selected input signal. |
 | Go To… | Ctrl+G | Open a dialog to center both panes at a specified period number. |
 
 #### Zoom Menu
@@ -195,6 +215,7 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 | Ctrl+Up | Move selected waveform(s) up one position |
 | Ctrl+Down | Move selected waveform(s) down one position |
 | Ctrl+G | Go To… — center both panes at a specified period number |
+| (none) | Set Repeating Pattern… — open the periodic-pattern editor for the selected input signal |
 | Ctrl+F | Zoom Full — restore initial zoom, centered at the cursor |
 | Ctrl+0 | Pan to Start — scroll to time 0 |
 | Ctrl+B | Pan to Start (alternate binding) |
@@ -231,8 +252,10 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 | v (hold) + click segment | Open the **Set Segment Value** dialog for that segment |
 | t (hold) + click waveform | Invert all values of a 1-bit waveform |
 | Ctrl+Shift+D | Duplicate the selected signal |
+| (menu / button) | Set Repeating Pattern… — open the periodic-pattern editor |
 | Ctrl+Z / Ctrl+Y | Undo / Redo |
 | Escape | Cancel the held **a**, **d**, **v**, or **t** action key |
+| Right-click (editable wave) | Context menu: Set Repeating Pattern…, and Format (bus) |
 
 ---
 
@@ -274,13 +297,15 @@ TimeSpcs:
 
 1. **Start**: `wave_display.py TB_DVDR4` — builds, simulates, and loads the circuit.
 2. **Display**: Click **Display** to open the Waveform Display window. Input waveforms (CLK, INIT, etc.) appear in the top pane; simulation outputs appear in the bottom pane.
-3. **Edit inputs**: Modify transition edges in the top pane.
+3. **Edit inputs**: Modify transition edges in the top pane, or use **Wave → Set Repeating Pattern…** to build a tiled input (e.g. a serial bit stream or pulsed reset).
 4. **Re-simulate**: Click **Simulate** (in either window). The spec file is unchanged; the edited inputs are used for this run only. Output waveforms update in place, retaining any reordering.
 5. **Select more nodes**: In the selector window, navigate the tree, check additional nodes (use **Select All** to check everything except power rails), and click **Add**. New waveforms are appended to the bottom of the output pane.
 6. **Reorder**: Click a waveform label to select it; Shift+click to add more. Use Ctrl+Up / Ctrl+Down to move the selection. The order persists through subsequent simulations.
 7. **Navigate time**: Use Ctrl+G to jump to a specific period, Ctrl+F to zoom to the initial level centered at the cursor, or Ctrl+0 / Ctrl+B to pan to time 0. Pan with click-and-drag; zoom with Ctrl+scroll.
 8. **Measure timing**: Ctrl+Right-click to drop a marker; the status bar shows the delta from the marker to the live cursor as you move the mouse.
 9. **Save**: Click **Save** or **Save Inputs** to write the current input waveforms and node selection permanently to the spec file.
+
+> **Manual edits are protected (9.2):** Spec files that do not carry `generated: true` at the top level are treated as hand-edited. Auto-generation, the waveform editor's **Save**, and cross-simulator sync will merge `TimeSpcs` per signal rather than overwrite the whole file. To force a full regenerate, delete the specs file or run `gen_verilog_tb.py --force`.
 
 ---
 
