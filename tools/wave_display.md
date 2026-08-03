@@ -222,7 +222,7 @@ The default pattern is high (`1`) for the first CLK period and low (`0`) for the
 |---|---|
 | Ctrl+O | Open Circuit — browse for a circuit YAML file |
 | Ctrl+R | Reload — rebuild and re-simulate the current circuit |
-| Ctrl+Q | Quit the application |
+| Ctrl+W | Close the window |
 
 #### Waveform Display Window — Menus
 

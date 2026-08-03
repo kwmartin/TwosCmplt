@@ -15,7 +15,7 @@ Both programs are written in Python and require Python 3.12 or later. A `require
 | F1 | Open this help window |
 | Ctrl+O | Open a different base YAML spec file |
 | Ctrl+S | Save the current input waveforms |
-| Ctrl+Q | Close the editor |
+| Ctrl+W | Close the editor |
 | Ctrl+A | Add a new input signal |
 | Ctrl+D | Delete the selected input signal |
 | Ctrl+Shift+D | Duplicate the selected input signal |

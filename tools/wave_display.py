@@ -171,6 +171,7 @@ class DisplayWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
+        self.setAttribute(Qt.WA_DeleteOnClose)
         self.setWindowTitle("Waveform Display")
         self.resize(1280, 760)
         self._current_circuit: Optional[str] = None
@@ -641,6 +642,11 @@ class DisplayWindow(QMainWindow):
         if main is not None:
             main._save_wave_state()
             main.close()
+        for win in getattr(self, "_help_windows", []):
+            try:
+                win.close()
+            except Exception:
+                pass
         super().closeEvent(event)
 
 
@@ -650,6 +656,7 @@ class WaveDisplay(QMainWindow):
     def __init__(self, config_path: str, circuit_name: Optional[str] = None,
                  spec_path: Optional[str] = None):
         super().__init__()
+        self.setAttribute(Qt.WA_DeleteOnClose)
         self.setWindowTitle("Wave Display")
 
         self._cfg: dict                          = rd_yml(config_path) or {}
@@ -717,10 +724,10 @@ class WaveDisplay(QMainWindow):
         reload_act.triggered.connect(self._reload)
         file_menu.addAction(reload_act)
         file_menu.addSeparator()
-        quit_act  = QAction("Quit", self)
-        quit_act.setShortcut(QKeySequence("Ctrl+Q"))
-        quit_act.triggered.connect(self.close)
-        file_menu.addAction(quit_act)
+        close_act  = QAction("Close", self)
+        close_act.setShortcut(QKeySequence("Ctrl+W"))
+        close_act.triggered.connect(self.close)
+        file_menu.addAction(close_act)
 
         help_menu = self.menuBar().addMenu("Help")
         help_act  = QAction("Help", self)
@@ -839,8 +846,12 @@ class WaveDisplay(QMainWindow):
         if self._display_win is not None:
             self._display_win._main_win = None  # prevent re-entry
             self._display_win.close()
+        for win in getattr(self, "_help_windows", []):
+            try:
+                win.close()
+            except Exception:
+                pass
         super().closeEvent(event)
-        QApplication.instance().quit()
 
     def _rebuild(self, circuit_name: str):
         runner = self._cfg.get("fileNames", {}).get("simRunner", "")
@@ -1691,6 +1702,7 @@ def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optio
         sys.exit(1)
 
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(True)
     win = DisplayWindow()
     win.setWindowTitle(f"Waveform Editor — {circuit_name}")
     win.load_spec(spec_file, circuit_name)
@@ -1725,6 +1737,7 @@ def main():
         return
 
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(True)
     win = WaveDisplay(args.config, args.circuit, spec_path=args.spec)
     win.show()
     _center_on_screen(win)

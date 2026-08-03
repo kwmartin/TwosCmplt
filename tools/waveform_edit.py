@@ -2039,6 +2039,16 @@ class PeriodicPatternDialog(QDialog):
         info.setStyleSheet("color:#7a95b0; font-size:11px;")
         layout.addWidget(info)
 
+        shortcuts = QLabel(
+            "<b>Shortcuts:</b> Shift+click / a+click = add edge; "
+            "Ctrl+click edge / d+click edge = delete edge; "
+            "v+click segment = set value; t+click = invert; "
+            "Ctrl+wheel = zoom; drag = pan; Ctrl+F = full; Esc = cancel"
+        )
+        shortcuts.setWordWrap(True)
+        shortcuts.setStyleSheet("color:#9fb3c8; font-size:11px;")
+        layout.addWidget(shortcuts)
+
         self.canvas = WaveformCanvas()
         self.canvas.setMinimumHeight(220)
         layout.addWidget(self.canvas, stretch=1)
@@ -2248,6 +2258,7 @@ class GenerateCountingSequenceDialog(QDialog):
 class MainWindow(QMainWindow):
     def __init__(self, output_base_name: str | None = None):
         super().__init__()
+        self.setAttribute(Qt.WA_DeleteOnClose)
         self.output_base_name = output_base_name or "waveforms"
         self.setWindowTitle("PySide6 Waveform Edge Editor Example")
         self.resize(1280, 560)
@@ -2358,6 +2369,14 @@ class MainWindow(QMainWindow):
             ),
         )
 
+    def closeEvent(self, event):
+        for win in getattr(self, "_help_windows", []):
+            try:
+                win.close()
+            except Exception:
+                pass
+        super().closeEvent(event)
+
     def _build_menu(self):
         file_menu = self.menuBar().addMenu("File")
 
@@ -2372,7 +2391,7 @@ class MainWindow(QMainWindow):
         file_menu.addAction(self.save_action)
 
         self.close_action = QAction("Close", self)
-        self.close_action.setShortcut(QKeySequence("Ctrl+Q"))
+        self.close_action.setShortcut(QKeySequence("Ctrl+W"))
         self.close_action.triggered.connect(self.close)
         file_menu.addAction(self.close_action)
 
@@ -2467,6 +2486,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(True)
     output_base_name = sys.argv[1] if len(sys.argv) > 1 else "waveforms"
     w = MainWindow(output_base_name=output_base_name)
     w.show()

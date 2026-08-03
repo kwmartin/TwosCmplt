@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from PySide6.QtCore import Qt, QUrl
-from PySide6.QtGui import QAction, QDesktopServices, QFont, QTextOption
+from PySide6.QtGui import QAction, QDesktopServices, QFont, QKeySequence, QTextOption
 from PySide6.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -16,6 +16,7 @@ from PySide6.QtWidgets import (
 class MarkdownHelpWindow(QMainWindow):
     def __init__(self, md_path: str | Path, parent=None):
         super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
 
         self.md_path = Path(md_path).resolve()
         self.setWindowTitle("Waveform Input-Signal Editor – Help")
@@ -49,6 +50,12 @@ class MarkdownHelpWindow(QMainWindow):
         )
 
         self.setCentralWidget(self.viewer)
+
+        file_menu = self.menuBar().addMenu("File")
+        close_action = QAction("Close", self)
+        close_action.setShortcut(QKeySequence("Ctrl+W"))
+        close_action.triggered.connect(self.close)
+        file_menu.addAction(close_action)
 
         toolbar = QToolBar("Help", self)
         toolbar.setMovable(False)
@@ -101,6 +108,7 @@ if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(True)
     md_file = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("wv_edit.md")
     win = MarkdownHelpWindow(md_file)
     win.show()
