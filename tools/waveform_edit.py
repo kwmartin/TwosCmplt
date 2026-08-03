@@ -25,6 +25,7 @@ from PySide6.QtWidgets import (
     QMenu,
     QMessageBox,
     QPushButton,
+    QRadioButton,
     QScrollBar,
     QSpinBox,
     QStyle,
@@ -97,6 +98,12 @@ def _parse_bus_value(value) -> tuple[int, int]:
             nbits = 1
         return int(parts[1], 16), nbits
     return int(s, 0), 1
+
+
+def _mask_to_nbits(value: int, nbits: int) -> int:
+    if nbits <= 0:
+        return value
+    return int(value) & ((1 << nbits) - 1)
 
 
 def build_constants_map(constants_list) -> dict[str, float]:
@@ -369,6 +376,7 @@ class WaveformCanvas(QWidget):
         self.constants_map: dict[str, float] = {"PER": 1000.0}
         self.finish_time_expr = "32*PER"
         self.clock_specs: list[dict] = []
+        self._signal_nbits: dict[str, int] = {}
         self._preserved_nonclock_waves: list[DigitalWaveRow] = []
 
         common_wave_color = QColor("#7ee787")
@@ -550,9 +558,12 @@ class WaveformCanvas(QWidget):
             items = transitions_by_signal[sig_name]
             items.sort(key=lambda x: x[0])
 
+            nb = self._signal_nbits.get(sig_name, nbits_by_signal.get(sig_name, 1))
+
             deduped: list[tuple[float, int]] = []
             for tm, val in items:
                 tm = snap01(tm)
+                val = _mask_to_nbits(val, nb)
                 if deduped and abs(deduped[-1][0] - tm) < 1e-9:
                     deduped[-1] = (tm, val)
                 else:
@@ -577,8 +588,7 @@ class WaveformCanvas(QWidget):
             if not segments:
                 continue
 
-            nb = nbits_by_signal.get(sig_name, 1)
-            wave = DigitalWaveRow(sig_name, segments, editable=(nb == 1), nbits=nb)
+            wave = DigitalWaveRow(sig_name, segments, editable=True, nbits=nb)
             self.normalize_segments(wave)
             waves.append(wave)
 
@@ -763,9 +773,11 @@ class WaveformCanvas(QWidget):
             )
             return False
 
+        nbits = self._signal_nbits.get(target.label_text, target.nbits)
+        target.nbits = nbits
         dlg = PeriodicPatternDialog(
             target.label_text,
-            target.nbits,
+            nbits,
             self.finishTm,
             parent=parent or self.window(),
         )
@@ -787,15 +799,81 @@ class WaveformCanvas(QWidget):
             offset = k * period_length
             for s in period_segments:
                 start = offset + s.start
+                val = _mask_to_nbits(s.value, nbits)
                 end = offset + s.end
                 if start >= self.finishTm:
                     break
                 end = min(end, self.finishTm)
                 if end > start:
-                    repeated.append(Segment(start, end, s.value))
+                    repeated.append(Segment(start, end, val))
             k += 1
 
         target.segments = repeated
+        target.nbits = nbits
+        self.normalize_segments(target)
+        self.update()
+        self.refresh_label_layout()
+        self.waves_changed.emit()
+        return True
+
+    def generate_counting_sequence(self, parent: QWidget | None = None) -> bool:
+        """Open the counting-sequence generator and apply it to the selected wave.
+
+        Returns True if a sequence was applied, False otherwise.
+        """
+        target = self.selected_wave
+        if not isinstance(target, DigitalWaveRow) or not target.editable:
+            QMessageBox.information(
+                parent or self.window(),
+                "No editable wave selected",
+                "Select an editable input waveform before generating a counting sequence.",
+            )
+            return False
+
+        nbits = self._signal_nbits.get(target.label_text, target.nbits)
+        target.nbits = nbits
+        dlg = GenerateCountingSequenceDialog(
+            target.label_text,
+            nbits,
+            self.finishTm,
+            self.constants_map,
+            parent=parent or self.window(),
+        )
+        if dlg.exec() != QDialog.Accepted:
+            return False
+
+        result = dlg.get_sequence()
+        if result is None:
+            return False
+        sequence, merge = result
+        if not sequence:
+            return False
+
+        self._push_undo()
+
+        if merge:
+            # Build existing transitions and merge with generated ones
+            existing: dict[float, int] = {seg.start: seg.value for seg in target.segments}
+            for tm, val in sequence:
+                existing[tm] = _mask_to_nbits(val, nbits)
+            times = sorted(existing.keys())
+            new_segments: list[Segment] = []
+            for i, tm in enumerate(times):
+                start = tm
+                end = times[i + 1] if i + 1 < len(times) else self.finishTm
+                if end <= start:
+                    continue
+                new_segments.append(Segment(start, end, _mask_to_nbits(existing[tm], nbits)))
+            target.segments = new_segments
+        else:
+            # Replace with the generated sequence
+            target.segments = []
+            for i, (tm, val) in enumerate(sequence):
+                end = sequence[i + 1][0] if i + 1 < len(sequence) else self.finishTm
+                if end <= tm:
+                    continue
+                target.segments.append(Segment(tm, end, _mask_to_nbits(val, nbits)))
+
         self.normalize_segments(target)
         self.update()
         self.refresh_label_layout()
@@ -812,8 +890,9 @@ class WaveformCanvas(QWidget):
         )
         if dlg.exec() == QDialog.Accepted and dlg.result_value is not None:
             self._push_undo()
-            wave.segments[seg_index].value = dlg.result_value
-            wave.nbits = dlg.result_nbits
+            nbits = max(1, dlg.result_nbits)
+            wave.nbits = nbits
+            wave.segments[seg_index].value = _mask_to_nbits(dlg.result_value, nbits)
             self.clear_selection()
             self.normalize_segments(wave)
             self.update()
@@ -1481,6 +1560,8 @@ class WaveformCanvas(QWidget):
         self.select_wave(wave)
 
         menu = QMenu(self)
+        count_act = menu.addAction("Generate Counting Sequence…")
+        count_act.setData("count")
         repeat_act = menu.addAction("Set Repeating Pattern…")
         repeat_act.setData("repeat")
 
@@ -1501,7 +1582,9 @@ class WaveformCanvas(QWidget):
         if chosen is None:
             return
         data = chosen.data()
-        if data == "repeat":
+        if data == "count":
+            self.generate_counting_sequence()
+        elif data == "repeat":
             self.set_repeating_pattern()
         elif data in ("hex", "dec", "sdec", "bin"):
             wave.fmt = data
@@ -1758,20 +1841,19 @@ class WaveformCanvas(QWidget):
                 continue
             if not wave.segments:
                 continue
-            if wave.nbits > 1:
-                continue  # bus waves preserved from permanent spec via _merge_time_spcs
 
             self.normalize_segments(wave)
 
+            nb = self._signal_nbits.get(wave.label_text, wave.nbits)
             wave_list: list[tuple[float, tuple[str, int]]] = []
             first_seg = wave.segments[0]
-            wave_list.append((snap01(0.0), (wave.label_text, int(first_seg.value))))
+            wave_list.append((snap01(0.0), (wave.label_text, _mask_to_nbits(int(first_seg.value), nb))))
 
             for i in range(1, len(wave.segments)):
                 prev_seg = wave.segments[i - 1]
                 seg = wave.segments[i]
                 trans_time = snap01(prev_seg.end)
-                wave_list.append((trans_time, (wave.label_text, int(seg.value))))
+                wave_list.append((trans_time, (wave.label_text, _mask_to_nbits(int(seg.value), nb))))
 
             merge_wave_list(wave_list)
 
@@ -1847,6 +1929,14 @@ class WaveformCanvas(QWidget):
             _ = expr_to_period_units(clk.get("per", "PER"), constants_map)
             _ = expr_to_period_units(clk.get("delay", 0), constants_map)
 
+        # Authoritative per-signal bit widths from the specs file (e.g. from gen_verilog_tb.py).
+        signal_nbits: dict[str, int] = {}
+        for sig_name, nb in (dct.get("Signals") or {}).items():
+            try:
+                signal_nbits[str(sig_name)] = max(1, int(nb))
+            except (ValueError, TypeError):
+                continue
+
         self.base_yaml_path = yml_path
         self.save_dir = yml_path.parent
         self.base_data = dct
@@ -1855,6 +1945,7 @@ class WaveformCanvas(QWidget):
         self.finish_time_expr = finish_expr
         self.finishTm = finish_tm
         self.clock_specs = clock_specs
+        self._signal_nbits = signal_nbits
 
         reconstructed = self.reconstruct_digital_waves_from_timespcs(dct)
         if reconstructed:
@@ -2033,6 +2124,127 @@ class PeriodicPatternDialog(QDialog):
         return None
 
 
+class GenerateCountingSequenceDialog(QDialog):
+    """Dialog to generate a counting sequence for one input signal."""
+
+    def __init__(
+        self,
+        signal_name: str,
+        nbits: int,
+        finish_tm: float,
+        constants_map: dict[str, float],
+        parent: QWidget | None = None,
+    ):
+        super().__init__(parent)
+        self.setWindowTitle(f"Generate Counting Sequence — {signal_name}")
+        self.resize(420, 260)
+
+        self.signal_name = signal_name
+        self.nbits = max(1, nbits)
+        self.finish_tm = finish_tm
+        self.constants_map = constants_map
+
+        self._build_ui()
+
+    def _build_ui(self):
+        self.setStyleSheet(
+            "QDialog { background:#11161c; }"
+            "QLabel  { color:#d7e3f4; }"
+            "QSpinBox { background:#1b2430; color:#d7e3f4;"
+            "           border:1px solid #344454; padding:4px; }"
+            "QLineEdit { background:#1b2430; color:#d7e3f4;"
+            "            border:1px solid #344454; padding:4px; }"
+            "QPushButton { background:#1b2430; color:#d7e3f4;"
+            "              border:1px solid #344454; padding:4px 14px; }"
+            "QPushButton:hover { background:#2a3a50; }"
+        )
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(8)
+        layout.setContentsMargins(8, 8, 8, 8)
+
+        form = QHBoxLayout()
+        form.addWidget(QLabel(f"Signal: <b>{self.signal_name}</b> ({self.nbits} bit{'s' if self.nbits != 1 else ''})"))
+        form.addStretch()
+        layout.addLayout(form)
+
+        grid = QHBoxLayout()
+        grid.addWidget(QLabel("Start:"))
+        self._start_spin = QSpinBox()
+        self._start_spin.setRange(0, (1 << self.nbits) - 1)
+        self._start_spin.setValue(0)
+        grid.addWidget(self._start_spin)
+
+        grid.addWidget(QLabel("Final:"))
+        self._final_spin = QSpinBox()
+        self._final_spin.setRange(1, (1 << self.nbits))
+        self._final_spin.setValue(16 if self.nbits == 1 else (1 << self.nbits))
+        grid.addWidget(self._final_spin)
+        layout.addLayout(grid)
+
+        grid2 = QHBoxLayout()
+        grid2.addWidget(QLabel("Time increment:"))
+        self._time_edit = QLineEdit("1*PER")
+        grid2.addWidget(self._time_edit)
+
+        grid2.addWidget(QLabel("Value increment:"))
+        self._var_incr_spin = QSpinBox()
+        self._var_incr_spin.setRange(-(1 << self.nbits), (1 << self.nbits))
+        self._var_incr_spin.setValue(1)
+        grid2.addWidget(self._var_incr_spin)
+        layout.addLayout(grid2)
+
+        self._replace_rb = QRadioButton("Replace existing signal entries")
+        self._replace_rb.setChecked(True)
+        self._replace_rb.setStyleSheet("color:#d7e3f4;")
+        self._merge_rb = QRadioButton("Merge with existing entries (per-signal)")
+        self._merge_rb.setStyleSheet("color:#d7e3f4;")
+        layout.addWidget(self._replace_rb)
+        layout.addWidget(self._merge_rb)
+
+        info = QLabel(
+            "Values are masked to the signal width. The sequence repeats at the end if "
+            "Final exceeds the maximum representable value."
+        )
+        info.setWordWrap(True)
+        info.setStyleSheet("color:#7a95b0; font-size:11px;")
+        layout.addWidget(info)
+
+        btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        btn_box.accepted.connect(self.accept)
+        btn_box.rejected.connect(self.reject)
+        layout.addWidget(btn_box)
+
+    def get_sequence(self) -> tuple[list[tuple[float, int]], bool] | None:
+        """Return (list of (time, value), is_merge) or None if invalid."""
+        start = self._start_spin.value()
+        final = self._final_spin.value()
+        var_incr = self._var_incr_spin.value()
+        time_str = self._time_edit.text().strip() or "1*PER"
+        try:
+            time_incr_f = expr_to_abs_time(time_str, self.constants_map)
+        except ValueError:
+            QMessageBox.warning(self, "Invalid time increment",
+                                f"Could not parse '{time_str}'.")
+            return None
+        if time_incr_f <= 0:
+            QMessageBox.warning(self, "Invalid time increment",
+                                "Time increment must be positive.")
+            return None
+        if final <= start and var_incr > 0:
+            QMessageBox.warning(self, "Invalid range",
+                                "Final must be greater than Start when increment is positive.")
+            return None
+
+        sequence: list[tuple[float, int]] = []
+        for i in range(final):
+            tm = 0.0 if i == 0 else i * time_incr_f
+            val = _mask_to_nbits(start + i * var_incr, self.nbits)
+            sequence.append((snap01(tm), val))
+
+        return sequence, self._merge_rb.isChecked()
+
+
 class MainWindow(QMainWindow):
     def __init__(self, output_base_name: str | None = None):
         super().__init__()
@@ -2195,6 +2407,11 @@ class MainWindow(QMainWindow):
 
         waves_menu.addSeparator()
 
+        self.count_action = QAction("Generate Counting Sequence…", self)
+        self.count_action.triggered.connect(self.editor.generate_counting_sequence)
+        self.count_action.setEnabled(False)
+        waves_menu.addAction(self.count_action)
+
         self.repeat_action = QAction("Set Repeating Pattern…", self)
         self.repeat_action.triggered.connect(self.editor.set_repeating_pattern)
         self.repeat_action.setEnabled(False)
@@ -2222,8 +2439,10 @@ class MainWindow(QMainWindow):
         help_menu = self.menuBar().addMenu("Help")
 
         self.help_action = QAction("Help", self)
+        self.help_action.setShortcut(QKeySequence("F1"))
         self.help_action.triggered.connect(self.show_help)
         help_menu.addAction(self.help_action)
+        QShortcut(QKeySequence("F1"), self).activated.connect(self.show_help)
 
         self.about_action = QAction("About", self)
         self.about_action.triggered.connect(self.show_about)
@@ -2237,6 +2456,7 @@ class MainWindow(QMainWindow):
             is_digital and getattr(self.editor.selected_wave, "editable", False)
         )
         self.duplicate_action.setEnabled(is_digital)
+        self.count_action.setEnabled(is_editable_digital)
         self.repeat_action.setEnabled(is_editable_digital)
         self.move_up_action.setEnabled(is_digital)
         self.move_down_action.setEnabled(is_digital)

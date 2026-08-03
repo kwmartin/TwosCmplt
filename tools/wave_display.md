@@ -11,7 +11,7 @@ wave_display.py <CircuitName> [--config /path/to/Config.yaml]
 wave_display.py --edit <CircuitName> [--config /path/to/Config.yaml] [--spec /path/to/spec.yml]
 ```
 
-The `--edit` mode opens only the editable waveform pane for a circuit, without requiring a simulation. It is the canonical entry point used by the legacy `wave_edit.py` launcher and by the **Edit Sigs** button in `gen_verilog_tb.py`. Since 9.4, all editing uses the same `wave_display.py` canvas, so behavior is identical whether you launch via `--edit`, from `wave_edit.py`, or from the Swift waveform viewer after a simulation.
+The `--edit` mode opens only the editable waveform pane for a circuit, without requiring a simulation. It is the canonical entry point used by the legacy `wave_edit.py` launcher and by the **Edit Sigs** button in `gen_verilog_tb.py`. Since 9.4, all input editing uses the same `wave_display.py` canvas. The **Run Generated Settings** dialog (`gen_verilog_tb.py`) only sets port classifications and `t=0` initial values; every later input edit happens in this editor.
 
 `Config.yaml` defaults to `../Config.yaml` relative to the script. The relevant keys are:
 
@@ -85,6 +85,7 @@ Editing operations:
 | Set segment value (multi-bit) | Hold **v** and click the segment, then enter a Python integer literal |
 | Invert a 1-bit waveform | Hold **t** and click the waveform |
 | Duplicate selected signal | **Ctrl+Shift+D** |
+| Generate counting sequence | **Wave → Generate Counting Sequence…** or **Count Sequence** button |
 | Set repeating pattern | **Wave → Set Repeating Pattern…** or **Repeat Pattern** button |
 | Undo / Redo | **Ctrl+Z** / **Ctrl+Y** |
 | Pan horizontally | Click and drag |
@@ -104,7 +105,9 @@ The bottom pane shows all simulation output signals: Clock signals, TimeSpcs inp
 
 **Removing from display**: Press **Ctrl+D** (or use Wave → Delete) to remove all selected waveforms from the output display. If multiple waveforms are selected, all are deleted at once. When waveforms are deleted, the corresponding node checkboxes in the Selector window are automatically unchecked. This does not modify the spec file.
 
-Bus signals (nbits > 1) are displayed in the format set by right-clicking the signal (Hex, Decimal, Signed Decimal, or Binary). Right-clicking an editable 1-bit or multi-bit signal shows the context menu, which includes **Set Repeating Pattern…**.
+Bus signals (nbits > 1) are displayed in the format set by right-clicking the signal (Hex, Decimal, Signed Decimal, or Binary). Right-clicking an editable 1-bit or multi-bit signal shows the context menu, which includes **Generate Counting Sequence…** and **Set Repeating Pattern…**.
+
+All values written back to the spec file are masked to each signal's declared bit width. The width is taken from the `Signals` section of the YAML if present; otherwise it is inferred from the literal format. A 1-bit signal like `D` will therefore never store `0x2` or `0xf` — it stores `0` or `1`.
 
 #### Status Bar (bottom row)
 
@@ -138,7 +141,22 @@ The live cursor (dashed yellow) continues to move as you move the mouse. The del
 |---|---|
 | **Simulate** | Same as the Simulate button in the selector window. |
 | **Save Inputs** | Same as the Save button in the selector window — writes edited inputs and node selection to the spec file. |
+| **Count Sequence** | Open the counting-sequence generator for the selected input signal. |
 | **Repeat Pattern** | Open the periodic-pattern editor for the selected input signal. |
+
+#### Generating a Counting Sequence
+
+Use **Wave → Generate Counting Sequence…** or the **Count Sequence** button to create a counter-style input without leaving the editor. This replaces the old **Gen Inputs** dialog in `Run Generated Settings`.
+
+In the dialog:
+
+1. Choose the **Start** and **Final** values (e.g. `0` to `16`).
+2. Set the **Time increment** (e.g. `1*PER`).
+3. Set the **Value increment** (default `1`; can be negative).
+4. Choose **Replace** (overwrite the signal) or **Merge** (combine with existing transitions).
+5. Click **OK** to generate the flat `TimeSpcs` entries.
+
+All generated values are masked to the signal's declared bit width, so a 1-bit `D` counting from `0` to `16` produces `0, 1, 0, 1, …`, not `0x0, 0x1, 0x2, …`.
 
 #### Repeating / Periodic Input Patterns
 
@@ -170,6 +188,7 @@ The default pattern is high (`1`) for the first CLK period and low (`0`) for the
 | Move Up | Ctrl+Up | Move the selected output waveform(s) up one position. |
 | Move Down | Ctrl+Down | Move the selected output waveform(s) down one position. |
 | Delete | Ctrl+D | Remove all selected waveform(s) from the display and uncheck them in the Selector. |
+| Generate Counting Sequence… | | Open the counting-sequence generator for the selected input signal. |
 | Set Repeating Pattern… | | Open the periodic-pattern editor for the selected input signal. |
 | Go To… | Ctrl+G | Open a dialog to center both panes at a specified period number. |
 
@@ -215,8 +234,10 @@ The default pattern is high (`1`) for the first CLK period and low (`0`) for the
 | Ctrl+Up | Move selected waveform(s) up one position |
 | Ctrl+Down | Move selected waveform(s) down one position |
 | Ctrl+G | Go To… — center both panes at a specified period number |
+| (none) | Generate Counting Sequence… — open the counting-sequence generator |
 | (none) | Set Repeating Pattern… — open the periodic-pattern editor for the selected input signal |
 | Ctrl+F | Zoom Full — restore initial zoom, centered at the cursor |
+| F1 | Open this help window |
 | Ctrl+0 | Pan to Start — scroll to time 0 |
 | Ctrl+B | Pan to Start (alternate binding) |
 
@@ -252,10 +273,12 @@ The default pattern is high (`1`) for the first CLK period and low (`0`) for the
 | v (hold) + click segment | Open the **Set Segment Value** dialog for that segment |
 | t (hold) + click waveform | Invert all values of a 1-bit waveform |
 | Ctrl+Shift+D | Duplicate the selected signal |
+| (menu / button) | Generate Counting Sequence… — open the counting-sequence generator |
 | (menu / button) | Set Repeating Pattern… — open the periodic-pattern editor |
 | Ctrl+Z / Ctrl+Y | Undo / Redo |
 | Escape | Cancel the held **a**, **d**, **v**, or **t** action key |
-| Right-click (editable wave) | Context menu: Set Repeating Pattern…, and Format (bus) |
+| Right-click (editable wave) | Context menu: Generate Counting Sequence…, Set Repeating Pattern…, and Format (bus) |
+| F1 | Open this help window |
 
 ---
 
@@ -297,7 +320,7 @@ TimeSpcs:
 
 1. **Start**: `wave_display.py TB_DVDR4` — builds, simulates, and loads the circuit.
 2. **Display**: Click **Display** to open the Waveform Display window. Input waveforms (CLK, INIT, etc.) appear in the top pane; simulation outputs appear in the bottom pane.
-3. **Edit inputs**: Modify transition edges in the top pane, or use **Wave → Set Repeating Pattern…** to build a tiled input (e.g. a serial bit stream or pulsed reset).
+3. **Edit inputs**: Modify transition edges in the top pane, use **Wave → Generate Counting Sequence…** for counter-style inputs, or use **Wave → Set Repeating Pattern…** to build a tiled input (e.g. a serial bit stream or pulsed reset). These are the only places input waveforms are edited.
 4. **Re-simulate**: Click **Simulate** (in either window). The spec file is unchanged; the edited inputs are used for this run only. Output waveforms update in place, retaining any reordering.
 5. **Select more nodes**: In the selector window, navigate the tree, check additional nodes (use **Select All** to check everything except power rails), and click **Add**. New waveforms are appended to the bottom of the output pane.
 6. **Reorder**: Click a waveform label to select it; Shift+click to add more. Use Ctrl+Up / Ctrl+Down to move the selection. The order persists through subsequent simulations.

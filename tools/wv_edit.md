@@ -95,17 +95,29 @@ Edges snap to `0.1*PER`.
 
 ---
 
-### Repeating / Periodic Patterns
+### Generating and Repeating Patterns
 
-Use **Waves → Set Repeating Pattern…** (also available from the toolbar button and the right-click context menu) to create a tiled input signal (9.3).
+Use **Waves → Generate Counting Sequence…** to create a counter-style input (e.g. `0, 1, 2, …`), or **Waves → Set Repeating Pattern…** to create a tiled input signal. Both are available from the toolbar button and the right-click context menu.
 
-In the dialog:
+#### Generate Counting Sequence
+
+1. Choose **Start**, **Final**, **Time increment** (e.g. `1*PER`), and **Value increment**.
+2. Choose **Replace** to overwrite the selected signal, or **Merge** to combine with existing transitions.
+3. Values are masked to the signal's declared bit width. A 1-bit signal counting from `0` to `16` produces `0, 1, 0, 1, …`.
+
+#### Set Repeating Pattern
 
 1. Set **CLK periods per input period** (default `8`, range `1–256`). The x-axis updates immediately.
 2. Edit the period with the same gestures as the main editor.
 3. Click **OK** to tile the period from time `0` to `FinishTime`.
 
 The default pattern is high for the first CLK period and low for the remaining CLK periods.
+
+---
+
+### Help
+
+Press **F1** in any editor window to open this help file.
 
 ---
 

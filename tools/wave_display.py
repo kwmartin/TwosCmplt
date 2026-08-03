@@ -242,6 +242,11 @@ class DisplayWindow(QMainWindow):
 
         wave_menu.addSeparator()
 
+        count_act = QAction("Generate Counting Sequence…", self)
+        count_act.triggered.connect(self._on_generate_counting_sequence)
+        wave_menu.addAction(count_act)
+        self._count_menu_act = count_act
+
         repeat_act = QAction("Set Repeating Pattern…", self)
         repeat_act.triggered.connect(self._on_set_repeating_pattern)
         wave_menu.addAction(repeat_act)
@@ -275,8 +280,10 @@ class DisplayWindow(QMainWindow):
         help_menu = self.menuBar().addMenu("Help")
 
         help_act = QAction("Help", self)
+        help_act.setShortcut(QKeySequence("F1"))
         help_act.triggered.connect(self._show_help)
         help_menu.addAction(help_act)
+        QShortcut(QKeySequence("F1"), self).activated.connect(self._show_help)
 
         about_act = QAction("About", self)
         about_act.triggered.connect(self._show_about)
@@ -379,12 +386,17 @@ class DisplayWindow(QMainWindow):
             if p is not None:
                 self._center_at(p)
 
+    def _on_generate_counting_sequence(self):
+        self.editor.generate_counting_sequence(parent=self)
+
     def _on_set_repeating_pattern(self):
         self.editor.set_repeating_pattern(parent=self)
 
     def _update_repeat_enabled(self):
         sw = self.editor.selected_wave
         enabled = isinstance(sw, DigitalWaveRow) and getattr(sw, "editable", False)
+        self._count_btn.setEnabled(enabled)
+        self._count_menu_act.setEnabled(enabled)
         self._repeat_btn.setEnabled(enabled)
         self._repeat_menu_act.setEnabled(enabled)
 
@@ -484,6 +496,13 @@ class DisplayWindow(QMainWindow):
             b.setToolTip(tip)
             b.clicked.connect(sig)
             btn_row.addWidget(b)
+
+        count_btn = QPushButton("Count Sequence")
+        count_btn.setToolTip("Generate a counting sequence for the selected input signal")
+        count_btn.clicked.connect(self._on_generate_counting_sequence)
+        count_btn.setEnabled(False)
+        btn_row.addWidget(count_btn)
+        self._count_btn = count_btn
 
         repeat_btn = QPushButton("Repeat Pattern")
         repeat_btn.setToolTip("Make the selected input signal repeat a periodic pattern")
@@ -706,8 +725,10 @@ class WaveDisplay(QMainWindow):
 
         help_menu = self.menuBar().addMenu("Help")
         help_act  = QAction("Help", self)
+        help_act.setShortcut(QKeySequence("F1"))
         help_act.triggered.connect(self._show_help)
         help_menu.addAction(help_act)
+        QShortcut(QKeySequence("F1"), self).activated.connect(self._show_help)
         about_act = QAction("About", self)
         about_act.triggered.connect(self._show_about)
         help_menu.addAction(about_act)
