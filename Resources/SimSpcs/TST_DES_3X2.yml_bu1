@@ -1,19 +1,14 @@
 module: TST_DES_3X2
 generated: true
 Constants:
-    PER: 1000
+  -   - PER
+      - 1000
 Clock:
   - clkNm: CLK
     per: PER
+    initVal: 0
 FinishTime: 64*PER
 TimeSpcs:
-  - tm: 0
-    vls:
-      - [CLK, 0]
-      - [VDD, 1]
-      - [VSS, 0]
-      - [INIT, 1]
-      - [D, 0]
   - tm: '0'
     vls:
       -   - CLK
@@ -22,6 +17,12 @@ TimeSpcs:
           - 1
       -   - VSS
           - 0
+  - tm: 0
+    vls:
+      -   - INIT
+          - 1
+      -   - D
+          - 1
   - tm: 0.1*PER
     vls:
       -   - D
@@ -31,6 +32,54 @@ TimeSpcs:
       -   - INIT
           - 0
   - tm: 1.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 2*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 2.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 3.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 4*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 4.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 5.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 6*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 6.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 7.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 8*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 8.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 9.1*PER
     vls:
       -   - D
           - 1
@@ -94,14 +143,6 @@ TimeSpcs:
     vls:
       -   - D
           - 1
-  - tm: 2*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 2.1*PER
-    vls:
-      -   - D
-          - 0
   - tm: 20*PER
     vls:
       -   - D
@@ -159,10 +200,6 @@ TimeSpcs:
       -   - D
           - 0
   - tm: 29.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 3.1*PER
     vls:
       -   - D
           - 1
@@ -226,14 +263,6 @@ TimeSpcs:
     vls:
       -   - D
           - 1
-  - tm: 4*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 4.1*PER
-    vls:
-      -   - D
-          - 0
   - tm: 40*PER
     vls:
       -   - D
@@ -291,10 +320,6 @@ TimeSpcs:
       -   - D
           - 0
   - tm: 49.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 5.1*PER
     vls:
       -   - D
           - 1
@@ -358,14 +383,6 @@ TimeSpcs:
     vls:
       -   - D
           - 1
-  - tm: 6*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 6.1*PER
-    vls:
-      -   - D
-          - 0
   - tm: 60*PER
     vls:
       -   - D
@@ -387,22 +404,6 @@ TimeSpcs:
       -   - D
           - 0
   - tm: 63.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 7.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 8*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 8.1*PER
-    vls:
-      -   - D
-          - 0
-  - tm: 9.1*PER
     vls:
       -   - D
           - 1
