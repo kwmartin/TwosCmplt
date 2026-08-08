@@ -593,6 +593,78 @@ class WaveformCanvas(QWidget):
 
         return waves
 
+    def _check_redundant_timespcs(self, dct: dict) -> list[str]:
+        """Return warnings for TimeSpcs entries that do not change any signal value.
+
+        A redundant entry is one where every signal/value pair in the entry
+        matches the last known value for that signal at that time.  These
+        entries do not create visible edges in the waveform editor and can
+        make the spec appear to disagree with the display.
+        """
+        timespcs = dct.get("TimeSpcs", [])
+        if not isinstance(timespcs, list) or not timespcs:
+            return []
+
+        last_values: dict[str, int] = {}
+        warnings: list[str] = []
+
+        clock_names = {str(clk.get("clkNm")) for clk in self.clock_specs if isinstance(clk, dict)}
+
+        for entry in timespcs:
+            if isinstance(entry, (list, tuple)) and len(entry) == 2:
+                sig_name = str(entry[0])
+                if sig_name in clock_names:
+                    continue
+                try:
+                    sig_val, _ = _parse_bus_value(entry[1])
+                except (ValueError, TypeError):
+                    continue
+                if sig_name in last_values and last_values[sig_name] == sig_val:
+                    warnings.append(
+                        f"t=0: {sig_name}={sig_val} is redundant (same as previous value)"
+                    )
+                last_values[sig_name] = sig_val
+                continue
+
+            if not isinstance(entry, dict):
+                continue
+
+            tm_expr = entry.get("tm", 0)
+            try:
+                tm = expr_to_period_units(tm_expr, self.constants_map)
+            except Exception:
+                continue
+            tm = snap01(tm)
+
+            vls = entry.get("vls", [])
+            if not isinstance(vls, list):
+                continue
+
+            redundant_in_entry: list[str] = []
+            for item in vls:
+                if not isinstance(item, (list, tuple)) or len(item) != 2:
+                    continue
+                sig_name = str(item[0])
+                if sig_name in clock_names:
+                    continue
+                try:
+                    sig_val, _ = _parse_bus_value(item[1])
+                except (ValueError, TypeError):
+                    continue
+
+                if sig_name in last_values and last_values[sig_name] == sig_val:
+                    redundant_in_entry.append(f"{sig_name}={sig_val}")
+                last_values[sig_name] = sig_val
+
+            if redundant_in_entry:
+                warnings.append(
+                    f"t={tm_expr} ({tm:.2f} PER): "
+                    + ", ".join(redundant_in_entry)
+                    + " does not change any signal value"
+                )
+
+        return warnings
+
     def rebuild_waves_from_specs(self):
         self.waves = []
 
@@ -1137,6 +1209,18 @@ class WaveformCanvas(QWidget):
             wave.segments[i + 1].start = wave.segments[i].end
 
         wave.segments[-1].end = self.finishTm
+
+        # Collapse adjacent segments that have the same value.  This prevents
+        # the saved TimeSpcs from containing redundant entries (e.g. D=1 at
+        # 8*PER when D was already 1 since 6.1*PER) that do not produce a
+        # visible edge in the waveform editor.
+        merged: list[Segment] = []
+        for seg in wave.segments:
+            if merged and merged[-1].value == seg.value:
+                merged[-1].end = seg.end
+            else:
+                merged.append(seg)
+        wave.segments = merged
 
     def insert_edge(self, wave: DigitalWaveRow, t: float):
         if not wave.editable:
@@ -1963,6 +2047,12 @@ class WaveformCanvas(QWidget):
         self.finishTm = finish_tm
         self.clock_specs = clock_specs
         self._signal_nbits = signal_nbits
+
+        redundant_warnings = self._check_redundant_timespcs(dct)
+        if redundant_warnings:
+            print(f"[waveform_edit] {yml_path} has redundant TimeSpcs entries:")
+            for w in redundant_warnings:
+                print(f"  - {w}")
 
         reconstructed = self.reconstruct_digital_waves_from_timespcs(dct)
         if reconstructed:
