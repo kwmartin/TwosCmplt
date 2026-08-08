@@ -1,18 +1,19 @@
+module: TST_DR_3X2
+generated: true
 Constants:
-  -   - PER
-      - 1000
-FinishTime: 64*PER
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 16*PER
 TimeSpcs:
   - tm: 0
     vls:
-      -   - VDD
-          - 1
-      -   - VSS
-          - 0
-      -   - INIT
-          - 1
-      -   - D
-          - 0
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, 0]
   - tm: 0.1*PER
     vls:
       -   - INIT
@@ -141,12 +142,6 @@ TimeSpcs:
     vls:
       -   - D
           - 1
-Clock:
-  - clkNm: CLK
-    per: PER
-    initVal: 0
-module: TST_DR_3X2
-generated: true
 Signals:
     CLK: 1
     INIT: 1
