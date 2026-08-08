@@ -2024,6 +2024,25 @@ class PeriodicPatternDialog(QDialog):
         self._build_ui()
         self._reset_canvas_to_period(self.period_count)
 
+        # Track Shift key state across the whole dialog (not just when the
+        # canvas has focus) so Shift+click reliably inserts edges even if a
+        # QSpinBox or button has keyboard focus.
+        self._app = QApplication.instance()
+        if self._app is not None:
+            self._app.installEventFilter(self)
+
+    def eventFilter(self, watched, event):
+        if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Shift:
+            self.canvas._shift_held = True
+        elif event.type() == QEvent.KeyRelease and event.key() == Qt.Key_Shift:
+            self.canvas._shift_held = False
+        return super().eventFilter(watched, event)
+
+    def done(self, result):
+        if self._app is not None:
+            self._app.removeEventFilter(self)
+        super().done(result)
+
     def _build_ui(self):
         self.setStyleSheet(
             "QDialog { background:#11161c; }"
