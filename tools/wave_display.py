@@ -164,20 +164,26 @@ class _GoToDialog(QDialog):
 # ── Display window ────────────────────────────────────────────────────────────
 
 class DisplayWindow(QMainWindow):
-    """Waveform display: editable inputs at top, read-only simulation outputs below."""
+    """Waveform display: editable inputs at top, read-only simulation outputs below.
+
+    When ``edit_only`` is True, only the editable-input pane is shown; the
+    simulation-output viewer is omitted.  This is the mode used by --edit.
+    """
 
     simulate_clicked = Signal()
     save_clicked     = Signal()
 
-    def __init__(self):
+    def __init__(self, edit_only: bool = False):
         super().__init__()
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.setWindowTitle("Waveform Display")
+        self.edit_only = edit_only
+        self.setWindowTitle("Waveform Display" if not edit_only else "Waveform Editor")
         self.resize(1280, 760)
         self._current_circuit: Optional[str] = None
         self._cursor_t_pu: Optional[float] = None
         self._marker_t_pu: Optional[float] = None
         self._main_win = None
+        self.viewer: "Optional[ViewCanvas]" = None
         self._build_ui()
         self._build_menu()
 
@@ -187,11 +193,14 @@ class DisplayWindow(QMainWindow):
         save_act.setShortcut(QKeySequence("Ctrl+S"))
         save_act.triggered.connect(self.save_clicked)
         file_menu.addAction(save_act)
-        file_menu.addSeparator()
-        goto_sel_act = QAction("Goto Select", self)
-        goto_sel_act.setShortcut(QKeySequence("Ctrl+H"))
-        goto_sel_act.triggered.connect(self._goto_selector)
-        file_menu.addAction(goto_sel_act)
+
+        if not self.edit_only:
+            file_menu.addSeparator()
+            goto_sel_act = QAction("Goto Select", self)
+            goto_sel_act.setShortcut(QKeySequence("Ctrl+H"))
+            goto_sel_act.triggered.connect(self._goto_selector)
+            file_menu.addAction(goto_sel_act)
+
         file_menu.addSeparator()
         print_menu = file_menu.addMenu("Print")
         print_pdf_act = QAction("Print to PDF…\tCtrl+P", self)
@@ -228,17 +237,23 @@ class DisplayWindow(QMainWindow):
 
         up_act = QAction("Move Up", self)
         up_act.setShortcut(QKeySequence("Ctrl+Up"))
-        up_act.triggered.connect(self.viewer.move_selection_up)
+        up_act.triggered.connect(
+            self.editor.move_selection_up if self.edit_only else self.viewer.move_selection_up
+        )
         wave_menu.addAction(up_act)
 
         down_act = QAction("Move Down", self)
         down_act.setShortcut(QKeySequence("Ctrl+Down"))
-        down_act.triggered.connect(self.viewer.move_selection_down)
+        down_act.triggered.connect(
+            self.editor.move_selection_down if self.edit_only else self.viewer.move_selection_down
+        )
         wave_menu.addAction(down_act)
 
         delete_act = QAction("Delete", self)
         delete_act.setShortcut(QKeySequence("Ctrl+D"))
-        delete_act.triggered.connect(self.viewer.delete_selected_waves)
+        delete_act.triggered.connect(
+            self.editor.delete_selected_wave if self.edit_only else self.viewer.delete_selected_waves
+        )
         wave_menu.addAction(delete_act)
 
         wave_menu.addSeparator()
@@ -272,11 +287,12 @@ class DisplayWindow(QMainWindow):
         start_act.triggered.connect(self._pan_to_start)
         zoom_menu.addAction(start_act)
 
-        markers_menu = self.menuBar().addMenu("Markers")
+        if not self.edit_only:
+            markers_menu = self.menuBar().addMenu("Markers")
 
-        drop_act = QAction("Drop Marker\tCtrl+Right-Click", self)
-        drop_act.triggered.connect(self.viewer.drop_marker_at_cursor)
-        markers_menu.addAction(drop_act)
+            drop_act = QAction("Drop Marker\tCtrl+Right-Click", self)
+            drop_act.triggered.connect(self.viewer.drop_marker_at_cursor)
+            markers_menu.addAction(drop_act)
 
         help_menu = self.menuBar().addMenu("Help")
 
@@ -327,14 +343,17 @@ class DisplayWindow(QMainWindow):
         if not path.lower().endswith('.pdf'):
             path += '.pdf'
         editor_pix = self.editor._make_print_pixmap()
-        viewer_pix = self.viewer._make_print_pixmap()
-        w = max(editor_pix.width(), viewer_pix.width())
-        combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
-        combined.fill(Qt.white)
-        p = QPainter(combined)
-        p.drawPixmap(0, 0, editor_pix)
-        p.drawPixmap(0, editor_pix.height(), viewer_pix)
-        p.end()
+        if self.viewer is not None:
+            viewer_pix = self.viewer._make_print_pixmap()
+            w = max(editor_pix.width(), viewer_pix.width())
+            combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
+            combined.fill(Qt.white)
+            p = QPainter(combined)
+            p.drawPixmap(0, 0, editor_pix)
+            p.drawPixmap(0, editor_pix.height(), viewer_pix)
+            p.end()
+        else:
+            combined = editor_pix
         writer = QPdfWriter(path)
         layout = QPageLayout(
             QPageSize(QPageSize.PageSizeId.Letter),
@@ -355,14 +374,17 @@ class DisplayWindow(QMainWindow):
         from PySide6.QtPrintSupport import QPrinter, QPrintDialog
         from PySide6.QtGui import QPageLayout, QPainter, QPixmap
         editor_pix = self.editor._make_print_pixmap()
-        viewer_pix = self.viewer._make_print_pixmap()
-        w = max(editor_pix.width(), viewer_pix.width())
-        combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
-        combined.fill(Qt.white)
-        p = QPainter(combined)
-        p.drawPixmap(0, 0, editor_pix)
-        p.drawPixmap(0, editor_pix.height(), viewer_pix)
-        p.end()
+        if self.viewer is not None:
+            viewer_pix = self.viewer._make_print_pixmap()
+            w = max(editor_pix.width(), viewer_pix.width())
+            combined = QPixmap(w, editor_pix.height() + viewer_pix.height())
+            combined.fill(Qt.white)
+            p = QPainter(combined)
+            p.drawPixmap(0, 0, editor_pix)
+            p.drawPixmap(0, editor_pix.height(), viewer_pix)
+            p.end()
+        else:
+            combined = editor_pix
         printer = QPrinter(QPrinter.PrinterMode.HighResolution)
         printer.setPageOrientation(QPageLayout.Orientation.Landscape)
         if QPrintDialog(printer, self).exec() != QDialog.Accepted:
@@ -402,10 +424,14 @@ class DisplayWindow(QMainWindow):
 
     def _zoom_full(self):
         self.editor.zoom_full()
-        self.viewer.zoom_full()
+        if self.viewer is not None:
+            self.viewer.zoom_full()
 
     def _pan_to_start(self):
-        for canvas in (self.editor, self.viewer):
+        canvases = [self.editor]
+        if self.viewer is not None:
+            canvases.append(self.viewer)
+        for canvas in canvases:
             canvas.left_time = 0.0
             canvas.clamp_left_time()
             canvas.update_scrollbars()
@@ -413,7 +439,10 @@ class DisplayWindow(QMainWindow):
             canvas.update()
 
     def _center_at(self, period: float):
-        for canvas in (self.editor, self.viewer):
+        canvases = [self.editor]
+        if self.viewer is not None:
+            canvases.append(self.viewer)
+        for canvas in canvases:
             vis = canvas.visible_time_span()
             canvas.show_range(period - vis / 2, period + vis / 2)
 
@@ -424,7 +453,13 @@ class DisplayWindow(QMainWindow):
         self.editor.update()
 
     def _adjust_splitter(self):
-        """Size the top pane to fit editor content, capped at 30% of window height."""
+        """Size the top pane to fit editor content, capped at 30% of window height.
+
+        In edit-only mode there is no bottom pane, so the editor is allowed to
+        fill the window.
+        """
+        if self.edit_only:
+            return
         total = self._vsplit.height()
         if total <= 0:
             return
@@ -438,6 +473,8 @@ class DisplayWindow(QMainWindow):
 
     def resizeEvent(self, event):
         super().resizeEvent(event)
+        if self.edit_only:
+            return
         sizes = self._vsplit.sizes()
         if sizes and sizes[0] > int(0.30 * self.height()):
             self._adjust_splitter()
@@ -463,27 +500,33 @@ class DisplayWindow(QMainWindow):
         tv.addWidget(self.editor, stretch=1)
         vsplit.addWidget(top)
 
-        bot = QWidget()
-        bv = QVBoxLayout(bot)
-        bv.setContentsMargins(0, 0, 0, 0)
-        bv.setSpacing(2)
-        bot_lbl = QLabel("Waveforms")
-        bot_lbl.setFont(QFont("monospace", 9))
-        bv.addWidget(bot_lbl)
-        self.viewer = ViewCanvas()
-        bv.addWidget(self.viewer, stretch=1)
-        vsplit.addWidget(bot)
+        if not self.edit_only:
+            bot = QWidget()
+            bv = QVBoxLayout(bot)
+            bv.setContentsMargins(0, 0, 0, 0)
+            bv.setSpacing(2)
+            bot_lbl = QLabel("Waveforms")
+            bot_lbl.setFont(QFont("monospace", 9))
+            bv.addWidget(bot_lbl)
+            self.viewer = ViewCanvas()
+            bv.addWidget(self.viewer, stretch=1)
+            vsplit.addWidget(bot)
 
-        self.editor.view_changed.connect(self.viewer.apply_view)
-        self.viewer.view_changed.connect(self.editor.apply_view)
-        self.viewer.label_width_changed.connect(self._sync_label_width)
+            self.editor.view_changed.connect(self.viewer.apply_view)
+            self.viewer.view_changed.connect(self.editor.apply_view)
+            self.viewer.label_width_changed.connect(self._sync_label_width)
+            self.viewer.cursor_moved_pu.connect(self._on_cursor_pu)
+            self.viewer.marker_changed.connect(self._on_marker_changed)
+
         self.editor.cursor_moved_pu.connect(self._on_cursor_pu)
-        self.viewer.cursor_moved_pu.connect(self._on_cursor_pu)
-        self.viewer.marker_changed.connect(self._on_marker_changed)
 
-        vsplit.setStretchFactor(0, 0)  # top pane: fixed size
-        vsplit.setStretchFactor(1, 1)  # bottom pane: absorbs resize
-        vsplit.setSizes([240, 480])
+        if self.edit_only:
+            vsplit.setStretchFactor(0, 1)
+            vsplit.setSizes([self.height()])
+        else:
+            vsplit.setStretchFactor(0, 0)  # top pane: fixed size
+            vsplit.setStretchFactor(1, 1)  # bottom pane: absorbs resize
+            vsplit.setSizes([240, 480])
         self._vsplit = vsplit
         root_vbox.addWidget(vsplit, stretch=1)
 
@@ -540,7 +583,12 @@ class DisplayWindow(QMainWindow):
             traceback.print_exc()
 
     def load_outputs(self, signals: dict):
-        """Replace output waveforms, preserving any user-defined display order."""
+        """Replace output waveforms, preserving any user-defined display order.
+
+        No-op in edit-only mode because there is no output viewer.
+        """
+        if self.viewer is None:
+            return
         saved_order = [w.label_text for w in self.viewer.waves]
         self.viewer.load_signals(signals)
         # Extend viewer time range to match the spec's FinishTime so the display
@@ -642,7 +690,12 @@ class DisplayWindow(QMainWindow):
         wrt_yml(str(spcs_file), dst_data)
 
     def apply_viewer_order(self, names: List[str]):
-        """Reorder viewer waves to match a saved name list (best-effort)."""
+        """Reorder viewer waves to match a saved name list (best-effort).
+
+        No-op in edit-only mode because there is no output viewer.
+        """
+        if self.viewer is None:
+            return
         by_label = {w.label_text: w for w in self.viewer.waves}
         reordered = [by_label.pop(n) for n in names if n in by_label]
         reordered.extend(by_label.values())
@@ -1728,7 +1781,7 @@ def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optio
 
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(True)
-    win = DisplayWindow()
+    win = DisplayWindow(edit_only=True)
     win.setWindowTitle(f"Waveform Editor — {circuit_name}")
     win.load_spec(spec_file, circuit_name)
     win.simulate_clicked.connect(
