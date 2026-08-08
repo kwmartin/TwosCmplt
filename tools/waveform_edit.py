@@ -1237,7 +1237,13 @@ class WaveformCanvas(QWidget):
 
                 key_add_mode = self.current_action_key == "a"
                 key_del_mode = self.current_action_key == "d"
-                mod_add_mode = bool(event.modifiers() & (Qt.AltModifier | Qt.ShiftModifier))
+                # Use the same multi-source shift detection that wave selection uses
+                # so Shift+click inserts an edge even when event.modifiers() does not
+                # report Shift (e.g. focus/accelerator paths).
+                shift_add = (bool(QApplication.keyboardModifiers() & Qt.ShiftModifier)
+                             or bool(event.modifiers() & Qt.ShiftModifier)
+                             or self._shift_held)
+                mod_add_mode = bool(event.modifiers() & Qt.AltModifier) or shift_add
                 mod_del_mode = bool(event.modifiers() & Qt.ControlModifier)
 
                 add_mode = key_add_mode or mod_add_mode

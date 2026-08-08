@@ -210,15 +210,16 @@ modules:
         hashes:
             verilog: 2efceeebcc7d30f08099a071a1c68249438f0491257920a0230bb3cc4718dad3
     DG_DES_3X2:
-        verilog: /home/martin/.xschem/verilogParse/lib/std28_lib/diglib28_vl.v
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DES_3X2.v
         timestamps:
-            verilog: 1785670440.523157
-            ast: 1785671433.4338908
-            mod: 1785671445.3860483
-            circuit_lib: 1785671451.8391333
-            unl: 1785671451.8431332
+            verilog: 1786187879.645989
+            ast: 1786187950.816868
+            mod: 1786187953.1998975
+            circuit_lib: 1786187954.3159115
+            unl: 1786187954.3199115
         hashes:
-            verilog: 22c7709372c2a6a46d0e79d268d26b8621d35d2d33b8d30f5a196ce7a4a74dbc
+            verilog: 150aa4e92519c553de23ec4f00e07339d73a44feca8078c97effa948e1907f35
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
     TST_DES_3X2:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_DES_3X2/verilog/TST_DES_3X2.v
         timestamps:
@@ -239,3 +240,25 @@ modules:
             unl: 1785675577.1002
         hashes:
             verilog: 78fd23ff60366db43af7e25be230ceb19f496488a237715f38cb347f89a4fe5c
+    DG_DR_3X2:
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DR_3X2.v
+        timestamps:
+            verilog: 1786187879.644989
+            ast: 1786188026.1708071
+            mod: 1786188028.5078363
+            circuit_lib: 1786188029.61485
+            unl: 1786188029.6188502
+        hashes:
+            verilog: bbc1aff208097ca361b1050cd00c0cda21401308624999f1cb9a26b5600a3523
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
+    TST_DR_3X2:
+        verilog: /home/martin/.xschem/simulations/TST_DR_3X2.v
+        timestamps:
+            verilog: 1786192287.1157227
+            ast: 1786192322.7492197
+            mod: 1786192325.3292556
+            circuit_lib: 1786192326.4822717
+            unl: 1786192326.4872718
+        hashes:
+            verilog: 75570f4d385a43234ae80564e217f7a606893b28d157b4d662a4c124b0c782b9
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c

@@ -72,6 +72,13 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Reg
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -103,7 +110,7 @@ behav_blcks:
             value: 0
 -   kind: always
     onlyif:
-    -   edge: negedge
+    -   edge: all
         node: CLK
     -   edge: posedge
         node: R
@@ -142,7 +149,25 @@ behav_blcks:
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: STATE
+                    name: CLKB
                 rvalue:
                     kind: ident
-                    name: D
+                    name: CLK
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
+                        args:
+                        -   kind: ident
+                            name: CLK
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: STATE
+                    rvalue:
+                        kind: ident
+                        name: D
+

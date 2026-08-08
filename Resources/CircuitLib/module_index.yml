@@ -1,4 +1,4 @@
-generated: '2026-08-02T11:38:24+00:00'
+generated: '2026-08-08T11:18:34+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -11,8 +11,7 @@ modules:
     CAP:
         directory: verilogParse/ver_lib
         file_name: CAP.v
-        clean: false
-        stale_reason: 'missing: circuit_lib'
+        clean: true
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -115,8 +114,8 @@ modules:
         file_name: DG_DER_3X2.v
         clean: true
     DG_DES_3X2:
-        directory: verilogParse/lib/std28_lib
-        file_name: diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: DG_DES_3X2.v
         clean: true
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
