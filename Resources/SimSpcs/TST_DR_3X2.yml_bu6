@@ -1,0 +1,36 @@
+module: TST_DR_3X2
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [CLK, 0]
+      - [D, 0]
+  - tm: PER
+    vls:
+      - [INIT, 0]
+Signals:
+    CLK: 1
+    INIT: 1
+    D: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    D: data_inputs
+    QP1: outputs
+    QN1: outputs

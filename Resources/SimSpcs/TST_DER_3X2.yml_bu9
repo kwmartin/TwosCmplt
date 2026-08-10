@@ -1,7 +1,7 @@
-module: TST_DR_3X2
+module: TST_DER_3X2
 generated: true
 Constants:
-    PER: 1000
+    PER: 100
 Clock:
   - clkNm: CLK
     per: PER
@@ -14,33 +14,9 @@ TimeSpcs:
       - [VSS, 0]
       - [INIT, 1]
       - [D, 0]
-  - tm: 1*PER
+  - tm: 0.1*PER
     vls:
       -   - INIT
-          - 0
-  - tm: 10.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 11.1*PER
-    vls:
-      -   - D
-          - 0
-  - tm: 12.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 13.1*PER
-    vls:
-      -   - D
-          - 0
-  - tm: 14.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 15.1*PER
-    vls:
-      -   - D
           - 0
   - tm: 2.1*PER
     vls:
@@ -63,6 +39,30 @@ TimeSpcs:
       -   - D
           - 1
   - tm: 7.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 10.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 11.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 12.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 13.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 14.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 15.1*PER
     vls:
       -   - D
           - 0
