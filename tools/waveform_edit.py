@@ -398,7 +398,6 @@ class WaveformCanvas(QWidget):
         self.selected_wave: WaveRow | None = None
         self.selected_waves: set = set()
         self.current_action_key: str | None = None
-        self._shift_held = False
         self.next_added_signal_index = 0
 
         self.label_edits: dict[WaveRow, LabelEdit] = {}
@@ -846,13 +845,41 @@ class WaveformCanvas(QWidget):
 
         nbits = self._signal_nbits.get(target.label_text, target.nbits)
         target.nbits = nbits
-        last_pattern = self._last_period_patterns.get(target.label_text)
+        # Preserve the current initial value from the waveform editor so the
+        # repeating pattern (and any delay segment) starts from the same level.
+        current_init = _mask_to_nbits(
+            target.segments[0].value if target.segments else 0, nbits
+        )
+        # Initialize the periodic editor with the first 8 clock periods of the
+        # waveform editor's current waveform, so the dialog matches what the user
+        # already sees. Fall back to the stored pattern only if extraction fails.
+        period_count = PeriodicPatternDialog.DEFAULT_PERIOD_COUNT
+        period_length = float(period_count)
+        initial_segments: list[Segment] = []
+        for seg in target.segments:
+            if seg.end <= 0:
+                continue
+            if seg.start >= period_length:
+                break
+            start = max(0.0, seg.start)
+            end = min(period_length, seg.end)
+            initial_segments.append(Segment(start, end, _mask_to_nbits(seg.value, nbits)))
+        if initial_segments:
+            initial_segments[0] = Segment(0.0, initial_segments[0].end, initial_segments[0].value)
+            initial_segments[-1] = Segment(initial_segments[-1].start, period_length, initial_segments[-1].value)
+            last_pattern: tuple[list[Segment], float] | None = (initial_segments, period_length)
+        else:
+            # _last_period_patterns stores a 3-tuple (segments, length, delay_periods);
+            # PeriodicPatternDialog only needs the segments and length.
+            stored_pattern = self._last_period_patterns.get(target.label_text)
+            last_pattern = stored_pattern[:2] if stored_pattern is not None else None
         dlg = PeriodicPatternDialog(
             target.label_text,
             nbits,
             self.finishTm,
             parent=parent or self.window(),
             last_pattern=last_pattern,
+            initial_value=current_init,
         )
         if dlg.exec() != QDialog.Accepted:
             return False
@@ -869,7 +896,9 @@ class WaveformCanvas(QWidget):
 
         self._push_undo()
         repeated: list[Segment] = []
-        init_val = _mask_to_nbits(period_segments[0].value if period_segments else 0, nbits)
+        # Use the waveform editor's original initial value (passed in as current_init)
+        # so the repeated pattern starts at the same level the signal already had.
+        init_val = _mask_to_nbits(current_init, nbits)
         delay_end = delay_periods * period_length
 
         if delay_end > 0:
@@ -1308,9 +1337,7 @@ class WaveformCanvas(QWidget):
         wave = self.press_wave
 
         if wave is not None:
-            shift = (bool(QApplication.keyboardModifiers() & Qt.ShiftModifier)
-                     or bool(event.modifiers() & Qt.ShiftModifier)
-                     or self._shift_held)
+            shift = bool(event.modifiers() & Qt.ShiftModifier)
             if shift:
                 self.select_wave_add(wave)
             else:
@@ -1321,13 +1348,7 @@ class WaveformCanvas(QWidget):
 
                 key_add_mode = self.current_action_key == "a"
                 key_del_mode = self.current_action_key == "d"
-                # Use the same multi-source shift detection that wave selection uses
-                # so Shift+click inserts an edge even when event.modifiers() does not
-                # report Shift (e.g. focus/accelerator paths).
-                shift_add = (bool(QApplication.keyboardModifiers() & Qt.ShiftModifier)
-                             or bool(event.modifiers() & Qt.ShiftModifier)
-                             or self._shift_held)
-                mod_add_mode = bool(event.modifiers() & Qt.AltModifier) or shift_add
+                mod_add_mode = bool(event.modifiers() & Qt.AltModifier)
                 mod_del_mode = bool(event.modifiers() & Qt.ControlModifier)
 
                 add_mode = key_add_mode or mod_add_mode
@@ -1531,10 +1552,6 @@ class WaveformCanvas(QWidget):
             self.move_selection_down()
             event.accept()
             return
-        if event.key() == Qt.Key_Shift:
-            self._shift_held = True
-            event.accept()
-            return
         if event.key() == Qt.Key_A and not ctrl:
             self.current_action_key = "a"
             event.accept()
@@ -1562,10 +1579,6 @@ class WaveformCanvas(QWidget):
         # Ignore synthetic key-release events from X11 auto-repeat so held
         # action keys stay active until the key is physically released.
         if event.isAutoRepeat():
-            event.accept()
-            return
-        if event.key() == Qt.Key_Shift:
-            self._shift_held = False
             event.accept()
             return
         if event.key() == Qt.Key_A and self.current_action_key == "a":
@@ -2100,6 +2113,7 @@ class PeriodicPatternDialog(QDialog):
         finish_tm: float,
         parent: QWidget | None = None,
         last_pattern: tuple[list[Segment], float] | None = None,
+        initial_value: int = 0,
     ):
         super().__init__(parent)
         self.setWindowTitle(f"Periodic Pattern — {signal_name}")
@@ -2110,27 +2124,14 @@ class PeriodicPatternDialog(QDialog):
         self.sim_finish_tm = finish_tm
         self.period_count = self.DEFAULT_PERIOD_COUNT
         self._last_pattern = last_pattern
+        self._initial_value = _mask_to_nbits(initial_value, nbits)
 
         self._build_ui()
         self._reset_canvas_to_period(self.period_count)
 
-        # Track Shift key state across the whole dialog (not just when the
-        # canvas has focus) so Shift+click reliably inserts edges even if a
-        # QSpinBox or button has keyboard focus.
-        self._app = QApplication.instance()
-        if self._app is not None:
-            self._app.installEventFilter(self)
-
-    def eventFilter(self, watched, event):
-        if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Shift:
-            self.canvas._shift_held = True
-        elif event.type() == QEvent.KeyRelease and event.key() == Qt.Key_Shift:
-            self.canvas._shift_held = False
-        return super().eventFilter(watched, event)
+        self.canvas.setFocus(Qt.OtherFocusReason)
 
     def done(self, result):
-        if self._app is not None:
-            self._app.removeEventFilter(self)
         super().done(result)
 
     def _build_ui(self):
@@ -2181,7 +2182,7 @@ class PeriodicPatternDialog(QDialog):
         layout.addWidget(info)
 
         shortcuts = QLabel(
-            "<b>Shortcuts:</b> Shift+click / a+click = add edge; "
+            "<b>Shortcuts:</b> a+click = add edge; "
             "Ctrl+click edge / d+click edge = delete edge; "
             "v+click segment = set value; t+click = invert; "
             "Ctrl+wheel = zoom; drag = pan; Ctrl+F = full; Esc = cancel"
@@ -2202,9 +2203,12 @@ class PeriodicPatternDialog(QDialog):
         layout.addWidget(self._btn_box)
 
     def _default_period_segments(self, period_count: int) -> list[Segment]:
+        # Start from the waveform editor's current initial value so the repeating
+        # pattern matches the signal's existing starting level.
+        init_val = self._initial_value
         return [
-            Segment(0.0, 1.0, 1),
-            Segment(1.0, float(period_count), 0),
+            Segment(0.0, 1.0, init_val),
+            Segment(1.0, float(period_count), 1 - init_val),
         ]
 
     def _scale_segments_to_length(
@@ -2445,7 +2449,7 @@ class MainWindow(QMainWindow):
             "Drag waveform background to pan. "
             "Drag waveform edges to edit. "
             "Existing non-clock signals are reconstructed from TimeSpcs."
-            "For non-clock waveforms, <Alt>Click to add a change edge. <Ctl>Click on a change edge to remove it."
+            "For non-clock waveforms, a+click to add a change edge. <Ctl>Click on a change edge to remove it."
             "<Ctl>A to add new waveform. Click on existing waveform and <Ctl>D to delete waveform."
             "Clocks are defined in yaml file in same directory as application, and specified at start up."
         )

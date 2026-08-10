@@ -532,7 +532,6 @@ class DisplayWindow(QMainWindow):
 
         btn_row = QHBoxLayout()
         for label, tip, sig in [
-            ("Simulate",    "Run simulation with current input waveforms", self.simulate_clicked),
             ("Save Inputs", "Save edited input waveforms to the spec file", self.save_clicked),
         ]:
             b = QPushButton(label)
@@ -1784,13 +1783,6 @@ def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optio
     win = DisplayWindow(edit_only=True)
     win.setWindowTitle(f"Waveform Editor — {circuit_name}")
     win.load_spec(spec_file, circuit_name)
-    win.simulate_clicked.connect(
-        lambda: QMessageBox.information(
-            win,
-            "Simulate",
-            "To simulate, close this editor and run wave_display.py normally.",
-        )
-    )
     win.save_clicked.connect(lambda: win.save_editor_yaml(spec_file, cfg))
     win.show()
     _center_on_screen(win)

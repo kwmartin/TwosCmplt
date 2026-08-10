@@ -1,4 +1,4 @@
-generated: '2026-08-08T11:18:34+00:00'
+generated: '2026-08-09T13:49:00+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -55,8 +55,7 @@ modules:
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DG_AND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_3X1.v
@@ -368,8 +367,7 @@ modules:
     DG_LTCHSN_6X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_6X1.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DG_LTCHS_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_3X1.v
@@ -789,8 +787,7 @@ modules:
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v

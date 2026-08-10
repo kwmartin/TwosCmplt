@@ -1,0 +1,161 @@
+module: TST_DR_3X2
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 16*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, 0]
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+  - tm: 2.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 4.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 6.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 8.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 10.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 12.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 14.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 16.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 18.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 20.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 22.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 24.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 26.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 28.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 30.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 32.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 34.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 36.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 38.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 40.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 42.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 44.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 46.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 48.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 50.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 52.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 54.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 56.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 58.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 60.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 62.1*PER
+    vls:
+      -   - D
+          - 1
+Signals:
+    CLK: 1
+    INIT: 1
+    D: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    D: data_inputs
+    QP1: outputs
+    QN1: outputs

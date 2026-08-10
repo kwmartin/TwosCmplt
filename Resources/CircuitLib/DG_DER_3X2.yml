@@ -72,6 +72,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Reg
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -101,9 +115,16 @@ behav_blcks:
         rvalue:
             kind: int
             value: 0
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: ENBL
+        rvalue:
+            kind: int
+            value: 0
 -   kind: always
     onlyif:
-    -   edge: negedge
+    -   edge: all
         node: CLK
     -   edge: posedge
         node: R
@@ -125,6 +146,13 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 0
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: ENBL
+            rvalue:
+                kind: int
+                value: 0
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -139,10 +167,53 @@ behav_blcks:
                     kind: int
                     value: 0
             ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: STATE
-                rvalue:
-                    kind: ident
-                    name: D
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_expr
+                    oper: 'BNotEq:'
+                    args:
+                    -   kind: ident
+                        name: STATE
+                    -   kind: ident
+                        name: D
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: ENBL
+                    rvalue:
+                        kind: int
+                        value: 1
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: CLKB
+                    rvalue:
+                        kind: ident
+                        name: CLK
+                ifelse:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: ENBL
+                    rvalue:
+                        kind: int
+                        value: 0
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
+                        args:
+                        -   kind: ident
+                            name: CLK
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: STATE
+                    rvalue:
+                        kind: ident
+                        name: D
+

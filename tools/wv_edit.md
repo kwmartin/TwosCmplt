@@ -28,7 +28,6 @@ Both programs are written in Python and require Python 3.12 or later. A `require
 
 | Shortcut | Action |
 |---|---|
-| Shift + click | Add a transition edge at the clicked time |
 | a (hold) + click | Add a transition edge at the clicked time |
 | Ctrl + click edge | Delete the edge at the clicked position |
 | d (hold) + click edge | Delete the edge at the clicked position |
@@ -123,7 +122,7 @@ When the editor starts, clock signals are displayed first, followed by any input
 
 | Action | Method |
 |---|---|
-| Add a transition edge | **Shift + click**, or hold **a** and click |
+| Add a transition edge | Hold **a** and click |
 | Delete a transition edge | **Ctrl + click** the edge, or hold **d** and click the edge |
 | Set multi-bit segment value | Hold **v** and click the segment |
 | Invert a 1-bit waveform | Hold **t** and click the waveform |

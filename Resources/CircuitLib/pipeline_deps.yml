@@ -100,15 +100,16 @@ modules:
         hashes:
             verilog: 2a21f4a8e9950009012b2e77184923e4a330da2b3691353324662eddbb8f9e3a
     TST_DLUSR_7X2:
-        verilog: /home/martin/.xschem/simulations/TB_TST_DLUSR_7X2.v
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/TST_DLUSR_7X2.v
         timestamps:
-            verilog: 1780952607.9124312
-            ast: 1785434953.5348356
-            mod: 1785434957.1128638
-            circuit_lib: 1785434958.4328742
-            unl: 1785434958.4368742
+            verilog: 1785281631.139826
+            ast: 1786203068.5872173
+            mod: 1786203070.9022474
+            circuit_lib: 1786203072.019262
+            unl: 1786203072.022262
         hashes:
-            verilog: 9eef690473cc49ee7be4bf9cab646f77fbd525044d25dbc140f188084194cd54
+            verilog: 4a6561485ec4cdf5a1dc21c94c2d9717a1844d86eb895d68e921958d948f650b
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
     DLUSR_7X2:
         verilog: /home/martin/.xschem/ver_lib/DLUSR_7X2.v
         timestamps:
@@ -140,15 +141,16 @@ modules:
         hashes:
             verilog: 01023a338f15ab251a9c2886359330bbe22cbbd41f2490320a86a0e9b3f0e6b9
     DG_LTCHSN_6X1:
-        verilog: /home/martin/.xschem/proj_lib/diglib28_vl.v
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_LTCHSN_6X1.v
         timestamps:
-            verilog: 1779104622.4502368
-            ast: 1780688428.0083907
-            mod: 1780688438.5954723
-            circuit_lib: 1780688447.9795449
-            unl: 1780688447.9835448
+            verilog: 1786187879.644989
+            ast: 1786203063.7211542
+            mod: 1786203066.0601845
+            circuit_lib: 1786203067.1641989
+            unl: 1786203067.1681988
         hashes:
-            verilog: 66be31ed1add99ba835977ee557cb6f4a256b54b664d8fcd261540d49af99ad3
+            verilog: 31476717408440854b7d527c023f701393663d6c8927236e3dc3701265b051d5
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
     DLUX_7X2:
         verilog: /home/martin/.xschem/simulations/DLUX_7X2.v
         timestamps:
@@ -200,15 +202,16 @@ modules:
         hashes:
             verilog: 0a339a7ebba03b96c6bd8976b426153884e0a1b7869c26740e9c0aa6b02abc0e
     DG_AND2_2X1:
-        verilog: /home/martin/.xschem/verilogParse/lib/std28_lib/diglib28_vl.v
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_AND2_2X1.v
         timestamps:
-            verilog: 1785435941.9035726
-            ast: 1785448378.7626743
-            mod: 1785448385.753708
-            circuit_lib: 1785448402.1327872
-            unl: 1785448402.1347873
+            verilog: 1786187879.643989
+            ast: 1786203058.8620908
+            mod: 1786203061.2001214
+            circuit_lib: 1786203062.3071358
+            unl: 1786203062.3091357
         hashes:
-            verilog: 2efceeebcc7d30f08099a071a1c68249438f0491257920a0230bb3cc4718dad3
+            verilog: e7723d1c915dd799706e9168ef0a6c90290a1790ff1863671260bbe59d02ae11
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
     DG_DES_3X2:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DES_3X2.v
         timestamps:
@@ -261,4 +264,26 @@ modules:
             unl: 1786192326.4872718
         hashes:
             verilog: 75570f4d385a43234ae80564e217f7a606893b28d157b4d662a4c124b0c782b9
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
+    TST_DER_3X2:
+        verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_DER_3X2/verilog/TST_DER_3X2.v
+        timestamps:
+            verilog: 1786202322.0726907
+            ast: 1786202323.5277088
+            mod: 1786202326.1807415
+            circuit_lib: 1786202327.345756
+            unl: 1786202327.3507562
+        hashes:
+            verilog: 77b6fd5293819f2e5595727212459e74beab5ffe1deb61f695fd830575887ec0
+            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
+    DG_DER_3X2:
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DER_3X2.v
+        timestamps:
+            verilog: 1786211822.3420825
+            ast: 1786211823.7661016
+            mod: 1786211826.1041327
+            circuit_lib: 1786211827.1971474
+            unl: 1786211827.2031474
+        hashes:
+            verilog: 11ef50debad11e3d22207773d9584cb0c79d93999b43fc2d3b39e428b66ca6dd
             scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
