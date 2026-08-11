@@ -86,6 +86,14 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -115,10 +123,17 @@ behav_blcks:
         rvalue:
             kind: int
             value: 0
-    -   kind: noblckst
+    -   kind: blckst
         lvalue:
             kind: ident
             name: ENBL
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
         rvalue:
             kind: int
             value: 0
@@ -191,6 +206,28 @@ behav_blcks:
                     rvalue:
                         kind: ident
                         name: CLK
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_unary
+                        arg:
+                            kind: uexpr
+                            oper: 'Ulnot:'
+                            args:
+                            -   kind: ident
+                                name: CLK
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: chngs
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: ident
+                                name: chngs
+                            -   kind: int
+                                value: 1
                 ifelse:
                 -   kind: noblckst
                     lvalue:
