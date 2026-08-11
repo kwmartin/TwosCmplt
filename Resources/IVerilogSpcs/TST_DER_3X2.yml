@@ -18,19 +18,11 @@ TimeSpcs:
     vls:
       -   - INIT
           - 0
-  - tm: 11.1*PER
+  - tm: 1.1*PER
     vls:
       -   - D
           - 1
-  - tm: 12.1*PER
-    vls:
-      -   - D
-          - 0
-  - tm: 13.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 14.1*PER
+  - tm: 2.1*PER
     vls:
       -   - D
           - 0
@@ -50,15 +42,39 @@ TimeSpcs:
     vls:
       -   - D
           - 0
+  - tm: 9.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 10.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 11.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 12.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 13.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 14.1*PER
+    vls:
+      -   - D
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    D: 1
 SaveNds:
   - name: QP1
     format: b
   - name: QN1
     format: b
-Signals:
-    CLK: 1
-    INIT: 1
-    D: 1
 Classifications:
     CLK: clocks
     VDD: power

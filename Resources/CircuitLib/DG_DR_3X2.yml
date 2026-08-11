@@ -79,6 +79,14 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -105,6 +113,13 @@ behav_blcks:
         lvalue:
             kind: ident
             name: STATE
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
         rvalue:
             kind: int
             value: 0
@@ -163,11 +178,33 @@ behav_blcks:
                         -   kind: ident
                             name: CLK
                 iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: STATE
-                    rvalue:
-                        kind: ident
-                        name: D
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BNotEq:'
+                        args:
+                        -   kind: ident
+                            name: STATE
+                        -   kind: ident
+                            name: D
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: chngs
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: ident
+                                name: chngs
+                            -   kind: int
+                                value: 1
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: STATE
+                        rvalue:
+                            kind: ident
+                            name: D
 

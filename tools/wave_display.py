@@ -539,6 +539,11 @@ class DisplayWindow(QMainWindow):
             b.clicked.connect(sig)
             btn_row.addWidget(b)
 
+        close_btn = QPushButton("Close")
+        close_btn.setToolTip("Close the window without saving (Ctrl+W)")
+        close_btn.clicked.connect(self.close)
+        btn_row.addWidget(close_btn)
+
         count_btn = QPushButton("Count Sequence")
         count_btn.setToolTip("Generate a counting sequence for the selected input signal")
         count_btn.clicked.connect(self._on_generate_counting_sequence)
@@ -1760,7 +1765,8 @@ class WaveDisplay(QMainWindow):
 
 # ── Standalone editor entry point ─────────────────────────────────────────────
 
-def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optional[str] = None):
+def _run_standalone_editor(config_path: str, circuit_name: str,
+                           spec_path: Optional[str] = None):
     """Open only the editable waveform pane for a circuit, without simulating."""
     cfg = rd_yml(config_path) or {}
     if spec_path:
@@ -1783,7 +1789,12 @@ def _run_standalone_editor(config_path: str, circuit_name: str, spec_path: Optio
     win = DisplayWindow(edit_only=True)
     win.setWindowTitle(f"Waveform Editor — {circuit_name}")
     win.load_spec(spec_file, circuit_name)
-    win.save_clicked.connect(lambda: win.save_editor_yaml(spec_file, cfg))
+
+    def _on_save():
+        win.save_editor_yaml(spec_file, cfg)
+        win.close()
+
+    win.save_clicked.connect(_on_save)
     win.show()
     _center_on_screen(win)
     sys.exit(app.exec())
