@@ -18,54 +18,54 @@ TimeSpcs:
     vls:
       -   - INIT
           - 0
-  - tm: 1.1*PER
-    vls:
-      -   - D
-          - 1
   - tm: 10.1*PER
     vls:
       -   - D
-          - 0
+          - 1
   - tm: 11.1*PER
     vls:
       -   - D
-          - 1
+          - 0
   - tm: 12.1*PER
     vls:
       -   - D
-          - 0
+          - 1
   - tm: 13.1*PER
     vls:
       -   - D
-          - 1
+          - 0
   - tm: 14.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 15.1*PER
     vls:
       -   - D
           - 0
   - tm: 2.1*PER
     vls:
       -   - D
-          - 0
+          - 1
   - tm: 3.1*PER
     vls:
       -   - D
-          - 1
+          - 0
   - tm: 4.1*PER
     vls:
       -   - D
-          - 0
+          - 1
   - tm: 5.1*PER
     vls:
       -   - D
-          - 1
+          - 0
   - tm: 6.1*PER
     vls:
       -   - D
-          - 0
-  - tm: 9.1*PER
+          - 1
+  - tm: 7.1*PER
     vls:
       -   - D
-          - 1
+          - 0
 Signals:
     CLK: 1
     INIT: 1

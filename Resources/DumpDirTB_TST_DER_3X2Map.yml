@@ -1,0 +1,91 @@
+TB_TST_DER_3X2:
+    instances:
+      - circIndxs:
+          - 0
+        name: TB_TST_DER_3X2
+    nodes:
+      - QP1
+      - QN1
+      - CLK
+      - VDD
+      - VSS
+      - INIT
+      - D
+      - name: dsplyFile
+        nbits: 32
+      - name: n
+        nbits: 32
+TST_DER_3X2:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+        name: TST_DER_3X2
+    nodes:
+      - QP1
+      - QN1
+      - CLK
+      - VDD
+      - VSS
+      - INIT
+      - D
+      - QN2
+      - QP2
+DG_INV2_1X1:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+          - 0
+        name: INV_IDL1
+      - circIndxs:
+          - 0
+          - 0
+          - 2
+        name: INV_IDL2
+    nodes:
+      - IN
+      - OUT
+      - VDD
+      - VSS
+      - name: circuit
+        nbits: 40
+CAP:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+          - 1
+        name: CLD1
+      - circIndxs:
+          - 0
+          - 0
+          - 3
+        name: CLD2
+    nodes:
+      - P
+      - N
+      - VDD
+      - VSS
+      - name: circuit
+        nbits: 40
+      - name: value
+        nbits: 16
+DG_DER_3X2:
+    instances:
+      - circIndxs:
+          - 0
+          - 0
+          - 4
+        name: DE1
+    nodes:
+      - D
+      - R
+      - CLK
+      - QP
+      - QN
+      - VDD
+      - VSS
+      - STATE
+      - ENBL
+      - CLKB
