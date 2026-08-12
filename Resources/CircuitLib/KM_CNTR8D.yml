@@ -1,0 +1,290 @@
+kind: verilog
+module: KM_CNTR8D
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: LD
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+decls:
+-   -   kind: Wire
+        name: LD_N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: COUT0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: COUT1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: CNTR0
+    module: KM_CNTR4E
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: COUT0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: CN
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: LD
+    -   port: None
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: QP
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CNTR1
+    module: KM_CNTR4E
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: COUT0
+    -   port: None
+        node:
+            kind: ident
+            name: COUT1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: CN
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: LD
+    -   port: None
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: slice
+            name: QP
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NAND1
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: COUT0
+    -   port: None
+        node:
+            kind: ident
+            name: COUT1
+    -   port: None
+        node:
+            kind: ident
+            name: LD_N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV1
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: LD_N
+    -   port: None
+        node:
+            kind: ident
+            name: LD
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: S2D2
+    module: DG_SNGL2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

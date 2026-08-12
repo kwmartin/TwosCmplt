@@ -1,4 +1,4 @@
-generated: '2026-08-11T23:16:03+00:00'
+generated: '2026-08-12T12:12:08+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -644,6 +644,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CAPN.v
         clean: true
+    KM_CNTR4E:
+        directory: verilogParse/ver_lib
+        file_name: KM_CNTR4E.v
+        clean: true
+    KM_CNTR8D:
+        directory: verilogParse/ver_lib
+        file_name: KM_CNTR8D.v
+        clean: true
     KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
@@ -783,6 +791,10 @@ modules:
     TFF:
         directory: verilogParse/ver_lib
         file_name: TFF.v
+        clean: true
+    TST_CNTR8D:
+        directory: verilogParse/ver_lib
+        file_name: TST_CNTR8D.v
         clean: true
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
