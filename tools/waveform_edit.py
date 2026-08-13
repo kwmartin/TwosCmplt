@@ -2,10 +2,7 @@ from __future__ import annotations
 
 import copy
 import math
-import re
-import string
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 
 from PySide6.QtCore import QEvent, QPoint, QPointF, QRectF, Qt, Signal
@@ -37,42 +34,34 @@ from PySide6.QtWidgets import (
 from help_viewer import MarkdownHelpWindow
 from lib.glbls import *
 
+# SimLib/lib is inserted as a bare directory (not as a `lib` package) so its
+# modules resolve as top-level names -- must not collide with this file's
+# own `lib` package (imported just above for lib.glbls).
+_SIMLIB_LIB = '/home/martin/IC_Design/Testbenches/NgSpice/SimLib/lib'
+if _SIMLIB_LIB not in sys.path:
+    sys.path.insert(0, _SIMLIB_LIB)
+
+from wave_data_model import (
+    Segment,
+    snap01,
+    fmt_tm_expr,
+    alpha_name_from_index,
+    build_constants_map,
+    expr_to_abs_time,
+    expr_to_period_units,
+    WaveRow,
+    ClockWaveRow,
+    DigitalWaveRow,
+)
+from wave_reorder import move_block_up, move_block_down
+from wave_duplicate import duplicate_digital_row
+from wave_undo import UndoStack
+
 SAVE_LOCATION = "../Resources/SimSpcs"
 
 LEFT = 0
 RIGHT = 1
 NO_HANDLE = -1
-
-
-@dataclass
-class Segment:
-    start: float
-    end: float
-    value: int
-
-
-def alpha_name_from_index(idx: int) -> str:
-    letters = string.ascii_uppercase
-    result = ""
-    while True:
-        result = letters[idx % 26] + result
-        idx = idx // 26 - 1
-        if idx < 0:
-            break
-    return result
-
-
-def snap01(t: float) -> float:
-    return round(t * 10.0) / 10.0
-
-
-def fmt_tm_expr(t: float, per_name: str = "PER") -> int | str:
-    t = snap01(t)
-    if abs(t) < 1e-12:
-        return 0
-    if abs(t - round(t)) < 1e-9:
-        return f"{int(round(t))}*{per_name}"
-    return f"{t:.1f}*{per_name}"
 
 
 def _parse_int_value(value) -> int:
@@ -106,55 +95,18 @@ def _mask_to_nbits(value: int, nbits: int) -> int:
     return int(value) & ((1 << nbits) - 1)
 
 
-def build_constants_map(constants_list) -> dict[str, float]:
-    constants_map: dict[str, float] = {}
-    for item in constants_list or []:
-        if isinstance(item, (list, tuple)) and len(item) == 2:
-            nm, val = item
-            if isinstance(val, (int, float)):
-                constants_map[str(nm)] = float(val)
-    return constants_map
-
-
-def expr_to_abs_time(value, constants: dict[str, float]) -> float:
-    if isinstance(value, (int, float)):
-        return float(value)
-
-    s = str(value).strip()
-    if s == "":
-        raise ValueError("empty expression")
-
-    if s in constants:
-        return float(constants[s])
-
-    if re.fullmatch(r"[+-]?\d+(\.\d+)?", s):
-        return float(s)
-
-    m = re.fullmatch(r"([+-]?\d+(\.\d+)?)\s*\*\s*([A-Za-z_]\w*)", s)
-    if m:
-        mult = float(m.group(1))
-        name = m.group(3)
-        if name not in constants:
-            raise ValueError(f"unknown constant '{name}' in expression '{s}'")
-        return mult * float(constants[name])
-
-    raise ValueError(f"unsupported expression '{s}'")
-
-
-def expr_to_period_units(value, constants: dict[str, float]) -> float:
-    per_val = float(constants["PER"])
-    abs_val = expr_to_abs_time(value, constants)
-    return abs_val / per_val
-
-
 class LabelEdit(QLineEdit):
     focused = Signal(object)
 
-    def __init__(self, wave: "WaveRow", parent=None):
+    def __init__(self, wave: "WaveRow", canvas: "WaveformCanvas", parent=None):
         super().__init__(parent)
         self.wave = wave
+        self.canvas = canvas
         self.setText(wave.label_text)
-        self.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        # Left-aligned so the hierarchy reads naturally start-to-end and, if
+        # the column is too narrow, the (less useful) tail gets clipped
+        # rather than the head.
+        self.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
         self.textChanged.connect(self._on_text_changed)
         self._set_normal_style()
 
@@ -164,6 +116,9 @@ class LabelEdit(QLineEdit):
     def focusInEvent(self, event):
         self.focused.emit(self.wave)
         super().focusInEvent(event)
+
+    def contextMenuEvent(self, event: QContextMenuEvent):
+        self.canvas.show_label_context_menu(self.wave, event.globalPos())
 
     def _set_normal_style(self):
         self.setStyleSheet(
@@ -292,55 +247,6 @@ class ValueEditDialog(QDialog):
         return max(1, val.bit_length())
 
 
-class WaveRow:
-    def __init__(self, label_text: str):
-        self.label_text = label_text
-
-
-class ClockWaveRow(WaveRow):
-    def __init__(self, label_text: str = "CLK"):
-        super().__init__(label_text)
-        self.start_high = False
-        self.per_expr = "PER"
-        self.delay_expr = 0
-        self.period = 1.0
-        self.delay = 0.0
-
-    def value_for_time(self, t: float) -> int:
-        init_val = 1 if self.start_high else 0
-
-        if t < self.delay:
-            return init_val
-
-        local_t = t - self.delay
-        if self.period <= 0:
-            return init_val
-
-        phase = local_t % self.period
-        if phase < (0.5 * self.period):
-            return init_val
-        return 1 - init_val
-
-    def toggle_start_value(self):
-        self.start_high = not self.start_high
-
-
-class DigitalWaveRow(WaveRow):
-    def __init__(self, label_text: str, segments: list[Segment], editable: bool,
-                 nbits: int = 1):
-        super().__init__(label_text)
-        self.segments = segments
-        self.editable = editable
-        self.nbits = nbits
-        self.fmt: str = "hex"
-
-    def toggle_start_value(self):
-        if self.nbits > 1:
-            return
-        for seg in self.segments:
-            seg.value = 1 - seg.value
-
-
 class WaveformCanvas(QWidget):
     selection_changed = Signal()
     waves_changed = Signal()
@@ -411,8 +317,7 @@ class WaveformCanvas(QWidget):
         self.click_drag_threshold = 6
         self._syncing: bool = False
 
-        self._undo_stack: list = []
-        self._redo_stack: list = []
+        self._undo_stack = UndoStack(self._snapshot, self._restore_snapshot)
 
         self.hbar = QScrollBar(Qt.Horizontal, self)
         self.vbar = QScrollBar(Qt.Vertical, self)
@@ -423,6 +328,27 @@ class WaveformCanvas(QWidget):
         self.overlay.setAttribute(Qt.WA_StyledBackground, True)
         self.overlay.setStyleSheet("background:#11161c; border-right:1px solid #344454;")
         self.overlay.show()
+
+        # Label column auto-widens to fit the widest current label, capped
+        # at 25% of the window width; beyond that, label_hbar pans the
+        # (widened) label widgets left/right within the fixed-size overlay,
+        # which clips anything outside its own bounds automatically.
+        self._label_full_width: int = 150
+        self._label_scroll_px: int = 0
+        # Parented to the canvas itself, not self.overlay: refresh_label_layout()
+        # positions this scrollbar just below the (correspondingly shrunk)
+        # overlay's bottom edge, and a child is clipped to its own parent's
+        # bounds, so it must not be an overlay child or it would be invisible.
+        self.label_hbar = QScrollBar(Qt.Horizontal, self)
+        self.label_hbar.hide()
+        self.label_hbar.setStyleSheet("""
+            QScrollBar:horizontal { background: #0d1117; height: 10px; margin: 0; }
+            QScrollBar::handle:horizontal { background: #344454; min-width: 20px;
+                                            border-radius: 3px; }
+            QScrollBar::handle:horizontal:hover { background: #4a6578; }
+            QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0; }
+        """)
+        self.label_hbar.valueChanged.connect(self._on_label_hscroll)
 
         self.load_default_state()
         self.update_scrollbars()
@@ -472,27 +398,16 @@ class WaveformCanvas(QWidget):
         self.waves_changed.emit()
 
     def _push_undo(self):
-        self._undo_stack.append(self._snapshot())
-        if len(self._undo_stack) > 100:
-            self._undo_stack.pop(0)
-        self._redo_stack.clear()
+        self._undo_stack.push()
         self.undo_changed.emit()
 
     def undo(self):
-        if not self._undo_stack:
-            return
-        self._redo_stack.append(self._snapshot())
-        snap = self._undo_stack.pop()
-        self._restore_snapshot(snap)
-        self.undo_changed.emit()
+        if self._undo_stack.undo():
+            self.undo_changed.emit()
 
     def redo(self):
-        if not self._redo_stack:
-            return
-        self._undo_stack.append(self._snapshot())
-        snap = self._redo_stack.pop()
-        self._restore_snapshot(snap)
-        self.undo_changed.emit()
+        if self._undo_stack.redo():
+            self.undo_changed.emit()
 
     def reconstruct_digital_waves_from_timespcs(self, dct: dict) -> list[DigitalWaveRow]:
         timespcs = dct.get("TimeSpcs", [])
@@ -785,18 +700,22 @@ class WaveformCanvas(QWidget):
         self.waves_changed.emit()
 
     def delete_selected_wave(self):
-        if self.selected_wave is None:
+        """Delete every currently selected wave. Previously only removed
+        self.selected_wave (the singular) despite self.selected_waves being
+        fully populated by Shift+click-add -- multi-selecting then deleting
+        silently dropped everything but the last-clicked wave. Fixed to
+        match wave_view.py's already-correct delete_selected_waves."""
+        if not self.selected_waves:
             return
         self._push_undo()
-        wave = self.selected_wave
+        for wave in list(self.selected_waves):
+            edit = self.label_edits.pop(wave, None)
+            if edit is not None:
+                edit.deleteLater()
+            if wave in self.waves:
+                self.waves.remove(wave)
         self.selected_wave = None
-
-        edit = self.label_edits.pop(wave, None)
-        if edit is not None:
-            edit.deleteLater()
-
-        if wave in self.waves:
-            self.waves.remove(wave)
+        self.selected_waves = set()
 
         self.update_scrollbars()
         self.refresh_label_layout()
@@ -809,13 +728,7 @@ class WaveformCanvas(QWidget):
             return
         original = self.selected_wave
         self._push_undo()
-        new_wave = DigitalWaveRow(
-            original.label_text + "_copy",
-            [Segment(s.start, s.end, s.value) for s in original.segments],
-            editable=True,
-            nbits=original.nbits,
-        )
-        new_wave.fmt = original.fmt
+        new_wave = duplicate_digital_row(original)
         nonclock = [w for w in self.waves if isinstance(w, DigitalWaveRow) and w.editable]
         if original in nonclock:
             nonclock.insert(nonclock.index(original) + 1, new_wave)
@@ -1018,8 +931,7 @@ class WaveformCanvas(QWidget):
         if not indices or indices[0] == 0:
             return
         self._push_undo()
-        above = self.waves.pop(indices[0] - 1)
-        self.waves.insert(indices[-1], above)
+        move_block_up(self.waves, indices)
         self.refresh_label_layout()
         self.update()
         self.waves_changed.emit()
@@ -1029,11 +941,46 @@ class WaveformCanvas(QWidget):
         if not indices or indices[-1] >= len(self.waves) - 1:
             return
         self._push_undo()
-        below = self.waves.pop(indices[-1] + 1)
-        self.waves.insert(indices[0], below)
+        move_block_down(self.waves, indices)
         self.refresh_label_layout()
         self.update()
         self.waves_changed.emit()
+
+    def show_label_context_menu(self, wave: WaveRow, global_pos):
+        """Built on this file's existing selected_wave/selected_waves state
+        (Tier 2's full SelectionModel migration was deferred for this file
+        -- see the consolidation plan -- but Tier 3 already made
+        delete_selected_wave genuinely plural, so a bulk-delete menu item
+        here is correct as-is)."""
+        menu = QMenu(self)
+        sel = [w for w in self.waves if w in self.selected_waves]
+        if len(sel) > 1 and wave in self.selected_waves:
+            act = menu.addAction(f'Delete {len(sel)} selected signals')
+            act.triggered.connect(self.delete_selected_wave)
+        else:
+            act = menu.addAction(f'Delete signal: {wave.label_text}')
+            act.triggered.connect(
+                lambda checked=False, w=wave: self._delete_single_wave(w)
+            )
+        if isinstance(wave, DigitalWaveRow):
+            dup_act = menu.addAction(f'Duplicate: {wave.label_text}')
+            dup_act.triggered.connect(
+                lambda checked=False, w=wave: self._duplicate_single_wave(w)
+            )
+        menu.addSeparator()
+        move_up_act = menu.addAction('Move Up\tCtrl+Up')
+        move_up_act.triggered.connect(self.move_selection_up)
+        move_down_act = menu.addAction('Move Down\tCtrl+Down')
+        move_down_act.triggered.connect(self.move_selection_down)
+        menu.exec(global_pos)
+
+    def _delete_single_wave(self, wave: WaveRow):
+        self.select_wave(wave)
+        self.delete_selected_wave()
+
+    def _duplicate_single_wave(self, wave: WaveRow):
+        self.select_wave(wave)
+        self.duplicate_selected_wave()
 
     def zoom_full(self):
         self.show_range(0.0, min(10.0, self.finishTm))
@@ -1085,7 +1032,7 @@ class WaveformCanvas(QWidget):
 
     def ensure_label(self, wave: WaveRow):
         if wave not in self.label_edits:
-            edit = LabelEdit(wave, self.overlay)
+            edit = LabelEdit(wave, self, self.overlay)
             edit.focused.connect(self.select_wave)
             if isinstance(wave, ClockWaveRow):
                 edit.setReadOnly(True)
@@ -1093,21 +1040,87 @@ class WaveformCanvas(QWidget):
             edit.show()
         return self.label_edits[wave]
 
-    def refresh_label_layout(self):
-        hbh = self.hbar.height()
-        overlay_h = max(0, self.height() - hbh)
-        self.overlay.setGeometry(0, 0, self.label_panel_width, overlay_h)
+    _LABEL_SB_H = 10
 
+    def _measure_max_label_width(self) -> int:
+        font = QFont()
+        font.setPixelSize(14)
+        fm = QFontMetrics(font)
+        if not self.waves:
+            return 100
+        return max(fm.horizontalAdvance(w.label_text) for w in self.waves)
+
+    def _update_label_panel_width(self):
+        max_text_w = self._measure_max_label_width()
+        needed = max_text_w + 40
+        max_allowed = max(150, int(0.25 * self.width()))
+        self._label_full_width = max(150, needed)
+        if needed <= max_allowed:
+            self.label_panel_width = max(150, needed)
+            self._label_scroll_px = 0
+            self.label_hbar.blockSignals(True)
+            self.label_hbar.setValue(0)
+            self.label_hbar.blockSignals(False)
+            self.label_hbar.hide()
+        else:
+            self.label_panel_width = max_allowed
+            overhang = needed - max_allowed
+            if self._label_scroll_px > overhang:
+                self._label_scroll_px = overhang
+            self.label_hbar.blockSignals(True)
+            self.label_hbar.setRange(0, overhang)
+            self.label_hbar.setPageStep(max(1, max_allowed // 4))
+            self.label_hbar.setValue(self._label_scroll_px)
+            self.label_hbar.blockSignals(False)
+            self.label_hbar.show()
+
+    def _on_label_hscroll(self, value: int):
+        self._label_scroll_px = value
+        self.refresh_label_layout()
+
+    def _position_scrollbars(self):
+        sbw = self.style().pixelMetric(QStyle.PixelMetric.PM_ScrollBarExtent)
+        self.vbar.setGeometry(self.width() - sbw, 0, sbw, self.height() - sbw)
+        # Confined to the plot region (right of the label column): this bar
+        # only pans the time axis, so it must not extend under the labels.
+        self.hbar.setGeometry(
+            self.label_panel_width, self.height() - sbw,
+            max(0, self.width() - sbw - self.label_panel_width), sbw,
+        )
+
+    def refresh_label_layout(self):
+        self._update_label_panel_width()
+
+        hbh = self.hbar.height()
+        # This canvas' row content has very little built-in bottom margin
+        # (self.bottom_margin == 8px) -- unlike the other viewer/editor
+        # files, there isn't enough incidental slack to tuck label_hbar
+        # into, so its height is explicitly subtracted from the row area
+        # (and, in lockstep, from update_scrollbars()'s viewport_h) whenever
+        # it's shown, rather than risking it overlapping the last row.
+        lhb_shown = not self.label_hbar.isHidden()
+        lhbh = self._LABEL_SB_H if lhb_shown else 0
+        overlay_h = max(0, self.height() - hbh - lhbh)
+        self.overlay.setGeometry(0, 0, self.label_panel_width, overlay_h)
+        if lhb_shown:
+            self.label_hbar.setGeometry(8, overlay_h, self.label_panel_width - 16, self._LABEL_SB_H)
+            # LabelEdits are created lazily (ensure_label), after label_hbar --
+            # Qt stacks later-created siblings on top by default, which would
+            # otherwise hide this scrollbar behind the label widgets.
+            self.label_hbar.raise_()
+
+        lbl_w = max(self._label_full_width - 16, self.label_panel_width - 16)
+        lbl_x = 8 - self._label_scroll_px
         for i, wave in enumerate(self.waves):
             edit = self.ensure_label(wave)
             y = self.viewport_row_y(i)
-            edit.setGeometry(8, y, self.label_panel_width - 16, self.track_height)
+            edit.setGeometry(lbl_x, y, lbl_w, self.track_height)
             edit.set_selected(wave in self.selected_waves)
 
+        self._position_scrollbars()
+
     def resizeEvent(self, event):
-        sbw = self.style().pixelMetric(QStyle.PixelMetric.PM_ScrollBarExtent)
-        self.vbar.setGeometry(self.width() - sbw, 0, sbw, self.height() - sbw)
-        self.hbar.setGeometry(0, self.height() - sbw, self.width() - sbw, sbw)
+        self._position_scrollbars()
 
         if self._initial_range_applied:
             visible = max(0.1, self.visible_time_span())
@@ -1136,7 +1149,8 @@ class WaveformCanvas(QWidget):
             self.hbar.setValue(int(round(frac * 100000)))
         self.hbar.blockSignals(False)
 
-        viewport_h = max(1, self.height() - self.hbar.height())
+        lhbh = self._LABEL_SB_H if not self.label_hbar.isHidden() else 0
+        viewport_h = max(1, self.height() - self.hbar.height() - lhbh)
         content_h = self.content_height()
 
         self.vbar.blockSignals(True)
@@ -2650,8 +2664,8 @@ class MainWindow(QMainWindow):
         self.move_down_action.setEnabled(is_digital)
 
     def _update_undo_enabled(self):
-        self.undo_action.setEnabled(bool(self.editor._undo_stack))
-        self.redo_action.setEnabled(bool(self.editor._redo_stack))
+        self.undo_action.setEnabled(self.editor._undo_stack.can_undo)
+        self.redo_action.setEnabled(self.editor._undo_stack.can_redo)
 
 
 if __name__ == "__main__":

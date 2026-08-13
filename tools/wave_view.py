@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import math
-import re
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 
 from PySide6.QtCore import QPoint, QPointF, QRectF, Qt, Signal
@@ -26,109 +24,33 @@ from PySide6.QtWidgets import (
 
 from lib.glbls import rd_yml
 
+# SimLib/lib is inserted as a bare directory (not as a `lib` package) so its
+# modules resolve as top-level names -- must not collide with this file's
+# own `lib` package (imported just above for lib.glbls). Neither
+# wave_data_model.py nor its siblings there import anything as `lib.xxx`
+# internally, so there's no name collision risk in either direction.
+_SIMLIB_LIB = '/home/martin/IC_Design/Testbenches/NgSpice/SimLib/lib'
+if _SIMLIB_LIB not in sys.path:
+    sys.path.insert(0, _SIMLIB_LIB)
+
+from wave_data_model import (
+    Segment,
+    snap01,
+    build_constants_map,
+    expr_to_abs_time,
+    expr_to_period_units,
+    transitions_to_segments,
+    WaveRow,
+    ClockWaveRow,
+    DigitalWaveRow,
+)
+from wave_selection import SelectionModel
+from wave_reorder import move_block_up, move_block_down
+
 SAVE_LOCATION = "../Resources/SimSpcs"
 
 LEFT = 0
 RIGHT = 1
-
-
-@dataclass
-class Segment:
-    start: float
-    end: float
-    value: int
-
-
-def snap01(t: float) -> float:
-    return round(t * 10.0) / 10.0
-
-
-def build_constants_map(constants_list) -> dict[str, float]:
-    constants_map: dict[str, float] = {}
-    for item in constants_list or []:
-        if isinstance(item, (list, tuple)) and len(item) == 2:
-            nm, val = item
-            if isinstance(val, (int, float)):
-                constants_map[str(nm)] = float(val)
-    return constants_map
-
-
-def expr_to_abs_time(value, constants: dict[str, float]) -> float:
-    if isinstance(value, (int, float)):
-        return float(value)
-    s = str(value).strip()
-    if s == "":
-        raise ValueError("empty expression")
-    if s in constants:
-        return float(constants[s])
-    if re.fullmatch(r"[+-]?\d+(\.\d+)?", s):
-        return float(s)
-    m = re.fullmatch(r"([+-]?\d+(\.\d+)?)\s*\*\s*([A-Za-z_]\w*)", s)
-    if m:
-        mult = float(m.group(1))
-        name = m.group(3)
-        if name not in constants:
-            raise ValueError(f"unknown constant '{name}' in expression '{s}'")
-        return mult * float(constants[name])
-    raise ValueError(f"unsupported expression '{s}'")
-
-
-def expr_to_period_units(value, constants: dict[str, float]) -> float:
-    per_val = float(constants["PER"])
-    abs_val = expr_to_abs_time(value, constants)
-    return abs_val / per_val
-
-
-def transitions_to_segments(
-    transitions_pu: list[float], finish_tm: float, init_val: int = 0
-) -> list[Segment]:
-    times = [0.0] + sorted(transitions_pu) + [finish_tm]
-    segs, val = [], init_val
-    for i in range(len(times) - 1):
-        s, e = times[i], times[i + 1]
-        if e > s:
-            segs.append(Segment(s, e, val))
-        val = 1 - val
-    return segs
-
-
-# ---------------------------------------------------------------------------
-# Data model
-# ---------------------------------------------------------------------------
-
-class WaveRow:
-    def __init__(self, label_text: str):
-        self.label_text = label_text
-
-
-class ClockWaveRow(WaveRow):
-    def __init__(self, label_text: str = "CLK"):
-        super().__init__(label_text)
-        self.start_high = False
-        self.per_expr = "PER"
-        self.delay_expr = 0
-        self.period = 1.0
-        self.delay = 0.0
-
-    def value_for_time(self, t: float) -> int:
-        init_val = 1 if self.start_high else 0
-        if t < self.delay:
-            return init_val
-        local_t = t - self.delay
-        if self.period <= 0:
-            return init_val
-        phase = local_t % self.period
-        if phase < (0.5 * self.period):
-            return init_val
-        return 1 - init_val
-
-
-class DigitalWaveRow(WaveRow):
-    def __init__(self, label_text: str, segments: list[Segment], nbits: int = 1):
-        super().__init__(label_text)
-        self.segments = segments
-        self.nbits = nbits
-        self.fmt: str = "hex"  # one of: hex, dec, sdec, bin
 
 
 # ---------------------------------------------------------------------------
@@ -138,9 +60,10 @@ class DigitalWaveRow(WaveRow):
 class RowLabel(QLabel):
     clicked = Signal(object, object)  # wave, Qt.KeyboardModifiers
 
-    def __init__(self, wave: WaveRow, parent=None):
+    def __init__(self, wave: WaveRow, canvas: "WaveformCanvas", parent=None):
         super().__init__(wave.label_text, parent)
         self._wave = wave
+        self.canvas = canvas
         self.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
         self.setStyleSheet(
             "QLabel {"
@@ -154,6 +77,9 @@ class RowLabel(QLabel):
     def mousePressEvent(self, event: QMouseEvent):
         self.clicked.emit(self._wave, event.modifiers())
         super().mousePressEvent(event)
+
+    def contextMenuEvent(self, event: QContextMenuEvent):
+        self.canvas.show_label_context_menu(self._wave, event.globalPos())
 
 
 # ---------------------------------------------------------------------------
@@ -224,8 +150,7 @@ class WaveformCanvas(QWidget):
         self._dragging_marker: bool = False
 
         self.waves: list[WaveRow] = []
-        self.selected_waves: set = set()
-        self._anchor_wave: WaveRow | None = None
+        self._selection = SelectionModel()
 
         self.label_widgets: dict[WaveRow, RowLabel] = {}
         self.panning = False
@@ -405,7 +330,7 @@ class WaveformCanvas(QWidget):
         for lbl in self.label_widgets.values():
             lbl.deleteLater()
         self.label_widgets.clear()
-        self.selected_waves.clear()
+        self._selection.clear()
         self._update_label_panel_width()
 
     def load_base_yaml(self, yml_path: Path):
@@ -538,8 +463,7 @@ class WaveformCanvas(QWidget):
         self.finishTm = finish
         self._preserved_nonclock_waves = waves
         self.waves = list(waves)
-        self.selected_waves = set()
-        self._anchor_wave = None
+        self._selection.clear()
         self._rebuild_label_widgets()
         self.left_time = 0.0
         self.clamp_left_time()
@@ -680,37 +604,25 @@ class WaveformCanvas(QWidget):
 
     def ensure_label(self, wave: WaveRow) -> RowLabel:
         if wave not in self.label_widgets:
-            lbl = RowLabel(wave, self.overlay)
+            lbl = RowLabel(wave, self, self.overlay)
             lbl.clicked.connect(self._on_label_clicked)
             self.label_widgets[wave] = lbl
             lbl.show()
         return self.label_widgets[wave]
 
     def _on_label_clicked(self, wave: WaveRow, modifiers):
-        self._apply_selection(wave, add=bool(modifiers & Qt.ShiftModifier))
-
-    def _apply_selection(self, wave: WaveRow, add: bool):
-        if add and self._anchor_wave is not None and self._anchor_wave in self.waves:
-            # Range select from anchor to clicked wave (inclusive)
-            anchor_idx = self.waves.index(self._anchor_wave)
-            wave_idx = self.waves.index(wave) if wave in self.waves else -1
-            if wave_idx >= 0:
-                lo = min(anchor_idx, wave_idx)
-                hi = max(anchor_idx, wave_idx)
-                self.selected_waves = set(self.waves[lo:hi + 1])
-            else:
-                self.selected_waves.add(wave)
-        elif add:
-            self.selected_waves.add(wave)
-        else:
-            self._anchor_wave = wave
-            self.selected_waves = {wave}
+        self._selection.toggle(
+            wave,
+            shift=bool(modifiers & Qt.ShiftModifier),
+            ctrl=bool(modifiers & Qt.ControlModifier),
+            ordered_items=self.waves,
+        )
         self._update_label_selection_styles()
         self.update()
 
     def _update_label_selection_styles(self):
         for wave, lbl in self.label_widgets.items():
-            bg = "#1e3a5f" if wave in self.selected_waves else "#11161c"
+            bg = "#1e3a5f" if wave in self._selection.selected else "#11161c"
             lbl.setStyleSheet(
                 "QLabel {"
                 f" background:{bg};"
@@ -721,45 +633,62 @@ class WaveformCanvas(QWidget):
             )
 
     def _selected_indices(self) -> list:
-        return sorted(i for i, w in enumerate(self.waves) if w in self.selected_waves)
+        return sorted(i for i, w in enumerate(self.waves) if w in self._selection.selected)
 
     def move_selection_up(self):
         indices = self._selected_indices()
-        if not indices or indices[0] == 0:
+        if not move_block_up(self.waves, indices):
             return
-        above = self.waves.pop(indices[0] - 1)
-        self.waves.insert(indices[-1], above)
         self.refresh_label_layout()
         self.update()
         self._scroll_to_show_index(indices[0] - 1)
 
     def move_selection_down(self):
         indices = self._selected_indices()
-        if not indices or indices[-1] >= len(self.waves) - 1:
+        if not move_block_down(self.waves, indices):
             return
-        below = self.waves.pop(indices[-1] + 1)
-        self.waves.insert(indices[0], below)
         self.refresh_label_layout()
         self.update()
         self._scroll_to_show_index(indices[-1] + 1)
 
     def delete_selected_waves(self):
-        if not self.selected_waves:
+        if not self._selection.selected:
             return
-        deleted_labels = [w.label_text for w in self.selected_waves]
-        if self._anchor_wave in self.selected_waves:
-            self._anchor_wave = None
-        for wave in list(self.selected_waves):
+        deleted_labels = [w.label_text for w in self._selection.selected]
+        for wave in list(self._selection.selected):
             if wave in self.waves:
                 self.waves.remove(wave)
             lbl = self.label_widgets.pop(wave, None)
             if lbl:
                 lbl.deleteLater()
-        self.selected_waves.clear()
+        self._selection.clear()
         self.update_scrollbars()
         self.refresh_label_layout()
         self.update()
         self.waves_deleted.emit(deleted_labels)
+
+    def show_label_context_menu(self, wave: WaveRow, global_pos):
+        menu = QMenu(self)
+        sel = [w for w in self.waves if w in self._selection.selected]
+        if len(sel) > 1 and wave in self._selection.selected:
+            act = menu.addAction(f'Delete {len(sel)} selected signals')
+            act.triggered.connect(self.delete_selected_waves)
+        else:
+            act = menu.addAction(f'Delete signal: {wave.label_text}')
+            act.triggered.connect(
+                lambda checked=False, w=wave: self._delete_single_wave(w)
+            )
+        menu.addSeparator()
+        move_up_act = menu.addAction('Move Up\tCtrl+Up')
+        move_up_act.triggered.connect(self.move_selection_up)
+        move_down_act = menu.addAction('Move Down\tCtrl+Down')
+        move_down_act.triggered.connect(self.move_selection_down)
+        menu.exec(global_pos)
+
+    def _delete_single_wave(self, wave: WaveRow):
+        self._selection.clear()
+        self._selection.toggle(wave, shift=False, ctrl=False)
+        self.delete_selected_waves()
 
     def _scroll_to_show_index(self, index: int):
         """Scroll vbar so the wave at index is within the visible area."""
@@ -815,6 +744,7 @@ class WaveformCanvas(QWidget):
             self.label_hbar.setRange(0, needed - max_allowed)
             self.label_hbar.setPageStep(max(1, max_allowed // 4))
             self.label_hbar.show()
+        self._position_scrollbars()
         self.label_width_changed.emit(self.label_panel_width)
 
     def _on_label_hscroll(self, value: int):
@@ -824,10 +754,21 @@ class WaveformCanvas(QWidget):
     # ------------------------------------------------------------------
     # Resize / scroll
 
-    def resizeEvent(self, event):
+    def _position_scrollbars(self):
         sbw = self.style().pixelMetric(QStyle.PixelMetric.PM_ScrollBarExtent)
         self.vbar.setGeometry(self.width() - sbw, 0, sbw, self.height() - sbw)
-        self.hbar.setGeometry(0, self.height() - sbw, self.width() - sbw, sbw)
+        # Confined to the plot region (right of the label column): this bar
+        # only pans the time axis, so it must not extend under the labels --
+        # doing so implied it scrolled the whole window, labels included.
+        # label_panel_width can change outside resizeEvent (see
+        # _update_label_panel_width), so this must be called from there too.
+        self.hbar.setGeometry(
+            self.label_panel_width, self.height() - sbw,
+            max(0, self.width() - sbw - self.label_panel_width), sbw,
+        )
+
+    def resizeEvent(self, event):
+        self._position_scrollbars()
 
         if self._initial_range_applied:
             visible = max(0.1, self.visible_time_span())
@@ -1017,8 +958,7 @@ class WaveformCanvas(QWidget):
                 event.accept()
                 return
         if event.key() == Qt.Key_Escape:
-            self.selected_waves.clear()
-            self._anchor_wave = None
+            self._selection.clear()
             self._update_label_selection_styles()
             self.update()
             event.accept()
@@ -1105,7 +1045,7 @@ class WaveformCanvas(QWidget):
         for i, wave in enumerate(self.waves):
             rect = self.wave_rect(i)
 
-            if wave in self.selected_waves:
+            if wave in self._selection.selected:
                 bg = QColor("#dbeafe") if getattr(self, '_print_mode', False) else QColor("#1e3a5f")
                 painter.fillRect(rect, bg)
 
