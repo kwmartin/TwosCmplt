@@ -2260,11 +2260,19 @@ class PeriodicPatternDialog(QDialog):
 
     def _default_period_segments(self, period_count: int) -> list[Segment]:
         # Start from the waveform editor's current initial value so the repeating
-        # pattern matches the signal's existing starting level.
+        # pattern matches the signal's existing starting level. `1 - init_val`
+        # only makes sense as a binary flip -- for a multi-bit init_val (e.g. 5)
+        # it produced a negative, nonsensical second value. Mirrors insert_edge's
+        # existing nbits==1-vs-else convention: flip for 1-bit, increment
+        # (masked, so it can't overflow past the signal width) otherwise.
         init_val = self._initial_value
+        if self.nbits == 1:
+            second_val = 1 - init_val
+        else:
+            second_val = _mask_to_nbits(init_val + 1, self.nbits)
         return [
             Segment(0.0, 1.0, init_val),
-            Segment(1.0, float(period_count), 1 - init_val),
+            Segment(1.0, float(period_count), second_val),
         ]
 
     def _scale_segments_to_length(
