@@ -743,6 +743,15 @@ class WaveformCanvas(QWidget):
                 edit.deleteLater()
             if wave in self.waves:
                 self.waves.remove(wave)
+            if isinstance(wave, ClockWaveRow):
+                # Otherwise the next rebuild_waves_from_specs() call (undo,
+                # redo, duplicate, move) silently resurrects this clock --
+                # self.waves is no longer the source of truth once specs
+                # exist, clock_specs is.
+                self.clock_specs = [
+                    spec for spec in self.clock_specs
+                    if str(spec.get("clkNm", "")) != wave.label_text
+                ]
         self._selection.clear()
 
         self.update_scrollbars()
