@@ -76,6 +76,13 @@ class RowLabel(QLabel):
         )
 
     def mousePressEvent(self, event: QMouseEvent):
+        # QLabel doesn't accept focus by default, so without this a
+        # label-panel click here would leave QApplication.focusWidget()
+        # wherever it last was (e.g. the sibling editor pane in
+        # wave_display.py) -- breaking focus-dynamic dispatch like
+        # DisplayWindow._active_canvas(), which needs to see this canvas
+        # as the click target even when the plot area itself wasn't clicked.
+        self.canvas.setFocus(Qt.MouseFocusReason)
         self.clicked.emit(self._wave, event.modifiers())
         super().mousePressEvent(event)
 

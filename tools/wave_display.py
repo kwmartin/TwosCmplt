@@ -237,23 +237,17 @@ class DisplayWindow(QMainWindow):
 
         up_act = QAction("Move Up", self)
         up_act.setShortcut(QKeySequence("Ctrl+Up"))
-        up_act.triggered.connect(
-            self.editor.move_selection_up if self.edit_only else self.viewer.move_selection_up
-        )
+        up_act.triggered.connect(lambda: self._active_canvas().move_selection_up())
         wave_menu.addAction(up_act)
 
         down_act = QAction("Move Down", self)
         down_act.setShortcut(QKeySequence("Ctrl+Down"))
-        down_act.triggered.connect(
-            self.editor.move_selection_down if self.edit_only else self.viewer.move_selection_down
-        )
+        down_act.triggered.connect(lambda: self._active_canvas().move_selection_down())
         wave_menu.addAction(down_act)
 
         delete_act = QAction("Delete", self)
         delete_act.setShortcut(QKeySequence("Ctrl+D"))
-        delete_act.triggered.connect(
-            self.editor.delete_selected_wave if self.edit_only else self.viewer.delete_selected_waves
-        )
+        delete_act.triggered.connect(self._delete_active_selection)
         wave_menu.addAction(delete_act)
 
         wave_menu.addSeparator()
@@ -304,6 +298,33 @@ class DisplayWindow(QMainWindow):
         about_act = QAction("About", self)
         about_act.triggered.connect(self._show_about)
         help_menu.addAction(about_act)
+
+    def _active_canvas(self):
+        """Whichever pane -- the editable top canvas or the view-only
+        bottom one -- most recently had keyboard focus, so the Wave menu's
+        Move Up/Move Down/Delete (and their Ctrl+Up/Down/D shortcuts) act
+        on whatever pane the user actually clicked in, instead of always
+        acting on a single pane fixed at construction time regardless of
+        where the current selection lives. Falls back to the editor: the
+        only pane that exists in edit_only mode, and the default before
+        the user has clicked anywhere."""
+        if self.viewer is None:
+            return self.editor
+        w = QApplication.focusWidget()
+        while w is not None:
+            if w is self.viewer:
+                return self.viewer
+            if w is self.editor:
+                return self.editor
+            w = w.parentWidget()
+        return self.editor
+
+    def _delete_active_selection(self):
+        canvas = self._active_canvas()
+        if canvas is self.editor:
+            canvas.delete_selected_wave()
+        else:
+            canvas.delete_selected_waves()
 
     def _show_help(self):
         base_dir = Path(__file__).resolve().parent
