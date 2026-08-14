@@ -53,9 +53,11 @@ from wave_data_model import (
     ClockWaveRow,
     DigitalWaveRow,
 )
+from wave_selection import SelectionModel
 from wave_reorder import move_block_up, move_block_down
 from wave_duplicate import duplicate_digital_row
 from wave_undo import UndoStack
+from wave_context_menu import show_label_menu
 
 SAVE_LOCATION = "../Resources/SimSpcs"
 
@@ -113,8 +115,37 @@ class LabelEdit(QLineEdit):
     def _on_text_changed(self, text: str):
         self.wave.label_text = text
 
+    def mousePressEvent(self, event: QMouseEvent):
+        # Shift/Ctrl+click multi-selects instead of focusing the field.
+        # Qt's click-to-focus happens BEFORE a widget's own mousePressEvent
+        # runs (it's handled at the platform/QApplication level, not
+        # something an override here can pre-empt by skipping super()), so
+        # focusInEvent has already fired and called select_wave() by the
+        # time we get here -- see the QApplication.keyboardModifiers() guard
+        # there, which is what actually prevents it from clobbering the
+        # multi-select anchor this toggle is about to compute.
+        if event.button() == Qt.LeftButton and (
+            event.modifiers() & (Qt.ShiftModifier | Qt.ControlModifier)
+        ):
+            self.canvas.setFocus(Qt.MouseFocusReason)
+            self.canvas.toggle_wave_highlight(
+                self.wave,
+                shift=bool(event.modifiers() & Qt.ShiftModifier),
+                ctrl=bool(event.modifiers() & Qt.ControlModifier),
+            )
+            return
+        super().mousePressEvent(event)
+
     def focusInEvent(self, event):
-        self.focused.emit(self.wave)
+        # Skip the focus-driven single-select if this focus change was
+        # caused by a Shift/Ctrl+click -- mousePressEvent (which Qt runs
+        # AFTER delivering focus) handles multi-select in that case, and
+        # calling select_wave() here first would clobber its anchor before
+        # it gets a chance to run. QFocusEvent carries no modifier info of
+        # its own, so the live keyboard state is the only way to tell.
+        mods = QApplication.keyboardModifiers()
+        if not (mods & (Qt.ShiftModifier | Qt.ControlModifier)):
+            self.focused.emit(self.wave)
         super().focusInEvent(event)
 
     def contextMenuEvent(self, event: QContextMenuEvent):
@@ -301,8 +332,7 @@ class WaveformCanvas(QWidget):
         self.row_sep_pen   = QPen(QColor("#4a7090"), 1)
 
         self.waves: list[WaveRow] = []
-        self.selected_wave: WaveRow | None = None
-        self.selected_waves: set = set()
+        self._selection = SelectionModel()
         self.current_action_key: str | None = None
         self.next_added_signal_index = 0
 
@@ -625,8 +655,7 @@ class WaveformCanvas(QWidget):
         for edit in self.label_edits.values():
             edit.deleteLater()
         self.label_edits.clear()
-        self.selected_wave = None
-        self.selected_waves = set()
+        self._selection.clear()
 
     def showEvent(self, event):
         super().showEvent(event)
@@ -705,17 +734,16 @@ class WaveformCanvas(QWidget):
         fully populated by Shift+click-add -- multi-selecting then deleting
         silently dropped everything but the last-clicked wave. Fixed to
         match wave_view.py's already-correct delete_selected_waves."""
-        if not self.selected_waves:
+        if not self._selection.selected:
             return
         self._push_undo()
-        for wave in list(self.selected_waves):
+        for wave in list(self._selection.selected):
             edit = self.label_edits.pop(wave, None)
             if edit is not None:
                 edit.deleteLater()
             if wave in self.waves:
                 self.waves.remove(wave)
-        self.selected_wave = None
-        self.selected_waves = set()
+        self._selection.clear()
 
         self.update_scrollbars()
         self.refresh_label_layout()
@@ -924,7 +952,7 @@ class WaveformCanvas(QWidget):
             self.waves_changed.emit()
 
     def _selected_indices(self) -> list:
-        return sorted(i for i, w in enumerate(self.waves) if w in self.selected_waves)
+        return sorted(i for i, w in enumerate(self.waves) if w in self._selection.selected)
 
     def move_selection_up(self):
         indices = self._selected_indices()
@@ -947,39 +975,21 @@ class WaveformCanvas(QWidget):
         self.waves_changed.emit()
 
     def show_label_context_menu(self, wave: WaveRow, global_pos):
-        """Built on this file's existing selected_wave/selected_waves state
-        (Tier 2's full SelectionModel migration was deferred for this file
-        -- see the consolidation plan -- but Tier 3 already made
-        delete_selected_wave genuinely plural, so a bulk-delete menu item
-        here is correct as-is)."""
-        menu = QMenu(self)
-        sel = [w for w in self.waves if w in self.selected_waves]
-        if len(sel) > 1 and wave in self.selected_waves:
-            act = menu.addAction(f'Delete {len(sel)} selected signals')
-            act.triggered.connect(self.delete_selected_wave)
-        else:
-            act = menu.addAction(f'Delete signal: {wave.label_text}')
-            act.triggered.connect(
-                lambda checked=False, w=wave: self._delete_single_wave(w)
-            )
-        if isinstance(wave, DigitalWaveRow):
-            dup_act = menu.addAction(f'Duplicate: {wave.label_text}')
-            dup_act.triggered.connect(
-                lambda checked=False, w=wave: self._duplicate_single_wave(w)
-            )
-        menu.addSeparator()
-        move_up_act = menu.addAction('Move Up\tCtrl+Up')
-        move_up_act.triggered.connect(self.move_selection_up)
-        move_down_act = menu.addAction('Move Down\tCtrl+Down')
-        move_down_act.triggered.connect(self.move_selection_down)
-        menu.exec(global_pos)
+        sel = [w for w in self.waves if w in self._selection.selected]
+        show_label_menu(
+            self, wave, global_pos, selected=sel,
+            delete_single_fn=self._delete_single_wave,
+            delete_bulk_fn=self.delete_selected_wave,
+            duplicate_fn=self._duplicate_single_wave if isinstance(wave, DigitalWaveRow) else None,
+            move_up_fn=self.move_selection_up, move_down_fn=self.move_selection_down,
+        )
 
     def _delete_single_wave(self, wave: WaveRow):
-        self.select_wave(wave)
+        self._selection.select_only(wave)
         self.delete_selected_wave()
 
     def _duplicate_single_wave(self, wave: WaveRow):
-        self.select_wave(wave)
+        self._selection.select_only(wave)
         self.duplicate_selected_wave()
 
     def zoom_full(self):
@@ -1011,19 +1021,41 @@ class WaveformCanvas(QWidget):
         self.update()
         self._syncing = False
 
+    @property
+    def selected_wave(self) -> WaveRow | None:
+        """Approximates the old single-scalar 'last selected' semantics as
+        an arbitrary member of the current selection -- exact when at most
+        one wave is selected (the common case for the single-wave readers
+        that use this: duplicate/pattern/counting-sequence actions and
+        wave_display.py's enable-state checks), an implementation-detail
+        pick among several when multiple are selected. See the
+        consolidation plan for the tradeoff behind keeping this as a thin
+        compat property instead of rewriting every call site onto
+        `_selection.selected` directly."""
+        return next(iter(self._selection.selected), None)
+
     def select_wave(self, wave: WaveRow | None):
-        self.selected_wave = wave
-        self.selected_waves = {wave} if wave is not None else set()
+        if wave is None:
+            self._selection.clear()
+        else:
+            self._selection.select_only(wave)
         for w, edit in self.label_edits.items():
-            edit.set_selected(w in self.selected_waves)
+            edit.set_selected(w in self._selection.selected)
         self.selection_changed.emit()
         self.update()
 
     def select_wave_add(self, wave: WaveRow):
-        self.selected_wave = wave
-        self.selected_waves.add(wave)
+        self._selection.add(wave)
         for w, edit in self.label_edits.items():
-            edit.set_selected(w in self.selected_waves)
+            edit.set_selected(w in self._selection.selected)
+        self.selection_changed.emit()
+        self.update()
+
+    def toggle_wave_highlight(self, wave: WaveRow, shift: bool, ctrl: bool = False):
+        """Shift/Ctrl+click multi-select from the label panel (see LabelEdit)."""
+        self._selection.toggle(wave, shift, ctrl, ordered_items=self.waves)
+        for w, edit in self.label_edits.items():
+            edit.set_selected(w in self._selection.selected)
         self.selection_changed.emit()
         self.update()
 
@@ -1115,7 +1147,7 @@ class WaveformCanvas(QWidget):
             edit = self.ensure_label(wave)
             y = self.viewport_row_y(i)
             edit.setGeometry(lbl_x, y, lbl_w, self.track_height)
-            edit.set_selected(wave in self.selected_waves)
+            edit.set_selected(wave in self._selection.selected)
 
         self._position_scrollbars()
 
@@ -1763,7 +1795,7 @@ class WaveformCanvas(QWidget):
         for i, wave in enumerate(self.waves):
             rect = self.wave_rect(i)
 
-            if wave in self.selected_waves:
+            if wave in self._selection.selected:
                 painter.fillRect(rect, QColor("#1e3a5f"))
 
             y_high = rect.top() + self.track_height * 0.25

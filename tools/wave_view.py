@@ -46,6 +46,7 @@ from wave_data_model import (
 )
 from wave_selection import SelectionModel
 from wave_reorder import move_block_up, move_block_down
+from wave_context_menu import show_label_menu
 
 SAVE_LOCATION = "../Resources/SimSpcs"
 
@@ -668,26 +669,16 @@ class WaveformCanvas(QWidget):
         self.waves_deleted.emit(deleted_labels)
 
     def show_label_context_menu(self, wave: WaveRow, global_pos):
-        menu = QMenu(self)
         sel = [w for w in self.waves if w in self._selection.selected]
-        if len(sel) > 1 and wave in self._selection.selected:
-            act = menu.addAction(f'Delete {len(sel)} selected signals')
-            act.triggered.connect(self.delete_selected_waves)
-        else:
-            act = menu.addAction(f'Delete signal: {wave.label_text}')
-            act.triggered.connect(
-                lambda checked=False, w=wave: self._delete_single_wave(w)
-            )
-        menu.addSeparator()
-        move_up_act = menu.addAction('Move Up\tCtrl+Up')
-        move_up_act.triggered.connect(self.move_selection_up)
-        move_down_act = menu.addAction('Move Down\tCtrl+Down')
-        move_down_act.triggered.connect(self.move_selection_down)
-        menu.exec(global_pos)
+        show_label_menu(
+            self, wave, global_pos, selected=sel,
+            delete_single_fn=self._delete_single_wave,
+            delete_bulk_fn=self.delete_selected_waves,
+            move_up_fn=self.move_selection_up, move_down_fn=self.move_selection_down,
+        )
 
     def _delete_single_wave(self, wave: WaveRow):
-        self._selection.clear()
-        self._selection.toggle(wave, shift=False, ctrl=False)
+        self._selection.select_only(wave)
         self.delete_selected_waves()
 
     def _scroll_to_show_index(self, index: int):
