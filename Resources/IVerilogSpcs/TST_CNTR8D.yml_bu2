@@ -1,0 +1,40 @@
+module: TST_CNTR8D
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, '0x80']
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    D: 8
+SaveNds:
+  - name: QP
+    format: h
+  - name: QN
+    format: h
+  - name: LD
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    D: data_inputs
+    QP: outputs
+    QN: outputs
+    LD: outputs

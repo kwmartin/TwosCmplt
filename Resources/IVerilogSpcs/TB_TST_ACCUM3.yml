@@ -1,0 +1,42 @@
+module: TST_ACCUM3
+generated: true
+Constants:
+    PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 128*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - FRQ
+          - '0x40000000'
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    FRQ: 34
+SaveNds:
+  - name: QD_
+    format: h
+  - name: RL_
+    format: h
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    FRQ: data_inputs
+    QD_: outputs
+    RL_: outputs

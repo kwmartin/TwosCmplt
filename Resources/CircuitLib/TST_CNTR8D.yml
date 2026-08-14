@@ -27,6 +27,10 @@ io_ports:
       - kind: int
         value: 0
   - kind: Wire
+    name: LD
+    direct: 'Output:'
+    signed: 'False'
+  - kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'

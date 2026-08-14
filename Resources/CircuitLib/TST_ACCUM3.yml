@@ -1,591 +1,106 @@
 kind: verilog
 module: TST_ACCUM3
 params:
--   kind: str
-    name: circuit
-    value: async
--   kind: Int
+  - kind: Int
     name: delay
     value: 5
+  - kind: str
+    name: circuit
+    value: subcirc
 io_ports:
--   kind: Wire
+  - kind: Wire
     name: QD_
     direct: 'Output:'
     signed: 'False'
     width:
-    -   kind: int
+      - kind: int
         value: 17
-    -   kind: int
+      - kind: int
         value: 0
--   kind: Wire
+  - kind: Wire
     name: RL_
     direct: 'Output:'
     signed: 'False'
     width:
-    -   kind: int
+      - kind: int
         value: 17
-    -   kind: int
+      - kind: int
         value: 0
--   kind: Wire
+  - kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: FRQ
     direct: 'Input:'
     signed: 'False'
     width:
-    -   kind: int
+      - kind: int
         value: 33
-    -   kind: int
+      - kind: int
         value: 0
--   kind: Wire
+  - kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
-decls:
--   -   kind: Wire
-        name: RL_10
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_11
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_12
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_13
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_14
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_15
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_16
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_17
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_4
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_5
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_6
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_7
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_8
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: RL_9
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ10
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ11
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ12
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ13
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ14
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ15
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ16
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ17
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ18
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ19
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ20
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ21
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ22
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ23
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ24
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ25
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ26
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ27
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ28
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ29
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ30
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ31
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ32
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ33
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_10
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_11
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_12
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_13
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_14
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_15
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_16
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_17
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ4
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ5
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ6
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ7
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ8
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: FRQ9
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_4
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_5
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_6
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_7
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_8
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: QD_9
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
+decls: []
 behav_blcks:
--   kind: subcirc
+  - kind: subcirc
     name: ACCM0
     module: M1M_QDACCUM5
     params:
-    -   kind: str
+      - kind: str
         value: sync
         name: circuit
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: CLK
-    -   port: None
+      - port: None
         node:
             kind: slice
             name: FRQ
             sgmnts:
-            - 33
-            - 0
-    -   port: None
+              - kind: int
+                value: 33
+              - kind: int
+                value: 0
+      - port: None
         node:
             kind: ident
             name: INIT
-    -   port: None
+      - port: None
         node:
             kind: slice
             name: QD_
             sgmnts:
-            - 17
-            - 0
-    -   port: None
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
         node:
             kind: slice
             name: RL_
             sgmnts:
-            - 17
-            - 0
-    -   port: None
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
         node:
             kind: concat
             sgmnts:
-            -   kind: ident
+              - kind: ident
                 name: VDD
-            -   kind: ident
+              - kind: ident
                 name: VSS
-

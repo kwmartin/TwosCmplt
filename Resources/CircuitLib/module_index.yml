@@ -1,4 +1,4 @@
-generated: '2026-08-12T12:12:08+00:00'
+generated: '2026-08-14T18:33:45+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -31,6 +31,38 @@ modules:
     CAP_LD2:
         directory: verilogParse/ver_lib
         file_name: CAP_LD2.v
+        clean: true
+    CLA1:
+        directory: verilogParse/ver_lib
+        file_name: CLA1.v
+        clean: true
+    CLA10:
+        directory: verilogParse/ver_lib
+        file_name: CLA10.v
+        clean: true
+    CLA16:
+        directory: verilogParse/ver_lib
+        file_name: CLA16.v
+        clean: true
+    CLA18:
+        directory: verilogParse/ver_lib
+        file_name: CLA18.v
+        clean: true
+    CLA2:
+        directory: verilogParse/ver_lib
+        file_name: CLA2.v
+        clean: true
+    CLA4:
+        directory: verilogParse/ver_lib
+        file_name: CLA4.v
+        clean: true
+    CLA6:
+        directory: verilogParse/ver_lib
+        file_name: CLA6.v
+        clean: true
+    CLA8:
+        directory: verilogParse/ver_lib
+        file_name: CLA8.v
         clean: true
     CLK_SLCT:
         directory: verilogParse/ver_lib
@@ -540,6 +572,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
         clean: true
+    DG_TDER_6X2:
+        directory: verilogParse/ver_lib
+        file_name: DG_TDER_6X2.v
+        clean: true
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
@@ -732,6 +768,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_PRPLGC.v
         clean: true
+    KM_REGS17:
+        directory: verilogParse/ver_lib
+        file_name: KM_REGS17.v
+        clean: true
+    KM_REGS18:
+        directory: verilogParse/ver_lib
+        file_name: KM_REGS18.v
+        clean: true
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
@@ -739,6 +783,10 @@ modules:
     KM_SPCL_DIFFMX:
         directory: verilogParse/ver_lib
         file_name: KM_SPCL_DIFFMX.v
+        clean: true
+    M1M_QDACCUM5:
+        directory: verilogParse/ver_lib
+        file_name: M1M_QDACCUM5.v
         clean: true
     MLTPLY_FINE2:
         directory: verilogParse/ver_lib
@@ -791,6 +839,10 @@ modules:
     TFF:
         directory: verilogParse/ver_lib
         file_name: TFF.v
+        clean: true
+    TST_ACCUM3:
+        directory: verilogParse/ver_lib
+        file_name: TST_ACCUM3.v
         clean: true
     TST_CNTR8D:
         directory: verilogParse/ver_lib

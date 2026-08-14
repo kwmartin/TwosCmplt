@@ -103,6 +103,31 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
+        name: net1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
         name: N380
         signed: 'False'
         width:
@@ -410,4 +435,27 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
-
+-   kind: async
+    name: X1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: net1
+    -   port: None
+        node:
+            kind: ident
+            name: net2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: net3_1
+            -   kind: ident
+                name: net3_0
