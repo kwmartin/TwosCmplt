@@ -220,11 +220,11 @@ class DisplayWindow(QMainWindow):
         edit_menu = self.menuBar().addMenu("Edit")
 
         undo_act = QAction("Undo\tCtrl+Z", self)
-        undo_act.triggered.connect(self.editor.undo)
+        undo_act.triggered.connect(lambda: self._active_canvas().undo())
         edit_menu.addAction(undo_act)
 
         redo_act = QAction("Redo\tCtrl+Y", self)
-        redo_act.triggered.connect(self.editor.redo)
+        redo_act.triggered.connect(lambda: self._active_canvas().redo())
         edit_menu.addAction(redo_act)
 
         edit_menu.addSeparator()

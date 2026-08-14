@@ -47,6 +47,7 @@ from wave_data_model import (
 from wave_selection import SelectionModel
 from wave_reorder import move_block_up, move_block_down
 from wave_context_menu import show_label_menu
+from wave_undo import UndoStack
 
 SAVE_LOCATION = "../Resources/SimSpcs"
 
@@ -159,6 +160,11 @@ class WaveformCanvas(QWidget):
 
         self.waves: list[WaveRow] = []
         self._selection = SelectionModel()
+
+        # undo/redo for delete/reorder only -- this canvas is view-only, so
+        # there's no wave-value editing to protect, just accidental deletes
+        # and reorders of what's currently on screen.
+        self._undo_stack = UndoStack(self._snapshot, self._restore_snapshot)
 
         self.label_widgets: dict[WaveRow, RowLabel] = {}
         self.panning = False
@@ -645,16 +651,20 @@ class WaveformCanvas(QWidget):
 
     def move_selection_up(self):
         indices = self._selected_indices()
-        if not move_block_up(self.waves, indices):
+        if not indices or indices[0] == 0:
             return
+        self._push_undo()
+        move_block_up(self.waves, indices)
         self.refresh_label_layout()
         self.update()
         self._scroll_to_show_index(indices[0] - 1)
 
     def move_selection_down(self):
         indices = self._selected_indices()
-        if not move_block_down(self.waves, indices):
+        if not indices or indices[-1] >= len(self.waves) - 1:
             return
+        self._push_undo()
+        move_block_down(self.waves, indices)
         self.refresh_label_layout()
         self.update()
         self._scroll_to_show_index(indices[-1] + 1)
@@ -662,6 +672,7 @@ class WaveformCanvas(QWidget):
     def delete_selected_waves(self):
         if not self._selection.selected:
             return
+        self._push_undo()
         deleted_labels = [w.label_text for w in self._selection.selected]
         for wave in list(self._selection.selected):
             if wave in self.waves:
@@ -674,6 +685,31 @@ class WaveformCanvas(QWidget):
         self.refresh_label_layout()
         self.update()
         self.waves_deleted.emit(deleted_labels)
+
+    # ------------------------------------------------------------------ undo/redo
+
+    def _snapshot(self):
+        return list(self.waves)
+
+    def _restore_snapshot(self, snap):
+        self.waves = list(snap)
+        self._rebuild_label_widgets()
+        self.update_scrollbars()
+        self.refresh_label_layout()
+        self.update()
+        # Reuses waves_deleted purely to trigger wave_display.py's node-picker
+        # re-sync (_on_waves_deleted ignores the argument content) -- undo/redo
+        # can add waves back just as easily as remove them, not just delete.
+        self.waves_deleted.emit([])
+
+    def _push_undo(self):
+        self._undo_stack.push()
+
+    def undo(self):
+        self._undo_stack.undo()
+
+    def redo(self):
+        self._undo_stack.redo()
 
     def show_label_context_menu(self, wave: WaveRow, global_pos):
         sel = [w for w in self.waves if w in self._selection.selected]
@@ -953,6 +989,14 @@ class WaveformCanvas(QWidget):
                 return
             if event.key() == Qt.Key_Down:
                 self.move_selection_down()
+                event.accept()
+                return
+            if event.key() == Qt.Key_Z:
+                self.undo()
+                event.accept()
+                return
+            if event.key() == Qt.Key_Y:
+                self.redo()
                 event.accept()
                 return
         if event.key() == Qt.Key_Escape:

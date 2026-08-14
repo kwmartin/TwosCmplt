@@ -49,6 +49,7 @@ from wave_data_model import (
     build_constants_map,
     expr_to_abs_time,
     expr_to_period_units,
+    counting_sequence_values,
     WaveRow,
     ClockWaveRow,
     DigitalWaveRow,
@@ -2471,12 +2472,7 @@ class GenerateCountingSequenceDialog(QDialog):
                                 "Final must be greater than Start when increment is positive.")
             return None
 
-        sequence: list[tuple[float, int]] = []
-        for i in range(final):
-            tm = 0.0 if i == 0 else i * time_incr_f
-            val = _mask_to_nbits(start + i * var_incr, self.nbits)
-            sequence.append((snap01(tm), val))
-
+        sequence = counting_sequence_values(start, final, var_incr, time_incr_f, self.nbits)
         return sequence, self._merge_rb.isChecked()
 
 
