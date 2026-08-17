@@ -1,5 +1,5 @@
 kind: verilog
-module: TST_TDR_6X2
+module: TST_TDER_6X2
 params:
   - kind: Int
     name: delay
@@ -117,54 +117,6 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-  - kind: sync
-    name: T1
-    module: DG_TDR_6X2
-    params:
-      - kind: str
-        value: sync
-        name: circuit
-    ports:
-      - port: None
-        node:
-            kind: ident
-            name: L
-      - port: None
-        node:
-            kind: ident
-            name: LI
-      - port: None
-        node:
-            kind: ident
-            name: T
-      - port: None
-        node:
-            kind: ident
-            name: INIT
-      - port: None
-        node:
-            kind: ident
-            name: CP
-      - port: None
-        node:
-            kind: ident
-            name: CN
-      - port: None
-        node:
-            kind: ident
-            name: QP1
-      - port: None
-        node:
-            kind: ident
-            name: QN1
-      - port: None
-        node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
   - kind: async
     name: INV2
     module: DG_INV4_1X1
@@ -228,6 +180,54 @@ behav_blcks:
         node:
             kind: ident
             name: CN
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: T1
+    module: DG_TDR_6X2
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: L
+      - port: None
+        node:
+            kind: ident
+            name: LI
+      - port: None
+        node:
+            kind: ident
+            name: T
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CP
+      - port: None
+        node:
+            kind: ident
+            name: CN
+      - port: None
+        node:
+            kind: ident
+            name: QP1
+      - port: None
+        node:
+            kind: ident
+            name: QN1
       - port: None
         node:
             kind: concat

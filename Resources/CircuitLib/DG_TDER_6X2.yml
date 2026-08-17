@@ -9,15 +9,25 @@ params:
     value: 5
 io_ports:
 -   name: L
--   name: D
+    direct: Input
+-   name: LI
+    direct: Input
 -   name: T
+    direct: Input
 -   name: R
+    direct: Input
 -   name: CP
+    direct: Input
 -   name: CN
+    direct: Input
 -   name: QP
+    direct: Output
 -   name: QN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: L
@@ -27,7 +37,7 @@ decls:
         - 0
         length: []
     -   kind: Input
-        name: D
+        name: LI
         signed: 'False'
         width:
         - 0
@@ -225,7 +235,7 @@ behav_blcks:
                         -   kind: ident
                             name: L
                         -   kind: ident
-                            name: D
+                            name: LI
                         -   kind: cndexpr
                             args:
                             -   kind: ident
@@ -301,7 +311,7 @@ behav_blcks:
                         -   kind: ident
                             name: L
                         -   kind: ident
-                            name: D
+                            name: LI
                         -   kind: cndexpr
                             args:
                             -   kind: ident
@@ -315,20 +325,9 @@ behav_blcks:
                         kind: ident
                         name: QN
                     rvalue:
-                        kind: cndexpr
+                        kind: uexpr
+                        oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: L
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: D
-                        -   kind: cndexpr
-                            args:
-                            -   kind: ident
-                                name: T
-                            -   kind: ident
-                                name: QP
-                            -   kind: ident
-                                name: QN
+                            name: QN
+

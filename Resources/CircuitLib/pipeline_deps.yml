@@ -260,25 +260,25 @@ modules:
     TST_DR_3X2:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_DR_3X2/verilog/TST_DR_3X2.v
         timestamps:
-            verilog: 1786493917.0998816
-            ast: 1786495211.2649772
-            mod: 1786495213.6020103
-            circuit_lib: 1786495214.7650268
-            unl: 1786495214.7710268
+            verilog: 1786996926.5596018
+            ast: 1786996928.0196137
+            mod: 1786996929.9916298
+            circuit_lib: 1786996930.980638
+            unl: 1786996930.984638
         hashes:
             verilog: 6527913f7820116f786e45501f7277ce3f6dbf586a01828705dda7952bc31860
-            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
+            scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88
     TST_DER_3X2:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_DER_3X2/verilog/TST_DER_3X2.v
         timestamps:
-            verilog: 1786202322.0726907
-            ast: 1786202323.5277088
-            mod: 1786202326.1807415
-            circuit_lib: 1786202327.345756
-            unl: 1786202327.3507562
+            verilog: 1787002656.235266
+            ast: 1787002661.8123066
+            mod: 1787002663.7413208
+            circuit_lib: 1787002664.718328
+            unl: 1787002664.722328
         hashes:
             verilog: 77b6fd5293819f2e5595727212459e74beab5ffe1deb61f695fd830575887ec0
-            scripts: ccc42b20c77f35f061cb21d445fafa9635df5382d447ca163165f74e70ad5f4c
+            scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88
     DG_DER_3X2:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DER_3X2.v
         timestamps:
@@ -326,13 +326,13 @@ modules:
     DG_TDER_6X2:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_TDER_6X2.v
         timestamps:
-            verilog: 1786631006.7776124
-            ast: 1786842070.5369556
-            mod: 1786842072.8839865
-            circuit_lib: 1786842074.0200014
-            unl: 1786842074.0270014
+            verilog: 1786982161.1081898
+            ast: 1786982166.5662372
+            mod: 1786982168.9142575
+            circuit_lib: 1786982169.9622664
+            unl: 1786982169.9692667
         hashes:
-            verilog: adcf70e89e1d78ca074819f65ab53d14ac330dcb219704d446f620a278dbece1
+            verilog: cd4e4f8eef66801d1c1872f4bc90606dcb5ae3c7d79c95167df4b4bd95269703
             scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88
     CLA1:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/CLA1.v
@@ -436,22 +436,33 @@ modules:
     TST_TDR_6X2:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_TDR_6X2/verilog/TST_TDR_6X2.v
         timestamps:
-            verilog: 1786842230.9760516
-            ast: 1786842242.614203
-            mod: 1786842244.8022316
-            circuit_lib: 1786842245.913246
-            unl: 1786842245.920246
+            verilog: 1786976704.8229628
+            ast: 1786976734.9691932
+            mod: 1786976736.880208
+            circuit_lib: 1786976737.8982158
+            unl: 1786976737.903216
         hashes:
-            verilog: 5696b9f7aba65137c7b6993e952ed230e49981964f079b23f691d346fb775eb6
+            verilog: 3471946efedd1b69c8dff098c938b3db9dcfabc936e3df7e4db459336e8fcdb2
             scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88
     DG_DER1_3X2:
-        verilog: /home/martin/.xschem/verilogParse/lib/std28_lib/diglib28_vl.v
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DER1_3X2.v
         timestamps:
-            verilog: 1786879201.258298
-            ast: 1786881948.0685976
-            mod: 1786881961.7727659
-            circuit_lib: 1786881969.7448637
-            unl: 1786881969.7508638
+            verilog: 1786982161.1071897
+            ast: 1786982162.3612006
+            mod: 1786982164.2972174
+            circuit_lib: 1786982165.2552257
+            unl: 1786982165.2602258
         hashes:
-            verilog: 0aabe1eb7ebc1006692780d3d12ce2e0f529bd5f2e4a52f5c7e0e8b28f4198a8
+            verilog: 215d81698a6ddeff6c87d1b8164986b8a3f8730685300324bf4a5d83fec6acda
+            scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88
+    TST_TDER_6X2:
+        verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_TDER_6X2/verilog/TST_TDER_6X2.v
+        timestamps:
+            verilog: 1786985442.3096259
+            ast: 1786985448.2976773
+            mod: 1786985450.242694
+            circuit_lib: 1786985451.2617028
+            unl: 1786985451.2667027
+        hashes:
+            verilog: 81db322f9e59f1f32e03eec5e03c82603e2bb6ef818075c9f5690e0705787313
             scripts: aa1b11692f5abd04272e78233a34d9a55833816f3335813d7a54a6e305b10c88

@@ -1,0 +1,60 @@
+module: TST_TDER_6X2
+generated: true
+Constants:
+  -   - PER
+      - 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - T
+          - 0
+  - tm: 0
+    vls:
+      -   - INIT
+          - 1
+      -   - Ta
+          - 0
+      -   - LI
+          - 0
+      -   - L
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+  - tm: 4.1*PER
+    vls:
+      -   - Ta
+          - 1
+Signals:
+    CLK: 1
+    INIT: 1
+    T: 1
+    LI: 1
+    L: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    T: data_inputs
+    LI: data_inputs
+    L: data_inputs
+    QP1: outputs
+    QN1: outputs
