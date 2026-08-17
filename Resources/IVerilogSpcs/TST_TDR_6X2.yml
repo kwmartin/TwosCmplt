@@ -1,0 +1,43 @@
+module: TST_TDR_6X2
+generated: true
+Constants:
+    PER: 1000
+FinishTime: 16*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [CP, 0]
+      - [T, 1]
+      - [LI, 0]
+      - [L, 0]
+      - [CN, 0]
+  - tm: PER
+    vls:
+      -   - INIT
+          - 0
+Signals:
+    INIT: 1
+    CP: 1
+    T: 1
+    LI: 1
+    L: 1
+    CN: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    INIT: resets
+    CP: data_inputs
+    T: data_inputs
+    LI: data_inputs
+    L: data_inputs
+    CN: data_inputs
+    QP1: outputs
+    QN1: outputs

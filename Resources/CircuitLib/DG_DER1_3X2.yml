@@ -1,5 +1,5 @@
 kind: verilog
-module: DG_DR_3X2
+module: DG_DER1_3X2
 params:
 -   kind: str
     name: circuit
@@ -9,12 +9,19 @@ params:
     value: 5
 io_ports:
 -   name: D
+    direct: Input
 -   name: R
+    direct: Input
 -   name: CLK
+    direct: Input
 -   name: QP
+    direct: Output
 -   name: QN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: D
@@ -73,6 +80,13 @@ decls:
         - 0
         length: []
     -   kind: Reg
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
         name: CLKB
         signed: 'False'
         width:
@@ -119,6 +133,13 @@ behav_blcks:
     -   kind: blckst
         lvalue:
             kind: ident
+            name: ENBL
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
             name: chngs
         rvalue:
             kind: int
@@ -147,6 +168,13 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 0
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: ENBL
+            rvalue:
+                kind: int
+                value: 0
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -161,32 +189,39 @@ behav_blcks:
                     kind: int
                     value: 0
             ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: CLKB
-                rvalue:
-                    kind: ident
-                    name: CLK
             -   kind: ifst
                 cmpr_expr:
-                    kind: cmpr_unary
-                    arg:
-                        kind: uexpr
-                        oper: 'Ulnot:'
-                        args:
-                        -   kind: ident
-                            name: CLK
+                    kind: cmpr_expr
+                    oper: 'BNotEq:'
+                    args:
+                    -   kind: ident
+                        name: STATE
+                    -   kind: ident
+                        name: D
                 iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: ENBL
+                    rvalue:
+                        kind: int
+                        value: 1
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: CLKB
+                    rvalue:
+                        kind: ident
+                        name: CLK
                 -   kind: ifst
                     cmpr_expr:
-                        kind: cmpr_expr
-                        oper: 'BNotEq:'
-                        args:
-                        -   kind: ident
-                            name: STATE
-                        -   kind: ident
-                            name: D
+                        kind: cmpr_unary
+                        arg:
+                            kind: uexpr
+                            oper: 'Ulnot:'
+                            args:
+                            -   kind: ident
+                                name: CLK
                     iftrue:
                     -   kind: blckst
                         lvalue:
@@ -200,10 +235,29 @@ behav_blcks:
                                 name: chngs
                             -   kind: int
                                 value: 1
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: STATE
-                        rvalue:
-                            kind: ident
-                            name: D
+                ifelse:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: ENBL
+                    rvalue:
+                        kind: int
+                        value: 0
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
+                        args:
+                        -   kind: ident
+                            name: CLK
+                iftrue:
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: STATE
+                    rvalue:
+                        kind: ident
+                        name: D
+

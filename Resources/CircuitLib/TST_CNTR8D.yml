@@ -1,111 +1,112 @@
 kind: verilog
 module: TST_CNTR8D
 params:
-  - kind: Int
-    name: delay
-    value: 5
-  - kind: str
+-   kind: str
     name: circuit
     value: async
+-   kind: Int
+    name: delay
+    value: 5
 io_ports:
-  - kind: Wire
+-   kind: Wire
     name: QP
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: QN
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: LD
     direct: 'Output:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: D
     direct: 'Input:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
 decls: []
 behav_blcks:
-  - kind: instance
+-   kind: instance
     name: X1
     module: KM_CNTR8D
     params: null
     ports:
-      - port: None
+    -   port: D
         node:
             kind: slice
             name: D
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: D
+    -   port: INIT
         node:
             kind: ident
             name: INIT
-      - port: INIT
+    -   port: CLK
         node:
             kind: ident
             name: CLK
-      - port: LD
+    -   port: LD
         node:
             kind: ident
             name: LD
-      - port: QN
+    -   port: QN
         node:
             kind: slice
             name: QN
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: QP
+    -   port: QP
         node:
             kind: slice
             name: QP
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: VDD
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-      - port: VSS
+    -   port: VSS
         node:
             kind: ident
             name: VSS
+

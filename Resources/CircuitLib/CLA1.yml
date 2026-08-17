@@ -68,12 +68,12 @@ behav_blcks:
             name: P
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: AND1
     module: DG_AND2_2X1
@@ -96,12 +96,12 @@ behav_blcks:
             name: G
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: FADDR1
     module: FADDR_3X2
@@ -132,9 +132,10 @@ behav_blcks:
             name: CO
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

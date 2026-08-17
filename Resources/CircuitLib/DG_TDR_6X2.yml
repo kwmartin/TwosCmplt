@@ -103,6 +103,21 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Reg
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
 -   kind: initial
     stmnts:
@@ -120,9 +135,16 @@ behav_blcks:
         rvalue:
             kind: int
             value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
+        rvalue:
+            kind: int
+            value: 0
 -   kind: always
     onlyif:
-    -   edge: negedge
+    -   edge: all
         node: CP
     -   edge: posedge
         node: R
@@ -175,41 +197,92 @@ behav_blcks:
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: QP
+                    name: CLKB
                 rvalue:
-                    kind: cndexpr
-                    args:
-                    -   kind: ident
-                        name: L
-                    -   kind: ident
-                        name: D
-                    -   kind: cndexpr
-                        args:
-                        -   kind: ident
-                            name: T
-                        -   kind: ident
-                            name: QN
-                        -   kind: ident
-                            name: QP
-            -   kind: noblckst
-                lvalue:
                     kind: ident
-                    name: QN
-                rvalue:
-                    kind: cndexpr
-                    args:
-                    -   kind: ident
-                        name: L
-                    -   kind: uexpr
-                        oper: 'Unot:'
+                    name: CP
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
                         args:
                         -   kind: ident
-                            name: D
-                    -   kind: cndexpr
+                            name: CP
+                iftrue:
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BNotEq:'
                         args:
-                        -   kind: ident
-                            name: T
+                        -   kind: cndexpr
+                            args:
+                            -   kind: ident
+                                name: L
+                            -   kind: ident
+                                name: D
+                            -   kind: cndexpr
+                                args:
+                                -   kind: ident
+                                    name: T
+                                -   kind: ident
+                                    name: QN
+                                -   kind: ident
+                                    name: QP
                         -   kind: ident
                             name: QP
-                        -   kind: ident
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: chngs
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: ident
+                                name: chngs
+                            -   kind: int
+                                value: 1
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: QP
+                        rvalue:
+                            kind: cndexpr
+                            args:
+                            -   kind: ident
+                                name: L
+                            -   kind: ident
+                                name: D
+                            -   kind: cndexpr
+                                args:
+                                -   kind: ident
+                                    name: T
+                                -   kind: ident
+                                    name: QN
+                                -   kind: ident
+                                    name: QP
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
                             name: QN
+                        rvalue:
+                            kind: cndexpr
+                            args:
+                            -   kind: ident
+                                name: L
+                            -   kind: uexpr
+                                oper: 'Unot:'
+                                args:
+                                -   kind: ident
+                                    name: D
+                            -   kind: cndexpr
+                                args:
+                                -   kind: ident
+                                    name: T
+                                -   kind: ident
+                                    name: QP
+                                -   kind: ident
+                                    name: QN

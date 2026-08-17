@@ -1,106 +1,107 @@
 kind: verilog
 module: TST_ACCUM3
 params:
-  - kind: Int
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
     name: delay
     value: 5
-  - kind: str
-    name: circuit
-    value: subcirc
 io_ports:
-  - kind: Wire
+-   kind: Wire
     name: QD_
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 17
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: RL_
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 17
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: FRQ
     direct: 'Input:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 33
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
 decls: []
 behav_blcks:
-  - kind: subcirc
+-   kind: subcirc
     name: ACCM0
     module: M1M_QDACCUM5
     params:
-      - kind: str
+    -   kind: str
         value: sync
         name: circuit
     ports:
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: CLK
-      - port: None
+    -   port: None
         node:
             kind: slice
             name: FRQ
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 33
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: INIT
-      - port: None
+    -   port: None
         node:
             kind: slice
             name: QD_
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 17
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: None
+    -   port: None
         node:
             kind: slice
             name: RL_
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 17
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: None
+    -   port: None
         node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

@@ -1,0 +1,22 @@
+Constants:
+    PER: 1000
+FinishTime: 16*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [CP, 0]
+      - [T, 1]
+      - [LI, 0]
+      - [L, 0]
+      - [CN, 0]
+  - tm: PER
+    vls:
+      - [INIT, 0]
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b

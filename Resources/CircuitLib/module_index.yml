@@ -1,4 +1,4 @@
-generated: '2026-08-14T18:33:45+00:00'
+generated: '2026-08-16T12:05:46+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -139,6 +139,10 @@ modules:
     DG_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF8_1X1.v
+        clean: true
+    DG_DER1_3X2:
+        directory: verilogParse/lib/std28_lib
+        file_name: diglib28_vl.v
         clean: true
     DG_DER_3X2:
         directory: verilogParse/ver_lib
@@ -852,9 +856,18 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
         clean: true
+    TST_DR_3X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DR_3X2.v
+        clean: false
+        stale_reason: parser scripts changed
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
+        clean: true
+    TST_TDR_6X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_TDR_6X2.v
         clean: true
     VOTER:
         directory: verilogParse/ver_lib
