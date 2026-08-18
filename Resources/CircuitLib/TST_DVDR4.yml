@@ -56,6 +56,14 @@ decls:
             value: 31
         -   kind: int
             value: 0
+-   -   kind: Integer
+        name: dsplyFile
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
 -   kind: always
     onlyif:
@@ -132,14 +140,6 @@ behav_blcks:
             args:
             -   kind: ident
                 name: CLK
--   kind: Integer
-    name: dsplyFile
-    signed: integer
-    width:
-    -   kind: int
-        value: 31
-    -   kind: int
-        value: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -226,7 +226,7 @@ behav_blcks:
     module: DVDR4
     params: null
     ports:
-    -   port: None
+    -   port: OUT
         node:
             kind: slice
             name: OUT
@@ -235,19 +235,20 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: INIT
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: CLK
         node:
             kind: ident
             name: CLK
-    -   port: None
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: None
+    -   port: VSS
         node:
             kind: ident
             name: VSS
+

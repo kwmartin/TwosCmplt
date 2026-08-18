@@ -3,18 +3,25 @@ module: KM_DIFF2SNGL
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: INP
+    direct: Input
 -   name: INN
+    direct: Input
 -   name: PD
+    direct: Input
 -   name: IBIAS
+    direct: Input
 -   name: OUT
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: INP
@@ -82,3 +89,4 @@ behav_blcks:
         -   kind: ident
             name: INP
     delay: 120.0
+

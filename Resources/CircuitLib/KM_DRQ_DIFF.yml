@@ -9,16 +9,27 @@ params:
     value: 5
 io_ports:
 -   name: DP
+    direct: Input
 -   name: DN
+    direct: Input
 -   name: R
+    direct: Input
 -   name: CP
+    direct: Input
 -   name: CN
+    direct: Input
 -   name: ROP
+    direct: Output
 -   name: RON
+    direct: Output
 -   name: QOP
+    direct: Output
 -   name: QON
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: DP
@@ -158,23 +169,6 @@ behav_blcks:
         kind: ident
         name: QN
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 22.0
-    src_sgnls:
-    - DP
-    - DN
-    - R
-    - CP
-    - CN
-    edge: posedge
-    dst_sgnls:
-    - ROP
-    - RON
-    - QOP
-    - QON
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -313,3 +307,4 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: RN
+

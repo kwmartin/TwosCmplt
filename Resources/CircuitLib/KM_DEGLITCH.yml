@@ -3,21 +3,31 @@ module: KM_DEGLITCH
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: RIP
+    direct: Input
 -   name: RIN
+    direct: Input
 -   name: QIP
+    direct: Input
 -   name: QIN
+    direct: Input
 -   name: RP
+    direct: Output
 -   name: RN
+    direct: Output
 -   name: QP
+    direct: Output
 -   name: QN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: RIP
@@ -104,22 +114,44 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 7.8
-    src_sgnls:
-    - RIP
-    - RIN
-    - QIP
-    - QIP
-    edge: posedge
-    dst_sgnls:
-    - RP
-    - RN
-    - QP
-    - QN
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: RP
+    rvalue:
+        kind: ident
+        name: RSTATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: RN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: RSTATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: QSTATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: QSTATE
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -248,41 +280,4 @@ behav_blcks:
                 rvalue:
                     kind: int
                     value: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: RP
-    rvalue:
-        kind: ident
-        name: RSTATE
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: RN
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: RSTATE
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QP
-    rvalue:
-        kind: ident
-        name: QSTATE
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QN
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: QSTATE
-    delay: 0
+

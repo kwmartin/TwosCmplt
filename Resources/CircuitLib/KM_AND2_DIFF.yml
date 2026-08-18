@@ -3,7 +3,7 @@ module: KM_AND2_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -86,7 +86,7 @@ behav_blcks:
             name: AP
         -   kind: ident
             name: BP
-    delay: 10.3
+    delay: 18.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -102,4 +102,5 @@ behav_blcks:
                 name: AP
             -   kind: ident
                 name: BP
-    delay: 10.3
+    delay: 18.0
+

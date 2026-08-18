@@ -9,12 +9,19 @@ params:
     value: 5
 io_ports:
 -   name: d
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: cn
+    direct: Input
 -   name: qop
+    direct: Output
 -   name: qon
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: d
@@ -37,6 +44,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: qop
         signed: 'False'
@@ -46,20 +67,6 @@ decls:
         length: []
     -   kind: Output
         name: qon
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
-        name: vdd
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: vss
         signed: 'False'
         width:
         - 0
@@ -96,30 +103,6 @@ behav_blcks:
         kind: ident
         name: qn
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 31.5
-    src_sgnls:
-    - cp
-    edge: negedge
-    dst_sgnls:
-    - qop
-    - d
-    pth_spc: pluscolon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 31.5
-    src_sgnls:
-    - cn
-    edge: posedge
-    dst_sgnls:
-    - qon
-    - d
-    pth_spc: minuscolon
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -148,8 +131,8 @@ behav_blcks:
             args:
             -   kind: sys_tm
                 name: time
-            -   kind: int
-                value: 200
+            -   kind: float
+                value: 100.0
         iftrue:
         -   kind: blckst
             lvalue:
@@ -183,3 +166,4 @@ behav_blcks:
                 args:
                 -   kind: ident
                     name: d
+

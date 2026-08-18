@@ -3,7 +3,7 @@ module: Sine
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -242,6 +242,17 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
+        name: net1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
         name: CO2
         signed: 'False'
         width:
@@ -406,6 +417,38 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+-   kind: async
+    name: CMPL0
+    module: DG_CMPL
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: R0_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: slice
+            name: R0_
+            sgmnts:
+            -   kind: int
+                value: 13
+            -   kind: int
+                value: 2
+    -   port: None
+        node:
+            kind: slice
+            name: CMPL0_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
 -   kind: async
     name: ROM0
     module: ROM
@@ -586,6 +629,38 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+-   kind: async
+    name: CMPL1
+    module: DG_CMPL
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: R0_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR2_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CMPL1_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
 -   kind: async
     name: ADDR3
     module: ADDR
@@ -865,23 +940,30 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: async
-    name: i1
-    module: DG_INV2
+    name: inv1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
         name: circuit
     ports:
-    -   port: A
+    -   port: None
         node:
             kind: bit
             name: R0_
             sgmnts:
             - 15
-    -   port: Z
+    -   port: None
         node:
             kind: bit
             name: R0N_
             sgmnts:
             - 15
-
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: net1_1
+            -   kind: ident
+                name: net1_0

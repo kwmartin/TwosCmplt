@@ -1,12 +1,9 @@
 kind: verilog
 module: CMPL
 params:
--   kind: int
-    name: nbits
-    value: 8
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -43,47 +40,6 @@ io_ports:
             value: 1
     -   kind: int
         value: 0
--   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
 decls:
 - null
-behav_blcks:
--   kind: assign
-    lvalue:
-        kind: ident
-        name: OUT
-    rvalue:
-        kind: cndexpr
-        args:
-        -   kind: cmpr_expr
-            oper: 'BEq:'
-            args:
-            -   kind: ident
-                name: INVRT
-            -   kind: int
-                value: 1
-        -   kind: uexpr
-            oper: 'Unot:'
-            args:
-            -   kind: ident
-                name: IN
-        -   kind: ident
-            name: IN
-    delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 20.0
-    src_sgnls:
-    - INVRT
-    - IN
-    edge: posedge
-    dst_sgnls:
-    - OUT
+behav_blcks: null

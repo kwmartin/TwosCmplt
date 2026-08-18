@@ -4,9 +4,6 @@ params:
 -   kind: str
     name: circuit
     value: sync
--   kind: str
-    name: circuit
-    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -814,7 +811,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK1
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -835,7 +832,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK3
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -856,7 +853,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK2
-    -   port: VDD
+    -   port: VCC
         node:
             kind: ident
             name: VDD
@@ -1035,3 +1032,4 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+

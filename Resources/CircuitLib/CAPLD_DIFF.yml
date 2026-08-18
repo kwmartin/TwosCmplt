@@ -3,15 +3,19 @@ module: CAPLD_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: NDP
+    direct: Input
 -   name: NDN
+    direct: Input
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: NDP
@@ -42,3 +46,4 @@ decls:
         - 0
         length: []
 behav_blcks: null
+

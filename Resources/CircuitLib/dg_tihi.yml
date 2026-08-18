@@ -3,14 +3,17 @@ module: dg_tihi
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: hi
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: vdd
@@ -42,3 +45,4 @@ behav_blcks:
         kind: int
         value: 1
     delay: 0
+

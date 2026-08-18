@@ -9,15 +9,25 @@ params:
     value: 5
 io_ports:
 -   name: DP
+    direct: Input
 -   name: DN
+    direct: Input
 -   name: RP
+    direct: Input
 -   name: RN
+    direct: Input
 -   name: CP
+    direct: Input
 -   name: CN
+    direct: Input
 -   name: QOP
+    direct: Output
 -   name: QON
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: DP
@@ -61,6 +71,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: QOP
         signed: 'False'
@@ -70,20 +94,6 @@ decls:
         length: []
     -   kind: Output
         name: QON
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
         signed: 'False'
         width:
         - 0
@@ -120,32 +130,6 @@ behav_blcks:
         kind: ident
         name: QN
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 40.0
-    src_sgnls:
-    - CP
-    - CN
-    - DP
-    - DN
-    edge: posedge
-    dst_sgnls:
-    - QOP
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 40.0
-    src_sgnls:
-    - CP
-    - CN
-    - DP
-    - DN
-    edge: posedge
-    dst_sgnls:
-    - QON
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -227,3 +211,4 @@ behav_blcks:
                     args:
                     -   kind: ident
                         name: DP
+

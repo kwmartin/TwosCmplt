@@ -3,28 +3,58 @@ module: MX3X1_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: D0P
+    direct: Input
 -   name: D0N
+    direct: Input
 -   name: D1P
+    direct: Input
 -   name: D1N
+    direct: Input
 -   name: D2P
+    direct: Input
 -   name: D2N
+    direct: Input
 -   name: S0P
+    direct: Input
 -   name: S0N
+    direct: Input
 -   name: S1P
+    direct: Input
 -   name: S1N
+    direct: Input
 -   name: S2P
+    direct: Input
 -   name: S2N
+    direct: Input
 -   name: OP
+    direct: Wire
 -   name: 'ON'
+    direct: Wire
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
+-   -   kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: D0P
         signed: 'False'
@@ -137,20 +167,6 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Wire
-        name: OP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: 'ON'
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: OUT
         signed: 'False'
@@ -159,28 +175,25 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 12.8
-    src_sgnls:
-    - D0P
-    - D0N
-    - D1P
-    - D1N
-    - D2P
-    - D2N
-    - S0P
-    - S0N
-    - S1P
-    - S1N
-    - S2P
-    - S2N
-    edge: posedge
-    dst_sgnls:
-    - OP
-    - OP
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: ident
+        name: OUT
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: OP
+    delay: 0
 -   kind: always
     onlyif:
     -   edge: all
@@ -331,22 +344,4 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 1'B1
--   kind: assign
-    lvalue:
-        kind: ident
-        name: OP
-    rvalue:
-        kind: ident
-        name: OUT
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: 'ON'
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: OP
-    delay: 0
+

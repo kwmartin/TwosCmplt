@@ -3,16 +3,21 @@ module: DG_HV2LV
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: IN
+    direct: Input
 -   name: OUT
+    direct: Output
 -   name: VDDH
+    direct: Input
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: IN
@@ -58,3 +63,4 @@ behav_blcks:
         kind: ident
         name: IN
     delay: 350.0
+

@@ -3,19 +3,27 @@ module: KM_NOR2_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: AP
+    direct: Input
 -   name: AN
+    direct: Input
 -   name: BP
+    direct: Input
 -   name: BN
+    direct: Input
 -   name: OP
+    direct: Output
 -   name: 'ON'
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: AP
@@ -89,7 +97,7 @@ behav_blcks:
                 name: AP
             -   kind: ident
                 name: BP
-    delay: 10.7
+    delay: 18.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -102,4 +110,5 @@ behav_blcks:
             name: AP
         -   kind: ident
             name: BP
-    delay: 10.7
+    delay: 18.0
+

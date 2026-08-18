@@ -3,21 +3,31 @@ module: KM_NAB_C_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: AP
+    direct: Input
 -   name: AN
+    direct: Input
 -   name: BP
+    direct: Input
 -   name: BN
+    direct: Input
 -   name: CP
+    direct: Input
 -   name: CN
+    direct: Input
 -   name: OP
+    direct: Output
 -   name: 'ON'
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: AP
@@ -110,7 +120,7 @@ behav_blcks:
                     name: BP
             -   kind: ident
                 name: CP
-    delay: 11.7
+    delay: 14.3
 -   kind: assign
     lvalue:
         kind: ident
@@ -128,4 +138,5 @@ behav_blcks:
                 name: BP
         -   kind: ident
             name: CP
-    delay: 11.7
+    delay: 14.3
+

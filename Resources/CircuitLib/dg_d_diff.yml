@@ -9,13 +9,21 @@ params:
     value: 5
 io_ports:
 -   name: dp
+    direct: Input
 -   name: dn
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: cn
+    direct: Input
 -   name: qop
+    direct: Output
 -   name: qon
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: dp
@@ -45,6 +53,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: qop
         signed: 'False'
@@ -59,20 +81,6 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Input
-        name: vdd
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: vss
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: qp
         signed: 'False'
@@ -80,7 +88,7 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Reg
+    -   kind: Reg
         name: qn
         signed: 'False'
         width:
@@ -107,68 +115,6 @@ behav_blcks:
         -   kind: ident
             name: qp
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 21.0
-    src_sgnls:
-    - cp
-    - cn
-    - dp
-    - dn
-    edge: posedge
-    dst_sgnls:
-    - qop
-    - qon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 21.0
-    src_sgnls:
-    - cp
-    edge: negedge
-    dst_sgnls:
-    - qop
-    - dp
-    pth_spc: pluscolon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 21.0
-    src_sgnls:
-    - cn
-    edge: posedge
-    dst_sgnls:
-    - qon
-    - dp
-    pth_spc: minuscolon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 21.0
-    src_sgnls:
-    - cp
-    edge: negedge
-    dst_sgnls:
-    - qop
-    - dn
-    pth_spc: pluscolon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 21.0
-    src_sgnls:
-    - cn
-    edge: posedge
-    dst_sgnls:
-    - qon
-    - dn
-    pth_spc: minuscolon
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -199,8 +145,8 @@ behav_blcks:
             args:
             -   kind: sys_tm
                 name: time
-            -   kind: int
-                value: 200
+            -   kind: float
+                value: 100.0
         iftrue:
         -   kind: blckst
             lvalue:
@@ -234,3 +180,4 @@ behav_blcks:
                 args:
                 -   kind: ident
                     name: dp
+

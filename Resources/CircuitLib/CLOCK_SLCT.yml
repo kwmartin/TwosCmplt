@@ -9,22 +9,52 @@ params:
     value: 5
 io_ports:
 -   name: FSTP
+    direct: Input
 -   name: FSTN
+    direct: Input
 -   name: E0P
+    direct: Input
 -   name: E0N
+    direct: Input
 -   name: SAP
+    direct: Input
 -   name: SAN
+    direct: Input
 -   name: SBP
+    direct: Input
 -   name: SBN
+    direct: Input
 -   name: AP
+    direct: Input
 -   name: AN
+    direct: Input
 -   name: BP
+    direct: Input
 -   name: BN
+    direct: Input
 -   name: OP
+    direct: Wire
 -   name: 'ON'
+    direct: Wire
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
+-   -   kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: FSTP
         signed: 'False'
@@ -137,20 +167,6 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Wire
-        name: OP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: 'ON'
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: OUT
         signed: 'False'
@@ -159,28 +175,25 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 30.0
-    src_sgnls:
-    - FSTP
-    - FSTN
-    - E0P
-    - E0N
-    - SAP
-    - SAN
-    - SBP
-    - SBN
-    - AP
-    - AN
-    - BP
-    - BN
-    edge: posedge
-    dst_sgnls:
-    - OP
-    - OP
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: ident
+        name: OUT
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: OP
+    delay: 0
 -   kind: always
     onlyif:
     -   edge: all
@@ -230,76 +243,56 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: AP
-        ifelse:
-        -   kind: ifst
-            cmpr_expr:
-                kind: cmpr_gate
-                gate:
-                    kind: gt_expr
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
                     oper: 'BAnd:'
                     args:
-                    -   kind: gt_expr
-                        oper: 'BAnd:'
-                        args:
-                        -   kind: ident
-                            name: SBP
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: SAP
+                    -   kind: ident
+                        name: SBP
                     -   kind: uexpr
                         oper: 'Unot:'
                         args:
                         -   kind: ident
-                            name: E0P
-            iftrue:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: OUT
-                rvalue:
-                    kind: ident
-                    name: BP
-            ifelse:
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_gate
-                    gate:
-                        kind: gt_expr
-                        oper: 'BAnd:'
-                        args:
-                        -   kind: ident
-                            name: E0P
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: FSTP
-                iftrue:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: OUT
-                    rvalue:
-                        kind: int
-                        value: 1'B0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: OP
-    rvalue:
-        kind: ident
-        name: OUT
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: 'ON'
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: OP
-    delay: 0
+                            name: SAP
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: E0P
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: BP
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: ident
+                    name: E0P
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: FSTP
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: int
+                value: 1'B0
+

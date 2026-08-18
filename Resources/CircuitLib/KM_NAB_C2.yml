@@ -3,17 +3,23 @@ module: KM_NAB_C2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: A
+    direct: Input
 -   name: B
+    direct: Input
 -   name: C
+    direct: Input
 -   name: OUT
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: A
@@ -79,3 +85,4 @@ behav_blcks:
             -   kind: ident
                 name: C
     delay: 18.7
+

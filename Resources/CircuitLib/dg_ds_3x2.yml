@@ -9,12 +9,19 @@ params:
     value: 5
 io_ports:
 -   name: d
+    direct: Input
 -   name: s
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: qp
+    direct: Output
 -   name: qn
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: d
@@ -37,6 +44,20 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Input
+        name: vdd
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: vss
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Output
         name: qp
         signed: 'False'
@@ -51,20 +72,6 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Input
-        name: vdd
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: vss
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: state
         signed: 'False'
@@ -73,38 +80,33 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 32.6
-    src_sgnls:
-    - cp
-    edge: negedge
-    dst_sgnls:
-    - qp
-    - d
-    pth_spc: pluscolon
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 32.6
-    src_sgnls:
-    - s
-    edge: posedge
-    dst_sgnls:
-    - qp
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 32.6
-    src_sgnls:
-    - s
-    edge: posedge
-    dst_sgnls:
-    - qn
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: state
+    rvalue:
+        kind: int
+        value: 1
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: state
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: state
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -123,15 +125,7 @@ behav_blcks:
         cmpr_expr:
             kind: cmpr_ident
             node: s
-        iftrue:
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: state
-            rvalue:
-                kind: int
-                value: 1
-            delay: 0
+        iftrue: []
         ifelse:
         -   lvalue:
                 kind: ident
@@ -148,8 +142,8 @@ behav_blcks:
             args:
             -   kind: sys_tm
                 name: time
-            -   kind: int
-                value: 200
+            -   kind: float
+                value: 100.0
         iftrue:
         -   kind: blckst
             lvalue:
@@ -179,22 +173,4 @@ behav_blcks:
                 rvalue:
                     kind: ident
                     name: d
--   kind: assign
-    lvalue:
-        kind: ident
-        name: qp
-    rvalue:
-        kind: ident
-        name: state
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: qn
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: state
-    delay: 0
+

@@ -3,21 +3,31 @@ module: KM_PRPLGC
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: D1P
+    direct: Input
 -   name: D1N
+    direct: Input
 -   name: D2P
+    direct: Input
 -   name: D2N
+    direct: Input
 -   name: OVWR
+    direct: Input
 -   name: OVAL
+    direct: Input
 -   name: OUTP
+    direct: Output
 -   name: OUTN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: D1P
@@ -108,7 +118,7 @@ behav_blcks:
                 name: D1P
             -   kind: ident
                 name: D2P
-    delay: 13.0
+    delay: 40.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -130,4 +140,5 @@ behav_blcks:
                     name: D1P
                 -   kind: ident
                     name: D2P
-    delay: 13.0
+    delay: 40.0
+

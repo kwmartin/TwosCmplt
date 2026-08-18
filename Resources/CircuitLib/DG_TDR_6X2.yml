@@ -90,20 +90,13 @@ decls:
         - 0
         length: []
 -   -   kind: Reg
-        name: QP
+        name: STATE
         signed: 'False'
         width:
         - 0
         - 0
         length: []
     -   kind: Reg
-        name: QN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Reg
         name: CLKB
         signed: 'False'
         width:
@@ -119,6 +112,25 @@ decls:
         -   kind: int
             value: 0
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STATE
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -162,7 +174,7 @@ behav_blcks:
         -   kind: blckst
             lvalue:
                 kind: ident
-                name: QP
+                name: STATE
             rvalue:
                 kind: int
                 value: 0
@@ -182,17 +194,10 @@ behav_blcks:
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: QP
+                    name: STATE
                 rvalue:
                     kind: int
                     value: 0
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QN
-                rvalue:
-                    kind: int
-                    value: 1
             ifelse:
             -   kind: noblckst
                 lvalue:
@@ -248,7 +253,7 @@ behav_blcks:
                     -   kind: noblckst
                         lvalue:
                             kind: ident
-                            name: QP
+                            name: STATE
                         rvalue:
                             kind: cndexpr
                             args:
@@ -264,25 +269,4 @@ behav_blcks:
                                     name: QN
                                 -   kind: ident
                                     name: QP
-                    -   kind: noblckst
-                        lvalue:
-                            kind: ident
-                            name: QN
-                        rvalue:
-                            kind: cndexpr
-                            args:
-                            -   kind: ident
-                                name: L
-                            -   kind: uexpr
-                                oper: 'Unot:'
-                                args:
-                                -   kind: ident
-                                    name: D
-                            -   kind: cndexpr
-                                args:
-                                -   kind: ident
-                                    name: T
-                                -   kind: ident
-                                    name: QP
-                                -   kind: ident
-                                    name: QN
+

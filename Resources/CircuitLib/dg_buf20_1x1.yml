@@ -3,15 +3,19 @@ module: dg_buf20_1x1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: in
+    direct: Input
 -   name: out
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: in
@@ -57,3 +61,4 @@ behav_blcks:
         -   kind: float
             value: 1.0
         name: None
+

@@ -3,21 +3,31 @@ module: CAP_LD2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: PH0
+    direct: Input
 -   name: PH1
+    direct: Input
 -   name: PH2
+    direct: Input
 -   name: PH3
+    direct: Input
 -   name: PH4
+    direct: Input
 -   name: PH5
+    direct: Input
 -   name: PH6
+    direct: Input
 -   name: PH7
+    direct: Input
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: PH0
@@ -90,3 +100,4 @@ decls:
         - 0
         length: []
 behav_blcks: null
+

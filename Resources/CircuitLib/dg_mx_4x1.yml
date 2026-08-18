@@ -3,22 +3,33 @@ module: dg_mx_4x1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: s3
+    direct: Input
 -   name: s2
+    direct: Input
 -   name: s1
+    direct: Input
 -   name: s0
+    direct: Input
 -   name: d3
+    direct: Input
 -   name: d2
+    direct: Input
 -   name: d1
+    direct: Input
 -   name: d0
+    direct: Input
 -   name: out
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: s3
@@ -174,3 +185,4 @@ behav_blcks:
         -   kind: int
             value: 1'bz
     delay: 19.9
+

@@ -9,13 +9,21 @@ params:
     value: 5
 io_ports:
 -   name: j
+    direct: Input
 -   name: k
+    direct: Input
 -   name: s
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: qop
+    direct: Output
 -   name: qon
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: j
@@ -104,20 +112,22 @@ behav_blcks:
         kind: ident
         name: qn
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 32.7
-    src_sgnls:
-    - cp
-    - j
-    - k
-    - s
-    edge: posedge
-    dst_sgnls:
-    - qop
-    - qon
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: int
+        value: 1
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: int
+        value: 0
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -143,23 +153,7 @@ behav_blcks:
         cmpr_expr:
             kind: cmpr_ident
             node: s
-        iftrue:
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qp
-            rvalue:
-                kind: int
-                value: 1
-            delay: 0
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qn
-            rvalue:
-                kind: int
-                value: 0
-            delay: 0
+        iftrue: []
         ifelse:
         -   lvalue:
                 kind: ident
@@ -179,8 +173,8 @@ behav_blcks:
             args:
             -   kind: sys_tm
                 name: time
-            -   kind: int
-                value: 200
+            -   kind: float
+                value: 100.0
         iftrue:
         -   kind: blckst
             lvalue:
@@ -249,3 +243,4 @@ behav_blcks:
                         args:
                         -   kind: ident
                             name: j
+

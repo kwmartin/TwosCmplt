@@ -3,7 +3,7 @@ module: KM_DLY_UP
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -42,16 +42,6 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 744.0
-    src_sgnls:
-    - IN
-    edge: posedge
-    dst_sgnls:
-    - OUT
 -   kind: assign
     lvalue:
         kind: ident
@@ -60,3 +50,4 @@ behav_blcks:
         kind: ident
         name: IN
     delay: 0
+

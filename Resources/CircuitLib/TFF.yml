@@ -3,7 +3,7 @@ module: TFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -71,127 +71,128 @@ behav_blcks:
     module: DG_DR_3X2
     params: null
     ports:
-    -   port: None
+    -   port: D
         node:
             kind: ident
             name: D0
-    -   port: None
+    -   port: R
         node:
             kind: ident
             name: RST
-    -   port: None
+    -   port: CLK
         node:
             kind: ident
             name: CLK
-    -   port: None
+    -   port: QP
         node:
             kind: ident
             name: QP
-    -   port: None
+    -   port: QN
         node:
             kind: ident
             name: QN
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
-    name: X1
+    name: Nor_2
     module: DG_NOR1_2X1
     params: null
     ports:
-    -   port: None
+    -   port: A
         node:
             kind: ident
             name: NOR_0
-    -   port: None
+    -   port: B
         node:
             kind: ident
             name: NOR_1
-    -   port: None
+    -   port: OUT
         node:
             kind: ident
             name: D0
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
-    name: X3
+    name: Nor_0
     module: DG_NOR1_2X1
     params: null
     ports:
-    -   port: None
+    -   port: A
         node:
             kind: ident
             name: QP
-    -   port: None
+    -   port: B
         node:
             kind: ident
             name: T
-    -   port: None
+    -   port: OUT
         node:
             kind: ident
             name: NOR_0
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
-    name: X4
+    name: Nor_1
     module: DG_NOR1_2X1
     params: null
     ports:
-    -   port: None
+    -   port: A
         node:
             kind: ident
             name: QN
-    -   port: None
+    -   port: B
         node:
             kind: ident
             name: TN
-    -   port: None
+    -   port: OUT
         node:
             kind: ident
             name: NOR_1
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: INV3
     module: DG_INV1_1X1
     params: null
     ports:
-    -   port: None
+    -   port: IN
         node:
             kind: ident
             name: T
-    -   port: None
+    -   port: OUT
         node:
             kind: ident
             name: TN
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+

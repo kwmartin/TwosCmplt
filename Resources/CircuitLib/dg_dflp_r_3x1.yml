@@ -9,13 +9,21 @@ params:
     value: 5
 io_ports:
 -   name: d
+    direct: Input
 -   name: r
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: cn
+    direct: Input
 -   name: qop
+    direct: Output
 -   name: qon
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: d
@@ -104,6 +112,22 @@ behav_blcks:
         kind: ident
         name: qn
     delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: int
+        value: 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: int
+        value: 1
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -131,22 +155,6 @@ behav_blcks:
             node: r
         iftrue:
         - 'SingleStatement:'
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qp
-            rvalue:
-                kind: int
-                value: 0
-            delay: 0
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qn
-            rvalue:
-                kind: int
-                value: 1
-            delay: 0
         ifelse:
         -   lvalue:
                 kind: ident
@@ -182,3 +190,4 @@ behav_blcks:
         delay:
             kind: float
             delay: 75.0
+

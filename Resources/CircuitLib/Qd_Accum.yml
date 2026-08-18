@@ -4,9 +4,6 @@ params:
 -   kind: str
     name: circuit
     value: sync
--   kind: str
-    name: circuit
-    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -549,10 +546,13 @@ behav_blcks:
         node:
             kind: ident
             name: CO1Q
--   kind: instance
+-   kind: async
     name: X1
     module: DG_BUF20_1X1
-    params: null
+    params:
+    -   kind: str
+        value: async
+        name: circuit
     ports:
     -   port: None
         node:

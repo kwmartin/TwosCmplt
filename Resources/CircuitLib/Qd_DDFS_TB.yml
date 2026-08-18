@@ -3,7 +3,7 @@ module: Qd_DDFS_TB
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -105,8 +105,7 @@ io_ports:
         value: 11
     -   kind: int
         value: 0
-decls:
-- null
+decls: []
 behav_blcks:
 -   kind: subcirc
     name: Qd_Ddfs

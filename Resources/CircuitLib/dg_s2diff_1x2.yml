@@ -3,17 +3,36 @@ module: dg_s2diff_1x2
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: in
+    direct: Input
 -   name: qp
+    direct: Wire
 -   name: qn
+    direct: Wire
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
+-   -   kind: Wire
+        name: qp
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: qn
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: in
         signed: 'False'
@@ -49,21 +68,15 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Wire
-        name: qp
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: qn
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: p
+    rvalue:
+        kind: ident
+        name: in
+    delay: 0.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -83,3 +96,4 @@ behav_blcks:
         -   kind: ident
             name: in
     delay: 20.0
+

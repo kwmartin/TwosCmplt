@@ -3,7 +3,7 @@ module: RES
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -34,3 +34,4 @@ behav_blcks:
         kind: ident
         name: P
     delay: 0
+

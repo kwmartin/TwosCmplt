@@ -3,16 +3,21 @@ module: dg_nand2_2x1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: a
+    direct: Input
 -   name: b
+    direct: Input
 -   name: out
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: a
@@ -66,3 +71,4 @@ behav_blcks:
             -   kind: ident
                 name: b
     delay: 9.6
+

@@ -3,13 +3,15 @@ module: KM_CAP
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: ND1
+    direct: Input
 -   name: ND2
+    direct: Input
 decls:
 -   -   kind: Input
         name: ND1
@@ -26,3 +28,4 @@ decls:
         - 0
         length: []
 behav_blcks: null
+

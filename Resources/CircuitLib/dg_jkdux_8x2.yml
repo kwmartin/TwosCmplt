@@ -9,17 +9,29 @@ params:
     value: 5
 io_ports:
 -   name: u
+    direct: Input
 -   name: l
+    direct: Input
 -   name: d
+    direct: Input
 -   name: j
+    direct: Input
 -   name: k
+    direct: Input
 -   name: q0
+    direct: Input
 -   name: init
+    direct: Input
 -   name: clk
+    direct: Input
 -   name: qop
+    direct: Output
 -   name: qon
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: u
@@ -136,24 +148,25 @@ behav_blcks:
         kind: ident
         name: qn
     delay: 0
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 43.1
-    src_sgnls:
-    - u
-    - l
-    - d
-    - j
-    - k
-    - q0
-    - init
-    - clk
-    edge: posedge
-    dst_sgnls:
-    - qop
-    - qon
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: q0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qn
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: q0
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
@@ -179,26 +192,7 @@ behav_blcks:
         cmpr_expr:
             kind: cmpr_ident
             node: init
-        iftrue:
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qp
-            rvalue:
-                kind: ident
-                name: q0
-            delay: 0
-        -   kind: assign
-            lvalue:
-                kind: ident
-                name: qn
-            rvalue:
-                kind: uexpr
-                oper: 'Unot:'
-                args:
-                -   kind: ident
-                    name: q0
-            delay: 0
+        iftrue: []
         ifelse:
         -   lvalue:
                 kind: ident
@@ -218,8 +212,8 @@ behav_blcks:
             args:
             -   kind: sys_tm
                 name: time
-            -   kind: int
-                value: 200
+            -   kind: float
+                value: 100.0
         iftrue:
         -   kind: blckst
             lvalue:
@@ -321,3 +315,4 @@ behav_blcks:
                                     name: j
                     -   kind: ident
                         name: qn
+

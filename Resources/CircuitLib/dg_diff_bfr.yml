@@ -3,17 +3,23 @@ module: dg_diff_bfr
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: dp
+    direct: Input
 -   name: dn
+    direct: Input
 -   name: qp
+    direct: Output
 -   name: qn
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
 -   -   kind: Input
         name: dp
@@ -74,3 +80,4 @@ behav_blcks:
         kind: ident
         name: dn
     delay: 20.0
+

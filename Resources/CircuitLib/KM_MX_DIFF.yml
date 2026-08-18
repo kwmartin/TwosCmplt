@@ -3,21 +3,31 @@ module: KM_MX_DIFF
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: SP
+    direct: Input
 -   name: SN
+    direct: Input
 -   name: AP
+    direct: Input
 -   name: AN
+    direct: Input
 -   name: BP
+    direct: Input
 -   name: BN
+    direct: Input
 -   name: OP
+    direct: Output
 -   name: 'ON'
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: SP
@@ -115,7 +125,7 @@ behav_blcks:
                     name: SP
             -   kind: ident
                 name: BP
-    delay: 11.6
+    delay: 14.4
 -   kind: assign
     lvalue:
         kind: ident
@@ -144,4 +154,5 @@ behav_blcks:
                         name: SP
                 -   kind: ident
                     name: BP
-    delay: 11.6
+    delay: 14.4
+

@@ -3,19 +3,27 @@ module: ENBL_BFRC
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: DP
+    direct: Input
 -   name: DN
+    direct: Input
 -   name: ENP
+    direct: Input
 -   name: ENN
+    direct: Input
 -   name: QP
+    direct: Output
 -   name: QN
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: DP
@@ -92,7 +100,7 @@ behav_blcks:
             name: DP
         -   kind: int
             value: 1'B0
-    delay: 5.8
+    delay: 13.7
 -   kind: assign
     lvalue:
         kind: ident
@@ -114,7 +122,7 @@ behav_blcks:
                 name: DP
         -   kind: int
             value: 1'B1
-    delay: 5.8
+    delay: 13.7
 -   kind: assign
     lvalue:
         kind: ident
@@ -126,3 +134,4 @@ behav_blcks:
         -   kind: ident
             name: QP
     delay: 0
+

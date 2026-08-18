@@ -9,13 +9,27 @@ params:
     value: 5
 io_ports:
 -   name: d
+    direct: Input
 -   name: sn
+    direct: Input
 -   name: cp
+    direct: Input
 -   name: cn
+    direct: Input
 -   name: qp
+    direct: Output
 -   name: vdd
+    direct: Input
 -   name: vss
+    direct: Input
 decls:
+-   -   kind: Wire
+        name: s_n
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: d
         signed: 'False'
@@ -44,14 +58,7 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Output
-        name: qp
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Input
+    -   kind: Input
         name: vdd
         signed: 'False'
         width:
@@ -65,15 +72,15 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Reg
-        name: str
+-   -   kind: Output
+        name: qp
         signed: 'False'
         width:
         - 0
         - 0
         length: []
--   -   kind: Wire
-        name: s_n
+-   -   kind: Reg
+        name: str
         signed: 'False'
         width:
         - 0
@@ -87,6 +94,14 @@ behav_blcks:
     rvalue:
         kind: ident
         name: sn
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: qp
+    rvalue:
+        kind: ident
+        name: str
     delay: 0
 -   kind: initial
     stmnts:
@@ -203,11 +218,4 @@ behav_blcks:
                 delay:
                     kind: float
                     delay: 22.9
--   kind: assign
-    lvalue:
-        kind: ident
-        name: qp
-    rvalue:
-        kind: ident
-        name: str
-    delay: 0
+

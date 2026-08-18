@@ -3,16 +3,21 @@ module: DG_SW_INV
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: ST
+    direct: Input
 -   name: IN
+    direct: Input
 -   name: OUT
+    direct: Inout
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: ST
@@ -71,4 +76,5 @@ behav_blcks:
                 name: IN
         -   kind: int
             value: 1'BZ
-    delay: 20.8
+    delay: 23.4
+
