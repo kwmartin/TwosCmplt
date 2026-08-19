@@ -67,14 +67,6 @@ behav_blcks:
 -   kind: assign
     lvalue:
         kind: ident
-        name: P
-    rvalue:
-        kind: ident
-        name: IN
-    delay: 0.0
--   kind: assign
-    lvalue:
-        kind: ident
         name: OUTP
     rvalue:
         kind: ident

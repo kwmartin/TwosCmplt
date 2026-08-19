@@ -1,4 +1,4 @@
-generated: '2026-08-19T00:28:00+00:00'
+generated: '2026-08-19T13:23:52+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -84,7 +84,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL.v
         clean: false
-        stale_reason: 'not in deps, source newer than: unl'
+        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
@@ -736,13 +736,12 @@ modules:
     KM_MXDIFF_5X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXDIFF_5X1.v
-        clean: false
-        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
+        clean: true
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
         clean: false
-        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
+        stale_reason: 'not in deps, source newer than: mod, circuit_lib, unl'
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
@@ -839,7 +838,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: Sine.v
         clean: false
-        stale_reason: 'not in deps, source newer than: unl'
+        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
     Sine5:
         directory: verilogParse/ver_lib
         file_name: Sine5.v

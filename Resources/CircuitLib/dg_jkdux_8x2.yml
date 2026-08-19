@@ -9,29 +9,17 @@ params:
     value: 5
 io_ports:
 -   name: u
-    direct: Input
 -   name: l
-    direct: Input
 -   name: d
-    direct: Input
 -   name: j
-    direct: Input
 -   name: k
-    direct: Input
 -   name: q0
-    direct: Input
 -   name: init
-    direct: Input
 -   name: clk
-    direct: Input
 -   name: qop
-    direct: Output
 -   name: qon
-    direct: Output
 -   name: vdd
-    direct: Input
 -   name: vss
-    direct: Input
 decls:
 -   -   kind: Input
         name: u

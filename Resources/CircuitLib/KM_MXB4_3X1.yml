@@ -9,17 +9,11 @@ params:
     value: 5
 io_ports:
 -   name: SN
-    direct: Input
 -   name: A
-    direct: Input
 -   name: B
-    direct: Input
 -   name: OUT
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: SN

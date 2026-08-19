@@ -9,15 +9,10 @@ params:
     value: 5
 io_ports:
 -   name: in
-    direct: Input
 -   name: qp
-    direct: Wire
 -   name: qn
-    direct: Wire
 -   name: vdd
-    direct: Input
 -   name: vss
-    direct: Input
 decls:
 -   -   kind: Wire
         name: qp
@@ -69,14 +64,6 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: assign
-    lvalue:
-        kind: ident
-        name: p
-    rvalue:
-        kind: ident
-        name: in
-    delay: 0.0
 -   kind: assign
     lvalue:
         kind: ident

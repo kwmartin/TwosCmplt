@@ -9,32 +9,72 @@ params:
     value: 5
 io_ports:
 -   name: SP0
+    direct: Input
 -   name: SP1
+    direct: Input
 -   name: SP2
+    direct: Input
 -   name: SP3
+    direct: Input
 -   name: SP4
+    direct: Input
 -   name: SN0
+    direct: Input
 -   name: SN1
+    direct: Input
 -   name: SN2
+    direct: Input
 -   name: SN3
+    direct: Input
 -   name: SN4
+    direct: Input
 -   name: DP0
+    direct: Input
 -   name: DP1
+    direct: Input
 -   name: DP2
+    direct: Input
 -   name: DP3
+    direct: Input
 -   name: DP4
+    direct: Input
 -   name: DN0
+    direct: Input
 -   name: DN1
+    direct: Input
 -   name: DN2
+    direct: Input
 -   name: DN3
+    direct: Input
 -   name: DN4
+    direct: Input
 -   name: PDP
+    direct: Input
 -   name: PDN
+    direct: Input
 -   name: OP
+    direct: Wire
 -   name: 'ON'
+    direct: Wire
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
+-   -   kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: 'ON'
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: SP0
         signed: 'False'
@@ -217,20 +257,6 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Wire
-        name: OP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: 'ON'
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Reg
         name: OUT
         signed: 'False'
@@ -239,38 +265,25 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 30.0
-    src_sgnls:
-    - SP0
-    - SP1
-    - SP2
-    - SP3
-    - SP4
-    - SN0
-    - SN1
-    - SN2
-    - SN3
-    - SN4
-    - DP0
-    - DP1
-    - DP2
-    - DP3
-    - DP4
-    - DN0
-    - DN1
-    - DN2
-    - DN3
-    - DN4
-    - PDP
-    - PDN
-    edge: posedge
-    dst_sgnls:
-    - OP
-    - OP
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: ident
+        name: OUT
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: OP
+    delay: 0
 -   kind: always
     onlyif:
     -   edge: all
@@ -520,22 +533,4 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 1'B0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: OP
-    rvalue:
-        kind: ident
-        name: OUT
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: 'ON'
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: OP
-    delay: 0
+

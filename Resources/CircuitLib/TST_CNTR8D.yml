@@ -101,11 +101,11 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 0
-    -   port: VDD
+    -   port: None
         node:
             kind: ident
             name: VDD
-    -   port: VSS
+    -   port: None
         node:
             kind: ident
             name: VSS
