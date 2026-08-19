@@ -41,5 +41,705 @@ io_ports:
     -   kind: int
         value: 0
 decls:
-- null
-behav_blcks: null
+-   -   kind: Wire
+        name: INVI
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NAND_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NAND_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NAND_2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NAND_3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A0N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A3N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N151
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N152
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N242
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N252
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N277
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N291
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: NOR1
+    module: DG_NOR2_2X1T
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: N151
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NOR0
+    module: DG_NOR2_2X1T
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: N152
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NAND0
+    module: DG_NAND2_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVIN
+    -   port: None
+        node:
+            kind: ident
+            name: N152
+    -   port: None
+        node:
+            kind: ident
+            name: N151
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MXN0
+    module: MUX2ND1BWP35HVT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVI
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: A0N
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MXN1
+    module: MUX2ND1BWP35HVT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_1
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: A1N
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MXN2
+    module: MUX2ND1BWP35HVT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_2
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: A2N
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MXN3
+    module: MUX2ND1BWP35HVT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_3
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: A3N
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NOR3
+    module: DG_NOR2_2X1T
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: N242
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV1
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVIN
+    -   port: None
+        node:
+            kind: ident
+            name: INVI
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NOR2
+    module: DG_NOR2_2X1T
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: N252
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NAND2
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVIN
+    -   port: None
+        node:
+            kind: ident
+            name: N252
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NAND1
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVIN
+    -   port: None
+        node:
+            kind: ident
+            name: N277
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: N277
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV0
+    module: DG_INV8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_0
+    -   port: None
+        node:
+            kind: ident
+            name: INVON
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: NAND3
+    module: DG_NAND2_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVIN
+    -   port: None
+        node:
+            kind: ident
+            name: N291
+    -   port: None
+        node:
+            kind: ident
+            name: N242
+    -   port: None
+        node:
+            kind: ident
+            name: NAND_3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: N291
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV4
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: A0N
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV5
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: A1N
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV6
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: A2N
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV7
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: A3N
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

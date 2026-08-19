@@ -1,4 +1,4 @@
-generated: '2026-08-18T16:08:20+00:00'
+generated: '2026-08-19T00:28:00+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -82,7 +82,7 @@ modules:
         clean: true
     CMPL:
         directory: verilogParse/ver_lib
-        file_name: Qd_DDFS_TB.v
+        file_name: CMPL.v
         clean: false
         stale_reason: 'not in deps, source newer than: unl'
     DG_AND2_2X1:
@@ -821,11 +821,11 @@ modules:
         clean: true
     Qd_Accum:
         directory: verilogParse/ver_lib
-        file_name: Qd_DDFS_TB.v
+        file_name: Qd_Accum.v
         clean: true
     Qd_DDFS:
         directory: verilogParse/ver_lib
-        file_name: Qd_DDFS_TB.v
+        file_name: Qd_DDFS.v
         clean: true
     Qd_DDFS_TB:
         directory: verilogParse/ver_lib
@@ -837,7 +837,7 @@ modules:
         clean: true
     Sine:
         directory: verilogParse/ver_lib
-        file_name: Qd_DDFS_TB.v
+        file_name: Sine.v
         clean: false
         stale_reason: 'not in deps, source newer than: unl'
     Sine5:
@@ -1284,5 +1284,3 @@ duplicates:
   - DG_BSMX8
   - KM_DVD2Q_DIFF
   - QD_DDFS5
-  - Qd_Accum
-  - Sine
