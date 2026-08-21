@@ -9,21 +9,13 @@ params:
     value: 5
 io_ports:
 -   name: PLS1
-    direct: Input
 -   name: PLS2
-    direct: Input
 -   name: NEG1
-    direct: Input
 -   name: NEG2
-    direct: Input
 -   name: OP
-    direct: Output
 -   name: 'ON'
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: PLS1

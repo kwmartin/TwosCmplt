@@ -9,13 +9,9 @@ params:
     value: 5
 io_ports:
 -   name: NDP
-    direct: Input
 -   name: NDN
-    direct: Input
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: NDP

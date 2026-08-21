@@ -9,29 +9,17 @@ params:
     value: 5
 io_ports:
 -   name: ENBL
-    direct: Input
 -   name: S3
-    direct: Input
 -   name: S2
-    direct: Input
 -   name: S1
-    direct: Input
 -   name: S0
-    direct: Input
 -   name: D3
-    direct: Input
 -   name: D2
-    direct: Input
 -   name: D1
-    direct: Input
 -   name: D0
-    direct: Input
 -   name: OUT
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: ENBL

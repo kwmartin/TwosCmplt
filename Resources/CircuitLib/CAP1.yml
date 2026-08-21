@@ -9,19 +9,12 @@ params:
     value: 5
 io_ports:
 -   name: EQ2
-    direct: Input
 -   name: EQ1
-    direct: Input
 -   name: EQ0
-    direct: Input
 -   name: DP
-    direct: Input
 -   name: DN
-    direct: Input
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: EQ2

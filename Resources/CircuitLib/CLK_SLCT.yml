@@ -9,41 +9,23 @@ params:
     value: 5
 io_ports:
 -   name: D1P
-    direct: Input
 -   name: D1N
-    direct: Input
 -   name: D2P
-    direct: Input
 -   name: D2N
-    direct: Input
 -   name: D3P
-    direct: Input
 -   name: D3N
-    direct: Input
 -   name: S1P
-    direct: Input
 -   name: S1N
-    direct: Input
 -   name: S2P
-    direct: Input
 -   name: S2N
-    direct: Input
 -   name: S3P
-    direct: Input
 -   name: S3N
-    direct: Input
 -   name: RP
-    direct: Input
 -   name: RN
-    direct: Input
 -   name: OP
-    direct: Wire
 -   name: 'ON'
-    direct: Wire
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Wire
         name: OP

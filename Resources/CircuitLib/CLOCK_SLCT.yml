@@ -9,37 +9,21 @@ params:
     value: 5
 io_ports:
 -   name: FSTP
-    direct: Input
 -   name: FSTN
-    direct: Input
 -   name: E0P
-    direct: Input
 -   name: E0N
-    direct: Input
 -   name: SAP
-    direct: Input
 -   name: SAN
-    direct: Input
 -   name: SBP
-    direct: Input
 -   name: SBN
-    direct: Input
 -   name: AP
-    direct: Input
 -   name: AN
-    direct: Input
 -   name: BP
-    direct: Input
 -   name: BN
-    direct: Input
 -   name: OP
-    direct: Wire
 -   name: 'ON'
-    direct: Wire
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Wire
         name: OP

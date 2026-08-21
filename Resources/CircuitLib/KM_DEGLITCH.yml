@@ -9,25 +9,15 @@ params:
     value: 5
 io_ports:
 -   name: RIP
-    direct: Input
 -   name: RIN
-    direct: Input
 -   name: QIP
-    direct: Input
 -   name: QIN
-    direct: Input
 -   name: RP
-    direct: Output
 -   name: RN
-    direct: Output
 -   name: QP
-    direct: Output
 -   name: QN
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: RIP

@@ -961,9 +961,9 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: net1_1
-            -   kind: ident
-                name: net1_0
+            kind: ident
+            name: net1_1
+    -   port: None
+        node:
+            kind: ident
+            name: net1_0

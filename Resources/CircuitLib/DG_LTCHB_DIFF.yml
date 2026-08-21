@@ -9,25 +9,15 @@ params:
     value: 5
 io_ports:
 -   name: DP
-    direct: Input
 -   name: DN
-    direct: Input
 -   name: RP
-    direct: Input
 -   name: RN
-    direct: Input
 -   name: CP
-    direct: Input
 -   name: CN
-    direct: Input
 -   name: QOP
-    direct: Output
 -   name: QON
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Input
         name: DP
