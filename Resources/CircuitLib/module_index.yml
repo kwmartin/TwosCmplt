@@ -1,114 +1,140 @@
-generated: '2026-08-19T13:23:52+00:00'
+generated: '2026-08-21T18:08:19+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
         file_name: accum.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     BUF_BIAS_VAMS:
         directory: verilogParse/ver_lib
         file_name: BUF_BIAS_VAMS.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAP:
         directory: verilogParse/ver_lib
         file_name: CAP.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAPLD_DIFF:
         directory: verilogParse/ver_lib
         file_name: CAPLD_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAPLD_IN:
         directory: verilogParse/ver_lib
         file_name: CAPLD_IN.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAPLD_OUT:
         directory: verilogParse/ver_lib
         file_name: CAPLD_OUT.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CAP_LD2:
         directory: verilogParse/ver_lib
         file_name: CAP_LD2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA1:
         directory: verilogParse/ver_lib
         file_name: CLA1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA10:
         directory: verilogParse/ver_lib
         file_name: CLA10.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA16:
         directory: verilogParse/ver_lib
         file_name: CLA16.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA18:
         directory: verilogParse/ver_lib
         file_name: CLA18.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA2:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA4:
         directory: verilogParse/ver_lib
         file_name: CLA4.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA6:
         directory: verilogParse/ver_lib
         file_name: CLA6.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLA8:
         directory: verilogParse/ver_lib
         file_name: CLA8.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLK_SLCT:
         directory: verilogParse/ver_lib
         file_name: CLK_SLCT.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLK_SLCT2:
         directory: verilogParse/ver_lib
         file_name: CLK_SLCT2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLK_SLCT3:
         directory: verilogParse/ver_lib
         file_name: CLK_SLCT3.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CLOCK_SLCT:
         directory: verilogParse/ver_lib
         file_name: CLOCK_SLCT.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     CMPL:
         directory: verilogParse/ver_lib
         file_name: CMPL.v
         clean: false
-        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
+        stale_reason: 'not in deps, source newer than: unl'
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_AND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_AND2_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_AND4_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND4_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_AND4_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_AND4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND4_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BSMX8:
         directory: dig_lib
         file_name: DG_BSMX8.v
@@ -116,71 +142,88 @@ modules:
     DG_BUF16_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF16_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF1_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF1_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF20_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF2_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF4_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF6_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF6_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF8_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DER1_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER1_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DES_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DFFR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DFFR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DFLP_R_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_DFLP_R_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFR.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLR_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUSR_7X2.v
@@ -188,7 +231,8 @@ modules:
     DG_DLUS_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUS_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DLUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUX_7X2.v
@@ -196,303 +240,378 @@ modules:
     DG_DMMY:
         directory: verilogParse/ver_lib
         file_name: DG_DMMY.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DRC_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DRC_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DR_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_DR_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DR_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DR_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DS_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DS_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DS_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DUR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DUR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DUX_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DVD2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_DVD2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DVD2_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DVD2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_DX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DX_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_D_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_D_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_D_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_D_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_EMX_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_EXNOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_HV2LV:
         directory: verilogParse/ver_lib
         file_name: DG_HV2LV.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV:
         directory: verilogParse/ver_lib
         file_name: DG_INV.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV1:
         directory: verilogParse/ver_lib
         file_name: DG_INV1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV16:
         directory: verilogParse/ver_lib
         file_name: DG_INV16.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV16_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV16_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV1_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV1_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV2:
         directory: verilogParse/ver_lib
         file_name: DG_INV2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV20:
         directory: verilogParse/ver_lib
         file_name: DG_INV20.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV20_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV2_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV4:
         directory: verilogParse/ver_lib
         file_name: DG_INV4.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV4_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV6:
         directory: verilogParse/ver_lib
         file_name: DG_INV6.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV6_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV6_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV8:
         directory: verilogParse/ver_lib
         file_name: DG_INV8.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_INV8_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV8_1X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKDS_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDS_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKDUR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUS_7X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKDUX_8X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUX_8X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_4X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_JKS_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LR6X2_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR6X2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHB_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHB_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHR_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHR_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHR_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHR_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHR_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHSN_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHSN_5X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_5X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHSN_6X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_6X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHS_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCHS_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LTCH_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCH_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_LV2HV:
         directory: verilogParse/ver_lib
         file_name: DG_LV2HV.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_L_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_L_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MX1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MX2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX2_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MX4_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN2_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: DG_NABC_ABD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAB_AC:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_AC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_AC_BC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_C2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAB_CDA_CDB:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_CDA_CDB.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAC_AD_BC_BD:
         directory: verilogParse/ver_lib
         file_name: DG_NAC_AD_BC_BD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND1_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NAND2_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_4X1.v
@@ -500,131 +619,163 @@ modules:
     DG_NA_BC:
         directory: verilogParse/ver_lib
         file_name: DG_NA_BC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NA_BCD:
         directory: verilogParse/ver_lib
         file_name: DG_NA_BCD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: DG_NA_BC_BD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_OR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_OR2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_OR4_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR4_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_OR4_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_PRGT4:
         directory: verilogParse/ver_lib
         file_name: DG_PRGT4.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_PRPA:
         directory: verilogParse/ver_lib
         file_name: DG_PRPA.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_PRPB:
         directory: verilogParse/ver_lib
         file_name: DG_PRPB.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_PRPF:
         directory: verilogParse/ver_lib
         file_name: DG_PRPF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_RG_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_2X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_S2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_S2DIFF_1X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_SE2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SE2DIFF_1X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_SNGL2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SNGL2DIFF_1X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TDUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDUR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TDUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDUX_7X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TILO:
         directory: verilogParse/ver_lib
         file_name: DG_TILO.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDR_5X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TL_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TL_FF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TR_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TR_FF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DG_TS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TS_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -632,7 +783,8 @@ modules:
     DVD2_QD:
         directory: verilogParse/ver_lib
         file_name: DVD2_QD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     DVDR4:
         directory: verilogParse/ver_lib
         file_name: DVDR4.v
@@ -640,79 +792,98 @@ modules:
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     EXOR_DIFF:
         directory: verilogParse/ver_lib
         file_name: EXOR_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     FADDR_3X2:
         directory: verilogParse/ver_lib
         file_name: FADDR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     HADDRA:
         directory: verilogParse/ver_lib
         file_name: HADDRA.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     HADDRB:
         directory: verilogParse/ver_lib
         file_name: HADDRB.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     HADDRC:
         directory: verilogParse/ver_lib
         file_name: HADDRC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     HADDR_2X2:
         directory: verilogParse/ver_lib
         file_name: HADDR_2X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_AND2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_AND2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: KM_BFR_ENBL.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_BUF_HYST:
         directory: verilogParse/ver_lib
         file_name: KM_BUF_HYST.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_CAP:
         directory: verilogParse/ver_lib
         file_name: KM_CAP.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_CAPN:
         directory: verilogParse/ver_lib
         file_name: KM_CAPN.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR8D.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DIFF2SNGL:
         directory: verilogParse/ver_lib
         file_name: KM_DIFF2SNGL.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DLY:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DRQ_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_DRQ_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_DVD2Q_DIFF:
         directory: dig_lib
         file_name: KM_DVD2Q_DIFF.v
@@ -720,23 +891,28 @@ modules:
     KM_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: KM_EMX_4X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_MXDIFF_5X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXDIFF_5X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
@@ -745,55 +921,68 @@ modules:
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: KM_NAB_C2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_NAB_C_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NAB_C_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_NAND2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NAND2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: KM_NA_BC_BD.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_NOR2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NOR2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_OR2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_OR2_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_PRPLGC:
         directory: verilogParse/ver_lib
         file_name: KM_PRPLGC.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_REGS17:
         directory: verilogParse/ver_lib
         file_name: KM_REGS17.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_REGS18:
         directory: verilogParse/ver_lib
         file_name: KM_REGS18.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_SPCL_DIFFMX:
         directory: verilogParse/ver_lib
         file_name: KM_SPCL_DIFFMX.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     M1M_QDACCUM5:
         directory: verilogParse/ver_lib
         file_name: M1M_QDACCUM5.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     MLTPLY_FINE2:
         directory: verilogParse/ver_lib
         file_name: MLTPLY_FINE2.v
@@ -801,15 +990,18 @@ modules:
     MX3X1_DIFF:
         directory: verilogParse/ver_lib
         file_name: MX3X1_DIFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     NMOSCAP_18:
         directory: verilogParse/ver_lib
         file_name: NMOSCAP_18.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: OUT_SLCT.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     QD_ACCUM5:
         directory: verilogParse/ver_lib
         file_name: QD_ACCUM5.v
@@ -821,68 +1013,83 @@ modules:
     Qd_Accum:
         directory: verilogParse/ver_lib
         file_name: Qd_Accum.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     Qd_DDFS:
         directory: verilogParse/ver_lib
         file_name: Qd_DDFS.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     Qd_DDFS_TB:
         directory: verilogParse/ver_lib
         file_name: Qd_DDFS_TB.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     RES:
         directory: verilogParse/ver_lib
         file_name: RES.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     Sine:
         directory: verilogParse/ver_lib
         file_name: Sine.v
         clean: false
-        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
+        stale_reason: 'not in deps, source newer than: unl'
     Sine5:
         directory: verilogParse/ver_lib
         file_name: Sine5.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TFF:
         directory: verilogParse/ver_lib
         file_name: TFF.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_ACCUM3:
         directory: verilogParse/ver_lib
         file_name: TST_ACCUM3.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     VOTER:
         directory: verilogParse/ver_lib
         file_name: VOTER.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     coeffPre:
         directory: verilogParse/ver_lib
         file_name: coeffPre.v
@@ -890,395 +1097,493 @@ modules:
     dg_and2_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_and2_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_and2_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_and2_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_and2_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_and2_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_and4_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_and4_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_and4_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_and4_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_and4_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_and4_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf16_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf16_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf1_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf1_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf2:
         directory: verilogParse/ver_lib
         file_name: dg_buf2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf20_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf20_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf2_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf2_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf4_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf4_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf6_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf6_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_buf8_1x1:
         directory: verilogParse/ver_lib
         file_name: dg_buf8_1x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_d_3x2:
         directory: verilogParse/ver_lib
         file_name: dg_d_3x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_d_diff:
         directory: verilogParse/ver_lib
         file_name: dg_d_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dffr_3x2:
         directory: verilogParse/ver_lib
         file_name: dg_dffr_3x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dffr_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_dffr_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dflp_r_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_dflp_r_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_diff_bfr:
         directory: verilogParse/ver_lib
         file_name: dg_diff_bfr.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dlr_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_dlr_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dlur_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_dlur_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dlus_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_dlus_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dlux_7x2:
         directory: verilogParse/ver_lib
         file_name: dg_dlux_7x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dr_3x2:
         directory: verilogParse/ver_lib
         file_name: dg_dr_3x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dr_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_dr_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dr_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_dr_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dr_diff:
         directory: verilogParse/ver_lib
         file_name: dg_dr_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_drc_diff:
         directory: verilogParse/ver_lib
         file_name: dg_drc_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ds_3x2:
         directory: verilogParse/ver_lib
         file_name: dg_ds_3x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ds_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_ds_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dur_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_dur_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dux_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_dux_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dvd2_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_dvd2_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dvd2_diff:
         directory: verilogParse/ver_lib
         file_name: dg_dvd2_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_dx_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_dx_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_exnor1_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_exnor1_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_exor1_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_exor1_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv:
         directory: verilogParse/ver_lib
         file_name: dg_inv.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv1:
         directory: verilogParse/ver_lib
         file_name: dg_inv1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv16:
         directory: verilogParse/ver_lib
         file_name: dg_inv16.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv2:
         directory: verilogParse/ver_lib
         file_name: dg_inv2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv20:
         directory: verilogParse/ver_lib
         file_name: dg_inv20.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv4:
         directory: verilogParse/ver_lib
         file_name: dg_inv4.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv6:
         directory: verilogParse/ver_lib
         file_name: dg_inv6.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_inv8:
         directory: verilogParse/ver_lib
         file_name: dg_inv8.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkdr_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkdr_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkds_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkds_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkdur_7x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkdur_7x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkdus_7x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkdus_7x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkdux_8x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkdux_8x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkr_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkr_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jkr_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_jkr_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jks_4x2:
         directory: verilogParse/ver_lib
         file_name: dg_jks_4x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_jks_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_jks_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_l_diff:
         directory: verilogParse/ver_lib
         file_name: dg_l_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_lr6x2_diff:
         directory: verilogParse/ver_lib
         file_name: dg_lr6x2_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_lr_diff:
         directory: verilogParse/ver_lib
         file_name: dg_lr_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltch_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltch_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchr_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchr_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchr_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchr_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchr_diff:
         directory: verilogParse/ver_lib
         file_name: dg_ltchr_diff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchs_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchs_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchs_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchs_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchsn_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchsn_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchsn_5x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchsn_5x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_ltchsn_6x1:
         directory: verilogParse/ver_lib
         file_name: dg_ltchsn_6x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mx1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mx1_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mx2_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mx2_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mx4_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mx4_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mx_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_mx_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mxn1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mxn1_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_mxn2_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mxn2_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nab_c2:
         directory: verilogParse/ver_lib
         file_name: dg_nab_c2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand1_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand1_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand1_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand1_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand1_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand2_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand2_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand2_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand2_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nand2_4x1:
         directory: verilogParse/ver_lib
         file_name: dg_nand2_4x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nor1_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_nor1_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nor1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_nor1_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_nor2_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_nor2_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_or2_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_or2_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_or2_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_or2_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_or4_2x1:
         directory: verilogParse/ver_lib
         file_name: dg_or4_2x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_or4_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_or4_3x1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_s2diff_1x2:
         directory: verilogParse/ver_lib
         file_name: dg_s2diff_1x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_sngl2diff_1x2:
         directory: verilogParse/ver_lib
         file_name: dg_sngl2diff_1x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tdr_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_tdr_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tdr_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_tdr_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tdur_6x2:
         directory: verilogParse/ver_lib
         file_name: dg_tdur_6x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tdux_7x2:
         directory: verilogParse/ver_lib
         file_name: dg_tdux_7x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tihi:
         directory: verilogParse/ver_lib
         file_name: dg_tihi.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tilo:
         directory: verilogParse/ver_lib
         file_name: dg_tilo.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tl_ff:
         directory: verilogParse/ver_lib
         file_name: dg_tl_ff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tldr_5x2:
         directory: verilogParse/ver_lib
         file_name: dg_tldr_5x2.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     dg_tr_ff:
         directory: verilogParse/ver_lib
         file_name: dg_tr_ff.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
 duplicates:
   - DG_BSMX8
   - KM_DVD2Q_DIFF

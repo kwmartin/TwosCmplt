@@ -1,0 +1,781 @@
+kind: verilog
+module: KM_LN2SIN3
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: O_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R2_SET0
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: R5_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: R6_SET
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: REG0_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 15
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: RG2__0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CMPL0_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RG2N__0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CMPL1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: REG4_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: REG2_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 0
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RG2N_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: REG3_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: REG2N_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 0
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RG2___0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ADDR2_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RG2N___0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: REG5N_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RG2_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: __concat_ROM1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_REG5_2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: instance
+    name: CMPL1
+    module: KM_CMPL12
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: REG2_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR2_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CMPL1_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: ROM1
+    module: ROM1_8BT
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_ROM1_0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: REG4_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CMPL0
+    module: KM_CMPL12
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: REG0_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: slice
+            name: REG0_
+            sgmnts:
+            -   kind: int
+                value: 13
+            -   kind: int
+                value: 2
+    -   port: None
+        node:
+            kind: slice
+            name: CMPL0_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG5
+    module: KM_REGS12
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_REG5_2
+    -   port: None
+        node:
+            kind: slice
+            name: REG5N_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: O_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R5_SET
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG2A
+    module: KM_REGS1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: REG0_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: RG2N_0
+    -   port: None
+        node:
+            kind: ident
+            name: RG2_0
+    -   port: None
+        node:
+            kind: ident
+            name: R2_SET0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: ADDR2
+    module: KM_ADD4TO12
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: REG3_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: REG4_
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C2
+    -   port: None
+        node:
+            kind: ident
+            name: G2
+    -   port: None
+        node:
+            kind: ident
+            name: P2
+    -   port: None
+        node:
+            kind: slice
+            name: ADDR2_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: ROM_0
+    module: ROM0_8BT
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: CMPL0_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: REG3_
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG2B
+    module: KM_REGS1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: RG2_0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: RG2N__0
+    -   port: None
+        node:
+            kind: ident
+            name: RG2__0
+    -   port: None
+        node:
+            kind: ident
+            name: R2_SET0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG2D
+    module: KM_REGS1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: RG2___0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: bit
+            name: REG2N_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: REG2_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: R2_SET0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: REG2C
+    module: KM_REGS1
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: RG2__0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: RG2N___0
+    -   port: None
+        node:
+            kind: ident
+            name: RG2___0
+    -   port: None
+        node:
+            kind: ident
+            name: R2_SET0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF1
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_ROM1_0
+    rvalue:
+        concats:
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: CMPL0_
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_REG5_2
+    rvalue:
+        concats:
+        -   kind: bit
+            name: REG2_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: CMPL1_
+            sgmnts:
+            - 0
+    delay: 0

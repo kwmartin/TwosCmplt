@@ -1,0 +1,876 @@
+kind: verilog
+module: KM_CMPL12
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: INVRT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 11
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: INN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: INVRTN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MUX_11
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_10
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_9
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_8
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_7
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_6
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_5
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_4
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_3
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_2
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_1
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MUX_0
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF__1
+    module: DG_INV6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INVRT
+    -   port: None
+        node:
+            kind: ident
+            name: INVRTN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_11
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_10
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_9
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_8
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_7
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_6
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_5
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_4
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: INN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS

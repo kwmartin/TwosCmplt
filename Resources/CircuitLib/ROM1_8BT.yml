@@ -1,0 +1,523 @@
+kind: verilog
+module: ROM1_8BT
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CS_N
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_7
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_6
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_5
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_4
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_3
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_2
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_1
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: ADDR_0
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA_3
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA_2
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA_1
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: DATA_0
+    direct: 'Output:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: ADDR
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Reg
+        name: nmb_lns
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+    -   kind: Reg
+        name: MEMORY
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 10
+            -   kind: int
+                value: 0
+        length:
+        -   kind: length
+            value:
+            -   kind: int
+                value: 255
+            -   kind: int
+                value: 0
+    -   kind: Reg
+        name: DAT_RG
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 10
+            -   kind: int
+                value: 0
+        length: []
+    -   kind: Reg
+        name: DATA
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 10
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Integer
+        name: dat_file
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: nmb_read
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: cnt
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: ADDR
+    rvalue:
+        concats:
+        - ADDR_7
+        - ADDR_6
+        - ADDR_5
+        - ADDR_4
+        - ADDR_3
+        - ADDR_2
+        - ADDR_1
+        - ADDR_0
+    delay: 0
+-   kind: assign
+    lvalue:
+    - lconcat
+    -   - DATA_3
+        - DATA_2
+        - DATA_1
+        - DATA_0
+    rvalue:
+        kind: ident
+        name: DATA
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: dat_file
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: nmb_read
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: cnt
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Delay
+        rvalue:
+            kind: float
+            value: 2.0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: Period
+        rvalue:
+            kind: float
+            value: 1.0
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_unary
+            arg:
+                kind: uexpr
+                oper: 'Ulnot:'
+                args:
+                -   kind: ident
+                    name: dat_file
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: dat_file
+            rvalue:
+                kind: syscall
+                name: fopen
+                value:
+                -   kind: str
+                    value: rom1.dat
+                -   kind: str
+                    value: r
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: dat_file
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: rom0.dat File could not be opened
+        -   kind: disable
+            name: file_block
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BNotEq:'
+            args:
+            -   kind: ident
+                name: nmb_read
+            -   kind: int
+                value: 1
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: nmb_read
+            rvalue:
+                kind: syscall
+                name: fscanf
+                value:
+                -   kind: ident
+                    name: dat_file
+                -   kind: str
+                    value: '%d\n'
+                -   kind: ident
+                    name: nmb_lns
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BNotEq:'
+                args:
+                -   kind: ident
+                    name: nmb_read
+                -   kind: int
+                    value: 1
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: rom0.dat is not read correctly
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_int
+            arg:
+                kind: int
+                value: 1
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: 'BTime: %tns at L63 (DEBUG0)\n\t\t nmb_lns: %d'
+            -   kind: bexpr
+                oper: 'BDivide:'
+                args:
+                -   kind: sys_rltm
+                    name: realtime
+                -   kind: int
+                    value: 100000
+            -   kind: ident
+                name: nmb_lns
+    -   kind: forst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: ident
+                name: cnt
+            -   kind: ident
+                name: nmb_lns
+        pre:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: cnt
+            rvalue:
+                kind: int
+                value: 0
+        post:
+            kind: blckst
+            lvalue:
+                kind: ident
+                name: cnt
+            rvalue:
+                kind: bexpr
+                oper: 'BPlus:'
+                args:
+                -   kind: ident
+                    name: cnt
+                -   kind: int
+                    value: 1
+        body:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: nmb_read
+            rvalue:
+                kind: syscall
+                name: fscanf
+                value:
+                -   kind: ident
+                    name: dat_file
+                -   kind: str
+                    value: '%d\n'
+                -   kind: ident
+                    name: DAT_RG
+        -   kind: blckst
+            lvalue:
+            - point
+            -   kind: bit
+                name: MEMORY
+                sgmnts:
+                - cnt
+            rvalue:
+                kind: ident
+                name: DAT_RG
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_int
+                arg:
+                    kind: int
+                    value: 0
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'BTime: %tns at L74(DEBUG1)\n\t cnt: %5d, DAT_RG: %5b'
+                -   kind: bexpr
+                    oper: 'BDivide:'
+                    args:
+                    -   kind: sys_rltm
+                        name: realtime
+                    -   kind: int
+                        value: 100000
+                -   kind: ident
+                    name: cnt
+                -   kind: bit
+                    name: MEMORY
+                    sgmnts:
+                    - cnt
+        -   kind: syscall
+            name: fclose
+            value:
+            -   kind: ident
+                name: dat_file
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: cnt
+            rvalue:
+                kind: int
+                value: 0
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: CS_N
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: DATA
+            rvalue:
+                kind: bit
+                name: MEMORY
+                sgmnts:
+                - ADDR
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: cnt
+            rvalue:
+                kind: bexpr
+                oper: 'BPlus:'
+                args:
+                -   kind: ident
+                    name: cnt
+                -   kind: int
+                    value: 1
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_expr
+                oper: 'BEq:'
+                args:
+                -   kind: ident
+                    name: cnt
+                -   kind: int
+                    value: 256
+            iftrue:
+            -   kind: blckst
+                lvalue:
+                    kind: ident
+                    name: cnt
+                rvalue:
+                    kind: int
+                    value: 0
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_int
+                arg:
+                    kind: int
+                    value: 1
+            iftrue:
+            -   kind: syscall
+                name: display
+                value:
+                -   kind: str
+                    value: 'BTime: %tns at L108(DEBUG0), at posedge CLK\n\tcnt: %4d,
+                        DATA: %5d'
+                -   kind: bexpr
+                    oper: 'BDivide:'
+                    args:
+                    -   kind: sys_rltm
+                        name: realtime
+                    -   kind: int
+                        value: 100000
+                -   kind: ident
+                    name: cnt
+                -   kind: ident
+                    name: DATA

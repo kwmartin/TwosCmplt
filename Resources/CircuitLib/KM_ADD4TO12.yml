@@ -1,5 +1,5 @@
 kind: verilog
-module: CLA2
+module: KM_ADD4TO12
 params:
 -   kind: str
     name: circuit
@@ -14,7 +14,7 @@ io_ports:
     signed: 'False'
     width:
     -   kind: int
-        value: 1
+        value: 11
     -   kind: int
         value: 0
 -   kind: Wire
@@ -23,7 +23,7 @@ io_ports:
     signed: 'False'
     width:
     -   kind: int
-        value: 1
+        value: 3
     -   kind: int
         value: 0
 -   kind: Wire
@@ -48,7 +48,7 @@ io_ports:
     signed: 'False'
     width:
     -   kind: int
-        value: 1
+        value: 11
     -   kind: int
         value: 0
 -   kind: Wire
@@ -60,6 +60,20 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 decls:
+-   -   kind: Wire
+        name: C0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Wire
         name: G0
         signed: 'False'
@@ -89,21 +103,7 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
-        name: CON
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: C_0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: C_1
+        name: N380
         signed: 'False'
         width:
         - 0
@@ -111,6 +111,13 @@ decls:
         length: []
 -   -   kind: Wire
         name: N397
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N503
         signed: 'False'
         width:
         - 0
@@ -146,25 +153,13 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: CLA1_0
-    module: CLA1
+    name: NAB_C3
+    module: DG_NAB_C2
     params:
     -   kind: str
         value: async
         name: circuit
     ports:
-    -   port: None
-        node:
-            kind: bit
-            name: A
-            sgmnts:
-            - 0
-    -   port: None
-        node:
-            kind: bit
-            name: B
-            sgmnts:
-            - 0
     -   port: None
         node:
             kind: ident
@@ -172,71 +167,15 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: C_0
+            name: N503
     -   port: None
         node:
             kind: ident
-            name: G0
+            name: G
     -   port: None
         node:
             kind: ident
-            name: P0
-    -   port: None
-        node:
-            kind: bit
-            name: S
-            sgmnts:
-            - 0
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: CLA1_1
-    module: CLA1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: A
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: bit
-            name: B
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: ident
-            name: C_0
-    -   port: None
-        node:
-            kind: ident
-            name: C_1
-    -   port: None
-        node:
-            kind: ident
-            name: G1
-    -   port: None
-        node:
-            kind: ident
-            name: P1
-    -   port: None
-        node:
-            kind: bit
-            name: S
-            sgmnts:
-            - 1
+            name: N380
     -   port: None
         node:
             kind: concat
@@ -256,7 +195,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CON
+            name: N380
     -   port: None
         node:
             kind: ident
@@ -326,21 +265,13 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: GT_1
-    module: DG_NA_BCD
+    name: AND2
+    module: DG_AND2_2X1
     params:
     -   kind: str
         value: async
         name: circuit
     ports:
-    -   port: None
-        node:
-            kind: ident
-            name: G
-    -   port: None
-        node:
-            kind: ident
-            name: CI
     -   port: None
         node:
             kind: ident
@@ -352,7 +283,113 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CON
+            name: N503
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA4_0
+    module: CLA4
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: CI
+    -   port: None
+        node:
+            kind: ident
+            name: C0
+    -   port: None
+        node:
+            kind: ident
+            name: G0
+    -   port: None
+        node:
+            kind: ident
+            name: P0
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CLA8E_1
+    module: CLA8E
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: ident
+            name: C0
+    -   port: None
+        node:
+            kind: ident
+            name: C1
+    -   port: None
+        node:
+            kind: ident
+            name: G1
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 11
+            -   kind: int
+                value: 4
     -   port: None
         node:
             kind: concat
