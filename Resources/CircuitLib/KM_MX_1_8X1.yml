@@ -3,51 +3,91 @@ module: KM_MX_1_8X1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports:
 -   name: SP0
+    direct: Input
 -   name: SP1
+    direct: Input
 -   name: SP2
+    direct: Input
 -   name: SP3
+    direct: Input
 -   name: SP4
+    direct: Input
 -   name: SP5
+    direct: Input
 -   name: SP6
+    direct: Input
 -   name: SP7
+    direct: Input
 -   name: SN0
+    direct: Input
 -   name: SN1
+    direct: Input
 -   name: SN2
+    direct: Input
 -   name: SN3
+    direct: Input
 -   name: SN4
+    direct: Input
 -   name: SN5
+    direct: Input
 -   name: SN6
+    direct: Input
 -   name: SN7
+    direct: Input
 -   name: DP0
+    direct: Input
 -   name: DP1
+    direct: Input
 -   name: DP2
+    direct: Input
 -   name: DP3
+    direct: Input
 -   name: DP4
+    direct: Input
 -   name: DP5
+    direct: Input
 -   name: DP6
+    direct: Input
 -   name: DP7
+    direct: Input
 -   name: DN0
+    direct: Input
 -   name: DN1
+    direct: Input
 -   name: DN2
+    direct: Input
 -   name: DN3
+    direct: Input
 -   name: DN4
+    direct: Input
 -   name: DN5
+    direct: Input
 -   name: DN6
+    direct: Input
 -   name: DN7
+    direct: Input
 -   name: BP
+    direct: Input
 -   name: BN
+    direct: Input
 -   name: PDP
+    direct: Input
 -   name: PDN
+    direct: Input
 -   name: OP
+    direct: Output
 -   name: 'ON'
+    direct: Output
 -   name: VDD
+    direct: Input
 -   name: VSS
+    direct: Input
 decls:
 -   -   kind: Input
         name: SP0
@@ -337,52 +377,25 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 20.2
-    src_sgnls:
-    - SP0
-    - SP1
-    - SP2
-    - SP3
-    - SP4
-    - SP5
-    - SP6
-    - SP7
-    - SN0
-    - SN1
-    - SN2
-    - SN3
-    - SN4
-    - SN5
-    - SN6
-    - SN7
-    - DP0
-    - DP1
-    - DP2
-    - DP3
-    - DP4
-    - DP5
-    - DP6
-    - DP7
-    - DN0
-    - DN1
-    - DN2
-    - DN3
-    - DN4
-    - DN5
-    - DN6
-    - DN7
-    - BP
-    - BN
-    - PDP
-    - PDN
-    edge: posedge
-    dst_sgnls:
-    - OP
-    - OP
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OP
+    rvalue:
+        kind: ident
+        name: OUT
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: 'ON'
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: OP
+    delay: 0
 -   kind: always
     onlyif:
     -   edge: all
@@ -698,22 +711,4 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: DP7
--   kind: assign
-    lvalue:
-        kind: ident
-        name: OP
-    rvalue:
-        kind: ident
-        name: OUT
-    delay: 0
--   kind: assign
-    lvalue:
-        kind: ident
-        name: 'ON'
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: OP
-    delay: 0
+

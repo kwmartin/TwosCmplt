@@ -1,0 +1,27 @@
+module: TST_CMPL12
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: INVRT
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [IN, '0xf0f']
+      - [INVRT, 0]
+Signals:
+    INVRT: 1
+    IN: 12
+SaveNds:
+  - name: OUT
+    format: h
+Classifications:
+    INVRT: clocks
+    VDD: power
+    VSS: power
+    IN: data_inputs
+    OUT: outputs

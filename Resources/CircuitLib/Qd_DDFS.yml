@@ -215,7 +215,7 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: R1_SET
+    -   port: R1SET
         node:
             kind: slice
             name: R1R_SET
@@ -224,11 +224,11 @@ behav_blcks:
                 value: 11
             -   kind: int
                 value: 0
-    -   port: R2_SET
+    -   port: R2SET
         node:
             kind: ident
             name: VSS
-    -   port: R4_SET
+    -   port: R5SET
         node:
             kind: slice
             name: R4R_SET
@@ -253,7 +253,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: O_
+    -   port: OUT
         node:
             kind: slice
             name: SINE
@@ -279,7 +279,7 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: R1_SET
+    -   port: R1SET
         node:
             kind: slice
             name: R1Q_SET
@@ -288,11 +288,11 @@ behav_blcks:
                 value: 11
             -   kind: int
                 value: 0
-    -   port: R2_SET
+    -   port: R2SET
         node:
             kind: ident
             name: VSS
-    -   port: R4_SET
+    -   port: R5SET
         node:
             kind: slice
             name: R4Q_SET
@@ -317,7 +317,7 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-    -   port: O_
+    -   port: OUT
         node:
             kind: slice
             name: COS

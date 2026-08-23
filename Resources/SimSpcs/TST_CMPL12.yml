@@ -1,0 +1,16 @@
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: INVRT
+    per: PER
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [IN, '0xf0f']
+      - [INVRT, 0]
+SaveNds:
+  - name: OUT
+    format: h

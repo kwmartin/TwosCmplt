@@ -3494,24 +3494,24 @@ modules:
     Qd_DDFS:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/Qd_DDFS.v
         timestamps:
-            verilog: 1787145832.7969663
-            ast: 1787344977.9756315
-            mod: 1787344980.0276482
-            circuit_lib: 1787344981.0646565
-            unl: 1787344981.0716567
+            verilog: 1787400519.6762214
+            ast: 1787400525.1042926
+            mod: 1787400526.7573144
+            circuit_lib: 1787400527.6563263
+            unl: 1787400527.6633263
         hashes:
-            verilog: 13fb0610e504ee160760f6fa650b9222f15e73282c9682db8718b74e6114957d
+            verilog: 721c4aeeb4e121468aa6d941d5b7d298ba1763d36d84e37f5cade2906503ce6a
             scripts: dc23e1717583701068f2cd4f3542d155567442510aa5c7c536a3a665d96ac226
     Qd_DDFS_TB:
-        verilog: /home/martin/.xschem/verilogParse/ver_lib/Qd_DDFS_TB.v
+        verilog: /home/martin/IC_Design/Testbenches/NgSpice/Qd_DDFS_TB/verilog/Qd_DDFS_TB.v
         timestamps:
-            verilog: 1787145832.8449667
-            ast: 1787344982.5506685
-            mod: 1787344984.5986853
-            circuit_lib: 1787344985.566693
-            unl: 1787344985.571693
+            verilog: 1787400519.636221
+            ast: 1787400538.395467
+            mod: 1787138862.2038012
+            circuit_lib: 1787400540.2704918
+            unl: 1787400540.2764919
         hashes:
-            verilog: 0c2a3a4f8440a2f0c76e8a3e0d82ff5f8e60ce7bf80c1d307801ad245d660520
+            verilog: f527ef7bc401cc15b5a2814134ece63f89de7bc273dfc33f68e59704118049d9
             scripts: dc23e1717583701068f2cd4f3542d155567442510aa5c7c536a3a665d96ac226
     KM_MXDIFF_5X1:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_MXDIFF_5X1.v
@@ -3527,11 +3527,33 @@ modules:
     KM_CMPL12:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_CMPL12.v
         timestamps:
-            verilog: 1787344099.2804947
-            ast: 1787344838.441502
-            mod: 1787344840.7495208
-            circuit_lib: 1787344841.90853
-            unl: 1787344841.9265304
+            verilog: 1787352632.2848606
+            ast: 1787352637.6559284
+            mod: 1787352639.3459496
+            circuit_lib: 1787352640.2859614
+            unl: 1787352640.3089616
         hashes:
-            verilog: 3d812b93ea07de26a27c39114059989cce194ae3763079b17a0ee8652f2337ce
+            verilog: e08065a665af1db40a74f4cb04d1d8dc4b1a52a66527f00921b9bd820db1964e
+            scripts: dc23e1717583701068f2cd4f3542d155567442510aa5c7c536a3a665d96ac226
+    KM_MX_1_8X1:
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_MX_1_8X1.v
+        timestamps:
+            verilog: 1785409192.0403643
+            ast: 1787352642.0369835
+            mod: 1787352643.909007
+            circuit_lib: 1787352644.7480178
+            unl: 1787352644.7590177
+        hashes:
+            verilog: cc63f6f93d9c1298f6687963af84a2c70263baefaa753044a69ce071c7603069
+            scripts: dc23e1717583701068f2cd4f3542d155567442510aa5c7c536a3a665d96ac226
+    TST_CMPL12:
+        verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_CMPL12/verilog/TST_CMPL12.v
+        timestamps:
+            verilog: 1787501328.1805136
+            ast: 1787501329.5305274
+            mod: 1787501331.2205443
+            circuit_lib: 1787501332.2115545
+            unl: 1787501332.2145545
+        hashes:
+            verilog: dfe085da727b1292cbc7871a442002995793eab6f28230cc25110f708029b976
             scripts: dc23e1717583701068f2cd4f3542d155567442510aa5c7c536a3a665d96ac226
