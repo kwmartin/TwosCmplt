@@ -1,77 +1,78 @@
 kind: verilog
 module: TST_CMPL12
 params:
-  - kind: Int
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
     name: delay
     value: 5
-  - kind: str
-    name: circuit
-    value: async
 io_ports:
-  - kind: Wire
+-   kind: Wire
     name: OUT
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 11
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: IN
     direct: 'Input:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 11
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: INVRT
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
 decls: []
 behav_blcks:
-  - kind: instance
+-   kind: instance
     name: X1
     module: KM_CMPL12
     params: null
     ports:
-      - port: INVRT
+    -   port: INVRT
         node:
             kind: ident
             name: INVRT
-      - port: IN
+    -   port: IN
         node:
             kind: slice
             name: IN
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 11
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: OUT
+    -   port: OUT
         node:
             kind: slice
             name: OUT
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 11
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: VDD
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-      - port: VSS
+    -   port: VSS
         node:
             kind: ident
             name: VSS
+

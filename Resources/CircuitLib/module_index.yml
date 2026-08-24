@@ -1,4 +1,4 @@
-generated: '2026-08-23T16:08:43+00:00'
+generated: '2026-08-24T13:10:47+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -841,7 +841,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: Sine.v
         clean: false
-        stale_reason: 'not in deps, source newer than: mod, circuit_lib, unl'
+        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
     Sine5:
         directory: verilogParse/ver_lib
         file_name: Sine5.v
@@ -877,6 +877,10 @@ modules:
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
+        clean: true
+    TST_FADDRB_3X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_FADDRB_3X2.v
         clean: true
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
