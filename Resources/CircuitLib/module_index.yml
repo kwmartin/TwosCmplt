@@ -1,4 +1,4 @@
-generated: '2026-08-24T13:10:47+00:00'
+generated: '2026-08-25T20:44:45+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -881,6 +881,10 @@ modules:
     TST_FADDRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDRB_3X2.v
+        clean: true
+    TST_FADDR_3X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_FADDR_3X2.v
         clean: true
     TST_TDER_6X2:
         directory: verilogParse/ver_lib

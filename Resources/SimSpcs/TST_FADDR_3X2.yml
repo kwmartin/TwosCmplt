@@ -1,0 +1,16 @@
+Constants:
+    PER: 1000
+FinishTime: 32*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [BN, 0]
+      - [AN, 0]
+      - [CINN, 0]
+SaveNds:
+  - name: SUM
+    format: b
+  - name: COUT
+    format: b
