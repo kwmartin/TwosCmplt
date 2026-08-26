@@ -1,5 +1,5 @@
 kind: verilog
-module: KM_CNTR4E
+module: CNTRE4
 params:
 -   kind: str
     name: circuit
@@ -126,6 +126,20 @@ decls:
         length: []
 -   -   kind: Wire
         name: T3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBP
         signed: 'False'
         width:
         - 0
@@ -459,13 +473,10 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: sync
+-   kind: instance
     name: TLD0
-    module: DG_TDR_6X2
-    params:
-    -   kind: str
-        value: sync
-        name: circuit
+    module: DG_TDER_6X2
+    params: null
     ports:
     -   port: None
         node:
@@ -488,11 +499,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CBP
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CBN
     -   port: None
         node:
             kind: bit
@@ -513,13 +524,10 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: sync
+-   kind: instance
     name: TLD1
-    module: DG_TDR_6X2
-    params:
-    -   kind: str
-        value: sync
-        name: circuit
+    module: DG_TDER_6X2
+    params: null
     ports:
     -   port: None
         node:
@@ -542,11 +550,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CBP
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CBN
     -   port: None
         node:
             kind: bit
@@ -567,13 +575,10 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: sync
+-   kind: instance
     name: TLD2
-    module: DG_TDR_6X2
-    params:
-    -   kind: str
-        value: sync
-        name: circuit
+    module: DG_TDER_6X2
+    params: null
     ports:
     -   port: None
         node:
@@ -596,11 +601,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CBP
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CBN
     -   port: None
         node:
             kind: bit
@@ -621,13 +626,10 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: sync
+-   kind: instance
     name: TLD3
-    module: DG_TDR_6X2
-    params:
-    -   kind: str
-        value: sync
-        name: circuit
+    module: DG_TDER_6X2
+    params: null
     ports:
     -   port: None
         node:
@@ -650,11 +652,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CBP
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CBN
     -   port: None
         node:
             kind: bit
@@ -667,6 +669,39 @@ behav_blcks:
             name: QN
             sgmnts:
             - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: CBFR
+    module: DG_DIFF_BFRE
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CNT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
     -   port: None
         node:
             kind: concat

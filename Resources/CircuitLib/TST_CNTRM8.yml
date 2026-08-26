@@ -1,0 +1,103 @@
+kind: verilog
+module: TST_CNTRM8
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: async
+io_ports:
+  - kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 7
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 7
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 7
+      - kind: int
+        value: 0
+decls: []
+behav_blcks:
+  - kind: instance
+    name: CNTRM8
+    module: CNTRM8
+    params: null
+    ports:
+      - port: D
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+              - kind: int
+                value: 7
+              - kind: int
+                value: 0
+      - port: INIT
+        node:
+            kind: ident
+            name: INIT
+      - port: CLK
+        node:
+            kind: ident
+            name: CLK
+      - port: QP
+        node:
+            kind: slice
+            name: QP
+            sgmnts:
+              - kind: int
+                value: 7
+              - kind: int
+                value: 0
+      - port: QN
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+              - kind: int
+                value: 7
+              - kind: int
+                value: 0
+      - port: VDD
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS

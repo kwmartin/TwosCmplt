@@ -1,169 +1,170 @@
 kind: verilog
 module: TST_FADDRB_3X2
 params:
-  - kind: Int
-    name: delay
-    value: 5
-  - kind: str
+-   kind: str
     name: circuit
     value: async
+-   kind: Int
+    name: delay
+    value: 5
 io_ports:
-  - kind: Wire
+-   kind: Wire
     name: SUM
     direct: 'Output:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: COUT
     direct: 'Output:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: BN
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: AN
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: CINN
     direct: 'Input:'
     signed: 'False'
 decls:
-  -   - kind: Wire
+-   -   kind: Wire
         name: A
         signed: 'False'
         width:
-          - 0
-          - 0
+        - 0
+        - 0
         length: []
-  -   - kind: Wire
+-   -   kind: Wire
         name: B
         signed: 'False'
         width:
-          - 0
-          - 0
+        - 0
+        - 0
         length: []
-  -   - kind: Wire
+-   -   kind: Wire
         name: CIN
         signed: 'False'
         width:
-          - 0
-          - 0
+        - 0
+        - 0
         length: []
 behav_blcks:
-  - kind: async
+-   kind: async
     name: INV_IDL5
     module: DG_INV2_1X1
     params:
-      - kind: str
+    -   kind: str
         value: async
         name: circuit
     ports:
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: CINN
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: CIN
-      - port: None
+    -   port: None
         node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
-  - kind: async
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
     name: INV_IDL6
     module: DG_INV2_1X1
     params:
-      - kind: str
+    -   kind: str
         value: async
         name: circuit
     ports:
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: AN
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: A
-      - port: None
+    -   port: None
         node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
-  - kind: async
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
     name: INV_IDL7
     module: DG_INV2_1X1
     params:
-      - kind: str
+    -   kind: str
         value: async
         name: circuit
     ports:
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: BN
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: B
-      - port: None
+    -   port: None
         node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
-  - kind: async
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
     name: FADDR1
     module: FADDR_3X2
     params:
-      - kind: str
+    -   kind: str
         value: async
         name: circuit
     ports:
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: CIN
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: A
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: B
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: SUM
-      - port: None
+    -   port: None
         node:
             kind: ident
             name: COUT
-      - port: None
+    -   port: None
         node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

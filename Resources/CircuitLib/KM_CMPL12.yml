@@ -532,12 +532,12 @@ behav_blcks:
             name: INVRTN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV_11
     module: DG_INV2_1X1
@@ -874,3 +874,4 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+

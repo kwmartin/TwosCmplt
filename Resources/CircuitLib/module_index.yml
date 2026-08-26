@@ -1,4 +1,4 @@
-generated: '2026-08-25T20:44:45+00:00'
+generated: '2026-08-26T19:48:16+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -85,6 +85,14 @@ modules:
         file_name: CMPL.v
         clean: false
         stale_reason: 'not in deps, source newer than: unl'
+    CNTRE4:
+        directory: verilogParse/ver_lib
+        file_name: CNTRE4.v
+        clean: true
+    CNTRM8:
+        directory: verilogParse/ver_lib
+        file_name: CNTRM8.v
+        clean: true
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
@@ -172,6 +180,10 @@ modules:
     DG_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFR.v
+        clean: true
+    DG_DIFF_BFRE:
+        directory: verilogParse/ver_lib
+        file_name: DG_DIFF_BFRE.v
         clean: true
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
@@ -744,7 +756,8 @@ modules:
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
-        clean: true
+        clean: false
+        stale_reason: parser scripts changed
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
@@ -861,6 +874,10 @@ modules:
     TST_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
+        clean: true
+    TST_CNTRM8:
+        directory: verilogParse/ver_lib
+        file_name: TST_CNTRM8.v
         clean: true
     TST_DER_3X2:
         directory: verilogParse/ver_lib

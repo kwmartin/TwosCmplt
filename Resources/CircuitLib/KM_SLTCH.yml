@@ -13,6 +13,10 @@ io_ports:
 -   name: INIT
 -   name: QP
 -   name: QN
+-   name: CP
+-   name: CN
+-   name: VDD
+-   name: VSS
 decls:
 -   -   kind: Input
         name: D

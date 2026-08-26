@@ -136,17 +136,10 @@ behav_blcks:
     -   kind: blckst
         lvalue:
             kind: ident
-            name: QP
+            name: STATE
         rvalue:
             kind: int
             value: 0
-    -   kind: blckst
-        lvalue:
-            kind: ident
-            name: QN
-        rvalue:
-            kind: int
-            value: 1
     -   kind: blckst
         lvalue:
             kind: ident
@@ -178,13 +171,6 @@ behav_blcks:
             rvalue:
                 kind: int
                 value: 0
-        -   kind: blckst
-            lvalue:
-                kind: ident
-                name: QN
-            rvalue:
-                kind: int
-                value: 1
         ifelse:
         -   kind: ifst
             cmpr_expr:
