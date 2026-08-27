@@ -238,13 +238,16 @@ behav_blcks:
                         value: 0
             -   kind: ifst
                 cmpr_expr:
-                    kind: cmpr_unary
-                    arg:
-                        kind: uexpr
+                    kind: cmpr_expr
+                    oper: 'BLand:'
+                    args:
+                    -   kind: uexpr
                         oper: 'Ulnot:'
                         args:
                         -   kind: ident
                             name: CLK
+                    -   kind: ident
+                        name: ENBL
                 iftrue:
                 -   kind: noblckst
                     lvalue:

@@ -1,4 +1,4 @@
-generated: '2026-08-26T19:48:16+00:00'
+generated: '2026-08-27T20:21:15+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -756,8 +756,7 @@ modules:
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
-        clean: false
-        stale_reason: parser scripts changed
+        clean: true
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
