@@ -10,14 +10,20 @@ ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [CLK, 0]
-      - [VDD, 1]
-      - [VSS, 0]
-      - [INIT, 1]
-      - [D, '0x9b']
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - D
+          - '0xff'
   - tm: 0.1*PER
     vls:
-      - [INIT, 0]
+      -   - INIT
+          - 0
 Signals:
     CLK: 1
     INIT: 1
