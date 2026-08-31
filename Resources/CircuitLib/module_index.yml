@@ -1,4 +1,4 @@
-generated: '2026-08-28T10:42:41+00:00'
+generated: '2026-08-29T18:57:03+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -906,9 +906,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
         clean: true
+    TST_TDER_IN_6X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_TDER_IN_6X2.v
+        clean: true
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
+        clean: true
+    TST_TDR_IN_6X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_TDR_IN_6X2.v
         clean: true
     VOTER:
         directory: verilogParse/ver_lib

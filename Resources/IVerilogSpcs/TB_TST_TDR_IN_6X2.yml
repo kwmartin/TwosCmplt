@@ -1,0 +1,59 @@
+module: TST_TDR_IN_6X2
+generated: true
+Constants:
+  -   - PER
+      - 1
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+FinishTime: 64*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+  - tm: 0
+    vls:
+      -   - INITIN
+          - 1
+      -   - TIN
+          - 0
+      -   - LIIN
+          - 0
+      -   - LIN
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - INITIN
+          - 0
+  - tm: 8.1*PER
+    vls:
+      -   - TIN
+          - 1
+Signals:
+    CLK: 1
+    INITIN: 1
+    TIN: 1
+    LIIN: 1
+    LIN: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INITIN: resets
+    TIN: data_inputs
+    LIIN: data_inputs
+    LIN: data_inputs
+    QP1: outputs
+    QN1: outputs
