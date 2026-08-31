@@ -54,6 +54,15 @@ def _merge_time_spcs(perm_ts: list, editor_ts: list) -> list:
     Signals managed by the editor come from editor_ts.  Non-editor signals
     (e.g. VDD, VSS) are preserved from perm_ts — both flat [name, val] entries
     and the non-editor vls items inside dict entries.
+
+    Each source (perm_ts, editor_ts) is really an independent list of
+    (time, value) events per signal; this function's job is only to combine
+    them into one clean TimeSpcs. It must therefore group everything by
+    time into a single entry per timestamp -- previously it just
+    concatenated preserved + editor_ts, which left two separate `tm: 0`
+    blocks (one from each source) whenever both had something to say at
+    t=0, silently breaking any reader that only inspects the first `tm==0`
+    entry it finds (see gen_verilog_tb.py's _load_t0_vals_from).
     """
     editor_names: Set[str] = set()
     for entry in editor_ts:
@@ -76,7 +85,25 @@ def _merge_time_spcs(perm_ts: list, editor_ts: list) -> list:
             if str(entry[0]) not in editor_names:
                 preserved.append(entry)
 
-    return preserved + list(editor_ts)
+    combined = preserved + list(editor_ts)
+
+    grouped: dict = {}
+    order: list = []
+    for entry in combined:
+        if isinstance(entry, dict):
+            tm = entry.get("tm", 0)
+            vls = [v for v in entry.get("vls", []) if isinstance(v, (list, tuple)) and len(v) >= 2]
+        elif isinstance(entry, (list, tuple)) and len(entry) >= 2:
+            tm, vls = 0, [entry]
+        else:
+            continue
+        key = str(tm)
+        if key not in grouped:
+            grouped[key] = {"tm": tm, "vls": []}
+            order.append(key)
+        grouped[key]["vls"].extend(vls)
+
+    return [grouped[k] for k in order]
 
 
 def _build_hierarchy(map_data: dict) -> Dict[CircKey, dict]:

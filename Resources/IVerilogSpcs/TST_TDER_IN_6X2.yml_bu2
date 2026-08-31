@@ -1,25 +1,33 @@
 module: TST_TDER_IN_6X2
 generated: true
 Constants:
-    PER: 1000
+  -   - PER
+      - 1000
 Clock:
   - clkNm: CLK
     per: PER
+    initVal: 0
 FinishTime: 64*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [CLK, 0]
-      - [VDD, 1]
-      - [VSS, 0]
-      - [INITIN, 1]
-      - [TIN, 0]
-      - [LIIN, 0]
-      - [LIN, 0]
-  - tm: 0.1*PER
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+  - tm: 0
     vls:
-      - [INITIN, 0]
+      -   - INITIN
+          - 0
+      -   - TIN
+          - 0
+      -   - LIIN
+          - 0
+      -   - LIN
+          - 0
   - tm: 8.1*PER
     vls:
       -   - TIN

@@ -1831,21 +1831,33 @@ class WaveformCanvas(QWidget):
             painter.setPen(self.wave_pen)
 
             if isinstance(wave, ClockWaveRow):
-                t = self.startTm
-                dt = max(0.02, min(0.05, wave.period / 20.0 if wave.period > 0 else 0.05))
-                prev_t = t
-                prev_y = y_high if wave.value_for_time(t) else y_low
+                # Enumerate exact transition times (delay + n*half_period, n an
+                # integer) instead of stepping a running `t` by a fixed `dt` --
+                # the old sampling approach quantized every edge to the nearest
+                # dt (up to ~0.05 period units late) and accumulated further
+                # floating-point drift from repeated `t = t + dt` over many
+                # periods, both making transitions land visibly later than the
+                # true edge time (worse in later periods).
+                prev_t = self.startTm
+                prev_y = y_high if wave.value_for_time(prev_t) else y_low
+                half = wave.period / 2.0 if wave.period > 0 else 0.0
 
-                while t <= self.finishTm + 1e-9:
-                    cur_y = y_high if wave.value_for_time(t) else y_low
-                    px = self.time_to_x(prev_t)
-                    x = self.time_to_x(t)
-                    painter.drawLine(QPointF(px, prev_y), QPointF(x, prev_y))
-                    if cur_y != prev_y:
-                        painter.drawLine(QPointF(x, prev_y), QPointF(x, cur_y))
-                    prev_t = t
-                    prev_y = cur_y
-                    t = t + dt
+                if half > 0:
+                    n = max(1, math.ceil((self.startTm - wave.delay) / half))
+                    while True:
+                        t_tr = wave.delay + n * half
+                        if t_tr > self.finishTm + 1e-9:
+                            break
+                        if t_tr >= self.startTm - 1e-9:
+                            cur_y = y_high if wave.value_for_time(t_tr) else y_low
+                            px = self.time_to_x(prev_t)
+                            x = self.time_to_x(t_tr)
+                            painter.drawLine(QPointF(px, prev_y), QPointF(x, prev_y))
+                            if cur_y != prev_y:
+                                painter.drawLine(QPointF(x, prev_y), QPointF(x, cur_y))
+                            prev_t = t_tr
+                            prev_y = cur_y
+                        n += 1
 
                 x_end = self.time_to_x(self.finishTm)
                 painter.drawLine(QPointF(self.time_to_x(prev_t), prev_y), QPointF(x_end, prev_y))

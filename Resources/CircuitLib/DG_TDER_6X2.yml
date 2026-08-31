@@ -194,6 +194,13 @@ behav_blcks:
     -   kind: blckst
         lvalue:
             kind: ident
+            name: CLKB
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
             name: STATE
         rvalue:
             kind: int
