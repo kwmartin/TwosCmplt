@@ -1,10 +1,12 @@
 module: TST_TDR_IN_6X2
 generated: true
 Constants:
-    PER: 1
+  -   - PER
+      - 1000
 Clock:
   - clkNm: CLK
     per: PER
+    initVal: 0
 FinishTime: 16*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
