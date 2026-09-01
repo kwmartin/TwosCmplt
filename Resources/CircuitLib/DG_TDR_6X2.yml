@@ -96,13 +96,6 @@ decls:
         - 0
         - 0
         length: []
-    -   kind: Reg
-        name: CLKB
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 -   -   kind: Integer
         name: chngs
         signed: integer
@@ -185,13 +178,6 @@ behav_blcks:
                     kind: int
                     value: 0
             ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: CLKB
-                rvalue:
-                    kind: ident
-                    name: CP
             -   kind: ifst
                 cmpr_expr:
                     kind: cmpr_unary
