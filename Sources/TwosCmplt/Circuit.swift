@@ -408,7 +408,12 @@ public struct CmpRef: Sendable, Hashable {
     static let none = CmpRef(kind: .none, index: 0)
 } 
 
-public struct NodeChng {
+// Codable: fields already match the {circIndxs, nodeIndx, value, updTm,
+// nbits, capac} shape run_sim_ui.py / vcd2swift.py expect from an
+// iVerilog-produced Chngs.json entry (that side additionally carries an
+// id_code key Swift's own consumers already treat as optional), so no
+// custom key mapping is needed -- see WaveDisplay.swift's saveNodeChngs().
+public struct NodeChng: Codable {
     public let circIndxs: [Int]
     public let nodeIndx: Int
     public let value: Int
