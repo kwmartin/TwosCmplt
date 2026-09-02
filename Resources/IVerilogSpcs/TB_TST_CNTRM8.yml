@@ -5,7 +5,7 @@ Constants:
 Clock:
   - clkNm: CLK
     per: PER
-FinishTime: 560*PER
+FinishTime: 514*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
@@ -19,7 +19,7 @@ TimeSpcs:
       -   - INIT
           - 1
       -   - D
-          - '0x9b'
+          - '0xff'
   - tm: 0.1*PER
     vls:
       -   - INIT
