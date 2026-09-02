@@ -1,25 +1,19 @@
 module: TST_CNTR8D
 generated: true
 Constants:
-    PER: 1
+    PER: 1000
 Clock:
   - clkNm: CLK
     per: PER
-FinishTime: 513*PER
-ResetRelease: 0.1*PER
+FinishTime: 260*PER
 TimeSpcs:
   - tm: 0
     vls:
-      -   - CLK
-          - 0
-      -   - VDD
-          - 1
-      -   - VSS
-          - 0
-      -   - INIT
-          - 1
-      -   - D
-          - '0xff'
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, '0x80']
   - tm: 0.1*PER
     vls:
       -   - INIT

@@ -17,6 +17,14 @@ io_ports:
     direct: 'Output:'
     signed: 'False'
 -   kind: Wire
+    name: CP
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CN
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
     name: D
     direct: 'Input:'
     signed: 'False'
@@ -51,14 +59,6 @@ io_ports:
         value: 3
     -   kind: int
         value: 0
--   kind: Wire
-    name: CP
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: CN
-    direct: 'Input:'
-    signed: 'False'
 -   kind: Wire
     name: VDD
     direct: 'Input:'
