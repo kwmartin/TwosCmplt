@@ -1,4 +1,4 @@
-generated: '2026-09-02T21:21:20+00:00'
+generated: '2026-09-02T21:55:24+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -85,6 +85,10 @@ modules:
         file_name: CMPL.v
         clean: false
         stale_reason: 'not in deps, source newer than: unl'
+    CNTR8G:
+        directory: verilogParse/ver_lib
+        file_name: CNTR8G.v
+        clean: true
     CNTRE4:
         directory: verilogParse/ver_lib
         file_name: CNTRE4.v
@@ -705,6 +709,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
         clean: true
+    KM_CNTR4G:
+        directory: verilogParse/ver_lib
+        file_name: KM_CNTR4G.v
+        clean: true
     KM_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR8D.v
@@ -873,6 +881,10 @@ modules:
     TST_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
+        clean: true
+    TST_CNTR8G:
+        directory: verilogParse/ver_lib
+        file_name: TST_CNTR8G.v
         clean: true
     TST_CNTRM8:
         directory: verilogParse/ver_lib

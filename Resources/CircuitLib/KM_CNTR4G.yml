@@ -1,0 +1,717 @@
+kind: verilog
+module: KM_CNTR4G
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CNT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: COUT
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: CP
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CN
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: L
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: ND1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ND2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ND3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NR2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: NR3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CNTN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: T1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: T2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: T3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N1143
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: NOR4
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CNTN
+    -   port: None
+        node:
+            kind: ident
+            name: NR2
+    -   port: None
+        node:
+            kind: ident
+            name: T3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NAND2
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: NR3
+    -   port: None
+        node:
+            kind: ident
+            name: NR2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NOR3
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: NR3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV1
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CNT
+    -   port: None
+        node:
+            kind: ident
+            name: CNTN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NOR1
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CNTN
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: T1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NOR2
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CNTN
+    -   port: None
+        node:
+            kind: ident
+            name: N1143
+    -   port: None
+        node:
+            kind: ident
+            name: T2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NAND1
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: N1143
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NAND4
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: ND2
+    -   port: None
+        node:
+            kind: ident
+            name: ND3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NOR5
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: ND1
+    -   port: None
+        node:
+            kind: ident
+            name: ND2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: NAND3
+    module: DG_NAND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: ND1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_0
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ND3
+    -   port: None
+        node:
+            kind: ident
+            name: COUT
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: TLD0
+    module: DG_TDR_6X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: CNT
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: TLD1
+    module: DG_TDR_6X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: T1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: TLD2
+    module: DG_TDER_6X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: T2
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: instance
+    name: XLD3
+    module: DG_TDER_6X2
+    params: null
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: T3
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: DIFFBF
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
