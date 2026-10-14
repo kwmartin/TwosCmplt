@@ -73,6 +73,7 @@ public struct Glbls {
     nonisolated(unsafe) public static var mltTruncate: Bool = false
     nonisolated(unsafe) public static var topCircuit: Circuit? = nil
     nonisolated(unsafe) public static var nodeChngs: [NodeChng] = []
+    nonisolated(unsafe) public static var chngCount: Int = 0   // every recorded node change (saveChng)
     nonisolated(unsafe) public static var configs: ProjectConfig!
     nonisolated(unsafe) public static var sigTraces: [String] = []
     nonisolated(unsafe) public static var allChngs: [(String, (Int, Int))] = []

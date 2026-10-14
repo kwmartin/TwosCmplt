@@ -606,23 +606,19 @@ public func initializeCmpCnts(_ circ: Circuit) {
 
     sortCmpRefs(circ)
     if circ.evalOrder.count != circ.cmpRefs.count {
-        let cCircInfo = circ.cCircs.map { "\($0.module)(sync=\($0.sync))" }.joined(separator: ", ")
-        let aCircInfo = circ.aCircs.map { $0.name }.joined(separator: ", ")
-        let sCircInfo = circ.sCircs.map { $0.name }.joined(separator: ", ")
-        let extraRefs = circ.evalOrder.filter { !circ.cmpRefs.contains($0) }.map { "\($0.kind)[\($0.index)]sync=\($0.sync)" }.joined(separator: ", ")
-        let missingRefs = circ.cmpRefs.filter { !circ.evalOrder.contains($0) }.map { "\($0.kind)[\($0.index)]sync=\($0.sync)" }.joined(separator: ", ")
-        let evalDupStr = Dictionary(circ.evalOrder.map { ($0, 1) }, uniquingKeysWith: +).filter { $0.value > 1 }.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
-        let cmpDupStr = cmpRefDups.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
-        let sortDupStr = sortArryDups.map { "\($0.key.kind)[\($0.key.index)]x\($0.value)" }.joined(separator: ", ")
-        let msg = "Evaluation order not determined for '\(circ.module)' evalOrder=\(circ.evalOrder.count) cmpRefs=\(circ.cmpRefs.count)\n  cCircs: [\(cCircInfo)]\n  aCircs: [\(aCircInfo)]\n  sCircs: [\(sCircInfo)]\n  extra in evalOrder: [\(extraRefs)]\n  missing from evalOrder: [\(missingRefs)]\n  evalOrder dups: [\(evalDupStr)]\n  cmpRefs dups: [\(cmpDupStr)]\n  sortArry dups: [\(sortDupStr)]\nmaybe a verilog parameter circuit=sync needs to be added"
-        preconditionFailure(msg)
+        // A loop among the children. With only leaf flip-flops breaking
+        // edges, this is the normal case for composites wired in a ring
+        // through their internal registers (see isSync). Order the rest as
+        // declared and let eval() repeat the async pass until it settles.
+        let missing = circ.cmpRefs.filter { !circ.evalOrder.contains($0) }
+        let names = missing.compactMap { ref -> String? in
+            guard ref.kind == .vCirc || ref.kind == .cCirc else { return nil }
+            return circ.cCircs[ref.index].name
+        }
+        dbg("= \(circ.module): loop among \(names.joined(separator: ", ")) -- async pass repeats until stable")
+        circ.evalOrder += missing
+        circ.hasLoop = true
     }
-    precondition(circ.evalOrder.count == circ.cmpRefs.count,
-        """
-        Evaluation order not determined,
-        maybe a verilog parameter circuit=sync needs to be added
-        """
-        )
 }
 
 public func getIndxs(_ circ: Circuit) -> [Int] {
@@ -778,6 +774,7 @@ public func saveChng(_ circ: Circuit, indx: Int) {
     }
     circ.capacTrns += nd.capac
 
+    Glbls.chngCount &+= 1
     Glbls.nodeChngs.append(ndChng)
     Glbls.allChngs.append((ndStr, (nd.updTm, nd.node.value)))
 }
@@ -789,6 +786,7 @@ public struct AlwaysState {
     public var stack: [Value] = []              // this always-block's private VM stack
     public var blk: [ScheduledUpdate] = []
     public var updTm: Int = -1
+    public var trigTm: Int = 0                  // time of the change that last triggered it
 }
 
 // Per-init-block runtime state, per Circuit instance
@@ -833,6 +831,15 @@ public final class Circuit {
     public var initStates: [InitState] = []       // one per InitBlckAST in CircDef
     public var assgnStates: [AssgnState] = []   // one per AssgnBlckAST
 
+    /// Verilog `integer` variables -- and any other non-node variable a block
+    /// assigns -- kept per instance across eval() calls. Blocks see them as
+    /// Context.vars; eval() hands them in and stores them back, so e.g. a
+    /// flip-flop's `initial chngs = 0;` is still there when its always block
+    /// runs `chngs = chngs + 1`. They are not nodes, so nodes/nodeLU and every
+    /// node index (Map/Chngs, capacitances.yml) are unaffected.
+    public var vars: [String: Value] = [:]
+    var varsSeeded: Bool = false
+
     var instanceCircDef: CircDef? = nil  // instance-specific CircDef (may have overridden params)
     var aCircs: [Gate] = []
     var sCircs: [Reg] = []
@@ -849,6 +856,17 @@ public final class Circuit {
     weak var head: Circuit? = nil
     var cmpRefs: [CmpRef] = []
     var evalOrder: [CmpRef] = []
+    /// evalOrder couldn't be completed (a loop among children that passes
+    /// through registers inside a composite, e.g. CNTRM8's COUT0 -> NAND1 ->
+    /// INV1 -> LD -> L): the async pass is repeated until nothing changes.
+    var hasLoop: Bool = false
+    /// Latest updTm of any node read by the assign block now running (reset
+    /// by runAssignBlck, raised by Context.readNode). An assign's output
+    /// arrives at that time plus its delays, as a gate's does -- so e.g.
+    /// `assign QP = STATE` follows STATE's clock-edge time, not the sweep time.
+    var asgnReadTm: Int = Int.min
+    var loopCapWarned: Bool = false
+    static let loopIterCap = 16
     var sortArry: [CmpRef] = []
     var refCnts: [CmpRef: Int] = [:]
     public var nodeLU: [String: Int] = ["VSS": 1000000, "VDD": 1000001]
@@ -1078,34 +1096,39 @@ public final class Circuit {
         )
     }
 
+    /// Queue always block idx, remembering when its trigger changed: a
+    /// clocked block runs at that time (runAlwysBlck), not at the sweep time.
+    func trigger(_ idx: Int, tm: Int) {
+        alwysStk.append(idx)
+        if alwaysStates.indices.contains(idx) { alwaysStates[idx].trigTm = tm }
+    }
+
     func setNode(_ ndNm: String, val: Int, tm: Int) {
         guard let ndIndx = self.nodeLU[ndNm] else {
             print("⚠️ setNode: node '\(ndNm)' not found in circuit '\(self.module)' — skipping")
             return
         }
         if self.nodes[ndIndx].node.value != val {
-            self.nodes[ndIndx].prevValue = self.nodes[ndIndx].node.value
-            self.nodes[ndIndx].node.value = val
-            self.nodes[ndIndx].updTm = tm
+            self.nodes[ndIndx].commit(val, tm: tm)
             let wtch = self.snstvLU[ndIndx]
             // stack alwysBlcks for any sense triggers
             if wtch != nil {
                 switch wtch!.edge {
                 case .posedge:
                     if wtch!.value == 0 && val == 1 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .negedge:
                     if wtch!.value == 1 && val == 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .all:
                     if (wtch!.value^val != 0)  {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .level:
                     if (wtch!.value^val != 0)  {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 }
                 self.snstvLU[ndIndx]!.value = val
@@ -1123,27 +1146,25 @@ public final class Circuit {
         let oldVal = self.nodes[ndIndx].node.value
         let newVal = (oldVal & ~(1 << bitIndex)) | ((bitVal & 1) << bitIndex)
         if oldVal != newVal {
-            self.nodes[ndIndx].prevValue = oldVal
-            self.nodes[ndIndx].node.value = newVal
-            self.nodes[ndIndx].updTm = tm
+            self.nodes[ndIndx].commit(newVal, tm: tm)
             let wtch = self.snstvLU[ndIndx]
             if wtch != nil {
                 switch wtch!.edge {
                 case .posedge:
                     if wtch!.value == 0 && newVal == 1 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .negedge:
                     if wtch!.value == 1 && newVal == 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .all:
                     if (wtch!.value ^ newVal) != 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .level:
                     if (wtch!.value ^ newVal) != 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 }
                 self.snstvLU[ndIndx]!.value = newVal
@@ -1164,33 +1185,45 @@ public final class Circuit {
         let oldVal = self.nodes[ndIndx].node.value
         let newVal = (oldVal & ~mask) | ((val << lsb) & mask)
         if oldVal != newVal {
-            self.nodes[ndIndx].prevValue = oldVal
-            self.nodes[ndIndx].node.value = newVal
-            self.nodes[ndIndx].updTm = tm
+            self.nodes[ndIndx].commit(newVal, tm: tm)
             let wtch = self.snstvLU[ndIndx]
             if wtch != nil {
                 switch wtch!.edge {
                 case .posedge:
                     if wtch!.value == 0 && newVal == 1 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .negedge:
                     if wtch!.value == 1 && newVal == 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .all:
                     if (wtch!.value ^ newVal) != 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 case .level:
                     if (wtch!.value ^ newVal) != 0 {
-                        self.alwysStk.append(wtch!.alwysIndx)
+                        self.trigger(wtch!.alwysIndx, tm: tm)
                     }
                 }
                 self.snstvLU[ndIndx]!.value = newVal
             }
             saveChng(self, indx: ndIndx)
         }
+    }
+
+    /// self.vars, after seeding each scalar `integer` declared in cDef to 0
+    /// on first use (Verilog starts it at x; this simulator is two-state).
+    func persistentVars(_ cDef: CircDef) -> [String: Value] {
+        if !varsSeeded {
+            for group in cDef.decls {
+                for d in group where d.kind == "Integer" && (d.length ?? []).isEmpty && vars[d.name] == nil {
+                    vars[d.name] = .int(0)
+                }
+            }
+            varsSeeded = true
+        }
+        return vars
     }
 
     func eval(async: Bool, tm: Int) {
@@ -1203,8 +1236,10 @@ public final class Circuit {
         var ctx: Context!
         if self.kind == "verilog" {
             let circDefForCtx = self.instanceCircDef ?? Glbls.circDef(for: self.module)!
-            ctx = Context(circDef: circDefForCtx)
+            ctx = Context(circDef: circDefForCtx, vars: persistentVars(circDefForCtx))
         }
+        // Keep this evaluation's variables for the next one, on every exit path.
+        defer { if ctx != nil { self.vars = ctx.vars } }
 
         if self.parent != nil {
             for prt in self.iPrts {
@@ -1239,11 +1274,12 @@ public final class Circuit {
         if self.kind == "verilog" && self.initialized == false {
             for (i, circ) in cCircs.enumerated() {
                 let cDef = circ.instanceCircDef ?? Glbls.circDef(for: cCircs[i].module)!
-                var vctx = Context(circDef: cDef)
+                var vctx = Context(circDef: cDef, vars: circ.persistentVars(cDef))
                 vctx.circ = cCircs[i]
                 // attachBehavior (inside simVrlgInits) must run before setChngWtchs
                 // so that alwaysStates is populated when watchers are registered.
                 circ.simVrlgInits(ctx: &vctx)
+                circ.vars = vctx.vars   // e.g. `initial chngs = 0;` -- keep it for eval()
                 circ.setChngWtchs(cDef)
             }
             self.simVrlgInits(ctx: &ctx)
@@ -1263,6 +1299,10 @@ public final class Circuit {
         // not run unconditionally here. See CircDef.md.
 
         if async == true {
+          var iter = 0
+          repeat {
+            let chngsBefore = Glbls.chngCount
+            iter += 1
             for cmp in evalOrder {
                 switch cmp.kind {
                 case .aCirc:
@@ -1292,6 +1332,16 @@ public final class Circuit {
                     break
                 }
             }
+            if !hasLoop || Glbls.chngCount == chngsBefore { break }
+            if iter >= Circuit.loopIterCap {
+                if !loopCapWarned {
+                    print("WARNING: \(self.module) \(self.name): async pass still changing after "
+                          + "\(Circuit.loopIterCap) repeats at t=\(tm) -- combinational loop?")
+                    loopCapWarned = true
+                }
+                break
+            }
+          } while true
         } else {
             for cmp in evalOrder {
                 switch cmp.kind {
@@ -1603,6 +1653,7 @@ extension Circuit {
         let savedStack = ctx.stack
         ctx.code  = assgnBlk.code
         ctx.stack = []
+        self.asgnReadTm = Int.min
         run(ctx: &ctx)
         ctx.code  = savedCode
         ctx.stack = savedStack
@@ -1678,7 +1729,15 @@ extension Circuit {
             return false
         }) ?? false
         ctx.isEdgeTriggered = hasClockEdge
+        // A clocked block acts at the clock edge: run it at the time its
+        // trigger changed, so readNode returns every input as it was at the
+        // edge (Nod.value(at:)) and its non-blocking updates are scheduled
+        // from the edge -- independent of where it falls in evalOrder or
+        // which pass of the sweep it fires in.
+        let sweepTm = ctx.simTime
+        if hasClockEdge { ctx.simTime = circuit.alwaysStates[indx].trigTm }
         run(ctx: &ctx)
+        ctx.simTime = sweepTm
         ctx.isEdgeTriggered = false
 
         alwysSt.stack = ctx.stack
@@ -1693,11 +1752,14 @@ extension Circuit {
             return true
         }
         if (ref.kind == .vCirc) || (ref.kind == .cCirc) {
-            if self.cCircs[ref.index].sync == true {
-                return true
-            } else {
-                return false
-            }
+            // Only a leaf sync cell (a behavioural flip-flop, no children)
+            // breaks ordering edges: its outputs really are last edge's
+            // values. A sync *composite* (circuit=subcirc, e.g. a counter)
+            // also has combinational input-to-output paths (CNT -> COUT), so
+            // it is ordered like any other child; loops through its internal
+            // registers are settled by repeating the async pass (hasLoop).
+            let child = self.cCircs[ref.index]
+            return child.sync && child.cCircs.isEmpty
         }
     return false
     }

@@ -902,12 +902,15 @@ extension Context {
         precondition(idx >= 0 && idx < ckt.nodes.count,
                      "nodeLU[\(name)] = \(idx) out of bounds for nodes.count \(ckt.nodes.count)")
 
-        // If the node's value was updated with a future timestamp (set by a gate's
-        // propagation delay firing in the same eval sweep), use the previous stable
-        // value instead — the new value hasn't physically arrived at simTime yet.
+        if nd.updTm > ckt.asgnReadTm { ckt.asgnReadTm = nd.updTm }
+
+        // In a clocked block simTime is the clock-edge time (runAlwysBlck). A
+        // node changed after it -- later in this sweep, or by a gate whose
+        // propagation delay lands past the edge -- is read as it was at the
+        // edge, from its value history.
         if isEdgeTriggered && nd.updTm > simTime {
             var prevNode = nd.node
-            prevNode.value = nd.prevValue
+            prevNode.value = nd.value(at: simTime)
             return SmallNod(name: name, node: prevNode, updTm: nd.updTm)
         }
 
@@ -1262,7 +1265,13 @@ public func setLeftNet(lvalue: LValueAST,
                                ctx: inout Context)
 {
     let val = value.asInt
-    let updTm = ctx.simTime + (delay ?? 0)
+    // An assign's output follows its latest input (Circuit.asgnReadTm); an
+    // always block's follows its own (edge or sweep) time.
+    var baseTm = ctx.simTime
+    if case .assgnBlock = ctx.behavIdx, let c = ctx.circ, c.asgnReadTm > baseTm {
+        baseTm = c.asgnReadTm
+    }
+    let updTm = baseTm + (delay ?? 0)
 
     switch lvalue {
     case .net(let name):

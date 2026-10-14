@@ -347,6 +347,28 @@ let package = Package(
             ],
         ),
         .executableTarget(
+            name: "DR_3X2",
+            dependencies: ["TwosCmplt", "Yams"],
+            path: "Examples/DR_3X2",
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency=targeted")
+            ],
+            linkerSettings: [
+                .linkedLibrary("m")
+            ],
+        ),
+        .executableTarget(
+            name: "CNTRM8",
+            dependencies: ["TwosCmplt", "Yams"],
+            path: "Examples/CNTRM8",
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency=targeted")
+            ],
+            linkerSettings: [
+                .linkedLibrary("m")
+            ],
+        ),
+        .executableTarget(
             name: "Interpret",
             dependencies: ["TwosCmplt", "Yams"],
             path: "Examples/Interpret",

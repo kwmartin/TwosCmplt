@@ -1019,6 +1019,26 @@
             "target": "SimRun",
             "configuration": "release",
             "preLaunchTask": "swift: Build Release SimRun"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": ["TST_CNTRM8", "--config", "Config.yaml"],
+            "cwd": "${workspaceFolder:TwosCmplt}",
+            "name": "Debug CNTRM8",
+            "target": "CNTRM8",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug CNTRM8"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": ["TST_DR_3X2", "--config", "Config.yaml"],
+            "cwd": "${workspaceFolder:TwosCmplt}",
+            "name": "Debug DR_3X2",
+            "target": "DR_3X2",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug DR_3X2"
         }
     ]
 }
