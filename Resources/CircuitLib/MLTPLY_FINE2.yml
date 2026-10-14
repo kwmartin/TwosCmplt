@@ -1,12 +1,12 @@
 kind: verilog
 module: MLTPLY_FINE2
 params:
--   kind: int
-    name: nbits
-    value: 20
 -   kind: str
     name: circuit
     value: sync
+-   kind: int
+    name: nbits
+    value: 20
 -   kind: Int
     name: delay
     value: 5
@@ -35,14 +35,6 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Reg
     name: OUT
     direct: 'Output:'
     signed: 'False'
@@ -51,6 +43,14 @@ io_ports:
         value: 7
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls:
 -   -   kind: Wire
         name: F
@@ -125,7 +125,7 @@ behav_blcks:
         value: 16
         name: None
     ports:
-    -   port: None
+    -   port: IN
         node:
             kind: slice
             name: IN
@@ -139,7 +139,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: OUT
         node:
             kind: slice
             name: G
@@ -172,7 +172,7 @@ behav_blcks:
         value: 7
         name: None
     ports:
-    -   port: None
+    -   port: IN
         node:
             kind: slice
             name: G
@@ -186,7 +186,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: k
         node:
             kind: slice
             name: k
@@ -195,7 +195,7 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
-    -   port: None
+    -   port: OUT
         node:
             kind: slice
             name: H
@@ -209,11 +209,11 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: None
+    -   port: VSS
         node:
             kind: ident
             name: VSS
@@ -287,7 +287,7 @@ behav_blcks:
         value: 11
         name: None
     ports:
-    -   port: None
+    -   port: IN
         node:
             kind: slice
             name: G
@@ -301,7 +301,7 @@ behav_blcks:
                     value: 1
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: k
         node:
             kind: slice
             name: k
@@ -310,7 +310,7 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: OUT
         node:
             kind: slice
             name: F
@@ -319,11 +319,12 @@ behav_blcks:
                 value: 15
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: None
+    -   port: VSS
         node:
             kind: ident
             name: VSS
+

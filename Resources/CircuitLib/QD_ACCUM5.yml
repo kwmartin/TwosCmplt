@@ -4,9 +4,6 @@ params:
 -   kind: str
     name: circuit
     value: sync
--   kind: str
-    name: circuit
-    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -29,14 +26,6 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: RL_
     direct: 'Output:'
     signed: 'False'
@@ -54,6 +43,14 @@ io_ports:
         value: 17
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls:
 -   -   kind: Wire
         name: ADDR0R
@@ -530,27 +527,27 @@ behav_blcks:
         value: async
         name: None
     ports:
-    -   port: None
+    -   port: A
         node:
             kind: bit
             name: RL_
             sgmnts:
             - 17
-    -   port: None
+    -   port: B
         node:
             kind: bit
             name: RL_
             sgmnts:
             - 16
-    -   port: None
+    -   port: OUT
         node:
             kind: ident
             name: net1
-    -   port: None
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: None
+    -   port: VSS
         node:
             kind: ident
             name: VSS
@@ -1004,3 +1001,4 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
+

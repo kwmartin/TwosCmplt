@@ -3,7 +3,7 @@ module: CNTRE4
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -175,12 +175,12 @@ behav_blcks:
             name: T3
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NAND2
     module: DG_NAND2_2X1
@@ -205,12 +205,12 @@ behav_blcks:
             name: NR2
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NOR3
     module: DG_NOR2_2X1
@@ -237,12 +237,12 @@ behav_blcks:
             name: NR3
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV1
     module: DG_INV4_1X1
@@ -261,12 +261,12 @@ behav_blcks:
             name: CNTN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NOR1
     module: DG_NOR2_2X1
@@ -291,12 +291,12 @@ behav_blcks:
             name: T1
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NOR2
     module: DG_NOR2_2X1
@@ -319,12 +319,12 @@ behav_blcks:
             name: T2
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NAND1
     module: DG_NAND2_2X1
@@ -351,12 +351,12 @@ behav_blcks:
             name: N1143
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NAND4
     module: DG_NAND2_2X1
@@ -381,12 +381,12 @@ behav_blcks:
             name: ND3
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NOR5
     module: DG_NOR2_2X1
@@ -411,12 +411,12 @@ behav_blcks:
             name: ND2
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: NAND3
     module: DG_NAND2_2X1
@@ -443,12 +443,12 @@ behav_blcks:
             name: ND1
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV_0
     module: DG_INV4_1X1
@@ -467,246 +467,247 @@ behav_blcks:
             name: COUT
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: TLD0
     module: DG_TDER_6X2
     params: null
     ports:
-    -   port: None
+    -   port: L
         node:
             kind: ident
             name: L
-    -   port: None
+    -   port: LI
         node:
             kind: bit
             name: D
             sgmnts:
             - 0
-    -   port: None
+    -   port: T
         node:
             kind: ident
             name: CNT
-    -   port: None
+    -   port: R
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: CP
         node:
             kind: ident
             name: CBP
-    -   port: None
+    -   port: CN
         node:
             kind: ident
             name: CBN
-    -   port: None
+    -   port: QP
         node:
             kind: bit
             name: QP
             sgmnts:
             - 0
-    -   port: None
+    -   port: QN
         node:
             kind: bit
             name: QN
             sgmnts:
             - 0
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: TLD1
     module: DG_TDER_6X2
     params: null
     ports:
-    -   port: None
+    -   port: L
         node:
             kind: ident
             name: L
-    -   port: None
+    -   port: LI
         node:
             kind: bit
             name: D
             sgmnts:
             - 1
-    -   port: None
+    -   port: T
         node:
             kind: ident
             name: T1
-    -   port: None
+    -   port: R
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: CP
         node:
             kind: ident
             name: CBP
-    -   port: None
+    -   port: CN
         node:
             kind: ident
             name: CBN
-    -   port: None
+    -   port: QP
         node:
             kind: bit
             name: QP
             sgmnts:
             - 1
-    -   port: None
+    -   port: QN
         node:
             kind: bit
             name: QN
             sgmnts:
             - 1
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: TLD2
     module: DG_TDER_6X2
     params: null
     ports:
-    -   port: None
+    -   port: L
         node:
             kind: ident
             name: L
-    -   port: None
+    -   port: LI
         node:
             kind: bit
             name: D
             sgmnts:
             - 2
-    -   port: None
+    -   port: T
         node:
             kind: ident
             name: T2
-    -   port: None
+    -   port: R
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: CP
         node:
             kind: ident
             name: CBP
-    -   port: None
+    -   port: CN
         node:
             kind: ident
             name: CBN
-    -   port: None
+    -   port: QP
         node:
             kind: bit
             name: QP
             sgmnts:
             - 2
-    -   port: None
+    -   port: QN
         node:
             kind: bit
             name: QN
             sgmnts:
             - 2
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: TLD3
     module: DG_TDER_6X2
     params: null
     ports:
-    -   port: None
+    -   port: L
         node:
             kind: ident
             name: L
-    -   port: None
+    -   port: LI
         node:
             kind: bit
             name: D
             sgmnts:
             - 3
-    -   port: None
+    -   port: T
         node:
             kind: ident
             name: T3
-    -   port: None
+    -   port: R
         node:
             kind: ident
             name: INIT
-    -   port: None
+    -   port: CP
         node:
             kind: ident
             name: CBP
-    -   port: None
+    -   port: CN
         node:
             kind: ident
             name: CBN
-    -   port: None
+    -   port: QP
         node:
             kind: bit
             name: QP
             sgmnts:
             - 3
-    -   port: None
+    -   port: QN
         node:
             kind: bit
             name: QN
             sgmnts:
             - 3
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: instance
     name: CBFR
     module: DG_DIFF_BFRE
     params: null
     ports:
-    -   port: None
+    -   port: ENBL
         node:
             kind: ident
             name: CNT
-    -   port: None
+    -   port: DP
         node:
             kind: ident
             name: CP
-    -   port: None
+    -   port: DN
         node:
             kind: ident
             name: CN
-    -   port: None
+    -   port: OP
         node:
             kind: ident
             name: CBP
-    -   port: None
+    -   port: 'ON'
         node:
             kind: ident
             name: CBN
-    -   port: None
+    -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+

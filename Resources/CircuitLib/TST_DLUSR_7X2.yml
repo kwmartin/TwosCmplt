@@ -3,7 +3,7 @@ module: TST_DLUSR_7X2
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -91,11 +91,11 @@ behav_blcks:
         node:
             kind: ident
             name: QN
-    -   port: U
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: I_D
+    -   port: VSS
         node:
             kind: ident
             name: VSS

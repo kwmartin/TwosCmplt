@@ -43,14 +43,6 @@ io_ports:
     name: CLK
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
 -   kind: Reg
     name: RL_
     direct: 'Output:'
@@ -69,6 +61,14 @@ io_ports:
         value: 15
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls:
 -   -   kind: Wire
         name: CLKB

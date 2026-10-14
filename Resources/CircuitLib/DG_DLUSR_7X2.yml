@@ -9,31 +9,7 @@ params:
     value: 5
 io_ports:
 -   kind: Wire
-    name: QP
-    direct: 'Output:'
-    signed: 'False'
--   kind: Wire
-    name: QN
-    direct: 'Output:'
-    signed: 'False'
--   kind: Wire
-    name: CLK
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: INIT
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: D
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
+    name: U
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
@@ -45,11 +21,35 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: U
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
     name: I_D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:

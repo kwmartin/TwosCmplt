@@ -35,14 +35,6 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: OUT
     direct: 'Output:'
     signed: 'False'
@@ -60,6 +52,14 @@ io_ports:
         value: 15
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls:
 -   -   kind: Wire
         name: ADDR3_
@@ -811,7 +811,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK1
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -832,7 +832,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK3
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
@@ -853,7 +853,7 @@ behav_blcks:
         node:
             kind: ident
             name: CLK2
-    -   port: VCC
+    -   port: VDD
         node:
             kind: ident
             name: VDD
