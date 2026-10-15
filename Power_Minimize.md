@@ -1,5 +1,9 @@
 # Power Minimization at the RTL level
 
+> **Superseded.** This is the first draft (2026-08) of the power-minimization idea.
+> The current description of power estimation, and the roadmap that includes
+> this flow, is `/home/martin/IC_Design/Testbenches/NgSpice/SimLib/Power_Estimation.md` (§11.1 merges this draft's swap-back rule).
+
 This file summarizes the different steps to be used for minimizing power using gated latches.
 
 ## Static analysis
