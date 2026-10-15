@@ -3,7 +3,7 @@ module: TST_DER_3X2
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5
@@ -21,19 +21,19 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
     name: D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:

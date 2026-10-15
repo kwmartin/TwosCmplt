@@ -1,10 +1,14 @@
+module: TST_HADDRA
+generated: true
 Constants:
-  -   - PER
-      - 100.0
+    PER: 100
 FinishTime: 130*PER
+ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
+      - [VDD, 1]
+      - [VSS, 0]
       -   - CINN
           - 1
       -   - AN
@@ -427,5 +431,18 @@ TimeSpcs:
     vls:
       -   - CINN
           - 1
-module: TST_HADDRA
-generated: true
+Signals:
+    CINN: 1
+    AN: 1
+SaveNds:
+  - name: SUM
+    format: b
+  - name: COUT
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    CINN: data_inputs
+    AN: data_inputs
+    SUM: outputs
+    COUT: outputs

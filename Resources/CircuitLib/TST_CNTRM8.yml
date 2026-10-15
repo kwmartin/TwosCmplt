@@ -1,103 +1,212 @@
 kind: verilog
 module: TST_CNTRM8
 params:
-  - kind: Int
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
     name: delay
     value: 5
-  - kind: str
-    name: circuit
-    value: async
 io_ports:
-  - kind: Wire
+-   kind: Wire
     name: QP
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: QN
     direct: 'Output:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
-  - kind: Wire
+-   kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
-  - kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
-  - kind: Wire
+-   kind: Wire
     name: D
     direct: 'Input:'
     signed: 'False'
     width:
-      - kind: int
+    -   kind: int
         value: 7
-      - kind: int
+    -   kind: int
         value: 0
-decls: []
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: net1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: net6
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+        length: []
 behav_blcks:
-  - kind: instance
+-   kind: subcirc
     name: CNTRM8
     module: CNTRM8
-    params: null
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
     ports:
-      - port: D
+    -   port: None
         node:
             kind: slice
             name: D
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: INIT
+    -   port: None
         node:
             kind: ident
             name: INIT
-      - port: CLK
+    -   port: None
         node:
             kind: ident
             name: CLK
-      - port: QP
+    -   port: None
         node:
             kind: slice
             name: QP
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: QN
+    -   port: None
         node:
             kind: slice
             name: QN
             sgmnts:
-              - kind: int
+            -   kind: int
                 value: 7
-              - kind: int
+            -   kind: int
                 value: 0
-      - port: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: X1
+    module: MTCH4
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
         node:
             kind: concat
             sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
+            -   kind: ident
+                name: net1_3
+            -   kind: ident
+                name: net1_2
+            -   kind: ident
+                name: net1_1
+            -   kind: ident
+                name: net1_0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: net2_3
+            -   kind: ident
+                name: net2_2
+            -   kind: ident
+                name: net2_1
+            -   kind: ident
+                name: net2_0
+    -   port: None
+        node:
+            kind: ident
+            name: net3
+    -   port: None
+        node:
+            kind: ident
+            name: net4
+    -   port: None
+        node:
+            kind: ident
+            name: net5
+    -   port: None
+        node:
+            kind: ident
+            name: net6_1
+    -   port: None
+        node:
+            kind: ident
+            name: net6_0

@@ -8,95 +8,37 @@ params:
     name: delay
     value: 5
 io_ports:
--   name: S3
--   name: S2
--   name: S1
--   name: S0
--   name: D3
--   name: D2
--   name: D1
--   name: D0
--   name: OUT
--   name: VDD
--   name: VSS
-decls:
--   -   kind: Input
-        name: S3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: S2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: S1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: S0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: D3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: D2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: D1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: D0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: OUT
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
+-   kind: Wire
+    name: S
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -108,12 +50,16 @@ behav_blcks:
         -   kind: cmpr_expr
             oper: 'BEq:'
             args:
-            -   kind: ident
-                name: S0
+            -   kind: bit
+                name: S
+                sgmnts:
+                - 0
             -   kind: int
                 value: 1
-        -   kind: ident
-            name: D0
+        -   kind: bit
+            name: D
+            sgmnts:
+            - 0
         -   kind: int
             value: 1'BZ
     delay: 19.9
@@ -127,12 +73,16 @@ behav_blcks:
         -   kind: cmpr_expr
             oper: 'BEq:'
             args:
-            -   kind: ident
-                name: S1
+            -   kind: bit
+                name: S
+                sgmnts:
+                - 1
             -   kind: int
                 value: 1
-        -   kind: ident
-            name: D1
+        -   kind: bit
+            name: D
+            sgmnts:
+            - 1
         -   kind: int
             value: 1'BZ
     delay: 19.9
@@ -146,12 +96,16 @@ behav_blcks:
         -   kind: cmpr_expr
             oper: 'BEq:'
             args:
-            -   kind: ident
-                name: S2
+            -   kind: bit
+                name: S
+                sgmnts:
+                - 2
             -   kind: int
                 value: 1
-        -   kind: ident
-            name: D2
+        -   kind: bit
+            name: D
+            sgmnts:
+            - 2
         -   kind: int
             value: 1'BZ
     delay: 19.9
@@ -165,12 +119,16 @@ behav_blcks:
         -   kind: cmpr_expr
             oper: 'BEq:'
             args:
-            -   kind: ident
-                name: S3
+            -   kind: bit
+                name: S
+                sgmnts:
+                - 3
             -   kind: int
                 value: 1
-        -   kind: ident
-            name: D3
+        -   kind: bit
+            name: D
+            sgmnts:
+            - 3
         -   kind: int
             value: 1'BZ
     delay: 19.9

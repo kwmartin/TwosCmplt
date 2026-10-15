@@ -21,19 +21,19 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
     name: D
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:

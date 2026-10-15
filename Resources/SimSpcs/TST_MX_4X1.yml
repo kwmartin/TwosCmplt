@@ -1,0 +1,13 @@
+Constants:
+    PER: 100
+FinishTime: 513*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [DN, 0]
+      - [SN, 0]
+SaveNds:
+  - name: OUT
+    format: b

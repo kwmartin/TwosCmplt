@@ -2,7 +2,7 @@ module: TST_HADDRC
 generated: true
 Constants:
     PER: 1
-FinishTime: 131*PER
+FinishTime: 130*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
@@ -21,62 +21,108 @@ TimeSpcs:
     vls:
       -   - ZERON
           - 0
-  - tm: 2*PER
-    vls:
-      -   - AN
-          - 0
-      -   - ZERON
-          - 1
-  - tm: 3*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 1
-      -   - ZERON
-          - 0
-  - tm: 4*PER
-    vls:
-      -   - ZERON
-          - 1
-  - tm: 5*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 0
-      -   - ZERON
-          - 0
-  - tm: 6*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 7*PER
-    vls:
-      -   - ZERON
-          - 0
-  - tm: 8*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 9*PER
-    vls:
-      -   - ZERON
-          - 0
   - tm: 10*PER
     vls:
       -   - AN
           - 0
+  - tm: 100*PER
+    vls:
+      -   - AN
+          - 1
+      -   - ZERON
+          - 1
+  - tm: 101*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 102*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 103*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+      -   - ZERON
+          - 1
+  - tm: 105*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 106*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - ZERON
+          - 0
+  - tm: 107*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 108*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 109*PER
+    vls:
+      -   - ZERON
+          - 1
   - tm: 11*PER
     vls:
       -   - AN
           - 1
+      -   - ZERON
+          - 1
+  - tm: 111*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - ZERON
+          - 0
+  - tm: 112*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+      -   - ZERON
+          - 1
+  - tm: 113*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 114*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 115*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - ZERON
+          - 1
+  - tm: 116*PER
+    vls:
+      -   - AN
+          - 1
+      -   - ZERON
+          - 0
+  - tm: 117*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 118*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 119*PER
+    vls:
       -   - ZERON
           - 1
   - tm: 12*PER
@@ -84,6 +130,46 @@ TimeSpcs:
       -   - CINN
           - 0
       -   - AN
+          - 0
+  - tm: 120*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 121*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 123*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - AN
+          - 1
+      -   - ZERON
+          - 1
+  - tm: 125*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - ZERON
+          - 0
+  - tm: 126*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - ZERON
+          - 1
+  - tm: 127*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 128*PER
+    vls:
+      -   - AN
+          - 0
+      -   - ZERON
           - 0
   - tm: 13*PER
     vls:
@@ -125,6 +211,12 @@ TimeSpcs:
     vls:
       -   - CINN
           - 0
+  - tm: 2*PER
+    vls:
+      -   - AN
+          - 0
+      -   - ZERON
+          - 1
   - tm: 20*PER
     vls:
       -   - CINN
@@ -164,6 +256,14 @@ TimeSpcs:
   - tm: 29*PER
     vls:
       -   - CINN
+          - 1
+      -   - ZERON
+          - 0
+  - tm: 3*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
           - 1
       -   - ZERON
           - 0
@@ -207,6 +307,10 @@ TimeSpcs:
     vls:
       -   - AN
           - 0
+  - tm: 4*PER
+    vls:
+      -   - ZERON
+          - 1
   - tm: 40*PER
     vls:
       -   - AN
@@ -235,6 +339,14 @@ TimeSpcs:
     vls:
       -   - CINN
           - 1
+  - tm: 5*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+      -   - ZERON
+          - 0
   - tm: 51*PER
     vls:
       -   - CINN
@@ -276,6 +388,14 @@ TimeSpcs:
   - tm: 59*PER
     vls:
       -   - AN
+          - 1
+  - tm: 6*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+      -   - ZERON
           - 1
   - tm: 60*PER
     vls:
@@ -327,6 +447,10 @@ TimeSpcs:
           - 0
       -   - AN
           - 1
+  - tm: 7*PER
+    vls:
+      -   - ZERON
+          - 0
   - tm: 71*PER
     vls:
       -   - CINN
@@ -357,6 +481,12 @@ TimeSpcs:
           - 0
       -   - ZERON
           - 0
+  - tm: 8*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - ZERON
+          - 1
   - tm: 80*PER
     vls:
       -   - CINN
@@ -399,6 +529,10 @@ TimeSpcs:
           - 1
       -   - ZERON
           - 0
+  - tm: 9*PER
+    vls:
+      -   - ZERON
+          - 0
   - tm: 92*PER
     vls:
       -   - CINN
@@ -426,140 +560,6 @@ TimeSpcs:
       -   - CINN
           - 0
       -   - AN
-          - 0
-  - tm: 100*PER
-    vls:
-      -   - AN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 101*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 0
-  - tm: 102*PER
-    vls:
-      -   - ZERON
-          - 0
-  - tm: 103*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 105*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 106*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - ZERON
-          - 0
-  - tm: 107*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 108*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 109*PER
-    vls:
-      -   - ZERON
-          - 1
-  - tm: 111*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - ZERON
-          - 0
-  - tm: 112*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 113*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 0
-  - tm: 114*PER
-    vls:
-      -   - ZERON
-          - 0
-  - tm: 115*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 116*PER
-    vls:
-      -   - AN
-          - 1
-      -   - ZERON
-          - 0
-  - tm: 117*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 118*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 119*PER
-    vls:
-      -   - ZERON
-          - 1
-  - tm: 120*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 121*PER
-    vls:
-      -   - ZERON
-          - 0
-  - tm: 123*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 124*PER
-    vls:
-      -   - AN
-          - 1
-      -   - ZERON
-          - 1
-  - tm: 125*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - ZERON
-          - 0
-  - tm: 126*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - ZERON
-          - 1
-  - tm: 127*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 128*PER
-    vls:
-      -   - AN
-          - 0
-      -   - ZERON
           - 0
 Signals:
     CINN: 1

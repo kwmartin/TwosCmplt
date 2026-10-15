@@ -1,0 +1,435 @@
+Constants:
+    PER: 100
+FinishTime: 130*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 1*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 10*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 100*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 103*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 107*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 108*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 109*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 110*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 111*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 112*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 114*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 116*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 118*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 119*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 12*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 120*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 123*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 126*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 127*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 129*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 14*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 15*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 16*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 17*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 18*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 2*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 20*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 22*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 23*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 26*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 27*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 3*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 30*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 31*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 32*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 33*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 34*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 36*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 37*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 38*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 4*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 40*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 41*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 42*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 44*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 45*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 47*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 48*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 49*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 50*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 51*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 52*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 56*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 57*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 58*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 59*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 6*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 61*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 62*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 63*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 64*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 65*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 66*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 68*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 69*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 7*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 71*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 72*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 75*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 76*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 78*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 79*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 8*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 81*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 82*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 83*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 86*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 87*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 89*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 9*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 90*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 91*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 92*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 93*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 94*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 96*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 97*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 98*PER
+    vls:
+      -   - AN
+          - 0
+SaveNds:
+  - name: SUM
+    format: b
+  - name: COUT
+    format: b

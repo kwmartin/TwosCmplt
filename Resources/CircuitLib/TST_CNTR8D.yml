@@ -35,14 +35,6 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
@@ -55,6 +47,14 @@ io_ports:
         value: 7
     -   kind: int
         value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
 decls: []
 behav_blcks:
 -   kind: instance
@@ -101,11 +101,11 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: VDD
         node:
             kind: ident
             name: VDD
-    -   port: None
+    -   port: VSS
         node:
             kind: ident
             name: VSS

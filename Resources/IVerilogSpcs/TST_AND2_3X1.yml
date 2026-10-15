@@ -1,0 +1,926 @@
+Constants:
+    PER: 100.0
+FinishTime: 169*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 1*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 2*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 3*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 4*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 5*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 6*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 7*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 8*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 9*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 10*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 11*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 12*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 13*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 14*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 15*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 16*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 17*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 18*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 19*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 20*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 21*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 22*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 23*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 24*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 25*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 26*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 27*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 28*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 29*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 30*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 31*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 32*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 33*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 34*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 35*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 36*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 37*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 38*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 39*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 40*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 41*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 42*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 43*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 44*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 45*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 46*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 47*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 48*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 49*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 50*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 51*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 52*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 53*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 54*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 55*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 56*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 57*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 58*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 59*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 60*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 61*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 62*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 63*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 64*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 65*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 66*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 67*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 68*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 69*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 70*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 71*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 72*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 73*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 74*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 75*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 76*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 77*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 78*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 79*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 80*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 81*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 82*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 83*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 84*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 85*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 86*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 87*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 88*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 89*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 90*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 91*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 92*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 93*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 94*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 95*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 96*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 97*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 98*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 99*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 100*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 101*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 102*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 103*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 104*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 105*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 106*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 107*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 108*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 109*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 110*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 111*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 112*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 113*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 114*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 115*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 116*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 117*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 118*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 119*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 120*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 121*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 122*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 123*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 125*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 126*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 127*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 128*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 129*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 130*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 131*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 132*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 1
+  - tm: 133*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 134*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 135*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 136*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 137*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 138*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 139*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 140*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 0
+  - tm: 141*PER
+    vls:
+      -   - CN
+          - 1
+  - tm: 142*PER
+    vls:
+      -   - AN
+          - 1
+      -   - CN
+          - 0
+  - tm: 143*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 144*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 145*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 146*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+      -   - CN
+          - 0
+  - tm: 147*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 148*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 149*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 150*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 151*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 152*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 153*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 154*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 155*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 156*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 157*PER
+    vls:
+      -   - BN
+          - 0
+      -   - CN
+          - 1
+  - tm: 158*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+      -   - CN
+          - 0
+  - tm: 159*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 160*PER
+    vls:
+      -   - BN
+          - 1
+      -   - CN
+          - 1
+  - tm: 161*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 162*PER
+    vls:
+      -   - CN
+          - 0
+  - tm: 163*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 164*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 165*PER
+    vls:
+      -   - AN
+          - 0
+      -   - CN
+          - 1
+  - tm: 166*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 167*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 168*PER
+    vls:
+      -   - CN
+          - 0
+module: TST_AND2_3X1
+generated: true
