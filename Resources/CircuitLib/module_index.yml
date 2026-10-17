@@ -1,4 +1,4 @@
-generated: '2026-10-17T13:37:15+00:00'
+generated: '2026-10-17T13:52:35+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -372,6 +372,10 @@ modules:
     DG_JKDUX_8X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUX_8X2.v
+        clean: true
+    DG_JKER_4X2:
+        directory: verilogParse/ver_lib
+        file_name: DG_JKER_4X2.v
         clean: true
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
@@ -1079,6 +1083,14 @@ modules:
     TST_INV8_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV8_1X1.v
+        clean: true
+    TST_JKER_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_JKER_4X2.v
+        clean: true
+    TST_JKR_4X2_CAL:
+        directory: verilogParse/ver_lib
+        file_name: TST_JKR_4X2_CAL.v
         clean: true
     TST_MX1_3X1:
         directory: verilogParse/ver_lib
