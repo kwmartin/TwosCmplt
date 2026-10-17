@@ -72,6 +72,21 @@ decls:
         - 0
         - 0
         length: []
+    -   kind: Reg
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -101,9 +116,16 @@ behav_blcks:
         rvalue:
             kind: int
             value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
+        rvalue:
+            kind: int
+            value: 0
 -   kind: always
     onlyif:
-    -   edge: negedge
+    -   edge: all
         node: CLK
     -   edge: posedge
         node: S
@@ -118,7 +140,7 @@ behav_blcks:
             -   kind: float
                 value: 100.0
         iftrue:
-        -   kind: blckst
+        -   kind: noblckst
             lvalue:
                 kind: ident
                 name: STATE
@@ -142,7 +164,47 @@ behav_blcks:
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: STATE
+                    name: CLKB
                 rvalue:
                     kind: ident
-                    name: D
+                    name: CLK
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
+                        args:
+                        -   kind: ident
+                            name: CLK
+                iftrue:
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BNotEq:'
+                        args:
+                        -   kind: ident
+                            name: STATE
+                        -   kind: ident
+                            name: D
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: chngs
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
+                            args:
+                            -   kind: ident
+                                name: chngs
+                            -   kind: int
+                                value: 1
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: STATE
+                        rvalue:
+                            kind: ident
+                            name: D
+

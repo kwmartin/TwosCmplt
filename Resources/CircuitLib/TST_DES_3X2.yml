@@ -21,19 +21,19 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
   - kind: Wire
-    name: VDD
-    direct: 'Input:'
-    signed: 'False'
-  - kind: Wire
-    name: VSS
-    direct: 'Input:'
-    signed: 'False'
-  - kind: Wire
     name: INIT
     direct: 'Input:'
     signed: 'False'
   - kind: Wire
     name: D
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:
@@ -54,7 +54,7 @@ decls:
 behav_blcks:
   - kind: async
     name: INV_IDL1
-    module: DG_INV2_1X1
+    module: DG_INV4_1X1
     params:
       - kind: str
         value: async
@@ -97,7 +97,7 @@ behav_blcks:
             name: VSS
   - kind: async
     name: INV_IDL2
-    module: DG_INV2_1X1
+    module: DG_INV4_1X1
     params:
       - kind: str
         value: async

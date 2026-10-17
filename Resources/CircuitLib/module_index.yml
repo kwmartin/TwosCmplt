@@ -1,4 +1,4 @@
-generated: '2026-10-17T03:39:29+00:00'
+generated: '2026-10-17T12:18:03+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -992,6 +992,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
         clean: true
+    TST_DES_3X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DES_3X2.v
+        clean: true
     TST_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFR.v
@@ -1007,6 +1011,10 @@ modules:
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
+        clean: true
+    TST_DS_3X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DS_3X2.v
         clean: true
     TST_DVDR4:
         directory: verilogParse/ver_lib

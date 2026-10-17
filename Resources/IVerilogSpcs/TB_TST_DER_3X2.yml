@@ -7,7 +7,7 @@ Clock:
   - clkNm: CLK
     per: PER
     initVal: 0
-FinishTime: 16*PER
+FinishTime: 24*PER
 TimeSpcs:
   - tm: 0
     vls:
@@ -17,8 +17,6 @@ TimeSpcs:
           - 1
       -   - VSS
           - 0
-  - tm: 0
-    vls:
       -   - INIT
           - 1
       -   - D
@@ -27,46 +25,42 @@ TimeSpcs:
     vls:
       -   - INIT
           - 0
-  - tm: 6.1*PER
+  - tm: 9.2*PER
     vls:
       -   - D
           - 1
-  - tm: 7.1*PER
+  - tm: 10.2*PER
     vls:
       -   - D
           - 0
-  - tm: 8.1*PER
+  - tm: 11.2*PER
     vls:
       -   - D
           - 1
-  - tm: 9.1*PER
+  - tm: 12.2*PER
     vls:
       -   - D
           - 0
-  - tm: 10.1*PER
+  - tm: 13.2*PER
     vls:
       -   - D
           - 1
-  - tm: 11.1*PER
+  - tm: 14.2*PER
     vls:
       -   - D
           - 0
-  - tm: 12.1*PER
+  - tm: 15.2*PER
     vls:
       -   - D
           - 1
-  - tm: 13.1*PER
+  - tm: 16.2*PER
     vls:
       -   - D
           - 0
-  - tm: 14.1*PER
+  - tm: 17.2*PER
     vls:
       -   - D
           - 1
-  - tm: 15.1*PER
-    vls:
-      -   - D
-          - 0
 Signals:
     CLK: 1
     INIT: 1
