@@ -139,12 +139,12 @@ behav_blcks:
             name: P
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: NAB_C3
     module: DG_NAB_C2
@@ -171,12 +171,12 @@ behav_blcks:
             name: CON
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV3
     module: DG_INV2_1X1
@@ -195,12 +195,12 @@ behav_blcks:
             name: CO
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV1
     module: DG_INV2_1X1
@@ -219,12 +219,12 @@ behav_blcks:
             name: G
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: NAB_C1
     module: DG_NAB_C2
@@ -251,12 +251,12 @@ behav_blcks:
             name: GN
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLA2_0
     module: CLA2
@@ -310,12 +310,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLA2_1
     module: CLA2
@@ -369,10 +369,9 @@ behav_blcks:
                 value: 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
-
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS

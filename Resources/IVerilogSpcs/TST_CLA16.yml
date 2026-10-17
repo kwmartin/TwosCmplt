@@ -1,0 +1,948 @@
+module: TST_CLA16
+generated: true
+Constants:
+    PER: 250
+FinishTime: 131*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CIN
+          - 1
+      -   - AN
+          - 65535
+      -   - BN
+          - 65535
+  - tm: 1*PER
+    vls:
+      -   - AN
+          - 37967
+      -   - BN
+          - 55182
+  - tm: 2*PER
+    vls:
+      -   - AN
+          - 28348
+      -   - BN
+          - 26591
+  - tm: 3*PER
+    vls:
+      -   - AN
+          - 35993
+      -   - BN
+          - 30803
+  - tm: 4*PER
+    vls:
+      -   - AN
+          - 41079
+      -   - BN
+          - 14483
+  - tm: 5*PER
+    vls:
+      -   - AN
+          - 40777
+      -   - BN
+          - 41065
+  - tm: 6*PER
+    vls:
+      -   - AN
+          - 22524
+      -   - BN
+          - 24600
+  - tm: 7*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 24417
+      -   - BN
+          - 34584
+  - tm: 8*PER
+    vls:
+      -   - AN
+          - 56089
+      -   - BN
+          - 36666
+  - tm: 9*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 42429
+      -   - BN
+          - 61198
+  - tm: 10*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 5092
+      -   - BN
+          - 44399
+  - tm: 11*PER
+    vls:
+      -   - AN
+          - 33862
+      -   - BN
+          - 28383
+  - tm: 12*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 41802
+      -   - BN
+          - 62552
+  - tm: 13*PER
+    vls:
+      -   - AN
+          - 19494
+      -   - BN
+          - 8020
+  - tm: 14*PER
+    vls:
+      -   - AN
+          - 21855
+      -   - BN
+          - 4745
+  - tm: 15*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 57417
+      -   - BN
+          - 39854
+  - tm: 16*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 39025
+      -   - BN
+          - 62813
+  - tm: 17*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 4001
+      -   - BN
+          - 25769
+  - tm: 18*PER
+    vls:
+      -   - AN
+          - 51883
+      -   - BN
+          - 12577
+  - tm: 19*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 34610
+      -   - BN
+          - 7695
+  - tm: 20*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 27357
+      -   - BN
+          - 33626
+  - tm: 21*PER
+    vls:
+      -   - AN
+          - 44354
+      -   - BN
+          - 49685
+  - tm: 22*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 24994
+      -   - BN
+          - 17200
+  - tm: 23*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 50638
+      -   - BN
+          - 19148
+  - tm: 24*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 30744
+      -   - BN
+          - 35927
+  - tm: 25*PER
+    vls:
+      -   - AN
+          - 53822
+      -   - BN
+          - 13089
+  - tm: 26*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 11654
+      -   - BN
+          - 11411
+  - tm: 27*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 55468
+      -   - BN
+          - 22853
+  - tm: 28*PER
+    vls:
+      -   - AN
+          - 7472
+      -   - BN
+          - 64299
+  - tm: 29*PER
+    vls:
+      -   - AN
+          - 36940
+      -   - BN
+          - 61180
+  - tm: 30*PER
+    vls:
+      -   - AN
+          - 44739
+      -   - BN
+          - 24532
+  - tm: 31*PER
+    vls:
+      -   - AN
+          - 518
+      -   - BN
+          - 39122
+  - tm: 32*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 47964
+      -   - BN
+          - 45089
+  - tm: 33*PER
+    vls:
+      -   - AN
+          - 21559
+      -   - BN
+          - 43633
+  - tm: 34*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 17976
+      -   - BN
+          - 19727
+  - tm: 35*PER
+    vls:
+      -   - AN
+          - 40807
+      -   - BN
+          - 40298
+  - tm: 36*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 20834
+      -   - BN
+          - 58274
+  - tm: 37*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 29204
+      -   - BN
+          - 7847
+  - tm: 38*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 17424
+      -   - BN
+          - 37501
+  - tm: 39*PER
+    vls:
+      -   - AN
+          - 10701
+      -   - BN
+          - 34697
+  - tm: 40*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 34815
+      -   - BN
+          - 15758
+  - tm: 41*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 16652
+      -   - BN
+          - 34603
+  - tm: 42*PER
+    vls:
+      -   - AN
+          - 17942
+      -   - BN
+          - 30567
+  - tm: 43*PER
+    vls:
+      -   - AN
+          - 1101
+      -   - BN
+          - 57839
+  - tm: 44*PER
+    vls:
+      -   - AN
+          - 8949
+      -   - BN
+          - 63694
+  - tm: 45*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 28800
+      -   - BN
+          - 48484
+  - tm: 46*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 446
+      -   - BN
+          - 50450
+  - tm: 47*PER
+    vls:
+      -   - AN
+          - 8012
+      -   - BN
+          - 19322
+  - tm: 48*PER
+    vls:
+      -   - AN
+          - 39754
+      -   - BN
+          - 2384
+  - tm: 49*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 23469
+      -   - BN
+          - 34518
+  - tm: 50*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 19803
+      -   - BN
+          - 56962
+  - tm: 51*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 25015
+      -   - BN
+          - 12995
+  - tm: 52*PER
+    vls:
+      -   - AN
+          - 57542
+      -   - BN
+          - 19816
+  - tm: 53*PER
+    vls:
+      -   - AN
+          - 3996
+      -   - BN
+          - 33098
+  - tm: 54*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 11288
+      -   - BN
+          - 11300
+  - tm: 55*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 39087
+      -   - BN
+          - 29031
+  - tm: 56*PER
+    vls:
+      -   - AN
+          - 29880
+      -   - BN
+          - 35104
+  - tm: 57*PER
+    vls:
+      -   - AN
+          - 9382
+      -   - BN
+          - 32086
+  - tm: 58*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 21065
+      -   - BN
+          - 28551
+  - tm: 59*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 61156
+      -   - BN
+          - 53516
+  - tm: 60*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 26592
+      -   - BN
+          - 49356
+  - tm: 61*PER
+    vls:
+      -   - AN
+          - 57535
+      -   - BN
+          - 23216
+  - tm: 62*PER
+    vls:
+      -   - AN
+          - 22790
+      -   - BN
+          - 8283
+  - tm: 63*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 51181
+      -   - BN
+          - 17704
+  - tm: 64*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 63485
+      -   - BN
+          - 8623
+  - tm: 65*PER
+    vls:
+      -   - AN
+          - 28838
+      -   - BN
+          - 50156
+  - tm: 66*PER
+    vls:
+      -   - AN
+          - 10463
+      -   - BN
+          - 4092
+  - tm: 67*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 60384
+      -   - BN
+          - 58332
+  - tm: 68*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 8494
+      -   - BN
+          - 64904
+  - tm: 69*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 3003
+      -   - BN
+          - 48346
+  - tm: 70*PER
+    vls:
+      -   - AN
+          - 1471
+      -   - BN
+          - 57898
+  - tm: 71*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 1933
+      -   - BN
+          - 40918
+  - tm: 72*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 9184
+      -   - BN
+          - 759
+  - tm: 73*PER
+    vls:
+      -   - AN
+          - 3515
+      -   - BN
+          - 57777
+  - tm: 74*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 41985
+      -   - BN
+          - 13756
+  - tm: 75*PER
+    vls:
+      -   - AN
+          - 59109
+      -   - BN
+          - 55187
+  - tm: 76*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 49183
+      -   - BN
+          - 52956
+  - tm: 77*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 6399
+      -   - BN
+          - 63348
+  - tm: 78*PER
+    vls:
+      -   - AN
+          - 48947
+      -   - BN
+          - 64716
+  - tm: 79*PER
+    vls:
+      -   - AN
+          - 47674
+      -   - BN
+          - 19792
+  - tm: 80*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 57071
+      -   - BN
+          - 38700
+  - tm: 81*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 25361
+      -   - BN
+          - 29354
+  - tm: 82*PER
+    vls:
+      -   - AN
+          - 14043
+      -   - BN
+          - 49399
+  - tm: 83*PER
+    vls:
+      -   - AN
+          - 42877
+      -   - BN
+          - 3986
+  - tm: 84*PER
+    vls:
+      -   - AN
+          - 43625
+      -   - BN
+          - 3431
+  - tm: 85*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 33774
+      -   - BN
+          - 35039
+  - tm: 86*PER
+    vls:
+      -   - AN
+          - 12706
+      -   - BN
+          - 2235
+  - tm: 87*PER
+    vls:
+      -   - AN
+          - 13279
+      -   - BN
+          - 38163
+  - tm: 88*PER
+    vls:
+      -   - AN
+          - 5354
+      -   - BN
+          - 21190
+  - tm: 89*PER
+    vls:
+      -   - AN
+          - 56145
+      -   - BN
+          - 49025
+  - tm: 90*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 46273
+      -   - BN
+          - 43581
+  - tm: 91*PER
+    vls:
+      -   - AN
+          - 38828
+      -   - BN
+          - 5701
+  - tm: 92*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 39329
+      -   - BN
+          - 55509
+  - tm: 93*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 1298
+      -   - BN
+          - 23934
+  - tm: 94*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 48126
+      -   - BN
+          - 13620
+  - tm: 95*PER
+    vls:
+      -   - AN
+          - 11953
+      -   - BN
+          - 59675
+  - tm: 96*PER
+    vls:
+      -   - AN
+          - 64359
+      -   - BN
+          - 38122
+  - tm: 97*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 55593
+      -   - BN
+          - 11043
+  - tm: 98*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 42867
+      -   - BN
+          - 31449
+  - tm: 99*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 10286
+      -   - BN
+          - 25915
+  - tm: 100*PER
+    vls:
+      -   - AN
+          - 12809
+      -   - BN
+          - 8366
+  - tm: 101*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 35890
+      -   - BN
+          - 57662
+  - tm: 102*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 50357
+      -   - BN
+          - 10730
+  - tm: 103*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 34564
+      -   - BN
+          - 22447
+  - tm: 104*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 38595
+      -   - BN
+          - 17037
+  - tm: 105*PER
+    vls:
+      -   - AN
+          - 22919
+      -   - BN
+          - 6848
+  - tm: 106*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 49771
+      -   - BN
+          - 50675
+  - tm: 107*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 60367
+      -   - BN
+          - 16869
+  - tm: 108*PER
+    vls:
+      -   - AN
+          - 62642
+      -   - BN
+          - 38419
+  - tm: 109*PER
+    vls:
+      -   - AN
+          - 24150
+      -   - BN
+          - 60520
+  - tm: 110*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 58790
+      -   - BN
+          - 6759
+  - tm: 111*PER
+    vls:
+      -   - AN
+          - 53931
+      -   - BN
+          - 65069
+  - tm: 112*PER
+    vls:
+      -   - AN
+          - 17569
+      -   - BN
+          - 17574
+  - tm: 113*PER
+    vls:
+      -   - AN
+          - 16798
+      -   - BN
+          - 54932
+  - tm: 114*PER
+    vls:
+      -   - AN
+          - 27279
+      -   - BN
+          - 48848
+  - tm: 115*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 13472
+      -   - BN
+          - 51154
+  - tm: 116*PER
+    vls:
+      -   - AN
+          - 54044
+      -   - BN
+          - 42855
+  - tm: 117*PER
+    vls:
+      -   - AN
+          - 20611
+      -   - BN
+          - 23704
+  - tm: 118*PER
+    vls:
+      -   - AN
+          - 15319
+      -   - BN
+          - 6931
+  - tm: 119*PER
+    vls:
+      -   - AN
+          - 10615
+      -   - BN
+          - 5256
+  - tm: 120*PER
+    vls:
+      -   - AN
+          - 12418
+      -   - BN
+          - 50609
+  - tm: 121*PER
+    vls:
+      -   - AN
+          - 54095
+      -   - BN
+          - 11824
+  - tm: 122*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 45472
+      -   - BN
+          - 48571
+  - tm: 123*PER
+    vls:
+      -   - AN
+          - 24638
+      -   - BN
+          - 63985
+  - tm: 124*PER
+    vls:
+      -   - AN
+          - 10683
+      -   - BN
+          - 7057
+  - tm: 125*PER
+    vls:
+      -   - AN
+          - 26903
+      -   - BN
+          - 13678
+  - tm: 126*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 13209
+      -   - BN
+          - 40787
+  - tm: 127*PER
+    vls:
+      -   - AN
+          - 35951
+      -   - BN
+          - 28692
+  - tm: 128*PER
+    vls:
+      -   - AN
+          - 23939
+      -   - BN
+          - 19222
+  - tm: 129*PER
+    vls:
+      -   - CIN
+          - 1
+      -   - AN
+          - 43646
+      -   - BN
+          - 26714
+  - tm: 130*PER
+    vls:
+      -   - CIN
+          - 0
+      -   - AN
+          - 46585
+      -   - BN
+          - 1399
+Signals:
+    AN: 16
+    BN: 16
+    CIN: 1
+SaveNds:
+  - name: CO
+    format: b
+  - name: G
+    format: b
+  - name: P
+    format: b
+  - name: S
+    format: h
+Classifications:
+    VDD: power
+    VSS: power
+    AN: data_inputs
+    BN: data_inputs
+    CIN: data_inputs
+    CO: outputs
+    G: outputs
+    P: outputs
+    S: outputs

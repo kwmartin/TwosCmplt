@@ -1,0 +1,312 @@
+kind: verilog
+module: MTCH4
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: CN
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: A0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: X0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: X1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: X2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: X3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: X2
+    module: DG_EXNOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A0
+    -   port: None
+        node:
+            kind: ident
+            name: B0
+    -   port: None
+        node:
+            kind: ident
+            name: X0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: S2
+    module: DG_SE2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: ENBL
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: X4
+    module: DG_EXNOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A1
+    -   port: None
+        node:
+            kind: ident
+            name: B1
+    -   port: None
+        node:
+            kind: ident
+            name: X1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: X5
+    module: DG_EXNOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A2
+    -   port: None
+        node:
+            kind: ident
+            name: A2
+    -   port: None
+        node:
+            kind: ident
+            name: X2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: X6
+    module: DG_EXNOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: A3
+    -   port: None
+        node:
+            kind: ident
+            name: B3
+    -   port: None
+        node:
+            kind: ident
+            name: X3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: instance
+    name: X7
+    module: DG_OR4_4X1
+    params: null
+    ports:
+    -   port: A
+        node:
+            kind: ident
+            name: X0
+    -   port: B
+        node:
+            kind: ident
+            name: X1
+    -   port: C
+        node:
+            kind: ident
+            name: X2
+    -   port: D
+        node:
+            kind: ident
+            name: X3
+    -   port: OUT
+        node:
+            kind: ident
+            name: ENBL
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
+
