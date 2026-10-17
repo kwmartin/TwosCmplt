@@ -1,4 +1,4 @@
-generated: '2026-10-17T12:18:03+00:00'
+generated: '2026-10-17T12:59:28+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -1168,9 +1168,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_3X1.v
         clean: true
+    TST_NOR1_4X1:
+        directory: verilogParse/ver_lib
+        file_name: TST_NOR1_4X1.v
+        clean: true
     TST_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR2_2X1.v
+        clean: true
+    TST_NOR4_4X1:
+        directory: verilogParse/ver_lib
+        file_name: TST_NOR4_4X1.v
         clean: true
     TST_OR2_2X1:
         directory: verilogParse/ver_lib
@@ -1187,6 +1195,10 @@ modules:
     TST_OR4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_3X1.v
+        clean: true
+    TST_OR4_4X1:
+        directory: verilogParse/ver_lib
+        file_name: TST_OR4_4X1.v
         clean: true
     TST_PRGT4:
         directory: verilogParse/ver_lib
