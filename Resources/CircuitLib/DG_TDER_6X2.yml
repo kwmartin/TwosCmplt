@@ -215,6 +215,44 @@ behav_blcks:
 -   kind: always
     onlyif:
     -   edge: all
+        node: L0_IN
+    -   edge: all
+        node: STATE
+    stmnts:
+        kind: blckst
+        lvalue:
+            kind: ident
+            name: ENBL
+        rvalue:
+            kind: cmpr_expr
+            oper: 'BNotEq:'
+            args:
+            -   kind: ident
+                name: L0_IN
+            -   kind: ident
+                name: STATE
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: CP
+    -   edge: all
+        node: ENBL
+    stmnts:
+        kind: noblckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: ENBL
+-   kind: always
+    onlyif:
+    -   edge: negedge
         node: CP
     -   edge: posedge
         node: R
@@ -229,24 +267,10 @@ behav_blcks:
             -   kind: float
                 value: 100.0
         iftrue:
-        -   kind: blckst
+        -   kind: noblckst
             lvalue:
                 kind: ident
                 name: STATE
-            rvalue:
-                kind: int
-                value: 0
-        -   kind: blckst
-            lvalue:
-                kind: ident
-                name: ENBL
-            rvalue:
-                kind: int
-                value: 0
-        -   kind: blckst
-            lvalue:
-                kind: ident
-                name: chngs
             rvalue:
                 kind: int
                 value: 0
@@ -266,71 +290,21 @@ behav_blcks:
             ifelse:
             -   kind: ifst
                 cmpr_expr:
-                    kind: cmpr_expr
-                    oper: 'BNotEq:'
-                    args:
-                    -   kind: ident
-                        name: STATE
-                    -   kind: ident
-                        name: L0_IN
+                    kind: cmpr_ident
+                    node: ENBL
                 iftrue:
-                -   kind: noblckst
+                -   kind: blckst
                     lvalue:
                         kind: ident
-                        name: ENBL
+                        name: chngs
                     rvalue:
-                        kind: int
-                        value: 1
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: CLKB
-                    rvalue:
-                        kind: ident
-                        name: CP
-                -   kind: ifst
-                    cmpr_expr:
-                        kind: cmpr_unary
-                        arg:
-                            kind: uexpr
-                            oper: 'Ulnot:'
-                            args:
-                            -   kind: ident
-                                name: CP
-                    iftrue:
-                    -   kind: blckst
-                        lvalue:
-                            kind: ident
-                            name: chngs
-                        rvalue:
-                            kind: bexpr
-                            oper: 'BPlus:'
-                            args:
-                            -   kind: ident
-                                name: chngs
-                            -   kind: int
-                                value: 1
-                ifelse:
-                -   kind: noblckst
-                    lvalue:
-                        kind: ident
-                        name: ENBL
-                    rvalue:
-                        kind: int
-                        value: 0
-            -   kind: ifst
-                cmpr_expr:
-                    kind: cmpr_expr
-                    oper: 'BLand:'
-                    args:
-                    -   kind: uexpr
-                        oper: 'Ulnot:'
+                        kind: bexpr
+                        oper: 'BPlus:'
                         args:
                         -   kind: ident
-                            name: CP
-                    -   kind: ident
-                        name: ENBL
-                iftrue:
+                            name: chngs
+                        -   kind: int
+                            value: 1
                 -   kind: noblckst
                     lvalue:
                         kind: ident
@@ -338,3 +312,4 @@ behav_blcks:
                     rvalue:
                         kind: ident
                         name: L0_IN
+
