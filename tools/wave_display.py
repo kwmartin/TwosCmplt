@@ -1828,6 +1828,12 @@ class WaveDisplay(QMainWindow):
 
 # ── Standalone editor entry point ─────────────────────────────────────────────
 
+# Exit code meaning "inputs were saved -- hand back to the Main UI". Shared
+# with ~/.xschem/verilogParse/gen_verilog_tb.py (Edit Input Signals, which
+# launches this editor) and SimLib's run_sim_ui.py.
+EXIT_INPUTS_SAVED = 10
+
+
 def _run_standalone_editor(config_path: str, circuit_name: str,
                            spec_path: Optional[str] = None):
     """Open only the editable waveform pane for a circuit, without simulating."""
@@ -1853,14 +1859,18 @@ def _run_standalone_editor(config_path: str, circuit_name: str,
     win.setWindowTitle(f"Waveform Editor — {circuit_name}")
     win.load_spec(spec_file, circuit_name)
 
+    saved = [False]
+
     def _on_save():
         win.save_editor_yaml(spec_file, cfg)
+        saved[0] = True
         win.close()
 
     win.save_clicked.connect(_on_save)
     win.show()
     _center_on_screen(win)
-    sys.exit(app.exec())
+    rc = app.exec()
+    sys.exit(EXIT_INPUTS_SAVED if saved[0] else rc)
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
