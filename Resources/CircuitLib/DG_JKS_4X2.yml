@@ -169,6 +169,13 @@ behav_blcks:
     -   edge: posedge
         node: S
     stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: ident
+            name: CP
     -   kind: ifst
         cmpr_expr:
             kind: cmpr_expr
@@ -200,13 +207,6 @@ behav_blcks:
                     kind: int
                     value: 1
             ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: CLKB
-                rvalue:
-                    kind: ident
-                    name: CP
             -   kind: ifst
                 cmpr_expr:
                     kind: cmpr_unary

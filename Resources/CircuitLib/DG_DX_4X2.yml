@@ -74,39 +74,82 @@ decls:
         - 0
         length: []
 -   -   kind: Reg
-        name: QP
+        name: STATE
         signed: 'False'
         width:
         - 0
         - 0
         length: []
     -   kind: Reg
-        name: QN
+        name: CLKB
         signed: 'False'
         width:
         - 0
         - 0
         length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STATE
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
         lvalue:
             kind: ident
-            name: QP
+            name: STATE
         rvalue:
             kind: ident
             name: D0
     -   kind: blckst
         lvalue:
             kind: ident
-            name: QN
+            name: CLKB
         rvalue:
-            kind: uexpr
-            oper: 'Unot:'
-            args:
-            -   kind: ident
-                name: D0
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: CLK
+    stmnts:
+        kind: noblckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: ident
+            name: CLK
 -   kind: always
     onlyif:
     -   edge: negedge
@@ -117,68 +160,53 @@ behav_blcks:
     -   kind: ifst
         cmpr_expr:
             kind: cmpr_expr
-            oper: 'BLessThan:'
+            oper: 'BLor:'
             args:
-            -   kind: sys_tm
-                name: time
-            -   kind: float
-                value: 100.0
+            -   kind: cmpr_expr
+                oper: 'BLessThan:'
+                args:
+                -   kind: sys_tm
+                    name: time
+                -   kind: float
+                    value: 100.0
+            -   kind: ident
+                name: INIT
         iftrue:
         -   kind: noblckst
             lvalue:
                 kind: ident
-                name: QP
+                name: STATE
             rvalue:
                 kind: ident
                 name: D0
-        -   kind: noblckst
-            lvalue:
-                kind: ident
-                name: QN
-            rvalue:
-                kind: uexpr
-                oper: 'Unot:'
-                args:
-                -   kind: ident
-                    name: D0
         ifelse:
         -   kind: ifst
             cmpr_expr:
-                kind: cmpr_ident
-                node: INIT
+                kind: cmpr_expr
+                oper: 'BNotEq:'
+                args:
+                -   kind: ident
+                    name: STATE
+                -   kind: ident
+                    name: D
             iftrue:
-            -   kind: noblckst
+            -   kind: blckst
                 lvalue:
                     kind: ident
-                    name: QP
+                    name: chngs
                 rvalue:
-                    kind: ident
-                    name: D0
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QN
-                rvalue:
-                    kind: uexpr
-                    oper: 'Unot:'
+                    kind: bexpr
+                    oper: 'BPlus:'
                     args:
                     -   kind: ident
-                        name: D0
-            ifelse:
+                        name: chngs
+                    -   kind: int
+                        value: 1
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: QP
+                    name: STATE
                 rvalue:
                     kind: ident
                     name: D
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QN
-                rvalue:
-                    kind: uexpr
-                    oper: 'Unot:'
-                    args:
-                    -   kind: ident
-                        name: D
+

@@ -1,4 +1,4 @@
-generated: '2026-10-20T18:08:15+00:00'
+generated: '2026-10-20T21:46:31+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -173,11 +173,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DES_3X2.v
         clean: true
+    DG_DEUR_4X2:
+        directory: verilogParse/ver_lib
+        file_name: DG_DEUR_4X2.v
+        clean: true
     DG_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEX_4X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        clean: true
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
@@ -201,6 +204,10 @@ modules:
     DG_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFRE.v
+        clean: true
+    DG_DLER_5X2:
+        directory: verilogParse/ver_lib
+        file_name: DG_DLER_5X2.v
         clean: true
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
@@ -277,8 +284,7 @@ modules:
     DG_DX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DX_4X2.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DG_D_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_D_3X2.v
@@ -386,8 +392,7 @@ modules:
     DG_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKER_4X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        clean: true
     DG_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKES_4X2.v
@@ -635,8 +640,7 @@ modules:
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
@@ -656,8 +660,7 @@ modules:
     DG_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TER_3X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        clean: true
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
@@ -685,8 +688,7 @@ modules:
     DG_TR_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TR_FF.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DG_TS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TS_3X2.v
@@ -1032,11 +1034,19 @@ modules:
         file_name: TST_DER_3X2.v
         clean: false
         stale_reason: verilog content changed
+    TST_DER_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DER_4X2.v
+        clean: true
     TST_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DES_3X2.v
         clean: false
         stale_reason: 'missing: ast, mod, unl'
+    TST_DEUR_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DEUR_4X2.v
+        clean: true
     TST_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEX_4X2.v
@@ -1050,6 +1060,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFRE.v
         clean: true
+    TST_DLER_5X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DLER_5X2.v
+        clean: true
+    TST_DLR_5X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DLR_5X2.v
+        clean: true
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
@@ -1059,11 +1077,19 @@ modules:
         file_name: TST_DR_3X2.v
         clean: false
         stale_reason: verilog content changed
+    TST_DR_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DR_4X2.v
+        clean: true
     TST_DS_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DS_3X2.v
         clean: false
         stale_reason: 'missing: ast, mod, unl'
+    TST_DUR_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_DUR_4X2.v
+        clean: true
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
@@ -1136,23 +1162,19 @@ modules:
     TST_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKER_4X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        clean: true
     TST_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKES_4X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        clean: true
     TST_JKR_4X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_JKR_4X2_CAL.v
-        clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        clean: true
     TST_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
-        clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        clean: true
     TST_MX1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX1_3X1.v
@@ -1341,6 +1363,10 @@ modules:
     TST_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_5X2.v
+        clean: true
+    TST_TLDR_5X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_TLDR_5X2.v
         clean: true
     TST_TR_FF:
         directory: verilogParse/ver_lib

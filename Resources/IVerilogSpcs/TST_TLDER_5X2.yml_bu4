@@ -1,0 +1,51 @@
+module: TST_TLDER_5X2
+generated: true
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 64*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [L, 0]
+      - [D, 0]
+      - [T, 0]
+  - tm: 0.1*PER
+    vls:
+      - [INIT, 0]
+  - tm: 3.1*PER
+    vls:
+      -   - T
+          - 1
+  - tm: 16.1*PER
+    vls:
+      -   - T
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    L: 1
+    D: 1
+    T: 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    L: data_inputs
+    D: data_inputs
+    T: data_inputs
+    QP1: outputs
+    QN1: outputs
