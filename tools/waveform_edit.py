@@ -56,6 +56,8 @@ from wave_data_model import (
     ClockWaveRow,
     DigitalWaveRow,
 )
+# Shared with Edit Input Signals (gen_verilog_tb.py), so both show the same dialog.
+from wave_seq_dialog import GenerateCountingSequenceDialog
 from wave_selection import SelectionModel
 from wave_reorder import move_block_up, move_block_down
 from wave_duplicate import duplicate_digital_row
@@ -317,6 +319,9 @@ class WaveformCanvas(QWidget):
         self.constants_map: dict[str, float] = {"PER": 1000.0}
         self.finish_time_expr = "32*PER"
         self.clock_specs: list[dict] = []
+        # Last Count Sequence dialog values per signal, persisted as the
+        # spec's SeqParams so the dialog reopens with them.
+        self.seq_params: dict[str, dict] = {}
         self._signal_nbits: dict[str, int] = {}
         self._preserved_nonclock_waves: list[DigitalWaveRow] = []
 
@@ -903,6 +908,7 @@ class WaveformCanvas(QWidget):
             self.finishTm,
             initial_value=target.segments[0].value if target.segments else 0,
             parent=parent or self.window(),
+            params=self.seq_params.get(target.label_text),
         )
         if dlg.exec() != QDialog.Accepted:
             return False
@@ -915,6 +921,7 @@ class WaveformCanvas(QWidget):
             return False
 
         self._push_undo()
+        self.seq_params[target.label_text] = dlg.params()
 
         if merge:
             # Build existing transitions and merge with generated ones
@@ -2070,6 +2077,8 @@ class WaveformCanvas(QWidget):
 
         if self.clock_specs:
             data["Clock"] = self.clock_specs
+        if self.seq_params:
+            data["SeqParams"] = self.seq_params
 
         return data
 
@@ -2130,6 +2139,8 @@ class WaveformCanvas(QWidget):
         self.finishTm = finish_tm
         self.clock_specs = clock_specs
         self._signal_nbits = signal_nbits
+        self.seq_params = {str(k): dict(v) for k, v in (dct.get("SeqParams") or {}).items()
+                           if isinstance(v, dict)}
 
         redundant_warnings = self._check_redundant_timespcs(dct)
         if redundant_warnings:
@@ -2380,189 +2391,6 @@ class PeriodicPatternDialog(QDialog):
                     self._delay_spin.value(),
                 )
         return None
-
-
-class GenerateCountingSequenceDialog(QDialog):
-    """Dialog to generate a counting sequence for one input signal.
-
-    Times are entered in PER with 0.1 resolution, like every other digital
-    time. A 1-bit signal gets a clock layout (Initial, Delay, Period) since
-    Start/Final/Value increment mean nothing there; Period steps in 0.2 so
-    every half-period edge lands on the 0.1 grid.
-    """
-
-    def __init__(
-        self,
-        signal_name: str,
-        nbits: int,
-        finish_tm: float,
-        initial_value: int = 0,
-        parent: QWidget | None = None,
-    ):
-        super().__init__(parent)
-        self.signal_name = signal_name
-        self.nbits = max(1, nbits)
-        self.finish_tm = finish_tm
-        self.initial_value = _mask_to_nbits(initial_value, self.nbits)
-        self.is_clock = self.nbits == 1
-
-        title = "Clock Sequence" if self.is_clock else "Generate Counting Sequence"
-        self.setWindowTitle(f"{title} — {signal_name}")
-        self.resize(420, 200 if self.is_clock else 260)
-
-        self._build_ui()
-
-    @staticmethod
-    def _per_spin(minimum: float, step: float, value: float) -> QDoubleSpinBox:
-        spin = QDoubleSpinBox()
-        spin.setDecimals(1)
-        spin.setRange(minimum, 100000.0)
-        spin.setSingleStep(step)
-        spin.setValue(value)
-        spin.setSuffix(" PER")
-        return spin
-
-    def _build_ui(self):
-        self.setStyleSheet(
-            "QDialog { background:#11161c; }"
-            "QLabel  { color:#d7e3f4; }"
-            "QSpinBox, QDoubleSpinBox { background:#1b2430; color:#d7e3f4;"
-            "           border:1px solid #344454; padding:4px; }"
-            "QPushButton { background:#1b2430; color:#d7e3f4;"
-            "              border:1px solid #344454; padding:4px 14px; }"
-            "QPushButton:hover { background:#2a3a50; }"
-        )
-        QShortcut(QKeySequence("Ctrl+W"), self).activated.connect(self.reject)
-
-        layout = QVBoxLayout(self)
-        layout.setSpacing(8)
-        layout.setContentsMargins(8, 8, 8, 8)
-
-        form = QHBoxLayout()
-        form.addWidget(QLabel(f"Signal <b>{self.signal_name}</b> ({self.nbits} bit{'s' if self.nbits != 1 else ''})"))
-        form.addStretch()
-        layout.addLayout(form)
-
-        if self.is_clock:
-            self._build_clock_fields(layout)
-        else:
-            self._build_count_fields(layout)
-
-        btn_box = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
-        btn_box.accepted.connect(self.accept)
-        btn_box.rejected.connect(self.reject)
-        layout.addWidget(btn_box)
-
-    def _build_clock_fields(self, layout: QVBoxLayout):
-        row = QHBoxLayout()
-        row.addWidget(QLabel("Initial"))
-        self._init_spin = QSpinBox()
-        self._init_spin.setRange(0, 1)
-        self._init_spin.setValue(self.initial_value)
-        row.addWidget(self._init_spin)
-
-        row.addWidget(QLabel("Period"))
-        self._period_spin = self._per_spin(0.2, 0.2, 1.0)
-        self._period_spin.editingFinished.connect(self._round_period_to_even_tenth)
-        row.addWidget(self._period_spin)
-
-        row.addWidget(QLabel("Delay"))
-        self._delay_spin = self._per_spin(0.0, 0.1, 0.0)
-        row.addWidget(self._delay_spin)
-        layout.addLayout(row)
-
-        info = QLabel(
-            "Initial is held until Delay; the signal then toggles every Period/2. "
-            "Replaces the existing signal entries."
-        )
-        info.setWordWrap(True)
-        info.setStyleSheet("color:#7a95b0; font-size:11px;")
-        layout.addWidget(info)
-
-        # Tab order follows the most-edited field first: Period, Delay, Initial.
-        self.setTabOrder(self._period_spin, self._delay_spin)
-        self.setTabOrder(self._delay_spin, self._init_spin)
-        self._period_spin.setFocus(Qt.OtherFocusReason)
-        self._period_spin.selectAll()
-
-    def _round_period_to_even_tenth(self):
-        tenths = int(round(self._period_spin.value() * 10))
-        if tenths % 2:
-            self._period_spin.setValue((tenths + 1) / 10.0)
-
-    def _build_count_fields(self, layout: QVBoxLayout):
-        grid = QHBoxLayout()
-        grid.addWidget(QLabel("Start"))
-        self._start_spin = QSpinBox()
-        self._start_spin.setRange(0, (1 << self.nbits) - 1)
-        self._start_spin.setValue(0)
-        grid.addWidget(self._start_spin)
-
-        grid.addWidget(QLabel("Final"))
-        self._final_spin = QSpinBox()
-        self._final_spin.setRange(1, (1 << self.nbits))
-        self._final_spin.setValue(1 << self.nbits)
-        grid.addWidget(self._final_spin)
-
-        grid.addWidget(QLabel("Value increment"))
-        self._var_incr_spin = QSpinBox()
-        self._var_incr_spin.setRange(-(1 << self.nbits), (1 << self.nbits))
-        self._var_incr_spin.setValue(1)
-        grid.addWidget(self._var_incr_spin)
-        layout.addLayout(grid)
-
-        grid2 = QHBoxLayout()
-        grid2.addWidget(QLabel("Time increment"))
-        self._time_spin = self._per_spin(0.1, 0.1, 1.0)
-        grid2.addWidget(self._time_spin)
-
-        grid2.addWidget(QLabel("Delay"))
-        self._delay_spin = self._per_spin(0.0, 0.1, 0.0)
-        grid2.addWidget(self._delay_spin)
-        grid2.addStretch()
-        layout.addLayout(grid2)
-
-        self._replace_rb = QRadioButton("Replace existing signal entries")
-        self._replace_rb.setChecked(True)
-        self._replace_rb.setStyleSheet("color:#d7e3f4;")
-        self._merge_rb = QRadioButton("Merge with existing entries (per-signal)")
-        self._merge_rb.setStyleSheet("color:#d7e3f4;")
-        layout.addWidget(self._replace_rb)
-        layout.addWidget(self._merge_rb)
-
-        info = QLabel(
-            "Values are masked to the signal width. The sequence repeats at the end if "
-            "Final exceeds the maximum representable value. The initial value is held until Delay."
-        )
-        info.setWordWrap(True)
-        info.setStyleSheet("color:#7a95b0; font-size:11px;")
-        layout.addWidget(info)
-
-    def get_sequence(self) -> tuple[list[tuple[float, int]], bool] | None:
-        """Return (list of (time, value), is_merge) or None if invalid."""
-        delay = snap01(self._delay_spin.value())
-        if self.is_clock:
-            self._round_period_to_even_tenth()
-            sequence = clock_sequence_values(
-                self._init_spin.value(), delay, self._period_spin.value(), self.finish_tm
-            )
-            return sequence, False
-
-        start = self._start_spin.value()
-        final = self._final_spin.value()
-        var_incr = self._var_incr_spin.value()
-        time_incr_f = snap01(self._time_spin.value())
-        if final <= start and var_incr > 0:
-            QMessageBox.warning(self, "Invalid range",
-                                "Final must be greater than Start when increment is positive.")
-            return None
-
-        sequence = counting_sequence_values(start, final, var_incr, time_incr_f, self.nbits)
-        if delay > 0:
-            sequence = [(0.0, self.initial_value)] + [
-                (snap01(tm + delay), val) for tm, val in sequence
-            ]
-        return sequence, self._merge_rb.isChecked()
 
 
 class MainWindow(QMainWindow):
