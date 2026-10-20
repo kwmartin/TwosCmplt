@@ -280,11 +280,13 @@ class DisplayWindow(QMainWindow):
         wave_menu.addSeparator()
 
         count_act = QAction("Generate Counting Sequence…", self)
+        count_act.setShortcut(QKeySequence("Ctrl+K"))
         count_act.triggered.connect(self._on_generate_counting_sequence)
         wave_menu.addAction(count_act)
         self._count_menu_act = count_act
 
         repeat_act = QAction("Set Repeating Pattern…", self)
+        repeat_act.setShortcut(QKeySequence("Ctrl+R"))
         repeat_act.triggered.connect(self._on_set_repeating_pattern)
         wave_menu.addAction(repeat_act)
         self._repeat_menu_act = repeat_act
@@ -543,6 +545,19 @@ class DisplayWindow(QMainWindow):
         top_lbl = QLabel("Input Waveforms (editable)")
         top_lbl.setFont(QFont("monospace", 9))
         tv.addWidget(top_lbl)
+        # Same format/style as the other wave windows (SimLib/lib/pwl_wave_editor.py).
+        shortcuts = QLabel(
+            "A/Alt+click: add &nbsp; D/Ctrl+click: delete &nbsp; V+click: value &nbsp; "
+            "T+click: invert &nbsp; Shift+click: multi-select &nbsp; Drag: move/pan &nbsp; "
+            "Ctrl+wheel: zoom &nbsp; Ctrl+F: fit &nbsp; Ctrl+0: start &nbsp; "
+            "Ctrl+Z/Y: undo/redo &nbsp; Ctrl+D: delete row &nbsp; Ctrl+Shift+D: duplicate &nbsp; "
+            "Ctrl+Up/Down: move row &nbsp; Ctrl+K: count &nbsp; Ctrl+R: repeat &nbsp; "
+            "Ctrl+S: save &nbsp; Ctrl+W: close"
+        )
+        shortcuts.setTextFormat(Qt.RichText)
+        shortcuts.setWordWrap(True)
+        shortcuts.setStyleSheet("color:#9fb3c8; font-size:11px;")
+        tv.addWidget(shortcuts)
         self.editor = EditableCanvas()
         self.editor.selection_changed.connect(self._update_repeat_enabled)
         tv.addWidget(self.editor, stretch=1)
@@ -593,14 +608,14 @@ class DisplayWindow(QMainWindow):
         btn_row.addWidget(close_btn)
 
         count_btn = QPushButton("Count Sequence")
-        count_btn.setToolTip("Generate a counting sequence for the selected input signal")
+        count_btn.setToolTip("Generate a counting sequence (clock for 1-bit) for the selected input signal (Ctrl+K)")
         count_btn.clicked.connect(self._on_generate_counting_sequence)
         count_btn.setEnabled(False)
         btn_row.addWidget(count_btn)
         self._count_btn = count_btn
 
         repeat_btn = QPushButton("Repeat Pattern")
-        repeat_btn.setToolTip("Make the selected input signal repeat a periodic pattern")
+        repeat_btn.setToolTip("Make the selected input signal repeat a periodic pattern (Ctrl+R)")
         repeat_btn.clicked.connect(self._on_set_repeating_pattern)
         repeat_btn.setEnabled(False)
         btn_row.addWidget(repeat_btn)
