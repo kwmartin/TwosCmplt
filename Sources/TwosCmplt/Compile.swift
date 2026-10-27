@@ -195,6 +195,10 @@ public func delayExprToNumber(_ d: DelayExpr) -> Number {
     case .arith(let v):
         // Treat arithmetic delay as real for now.
         return .real(v)
+
+    case .expr:
+        // Reads signals: no single number (statements evaluate it at run time).
+        return .real(0)
     }
 }
 
@@ -209,6 +213,9 @@ public func delayToInt(_ d: DelayExpr) -> Int {
     case .arith(let v):
         // Treat arithmetic delay as real for now.
         return Int(v)
+
+    case .expr:
+        return 0     // reads signals; statements evaluate it at run time
     }
 }
 
@@ -796,7 +803,13 @@ public func genNonBlockStmtCode(_ ast: NoblckStmntAST,
     // 2. Generate code that evaluates the RHS expression and pushes its Value.
     genExpr(expr, ctx: &ctx)
 
-    // 3. Emit a non-blocking-assign opcode carrying the LValueAST and delay info.
+    // 3. Emit a non-blocking-assign opcode carrying the LValueAST and delay info;
+    //    a delay that reads signals is evaluated now and pushed above the RHS.
+    if let d = ast.delayExpr {
+        genExpr(ctx.circDef.getExpr(d), ctx: &ctx)
+        ctx.code.append(Instruction(op: .noblckAssignDly(ast.lvalue)))
+        return
+    }
     ctx.code.append(
         Instruction(op: .noblckAssign(ast.lvalue, ast.delay))
     )
@@ -811,7 +824,13 @@ public func genBlockStmtCode(_ ast: BlckStmntAST,
     // 2. Generate code that evaluates the RHS expression and pushes its Value.
     genExpr(expr, ctx: &ctx)
 
-    // 3. Emit a non-blocking-assign opcode carrying the LValueAST and delay info.
+    // 3. Emit a blocking-assign opcode carrying the LValueAST and delay info;
+    //    a delay that reads signals is evaluated now and pushed above the RHS.
+    if let d = ast.delayExpr {
+        genExpr(ctx.circDef.getExpr(d), ctx: &ctx)
+        ctx.code.append(Instruction(op: .blckAssignDly(ast.lvalue)))
+        return
+    }
     ctx.code.append(
         Instruction(op: .blckAssign(ast.lvalue, ast.delay))
     )
@@ -1308,6 +1327,9 @@ public enum Opcode {
     case noblckAssign(LValueAST, Int?)
     // blocking assign; RHS will be taken from top of stack at run time
     case blckAssign(LValueAST, Int?)
+    // the same, with the delay (ps) on top of the stack, above the RHS
+    case noblckAssignDly(LValueAST)
+    case blckAssignDly(LValueAST)
 
     case assgn(LValueAST, Int?)
 

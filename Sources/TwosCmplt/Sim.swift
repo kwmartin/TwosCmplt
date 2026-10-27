@@ -1470,6 +1470,24 @@ public func run(ctx: inout Context) {
                                ctx: &ctx)
             ip += 1
 
+        case .noblckAssignDly(let lvAst):
+            let delay = Int(asDouble(ctx.pop()).rounded())
+            let rhsVal = ctx.pop()
+            stackNonBlockValue(lvalue: lvAst,
+                               value: rhsVal,
+                               delay: delay,
+                               ctx: &ctx)
+            ip += 1
+
+        case .blckAssignDly(let lvAst):
+            let delay = Int(asDouble(ctx.pop()).rounded())
+            let rhsVal = ctx.pop()
+            setLeftNet(lvalue: lvAst,
+                               value: rhsVal,
+                               delay: delay,
+                               ctx: &ctx)
+            ip += 1
+
         case .blckAssign(let lvAst, let delay):
             let rhsVal = ctx.pop()
             setLeftNet(lvalue: lvAst,

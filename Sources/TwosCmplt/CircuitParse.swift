@@ -687,6 +687,10 @@ public enum DelayExpr: Decodable {
     case float(Double)
     case int(Int)
     case arith(Double)   // or a more complex type later
+    // A delay that depends on signal values, evaluated when the statement
+    // runs: the latches' `STR <= #(`L2_C2Q*`DLY_MLTPLY) D`, where L2_C2Q is
+    // (D ? 13.2 : 8.1) -- a rising and a falling delay.
+    case expr(ExprYAML)
 
     private enum CodingKeys: String, CodingKey {
         case kind
@@ -706,13 +710,26 @@ public enum DelayExpr: Decodable {
         switch kind {
         case .float, .arith:
             // YAML numbers decode to Double cleanly in both float/arith cases
-            let value = try c.decode(Double.self, forKey: .delay)
-            self = (kind == .float) ? .float(value) : .arith(value)
+            if let value = try? c.decode(Double.self, forKey: .delay) {
+                self = (kind == .float) ? .float(value) : .arith(value)
+            } else {
+                self = try DelayExpr.fromExpr(c.decode(ExprYAML.self, forKey: .delay))
+            }
 
         case .int:
-            let value = try c.decode(Int.self, forKey: .delay)
-            self = .int(value)
+            if let value = try? c.decode(Int.self, forKey: .delay) {
+                self = .int(value)
+            } else {
+                self = try DelayExpr.fromExpr(c.decode(ExprYAML.self, forKey: .delay))
+            }
         }
+    }
+
+    /// A delay written as an expression: a constant one (2*1.5) becomes a
+    /// number, one that reads signals stays an expression.
+    static func fromExpr(_ e: ExprYAML) -> DelayExpr {
+        if let d = AssgnBlckYAML.evalDelayExpr(e) { return .float(d) }
+        return .expr(e)
     }
 }
 
@@ -729,6 +746,8 @@ extension DelayExpr {
             return Int(f)
         case .arith(let a):
             return Int(a)
+        case .expr:
+            return 0     // evaluated at run time (NoblckStmntAST.delayExpr)
         }
     }
 }
@@ -1724,10 +1743,14 @@ extension BlckStmntYAML {
         // Delay: default 0 if nil, otherwise convert via asInt()
         let delayInt: Int = delay.map { $0.asInt() } ?? 0
 
+        var dlyExpr: ExprId? = nil
+        if case .expr(let e)? = delay { dlyExpr = e.toExprId(in: &circ) }
+
         return BlckStmntAST(
             lvalue: l,
             rvalue: r,
-            delay: delayInt
+            delay: delayInt,
+            delayExpr: dlyExpr
         )
     }
 }
@@ -1740,10 +1763,14 @@ extension NoblckStmntYAML {
         // Delay: default 0 if nil, otherwise convert via asInt()
         let delayInt: Int = delay.map { $0.asInt() } ?? 0
 
+        var dlyExpr: ExprId? = nil
+        if case .expr(let e)? = delay { dlyExpr = e.toExprId(in: &circ) }
+
         return NoblckStmntAST(
             lvalue: l,
             rvalue: r,
-            delay: delayInt
+            delay: delayInt,
+            delayExpr: dlyExpr
         )
     }
 }
@@ -2113,6 +2140,7 @@ public struct BlckStmntAST {
     public let lwidth: Int = 1
     public let rvalue: ExprId
     public let delay: Int?         // optional array
+    public var delayExpr: ExprId? = nil   // a delay that reads signals (DelayExpr.expr)
 }
 
 public struct NoblckStmntAST {
@@ -2120,6 +2148,7 @@ public struct NoblckStmntAST {
     public let lwidth: Int = 1
     public let rvalue: ExprId
     public let delay: Int?         // optional array
+    public var delayExpr: ExprId? = nil   // a delay that reads signals (DelayExpr.expr)
 }
 
 public struct BlockAST {
@@ -2376,6 +2405,8 @@ extension DelayExpr {
         case .float(let d),
              .arith(let d):
             return circ.internExpr(Expr.real(d))
+        case .expr(let e):
+            return e.toExprId(in: &circ)
         }
     }
 }
