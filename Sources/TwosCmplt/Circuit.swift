@@ -761,22 +761,26 @@ public func setNodeRefs(_ circ: Circuit) {
     circ.evalOrder.removeAll(keepingCapacity: true)
 }
 
-public func saveChng(_ circ: Circuit, indx: Int) {
+/// Records node indx's change: its current value at its updTm, or (value, tm)
+/// when given (a bit written for an earlier time, Circuit.mergeBits).
+public func saveChng(_ circ: Circuit, indx: Int, value: Int? = nil, tm: Int? = nil) {
     var ndStr: String = ""
     let indxs = getIndxs(circ)
     let nd = circ.nodes[indx]
-    let ndChng = NodeChng(circIndxs: indxs, nodeIndx: indx, value: nd.node.value,
-        updTm: nd.updTm, nbits: nd.node.nbits, capac: nd.capac)
+    let val = value ?? nd.node.value
+    let updTm = tm ?? nd.updTm
+    let ndChng = NodeChng(circIndxs: indxs, nodeIndx: indx, value: val,
+        updTm: updTm, nbits: nd.node.nbits, capac: nd.capac)
     if !(nd.name == "CLK_") {
         ndStr = makeNm(circ, nodeIndx: indx)
         // print("Time: \(nd.updTm), node: \(ndStr), value: \(nd.node.value)")
-        dbg("= Time: \(nd.updTm), node: \(ndStr), value: \(nd.node.value)")
+        dbg("= Time: \(updTm), node: \(ndStr), value: \(val)")
     }
     circ.capacTrns += nd.capac
 
     Glbls.chngCount &+= 1
     Glbls.nodeChngs.append(ndChng)
-    Glbls.allChngs.append((ndStr, (nd.updTm, nd.node.value)))
+    Glbls.allChngs.append((ndStr, (updTm, val)))
 }
 
 // Per-always-block runtime state, per Circuit instance
@@ -1143,13 +1147,7 @@ public final class Circuit {
         guard let ndIndx = self.nodeLU[ndNm] else {
             preconditionFailure("Node not found: '\(ndNm)' in circuit '\(self.module)'")
         }
-        let oldVal = self.nodes[ndIndx].node.value
-        let newVal = (oldVal & ~(1 << bitIndex)) | ((bitVal & 1) << bitIndex)
-        if oldVal != newVal {
-            self.nodes[ndIndx].commit(newVal, tm: tm)
-            self.fireWatches(ndIndx, newVal: newVal, tm: tm)
-            saveChng(self, indx: ndIndx)
-        }
+        self.mergeBits(ndIndx, mask: 1 << bitIndex, bits: (bitVal & 1) << bitIndex, tm: tm)
     }
 
     // Merges `val` into bits [msb:lsb] of node `ndNm`, preserving the node's other
@@ -1161,12 +1159,64 @@ public final class Circuit {
         }
         let width = msb - lsb + 1
         let mask = ((1 << width) - 1) << lsb
-        let oldVal = self.nodes[ndIndx].node.value
-        let newVal = (oldVal & ~mask) | ((val << lsb) & mask)
-        if oldVal != newVal {
-            self.nodes[ndIndx].commit(newVal, tm: tm)
-            self.fireWatches(ndIndx, newVal: newVal, tm: tm)
-            saveChng(self, indx: ndIndx)
+        self.mergeBits(ndIndx, mask: mask, bits: (val << lsb) & mask, tm: tm)
+    }
+
+    // Sets the `mask` bits of node ndIndx to `bits` from time tm on. Children
+    // write their bits of a bus in evaluation order, not time order: in
+    // TST_CLA4, CLA2_1's bit 0 (due at 10532 ps) was written before bit 1 (due
+    // at 10504), and merging bit 1 into the latest value recorded S = 2 at
+    // 10504 where it was 3 (and 0 at 10532 where it was 2). A write earlier
+    // than the node's latest change is merged into the value at its own time,
+    // and into every later value and recorded change of the node.
+    func mergeBits(_ ndIndx: Int, mask: Int, bits: Int, tm: Int) {
+        let merge = { (v: Int) in (v & ~mask) | bits }
+        let nd = self.nodes[ndIndx]
+        if tm >= nd.updTm {
+            let oldVal = nd.node.value
+            let newVal = merge(oldVal)
+            if oldVal != newVal {
+                self.nodes[ndIndx].commit(newVal, tm: tm)
+                self.fireWatches(ndIndx, newVal: newVal, tm: tm)
+                saveChng(self, indx: ndIndx)
+            }
+            return
+        }
+        let oldAt = nd.value(at: tm)
+        let newAt = merge(oldAt)
+        if oldAt == newAt { return }
+        // The later values: the history after tm, and the current value.
+        for i in self.nodes[ndIndx].hist.indices where self.nodes[ndIndx].hist[i].tm > tm {
+            self.nodes[ndIndx].hist[i].value = merge(self.nodes[ndIndx].hist[i].value)
+        }
+        let oldCur = nd.node.value
+        self.nodes[ndIndx].node.value = merge(oldCur)
+        // The value from tm until the next later change.
+        var hist = self.nodes[ndIndx].hist
+        let at = hist.firstIndex(where: { $0.tm > tm }) ?? hist.count
+        hist.insert((tm: tm, value: newAt), at: at)
+        if hist.count > Nod.histDepth { hist.removeFirst(hist.count - Nod.histDepth) }
+        self.nodes[ndIndx].hist = hist
+        // The later recorded changes (recent: a gate delay or so ahead).
+        let indxs = getIndxs(self)
+        var i = Glbls.nodeChngs.count - 1
+        var looked = 0
+        while i >= 0 && looked < 4096 {
+            let c = Glbls.nodeChngs[i]
+            if c.nodeIndx == ndIndx && c.updTm > tm && c.circIndxs == indxs {
+                Glbls.nodeChngs[i] = NodeChng(circIndxs: c.circIndxs, nodeIndx: c.nodeIndx,
+                                              value: merge(c.value), updTm: c.updTm,
+                                              nbits: c.nbits, capac: c.capac)
+                if i < Glbls.allChngs.count && Glbls.allChngs[i].1.0 == c.updTm {
+                    Glbls.allChngs[i].1.1 = merge(Glbls.allChngs[i].1.1)
+                }
+            }
+            i -= 1
+            looked += 1
+        }
+        saveChng(self, indx: ndIndx, value: newAt, tm: tm)
+        if self.nodes[ndIndx].node.value != oldCur {
+            self.fireWatches(ndIndx, newVal: self.nodes[ndIndx].node.value, tm: tm)
         }
     }
 
