@@ -870,7 +870,11 @@ public final class Circuit {
     var sortArry: [CmpRef] = []
     var refCnts: [CmpRef: Int] = [:]
     public var nodeLU: [String: Int] = ["VSS": 1000000, "VDD": 1000001]
-    var snstvLU: [Int: SensWatch] = [:]
+    /// Every always block's watch on each node: a node in several blocks'
+    /// sensitivity lists (DG_DER_3X2's CLK: `@(CLK or ENBL)` and
+    /// `@(negedge CLK or posedge R)`) must wake each of them. One watch per
+    /// node woke only the first block, so the flip-flop's never ran.
+    var snstvLU: [Int: [SensWatch]] = [:]
     var alwysNoSns: [Int] = []
     var alwysStk: [Int] = []
     var parms: [Parm] = []
@@ -1103,6 +1107,24 @@ public final class Circuit {
         if alwaysStates.indices.contains(idx) { alwaysStates[idx].trigTm = tm }
     }
 
+    /// A node changed to newVal: trigger every always block watching it
+    /// whose edge condition holds, then record the new value in each watch.
+    func fireWatches(_ ndIndx: Int, newVal: Int, tm: Int) {
+        guard let wtchs = self.snstvLU[ndIndx] else { return }
+        for (k, wtch) in wtchs.enumerated() {
+            let fire: Bool
+            switch wtch.edge {
+            case .posedge: fire = wtch.value == 0 && newVal == 1
+            case .negedge: fire = wtch.value == 1 && newVal == 0
+            case .all, .level: fire = (wtch.value ^ newVal) != 0
+            }
+            if fire {
+                self.trigger(wtch.alwysIndx, tm: tm)
+            }
+            self.snstvLU[ndIndx]![k].value = newVal
+        }
+    }
+
     func setNode(_ ndNm: String, val: Int, tm: Int) {
         guard let ndIndx = self.nodeLU[ndNm] else {
             print("⚠️ setNode: node '\(ndNm)' not found in circuit '\(self.module)' — skipping")
@@ -1110,29 +1132,7 @@ public final class Circuit {
         }
         if self.nodes[ndIndx].node.value != val {
             self.nodes[ndIndx].commit(val, tm: tm)
-            let wtch = self.snstvLU[ndIndx]
-            // stack alwysBlcks for any sense triggers
-            if wtch != nil {
-                switch wtch!.edge {
-                case .posedge:
-                    if wtch!.value == 0 && val == 1 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .negedge:
-                    if wtch!.value == 1 && val == 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .all:
-                    if (wtch!.value^val != 0)  {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .level:
-                    if (wtch!.value^val != 0)  {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                }
-                self.snstvLU[ndIndx]!.value = val
-            }
+            self.fireWatches(ndIndx, newVal: val, tm: tm)
             saveChng(self, indx: ndIndx)
         }
     }
@@ -1147,28 +1147,7 @@ public final class Circuit {
         let newVal = (oldVal & ~(1 << bitIndex)) | ((bitVal & 1) << bitIndex)
         if oldVal != newVal {
             self.nodes[ndIndx].commit(newVal, tm: tm)
-            let wtch = self.snstvLU[ndIndx]
-            if wtch != nil {
-                switch wtch!.edge {
-                case .posedge:
-                    if wtch!.value == 0 && newVal == 1 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .negedge:
-                    if wtch!.value == 1 && newVal == 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .all:
-                    if (wtch!.value ^ newVal) != 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .level:
-                    if (wtch!.value ^ newVal) != 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                }
-                self.snstvLU[ndIndx]!.value = newVal
-            }
+            self.fireWatches(ndIndx, newVal: newVal, tm: tm)
             saveChng(self, indx: ndIndx)
         }
     }
@@ -1186,28 +1165,7 @@ public final class Circuit {
         let newVal = (oldVal & ~mask) | ((val << lsb) & mask)
         if oldVal != newVal {
             self.nodes[ndIndx].commit(newVal, tm: tm)
-            let wtch = self.snstvLU[ndIndx]
-            if wtch != nil {
-                switch wtch!.edge {
-                case .posedge:
-                    if wtch!.value == 0 && newVal == 1 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .negedge:
-                    if wtch!.value == 1 && newVal == 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .all:
-                    if (wtch!.value ^ newVal) != 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                case .level:
-                    if (wtch!.value ^ newVal) != 0 {
-                        self.trigger(wtch!.alwysIndx, tm: tm)
-                    }
-                }
-                self.snstvLU[ndIndx]!.value = newVal
-            }
+            self.fireWatches(ndIndx, newVal: newVal, tm: tm)
             saveChng(self, indx: ndIndx)
         }
     }
@@ -1549,38 +1507,28 @@ extension Circuit {
                     let wtch = SensWatch(node: ndIndx,
                         value: curVal, edge: .posedge, alwysIndx: indx)
                     st.chngWtchs!.append(wtch)
-                    let wtch_ = self.snstvLU[ndIndx]
-                    if wtch_ == nil {
-                        self.snstvLU[ndIndx] = wtch
-                    }
+                    self.snstvLU[ndIndx, default: []].append(wtch)
                 case .edgeNeg(let nd_nm):
                     let ndIndx = self.nodeLU[nd_nm]!
                     let curVal = self.nodes[ndIndx].node.value
                     let wtch = SensWatch(node: self.nodeLU[nd_nm]!,
                         value: curVal, edge: .negedge, alwysIndx: indx)
                     st.chngWtchs!.append(wtch)
-                    let wtch_ = self.snstvLU[ndIndx]
-                    if wtch_ == nil {
-                        self.snstvLU[ndIndx] = wtch
-                    }
+                    self.snstvLU[ndIndx, default: []].append(wtch)
                 case .all(let nd_nm):
                     let ndIndx = self.nodeLU[nd_nm]!
                     let curVal = self.nodes[ndIndx].node.value
                     let wtch = SensWatch(node: ndIndx,
                         value: curVal, edge: .all, alwysIndx: indx)
                     st.chngWtchs!.append(wtch)
-                    if self.snstvLU[ndIndx] == nil {
-                        self.snstvLU[ndIndx] = wtch
-                    }
+                    self.snstvLU[ndIndx, default: []].append(wtch)
                 case .level(let nd_nm):
                     let ndIndx = self.nodeLU[nd_nm]!
                     let curVal = self.nodes[ndIndx].node.value
                     let wtch = SensWatch(node: ndIndx,
                         value: curVal, edge: .level, alwysIndx: indx)
                     st.chngWtchs!.append(wtch)
-                    if self.snstvLU[ndIndx] == nil {
-                        self.snstvLU[ndIndx] = wtch
-                    }
+                    self.snstvLU[ndIndx, default: []].append(wtch)
                 }
             }
             alwaysStates[indx] = st
