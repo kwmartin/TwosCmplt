@@ -1,0 +1,117 @@
+module: TST_JKDUR_7X2
+generated: true
+Constants:
+    PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 24*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
+      -   - R
+          - 1
+      -   - U
+          - 0
+      -   - L
+          - 0
+      -   - J
+          - 0
+      -   - K
+          - 0
+      -   - LI
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - R
+          - 0
+  - tm: 9.2*PER
+    vls:
+      -   - U
+          - 1
+      -   - L
+          - 1
+  - tm: 10.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - J
+          - 1
+  - tm: 11.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 12.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - J
+          - 0
+      -   - K
+          - 1
+  - tm: 13.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 14.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - J
+          - 1
+  - tm: 15.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 16.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - J
+          - 0
+      -   - K
+          - 0
+      -   - LI
+          - 1
+  - tm: 17.2*PER
+    vls:
+      -   - U
+          - 0
+      -   - J
+          - 1
+      -   - K
+          - 1
+      -   - LI
+          - 0
+Signals:
+    CLK: 1
+    U: 1
+    L: 1
+    LI: 1
+    J: 1
+    K: 1
+    R: 1
+SaveNds:
+  - name: QP
+    format: b
+  - name: QN
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    U: data_inputs
+    L: data_inputs
+    LI: data_inputs
+    J: data_inputs
+    K: data_inputs
+    R: data_inputs
+    QP: outputs
+    QN: outputs

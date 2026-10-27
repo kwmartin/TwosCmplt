@@ -1,0 +1,29 @@
+module: TST_PRPA
+generated: true
+Constants:
+    PER: 1
+FinishTime: 513*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - AN
+          - 0
+      -   - B0N
+          - 0
+Signals:
+    AN: 4
+    B0N: 1
+SaveNds:
+  - name: P
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    AN: data_inputs
+    B0N: data_inputs
+    P: outputs

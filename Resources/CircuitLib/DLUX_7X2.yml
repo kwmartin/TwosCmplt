@@ -3,7 +3,7 @@ module: DLUX_7X2
 params:
 -   kind: str
     name: circuit
-    value: async
+    value: sync
 -   kind: Int
     name: delay
     value: 5

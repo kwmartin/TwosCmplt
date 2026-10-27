@@ -1,52 +1,18 @@
 Constants:
-    PER: 100.0
+    PER: 100
 FinishTime: 131*PER
 TimeSpcs:
   - tm: 0
     vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
       -   - AN
           - 0
       -   - BN
           - 0
   - tm: 1*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 2*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 1
-  - tm: 3*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 0
-  - tm: 4*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 5*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 1
-  - tm: 6*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 7*PER
-    vls:
-      -   - BN
-          - 1
-  - tm: 8*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 9*PER
     vls:
       -   - AN
           - 1
@@ -56,11 +22,153 @@ TimeSpcs:
           - 0
       -   - BN
           - 0
+  - tm: 100*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 101*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 102*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 103*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 104*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 105*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 106*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 107*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 108*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 109*PER
+    vls:
+      -   - AN
+          - 1
   - tm: 11*PER
     vls:
       -   - BN
           - 1
+  - tm: 110*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 111*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 112*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 113*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 114*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 115*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 116*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 117*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 118*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 119*PER
+    vls:
+      -   - AN
+          - 1
   - tm: 12*PER
+    vls:
+      -   - BN
+          - 0
+  - tm: 120*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 121*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
+  - tm: 122*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 123*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 1
+  - tm: 125*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 126*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+  - tm: 127*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 128*PER
+    vls:
+      -   - BN
+          - 1
+  - tm: 129*PER
     vls:
       -   - BN
           - 0
@@ -68,6 +176,10 @@ TimeSpcs:
     vls:
       -   - AN
           - 1
+  - tm: 130*PER
+    vls:
+      -   - AN
+          - 0
   - tm: 14*PER
     vls:
       -   - AN
@@ -97,6 +209,12 @@ TimeSpcs:
   - tm: 19*PER
     vls:
       -   - AN
+          - 1
+  - tm: 2*PER
+    vls:
+      -   - AN
+          - 0
+      -   - BN
           - 1
   - tm: 20*PER
     vls:
@@ -146,6 +264,12 @@ TimeSpcs:
           - 0
       -   - BN
           - 0
+  - tm: 3*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 0
   - tm: 30*PER
     vls:
       -   - BN
@@ -187,6 +311,10 @@ TimeSpcs:
   - tm: 39*PER
     vls:
       -   - BN
+          - 0
+  - tm: 4*PER
+    vls:
+      -   - AN
           - 0
   - tm: 40*PER
     vls:
@@ -238,6 +366,12 @@ TimeSpcs:
           - 1
       -   - BN
           - 1
+  - tm: 5*PER
+    vls:
+      -   - AN
+          - 1
+      -   - BN
+          - 1
   - tm: 50*PER
     vls:
       -   - BN
@@ -282,6 +416,10 @@ TimeSpcs:
     vls:
       -   - AN
           - 1
+      -   - BN
+          - 0
+  - tm: 6*PER
+    vls:
       -   - BN
           - 0
   - tm: 60*PER
@@ -332,6 +470,10 @@ TimeSpcs:
     vls:
       -   - BN
           - 1
+  - tm: 7*PER
+    vls:
+      -   - BN
+          - 1
   - tm: 70*PER
     vls:
       -   - AN
@@ -376,6 +518,10 @@ TimeSpcs:
           - 0
       -   - BN
           - 1
+  - tm: 8*PER
+    vls:
+      -   - AN
+          - 0
   - tm: 80*PER
     vls:
       -   - BN
@@ -421,6 +567,10 @@ TimeSpcs:
   - tm: 89*PER
     vls:
       -   - BN
+          - 1
+  - tm: 9*PER
+    vls:
+      -   - AN
           - 1
   - tm: 90*PER
     vls:
@@ -470,151 +620,8 @@ TimeSpcs:
     vls:
       -   - BN
           - 1
-  - tm: 100*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 101*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 1
-  - tm: 102*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 103*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 104*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 105*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 1
-  - tm: 106*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 107*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 108*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 0
-  - tm: 109*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 110*PER
-    vls:
-      -   - BN
-          - 1
-  - tm: 111*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 112*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 113*PER
-    vls:
-      -   - BN
-          - 1
-  - tm: 114*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 115*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 1
-  - tm: 116*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 117*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 0
-  - tm: 118*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 1
-  - tm: 119*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 120*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 0
-  - tm: 121*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 1
-  - tm: 122*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 123*PER
-    vls:
-      -   - AN
-          - 1
-      -   - BN
-          - 0
-  - tm: 124*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 1
-  - tm: 125*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 126*PER
-    vls:
-      -   - AN
-          - 0
-      -   - BN
-          - 0
-  - tm: 127*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 128*PER
-    vls:
-      -   - BN
-          - 1
-  - tm: 129*PER
-    vls:
-      -   - BN
-          - 0
-  - tm: 130*PER
-    vls:
-      -   - AN
-          - 0
 module: TST_EXOR1_2X1
 generated: true
+SaveNds:
+  - name: OUT
+    format: b

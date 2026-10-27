@@ -1,0 +1,33 @@
+module: TST_EMX_4X1
+generated: true
+Constants:
+    PER: 1
+FinishTime: 513*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - ENBLN
+          - 0
+      -   - SN
+          - 0
+      -   - DN
+          - 0
+Signals:
+    ENBLN: 1
+    SN: 4
+    DN: 4
+SaveNds:
+  - name: OUT
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    ENBLN: data_inputs
+    SN: data_inputs
+    DN: data_inputs
+    OUT: outputs

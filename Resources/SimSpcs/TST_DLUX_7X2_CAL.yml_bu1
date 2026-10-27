@@ -1,0 +1,89 @@
+Constants:
+    PER: 100
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+FinishTime: 24*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
+      -   - INIT
+          - 1
+      -   - Q0
+          - 0
+      -   - U
+          - 0
+      -   - L
+          - 0
+      -   - LI
+          - 0
+      -   - D
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+  - tm: 9.2*PER
+    vls:
+      -   - U
+          - 1
+      -   - L
+          - 1
+  - tm: 10.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - LI
+          - 1
+  - tm: 11.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 12.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - LI
+          - 0
+      -   - D
+          - 1
+  - tm: 13.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 14.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - LI
+          - 1
+  - tm: 15.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 16.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - LI
+          - 0
+      -   - D
+          - 0
+  - tm: 17.2*PER
+    vls:
+      -   - U
+          - 0
+SaveNds:
+  - name: QP
+    format: b
+  - name: QN
+    format: b
+generated: true
+module: TST_DLUX_7X2_CAL

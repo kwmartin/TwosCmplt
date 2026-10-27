@@ -5,25 +5,76 @@ Constants:
 Clock:
   - clkNm: CLK
     per: PER
-    initVal: 0
 FinishTime: 24*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [CLK, 0]
-      - [VDD, 1]
-      - [VSS, 0]
-      - [INIT, 1]
-      - [L, 0]
-      - [D, 0]
-      - [T, 0]
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - L
+          - 0
+      -   - D
+          - 0
+      -   - T
+          - 0
   - tm: 0.1*PER
     vls:
-      - [INIT, 0]
-  - tm: 6.1*PER
+      -   - INIT
+          - 0
+  - tm: 10.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - D
+          - 1
+  - tm: 11.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 12.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - D
+          - 0
+      -   - T
+          - 1
+  - tm: 13.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 14.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - D
+          - 1
+  - tm: 15.2*PER
+    vls:
+      -   - L
+          - 1
+  - tm: 16.2*PER
+    vls:
+      -   - L
+          - 0
+      -   - D
+          - 0
+      -   - T
+          - 0
+  - tm: 17.2*PER
     vls:
       -   - T
+          - 1
+  - tm: 9.2*PER
+    vls:
+      -   - L
           - 1
 Signals:
     CLK: 1

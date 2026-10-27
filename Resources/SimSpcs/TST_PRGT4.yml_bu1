@@ -1,0 +1,19 @@
+Constants:
+    PER: 100
+FinishTime: 513*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+SaveNds:
+  - name: P
+    format: b
+generated: true
+module: TST_PRGT4

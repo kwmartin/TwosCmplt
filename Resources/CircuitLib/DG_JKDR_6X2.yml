@@ -19,6 +19,13 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
+-   -   kind: Wire
+        name: L0_IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: L
         signed: 'False'
@@ -90,43 +97,107 @@ decls:
         - 0
         length: []
 -   -   kind: Reg
-        name: QP
+        name: STATE
         signed: 'False'
         width:
         - 0
         - 0
         length: []
     -   kind: Reg
-        name: QN
+        name: CLKB
         signed: 'False'
         width:
         - 0
         - 0
         length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
 behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: L0_IN
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: ident
+            name: L
+        -   kind: ident
+            name: D
+        -   kind: cndexpr
+            args:
+            -   kind: ident
+                name: STATE
+            -   kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: K
+            -   kind: ident
+                name: J
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STATE
+    delay: 0
 -   kind: initial
     stmnts:
     -   kind: blckst
         lvalue:
             kind: ident
-            name: QP
+            name: STATE
         rvalue:
             kind: int
             value: 0
     -   kind: blckst
         lvalue:
             kind: ident
-            name: QN
+            name: CLKB
         rvalue:
             kind: int
-            value: 1
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
+        rvalue:
+            kind: int
+            value: 0
 -   kind: always
     onlyif:
-    -   edge: negedge
+    -   edge: all
         node: CP
     -   edge: posedge
         node: R
     stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: ident
+            name: CP
     -   kind: ifst
         cmpr_expr:
             kind: cmpr_expr
@@ -137,20 +208,13 @@ behav_blcks:
             -   kind: float
                 value: 100.0
         iftrue:
-        -   kind: blckst
+        -   kind: noblckst
             lvalue:
                 kind: ident
-                name: QP
+                name: STATE
             rvalue:
                 kind: int
                 value: 0
-        -   kind: blckst
-            lvalue:
-                kind: ident
-                name: QN
-            rvalue:
-                kind: int
-                value: 1
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -160,62 +224,48 @@ behav_blcks:
             -   kind: noblckst
                 lvalue:
                     kind: ident
-                    name: QP
+                    name: STATE
                 rvalue:
                     kind: int
                     value: 0
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QN
-                rvalue:
-                    kind: int
-                    value: 1
             ifelse:
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QP
-                rvalue:
-                    kind: cndexpr
-                    args:
-                    -   kind: ident
-                        name: L
-                    -   kind: ident
-                        name: D
-                    -   kind: cndexpr
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_unary
+                    arg:
+                        kind: uexpr
+                        oper: 'Ulnot:'
                         args:
                         -   kind: ident
-                            name: QP
-                        -   kind: uexpr
-                            oper: 'Unot:'
+                            name: CP
+                iftrue:
+                -   kind: ifst
+                    cmpr_expr:
+                        kind: cmpr_expr
+                        oper: 'BNotEq:'
+                        args:
+                        -   kind: ident
+                            name: STATE
+                        -   kind: ident
+                            name: L0_IN
+                    iftrue:
+                    -   kind: blckst
+                        lvalue:
+                            kind: ident
+                            name: chngs
+                        rvalue:
+                            kind: bexpr
+                            oper: 'BPlus:'
                             args:
                             -   kind: ident
-                                name: K
-                        -   kind: ident
-                            name: J
-            -   kind: noblckst
-                lvalue:
-                    kind: ident
-                    name: QN
-                rvalue:
-                    kind: cndexpr
-                    args:
-                    -   kind: ident
-                        name: L
-                    -   kind: uexpr
-                        oper: 'Unot:'
-                        args:
-                        -   kind: ident
-                            name: D
-                    -   kind: cndexpr
-                        args:
-                        -   kind: ident
-                            name: QP
-                        -   kind: ident
-                            name: K
-                        -   kind: uexpr
-                            oper: 'Unot:'
-                            args:
-                            -   kind: ident
-                                name: J
+                                name: chngs
+                            -   kind: int
+                                value: 1
+                    -   kind: noblckst
+                        lvalue:
+                            kind: ident
+                            name: STATE
+                        rvalue:
+                            kind: ident
+                            name: L0_IN
+

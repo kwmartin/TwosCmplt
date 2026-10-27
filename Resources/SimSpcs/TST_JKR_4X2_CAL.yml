@@ -1,10 +1,12 @@
+module: TST_JKR_4X2_CAL
+generated: true
 Constants:
     PER: 100
 Clock:
   - clkNm: CLK
     per: PER
-    initVal: 0
 FinishTime: 24*PER
+ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
@@ -70,10 +72,22 @@ TimeSpcs:
           - 1
       -   - K
           - 1
+Signals:
+    CLK: 1
+    J: 1
+    K: 1
+    R: 1
 SaveNds:
   - name: QP
     format: b
   - name: QN
     format: b
-generated: true
-module: TST_JKR_4X2_CAL
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    J: data_inputs
+    K: data_inputs
+    R: data_inputs
+    QP: outputs
+    QN: outputs

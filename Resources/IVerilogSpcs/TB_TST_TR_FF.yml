@@ -1,0 +1,79 @@
+module: TST_TR_FF
+generated: true
+Constants:
+    PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 24*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
+      -   - R
+          - 1
+      -   - T
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - R
+          - 0
+  - tm: 9.2*PER
+    vls:
+      -   - T
+          - 1
+  - tm: 10.2*PER
+    vls:
+      -   - T
+          - 0
+  - tm: 11.2*PER
+    vls:
+      -   - T
+          - 1
+  - tm: 12.2*PER
+    vls:
+      -   - T
+          - 0
+  - tm: 13.2*PER
+    vls:
+      -   - T
+          - 1
+  - tm: 14.2*PER
+    vls:
+      -   - T
+          - 0
+  - tm: 15.2*PER
+    vls:
+      -   - T
+          - 1
+  - tm: 16.2*PER
+    vls:
+      -   - T
+          - 0
+  - tm: 17.2*PER
+    vls:
+      -   - T
+          - 1
+Signals:
+    CLK: 1
+    T: 1
+    R: 1
+SaveNds:
+  - name: QP
+    format: b
+  - name: QN
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    T: data_inputs
+    R: data_inputs
+    QP: outputs
+    QN: outputs

@@ -1,0 +1,315 @@
+kind: verilog
+module: DG_JKDEUS_7X2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   name: U
+-   name: L
+-   name: D
+-   name: J
+-   name: K
+-   name: S
+-   name: CP
+-   name: QP
+-   name: QN
+-   name: VDD
+-   name: VSS
+decls:
+-   -   kind: Wire
+        name: L0_IN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Input
+        name: U
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: L
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: D
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: J
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: K
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: S
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VDD
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Input
+        name: VSS
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Output
+        name: QP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: QN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Reg
+        name: STATE
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: ENBL
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Reg
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Integer
+        name: chngs
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: L0_IN
+    rvalue:
+        kind: cndexpr
+        args:
+        -   kind: ident
+            name: U
+        -   kind: cndexpr
+            args:
+            -   kind: ident
+                name: L
+            -   kind: ident
+                name: D
+            -   kind: cndexpr
+                args:
+                -   kind: ident
+                    name: STATE
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: K
+                -   kind: ident
+                    name: J
+        -   kind: ident
+            name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QP
+    rvalue:
+        kind: ident
+        name: STATE
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: QN
+    rvalue:
+        kind: uexpr
+        oper: 'Unot:'
+        args:
+        -   kind: ident
+            name: STATE
+    delay: 0
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: STATE
+        rvalue:
+            kind: int
+            value: 1
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: ENBL
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: chngs
+        rvalue:
+            kind: int
+            value: 0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: L0_IN
+    -   edge: all
+        node: STATE
+    stmnts:
+        kind: blckst
+        lvalue:
+            kind: ident
+            name: ENBL
+        rvalue:
+            kind: cmpr_expr
+            oper: 'BNotEq:'
+            args:
+            -   kind: ident
+                name: L0_IN
+            -   kind: ident
+                name: STATE
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: CP
+    -   edge: all
+        node: ENBL
+    stmnts:
+        kind: noblckst
+        lvalue:
+            kind: ident
+            name: CLKB
+        rvalue:
+            kind: gt_expr
+            oper: 'BAnd:'
+            args:
+            -   kind: ident
+                name: CP
+            -   kind: ident
+                name: ENBL
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CP
+    -   edge: posedge
+        node: S
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BLessThan:'
+            args:
+            -   kind: sys_tm
+                name: time
+            -   kind: float
+                value: 100.0
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STATE
+            rvalue:
+                kind: int
+                value: 1
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_ident
+                node: S
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STATE
+                rvalue:
+                    kind: int
+                    value: 1
+            ifelse:
+            -   kind: ifst
+                cmpr_expr:
+                    kind: cmpr_ident
+                    node: ENBL
+                iftrue:
+                -   kind: blckst
+                    lvalue:
+                        kind: ident
+                        name: chngs
+                    rvalue:
+                        kind: bexpr
+                        oper: 'BPlus:'
+                        args:
+                        -   kind: ident
+                            name: chngs
+                        -   kind: int
+                            value: 1
+                -   kind: noblckst
+                    lvalue:
+                        kind: ident
+                        name: STATE
+                    rvalue:
+                        kind: ident
+                        name: L0_IN
+

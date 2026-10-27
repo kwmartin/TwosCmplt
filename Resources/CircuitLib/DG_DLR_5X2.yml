@@ -9,23 +9,14 @@ params:
     value: 5
 io_ports:
 -   name: L
-    direct: Input
 -   name: D
-    direct: Input
 -   name: LI
-    direct: Input
 -   name: R
-    direct: Input
 -   name: CP
-    direct: Input
 -   name: QP
-    direct: Output
 -   name: QN
-    direct: Output
 -   name: VDD
-    direct: Input
 -   name: VSS
-    direct: Input
 decls:
 -   -   kind: Wire
         name: L0_IN

@@ -1,48 +1,24 @@
 module: TST_DER_3X2
 generated: true
 Constants:
-  -   - PER
-      - 100
+    PER: 100
 Clock:
   - clkNm: CLK
     per: PER
+    delay: 0
     initVal: 0
 FinishTime: 16*PER
 TimeSpcs:
   - tm: 0
     vls:
-      -   - CLK
-          - 0
-      -   - VDD
-          - 1
-      -   - VSS
-          - 0
-  - tm: 0
-    vls:
-      -   - INIT
-          - 1
-      -   - D
-          - 0
+      - [CLK, 0]
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INIT, 1]
+      - [D, 0]
   - tm: 0.1*PER
     vls:
-      -   - INIT
-          - 0
-  - tm: 6.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 7.1*PER
-    vls:
-      -   - D
-          - 0
-  - tm: 8.1*PER
-    vls:
-      -   - D
-          - 1
-  - tm: 9.1*PER
-    vls:
-      -   - D
-          - 0
+      - [INIT, 0]
   - tm: 10.1*PER
     vls:
       -   - D
@@ -67,6 +43,22 @@ TimeSpcs:
     vls:
       -   - D
           - 0
+  - tm: 6.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 7.1*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 8.1*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 9.1*PER
+    vls:
+      -   - D
+          - 0
 Signals:
     CLK: 1
     INIT: 1
@@ -84,3 +76,4 @@ Classifications:
     D: data_inputs
     QP1: outputs
     QN1: outputs
+ResetRelease: 0.1*PER

@@ -1,0 +1,72 @@
+module: TST_LTCHSN_4X1
+generated: true
+Constants:
+    PER: 100
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 24*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
+      -   - SN
+          - 0
+      -   - D
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - SN
+          - 1
+  - tm: 9.2*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 10.2*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 11.2*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 12.2*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 13.2*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 14.2*PER
+    vls:
+      -   - D
+          - 0
+  - tm: 15.2*PER
+    vls:
+      -   - D
+          - 1
+  - tm: 16.2*PER
+    vls:
+      -   - D
+          - 0
+Signals:
+    CLK: 1
+    D: 1
+    SN: 1
+SaveNds:
+  - name: QP
+    format: b
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    D: data_inputs
+    SN: data_inputs
+    QP: outputs

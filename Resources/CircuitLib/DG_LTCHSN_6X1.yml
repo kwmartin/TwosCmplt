@@ -123,15 +123,27 @@ behav_blcks:
                 name: SN
         delay:
             kind: float
-            delay: 21.9
+            delay:
+                kind: bexpr
+                oper: 'Times:'
+                args:
+                -   kind: cndexpr
+                    args:
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SN
+                    -   kind: float
+                        value: 13.3
+                    -   kind: float
+                        value: 13.3
+                -   kind: float
+                    value: 1.0
 -   kind: always
     onlyif:
     -   edge: all
         node: D
-    -   edge: all
-        node: CP
-    -   edge: all
-        node: CN
     stmnts:
     -   kind: ifst
         cmpr_expr:
@@ -150,7 +162,23 @@ behav_blcks:
                     name: SN
             delay:
                 kind: float
-                delay: 21.9
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: cndexpr
+                        args:
+                        -   kind: uexpr
+                            oper: 'Unot:'
+                            args:
+                            -   kind: ident
+                                name: SN
+                        -   kind: float
+                            value: 13.3
+                        -   kind: float
+                            value: 13.3
+                    -   kind: float
+                        value: 1.0
         ifelse:
         -   kind: ifst
             cmpr_expr:
@@ -176,4 +204,98 @@ behav_blcks:
                     name: D
                 delay:
                     kind: float
-                    delay: 21.9
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: cndexpr
+                            args:
+                            -   kind: ident
+                                name: D
+                            -   kind: float
+                                value: 16.1
+                            -   kind: float
+                                value: 15.8
+                        -   kind: float
+                            value: 1.0
+-   kind: always
+    onlyif:
+    -   edge: all
+        node: CP
+    -   edge: all
+        node: CN
+    stmnts:
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_ident
+            node: INIT
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: STR
+            rvalue:
+                kind: uexpr
+                oper: 'Unot:'
+                args:
+                -   kind: ident
+                    name: SN
+            delay:
+                kind: float
+                delay:
+                    kind: bexpr
+                    oper: 'Times:'
+                    args:
+                    -   kind: cndexpr
+                        args:
+                        -   kind: uexpr
+                            oper: 'Unot:'
+                            args:
+                            -   kind: ident
+                                name: SN
+                        -   kind: float
+                            value: 13.3
+                        -   kind: float
+                            value: 13.3
+                    -   kind: float
+                        value: 1.0
+        ifelse:
+        -   kind: ifst
+            cmpr_expr:
+                kind: cmpr_gate
+                gate:
+                    kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: CP
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: CN
+            iftrue:
+            -   kind: noblckst
+                lvalue:
+                    kind: ident
+                    name: STR
+                rvalue:
+                    kind: ident
+                    name: D
+                delay:
+                    kind: float
+                    delay:
+                        kind: bexpr
+                        oper: 'Times:'
+                        args:
+                        -   kind: cndexpr
+                            args:
+                            -   kind: ident
+                                name: D
+                            -   kind: float
+                                value: 13.3
+                            -   kind: float
+                                value: 13.3
+                        -   kind: float
+                            value: 1.0
+

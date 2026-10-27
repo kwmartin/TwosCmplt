@@ -1,0 +1,29 @@
+module: TST_PRGT4
+generated: true
+Constants:
+    PER: 100
+FinishTime: 513*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - AN
+          - 0
+      -   - BN
+          - 0
+Signals:
+    AN: 4
+    BN: 4
+SaveNds:
+  - name: P
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    AN: data_inputs
+    BN: data_inputs
+    P: outputs

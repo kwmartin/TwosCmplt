@@ -78,12 +78,12 @@ behav_blcks:
             name: CLKBF
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DR__17
     module: DG_DR_3X2
@@ -768,4 +768,3 @@ behav_blcks:
         node:
             kind: ident
             name: VSS
-

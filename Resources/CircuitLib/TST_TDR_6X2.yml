@@ -76,7 +76,7 @@ decls:
 behav_blcks:
 -   kind: async
     name: INV1
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -92,12 +92,12 @@ behav_blcks:
             name: QN2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLD1
     module: CAP
@@ -159,15 +159,15 @@ behav_blcks:
             name: QN1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV2
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -183,12 +183,12 @@ behav_blcks:
             name: QP2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLD2
     module: CAP
@@ -230,10 +230,10 @@ behav_blcks:
             name: CN
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 

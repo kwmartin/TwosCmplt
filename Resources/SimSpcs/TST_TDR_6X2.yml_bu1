@@ -1,0 +1,42 @@
+Constants:
+  -   - PER
+      - 1000
+FinishTime: 16*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
+  - tm: 0
+    vls:
+      -   - INIT
+          - 1
+      -   - T
+          - 0
+      -   - LI
+          - 0
+      -   - L
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+  - tm: 6.1*PER
+    vls:
+      -   - T
+          - 1
+SaveNds:
+  - name: QP1
+    format: b
+  - name: QN1
+    format: b
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+generated: true
+module: TST_TDR_6X2

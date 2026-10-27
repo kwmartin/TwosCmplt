@@ -1,8 +1,7 @@
 module: TST_CMPL12
 generated: true
 Constants:
-  -   - PER
-      - 1000
+    PER: 1000
 FinishTime: 64*PER
 TimeSpcs:
   - tm: 0
@@ -18,38 +17,6 @@ TimeSpcs:
       -   - INVRT
           - 0
   - tm: 1.1*PER
-    vls:
-      -   - INVRT
-          - 1
-  - tm: 2.1*PER
-    vls:
-      -   - INVRT
-          - 0
-  - tm: 3.1*PER
-    vls:
-      -   - INVRT
-          - 1
-  - tm: 4.1*PER
-    vls:
-      -   - INVRT
-          - 0
-  - tm: 5.1*PER
-    vls:
-      -   - INVRT
-          - 1
-  - tm: 6.2*PER
-    vls:
-      -   - INVRT
-          - 0
-  - tm: 7.1*PER
-    vls:
-      -   - INVRT
-          - 1
-  - tm: 8*PER
-    vls:
-      -   - INVRT
-          - 0
-  - tm: 9.1*PER
     vls:
       -   - INVRT
           - 1
@@ -93,6 +60,10 @@ TimeSpcs:
     vls:
       -   - INVRT
           - 1
+  - tm: 2.1*PER
+    vls:
+      -   - INVRT
+          - 0
   - tm: 20.1*PER
     vls:
       -   - INVRT
@@ -130,6 +101,10 @@ TimeSpcs:
       -   - INVRT
           - 0
   - tm: 29.1*PER
+    vls:
+      -   - INVRT
+          - 1
+  - tm: 3.1*PER
     vls:
       -   - INVRT
           - 1
@@ -173,6 +148,10 @@ TimeSpcs:
     vls:
       -   - INVRT
           - 1
+  - tm: 4.1*PER
+    vls:
+      -   - INVRT
+          - 0
   - tm: 40*PER
     vls:
       -   - INVRT
@@ -210,6 +189,10 @@ TimeSpcs:
       -   - INVRT
           - 0
   - tm: 49.1*PER
+    vls:
+      -   - INVRT
+          - 1
+  - tm: 5.1*PER
     vls:
       -   - INVRT
           - 1
@@ -253,6 +236,10 @@ TimeSpcs:
     vls:
       -   - INVRT
           - 1
+  - tm: 6.2*PER
+    vls:
+      -   - INVRT
+          - 0
   - tm: 60.1*PER
     vls:
       -   - INVRT
@@ -266,6 +253,18 @@ TimeSpcs:
       -   - INVRT
           - 0
   - tm: 63.1*PER
+    vls:
+      -   - INVRT
+          - 1
+  - tm: 7.1*PER
+    vls:
+      -   - INVRT
+          - 1
+  - tm: 8*PER
+    vls:
+      -   - INVRT
+          - 0
+  - tm: 9.1*PER
     vls:
       -   - INVRT
           - 1

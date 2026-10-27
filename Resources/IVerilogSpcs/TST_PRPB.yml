@@ -1,5 +1,5 @@
 Constants:
-    PER: 100.0
+    PER: 100
 FinishTime: 721*PER
 TimeSpcs:
   - tm: 0
@@ -12,611 +12,25 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 0
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - AN
+          - 0
   - tm: 1*PER
     vls:
       -   - AN[3]
           - 1
       -   - AN[2]
           - 1
-  - tm: 2*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 3*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 4*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 5*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 6*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 7*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 8*PER
-    vls:
-      -   - AN[2]
-          - 0
-  - tm: 9*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
   - tm: 10*PER
     vls:
       -   - AN[3]
           - 0
       -   - AN[0]
-          - 0
-  - tm: 11*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 0
-  - tm: 12*PER
-    vls:
-      -   - AN[3]
-          - 0
-  - tm: 13*PER
-    vls:
-      -   - AN[2]
-          - 1
-  - tm: 14*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 15*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 16*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 17*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 18*PER
-    vls:
-      -   - AN[1]
-          - 0
-  - tm: 19*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 20*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 21*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 22*PER
-    vls:
-      -   - AN[0]
-          - 0
-  - tm: 23*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 24*PER
-    vls:
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 25*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 26*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-  - tm: 27*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-  - tm: 28*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 29*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 30*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 31*PER
-    vls:
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 32*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 33*PER
-    vls:
-      -   - AN[3]
-          - 0
-  - tm: 34*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 1
-  - tm: 35*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 1
-  - tm: 36*PER
-    vls:
-      -   - AN[3]
-          - 1
-  - tm: 37*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 38*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 39*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 1
-  - tm: 40*PER
-    vls:
-      -   - AN[0]
-          - 1
-  - tm: 41*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 42*PER
-    vls:
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 43*PER
-    vls:
-      -   - AN[2]
-          - 0
-  - tm: 44*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 1
-  - tm: 45*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 46*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 47*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 1
-  - tm: 48*PER
-    vls:
-      -   - AN[3]
-          - 1
-  - tm: 49*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 50*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 1
-  - tm: 51*PER
-    vls:
-      -   - AN[0]
-          - 0
-  - tm: 52*PER
-    vls:
-      -   - AN[2]
-          - 1
-  - tm: 53*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-  - tm: 54*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 55*PER
-    vls:
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 56*PER
-    vls:
-      -   - AN[1]
-          - 0
-  - tm: 57*PER
-    vls:
-      -   - AN[3]
-          - 1
-  - tm: 58*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 59*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 60*PER
-    vls:
-      -   - AN[2]
-          - 1
-  - tm: 61*PER
-    vls:
-      -   - AN[3]
-          - 1
-  - tm: 62*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 63*PER
-    vls:
-      -   - AN[0]
-          - 1
-  - tm: 64*PER
-    vls:
-      -   - AN[1]
-          - 1
-  - tm: 65*PER
-    vls:
-      -   - AN[2]
-          - 1
-  - tm: 66*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 67*PER
-    vls:
-      -   - AN[1]
-          - 0
-  - tm: 68*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 69*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 70*PER
-    vls:
-      -   - AN[0]
-          - 0
-  - tm: 71*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 72*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 73*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 74*PER
-    vls:
-      -   - AN[1]
-          - 1
-  - tm: 75*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[0]
-          - 1
-  - tm: 76*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-  - tm: 77*PER
-    vls:
-      -   - AN[0]
-          - 0
-  - tm: 78*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 79*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 80*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-  - tm: 81*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 82*PER
-    vls:
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 83*PER
-    vls:
-      -   - AN[0]
-          - 0
-  - tm: 84*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 85*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 86*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[2]
-          - 1
-  - tm: 87*PER
-    vls:
-      -   - AN[2]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 88*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 89*PER
-    vls:
-      -   - AN[1]
-          - 1
-  - tm: 90*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 91*PER
-    vls:
-      -   - AN[0]
-          - 1
-  - tm: 92*PER
-    vls:
-      -   - AN[1]
-          - 1
-      -   - AN[0]
-          - 0
-  - tm: 93*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 94*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 0
-  - tm: 95*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 96*PER
-    vls:
-      -   - AN[3]
-          - 0
-      -   - AN[1]
-          - 0
-      -   - AN[0]
-          - 1
-  - tm: 97*PER
-    vls:
-      -   - AN[2]
-          - 0
-  - tm: 98*PER
-    vls:
-      -   - AN[2]
-          - 1
-      -   - AN[1]
-          - 1
-  - tm: 99*PER
-    vls:
-      -   - AN[3]
-          - 1
-      -   - AN[2]
-          - 0
-      -   - AN[1]
           - 0
   - tm: 100*PER
     vls:
@@ -680,6 +94,12 @@ TimeSpcs:
     vls:
       -   - AN[3]
           - 1
+  - tm: 11*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 0
   - tm: 110*PER
     vls:
       -   - AN[1]
@@ -742,6 +162,10 @@ TimeSpcs:
     vls:
       -   - AN[0]
           - 1
+  - tm: 12*PER
+    vls:
+      -   - AN[3]
+          - 0
   - tm: 120*PER
     vls:
       -   - AN[1]
@@ -808,6 +232,10 @@ TimeSpcs:
           - 0
       -   - AN[2]
           - 0
+  - tm: 13*PER
+    vls:
+      -   - AN[2]
+          - 1
   - tm: 130*PER
     vls:
       -   - AN[2]
@@ -858,6 +286,14 @@ TimeSpcs:
     vls:
       -   - AN[2]
           - 0
+  - tm: 14*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 1
   - tm: 140*PER
     vls:
       -   - AN[3]
@@ -922,6 +358,12 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 15*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 150*PER
     vls:
       -   - AN[3]
@@ -992,6 +434,14 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 0
+  - tm: 16*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 1
   - tm: 160*PER
     vls:
       -   - AN[3]
@@ -1058,6 +508,14 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 17*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 170*PER
     vls:
       -   - AN[3]
@@ -1118,6 +576,10 @@ TimeSpcs:
     vls:
       -   - AN[1]
           - 1
+  - tm: 18*PER
+    vls:
+      -   - AN[1]
+          - 0
   - tm: 180*PER
     vls:
       -   - AN[0]
@@ -1175,6 +637,12 @@ TimeSpcs:
       -   - AN[2]
           - 0
   - tm: 189*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[0]
+          - 1
+  - tm: 19*PER
     vls:
       -   - AN[3]
           - 1
@@ -1250,6 +718,18 @@ TimeSpcs:
           - 1
       -   - AN[1]
           - 1
+  - tm: 2*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 20*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 200*PER
     vls:
       -   - AN[3]
@@ -1318,6 +798,16 @@ TimeSpcs:
     vls:
       -   - AN[1]
           - 1
+  - tm: 21*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 1
   - tm: 210*PER
     vls:
       -   - AN[1]
@@ -1374,6 +864,10 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 22*PER
+    vls:
+      -   - AN[0]
+          - 0
   - tm: 220*PER
     vls:
       -   - AN[1]
@@ -1446,6 +940,16 @@ TimeSpcs:
           - 0
       -   - AN[2]
           - 1
+  - tm: 23*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
   - tm: 230*PER
     vls:
       -   - AN[2]
@@ -1512,6 +1016,12 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 1
+  - tm: 24*PER
+    vls:
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 240*PER
     vls:
       -   - AN[1]
@@ -1576,6 +1086,16 @@ TimeSpcs:
     vls:
       -   - AN[3]
           - 0
+  - tm: 25*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
   - tm: 250*PER
     vls:
       -   - AN[0]
@@ -1631,6 +1151,12 @@ TimeSpcs:
   - tm: 259*PER
     vls:
       -   - AN[0]
+          - 0
+  - tm: 26*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
           - 0
   - tm: 260*PER
     vls:
@@ -1696,6 +1222,12 @@ TimeSpcs:
     vls:
       -   - AN[1]
           - 0
+  - tm: 27*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
   - tm: 270*PER
     vls:
       -   - AN[3]
@@ -1774,6 +1306,12 @@ TimeSpcs:
           - 1
       -   - AN[1]
           - 1
+  - tm: 28*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 280*PER
     vls:
       -   - AN[3]
@@ -1840,6 +1378,12 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 29*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 1
   - tm: 290*PER
     vls:
       -   - AN[1]
@@ -1896,6 +1440,22 @@ TimeSpcs:
     vls:
       -   - AN[2]
           - 0
+  - tm: 3*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+  - tm: 30*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[0]
+          - 1
   - tm: 300*PER
     vls:
       -   - AN[3]
@@ -1962,6 +1522,12 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 1
+  - tm: 31*PER
+    vls:
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 310*PER
     vls:
       -   - AN[3]
@@ -2026,6 +1592,14 @@ TimeSpcs:
           - 1
       -   - AN[1]
           - 0
+  - tm: 32*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 1
   - tm: 320*PER
     vls:
       -   - AN[1]
@@ -2082,6 +1656,10 @@ TimeSpcs:
           - 0
       -   - AN[2]
           - 1
+  - tm: 33*PER
+    vls:
+      -   - AN[3]
+          - 0
   - tm: 330*PER
     vls:
       -   - AN[2]
@@ -2143,6 +1721,12 @@ TimeSpcs:
   - tm: 339*PER
     vls:
       -   - AN[3]
+          - 1
+  - tm: 34*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
           - 1
   - tm: 340*PER
     vls:
@@ -2212,6 +1796,12 @@ TimeSpcs:
     vls:
       -   - AN[1]
           - 0
+  - tm: 35*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 1
   - tm: 350*PER
     vls:
       -   - AN[3]
@@ -2272,6 +1862,10 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 36*PER
+    vls:
+      -   - AN[3]
+          - 1
   - tm: 360*PER
     vls:
       -   - AN[3]
@@ -2340,6 +1934,12 @@ TimeSpcs:
           - 1
       -   - AN[1]
           - 1
+  - tm: 37*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 0
   - tm: 370*PER
     vls:
       -   - AN[3]
@@ -2410,6 +2010,12 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 38*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 380*PER
     vls:
       -   - AN[3]
@@ -2478,6 +2084,14 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 0
+  - tm: 39*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 1
   - tm: 390*PER
     vls:
       -   - AN[3]
@@ -2537,6 +2151,18 @@ TimeSpcs:
   - tm: 399*PER
     vls:
       -   - AN[1]
+          - 1
+  - tm: 4*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 0
+  - tm: 40*PER
+    vls:
+      -   - AN[0]
           - 1
   - tm: 400*PER
     vls:
@@ -2598,6 +2224,14 @@ TimeSpcs:
     vls:
       -   - AN[1]
           - 0
+  - tm: 41*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 410*PER
     vls:
       -   - AN[3]
@@ -2654,6 +2288,12 @@ TimeSpcs:
           - 0
   - tm: 419*PER
     vls:
+      -   - AN[0]
+          - 1
+  - tm: 42*PER
+    vls:
+      -   - AN[1]
+          - 1
       -   - AN[0]
           - 1
   - tm: 420*PER
@@ -2720,6 +2360,10 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 43*PER
+    vls:
+      -   - AN[2]
+          - 0
   - tm: 430*PER
     vls:
       -   - AN[3]
@@ -2788,6 +2432,12 @@ TimeSpcs:
           - 0
       -   - AN[2]
           - 0
+  - tm: 44*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 1
   - tm: 440*PER
     vls:
       -   - AN[3]
@@ -2839,6 +2489,12 @@ TimeSpcs:
       -   - AN[1]
           - 0
       -   - AN[0]
+          - 0
+  - tm: 45*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
           - 0
   - tm: 450*PER
     vls:
@@ -2900,6 +2556,12 @@ TimeSpcs:
     vls:
       -   - AN[2]
           - 0
+  - tm: 46*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 460*PER
     vls:
       -   - AN[2]
@@ -2956,6 +2618,12 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 47*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 1
   - tm: 470*PER
     vls:
       -   - AN[0]
@@ -3013,6 +2681,10 @@ TimeSpcs:
       -   - AN[2]
           - 0
       -   - AN[1]
+          - 1
+  - tm: 48*PER
+    vls:
+      -   - AN[3]
           - 1
   - tm: 480*PER
     vls:
@@ -3082,6 +2754,14 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 49*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
   - tm: 490*PER
     vls:
       -   - AN[3]
@@ -3145,6 +2825,18 @@ TimeSpcs:
       -   - AN[1]
           - 1
       -   - AN[0]
+          - 1
+  - tm: 5*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[0]
+          - 1
+  - tm: 50*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
           - 1
   - tm: 500*PER
     vls:
@@ -3210,6 +2902,10 @@ TimeSpcs:
     vls:
       -   - AN[0]
           - 1
+  - tm: 51*PER
+    vls:
+      -   - AN[0]
+          - 0
   - tm: 510*PER
     vls:
       -   - AN[3]
@@ -3274,6 +2970,10 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 52*PER
+    vls:
+      -   - AN[2]
+          - 1
   - tm: 520*PER
     vls:
       -   - AN[2]
@@ -3334,6 +3034,12 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 1
+  - tm: 53*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
   - tm: 530*PER
     vls:
       -   - AN[1]
@@ -3402,6 +3108,12 @@ TimeSpcs:
           - 0
       -   - AN[2]
           - 0
+  - tm: 54*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 0
   - tm: 540*PER
     vls:
       -   - AN[2]
@@ -3460,6 +3172,12 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 55*PER
+    vls:
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 1
   - tm: 550*PER
     vls:
       -   - AN[2]
@@ -3522,6 +3240,10 @@ TimeSpcs:
     vls:
       -   - AN[2]
           - 1
+  - tm: 56*PER
+    vls:
+      -   - AN[1]
+          - 0
   - tm: 560*PER
     vls:
       -   - AN[3]
@@ -3584,6 +3306,10 @@ TimeSpcs:
           - 1
       -   - AN[2]
           - 1
+  - tm: 57*PER
+    vls:
+      -   - AN[3]
+          - 1
   - tm: 570*PER
     vls:
       -   - AN[2]
@@ -3642,6 +3368,16 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 58*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 580*PER
     vls:
       -   - AN[3]
@@ -3703,6 +3439,14 @@ TimeSpcs:
       -   - AN[2]
           - 0
       -   - AN[1]
+          - 1
+  - tm: 59*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
           - 1
   - tm: 590*PER
     vls:
@@ -3784,6 +3528,18 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 6*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
+  - tm: 60*PER
+    vls:
+      -   - AN[2]
+          - 1
   - tm: 600*PER
     vls:
       -   - AN[2]
@@ -3847,6 +3603,10 @@ TimeSpcs:
       -   - AN[3]
           - 0
       -   - AN[2]
+          - 1
+  - tm: 61*PER
+    vls:
+      -   - AN[3]
           - 1
   - tm: 610*PER
     vls:
@@ -3914,6 +3674,14 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 62*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 0
   - tm: 620*PER
     vls:
       -   - AN[3]
@@ -3976,6 +3744,10 @@ TimeSpcs:
     vls:
       -   - AN[3]
           - 0
+      -   - AN[0]
+          - 1
+  - tm: 63*PER
+    vls:
       -   - AN[0]
           - 1
   - tm: 630*PER
@@ -4044,6 +3816,10 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 0
+  - tm: 64*PER
+    vls:
+      -   - AN[1]
+          - 1
   - tm: 640*PER
     vls:
       -   - AN[1]
@@ -4106,6 +3882,10 @@ TimeSpcs:
           - 1
       -   - AN[1]
           - 0
+  - tm: 65*PER
+    vls:
+      -   - AN[2]
+          - 1
   - tm: 650*PER
     vls:
       -   - AN[1]
@@ -4160,6 +3940,12 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 66*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 660*PER
     vls:
       -   - AN[3]
@@ -4222,6 +4008,10 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 67*PER
+    vls:
+      -   - AN[1]
+          - 0
   - tm: 670*PER
     vls:
       -   - AN[3]
@@ -4292,6 +4082,14 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 68*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 1
   - tm: 680*PER
     vls:
       -   - AN[0]
@@ -4344,6 +4142,12 @@ TimeSpcs:
           - 0
       -   - AN[0]
           - 1
+  - tm: 69*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
   - tm: 690*PER
     vls:
       -   - AN[3]
@@ -4398,6 +4202,16 @@ TimeSpcs:
           - 0
       -   - AN[1]
           - 0
+  - tm: 7*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 0
+  - tm: 70*PER
+    vls:
+      -   - AN[0]
+          - 0
   - tm: 700*PER
     vls:
       -   - AN[2]
@@ -4451,6 +4265,12 @@ TimeSpcs:
   - tm: 709*PER
     vls:
       -   - AN[3]
+          - 1
+  - tm: 71*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[0]
           - 1
   - tm: 710*PER
     vls:
@@ -4518,11 +4338,202 @@ TimeSpcs:
           - 1
       -   - AN[0]
           - 1
+  - tm: 72*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
   - tm: 720*PER
     vls:
       -   - AN[1]
           - 0
       -   - AN[0]
           - 0
+  - tm: 73*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+  - tm: 74*PER
+    vls:
+      -   - AN[1]
+          - 1
+  - tm: 75*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[0]
+          - 1
+  - tm: 76*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+  - tm: 77*PER
+    vls:
+      -   - AN[0]
+          - 0
+  - tm: 78*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 79*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
+  - tm: 8*PER
+    vls:
+      -   - AN[2]
+          - 0
+  - tm: 80*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+  - tm: 81*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+  - tm: 82*PER
+    vls:
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 83*PER
+    vls:
+      -   - AN[0]
+          - 0
+  - tm: 84*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 1
+  - tm: 85*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 86*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[2]
+          - 1
+  - tm: 87*PER
+    vls:
+      -   - AN[2]
+          - 0
+      -   - AN[0]
+          - 0
+  - tm: 88*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 89*PER
+    vls:
+      -   - AN[1]
+          - 1
+  - tm: 9*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 1
+  - tm: 90*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 0
+  - tm: 91*PER
+    vls:
+      -   - AN[0]
+          - 1
+  - tm: 92*PER
+    vls:
+      -   - AN[1]
+          - 1
+      -   - AN[0]
+          - 0
+  - tm: 93*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 94*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 0
+  - tm: 95*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+  - tm: 96*PER
+    vls:
+      -   - AN[3]
+          - 0
+      -   - AN[1]
+          - 0
+      -   - AN[0]
+          - 1
+  - tm: 97*PER
+    vls:
+      -   - AN[2]
+          - 0
+  - tm: 98*PER
+    vls:
+      -   - AN[2]
+          - 1
+      -   - AN[1]
+          - 1
+  - tm: 99*PER
+    vls:
+      -   - AN[3]
+          - 1
+      -   - AN[2]
+          - 0
+      -   - AN[1]
+          - 0
 module: TST_PRPB
 generated: true
+SaveNds:
+  - name: P
+    format: b

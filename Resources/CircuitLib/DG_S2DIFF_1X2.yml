@@ -71,7 +71,9 @@ behav_blcks:
     rvalue:
         kind: ident
         name: IN
-    delay: 20.0
+    delay:
+    - 5.55
+    - 5.72
 -   kind: assign
     lvalue:
         kind: ident
@@ -82,4 +84,7 @@ behav_blcks:
         args:
         -   kind: ident
             name: IN
-    delay: 20.0
+    delay:
+    - 4.85
+    - 5.42
+

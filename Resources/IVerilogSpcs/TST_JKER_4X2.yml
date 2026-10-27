@@ -10,9 +10,12 @@ ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [VDD, 1]
-      - [VSS, 0]
-      - [CLK, 0]
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - CLK
+          - 0
       -   - INIT
           - 1
       -   - J
@@ -23,10 +26,6 @@ TimeSpcs:
     vls:
       -   - INIT
           - 0
-  - tm: 9.2*PER
-    vls:
-      -   - J
-          - 1
   - tm: 10.2*PER
     vls:
       -   - J
@@ -68,6 +67,10 @@ TimeSpcs:
       -   - J
           - 1
       -   - K
+          - 1
+  - tm: 9.2*PER
+    vls:
+      -   - J
           - 1
 Signals:
     CLK: 1

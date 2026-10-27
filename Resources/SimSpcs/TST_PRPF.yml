@@ -1,0 +1,29 @@
+module: TST_PRPF
+generated: true
+Constants:
+    PER: 100
+FinishTime: 513*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - AN
+          - 0
+      -   - B7N
+          - 0
+Signals:
+    AN: 4
+    B7N: 1
+SaveNds:
+  - name: P
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    AN: data_inputs
+    B7N: data_inputs
+    P: outputs

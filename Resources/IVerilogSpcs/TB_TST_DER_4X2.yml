@@ -1,6 +1,12 @@
+module: TST_DER_4X2
+generated: true
 Constants:
     PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
 FinishTime: 24*PER
+ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
@@ -50,13 +56,20 @@ TimeSpcs:
     vls:
       -   - D
           - 1
+Signals:
+    CLK: 1
+    D: 1
+    R: 1
 SaveNds:
   - name: QP
     format: b
   - name: QN
     format: b
-Clock:
-  - clkNm: CLK
-    per: PER
-generated: true
-module: TST_DER_4X2
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    D: data_inputs
+    R: data_inputs
+    QP: outputs
+    QN: outputs

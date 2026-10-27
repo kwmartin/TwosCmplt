@@ -1,0 +1,948 @@
+module: TST_KM_HADDRC
+generated: true
+Constants:
+    PER: 100
+FinishTime: 169*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 1*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 2*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 3*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 4*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 5*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 6*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 7*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 8*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 9*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 10*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 11*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 12*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 13*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 14*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 15*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 16*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 17*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 18*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 19*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 20*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 21*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 22*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 23*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 24*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 25*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 26*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 27*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 28*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 29*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 30*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 31*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 32*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 33*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 34*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 35*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 36*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 37*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 38*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 39*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 40*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 41*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 42*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 43*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 44*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 45*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 46*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 47*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 48*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 49*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 50*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 51*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 52*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 53*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 54*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 55*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 56*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 57*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 58*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 59*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 60*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 61*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 62*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 63*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 64*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 65*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 66*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 67*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 68*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 69*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 70*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 71*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 72*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 73*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 74*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 75*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 76*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 77*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 78*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 79*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 80*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 81*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 82*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 83*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 84*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 85*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 86*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 87*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 88*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 89*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 90*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 91*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 92*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 93*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 94*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 95*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 96*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 97*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 98*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 99*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 100*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 101*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 102*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 103*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 104*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 105*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 106*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 107*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 108*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 109*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 110*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 111*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 112*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 113*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 114*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 115*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 116*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 117*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 118*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 119*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 120*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 121*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 122*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 123*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 125*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 126*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 127*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 128*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 129*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 130*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 131*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 132*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 1
+  - tm: 133*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 134*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 135*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 136*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 137*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 138*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 139*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 140*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 0
+  - tm: 141*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 142*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - AN
+          - 0
+  - tm: 143*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 144*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 145*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 146*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 147*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 1
+  - tm: 148*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 149*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 150*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 151*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 152*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 153*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+  - tm: 154*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 155*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 156*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 157*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 158*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 159*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - CINN
+          - 0
+  - tm: 160*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 161*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 162*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 163*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 164*PER
+    vls:
+      -   - ZERON
+          - 1
+  - tm: 165*PER
+    vls:
+      -   - ZERON
+          - 0
+      -   - AN
+          - 1
+  - tm: 166*PER
+    vls:
+      -   - ZERON
+          - 1
+      -   - CINN
+          - 0
+  - tm: 167*PER
+    vls:
+      -   - ZERON
+          - 0
+  - tm: 168*PER
+    vls:
+      -   - AN
+          - 0
+Signals:
+    CINN: 1
+    AN: 1
+    ZERON: 1
+SaveNds:
+  - name: SUM
+    format: b
+  - name: COUT
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    CINN: data_inputs
+    AN: data_inputs
+    ZERON: data_inputs
+    SUM: outputs
+    COUT: outputs

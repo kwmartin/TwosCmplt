@@ -53,7 +53,16 @@ behav_blcks:
         oper: 'Times:'
         args:
         -   kind: float
-            value: 12.3
+            value: 4.13
         -   kind: float
             value: 1.0
         name: None
+    -   kind: bexpr
+        oper: 'Times:'
+        args:
+        -   kind: float
+            value: 5.05
+        -   kind: float
+            value: 1.0
+        name: None
+

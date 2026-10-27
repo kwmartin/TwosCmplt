@@ -1,9 +1,16 @@
+module: TST_NAND2_2X1
+generated: true
 Constants:
     PER: 1
 FinishTime: 131*PER
+ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
       -   - AN
           - 0
       -   - BN
@@ -616,5 +623,15 @@ TimeSpcs:
     vls:
       -   - AN
           - 0
-module: TST_NAND2_2X1
-generated: true
+Signals:
+    AN: 1
+    BN: 1
+SaveNds:
+  - name: OUT
+    format: b
+Classifications:
+    VDD: power
+    VSS: power
+    AN: data_inputs
+    BN: data_inputs
+    OUT: outputs

@@ -189,8 +189,8 @@ behav_blcks:
                             name: D
 -   kind: always
     onlyif:
-    -   - all
-        - null
+    -   edge: all
+        node: STATE
     stmnts:
         kind: blckst
         lvalue:

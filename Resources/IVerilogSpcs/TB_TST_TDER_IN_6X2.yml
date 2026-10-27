@@ -5,8 +5,7 @@ Constants:
 Clock:
   - clkNm: CLK
     per: PER
-    initVal: 0
-FinishTime: 24*PER
+FinishTime: 16*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
@@ -19,61 +18,17 @@ TimeSpcs:
           - 0
       -   - INITIN
           - 1
-      -   - LIN
+      -   - TIN
           - 0
       -   - LIIN
           - 0
-      -   - TIN
+      -   - LIN
           - 0
   - tm: 0.1*PER
     vls:
       -   - INITIN
           - 0
-  - tm: 9.2*PER
-    vls:
-      -   - LIN
-          - 1
-  - tm: 10.2*PER
-    vls:
-      -   - LIN
-          - 0
-      -   - LIIN
-          - 1
-  - tm: 11.2*PER
-    vls:
-      -   - LIN
-          - 1
-  - tm: 12.2*PER
-    vls:
-      -   - LIN
-          - 0
-      -   - LIIN
-          - 0
-      -   - TIN
-          - 1
-  - tm: 13.2*PER
-    vls:
-      -   - LIN
-          - 1
-  - tm: 14.2*PER
-    vls:
-      -   - LIN
-          - 0
-      -   - LIIN
-          - 1
-  - tm: 15.2*PER
-    vls:
-      -   - LIN
-          - 1
-  - tm: 16.2*PER
-    vls:
-      -   - LIN
-          - 0
-      -   - LIIN
-          - 0
-      -   - TIN
-          - 0
-  - tm: 17.2*PER
+  - tm: 8.1*PER
     vls:
       -   - TIN
           - 1
@@ -92,7 +47,7 @@ Classifications:
     CLK: clocks
     VDD: power
     VSS: power
-    INITIN: resets
+    INITIN: data_inputs
     TIN: data_inputs
     LIIN: data_inputs
     LIN: data_inputs

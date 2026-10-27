@@ -103,15 +103,15 @@ behav_blcks:
             name: COUT
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
-    name: iNV_IDL5
-    module: DG_INV4_1X1
+    name: INV_IDL5
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -127,15 +127,15 @@ behav_blcks:
             name: CIN
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_IDL6
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -151,15 +151,15 @@ behav_blcks:
             name: A
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_IDL7
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -175,15 +175,15 @@ behav_blcks:
             name: B
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_IDL3
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -199,12 +199,12 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLD1
     module: CAP
@@ -226,7 +226,7 @@ behav_blcks:
             name: VSS
 -   kind: async
     name: INV_IDL2
-    module: DG_INV4_1X1
+    module: DG_INV2_1X1
     params:
     -   kind: str
         value: async
@@ -242,12 +242,12 @@ behav_blcks:
             name: CON
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CLD2
     module: CAP

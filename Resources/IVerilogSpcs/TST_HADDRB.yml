@@ -7,8 +7,10 @@ ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [VDD, 1]
-      - [VSS, 0]
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
       -   - CINN
           - 1
       -   - AN
@@ -17,36 +19,134 @@ TimeSpcs:
     vls:
       -   - AN
           - 0
-  - tm: 2*PER
+  - tm: 100*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 101*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 102*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 103*PER
     vls:
       -   - CINN
           - 0
       -   - AN
-          - 1
-  - tm: 3*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 6*PER
-    vls:
-      -   - AN
           - 0
-  - tm: 7*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 1
-  - tm: 8*PER
+  - tm: 104*PER
     vls:
       -   - CINN
           - 1
       -   - AN
+          - 1
+  - tm: 106*PER
+    vls:
+      -   - CINN
           - 0
+      -   - AN
+          - 0
+  - tm: 107*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 108*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 109*PER
+    vls:
+      -   - AN
+          - 1
   - tm: 11*PER
     vls:
       -   - CINN
           - 0
+      -   - AN
+          - 1
+  - tm: 110*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 111*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
+  - tm: 112*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 113*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 114*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 115*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 116*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 117*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 119*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
+  - tm: 120*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 122*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 1
+  - tm: 123*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 0
+  - tm: 124*PER
+    vls:
+      -   - CINN
+          - 1
+  - tm: 125*PER
+    vls:
+      -   - CINN
+          - 0
+  - tm: 126*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 127*PER
+    vls:
+      -   - AN
+          - 0
+  - tm: 129*PER
+    vls:
       -   - AN
           - 1
   - tm: 13*PER
@@ -55,6 +155,10 @@ TimeSpcs:
           - 1
       -   - AN
           - 0
+  - tm: 130*PER
+    vls:
+      -   - CINN
+          - 1
   - tm: 14*PER
     vls:
       -   - AN
@@ -71,6 +175,12 @@ TimeSpcs:
           - 0
   - tm: 17*PER
     vls:
+      -   - AN
+          - 1
+  - tm: 2*PER
+    vls:
+      -   - CINN
+          - 0
       -   - AN
           - 1
   - tm: 20*PER
@@ -105,6 +215,10 @@ TimeSpcs:
     vls:
       -   - CINN
           - 0
+  - tm: 3*PER
+    vls:
+      -   - CINN
+          - 1
   - tm: 30*PER
     vls:
       -   - CINN
@@ -211,6 +325,10 @@ TimeSpcs:
     vls:
       -   - CINN
           - 1
+  - tm: 6*PER
+    vls:
+      -   - AN
+          - 0
   - tm: 60*PER
     vls:
       -   - CINN
@@ -247,6 +365,12 @@ TimeSpcs:
     vls:
       -   - CINN
           - 0
+  - tm: 7*PER
+    vls:
+      -   - CINN
+          - 0
+      -   - AN
+          - 1
   - tm: 71*PER
     vls:
       -   - CINN
@@ -277,6 +401,12 @@ TimeSpcs:
           - 1
       -   - AN
           - 1
+  - tm: 8*PER
+    vls:
+      -   - CINN
+          - 1
+      -   - AN
+          - 0
   - tm: 81*PER
     vls:
       -   - CINN
@@ -353,134 +483,6 @@ TimeSpcs:
     vls:
       -   - CINN
           - 0
-  - tm: 100*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 101*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 102*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 103*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 0
-  - tm: 104*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 1
-  - tm: 106*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 0
-  - tm: 107*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 1
-  - tm: 108*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 109*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 110*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 111*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 0
-  - tm: 112*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 113*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 1
-  - tm: 114*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 0
-  - tm: 115*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 116*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 117*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 119*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 1
-  - tm: 120*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 122*PER
-    vls:
-      -   - CINN
-          - 1
-      -   - AN
-          - 1
-  - tm: 123*PER
-    vls:
-      -   - CINN
-          - 0
-      -   - AN
-          - 0
-  - tm: 124*PER
-    vls:
-      -   - CINN
-          - 1
-  - tm: 125*PER
-    vls:
-      -   - CINN
-          - 0
-  - tm: 126*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 127*PER
-    vls:
-      -   - AN
-          - 0
-  - tm: 129*PER
-    vls:
-      -   - AN
-          - 1
-  - tm: 130*PER
-    vls:
-      -   - CINN
-          - 1
 Signals:
     CINN: 1
     AN: 1

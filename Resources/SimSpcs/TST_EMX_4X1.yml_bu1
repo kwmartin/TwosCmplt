@@ -1,0 +1,21 @@
+Constants:
+    PER: 100
+FinishTime: 513*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - ENBLN
+          - 0
+      -   - SN
+          - 0
+      -   - DN
+          - 0
+SaveNds:
+  - name: OUT
+    format: b
+generated: true
+module: TST_EMX_4X1
