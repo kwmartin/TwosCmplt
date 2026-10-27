@@ -1527,6 +1527,23 @@ public func loadSpecs(fromURL url: URL) -> (per: Int, finishTm: Int, tmSpcs: [Ti
     }
 }
 
+/// Within one half-period window, apply the input changes at each time before
+/// the window's last change time, in order, and evaluate the combinational
+/// (async) pass at that time -- as an event-driven simulator does -- so logic
+/// fed by those inputs responds when they change, not at the window's end
+/// (DG_DER_3X2: D at 710 ps, CLK at 750 ps; `always @(D or STATE)` ran at 750).
+/// The changes at the last time are left in `spcs` for the window's usual
+/// evaluation, so clocked logic is still evaluated at the clock edge.
+func evalEarlierInputs(_ circ: Circuit, _ spcs: inout [TimeSpec]) {
+    let times = Set(spcs.map { $0.tm }).sorted()
+    guard let last = times.last, times.count > 1 else { return }
+    for t in times.dropLast() {
+        setInputs(circ, tmSpcs: spcs.filter { $0.tm == t })
+        circ.eval(async: true, tm: t)
+    }
+    spcs = spcs.filter { $0.tm == last }
+}
+
 public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSpec]) -> [TimeSpec] {
 
     DbgLggr.shared.close()
@@ -1554,6 +1571,7 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
     while tm <= finishTm {
         // inputSpcs = tmSpcs.filter { $0.tm >= tm && $0.tm <= tm2  && $0.vl.0 != "CLK"}
         inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2}
+        evalEarlierInputs(circ, &inputSpcs)
 
         if let maxSpec = inputSpcs.max(by: { $0.tm < $1.tm }) {
             if maxSpec.tm > updTm {
@@ -1568,6 +1586,7 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
         tm2 += per/2
         // inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2 && $0.vl.0 == "CLK"}
         inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2}
+        evalEarlierInputs(circ, &inputSpcs)
 
         if let maxSpec = inputSpcs.max(by: { $0.tm < $1.tm }) {
             if maxSpec.tm > updTm {
