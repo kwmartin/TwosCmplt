@@ -1576,7 +1576,17 @@ extension Circuit {
         // trigger" semantics — rather than being force-refreshed. See
         // CircDef.md.
 
-        for alwysIndx in self.alwysStk {
+        // A work list, not `for ... in alwysStk`: a for-in walks a copy taken
+        // when the loop starts, so a block woken by another block's
+        // non-blocking update (DG_DER_3X2: `STATE <= D` wakes
+        // `always @(D or STATE) ENBL = ...`) was never run, and the caller
+        // then cleared the stack. Verilog runs it in the same timestep.
+        var next = 0
+        while next < self.alwysStk.count {
+            precondition(next < 1000, "\(self.module): more than 1000 always-block runs in one "
+                         + "timestep: blocks keep waking each other")
+            let alwysIndx = self.alwysStk[next]
+            next += 1
             self.runAlwysBlck(alwysIndx, ctx: &ctx)
         }
 
