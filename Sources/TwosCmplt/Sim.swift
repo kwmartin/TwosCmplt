@@ -154,6 +154,22 @@ public struct Constants: Decodable, Sendable {
             return
         }
 
+        // A whole number written with a decimal point (PER: 100.0, as Python
+        // writes a float) is the same constant; anything else (100.5) is not.
+        if let dict = try? single.decode([String: Double].self) {
+            var values: [Constant] = []
+            for (name, d) in dict {
+                guard let v = Constant.wholeInt(d) else {
+                    throw DecodingError.dataCorruptedError(
+                        in: single,
+                        debugDescription: "Constant \(name) must be a whole number, not \(d)")
+                }
+                values.append(Constant(name: name, value: v))
+            }
+            self.values = values.sorted { $0.name < $1.name }
+            return
+        }
+
         if let array = try? single.decode([Constant].self) {
             self.values = array
             return
@@ -180,7 +196,23 @@ public struct Constant: Decodable, Sendable {
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         self.name = try container.decode(String.self)
-        self.value = try container.decode(Int.self)
+        if let v = try? container.decode(Int.self) {
+            self.value = v
+        } else {
+            let d = try container.decode(Double.self)
+            guard let v = Constant.wholeInt(d) else {
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Constant \(name) must be a whole number, not \(d)")
+            }
+            self.value = v
+        }
+    }
+
+    /// d as an Int when it is a whole number (100.0 -> 100), else nil.
+    static func wholeInt(_ d: Double) -> Int? {
+        guard d.isFinite, d.rounded() == d, abs(d) < 9.0e15 else { return nil }
+        return Int(d)
     }
 }
 
