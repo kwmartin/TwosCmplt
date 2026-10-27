@@ -1145,8 +1145,37 @@ public struct CaseStmntYAML: Decodable {
     public let cases: [CaseItemYAML]
 }
 
+extension KeyedDecodingContainer {
+    /// A statement list, or a single statement in its place: the pipeline
+    /// writes the body of a one-statement block (`always @(D or STATE)
+    /// ENBL = ...;`, no begin/end) as the statement itself, not a one-item
+    /// list. Only a value that isn't a list at this key is taken as one
+    /// statement; an error inside a list is reported as before.
+    func decodeStmnts(forKey key: Key) throws -> [StmntYAML] {
+        do {
+            return try decode([StmntYAML].self, forKey: key)
+        } catch DecodingError.typeMismatch(_, let context)
+                    where context.codingPath.count == codingPath.count + 1 {
+            return [try decode(StmntYAML.self, forKey: key)]
+        }
+    }
+
+    func decodeStmntsIfPresent(forKey key: Key) throws -> [StmntYAML]? {
+        contains(key) ? try decodeStmnts(forKey: key) : nil
+    }
+}
+
 public struct InitBlckYAML: Decodable {
     public let stmnts: [StmntYAML]
+
+    private enum CodingKeys: String, CodingKey {
+        case stmnts
+    }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        self.stmnts = try c.decodeStmnts(forKey: .stmnts)
+    }
 }
 
 public struct AlwaysBlckYAML: Decodable {
@@ -1161,7 +1190,7 @@ public struct AlwaysBlckYAML: Decodable {
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.stmnts = try c.decode([StmntYAML].self, forKey: .stmnts)
+        self.stmnts = try c.decodeStmnts(forKey: .stmnts)
 
         if c.contains(.onlyif) {
             let raw = try c.decode([EdgeChngYAML].self, forKey: .onlyif)
@@ -1249,8 +1278,8 @@ public struct IfStmntYAML: Decodable {
         let c = try decoder.container(keyedBy: CodingKeys.self)
 
         self.cmpr_expr = try c.decode(ExprYAML.self, forKey: .cmpr_expr)
-        self.iftrue    = try c.decode([StmntYAML].self, forKey: .iftrue)
-        self.ifelse    = try c.decodeIfPresent([StmntYAML].self, forKey: .ifelse) ?? []
+        self.iftrue    = try c.decodeStmnts(forKey: .iftrue)
+        self.ifelse    = try c.decodeStmntsIfPresent(forKey: .ifelse) ?? []
     }
 }
 
