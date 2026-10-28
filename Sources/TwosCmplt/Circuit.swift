@@ -1129,9 +1129,20 @@ public final class Circuit {
         }
     }
 
-    func setNode(_ ndNm: String, val: Int, tm: Int) {
+    /// supersede: a combinational write (an assign, or a blocking assignment
+    /// in an always block without a clock edge). One stamped earlier than the
+    /// node's latest change replaces it: that change was computed before
+    /// this earlier input change had arrived (cells are evaluated in
+    /// dependency order, not time order). TST_CNTRM8's DG_TDER_6X2: L0_IN =
+    /// 1 at 70 ps (T rose, L read as 0) was recorded before L0_IN = 0 at 65
+    /// ps (L rose at 65), and the dump read 1 from 70 on (2026-10-28).
+    func setNode(_ ndNm: String, val: Int, tm: Int, supersede: Bool = false) {
         guard let ndIndx = self.nodeLU[ndNm] else {
             print("⚠️ setNode: node '\(ndNm)' not found in circuit '\(self.module)' — skipping")
+            return
+        }
+        if supersede && tm < self.nodes[ndIndx].updTm {
+            self.mergeBits(ndIndx, mask: -1, bits: val, tm: tm, overwriteLater: true)
             return
         }
         if self.nodes[ndIndx].node.value != val {
@@ -1169,7 +1180,10 @@ public final class Circuit {
     // 10504 where it was 3 (and 0 at 10532 where it was 2). A write earlier
     // than the node's latest change is merged into the value at its own time,
     // and into every later value and recorded change of the node.
-    func mergeBits(_ ndIndx: Int, mask: Int, bits: Int, tm: Int) {
+    /// overwriteLater (setNode's supersede): rewrite the later values and
+    /// records even when the value at tm doesn't change -- they were
+    /// computed before this write's input had arrived.
+    func mergeBits(_ ndIndx: Int, mask: Int, bits: Int, tm: Int, overwriteLater: Bool = false) {
         let merge = { (v: Int) in (v & ~mask) | bits }
         let nd = self.nodes[ndIndx]
         if tm >= nd.updTm {
@@ -1184,7 +1198,7 @@ public final class Circuit {
         }
         let oldAt = nd.value(at: tm)
         let newAt = merge(oldAt)
-        if oldAt == newAt { return }
+        if oldAt == newAt && !overwriteLater { return }
         // The later values: the history after tm, and the current value.
         for i in self.nodes[ndIndx].hist.indices where self.nodes[ndIndx].hist[i].tm > tm {
             self.nodes[ndIndx].hist[i].value = merge(self.nodes[ndIndx].hist[i].value)
@@ -1214,7 +1228,9 @@ public final class Circuit {
             i -= 1
             looked += 1
         }
-        saveChng(self, indx: ndIndx, value: newAt, tm: tm)
+        if oldAt != newAt {
+            saveChng(self, indx: ndIndx, value: newAt, tm: tm)
+        }
         if self.nodes[ndIndx].node.value != oldCur {
             self.fireWatches(ndIndx, newVal: self.nodes[ndIndx].node.value, tm: tm)
         }
@@ -1390,14 +1406,28 @@ public final class Circuit {
             for indx in self.alwysNoSns {
                 self.alwysStk.append(indx)
             }
-            if !self.alwysStk.isEmpty {
+            // An always block's result read by a continuous assign (a
+            // latch's `assign QP = STR`, STR <= #d D) must reach the assign
+            // now, stamped with the reg's own time (asgnReadTm), not at the
+            // cell's next input event: TST_LTCHR_4X1's QP followed STR only
+            // at the next CP edge, half a period late (2026-10-28). So re-run
+            // the assigns after the always blocks while either changes
+            // something; an assign change can wake an always block again.
+            var iter = 0
+            while !self.alwysStk.isEmpty && iter < Circuit.loopIterCap {
+                iter += 1
                 ctx.circ = self
                 ctx.simTime = inputTm
+                let chngsBefore = Glbls.chngCount
                 self.simVrlgAlwys(ctx: &ctx)
                 self.alwysStk = []
+                if Glbls.chngCount == chngsBefore { break }
+                for cmp in evalOrder where cmp.kind == .assgnBlk {
+                    ctx.circ = self
+                    ctx.simTime = inputTm
+                    self.runAssignBlck(cmp.index, ctx: &ctx)
+                }
             }
-            // Assigns are no longer re-run here after always-blocks fire —
-            // see the note above the main evalOrder dispatch loop.
         }
 
         for cmp in evalOrder {
@@ -1742,8 +1772,15 @@ extension Circuit {
         // edge (Nod.value(at:)) and its non-blocking updates are scheduled
         // from the edge -- independent of where it falls in evalOrder or
         // which pass of the sweep it fires in.
+        // A combinational block acts when the change that woke it happened,
+        // if that is after the sweep time: in a sync cell the sweep time is
+        // the half-period boundary, and DG_TDER_6X2's
+        // `always @(L0_IN or STATE) ENBL = ...`, woken by L0_IN at 166 ps,
+        // stamped ENBL at 100 ps -- before the 124 ps change it follows
+        // (TST_CNTRM8, 2026-10-28).
         let sweepTm = ctx.simTime
-        if hasClockEdge { ctx.simTime = circuit.alwaysStates[indx].trigTm }
+        let trigTm = circuit.alwaysStates[indx].trigTm
+        if hasClockEdge { ctx.simTime = trigTm } else if trigTm > sweepTm { ctx.simTime = trigTm }
         run(ctx: &ctx)
         ctx.simTime = sweepTm
         ctx.isEdgeTriggered = false

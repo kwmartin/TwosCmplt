@@ -1304,12 +1304,20 @@ public func setLeftNet(lvalue: LValueAST,
         baseTm = c.asgnReadTm
     }
     let updTm = baseTm + (delay ?? 0)
+    // An assign, or a blocking assignment in an always block without a clock
+    // edge, is combinational: its write replaces a later one (Circuit.setNode).
+    var combinational = false
+    switch ctx.behavIdx {
+    case .assgnBlock: combinational = true
+    case .alwaysBlock: combinational = !ctx.isEdgeTriggered
+    default: break
+    }
 
     switch lvalue {
     case .net(let name):
         let arcDelay = ctx.circDef.timingArcs.first(where: { $0.dst == name })?.delay ?? 0
         if ctx.circ?.nodeLU[name] != nil {
-            ctx.circ!.setNode(name, val: val, tm: updTm + arcDelay)
+            ctx.circ!.setNode(name, val: val, tm: updTm + arcDelay, supersede: combinational)
         } else {
             ctx.vars[name] = .int(val)
         }
