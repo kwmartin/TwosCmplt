@@ -8,63 +8,28 @@ params:
     name: delay
     value: 5
 io_ports:
--   name: A3
--   name: A2
--   name: A1
--   name: A0
--   name: P
--   name: VDD
--   name: VSS
-decls:
--   -   kind: Input
-        name: A3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: A0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VDD
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Input
-        name: VSS
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Output
-        name: P
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: P
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
 behav_blcks:
 -   kind: assign
     lvalue:
@@ -80,13 +45,21 @@ behav_blcks:
             -   kind: gt_expr
                 oper: 'BAnd:'
                 args:
-                -   kind: ident
-                    name: A0
-                -   kind: ident
-                    name: A1
-            -   kind: ident
-                name: A2
-        -   kind: ident
-            name: A3
+                -   kind: bit
+                    name: A
+                    sgmnts:
+                    - 0
+                -   kind: bit
+                    name: A
+                    sgmnts:
+                    - 1
+            -   kind: bit
+                name: A
+                sgmnts:
+                - 2
+        -   kind: bit
+            name: A
+            sgmnts:
+            - 3
     delay: 9.0
 

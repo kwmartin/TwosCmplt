@@ -87,12 +87,12 @@ behav_blcks:
             name: QN1
     -   port: VDD
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV_IDL1
     module: DG_INV2_1X1

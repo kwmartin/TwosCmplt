@@ -94,28 +94,28 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: DP
-            -   kind: ident
-                name: DN
+            kind: ident
+            name: DP
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: ENP
-            -   kind: ident
-                name: ENN
+            kind: ident
+            name: DN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: QP
-            -   kind: ident
-                name: QN
+            kind: ident
+            name: ENP
+    -   port: None
+        node:
+            kind: ident
+            name: ENN
+    -   port: None
+        node:
+            kind: ident
+            name: QP
+    -   port: None
+        node:
+            kind: ident
+            name: QN
     -   port: None
         node:
             kind: concat

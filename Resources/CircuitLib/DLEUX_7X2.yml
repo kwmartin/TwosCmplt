@@ -153,12 +153,12 @@ behav_blcks:
             name: QN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: MX1
     module: DG_MXN1_3X1
@@ -185,12 +185,12 @@ behav_blcks:
             name: DIN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: MX2
     module: DG_MXN1_3X1
@@ -217,12 +217,12 @@ behav_blcks:
             name: L0_IN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV_2
     module: DG_INV2_1X1
@@ -241,12 +241,12 @@ behav_blcks:
             name: N511
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: sync
     name: LO
     module: DG_LTCHSN_6X1
@@ -265,32 +265,32 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: IP
-            -   kind: ident
-                name: IN
+            kind: ident
+            name: IP
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: CP
-            -   kind: ident
-                name: CN
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
     -   port: None
         node:
             kind: ident
             name: L_0
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: INV_5
     module: DG_INV2_1X1
@@ -309,12 +309,12 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: sync
     name: L1
     module: DG_LTCHSN_6X1
@@ -333,32 +333,32 @@ behav_blcks:
             name: SN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: IP
-            -   kind: ident
-                name: IN
+            kind: ident
+            name: IP
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: CN
-            -   kind: ident
-                name: CP
+            kind: ident
+            name: IN
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: CP
     -   port: None
         node:
             kind: ident
             name: L_1
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: S1
     module: DG_SE2DIFF_1X2
@@ -385,12 +385,12 @@ behav_blcks:
             name: CN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: S2
     module: DG_SNGL2DIFF_1X2
@@ -413,12 +413,12 @@ behav_blcks:
             name: IN
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: EXOR
     module: DG_EXOR1_2X1
@@ -441,9 +441,10 @@ behav_blcks:
             name: E
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

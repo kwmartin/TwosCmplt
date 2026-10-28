@@ -1,185 +1,184 @@
 kind: verilog
 module: TST_DEUR_4X2
 params:
--   kind: str
-    name: circuit
-    value: sync
--   kind: Int
+  - kind: Int
     name: delay
     value: 5
+  - kind: str
+    name: circuit
+    value: sync
 io_ports:
--   kind: Wire
+  - kind: Wire
     name: QP
     direct: 'Output:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: QN
     direct: 'Output:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: U
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: D
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: R
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: CLK
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
--   kind: Wire
+  - kind: Wire
     name: VSS
     direct: 'Input:'
     signed: 'False'
 decls:
--   -   kind: Wire
+  -   - kind: Wire
         name: QN_L
         signed: 'False'
         width:
-        - 0
-        - 0
+          - 0
+          - 0
         length: []
--   -   kind: Wire
+  -   - kind: Wire
         name: QP_L
         signed: 'False'
         width:
-        - 0
-        - 0
+          - 0
+          - 0
         length: []
 behav_blcks:
--   kind: sync
+  - kind: sync
     name: FF
     module: DG_DEUR_4X2
     params:
-    -   kind: str
+      - kind: str
         value: sync
         name: circuit
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: U
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: D
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: R
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: CLK
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QP
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QN
-    -   port: None
+      - port: None
         node:
             kind: concat
             sgmnts:
-            -   kind: ident
+              - kind: ident
                 name: VDD
-            -   kind: ident
+              - kind: ident
                 name: VSS
--   kind: async
+  - kind: async
     name: INV_IDL100
     module: DG_INV2_1X1
     params:
-    -   kind: str
+      - kind: str
         value: async
         name: circuit
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QP
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QP_L
-    -   port: None
+      - port: None
         node:
             kind: concat
             sgmnts:
-            -   kind: ident
+              - kind: ident
                 name: VDD
-            -   kind: ident
+              - kind: ident
                 name: VSS
--   kind: async
+  - kind: async
     name: CLD1
     module: CAP
     params:
-    -   kind: str
+      - kind: str
         value: async
         name: circuit
-    -   kind: str
+      - kind: str
         value: 5F
         name: value
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QP_L
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: VSS
--   kind: async
+  - kind: async
     name: INV_IDL101
     module: DG_INV2_1X1
     params:
-    -   kind: str
+      - kind: str
         value: async
         name: circuit
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QN
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QN_L
-    -   port: None
+      - port: None
         node:
             kind: concat
             sgmnts:
-            -   kind: ident
+              - kind: ident
                 name: VDD
-            -   kind: ident
+              - kind: ident
                 name: VSS
--   kind: async
+  - kind: async
     name: CLD2
     module: CAP
     params:
-    -   kind: str
+      - kind: str
         value: async
         name: circuit
-    -   kind: str
+      - kind: str
         value: 5F
         name: value
     ports:
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: QN_L
-    -   port: None
+      - port: None
         node:
             kind: ident
             name: VSS
-

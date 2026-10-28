@@ -2,7 +2,7 @@ module: TST_PRPA
 generated: true
 Constants:
     PER: 100
-FinishTime: 513*PER
+FinishTime: 33*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
@@ -11,9 +11,135 @@ TimeSpcs:
           - 1
       -   - VSS
           - 0
+      -   - B0N
+          - 1
+      -   - AN
+          - 15
+  - tm: 2*PER
+    vls:
+      -   - AN
+          - 14
+  - tm: 3*PER
+    vls:
+      -   - AN
+          - 13
+  - tm: 4*PER
+    vls:
+      -   - AN
+          - 12
+  - tm: 5*PER
+    vls:
+      -   - AN
+          - 11
+  - tm: 6*PER
+    vls:
+      -   - AN
+          - 10
+  - tm: 7*PER
+    vls:
+      -   - AN
+          - 9
+  - tm: 8*PER
+    vls:
+      -   - AN
+          - 8
+  - tm: 9*PER
+    vls:
+      -   - AN
+          - 7
+  - tm: 10*PER
+    vls:
+      -   - AN
+          - 6
+  - tm: 11*PER
+    vls:
+      -   - AN
+          - 5
+  - tm: 12*PER
+    vls:
+      -   - AN
+          - 4
+  - tm: 13*PER
+    vls:
+      -   - AN
+          - 3
+  - tm: 14*PER
+    vls:
+      -   - AN
+          - 2
+  - tm: 15*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 16*PER
+    vls:
       -   - AN
           - 0
+  - tm: 17*PER
+    vls:
       -   - B0N
+          - 0
+      -   - AN
+          - 15
+  - tm: 18*PER
+    vls:
+      -   - AN
+          - 14
+  - tm: 19*PER
+    vls:
+      -   - AN
+          - 13
+  - tm: 20*PER
+    vls:
+      -   - AN
+          - 12
+  - tm: 21*PER
+    vls:
+      -   - AN
+          - 11
+  - tm: 22*PER
+    vls:
+      -   - AN
+          - 10
+  - tm: 23*PER
+    vls:
+      -   - AN
+          - 9
+  - tm: 24*PER
+    vls:
+      -   - AN
+          - 8
+  - tm: 25*PER
+    vls:
+      -   - AN
+          - 7
+  - tm: 26*PER
+    vls:
+      -   - AN
+          - 6
+  - tm: 27*PER
+    vls:
+      -   - AN
+          - 5
+  - tm: 28*PER
+    vls:
+      -   - AN
+          - 4
+  - tm: 29*PER
+    vls:
+      -   - AN
+          - 3
+  - tm: 30*PER
+    vls:
+      -   - AN
+          - 2
+  - tm: 31*PER
+    vls:
+      -   - AN
+          - 1
+  - tm: 32*PER
+    vls:
+      -   - AN
           - 0
 Signals:
     AN: 4

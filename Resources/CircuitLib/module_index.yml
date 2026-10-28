@@ -1,4 +1,4 @@
-generated: '2026-10-27T22:40:24+00:00'
+generated: '2026-10-28T12:26:20+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -735,8 +735,7 @@ modules:
     DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DLEUX_7X2.v
-        clean: false
-        stale_reason: 'missing: ast, unl'
+        clean: true
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -744,8 +743,7 @@ modules:
     DLUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUX_7X2.v
-        clean: false
-        stale_reason: verilog content changed
+        clean: true
     DVD2_QD:
         directory: verilogParse/ver_lib
         file_name: DVD2_QD.v
@@ -789,6 +787,11 @@ modules:
         directory: verilogParse/ver_lib
         file_name: HADDR_2X2.v
         clean: true
+    JK_FF_R_4X2:
+        directory: verilogParse/ver_lib
+        file_name: JK_FF_R_4X2.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     KM_AND2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_AND2_DIFF.v
@@ -1314,6 +1317,11 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
         clean: true
+    TST_JK_FF_R_4X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_JK_FF_R_4X2.v
+        clean: false
+        stale_reason: 'missing: circuit_lib'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v

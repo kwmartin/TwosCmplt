@@ -81,12 +81,12 @@ behav_blcks:
             name: INIT
     -   port: None
         node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: CP
-            -   kind: ident
-                name: CN
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
     -   port: None
         node:
             kind: ident

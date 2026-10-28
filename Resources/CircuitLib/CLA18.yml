@@ -453,9 +453,10 @@ behav_blcks:
             name: net2
     -   port: None
         node:
-            kind: concat
+            kind: slice
+            name: net3
             sgmnts:
-            -   kind: ident
-                name: net3_1
-            -   kind: ident
-                name: net3_0
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
