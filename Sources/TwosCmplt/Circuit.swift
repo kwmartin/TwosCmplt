@@ -1577,6 +1577,18 @@ extension Circuit {
             if snstvs.isEmpty {
                 self.alwysNoSns.append(indx)
                 self.alwysStk.append(indx)
+            } else if !snstvs.contains(where: {
+                if case .edgePos = $0 { return true }
+                if case .edgeNeg = $0 { return true }
+                return false
+            }) {
+                // A combinational block runs once at start-up, as Verilog's
+                // x -> initial-value changes at time 0 trigger it. Values here
+                // start at 0, so DG_DES_3X2's `always @(D or STATE) ENBL =
+                // (D != STATE)` never ran with D = 0 and the initial STATE = 1:
+                // ENBL stayed 0 and the first falling edge kept STATE = 1
+                // (TST_DES_3X2, 2026-10-28).
+                self.alwysStk.append(indx)
             }
             var st = alwaysStates[indx]
             for sns in snstvs {
