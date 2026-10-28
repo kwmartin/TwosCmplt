@@ -1,0 +1,36 @@
+history-changing early writes, by cause:
+     455  mergeBits | H1 other writer instance | effect merge
+      14  setNode-supersede | H4 earlier sweep/sub-sweep | effect merge
+      13  setNode-supersede | H4 loop repeat | effect merge
+harmless (effect none): 166998 in 13 testbenches
+
+per testbench:
+  TST_CLA8: 193  193 mergeBits | H1 other writer instance | effect merge
+  TST_CLA16: 179  179 mergeBits | H1 other writer instance | effect merge
+  TST_ACCUM3: 64  64 mergeBits | H1 other writer instance | effect merge
+  TST_CNTRM8: 21  14 setNode-supersede | H4 earlier sweep/sub-sweep | effect merge; 7 setNode-supersede | H4 loop repeat | effect merge
+  TST_CLA4: 19  19 mergeBits | H1 other writer instance | effect merge
+  TST_CNTR8G: 6  6 setNode-supersede | H4 loop repeat | effect merge
+
+first example of each (testbench, cause):
+  TST_ACCUM3 [mergeBits | H1 other writer instance | effect merge] Top.ACCM0.QD_ new 4049=0 after 4050=49152 | phase hp 7 sync-then-async t=4000
+      writer: Top(TST_ACCUM3) sync tm=4000 / ACCM0(M1M_QDACCUM5) sync tm=4000 / BUF16(DG_BUF4_1X1) async tm=4000 / out-ports
+      earlier record by: Top(TST_ACCUM3) sync tm=4000 / ACCM0(M1M_QDACCUM5) sync tm=4000 / INV2(DG_INV4_1X1) async tm=4000 / out-ports (hp 7 sync-then-async t=4000)
+  TST_CLA16 [mergeBits | H1 other writer instance | effect merge] Top.CELL.CLA8_1.CLA8_0.CLA2_1.S new 504=2 after 620=0 | phase hp 3 sync-then-async t=500
+      writer: CLA8_0(CLA4) async tm=500 / CLA2_1(CLA2) async tm=500 / CLA1_1(CLA1) async tm=500 / out-ports
+      earlier record by: CLA8_0(CLA4) async tm=500 / CLA2_1(CLA2) async tm=500 / CLA1_0(CLA1) async tm=500 / out-ports (hp 3 sync-then-async t=500)
+  TST_CLA4 [mergeBits | H1 other writer instance | effect merge] Top.CELL.CLA2_1.S new 10504=2 after 10532=0 | phase hp 83 sync-then-async t=10500
+      writer: CELL(CLA4) async tm=10500 / CLA2_1(CLA2) async tm=10500 / CLA1_1(CLA1) async tm=10500 / out-ports
+      earlier record by: CELL(CLA4) async tm=10500 / CLA2_1(CLA2) async tm=10500 / CLA1_0(CLA1) async tm=10500 / out-ports (hp 83 sync-then-async t=10500)
+  TST_CLA8 [mergeBits | H1 other writer instance | effect merge] Top.CELL.S new 254=0 after 304=250 | phase hp 1 sync-then-async t=250
+      writer: Top(TST_CLA8) sync tm=250 / CELL(CLA8) async tm=250 / CLA8_1(CLA4) async tm=250 / out-ports
+      earlier record by: Top(TST_CLA8) sync tm=250 / CELL(CLA8) async tm=250 / CLA8_0(CLA4) async tm=250 / out-ports (hp 1 sync-then-async t=250)
+  TST_CNTR8G [setNode-supersede | H4 loop repeat | effect merge] Top.CNTR8.CNTR1.TLD1.L0_IN new 65=1 after 70=1 | phase init
+      writer: loop-repeat 3 / CNTR1(CNTRE4) async tm=0 / TLD1(DG_TDER_6X2) async tm=0 / assign[0]
+      earlier record by: loop-repeat 2 / CNTR1(CNTRE4) async tm=0 / TLD1(DG_TDER_6X2) async tm=0 / assign[0] (init)
+  TST_CNTRM8 [setNode-supersede | H4 earlier sweep/sub-sweep | effect merge] Top.CNTRM8.CNTR1.TLD1.L0_IN new 65=1 after 70=1 | phase hp 0 early t=10
+      writer: CNTRM8(CNTRM8) async tm=10 / CNTR1(CNTRE4) async tm=10 / TLD1(DG_TDER_6X2) async tm=10 / assign[0]
+      earlier record by: loop-repeat 3 / CNTR1(CNTRE4) async tm=0 / TLD1(DG_TDER_6X2) async tm=0 / assign[0] (init)
+  TST_CNTRM8 [setNode-supersede | H4 loop repeat | effect merge] Top.CNTRM8.CNTR1.TLD1.L0_IN new 65=1 after 70=1 | phase init
+      writer: loop-repeat 3 / CNTR1(CNTRE4) async tm=0 / TLD1(DG_TDER_6X2) async tm=0 / assign[0]
+      earlier record by: loop-repeat 2 / CNTR1(CNTRE4) async tm=0 / TLD1(DG_TDER_6X2) async tm=0 / assign[0] (init)

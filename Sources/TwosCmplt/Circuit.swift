@@ -778,6 +778,7 @@ public func saveChng(_ circ: Circuit, indx: Int, value: Int? = nil, tm: Int? = n
     }
     circ.capacTrns += nd.capac
 
+    if OooLog.on { OooLog.wrote(circ, indx, tm: updTm, val: val) }
     Glbls.chngCount &+= 1
     Glbls.nodeChngs.append(ndChng)
     Glbls.allChngs.append((ndStr, (updTm, val)))
@@ -1142,10 +1143,14 @@ public final class Circuit {
             return
         }
         if supersede && tm < self.nodes[ndIndx].updTm {
+            if OooLog.on { OooLog.early(self, ndIndx, path: "setNode-supersede", tm: tm, val: val, effect: "merge") }
             self.mergeBits(ndIndx, mask: -1, bits: val, tm: tm, overwriteLater: true)
             return
         }
         if self.nodes[ndIndx].node.value != val {
+            if OooLog.on && tm < self.nodes[ndIndx].updTm {
+                OooLog.early(self, ndIndx, path: "setNode-plain", tm: tm, val: val, effect: "commit-backwards")
+            }
             self.nodes[ndIndx].commit(val, tm: tm)
             self.fireWatches(ndIndx, newVal: val, tm: tm)
             saveChng(self, indx: ndIndx)
@@ -1198,6 +1203,10 @@ public final class Circuit {
         }
         let oldAt = nd.value(at: tm)
         let newAt = merge(oldAt)
+        if OooLog.on && !overwriteLater {
+            OooLog.early(self, ndIndx, path: "mergeBits", tm: tm, val: bits, mask: mask,
+                         effect: oldAt == newAt ? "none" : "merge")
+        }
         if oldAt == newAt && !overwriteLater { return }
         // The later values: the history after tm, and the current value.
         for i in self.nodes[ndIndx].hist.indices where self.nodes[ndIndx].hist[i].tm > tm {
@@ -1264,7 +1273,10 @@ public final class Circuit {
         }
         // Keep this evaluation's variables for the next one, on every exit path.
         defer { if ctx != nil { self.vars = ctx.vars } }
+        OooLog.push("\(self.name)(\(self.module)) \(async ? "async" : "sync") tm=\(tm)")
+        defer { OooLog.pop() }
 
+        OooLog.push("in-ports")
         if self.parent != nil {
             for prt in self.iPrts {
                 if prt.node == "VDD" {
@@ -1294,6 +1306,7 @@ public final class Circuit {
                 self.setNode(prt.port, val: portVal, tm: extlNd.updTm)
             }
         }
+        OooLog.pop()
 
         if self.kind == "verilog" && self.initialized == false {
             for (i, circ) in cCircs.enumerated() {
@@ -1327,12 +1340,16 @@ public final class Circuit {
           repeat {
             let chngsBefore = Glbls.chngCount
             iter += 1
+            if iter > 1 { OooLog.push("loop-repeat \(iter)") }
+            defer { if iter > 1 { OooLog.pop() } }
             for cmp in evalOrder {
                 switch cmp.kind {
                 case .aCirc:
                     // print("In: \(self.name), evaluating aCirc[\(cmp.index)]")
                     dbg("In: \(self.name), evaluating aCirc[\(cmp.index)]")
+                    OooLog.push("gate[\(cmp.index)]")
                     aCircs[cmp.index].eval(tm: tm)
+                    OooLog.pop()
                 case .sCirc:
                     // print("In: \(self.name), evaluating sCirc[\(cmp.index)]")
                     sCircs[cmp.index].eval(tm: tm)
@@ -1434,12 +1451,16 @@ public final class Circuit {
             switch cmp.kind {
             case .aCirc:
                 dbg("In: \(self.name), evaluating aCirc[\(cmp.index)]")
+                OooLog.push("gate[\(cmp.index)]")
                 aCircs[cmp.index].eval(tm: tm)
+                OooLog.pop()
             default:
                 break
             }
         }
 
+        OooLog.push("out-ports")
+        defer { OooLog.pop() }
         if self.parent != nil {
             for prt in self.oPrts {
                 let nd = self.nodes[prt.intlIndx]
@@ -1654,6 +1675,8 @@ extension Circuit {
     }
 
     func simVrlgAlwys(ctx: inout Context) {
+        OooLog.push("always")
+        defer { OooLog.pop() }
         // print("Entered simVrlgAlwys() to simulate module: \(ctx.circ!.module) named \(ctx.circ!.name)")
         dbg("= module: \(ctx.circ!.module), name: \(ctx.circ!.name)")
         // circuit.attachBehavior(from: ctx.circDef)
@@ -1696,6 +1719,8 @@ extension Circuit {
     // former "run every assign, unconditionally, in declaration order"
     // sweep — see CircDef.md for why.
     func runAssignBlck(_ i: Int, ctx: inout Context) {
+        OooLog.push("assign[\(i)]")
+        defer { OooLog.pop() }
         let def = ctx.circDef
         let assgnBlk = def.assgnBlcks[i]
         ctx.behavIdx = BehavBlockKind.assgnBlock(i)

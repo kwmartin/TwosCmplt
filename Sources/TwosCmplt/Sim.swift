@@ -1595,7 +1595,10 @@ public func loadSpecs(fromURL url: URL) -> (per: Int, finishTm: Int, tmSpcs: [Ti
 func evalEarlierInputs(_ circ: Circuit, _ spcs: inout [TimeSpec]) {
     let times = Set(spcs.map { $0.tm }).sorted()
     guard let last = times.last, times.count > 1 else { return }
+    let base = OooLog.phase
+    defer { OooLog.phase = base }
     for t in times.dropLast() {
+        OooLog.phase = base + " early t=\(t)"
         setInputs(circ, tmSpcs: spcs.filter { $0.tm == t })
         circ.eval(async: true, tm: t)
     }
@@ -1618,6 +1621,8 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
     var updTm = tm
 
     inputSpcs = tmSpcs.filter { $0.tm <= 0}
+    OooLog.tb = circ.module
+    OooLog.phase = "init"
     setInputs(circ, tmSpcs: inputSpcs)
 
     if circ.kind == "verilog" && circ.initialized == false {
@@ -1629,6 +1634,7 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
     while tm <= finishTm {
         // inputSpcs = tmSpcs.filter { $0.tm >= tm && $0.tm <= tm2  && $0.vl.0 != "CLK"}
         inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2}
+        OooLog.phase = "hp \(tm / max(per / 2, 1))"
         evalEarlierInputs(circ, &inputSpcs)
 
         if let maxSpec = inputSpcs.max(by: { $0.tm < $1.tm }) {
@@ -1638,12 +1644,14 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
         }
 
         setInputs(circ, tmSpcs: inputSpcs)
+        OooLog.phase = "hp \(tm / max(per / 2, 1)) async-then-sync t=\(updTm)"
         circ.eval(async: true, tm: updTm)
         circ.eval(async: false, tm: updTm)
         tm += per/2
         tm2 += per/2
         // inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2 && $0.vl.0 == "CLK"}
         inputSpcs = tmSpcs.filter { $0.tm > tm && $0.tm <= tm2}
+        OooLog.phase = "hp \(tm / max(per / 2, 1))"
         evalEarlierInputs(circ, &inputSpcs)
 
         if let maxSpec = inputSpcs.max(by: { $0.tm < $1.tm }) {
@@ -1653,6 +1661,7 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
         }
 
         setInputs(circ, tmSpcs: inputSpcs)
+        OooLog.phase = "hp \(tm / max(per / 2, 1)) sync-then-async t=\(updTm)"
         circ.eval(async: false, tm: updTm)
         circ.eval(async: true, tm: updTm)  // for async after regs to outputs
         tm += per/2
