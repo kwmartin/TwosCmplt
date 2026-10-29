@@ -1,7 +1,9 @@
 # Simulation timing: why node writes arrive out of time order
 
-**Where:** `/home/Dropbox/programming/Swift/TwosCmplt/SIM_TIMING.md`, TwosCmplt
-branch **`ooo-trace`** (branched from `swift-compat-input-times` at 4a2229f).
+**Where:** `/home/Dropbox/programming/Swift/TwosCmplt/SIM_TIMING.md`, on the
+working branch `swift-compat-input-times`. The opt-in log (§8), the
+`Tools/ooo/` scripts and the line numbers marked "on `ooo-trace`" are on
+branch `ooo-trace` (commit dc28475), which is not checked out.
 **Date:** 2026-10-28. **Plan:** `~/.claude/plans/fancy-enchanting-marshmallow.md`.
 
 This is an investigation. The simulation is unchanged. The branch only adds an
