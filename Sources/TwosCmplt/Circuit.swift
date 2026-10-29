@@ -506,26 +506,17 @@ public func makeCmpRefs(_ circ: Circuit) {
             }
         }
     case .sCirc:
-        let scirc = circ.sCircs[ref.index]
-        for indx in scirc.outs {
-            for rf in circ.nodes[indx].nodeSinks {
-                outRefs.append(rf)
-            }
-        }
-    case .vCirc:
-        let vcirc = circ.cCircs[ref.index]
-        for prtDef in vcirc.oPrts {
+        // A register's outputs count no ordering edge in initializeCmpCnts,
+        // so they release none here (decrementing would take a count that
+        // belongs to another driver of the sink).
+        break
+    case .vCirc, .cCirc:
+        let child = circ.cCircs[ref.index]
+        for prtDef in child.oPrts where circ.drivesOrdering(ref: ref, node: prtDef.extlIndx) {
             for rf in circ.nodes[prtDef.extlIndx].nodeSinks {
                 outRefs.append(rf)
             }
         }
-    case .cCirc:
-        let ccirc = circ.cCircs[ref.index]
-        for prtDef in ccirc.oPrts {
-            for rf in circ.nodes[prtDef.extlIndx].nodeSinks {
-                outRefs.append(rf)
-            }
-    }
     case .oPrt:
         for prtDef in circ.oPrts {
             if !(circ.parent == nil) {
@@ -567,6 +558,9 @@ public func sortCmpRefs(_ circ: Circuit) {
 public func initializeCmpCnts(_ circ: Circuit) {
     // initialize circ.cmpRefs array so we can later iterate through it
     makeCmpRefs(circ)
+    // The synchronous-design check: port-level dependencies, real loops
+    // reported once per module (PortDeps.swift).
+    _ = PortDeps.of(circ)
 
     for i in circ.nodes.indices {
         var nd = circ.nodes[i]
@@ -575,7 +569,7 @@ public func initializeCmpCnts(_ circ: Circuit) {
             continue
         }
         if (drvr.kind == .vCirc || drvr.kind == .cCirc) {
-            if circ.isSync(ref: drvr) {
+            if !circ.drivesOrdering(ref: drvr, node: i) {
                 continue
             }
         }
@@ -606,19 +600,24 @@ public func initializeCmpCnts(_ circ: Circuit) {
 
     sortCmpRefs(circ)
     if circ.evalOrder.count != circ.cmpRefs.count {
-        // A loop among the children. With only leaf flip-flops breaking
-        // edges, this is the normal case for composites wired in a ring
-        // through their internal registers (see isSync). Order the rest as
-        // declared and let eval() repeat the async pass until it settles.
+        // A loop among the children that no register breaks (drivesOrdering).
+        // PortDeps has reported it if it is a combinational loop. Order the
+        // rest as declared and let eval() repeat the async pass until it
+        // settles (designer, 2026-10-29: warn, and keep the repeats for it).
         let missing = circ.cmpRefs.filter { !circ.evalOrder.contains($0) }
         let names = missing.compactMap { ref -> String? in
             guard ref.kind == .vCirc || ref.kind == .cCirc else { return nil }
             return circ.cCircs[ref.index].name
         }
         dbg("= \(circ.module): loop among \(names.joined(separator: ", ")) -- async pass repeats until stable")
+        if !PortDeps.warned.contains("order:" + circ.module) {
+            PortDeps.warned.insert("order:" + circ.module)
+            print("WARNING: \(circ.module): evaluation order has a loop among \(names.joined(separator: ", ")); the async pass repeats until stable")
+        }
         circ.evalOrder += missing
         circ.hasLoop = true
     }
+    EvalOrderDump.record(circ)
 }
 
 public func getIndxs(_ circ: Circuit) -> [Int] {
@@ -860,9 +859,9 @@ public final class Circuit {
     weak var head: Circuit? = nil
     var cmpRefs: [CmpRef] = []
     var evalOrder: [CmpRef] = []
-    /// evalOrder couldn't be completed (a loop among children that passes
-    /// through registers inside a composite, e.g. CNTRM8's COUT0 -> NAND1 ->
-    /// INV1 -> LD -> L): the async pass is repeated until nothing changes.
+    /// evalOrder couldn't be completed (a loop among children that no
+    /// register breaks; see drivesOrdering and PortDeps): the async pass is
+    /// repeated until nothing changes.
     var hasLoop: Bool = false
     /// Latest updTm of any node read by the assign block now running (reset
     /// by runAssignBlck, raised by Context.readNode). An assign's output
@@ -1380,7 +1379,11 @@ public final class Circuit {
                     // print("In: \(self.name), evaluating vCirc[\(cmp.index)]")
                     dbg("In: \(self.name), evaluating vCirc[\(cmp.index)]")
                     let circ = cCircs[cmp.index]
-                    if circ.sync {
+                    // At the start-up launch a composite launches too (its
+                    // registers drive their outputs, then its gates follow),
+                    // rather than running its registers' every assign from
+                    // inputs not yet final.
+                    if circ.sync || (PortDeps.launching && !circ.cCircs.isEmpty) {
                         circ.eval(async: false, tm: tm)
                     } else {
                         circ.eval(async: true, tm: tm)
@@ -1394,15 +1397,54 @@ public final class Circuit {
                 case .assgnBlk:
                     // Continuous assigns are combinational/async-only,
                     // like .aCirc — not re-evaluated on the sync pass.
-                    dbg("In: \(self.name), not evaluating assgnBlk[\(cmp.index)] (async only)")
+                    // Except at the start-up launch: a register's output
+                    // assigns (QP = STATE, QN = ~STATE) drive its initial
+                    // value out before anything reads it (PortDeps.launching).
+                    if PortDeps.launching && PortDeps.of(self).launchAssigns.contains(cmp.index) {
+                        ctx.circ = self
+                        ctx.simTime = inputTm
+                        self.runAssignBlck(cmp.index, ctx: &ctx)
+                    } else {
+                        dbg("In: \(self.name), not evaluating assgnBlk[\(cmp.index)] (async only)")
+                    }
                 default:
                     // print("not .sCirc or .vCirc or .cCirc, skipping")
                     break
                 }
             }
+            // Start-up launch in a composite: its registers have now driven
+            // their outputs, so carry them through its combinational children
+            // in order (CNTRE4: QN -> NAND3 -> NOR5 -> NAND4 -> INV_0 -> COUT),
+            // as they come before the registers in evalOrder. Then the parent's
+            // propagation pass reads final register-driven outputs (Part C).
+            if PortDeps.launching && !cCircs.isEmpty {
+                for cmp in evalOrder {
+                    switch cmp.kind {
+                    case .aCirc:
+                        aCircs[cmp.index].eval(tm: tm)
+                    case .vCirc, .cCirc:
+                        // Combinational children again, now after the
+                        // registers; a composite child relaunches itself.
+                        let child = cCircs[cmp.index]
+                        if child.sync { break }
+                        child.eval(async: !child.cCircs.isEmpty ? false : true, tm: tm)
+                    case .assgnBlk:
+                        ctx.circ = self
+                        ctx.simTime = inputTm
+                        self.runAssignBlck(cmp.index, ctx: &ctx)
+                    default:
+                        break
+                    }
+                }
+            }
         }
 
-        if self.kind == "verilog" && !self.alwaysStates.isEmpty {
+        // Not during the start-up launch: there registers only drive their
+        // initial values (launchAssigns). An always block woken by that runs in
+        // the propagation pass that follows, with final inputs (TST_JKES_4X2:
+        // ENBL would otherwise be computed from a next state not yet derived
+        // from the inputs, 1 then 0 at 0 ps).
+        if self.kind == "verilog" && !self.alwaysStates.isEmpty && !PortDeps.launching {
             for indx in self.alwysNoSns {
                 self.alwysStk.append(indx)
             }
@@ -1804,20 +1846,26 @@ extension Circuit {
 }
 
 extension Circuit {
-    func isSync(ref: CmpRef) -> Bool {
+    /// Whether the node `i` driven by `ref` gives `ref` an ordering edge to
+    /// the node's sinks. A register (sCirc) never does. A child instance does
+    /// only if the output port driving the node is reached combinationally
+    /// from one of its inputs (PortDeps); an output that changes only from
+    /// registers, or from an asynchronous set/reset, is a launch, like a
+    /// flip-flop's. So a counter whose outputs all come from its flip-flops
+    /// (CNTRE4: QP, QN, and COUT from QN/QP only) breaks a loop through it
+    /// (CNTRM8: COUT1 -> NAND1 -> INV1 -> LD -> CNTR1.L) as a flip-flop does.
+    func drivesOrdering(ref: CmpRef, node i: Int) -> Bool {
         if ref.kind == .sCirc {
-            return true
+            return false
         }
         if (ref.kind == .vCirc) || (ref.kind == .cCirc) {
-            // Only a leaf sync cell (a behavioural flip-flop, no children)
-            // breaks ordering edges: its outputs really are last edge's
-            // values. A sync *composite* (circuit=subcirc, e.g. a counter)
-            // also has combinational input-to-output paths (CNT -> COUT), so
-            // it is ordered like any other child; loops through its internal
-            // registers are settled by repeating the async pass (hasLoop).
-            let child = self.cCircs[ref.index]
-            return child.sync && child.cCircs.isEmpty
+            guard ref.index < cCircs.count else { return true }
+            let child = cCircs[ref.index]
+            let ports = child.oPrts.filter { $0.extlIndx == i }
+            if ports.isEmpty { return true }
+            let deps = PortDeps.of(child)
+            return ports.contains { deps.isCombinational($0.port) }
         }
-    return false
+        return true
     }
 }

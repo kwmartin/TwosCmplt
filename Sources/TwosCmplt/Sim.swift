@@ -1620,11 +1620,13 @@ public func simCircuit(_ circ: Circuit, per: Int, finishTm: Int, tmSpcs: [TimeSp
     inputSpcs = tmSpcs.filter { $0.tm <= 0}
     setInputs(circ, tmSpcs: inputSpcs)
 
-    if circ.kind == "verilog" && circ.initialized == false {
-        circ.eval(async: true, tm: updTm)
-    } else {
-        circ.eval(async: true, tm: updTm)
-    }
+    // Start-up: launch (registers take their initial values and drive their
+    // outputs), then propagate through the combinational logic in order, as
+    // after a clock edge (plan happy-mapping-ladybug, Part C).
+    PortDeps.launching = true
+    circ.eval(async: false, tm: updTm)
+    PortDeps.launching = false
+    circ.eval(async: true, tm: updTm)
 
     while tm <= finishTm {
         // inputSpcs = tmSpcs.filter { $0.tm >= tm && $0.tm <= tm2  && $0.vl.0 != "CLK"}
