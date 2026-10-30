@@ -142,12 +142,19 @@ Before simulating, `cleanSpecFile()` removes any `TimeSpcs` entries whose node n
 
 ### 4.3 Running and viewing
 
-`simCircuit()` drives the simulation:
+`simCircuit()` drives the simulation (full description, step by step:
+[`SIMULATION_ALGORITHM.md`](SIMULATION_ALGORITHM.md) §7):
 
-1. Applies `TimeSpcs` to input nodes.
-2. Runs clocks.
-3. Evaluates components in `evalOrder` each timestep.
-4. Writes `Resources/DumpDir/<module>Map.yml` and `<module>Chngs.yml`.
+1. Expands the clocks and merges them with `TimeSpcs` into one time-sorted
+   list of input changes.
+2. Start-up at t = 0: a launch pass (registers drive their initial values),
+   then a propagation pass.
+3. Then, half period by half period: the input changes in the window, with an
+   async pass at each earlier time; at the window's last time an async and a
+   sync pass, in an order that depends on the half. Each pass evaluates every
+   circuit's components in its `evalOrder`.
+4. Writes `Resources/DumpDir/<module>Map.json` and `<module>Chngs.json`
+   (JSON since TwosCmplt `3b3a99c`, 2026-09-02).
 
 `wave_display.py` then reads those dumps and the same spec YAML to display waveforms.
 
@@ -244,7 +251,7 @@ and by `wave_edit.py` / `wave_display.py` when saving.
 | CircuitLib YAML | `/home/Dropbox/…/TwosCmplt/Resources/CircuitLib/<name>.yml` | `parse_mod.py` | `makeCircDef()` |
 | Swift specs | `/home/Dropbox/…/TwosCmplt/Resources/SimSpcs/<name>.yml` | `gen_verilog_tb.py` (Swift), `wave_edit.py`, `wave_display.py` Save | `SimRun`, `wave_display.py` |
 | iVerilog specs | `/home/Dropbox/…/TwosCmplt/Resources/IVerilogSpcs/<name>.yml` | `gen_verilog_tb.py` (iVerilog), manual edits | `makeTB.py` |
-| Dump files | `/home/Dropbox/…/TwosCmplt/Resources/DumpDir/<name>Map.yml` `<name>Chngs.yml` | `SimRun` | `wave_display.py`, `wave_view.py` |
+| Dump files | `/home/Dropbox/…/TwosCmplt/Resources/DumpDir/<name>Map.json` `<name>Chngs.json` | `SimRun` | `wave_display.py`, `wave_view.py`, `sim_compare.py`, the power estimate |
 | IVerilog VCD context | `/home/Dropbox/…/TwosCmplt/Resources/IVerilogSpcs/TB_<name>.yml` | `vcd2swift.py` / iVerilog flow | `wave_display.py` (iVerilog viewer branch) |
 | Legacy Verilog specs | `~/.xschem/modules/<name>.yml` | (old, no longer written) | (migration source only) |
 

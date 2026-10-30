@@ -581,6 +581,16 @@ matching how sync/register dependencies are already treated elsewhere.
 This is a deliberate, user-confirmed semantic choice, not an accident of
 the implementation.
 
+**Update (TwosCmplt `b857af8`, 2026-10-28): assigns are re-run after always
+blocks again.** "Stale until next trigger" left a latch's `assign QP = STR`
+(`STR <= #d D` in an always block) following `STR` only at the cell's next
+input event: TST_LTCHR_4X1's `QP` changed half a period late. So
+`Circuit.eval` now, after the always blocks run, re-runs the module's assigns
+in `evalOrder` while that changes something, and the always blocks woken by
+those changes, at most `loopIterCap` times (`Circuit.swift`, the always-block
+section of `eval`). The ordering described above is unchanged. Current
+description: `SIMULATION_ALGORITHM.md` §7.3, step 3.
+
 ### Verified regression-free
 
 `MULT_25P125.yml` (`Resources/CircuitLib`) has three real continuous

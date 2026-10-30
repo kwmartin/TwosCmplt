@@ -20,7 +20,7 @@ The `--edit` mode opens only the editable waveform pane for a circuit, without r
 | `simRunner` | Path to the compiled `SimRun` binary |
 | Key (under `directories:`) | |
 | `specsLib` | Directory containing simulation spec YAML files |
-| `dumpDir` | Directory where `SimRun` writes `<Name>Map.yml` and `<Name>Chngs.yml` |
+| `dumpDir` | Directory where `SimRun` writes `<Name>Map.json` and `<Name>Chngs.json` (JSON since TwosCmplt `3b3a99c`, 2026-09-02; `wave_display.py` reads them, or an older `.yml` dump if that is all there is) |
 
 When a circuit name is given on the command line, the circuit is built and simulated automatically on startup.
 

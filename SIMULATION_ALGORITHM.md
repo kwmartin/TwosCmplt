@@ -825,13 +825,28 @@ Each item names the section that defines it.
   `SWIFT_COMPATIBILITY.md`, `PIPELINE.md`.
 - verilogParse: `PIPELINE.md`, `Circuit_Param_Problem.md`, `README.md`.
 
-**Where they disagree with the code at `0db46e9`:**
+**Corrected on 2026-10-30** (they disagreed with the code at `0db46e9`):
 
-| Document | Says | The code |
+| Document | Said | Now says |
 |---|---|---|
-| `Design_Flow.md` §4.3, §8 | the dumps are `<module>Map.yml` and `<module>Chngs.yml` | `<TB>Map.json` and `<TB>Chngs.json` (`WaveDisplay.swift:18`, `:58`) |
-| `Design_Flow.md` §4.3 | "evaluates components in `evalOrder` each timestep" | passes per half-period window, with sub-passes, start-up launch, and async/sync order by half (§7) |
-| `Simulation.md` | "each node can only have one driver" | a bus node can have several drivers, one per bit or slice (§5.2, §6.4) |
-| `Simulation.md` | a component connected to the output of "a sync gate or Circuit" gets no reference count | a child output adds an ordering edge unless it has no combinational input (`drivesOrdering`, §5.4); a `sync` composite with a combinational output does add one |
-| `CircDef.md` Part 4 | continuous assigns are not re-run after always blocks | since `b857af8` they are, while that changes something (§7.3 step 3) |
-| `SWIFT_TIMING_REPORT.md` §8 | line numbers | those of `ooo-trace`, or of `swift-compat-input-times` before `0db46e9` |
+| `Design_Flow.md` §4.3, §8 | the dumps are `<module>Map.yml` and `<module>Chngs.yml` | `.json` (since `3b3a99c`, 2026-09-02) |
+| `Design_Flow.md` §4.3 | "evaluates components in `evalOrder` each timestep" | start-up launch, half-period windows with sub-passes, async/sync order by half, with a pointer to §7 here |
+| `Simulation.md` | "each node can only have one driver" | each bit has one driver; a bus can have several |
+| `Simulation.md` | a component connected to the output of "a sync gate or Circuit" gets no reference count | no count from a register or from a child output with no combinational input (`drivesOrdering`, §5.4) |
+| `CircDef.md` Part 4 | continuous assigns are not re-run after always blocks | an update note: they are, since `b857af8` (§7.3 step 3) |
+| `tools/wave_display.md` | `SimRun` writes `<Name>Map.yml`, `<Name>Chngs.yml` | `.json`, with a note that `wave_display.py` still opens `.yml` |
+
+**Still to know:**
+- `SWIFT_TIMING_REPORT.md` §8 gives line numbers of `ooo-trace`, or of
+  `swift-compat-input-times` before `0db46e9`. It says so itself.
+- Records kept for reference, not changed: SimLib `plan.md`,
+  `Power_Minimize_Remaining.md`, `ceq_formulas.md` (their headers point to
+  `Power_Estimation.md`) still say `Chngs.yml`, as the files were then.
+
+**Code fixed on 2026-10-30** (with the documents):
+- `tools/wave_display.py` opened `<name>Map.yml` and `<name>Chngs.yml`,
+  which SimRun no longer writes. It now reads the `.json` files, or an old
+  `.yml` dump if that is all there is (`_dump_path`, `_rd_dump`).
+- The comment at the top of `simVrlgAlwys` (`Circuit.swift`) described
+  "stale until next trigger"; it now says the assigns are re-run by
+  `Circuit.eval` (§7.3). No code changed there.

@@ -1702,13 +1702,13 @@ extension Circuit {
 
         let startDepth = ctx.stack.count
 
-        // Continuous assigns are no longer re-run here after always-blocks
-        // fire: a node written by an always block never gets a structural
-        // nodeDrvr (setNode doesn't set one), so any assign reading it is
-        // already treated like a sync-driven dependency by
-        // initializeCmpCnts — no ref-count edge, "stale until next
-        // trigger" semantics — rather than being force-refreshed. See
-        // CircDef.md.
+        // Continuous assigns are not re-run here. A node written by an always
+        // block never gets a structural nodeDrvr (setNode doesn't set one),
+        // so it adds no ordering edge for the assigns reading it
+        // (initializeCmpCnts). They are re-run by the caller, Circuit.eval,
+        // after this returns, while that changes something (since b857af8:
+        // a latch's `assign QP = STR` must follow `STR <= #d D` at once).
+        // See CircDef.md Part 4 and SIMULATION_ALGORITHM.md §7.3.
 
         // A work list, not `for ... in alwysStk`: a for-in walks a copy taken
         // when the loop starts, so a block woken by another block's

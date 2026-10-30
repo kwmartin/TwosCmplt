@@ -20,6 +20,7 @@ Config.yaml keys used (all under fileNames:):
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 import tempfile
@@ -104,6 +105,24 @@ def _merge_time_spcs(perm_ts: list, editor_ts: list) -> list:
         grouped[key]["vls"].extend(vls)
 
     return [grouped[k] for k in order]
+
+
+def _dump_path(dump_dir: Path, circuit_name: str, kind: str) -> Path:
+    """<name><kind>.json, as SimRun writes it (since TwosCmplt 3b3a99c,
+    2026-09-02); an older <name><kind>.yml dump if that is all there is."""
+    path = dump_dir / f"{circuit_name}{kind}.json"
+    old = dump_dir / f"{circuit_name}{kind}.yml"
+    return path if path.exists() or not old.exists() else old
+
+
+def _rd_dump(path: Path):
+    """A Map/Chngs dump: JSON, or YAML for an old .yml dump; None if missing."""
+    if not path.exists():
+        return None
+    if path.suffix == ".json":
+        with open(path) as f:
+            return json.load(f)
+    return rd_yml(str(path))
 
 
 def _build_hierarchy(map_data: dict) -> Dict[CircKey, dict]:
@@ -1030,12 +1049,12 @@ class WaveDisplay(QMainWindow):
         self.setWindowTitle(f"Wave Display — {circuit_name}")
 
         dump_dir   = Path(self._cfg.get("directories", {}).get("dumpDir", ""))
-        map_path   = dump_dir / f"{circuit_name}Map.yml"
-        chngs_path = dump_dir / f"{circuit_name}Chngs.yml"
+        map_path   = _dump_path(dump_dir, circuit_name, "Map")
+        chngs_path = _dump_path(dump_dir, circuit_name, "Chngs")
 
         if map_path.exists():
-            self._map       = rd_yml(str(map_path)) or {}
-            self._chngs     = rd_yml(str(chngs_path)) or [] if chngs_path.exists() else []
+            self._map       = _rd_dump(map_path) or {}
+            self._chngs     = _rd_dump(chngs_path) or []
             self._hierarchy = _build_hierarchy(self._map)
             self._selection.clear()
             self._current_key = None
@@ -1155,11 +1174,11 @@ class WaveDisplay(QMainWindow):
             return
 
         dump_dir   = Path(self._cfg.get("directories", {}).get("dumpDir", ""))
-        chngs_path = str(dump_dir / f"{circuit_name}Chngs.yml")
-        map_path   = str(dump_dir / f"{circuit_name}Map.yml")
+        chngs_path = _dump_path(dump_dir, circuit_name, "Chngs")
+        map_path   = _dump_path(dump_dir, circuit_name, "Map")
 
-        self._chngs     = rd_yml(chngs_path) or []
-        self._map       = rd_yml(map_path)   or {}
+        self._chngs     = _rd_dump(chngs_path) or []
+        self._map       = _rd_dump(map_path)   or {}
         self._hierarchy = _build_hierarchy(self._map)
 
         # Drop selections whose circuit keys no longer exist in the new hierarchy
@@ -1562,11 +1581,9 @@ class WaveDisplay(QMainWindow):
         # Refresh simulation data from disk
         if self._circuit_name:
             dump_dir   = Path(self._cfg.get("directories", {}).get("dumpDir", ""))
-            chngs_path = dump_dir / f"{self._circuit_name}Chngs.yml"
-            if chngs_path.exists():
-                fresh = rd_yml(str(chngs_path))
-                if fresh is not None:
-                    self._chngs = fresh
+            fresh = _rd_dump(_dump_path(dump_dir, self._circuit_name, "Chngs"))
+            if fresh is not None:
+                self._chngs = fresh
 
         signals = self._collect_all_signals()
 
