@@ -1,0 +1,89 @@
+kind: verilog
+module: TST_OSC_GF2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: PHBN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: PHBP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDDA
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSSA
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VOSC
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+-   kind: analog
+    name: OSC
+    module: KM_OSCD_GF
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: PHBN
+            sgmnts:
+            -   kind: int
+                value: 0
+            -   kind: int
+                value: 3
+    -   port: None
+        node:
+            kind: slice
+            name: PHBP
+            sgmnts:
+            -   kind: int
+                value: 0
+            -   kind: int
+                value: 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VOSC
+

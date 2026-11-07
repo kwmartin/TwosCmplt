@@ -1,0 +1,991 @@
+kind: verilog
+module: KM_OSC_STG_GF2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN1N
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN1P
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN2N
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN2P
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN3N
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: IN3P
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: 'ON'
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: OP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: VDDA
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSSA
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: OUT
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: INITN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: X1
+    module: DG_INV4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: INITN
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY_0
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY_1
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY_2
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY_3
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: IN1P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_4
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_5
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_6
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_7
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: IN2P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY2_8
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN3P
+    -   port: None
+        node:
+            kind: ident
+            name: IN3P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY2_9
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN3P
+    -   port: None
+        node:
+            kind: ident
+            name: IN3P
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_10
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_11
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_12
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_13
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_14
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_15
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: IN1N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY2_16
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY2_17
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY2_18
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY2_19
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: IN2N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY1_20
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN3N
+    -   port: None
+        node:
+            kind: ident
+            name: IN3N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY1_21
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: IN3N
+    -   port: None
+        node:
+            kind: ident
+            name: IN3N
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY2_22
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY2_23
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY2_24
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: INITN
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY2_25
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: INITN
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: 'ON'
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+-   kind: analog
+    name: TARY3_26
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+-   kind: analog
+    name: TARY3_27
+    module: KM_TRN_ARRY1_12
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+    -   port: None
+        node:
+            kind: ident
+            name: VDDA
+    -   port: None
+        node:
+            kind: ident
+            name: OP
+    -   port: None
+        node:
+            kind: ident
+            name: VSSA
+

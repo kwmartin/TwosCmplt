@@ -1,0 +1,217 @@
+kind: verilog
+module: KM_OSC_BFR_GF
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: PHN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: PHN_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: PHP
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: PHP_
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+-   kind: async
+    name: BFR2
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PHP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: PHN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: PHP_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: PHN_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BFR0
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PHP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: PHN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: PHP_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: PHN_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BFR1
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PHP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: PHN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: PHP_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: PHN_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BFR3
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PHP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: PHN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: PHP_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: PHN_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+
