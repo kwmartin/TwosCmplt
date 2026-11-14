@@ -1,0 +1,28 @@
+Constants:
+    PER: 1000
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDDA, 1]
+      - [VSSA, 0]
+      - [S, '0x2']
+      - [D15_, '0xf']
+      - [D14_, '0xe']
+      - [D13_, '0xd']
+      - [D12_, '0xc']
+      - [D11_, '0xb']
+      - [D10_, '0xa']
+      - [D9_, '0x9']
+      - [D8_, '0x8']
+      - [D7_, '0x7']
+      - [D6_, '0x6']
+      - [D5_, '0x5']
+      - [D4_, '0x4']
+      - [D3_, '0x3']
+      - [D2_, '0x2']
+      - [D1_, 1]
+      - [D0_, 0]
+SaveNds:
+  - name: OUT
+    format: h

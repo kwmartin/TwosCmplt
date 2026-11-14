@@ -1,0 +1,360 @@
+kind: verilog
+module: TST_MX_16X16B
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: async
+io_ports:
+  - kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: VDDA
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSSA
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: S
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 3
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D15_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D14_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D13_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D12_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D11_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D10_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D9_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D8_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D7_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D6_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D5_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D4_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D3_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D2_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D1_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: D0_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+decls: []
+behav_blcks:
+  - kind: async
+    name: X1
+    module: KM_MX_16X16B
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+              - kind: int
+                value: 3
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D15_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D14_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D13_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D12_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D11_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D10_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D9_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D8_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D7_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D6_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D5_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D4_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D3_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D2_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D1_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: D0_
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDDA
+              - kind: ident
+                name: VSSA
