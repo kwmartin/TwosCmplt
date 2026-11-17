@@ -1,4 +1,4 @@
-generated: '2026-11-14T17:35:58+00:00'
+generated: '2026-11-17T17:03:06+00:00'
 modules:
     Accum:
         directory: verilogParse/ver_lib
@@ -61,6 +61,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
         clean: true
+    CLA24:
+        directory: verilogParse/ver_lib
+        file_name: CLA24.v
+        clean: true
     CLA4:
         directory: verilogParse/ver_lib
         file_name: CLA4.v
@@ -112,6 +116,34 @@ modules:
         file_name: CNTRM8.v
         clean: false
         stale_reason: verilog content changed
+    CSADDR24:
+        directory: verilogParse/ver_lib
+        file_name: CSADDR24.v
+        clean: false
+        stale_reason: 'missing: unl'
+    CSADDR24M:
+        directory: verilogParse/ver_lib
+        file_name: CSADDR24M.v
+        clean: false
+        stale_reason: 'missing: unl'
+    CSADDR24P4:
+        directory: verilogParse/ver_lib
+        file_name: CSADDR24P4.v
+        clean: true
+    CSADDR24P5:
+        directory: verilogParse/ver_lib
+        file_name: CSADDR24P5.v
+        clean: false
+        stale_reason: 'missing: unl'
+    CSSLCA:
+        directory: verilogParse/ver_lib
+        file_name: CSSLCA.v
+        clean: false
+        stale_reason: 'missing: unl'
+    CSSLCB:
+        directory: verilogParse/ver_lib
+        file_name: CSSLCB.v
+        clean: true
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
@@ -384,8 +416,7 @@ modules:
     DG_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV20_1X1.v
-        clean: false
-        stale_reason: parser scripts changed
+        clean: true
     DG_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV2_1X1.v
@@ -742,13 +773,11 @@ modules:
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
-        clean: false
-        stale_reason: parser scripts changed
+        clean: true
     DG_TILO:
         directory: verilogParse/ver_lib
         file_name: DG_TILO.v
-        clean: false
-        stale_reason: parser scripts changed
+        clean: true
     DG_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDER_5X2.v
@@ -780,7 +809,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DLEUX_7X2.v
         clean: false
-        stale_reason: parser scripts changed
+        stale_reason: 'missing: ast, unl'
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -873,6 +902,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL12.v
         clean: true
+    KM_CMPL20:
+        directory: verilogParse/ver_lib
+        file_name: KM_CMPL20.v
+        clean: true
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
@@ -887,6 +920,26 @@ modules:
         file_name: KM_CNTR8D.v
         clean: false
         stale_reason: verilog content changed
+    KM_COEFF_GEN2:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_GEN2.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    KM_COEFF_MULT3:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_MULT3.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    KM_COEFF_MUX1:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_MUX1.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    KM_CS_MULT1:
+        directory: verilogParse/ver_lib
+        file_name: KM_CS_MULT1.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
         file_name: KM_DEC_2X4.v
@@ -935,6 +988,14 @@ modules:
         file_name: KM_ENBL_BFRB.v
         clean: false
         stale_reason: parser scripts changed
+    KM_INGAT:
+        directory: verilogParse/ver_lib
+        file_name: KM_INGAT.v
+        clean: true
+    KM_MULTX4BTSC:
+        directory: verilogParse/ver_lib
+        file_name: KM_MULTX4BTSC.v
+        clean: true
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
@@ -947,10 +1008,20 @@ modules:
     KM_MX_16X16B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X16B.v
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
+    KM_MX_16X1B:
+        directory: verilogParse/ver_lib
+        file_name: KM_MX_16X1B.v
         clean: true
     KM_MX_16X1C:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1C.v
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
+    KM_MX_16X24:
+        directory: verilogParse/ver_lib
+        file_name: KM_MX_16X24.v
         clean: true
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
@@ -1005,7 +1076,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_BFR_GF.v
         clean: false
-        stale_reason: verilog content changed
+        stale_reason: 'missing: ast, mod, unl'
     KM_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_GF2.v
@@ -1015,7 +1086,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_STG_GF2.v
         clean: false
-        stale_reason: 'missing: unl'
+        stale_reason: 'missing: ast, mod, unl'
     KM_PRPLGC:
         directory: verilogParse/ver_lib
         file_name: KM_PRPLGC.v
@@ -1031,6 +1102,14 @@ modules:
         file_name: KM_REGS18.v
         clean: false
         stale_reason: verilog content changed
+    KM_REGS24:
+        directory: verilogParse/ver_lib
+        file_name: KM_REGS24.v
+        clean: true
+    KM_RG24:
+        directory: verilogParse/ver_lib
+        file_name: KM_RG24.v
+        clean: true
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
@@ -1109,8 +1188,7 @@ modules:
     RES:
         directory: verilogParse/ver_lib
         file_name: RES.v
-        clean: false
-        stale_reason: parser scripts changed
+        clean: true
     Sine:
         directory: verilogParse/ver_lib
         file_name: Sine.v
@@ -1190,7 +1268,8 @@ modules:
     TST_CLA16:
         directory: verilogParse/ver_lib
         file_name: TST_CLA16.v
-        clean: true
+        clean: false
+        stale_reason: verilog content changed
     TST_CLA2:
         directory: verilogParse/ver_lib
         file_name: TST_CLA2.v
@@ -1219,6 +1298,11 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_CNTRM8.v
         clean: true
+    TST_COEFF_GEN:
+        directory: verilogParse/ver_lib
+        file_name: TST_COEFF_GEN.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     TST_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
@@ -1422,7 +1506,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
         clean: false
-        stale_reason: 'missing: circuit_lib'
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
@@ -1498,7 +1582,8 @@ modules:
     TST_MX_16X16B:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
@@ -1603,7 +1688,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: unl'
+        stale_reason: 'missing: ast, mod, unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v

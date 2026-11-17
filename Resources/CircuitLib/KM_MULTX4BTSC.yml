@@ -1,0 +1,1010 @@
+kind: verilog
+module: KM_MULTX4BTSC
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: IN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: K
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: SM0_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CLK1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: N2_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CR1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: P1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SM1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: N0_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: N3_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: N1_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CR0_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_GT0_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_GT1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_GT3_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_GT2_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: GT0
+    module: KM_INGAT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_GT0_0
+    -   port: None
+        node:
+            kind: bit
+            name: K
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: slice
+            name: N0_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT1
+    module: KM_INGAT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_GT1_0
+    -   port: None
+        node:
+            kind: bit
+            name: K
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: slice
+            name: N1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT3
+    module: KM_INGAT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_GT3_0
+    -   port: None
+        node:
+            kind: bit
+            name: K
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: slice
+            name: N3_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT2
+    module: KM_INGAT
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_GT2_0
+    -   port: None
+        node:
+            kind: bit
+            name: K
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: slice
+            name: N2_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: CGP1
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C1
+    -   port: None
+        node:
+            kind: ident
+            name: G1
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: slice
+            name: S1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: REG2
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLK1
+    -   port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_0
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLK1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_1
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLK1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: CSADDR0
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: N0_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: N1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR0_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: N2_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: SM0_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: CSADDR1
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM0_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR0_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR1_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: N3_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: SM1_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_GT0_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_GT1_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_GT3_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_GT2_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: IN
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+

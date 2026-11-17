@@ -1,0 +1,1429 @@
+kind: verilog
+module: KM_INGAT
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: ONE
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: Q
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: ZERO
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: DN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: GT_23
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_22
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_21
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_20
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_19
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_18
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_17
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_16
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_15
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_14
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_13
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_12
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_11
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_10
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_9
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_8
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_7
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_6
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_5
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_4
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_3
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_2
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: GT_1
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: GT_0
+    module: DG_NOR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: bit
+            name: Q
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_23
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_22
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_21
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_20
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_19
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_18
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_17
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_16
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_15
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_14
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_13
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_12
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_11
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_10
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_9
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_8
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_7
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_6
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: DN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: INV1
+    module: DG_INV20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ONE
+    -   port: None
+        node:
+            kind: ident
+            name: ZERO
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

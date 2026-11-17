@@ -1,0 +1,1261 @@
+kind: verilog
+module: KM_MX_16X24
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: SL
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D15
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D14
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D13
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D12
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D11
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D10
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D7
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D9
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D8
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D6
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D5
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D4
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D3
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D2
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D1
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D0
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: O
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: D
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SLCT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MX0
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX1
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX2
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX3
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX4
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX5
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX7
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX6
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX8
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX9
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX11
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX10
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX14
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX15
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX13
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX12
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX16
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX17
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX19
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX18
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX22
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX23
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX21
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MX20
+    module: KM_MX_16X1B
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: D
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_0
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

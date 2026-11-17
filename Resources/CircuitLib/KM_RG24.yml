@@ -1,0 +1,846 @@
+kind: verilog
+module: KM_RG24
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: sync
+    name: RG_23
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_22
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_21
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_20
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_19
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_18
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_17
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_16
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_15
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_14
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_13
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_12
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_11
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_10
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_9
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_8
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_7
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_6
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_5
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_4
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_3
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_2
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: sync
+    name: RG_1
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: sync
+    name: RG_0
+    module: DG_RG_3X1
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_0
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+

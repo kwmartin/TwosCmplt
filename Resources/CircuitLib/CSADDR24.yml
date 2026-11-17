@@ -1,0 +1,1844 @@
+kind: verilog
+module: CSADDR24
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CRY
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: C
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: SUM
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+-   kind: async
+    name: TILO_0
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_24
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_23
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_22
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_21
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_20
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_19
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_18
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_17
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_16
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_15
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_14
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_13
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_12
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_11
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_10
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_9
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_8
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_7
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_6
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_5
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_4
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_3
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: AB_AC_BC_2
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: AB_AC_BC_1
+    module: AB_AC_BC
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_23
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_22
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_21
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_20
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_19
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_18
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_17
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_16
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_15
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_14
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_13
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_12
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_11
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_10
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_9
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_8
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_7
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_6
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_5
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_4
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_3
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_2
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: EXOR_1
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: analog
+    name: EXOR_0
+    module: EXOR_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+
