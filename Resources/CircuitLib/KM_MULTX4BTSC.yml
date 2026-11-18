@@ -253,12 +253,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: GT1
     module: KM_INGAT
@@ -288,12 +288,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: GT3
     module: KM_INGAT
@@ -323,12 +323,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: GT2
     module: KM_INGAT
@@ -358,12 +358,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: CGP1
     module: CLA24
@@ -417,12 +417,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: REG2
     module: KM_RG24
@@ -459,12 +459,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_0
     module: DG_BUF20_1X1
@@ -485,6 +485,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF20_1X1
@@ -501,6 +505,10 @@ behav_blcks:
         node:
             kind: ident
             name: CLK1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -560,12 +568,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: analog
     name: CSADDR1
     module: CSADDR24
@@ -621,12 +629,12 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: assign
     lvalue:
         kind: ident

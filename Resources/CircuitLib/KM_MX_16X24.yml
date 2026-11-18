@@ -18,7 +18,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D15
+    name: D15_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -27,7 +27,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D14
+    name: D14_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -36,7 +36,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D13
+    name: D13_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -45,7 +45,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D12
+    name: D12_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -54,7 +54,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D11
+    name: D11_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -63,7 +63,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D10
+    name: D10_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -72,7 +72,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D7
+    name: D7_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -81,7 +81,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D9
+    name: D9_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -90,7 +90,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D8
+    name: D8_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -99,7 +99,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D6
+    name: D6_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -108,7 +108,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D5
+    name: D5_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -117,7 +117,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D4
+    name: D4_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -126,7 +126,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D3
+    name: D3_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -135,7 +135,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D2
+    name: D2_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -144,7 +144,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D1
+    name: D1_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -153,7 +153,7 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D0
+    name: D0_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -180,7 +180,18 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
-        name: D
+        name: SLCT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX0_1
         signed: 'False'
         width:
             kind: width
@@ -191,13 +202,255 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
-        name: SLCT
+        name: __concat_MX1_1
         signed: 'False'
         width:
             kind: width
             width:
             -   kind: int
-                value: 3
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX2_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX3_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX4_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX5_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX7_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX6_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX8_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX9_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX11_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX10_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX14_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX15_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX13_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX12_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX16_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX17_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX19_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX18_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX22_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX23_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX21_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX20_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
             -   kind: int
                 value: 0
         length: []
@@ -221,13 +474,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX0_1
     -   port: None
         node:
             kind: bit
@@ -236,12 +484,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX1
     module: KM_MX_16X1B
@@ -261,13 +509,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX1_1
     -   port: None
         node:
             kind: bit
@@ -276,12 +519,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX2
     module: KM_MX_16X1B
@@ -301,13 +544,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX2_1
     -   port: None
         node:
             kind: bit
@@ -316,12 +554,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX3
     module: KM_MX_16X1B
@@ -341,13 +579,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX3_1
     -   port: None
         node:
             kind: bit
@@ -356,12 +589,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX4
     module: KM_MX_16X1B
@@ -381,13 +614,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX4_1
     -   port: None
         node:
             kind: bit
@@ -396,12 +624,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX5
     module: KM_MX_16X1B
@@ -421,13 +649,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX5_1
     -   port: None
         node:
             kind: bit
@@ -436,12 +659,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX7
     module: KM_MX_16X1B
@@ -461,13 +684,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX7_1
     -   port: None
         node:
             kind: bit
@@ -476,12 +694,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX6
     module: KM_MX_16X1B
@@ -501,13 +719,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX6_1
     -   port: None
         node:
             kind: bit
@@ -516,12 +729,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX8
     module: KM_MX_16X1B
@@ -541,13 +754,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX8_1
     -   port: None
         node:
             kind: bit
@@ -556,12 +764,12 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX9
     module: KM_MX_16X1B
@@ -581,13 +789,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX9_1
     -   port: None
         node:
             kind: bit
@@ -596,12 +799,12 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX11
     module: KM_MX_16X1B
@@ -621,13 +824,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX11_1
     -   port: None
         node:
             kind: bit
@@ -636,12 +834,12 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX10
     module: KM_MX_16X1B
@@ -661,13 +859,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX10_1
     -   port: None
         node:
             kind: bit
@@ -676,12 +869,12 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX14
     module: KM_MX_16X1B
@@ -701,13 +894,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX14_1
     -   port: None
         node:
             kind: bit
@@ -716,12 +904,12 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX15
     module: KM_MX_16X1B
@@ -741,13 +929,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX15_1
     -   port: None
         node:
             kind: bit
@@ -756,12 +939,12 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX13
     module: KM_MX_16X1B
@@ -781,13 +964,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX13_1
     -   port: None
         node:
             kind: bit
@@ -796,12 +974,12 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX12
     module: KM_MX_16X1B
@@ -821,13 +999,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX12_1
     -   port: None
         node:
             kind: bit
@@ -836,12 +1009,12 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX16
     module: KM_MX_16X1B
@@ -861,13 +1034,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX16_1
     -   port: None
         node:
             kind: bit
@@ -876,12 +1044,12 @@ behav_blcks:
             - 16
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX17
     module: KM_MX_16X1B
@@ -901,13 +1069,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX17_1
     -   port: None
         node:
             kind: bit
@@ -916,12 +1079,12 @@ behav_blcks:
             - 17
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX19
     module: KM_MX_16X1B
@@ -941,13 +1104,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX19_1
     -   port: None
         node:
             kind: bit
@@ -956,12 +1114,12 @@ behav_blcks:
             - 19
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX18
     module: KM_MX_16X1B
@@ -981,13 +1139,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX18_1
     -   port: None
         node:
             kind: bit
@@ -996,12 +1149,12 @@ behav_blcks:
             - 18
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX22
     module: KM_MX_16X1B
@@ -1021,13 +1174,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX22_1
     -   port: None
         node:
             kind: bit
@@ -1036,12 +1184,12 @@ behav_blcks:
             - 22
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX23
     module: KM_MX_16X1B
@@ -1061,13 +1209,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX23_1
     -   port: None
         node:
             kind: bit
@@ -1076,12 +1219,12 @@ behav_blcks:
             - 23
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX21
     module: KM_MX_16X1B
@@ -1101,13 +1244,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX21_1
     -   port: None
         node:
             kind: bit
@@ -1116,12 +1254,12 @@ behav_blcks:
             - 21
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX20
     module: KM_MX_16X1B
@@ -1141,13 +1279,8 @@ behav_blcks:
                 value: 0
     -   port: None
         node:
-            kind: slice
-            name: D
-            sgmnts:
-            -   kind: int
-                value: 15
-            -   kind: int
-                value: 0
+            kind: ident
+            name: __concat_MX20_1
     -   port: None
         node:
             kind: bit
@@ -1156,12 +1289,12 @@ behav_blcks:
             - 20
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_3
     module: DG_BUF20_1X1
@@ -1186,6 +1319,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: BUF_2
     module: DG_BUF20_1X1
@@ -1206,6 +1343,10 @@ behav_blcks:
             name: SLCT
             sgmnts:
             - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1234,6 +1375,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: async
     name: BUF_0
     module: DG_BUF20_1X1
@@ -1257,5 +1402,1713 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
             name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX0_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX1_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 1
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX2_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 2
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX3_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX4_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 4
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX5_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 5
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX7_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 7
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX6_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 6
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX8_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 8
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX9_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 9
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX11_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 11
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX10_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 10
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX14_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 14
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX15_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 15
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX13_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 13
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX12_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 12
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX16_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 16
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX17_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 17
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX19_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 19
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX18_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 18
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX22_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 22
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX23_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 23
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX21_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 21
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX20_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 20
+    delay: 0
 

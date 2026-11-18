@@ -648,12 +648,12 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_7
     module: DG_MX4_3X1

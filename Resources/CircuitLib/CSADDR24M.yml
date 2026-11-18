@@ -79,12 +79,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF4_1X1
@@ -107,6 +107,46 @@ behav_blcks:
             - 24
     -   port: None
         node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: analog
+    name: EXOR_23
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 23
+    -   port: None
+        node:
             kind: ident
             name: VDD
     -   port: None
@@ -114,8 +154,8 @@ behav_blcks:
             kind: ident
             name: VSS
 -   kind: analog
-    name: EXOR_23
-    module: EXNOR_3X1
+    name: EXOR_22
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -126,68 +166,36 @@ behav_blcks:
             kind: bit
             name: A
             sgmnts:
-            - 23
+            - 22
     -   port: None
         node:
             kind: bit
             name: B
             sgmnts:
-            - 23
+            - 22
     -   port: None
         node:
             kind: bit
             name: C
             sgmnts:
-            - 23
+            - 22
     -   port: None
         node:
             kind: bit
             name: SUM
             sgmnts:
-            - 23
+            - 22
     -   port: None
         node:
             kind: ident
             name: VDD
--   kind: analog
-    name: EXOR_22
-    module: EXNOR_3X1
-    params:
-    -   kind: str
-        value: analog
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: A
-            sgmnts:
-            - 22
-    -   port: None
-        node:
-            kind: bit
-            name: B
-            sgmnts:
-            - 22
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 22
-    -   port: None
-        node:
-            kind: bit
-            name: SUM
-            sgmnts:
-            - 22
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_21
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -221,9 +229,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_20
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -253,13 +265,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_19
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -293,9 +309,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_18
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -325,13 +345,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_17
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -365,9 +389,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_16
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -397,13 +425,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_15
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -437,9 +469,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_14
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -469,13 +505,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_13
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -509,9 +549,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_12
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -541,13 +585,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_11
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -581,9 +629,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_10
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -613,13 +665,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_9
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -653,9 +709,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_8
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -685,13 +745,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_7
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -725,9 +789,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_6
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -757,13 +825,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_5
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -797,9 +869,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_4
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -829,13 +905,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_3
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -869,9 +949,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_2
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -901,13 +985,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_1
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -941,9 +1029,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_0
-    module: EXNOR_3X1
+    module: DG_EXNOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -973,6 +1065,10 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1013,6 +1109,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_23
     module: AB_ANC_BNC
@@ -1045,6 +1145,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1085,6 +1189,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_21
     module: AB_ANC_BNC
@@ -1117,6 +1225,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1157,6 +1269,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_19
     module: AB_ANC_BNC
@@ -1189,6 +1305,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1229,6 +1349,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_17
     module: AB_ANC_BNC
@@ -1261,6 +1385,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1301,6 +1429,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_15
     module: AB_ANC_BNC
@@ -1333,6 +1465,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1373,6 +1509,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_13
     module: AB_ANC_BNC
@@ -1405,6 +1545,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1445,6 +1589,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_11
     module: AB_ANC_BNC
@@ -1477,6 +1625,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1517,6 +1669,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_9
     module: AB_ANC_BNC
@@ -1549,6 +1705,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1589,6 +1749,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_7
     module: AB_ANC_BNC
@@ -1621,6 +1785,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1661,6 +1829,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_5
     module: AB_ANC_BNC
@@ -1693,6 +1865,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1733,6 +1909,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_3
     module: AB_ANC_BNC
@@ -1765,6 +1945,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -1805,6 +1989,10 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: AB_AC_BC_1
     module: AB_ANC_BNC
@@ -1837,6 +2025,10 @@ behav_blcks:
             name: CRY
             sgmnts:
             - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident

@@ -1,0 +1,9144 @@
+kind: verilog
+module: KM_COEFF_GEN2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: COEF
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: C
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: CR11_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SM15_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SM11_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C1__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S14_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Y
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: S3_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: P_3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SM13_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C4__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CR14_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S12_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: G_10
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_11
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_12
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_13
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_14
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_15
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: S6_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C2__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S15_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S13_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S10_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S11_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CR7_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C8__
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S9_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S7_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CR15_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S5_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CR13_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: P_10
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_11
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_12
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_13
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_14
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_15
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SM14_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C_3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ZR_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C_10
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_11
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_12
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_13
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_14
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_15
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SM7_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: G_3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G_9
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_0_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_0_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_1_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR14_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR14_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR14_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDRM15_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDRM15_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDRM15_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR13_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR13_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR13_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_4_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_4_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR11_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR11_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR11_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_6_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_6_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_7_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_7_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR7_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR7_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSADDR7_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_9_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CLA24_9_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: CLA24_0
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_0_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_0_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_5
+    -   port: None
+        node:
+            kind: ident
+            name: G_5
+    -   port: None
+        node:
+            kind: ident
+            name: P_5
+    -   port: None
+        node:
+            kind: slice
+            name: S5_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG5
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S5_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C5_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_1
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_1_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_1_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_3
+    -   port: None
+        node:
+            kind: ident
+            name: G_3
+    -   port: None
+        node:
+            kind: ident
+            name: P_3
+    -   port: None
+        node:
+            kind: slice
+            name: S3_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG3
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S3_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C3_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_23
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_22
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_21
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_20
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_19
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_18
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_17
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_16
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_15
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_14
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_13
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_12
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_11
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_10
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_9
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_8
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_7
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_6
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_0
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C4__
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_23
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_22
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_21
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_20
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_19
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_18
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_17
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_16
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_15
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_14
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_13
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_12
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_11
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_10
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_9
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_8
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_7
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_6
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_5
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_4
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_3
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_2
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_2_1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2_0
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C0_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_23
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_22
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_21
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_20
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_19
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_18
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_17
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_16
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_15
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_14
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_13
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_12
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_11
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_10
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_9
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_8
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_7
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_6
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_5
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_4
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_3
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_2
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3_1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_3_0
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C1__
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_23
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_22
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_21
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_20
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_19
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_18
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_17
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_16
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_15
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_14
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_13
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_12
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_11
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_10
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_9
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_8
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_7
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_6
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_5
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_4
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_3
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_2
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_4_1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4_0
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C2__
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_23
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_22
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_21
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_20
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_19
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_18
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_17
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_16
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_15
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_14
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_13
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_12
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_11
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_10
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_9
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_8
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_7
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_6
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_5
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_4
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_1
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_0
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: ZR_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_24
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_25
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_26
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_27
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: RG8
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: C8__
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C8_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG4
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: C4__
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C4_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG2
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: C2__
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C2_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG1
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: C1__
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C1_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_2_23
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_22
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_21
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_20
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_19
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_18
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_17
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_16
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_15
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_14
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_13
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_12
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_11
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_10
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_9
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_8
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_7
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_6
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_5
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_4
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_3
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_2
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_2_1
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_2_0
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_23
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_22
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_21
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_20
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_19
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_18
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_17
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_16
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_15
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_14
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_13
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_12
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_11
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_10
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_9
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_8
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_7
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_6
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_5
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_4
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_3
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_2
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: TILO_3_1
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: TILO_3_0
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Y
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: CLA24
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM15_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR15_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_15
+    -   port: None
+        node:
+            kind: ident
+            name: G_15
+    -   port: None
+        node:
+            kind: ident
+            name: P_15
+    -   port: None
+        node:
+            kind: slice
+            name: S15_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: analog
+    name: CSADDR14
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR14_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR14_1
+    -   port: None
+        node:
+            kind: slice
+            name: CR14_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR14_3
+    -   port: None
+        node:
+            kind: slice
+            name: SM14_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG14
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S14_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C14_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: analog
+    name: CSADDRM15
+    module: CSADDR24M
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDRM15_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDRM15_1
+    -   port: None
+        node:
+            kind: slice
+            name: CR15_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDRM15_3
+    -   port: None
+        node:
+            kind: slice
+            name: SM15_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_2
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM14_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR14_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_14
+    -   port: None
+        node:
+            kind: ident
+            name: G_14
+    -   port: None
+        node:
+            kind: ident
+            name: P_14
+    -   port: None
+        node:
+            kind: slice
+            name: S14_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG15
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S15_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C15_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_3
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM13_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR13_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_13
+    -   port: None
+        node:
+            kind: ident
+            name: G_13
+    -   port: None
+        node:
+            kind: ident
+            name: P_13
+    -   port: None
+        node:
+            kind: slice
+            name: S13_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: analog
+    name: CSADDR13
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR13_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR13_1
+    -   port: None
+        node:
+            kind: slice
+            name: CR13_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR13_3
+    -   port: None
+        node:
+            kind: slice
+            name: SM13_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG13
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S13_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C13_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_4
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_4_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_4_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_12
+    -   port: None
+        node:
+            kind: ident
+            name: G_12
+    -   port: None
+        node:
+            kind: ident
+            name: P_12
+    -   port: None
+        node:
+            kind: slice
+            name: S12_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG12
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S12_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C12_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: analog
+    name: CSADDR11
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR11_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR11_1
+    -   port: None
+        node:
+            kind: slice
+            name: CR11_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR11_3
+    -   port: None
+        node:
+            kind: slice
+            name: SM11_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_5
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM11_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR11_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_11
+    -   port: None
+        node:
+            kind: ident
+            name: G_11
+    -   port: None
+        node:
+            kind: ident
+            name: P_11
+    -   port: None
+        node:
+            kind: slice
+            name: S11_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG11
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S11_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C11_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_6
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_6_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_6_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_10
+    -   port: None
+        node:
+            kind: ident
+            name: G_10
+    -   port: None
+        node:
+            kind: ident
+            name: P_10
+    -   port: None
+        node:
+            kind: slice
+            name: S10_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG10
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S10_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C10_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_7
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_7_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_7_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_9
+    -   port: None
+        node:
+            kind: ident
+            name: G_9
+    -   port: None
+        node:
+            kind: ident
+            name: P_9
+    -   port: None
+        node:
+            kind: slice
+            name: S9_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG9
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S9_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C9_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_5_23
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_22
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_21
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_20
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_19
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_18
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_17
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_16
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_15
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_14
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_13
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_12
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_11
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_10
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_9
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_8
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_7
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_6
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_5
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_4
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_3
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_2
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5_1
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_5_0
+    module: DG_BUF6_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: bit
+            name: C8__
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: analog
+    name: CSADDR7
+    module: CSADDR24
+    params:
+    -   kind: str
+        value: analog
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR7_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR7_1
+    -   port: None
+        node:
+            kind: slice
+            name: CR7_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSADDR7_3
+    -   port: None
+        node:
+            kind: slice
+            name: SM7_
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_8
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SM7_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CR7_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_7
+    -   port: None
+        node:
+            kind: ident
+            name: G_7
+    -   port: None
+        node:
+            kind: ident
+            name: P_7
+    -   port: None
+        node:
+            kind: slice
+            name: S7_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG7
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S7_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C7_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CLA24_9
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_9_0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CLA24_9_1
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_6
+    -   port: None
+        node:
+            kind: ident
+            name: G_6
+    -   port: None
+        node:
+            kind: ident
+            name: P_6
+    -   port: None
+        node:
+            kind: slice
+            name: S6_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: RG6
+    module: KM_RG24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S6_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CLKB
+    -   port: None
+        node:
+            kind: slice
+            name: C6_
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_0_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_0_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_1_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_1_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR14_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR14_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR14_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDRM15_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDRM15_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDRM15_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR13_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR13_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR13_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_4_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_4_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR11_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR11_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR11_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_6_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_6_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_7_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_7_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR7_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR7_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSADDR7_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_9_0
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CLA24_9_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: ident
+            name: VSS
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: COEF
+            sgmnts:
+            - 0
+        -   kind: ident
+            name: VSS
+    delay: 0
+

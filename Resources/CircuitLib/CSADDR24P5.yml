@@ -640,15 +640,15 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: analog
     name: EXOR_0
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -678,12 +678,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_1
     module: DG_INV4_1X1
@@ -706,12 +706,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXNOR_2
     module: DG_EXNOR1_2X1
@@ -740,12 +740,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_25
     module: DG_INV4_1X1
@@ -768,12 +768,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: NAND_26
     module: DG_NAND2_2X1
@@ -802,12 +802,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_27
     module: DG_TILO
@@ -824,12 +824,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_28
     module: DG_BUF4_1X1
@@ -852,12 +852,12 @@ behav_blcks:
             - 24
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_23
     module: DG_EXNOR1_2X1

@@ -1,0 +1,2346 @@
+kind: verilog
+module: KM_COEFF_MULT3
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: INV
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: SIG
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: O
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: S
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: C
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: G_24
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P_24
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: C_24
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SUM
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MULT_2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 383
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: CLA24
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: C_24
+    -   port: None
+        node:
+            kind: ident
+            name: G_24
+    -   port: None
+        node:
+            kind: ident
+            name: P_24
+    -   port: None
+        node:
+            kind: slice
+            name: SUM
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_23
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_22
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_21
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_20
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_19
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_18
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_17
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_16
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_15
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_14
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_13
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_12
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_11
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_10
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_9
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_8
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_7
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_6
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_5
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_4
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_3
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_2
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+-   kind: async
+    name: BUF_0
+    module: DG_BUF8_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+-   kind: async
+    name: MULT
+    module: KM_CS_MULT1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SIG
+            sgmnts:
+            -   kind: int
+                value: 19
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: INV
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MULT_2
+    -   port: None
+        node:
+            kind: slice
+            name: S
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MULT_2
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D15_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D14_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D13_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D12_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D11_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D10_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D9_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D8_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D7_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D6_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D5_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D4_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 0
+    delay: 0
+

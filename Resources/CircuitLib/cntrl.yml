@@ -3,13 +3,12 @@ module: cntrl
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
 io_ports: []
-decls:
-- null
+decls: []
 behav_blcks:
 -   kind: initial
     stmnts:
@@ -27,3 +26,4 @@ behav_blcks:
             value: ps
         -   kind: int
             value: 4
+

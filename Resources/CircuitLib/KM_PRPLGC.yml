@@ -108,7 +108,7 @@ behav_blcks:
                 name: D1P
             -   kind: ident
                 name: D2P
-    delay: 40.0
+    delay: 13.0
 -   kind: assign
     lvalue:
         kind: ident
@@ -130,5 +130,5 @@ behav_blcks:
                     name: D1P
                 -   kind: ident
                     name: D2P
-    delay: 40.0
+    delay: 13.0
 

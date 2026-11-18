@@ -3,7 +3,7 @@ module: DG_BSMX8
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -36,6 +36,118 @@ io_ports:
 -   name: VDD
 -   name: VSS
 decls:
+-   -   kind: Output
+        name: O7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O7
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O6
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O5
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Output
+        name: O0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+    -   kind: Wire
+        name: O0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 -   -   kind: Input
         name: SLCT
         signed: 'False'
@@ -169,152 +281,7 @@ decls:
         - 0
         - 0
         length: []
--   -   kind: Output
-        name: O7
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O7
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O6
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O6
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O5
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O5
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O4
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O4
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O3
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O2
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Output
-        name: O0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
-    -   kind: Wire
-        name: O0
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
 behav_blcks:
--   kind: specify
-    variant: full
-    delay_expr:
-        kind: float
-        delay: 20.2
-    src_sgnls:
-    - SLCT
-    - A7
-    - A6
-    - A5
-    - A4
-    - A3
-    - A2
-    - A1
-    - A0
-    - B7
-    - B6
-    - B5
-    - B4
-    - B3
-    - B2
-    - B1
-    - B0
-    edge: posedge
-    dst_sgnls:
-    - O7
-    - O6
-    - O5
-    - O4
-    - O3
-    - O2
-    - O1
-    - O0
 -   kind: assign
     lvalue:
     - lconcat
@@ -350,3 +317,4 @@ behav_blcks:
             - B1
             - B0
     delay: 0
+

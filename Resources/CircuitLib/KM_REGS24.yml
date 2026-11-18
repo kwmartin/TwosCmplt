@@ -87,12 +87,12 @@ behav_blcks:
             name: CLKBF
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__23
     module: DG_DX_4X2

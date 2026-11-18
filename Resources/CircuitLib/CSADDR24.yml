@@ -79,12 +79,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF4_1X1
@@ -107,12 +107,12 @@ behav_blcks:
             - 24
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: analog
     name: AB_AC_BC_24
     module: AB_AC_BC
@@ -979,7 +979,7 @@ behav_blcks:
             name: VSS
 -   kind: analog
     name: EXOR_23
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1013,9 +1013,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_22
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1045,13 +1049,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 22
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_21
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1085,9 +1093,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_20
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1117,13 +1129,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 20
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_19
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1157,9 +1173,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_18
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1189,13 +1209,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 18
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_17
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1229,9 +1253,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_16
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1261,13 +1289,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 16
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_15
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1301,9 +1333,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_14
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1333,13 +1369,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 14
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_13
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1373,9 +1413,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_12
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1405,13 +1449,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 12
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_11
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1445,9 +1493,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_10
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1477,13 +1529,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 10
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_9
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1517,9 +1573,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_8
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1549,13 +1609,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 8
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_7
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1589,9 +1653,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_6
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1621,13 +1689,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 6
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_5
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1661,9 +1733,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_4
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1693,13 +1769,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 4
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_3
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1733,9 +1813,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_2
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1765,13 +1849,17 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 2
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
             name: VSS
 -   kind: analog
     name: EXOR_1
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1805,9 +1893,13 @@ behav_blcks:
         node:
             kind: ident
             name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
 -   kind: analog
     name: EXOR_0
-    module: EXOR_3X1
+    module: DG_EXOR1_3X1
     params:
     -   kind: str
         value: analog
@@ -1837,6 +1929,10 @@ behav_blcks:
             name: SUM
             sgmnts:
             - 0
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
     -   port: None
         node:
             kind: ident
