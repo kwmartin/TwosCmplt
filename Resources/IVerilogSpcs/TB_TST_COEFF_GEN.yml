@@ -1,0 +1,79 @@
+module: TST_COEFF_GEN
+generated: true
+Constants:
+    PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+FinishTime: 64*PER
+ResetRelease: 0.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD_
+          - 1
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - COEF
+          - '0x8'
+      -   - D0_
+          - 0
+      -   - IN
+          - 0
+      -   - K
+          - 0
+      -   - SIG
+          - 0
+      -   - SIG19
+          - 0
+  - tm: 0.1*PER
+    vls:
+      -   - INIT
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    COEF: 20
+    D0_: 24
+    IN: 24
+    K: 4
+    SIG: 20
+    SIG19: 1
+SaveNds:
+  - name: C_24
+    format: b
+  - name: DATA_OUT
+    format: h
+  - name: G_24
+    format: b
+  - name: O
+    format: h
+  - name: P_32
+    format: b
+  - name: RGN_
+    format: h
+Classifications:
+    CLK: clocks
+    VDD_: power
+    VDD: power
+    VSS: power
+    INIT: resets
+    COEF: data_inputs
+    D0_: data_inputs
+    IN: data_inputs
+    K: data_inputs
+    SIG: data_inputs
+    SIG19: data_inputs
+    C_24: outputs
+    DATA_OUT: outputs
+    G_24: outputs
+    O: outputs
+    P_32: outputs
+    RGN_: outputs

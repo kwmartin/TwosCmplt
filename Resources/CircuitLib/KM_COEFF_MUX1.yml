@@ -45,13 +45,6 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
-        name: SIG19
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
         name: Z
         signed: 'False'
         width:
@@ -1112,8 +1105,10 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: ident
-            name: SIG19
+            kind: bit
+            name: SIG
+            sgmnts:
+            - 19
     -   port: None
         node:
             kind: slice
