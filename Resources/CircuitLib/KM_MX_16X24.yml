@@ -72,6 +72,15 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
+    name: D7_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
     name: D9_
     direct: 'Input:'
     signed: 'False'
@@ -82,15 +91,6 @@ io_ports:
         value: 0
 -   kind: Wire
     name: D8_
-    direct: 'Input:'
-    signed: 'False'
-    width:
-    -   kind: int
-        value: 23
-    -   kind: int
-        value: 0
--   kind: Wire
-    name: D7_
     direct: 'Input:'
     signed: 'False'
     width:
@@ -1317,12 +1317,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_2
     module: DG_BUF20_1X1
@@ -1345,12 +1345,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF20_1X1
@@ -1373,12 +1373,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_0
     module: DG_BUF20_1X1
@@ -1401,12 +1401,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: assign
     lvalue:
         kind: ident

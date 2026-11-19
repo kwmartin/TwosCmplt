@@ -3,7 +3,7 @@ module: CSSLCA
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -150,8 +150,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_6
     module: DG_MX4_3X1
@@ -184,8 +188,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_5
     module: DG_MX4_3X1
@@ -218,8 +226,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_4
     module: DG_MX4_3X1
@@ -252,8 +264,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_3
     module: DG_MX4_3X1
@@ -286,8 +302,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2
     module: DG_MX4_3X1
@@ -320,8 +340,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_1
     module: DG_MX4_3X1
@@ -354,8 +378,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_0
     module: DG_MX4_3X1
@@ -388,14 +416,18 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_7
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -424,18 +456,18 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_6
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -464,18 +496,18 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_5
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -504,18 +536,18 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_4
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -544,18 +576,18 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_3
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -584,18 +616,18 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_2
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -624,18 +656,18 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_1
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -664,18 +696,18 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: EXNORB_3X1_0
     module: DG_EXNOR1_3X1
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -704,12 +736,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_7
     module: DG_EXOR1_2X1
@@ -738,8 +770,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_6
     module: DG_EXOR1_2X1
@@ -768,8 +804,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_5
     module: DG_EXOR1_2X1
@@ -798,8 +838,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_4
     module: DG_EXOR1_2X1
@@ -828,8 +872,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_3
     module: DG_EXOR1_2X1
@@ -858,8 +906,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2
     module: DG_EXOR1_2X1
@@ -888,8 +940,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_1
     module: DG_EXOR1_2X1
@@ -918,8 +974,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_0
     module: DG_EXOR1_2X1
@@ -948,8 +1008,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_0
     module: DG_BUF8_1X1
@@ -1006,8 +1070,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_6
     module: DG_MX4_3X1
@@ -1040,8 +1108,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_5
     module: DG_MX4_3X1
@@ -1074,8 +1146,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_4
     module: DG_MX4_3X1
@@ -1108,8 +1184,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_3
     module: DG_MX4_3X1
@@ -1142,8 +1222,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_2
     module: DG_MX4_3X1
@@ -1176,8 +1260,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_1
     module: DG_MX4_3X1
@@ -1210,8 +1298,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MX_2_0
     module: DG_MX4_3X1
@@ -1244,8 +1336,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_7
     module: DG_AND2_2X1
@@ -1274,8 +1370,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_6
     module: DG_AND2_2X1
@@ -1304,8 +1404,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_5
     module: DG_AND2_2X1
@@ -1334,8 +1438,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_4
     module: DG_AND2_2X1
@@ -1364,8 +1472,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_3
     module: DG_AND2_2X1
@@ -1394,8 +1506,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_2
     module: DG_AND2_2X1
@@ -1424,8 +1540,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_1
     module: DG_AND2_2X1
@@ -1454,8 +1574,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: EXOR_2_0
     module: DG_AND2_2X1
@@ -1484,14 +1608,18 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_7
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1520,18 +1648,18 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_6
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1560,18 +1688,18 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_5
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1600,18 +1728,18 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_4
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1640,18 +1768,18 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_3
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1680,18 +1808,18 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_2
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1720,18 +1848,18 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_1
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1760,18 +1888,18 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: N_AB_AC_BC_0
     module: DG_NAB_AC_BC
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -1800,10 +1928,10 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 

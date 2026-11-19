@@ -135,8 +135,12 @@ behav_blcks:
             - 23
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__22
     module: DG_DX_4X2
@@ -179,8 +183,12 @@ behav_blcks:
             - 22
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__21
     module: DG_DX_4X2
@@ -223,8 +231,12 @@ behav_blcks:
             - 21
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__20
     module: DG_DX_4X2
@@ -267,8 +279,12 @@ behav_blcks:
             - 20
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__19
     module: DG_DX_4X2
@@ -311,8 +327,12 @@ behav_blcks:
             - 19
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__18
     module: DG_DX_4X2
@@ -355,8 +375,12 @@ behav_blcks:
             - 18
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__17
     module: DG_DX_4X2
@@ -399,8 +423,12 @@ behav_blcks:
             - 17
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__16
     module: DG_DX_4X2
@@ -443,8 +471,12 @@ behav_blcks:
             - 16
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__15
     module: DG_DX_4X2
@@ -487,8 +519,12 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__14
     module: DG_DX_4X2
@@ -531,8 +567,12 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__13
     module: DG_DX_4X2
@@ -575,8 +615,12 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__12
     module: DG_DX_4X2
@@ -619,8 +663,12 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__11
     module: DG_DX_4X2
@@ -663,8 +711,12 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__10
     module: DG_DX_4X2
@@ -707,8 +759,12 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__9
     module: DG_DX_4X2
@@ -751,8 +807,12 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__8
     module: DG_DX_4X2
@@ -795,8 +855,12 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__7
     module: DG_DX_4X2
@@ -839,8 +903,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__6
     module: DG_DX_4X2
@@ -883,8 +951,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__5
     module: DG_DX_4X2
@@ -927,8 +999,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__4
     module: DG_DX_4X2
@@ -971,8 +1047,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__3
     module: DG_DX_4X2
@@ -1015,8 +1095,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__2
     module: DG_DX_4X2
@@ -1059,8 +1143,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__1
     module: DG_DX_4X2
@@ -1103,8 +1191,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
     name: DX__0
     module: DG_DX_4X2
@@ -1147,6 +1239,10 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 

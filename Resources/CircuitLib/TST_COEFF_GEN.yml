@@ -6,7 +6,7 @@ params:
     value: 5
   - kind: str
     name: circuit
-    value: subcirc
+    value: sync
 io_ports:
   - kind: Wire
     name: C_24
@@ -250,12 +250,12 @@ behav_blcks:
                 name: VDD
               - kind: ident
                 name: VSS
-  - kind: async
+  - kind: sync
     name: REG
     module: KM_REGS24
     params:
       - kind: str
-        value: async
+        value: sync
         name: circuit
     ports:
       - port: None
@@ -310,12 +310,12 @@ behav_blcks:
                 name: VDD
               - kind: ident
                 name: VSS
-  - kind: analog
+  - kind: sync
     name: MLT
     module: KM_MULTX4BTSC
     params:
       - kind: str
-        value: analog
+        value: sync
         name: circuit
     ports:
       - port: None
@@ -361,12 +361,12 @@ behav_blcks:
                 name: VDD_
               - kind: ident
                 name: VSS
-  - kind: async
+  - kind: sync
     name: BS24
     module: OUT_BUS24
     params:
       - kind: str
-        value: async
+        value: sync
         name: circuit
     ports:
       - port: None
@@ -439,12 +439,12 @@ behav_blcks:
                 name: VDD
               - kind: ident
                 name: VSS
-  - kind: analog
+  - kind: subcirc
     name: KM_COEFF_GEN2_1
     module: KM_COEFF_GEN2
     params:
       - kind: str
-        value: analog
+        value: sync
         name: circuit
     ports:
       - port: None

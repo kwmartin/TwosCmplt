@@ -423,12 +423,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: async
+-   kind: sync
     name: REG2
     module: KM_RG24
     params:
     -   kind: str
-        value: async
+        value: sync
         name: circuit
     ports:
     -   port: None
@@ -483,12 +483,12 @@ behav_blcks:
             name: CLK1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF20_1X1
@@ -507,18 +507,18 @@ behav_blcks:
             name: CLK1
     -   port: None
         node:
-            kind: ident
-            name: VDD
-    -   port: None
-        node:
-            kind: ident
-            name: VSS
--   kind: analog
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
     name: CSADDR0
     module: CSADDR24
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -574,12 +574,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSADDR1
     module: CSADDR24
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None

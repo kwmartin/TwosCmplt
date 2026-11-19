@@ -240,8 +240,12 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: DMY_1
     module: DG_DMMY
@@ -252,8 +256,12 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: DMY_6
     module: DG_DMMY
@@ -264,8 +272,12 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: DMY_7
     module: DG_DMMY
@@ -276,6 +288,10 @@ behav_blcks:
     ports:
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 

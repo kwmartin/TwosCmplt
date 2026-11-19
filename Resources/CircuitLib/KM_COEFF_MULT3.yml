@@ -195,8 +195,12 @@ behav_blcks:
             - 23
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_22
     module: DG_BUF8_1X1
@@ -219,8 +223,12 @@ behav_blcks:
             - 22
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_21
     module: DG_BUF8_1X1
@@ -243,8 +251,12 @@ behav_blcks:
             - 21
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_20
     module: DG_BUF8_1X1
@@ -267,8 +279,12 @@ behav_blcks:
             - 20
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_19
     module: DG_BUF8_1X1
@@ -291,8 +307,12 @@ behav_blcks:
             - 19
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_18
     module: DG_BUF8_1X1
@@ -315,8 +335,12 @@ behav_blcks:
             - 18
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_17
     module: DG_BUF8_1X1
@@ -339,8 +363,12 @@ behav_blcks:
             - 17
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_16
     module: DG_BUF8_1X1
@@ -363,8 +391,12 @@ behav_blcks:
             - 16
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_15
     module: DG_BUF8_1X1
@@ -387,8 +419,12 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_14
     module: DG_BUF8_1X1
@@ -411,8 +447,12 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_13
     module: DG_BUF8_1X1
@@ -435,8 +475,12 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_12
     module: DG_BUF8_1X1
@@ -459,8 +503,12 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_11
     module: DG_BUF8_1X1
@@ -483,8 +531,12 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_10
     module: DG_BUF8_1X1
@@ -507,8 +559,12 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_9
     module: DG_BUF8_1X1
@@ -531,8 +587,12 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_8
     module: DG_BUF8_1X1
@@ -555,8 +615,12 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_7
     module: DG_BUF8_1X1
@@ -579,8 +643,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_6
     module: DG_BUF8_1X1
@@ -603,8 +671,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_5
     module: DG_BUF8_1X1
@@ -627,8 +699,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_4
     module: DG_BUF8_1X1
@@ -651,8 +727,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_3
     module: DG_BUF8_1X1
@@ -675,8 +755,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_2
     module: DG_BUF8_1X1
@@ -699,8 +783,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_1
     module: DG_BUF8_1X1
@@ -723,8 +811,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: BUF_0
     module: DG_BUF8_1X1
@@ -747,8 +839,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: MULT
     module: KM_CS_MULT1

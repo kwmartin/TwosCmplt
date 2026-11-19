@@ -1,4 +1,4 @@
-generated: '2026-11-18T22:49:09+00:00'
+generated: '2026-11-19T12:31:36+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -112,6 +112,11 @@ modules:
         file_name: CMPL.v
         clean: false
         stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
+    CMPL_A4_INVIN:
+        directory: verilogParse/ver_lib
+        file_name: CMPL_A4_INVIN.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
@@ -911,7 +916,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DLEUX_7X2.v
         clean: false
-        stale_reason: 'missing: ast, unl'
+        stale_reason: parser scripts changed
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -1113,7 +1118,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X16B.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: parser scripts changed
     KM_MX_16X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1B.v
@@ -1122,7 +1127,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1C.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: parser scripts changed
     KM_MX_16X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X24.v
@@ -1181,7 +1186,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_BFR_GF.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: parser scripts changed
     KM_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_GF2.v
@@ -1191,7 +1196,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_STG_GF2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'missing: unl'
     KM_PRPLGC:
         directory: verilogParse/ver_lib
         file_name: KM_PRPLGC.v
@@ -1302,7 +1307,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: Sine.v
         clean: false
-        stale_reason: 'not in deps, source newer than: mod, circuit_lib, unl'
+        stale_reason: 'not in deps, source newer than: ast, mod, circuit_lib, unl'
     Sine5:
         directory: verilogParse/ver_lib
         file_name: Sine5.v
@@ -1681,7 +1686,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
         clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        stale_reason: 'missing: circuit_lib'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
@@ -1776,7 +1781,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: parser scripts changed
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
@@ -1906,7 +1911,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'missing: unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -2020,8 +2025,7 @@ modules:
     cntrl:
         directory: verilogParse/lib/std28_lib
         file_name: OUT_BUS24.v
-        clean: false
-        stale_reason: 'not in deps, source newer than: unl'
+        clean: true
     coeffPre:
         directory: verilogParse/ver_lib
         file_name: coeffPre.v

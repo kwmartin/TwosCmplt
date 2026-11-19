@@ -3,7 +3,7 @@ module: CSADDR24P4
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -186,12 +186,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSSCLC2
     module: CSSLCA
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None

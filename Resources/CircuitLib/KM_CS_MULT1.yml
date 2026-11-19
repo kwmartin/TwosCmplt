@@ -3,7 +3,7 @@ module: KM_CS_MULT1
 params:
 -   kind: str
     name: circuit
-    value: sync
+    value: async
 -   kind: Int
     name: delay
     value: 5
@@ -281,12 +281,12 @@ decls:
                 value: 0
         length: []
 behav_blcks:
--   kind: analog
+-   kind: async
     name: CSADDR0
     module: CSADDR24
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -342,12 +342,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSADDR1
     module: CSADDR24
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -403,12 +403,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSA4
     module: CSADDR24P4
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -463,12 +463,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSADDR2
     module: CSADDR24
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -524,12 +524,12 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: analog
+-   kind: async
     name: CSA5
     module: CSADDR24P5
     params:
     -   kind: str
-        value: analog
+        value: async
         name: circuit
     ports:
     -   port: None
@@ -619,8 +619,12 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_14
     module: DG_TILO
@@ -637,8 +641,12 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_13
     module: DG_TILO
@@ -655,8 +663,12 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_12
     module: DG_TILO
@@ -673,8 +685,12 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_11
     module: DG_TILO
@@ -691,8 +707,12 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_10
     module: DG_TILO
@@ -709,8 +729,12 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_9
     module: DG_TILO
@@ -727,8 +751,12 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_8
     module: DG_TILO
@@ -745,8 +773,12 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_7
     module: DG_TILO
@@ -763,8 +795,12 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_6
     module: DG_TILO
@@ -781,8 +817,12 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_5
     module: DG_TILO
@@ -799,8 +839,12 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_4
     module: DG_TILO
@@ -817,8 +861,12 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_3
     module: DG_TILO
@@ -835,8 +883,12 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_2
     module: DG_TILO
@@ -853,8 +905,12 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_1
     module: DG_TILO
@@ -871,8 +927,12 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: TILO_0
     module: DG_TILO
@@ -889,8 +949,12 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: assign
     lvalue:
         kind: ident
