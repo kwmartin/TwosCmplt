@@ -45,20 +45,6 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
-        name: CN
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
-        name: CP
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
         name: DN
         signed: 'False'
         width:
@@ -79,7 +65,69 @@ decls:
         - 0
         - 0
         length: []
+-   -   kind: Wire
+        name: CLN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CLP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
 behav_blcks:
+-   kind: async
+    name: INV_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: CLN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLN
+    -   port: None
+        node:
+            kind: ident
+            name: CLP
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: async
     name: INV_2
     module: DG_INV2_1X1
@@ -123,11 +171,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CLN
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CLP
     -   port: None
         node:
             kind: ident
@@ -159,11 +207,11 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CP
+            name: CLP
     -   port: None
         node:
             kind: ident
-            name: CN
+            name: CLN
     -   port: None
         node:
             kind: ident
@@ -205,7 +253,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: RINV
+    name: INV_4
     module: DG_INV2_1X1
     params:
     -   kind: str
@@ -220,34 +268,6 @@ behav_blcks:
         node:
             kind: ident
             name: RBN
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: S2D2
-    module: DG_SNGL2DIFF_1X2
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: ident
-            name: CLK
-    -   port: None
-        node:
-            kind: ident
-            name: CP
-    -   port: None
-        node:
-            kind: ident
-            name: CN
     -   port: None
         node:
             kind: concat

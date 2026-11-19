@@ -100,20 +100,8 @@ behav_blcks:
     -   port: CNT
         node:
             kind: ident
-            name: VDD
+            name: LD
     -   port: COUT
-        node:
-            kind: ident
-            name: COUT0
-    -   port: CP
-        node:
-            kind: ident
-            name: CP
-    -   port: CN
-        node:
-            kind: ident
-            name: CN
-    -   port: D
         node:
             kind: slice
             name: D
@@ -122,24 +110,23 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: D
         node:
             kind: ident
             name: INIT
+    -   port: INIT
+        node:
+            kind: ident
+            name: CP
     -   port: L
         node:
             kind: ident
-            name: LD
+            name: CN
     -   port: QN
-        node:
-            kind: slice
-            name: QN
-            sgmnts:
-            -   kind: int
-                value: 3
-            -   kind: int
-                value: 0
-    -   port: QP
         node:
             kind: slice
             name: QP
@@ -148,6 +135,19 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
+    -   port: QP
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: COUT0
     -   port: VDD
         node:
             kind: ident
@@ -164,20 +164,8 @@ behav_blcks:
     -   port: CNT
         node:
             kind: ident
-            name: COUT0
+            name: LD
     -   port: COUT
-        node:
-            kind: ident
-            name: COUT1
-    -   port: CP
-        node:
-            kind: ident
-            name: CP
-    -   port: CN
-        node:
-            kind: ident
-            name: CN
-    -   port: D
         node:
             kind: slice
             name: D
@@ -186,24 +174,23 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
-    -   port: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: COUT0
+    -   port: D
         node:
             kind: ident
             name: INIT
+    -   port: INIT
+        node:
+            kind: ident
+            name: CP
     -   port: L
         node:
             kind: ident
-            name: LD
+            name: CN
     -   port: QN
-        node:
-            kind: slice
-            name: QN
-            sgmnts:
-            -   kind: int
-                value: 7
-            -   kind: int
-                value: 4
-    -   port: QP
         node:
             kind: slice
             name: QP
@@ -212,6 +199,19 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
+    -   port: QP
+        node:
+            kind: slice
+            name: QN
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 4
+    -   port: None
+        node:
+            kind: ident
+            name: COUT1
     -   port: VDD
         node:
             kind: ident

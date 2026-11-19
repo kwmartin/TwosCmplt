@@ -418,7 +418,7 @@ behav_blcks:
                 name: VSS
 -   kind: async
     name: INV1
-    module: DG_INV4
+    module: DG_INV4_1X1
     params:
     -   kind: str
         value: async
@@ -503,7 +503,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF16
+    name: BUFR_15
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -531,7 +531,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF2
+    name: BUFR_14
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -559,7 +559,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF3
+    name: BUFR_13
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -587,7 +587,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF4
+    name: BUFR_12
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -615,7 +615,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF5
+    name: BUFR_11
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -643,7 +643,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF6
+    name: BUFR_10
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -671,7 +671,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF7
+    name: BUFR_9
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -699,7 +699,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF8
+    name: BUFR_8
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -727,7 +727,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF9
+    name: BUFR_7
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -755,7 +755,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF10
+    name: BUFR_6
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -783,7 +783,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF11
+    name: BUFR_5
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -811,7 +811,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF12
+    name: BUFR_4
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -839,7 +839,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF13
+    name: BUFR_3
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -867,7 +867,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF14
+    name: BUFR_2
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -895,7 +895,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF15
+    name: BUFR_1
     module: DG_BUF4_1X1
     params:
     -   kind: str
@@ -923,7 +923,7 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: BUF17
+    name: BUFR_0
     module: DG_BUF4_1X1
     params:
     -   kind: str

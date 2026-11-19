@@ -1,0 +1,1033 @@
+kind: verilog
+module: KM_MX_2X25
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: SLCT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: O
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: SLCTN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: BUF_0
+    module: DG_INV20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCT
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_24
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_23
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_22
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_21
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_20
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_19
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_18
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_17
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_16
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_15
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_14
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_13
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_12
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_11
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_10
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_9
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_8
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_7
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_6
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_5
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_4
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_3
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_2
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_1
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MUX_0
+    module: KM_MXB4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SLCTN
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+

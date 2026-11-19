@@ -1,0 +1,1854 @@
+kind: verilog
+module: KM_MX_4X24
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: SL
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 3
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D0_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D1_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D2_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D3_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: O
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: SLCT
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX1_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX2_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX3_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX4_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX5_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX6_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX7_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX8_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX9_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX10_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX11_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX12_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX13_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX14_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX15_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX16_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX17_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX18_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX19_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX20_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX21_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX22_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX23_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_MX0_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MX1
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX1_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX2
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX2_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX3
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX3_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX4
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX4_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX5
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX5_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX6
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX6_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX7
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX7_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX8
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX8_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX9
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX9_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX10
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX10_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX11
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX11_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX12
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX12_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX13
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX13_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX14
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX14_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX15
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX15_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX16
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX16_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX17
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX17_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX18
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX18_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX19
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX19_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX20
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX20_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX21
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX21_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX22
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX22_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX23
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX23_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX0
+    module: DG_MX_4X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SLCT
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_MX0_1
+    -   port: None
+        node:
+            kind: bit
+            name: O
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_3
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_2
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_0
+    module: DG_BUF20_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SL
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SLCT
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX1_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 1
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 1
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX2_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 2
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 2
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX3_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 3
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX4_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 4
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX5_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 5
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX6_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 6
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX7_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 7
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX8_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 8
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX9_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 9
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX10_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 10
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX11_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 11
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX12_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 12
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX13_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 13
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX14_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 14
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX15_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 15
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX16_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 16
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX17_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 17
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX18_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 18
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX19_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 19
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX20_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 20
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX21_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 21
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX22_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 22
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX23_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 23
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_MX0_1
+    rvalue:
+        concats:
+        -   kind: bit
+            name: D3_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D2_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D1_
+            sgmnts:
+            - 0
+        -   kind: bit
+            name: D0_
+            sgmnts:
+            - 0
+    delay: 0
+

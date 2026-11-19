@@ -85,8 +85,8 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: sync
-    name: DR__16
-    module: DG_DR_3X2
+    name: DX__16
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -105,6 +105,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -120,11 +124,15 @@ behav_blcks:
             - 16
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__15
-    module: DG_DR_3X2
+    name: DX__15
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -143,6 +151,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -158,11 +170,15 @@ behav_blcks:
             - 15
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__14
-    module: DG_DR_3X2
+    name: DX__14
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -181,6 +197,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -196,11 +216,15 @@ behav_blcks:
             - 14
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__13
-    module: DG_DR_3X2
+    name: DX__13
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -219,6 +243,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -234,11 +262,15 @@ behav_blcks:
             - 13
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__12
-    module: DG_DR_3X2
+    name: DX__12
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -257,6 +289,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -272,11 +308,15 @@ behav_blcks:
             - 12
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__11
-    module: DG_DR_3X2
+    name: DX__11
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -295,6 +335,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -310,11 +354,15 @@ behav_blcks:
             - 11
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__10
-    module: DG_DR_3X2
+    name: DX__10
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -333,6 +381,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -348,11 +400,15 @@ behav_blcks:
             - 10
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__9
-    module: DG_DR_3X2
+    name: DX__9
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -371,6 +427,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -386,11 +446,15 @@ behav_blcks:
             - 9
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__8
-    module: DG_DR_3X2
+    name: DX__8
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -409,6 +473,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -424,11 +492,15 @@ behav_blcks:
             - 8
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__7
-    module: DG_DR_3X2
+    name: DX__7
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -447,6 +519,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -462,11 +538,15 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__6
-    module: DG_DR_3X2
+    name: DX__6
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -485,6 +565,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -500,11 +584,15 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__5
-    module: DG_DR_3X2
+    name: DX__5
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -523,6 +611,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -538,11 +630,15 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: VSS
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__4
-    module: DG_DR_3X2
+    name: DX__4
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -561,6 +657,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -576,11 +676,15 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__3
-    module: DG_DR_3X2
+    name: DX__3
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -596,29 +700,37 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: CLKBF
-    -   port: None
-        node:
-            kind: bit
-            name: QP
-            sgmnts:
-            - 3
-    -   port: None
-        node:
-            kind: bit
-            name: QN
-            sgmnts:
-            - 3
     -   port: None
         node:
             kind: ident
             name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__2
-    module: DG_DR_3X2
+    name: DX__2
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -634,67 +746,83 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: CLKBF
-    -   port: None
-        node:
-            kind: bit
-            name: QP
-            sgmnts:
-            - 2
-    -   port: None
-        node:
-            kind: bit
-            name: QN
-            sgmnts:
-            - 2
-    -   port: None
-        node:
-            kind: ident
-            name: VDD
--   kind: sync
-    name: DR__1
-    module: DG_DR_3X2
-    params:
-    -   kind: str
-        value: sync
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: IN_
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: ident
-            name: INIT
-    -   port: None
-        node:
-            kind: ident
-            name: CLKBF
-    -   port: None
-        node:
-            kind: bit
-            name: QP
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: bit
-            name: QN
-            sgmnts:
-            - 1
     -   port: None
         node:
             kind: ident
             name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 -   kind: sync
-    name: DR__0
-    module: DG_DR_3X2
+    name: DX__1
+    module: DG_DX_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: IN_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: CLKBF
+    -   port: None
+        node:
+            kind: bit
+            name: QP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: QN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: DX__0
+    module: DG_DX_4X2
     params:
     -   kind: str
         value: sync
@@ -713,6 +841,10 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
             name: CLKBF
     -   port: None
         node:
@@ -728,6 +860,10 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: VDD
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
 
