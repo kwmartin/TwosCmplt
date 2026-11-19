@@ -1,0 +1,17 @@
+Constants:
+    PER: 1000
+Clock:
+  - clkNm: INN
+    per: PER
+    delay: 0
+    initVal: 0
+FinishTime: 64*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      - [VDD, 1]
+      - [VSS, 0]
+      - [INN, 0]
+SaveNds:
+  - name: OUT
+    format: b
