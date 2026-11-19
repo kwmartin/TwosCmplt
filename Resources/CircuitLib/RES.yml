@@ -4,6 +4,9 @@ params:
 -   kind: str
     name: circuit
     value: async
+-   kind: int
+    name: VALUE
+    value: 1
 -   kind: Int
     name: delay
     value: 5
@@ -26,12 +29,10 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: assign
-    lvalue:
-        kind: ident
-        name: N
-    rvalue:
-        kind: ident
-        name: P
-    delay: 0
+-   kind: gate
+    name: ''
+    gate: buf
+    ports:
+    - N
+    - P
 
