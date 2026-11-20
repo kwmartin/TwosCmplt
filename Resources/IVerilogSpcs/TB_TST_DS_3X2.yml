@@ -5,6 +5,7 @@ Constants:
 Clock:
   - clkNm: CLK
     per: PER
+    initVal: 0
 FinishTime: 24*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
@@ -56,10 +57,6 @@ TimeSpcs:
     vls:
       -   - D
           - 0
-  - tm: 17.2*PER
-    vls:
-      -   - D
-          - 1
 Signals:
     CLK: 1
     D: 1
