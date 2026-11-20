@@ -1,15 +1,13 @@
-generated: '2026-11-19T22:46:21+00:00'
+generated: '2026-11-20T00:41:07+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     AB_ANC_BNC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     Accum:
         directory: verilogParse/ver_lib
         file_name: accum.v
@@ -23,7 +21,9 @@ modules:
     CAP:
         directory: verilogParse/ver_lib
         file_name: CAP.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 1 more changed'
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -52,8 +52,7 @@ modules:
     CLA1:
         directory: verilogParse/ver_lib
         file_name: CLA1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLA10:
         directory: verilogParse/ver_lib
         file_name: CLA10.v
@@ -62,8 +61,7 @@ modules:
     CLA16:
         directory: verilogParse/ver_lib
         file_name: CLA16.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLA18:
         directory: verilogParse/ver_lib
         file_name: CLA18.v
@@ -72,18 +70,15 @@ modules:
     CLA2:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLA24:
         directory: verilogParse/ver_lib
         file_name: CLA24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLA4:
         directory: verilogParse/ver_lib
         file_name: CLA4.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLA6:
         directory: verilogParse/ver_lib
         file_name: CLA6.v
@@ -92,8 +87,7 @@ modules:
     CLA8:
         directory: verilogParse/ver_lib
         file_name: CLA8.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CLK_SLCT:
         directory: verilogParse/ver_lib
         file_name: CLK_SLCT.v
@@ -123,7 +117,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
@@ -142,38 +136,31 @@ modules:
     CSADDR24:
         directory: verilogParse/ver_lib
         file_name: CSADDR24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CSADDR24M:
         directory: verilogParse/ver_lib
         file_name: CSADDR24M.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CSADDR24P4:
         directory: verilogParse/ver_lib
         file_name: CSADDR24P4.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CSADDR24P5:
         directory: verilogParse/ver_lib
         file_name: CSADDR24P5.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CSSLCA:
         directory: verilogParse/ver_lib
         file_name: CSSLCA.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     CSSLCB:
         directory: verilogParse/ver_lib
         file_name: CSSLCB.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_AND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_3X1.v
@@ -207,8 +194,7 @@ modules:
     DG_BUF16_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF16_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_BUF1_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF1_1X1.v
@@ -217,8 +203,7 @@ modules:
     DG_BUF20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF20_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF2_1X1.v
@@ -227,18 +212,15 @@ modules:
     DG_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF4_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_BUF6_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF6_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF8_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_DER1_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER1_3X2.v
@@ -347,8 +329,7 @@ modules:
     DG_DMMY:
         directory: verilogParse/ver_lib
         file_name: DG_DMMY.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_DRC_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DRC_DIFF.v
@@ -412,8 +393,7 @@ modules:
     DG_DX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DX_4X2.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_D_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_D_3X2.v
@@ -432,23 +412,19 @@ modules:
     DG_EXNOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_3X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_3X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_HV2LV:
         directory: verilogParse/ver_lib
         file_name: DG_HV2LV.v
@@ -505,8 +481,7 @@ modules:
     DG_INV4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV4_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_INV6:
         directory: verilogParse/ver_lib
         file_name: DG_INV6.v
@@ -515,8 +490,7 @@ modules:
     DG_INV6_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV6_1X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_INV8:
         directory: verilogParse/ver_lib
         file_name: DG_INV8.v
@@ -680,8 +654,7 @@ modules:
     DG_MX4_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX4_3X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN1_3X1.v
@@ -695,8 +668,7 @@ modules:
     DG_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_4X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_8X1.v
@@ -715,13 +687,11 @@ modules:
     DG_NAB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_AC_BC.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_C2.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NAB_CDA_CDB:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_CDA_CDB.v
@@ -735,8 +705,7 @@ modules:
     DG_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_3X1.v
@@ -750,8 +719,7 @@ modules:
     DG_NAND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NAND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_3X1.v
@@ -770,8 +738,7 @@ modules:
     DG_NA_BCD:
         directory: verilogParse/ver_lib
         file_name: DG_NA_BCD.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: DG_NA_BC_BD.v
@@ -795,8 +762,7 @@ modules:
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR4_4X1.v
@@ -805,8 +771,7 @@ modules:
     DG_OR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_OR2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_3X1.v
@@ -860,8 +825,7 @@ modules:
     DG_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_3X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_S2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_S2DIFF_1X2.v
@@ -915,13 +879,11 @@ modules:
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_TILO:
         directory: verilogParse/ver_lib
         file_name: DG_TILO.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     DG_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDER_5X2.v
@@ -976,7 +938,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, unl'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
@@ -990,8 +952,7 @@ modules:
     FADDR_3X2:
         directory: verilogParse/ver_lib
         file_name: FADDR_3X2.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     HADDRA:
         directory: verilogParse/ver_lib
         file_name: HADDRA.v
@@ -1050,8 +1011,7 @@ modules:
     KM_CMPL20:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL20.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
@@ -1070,28 +1030,23 @@ modules:
     KM_COEFF_GEN2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN2.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_COEFF_MULT3:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT3.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_COEFF_MUX1:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_CS_MULT1:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
         file_name: KM_DEC_2X4.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
@@ -1140,18 +1095,15 @@ modules:
     KM_INGAT:
         directory: verilogParse/ver_lib
         file_name: KM_INGAT.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_MULTX4BTSC:
         directory: verilogParse/ver_lib
         file_name: KM_MULTX4BTSC.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_MXDIFF_5X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXDIFF_5X1.v
@@ -1165,8 +1117,7 @@ modules:
     KM_MX_16X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1B.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_MX_16X1C:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1C.v
@@ -1175,8 +1126,7 @@ modules:
     KM_MX_16X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
@@ -1186,12 +1136,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
@@ -1255,13 +1205,11 @@ modules:
     KM_REGS24:
         directory: verilogParse/ver_lib
         file_name: KM_REGS24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_RG24:
         directory: verilogParse/ver_lib
         file_name: KM_RG24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
@@ -1300,8 +1248,7 @@ modules:
     OUT_BUS24:
         directory: verilogParse/lib/std28_lib
         file_name: OUT_BUS24.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: OUT_SLCT.v
@@ -1335,8 +1282,7 @@ modules:
     RES:
         directory: verilogParse/ver_lib
         file_name: RES.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     Sine:
         directory: verilogParse/ver_lib
         file_name: Sine.v
@@ -1470,8 +1416,7 @@ modules:
     TST_COEFF_GEN:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_GEN.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml changed'
+        clean: true
     TST_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
@@ -1650,7 +1595,8 @@ modules:
     TST_INV20:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
@@ -1820,7 +1766,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
@@ -1950,7 +1896,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'missing: unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -2030,7 +1976,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
