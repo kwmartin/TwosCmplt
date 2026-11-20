@@ -42,19 +42,12 @@ decls:
         - 0
         length: []
 behav_blcks:
--   kind: gate
-    name: ''
-    gate: buf
-    ports:
-    - OUT
-    - IN
-    delay:
-    -   kind: bexpr
-        oper: 'Times:'
-        args:
-        -   kind: int
-            value: 744
-        -   kind: float
-            value: 1.0
-        name: None
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: OUT
+    rvalue:
+        kind: ident
+        name: IN
+    delay: 744.0
 

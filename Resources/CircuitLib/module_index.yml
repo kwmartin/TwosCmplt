@@ -1,13 +1,15 @@
-generated: '2026-11-20T18:01:44+00:00'
+generated: '2026-11-20T19:24:18+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: input changed'
     AB_ANC_BNC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: input changed'
     Accum:
         directory: verilogParse/ver_lib
         file_name: accum.v
@@ -227,8 +229,7 @@ modules:
     DG_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_3X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_4X2.v
@@ -248,8 +249,7 @@ modules:
     DG_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEX_4X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
@@ -291,8 +291,7 @@ modules:
     DG_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUX_7X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLR_5X2.v
@@ -314,8 +313,7 @@ modules:
     DG_DLUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUX_7X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DMMY:
         directory: verilogParse/ver_lib
         file_name: DG_DMMY.v
@@ -333,8 +331,7 @@ modules:
     DG_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DR_3X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DR_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X1.v
@@ -528,8 +525,7 @@ modules:
     DG_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKES_4X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_4X2.v
@@ -542,8 +538,7 @@ modules:
     DG_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_4X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_JKS_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_5X2.v
@@ -592,8 +587,7 @@ modules:
     DG_LTCHSN_6X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_6X1.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_LTCHS_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_3X1.v
@@ -636,8 +630,7 @@ modules:
     DG_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN1_3X1.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN2_3X1.v
@@ -812,8 +805,7 @@ modules:
     DG_SE2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SE2DIFF_1X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_SNGL2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SNGL2DIFF_1X2.v
@@ -821,13 +813,11 @@ modules:
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
@@ -836,8 +826,7 @@ modules:
     DG_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_6X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_TDUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDUR_6X2.v
@@ -851,8 +840,7 @@ modules:
     DG_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TER_3X2.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
@@ -882,8 +870,7 @@ modules:
     DG_TR_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TR_FF.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_TS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TS_3X2.v
@@ -959,8 +946,7 @@ modules:
     KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: KM_BFR_ENBL.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_BUF_HYST:
         directory: verilogParse/ver_lib
         file_name: KM_BUF_HYST.v
@@ -1023,8 +1009,7 @@ modules:
     KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_DIFF2SNGL:
         directory: verilogParse/ver_lib
         file_name: KM_DIFF2SNGL.v
@@ -1033,13 +1018,11 @@ modules:
     KM_DLY:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_DRQ_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_DRQ_DIFF.v
@@ -1058,8 +1041,7 @@ modules:
     KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
@@ -1142,8 +1124,7 @@ modules:
     KM_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: KM_NA_BC_BD.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_NOR2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NOR2_DIFF.v
@@ -1229,8 +1210,7 @@ modules:
     OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: OUT_SLCT.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     QD_ACCUM5:
         directory: verilogParse/ver_lib
         file_name: QD_ACCUM5.v
@@ -1411,8 +1391,7 @@ modules:
     TST_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_4X2.v
@@ -1432,8 +1411,7 @@ modules:
     TST_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEX_4X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFR.v
@@ -1455,8 +1433,7 @@ modules:
     TST_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUX_7X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLR_5X2.v
@@ -1473,8 +1450,7 @@ modules:
     TST_DLUX_7X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_DLUX_7X2_CAL.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_DRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DRB_3X2.v
@@ -1483,8 +1459,7 @@ modules:
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_DR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_4X2.v
@@ -1509,8 +1484,7 @@ modules:
     TST_DX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DX_4X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_D_FF_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_D_FF_3X2.v
@@ -1547,8 +1521,7 @@ modules:
     TST_FADDR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDR_3X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_HADDRA:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRA.v
@@ -1638,8 +1611,7 @@ modules:
     TST_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKES_4X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_JKR_4X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_JKR_4X2_CAL.v
@@ -1647,13 +1619,32 @@ modules:
     TST_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_JK_FF_R_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
         clean: false
         stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+    TST_KM_BFR_ENBL:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_BFR_ENBL.v
+        clean: true
+    TST_KM_DEGLITCH:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_DEGLITCH.v
+        clean: true
+    TST_KM_DLY:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_DLY.v
+        clean: true
+    TST_KM_DLY_UP:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_DLY_UP.v
+        clean: true
+    TST_KM_ENBL_BFR:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_ENBL_BFR.v
+        clean: true
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
@@ -1669,6 +1660,10 @@ modules:
         file_name: TST_KM_MXB4_3X1.v
         clean: false
         stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+    TST_KM_NA_BC_BD:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_NA_BC_BD.v
+        clean: true
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
@@ -1882,6 +1877,10 @@ modules:
         file_name: TST_OSC_GF2.v
         clean: false
         stale_reason: 'missing: ast, mod, unl'
+    TST_OUT_SLCT:
+        directory: verilogParse/ver_lib
+        file_name: TST_OUT_SLCT.v
+        clean: true
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -1935,6 +1934,10 @@ modules:
         file_name: TST_SNGL2DIFF_1X2.v
         clean: false
         stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+    TST_SW_INV:
+        directory: verilogParse/ver_lib
+        file_name: TST_SW_INV.v
+        clean: true
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
@@ -1943,8 +1946,7 @@ modules:
     TST_TDER_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_IN_6X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
@@ -1953,8 +1955,7 @@ modules:
     TST_TDR_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_IN_6X2.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
@@ -1963,8 +1964,7 @@ modules:
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_5X2.v
@@ -1981,8 +1981,7 @@ modules:
     TST_TR_FF:
         directory: verilogParse/ver_lib
         file_name: TST_TR_FF.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     VOTER:
         directory: verilogParse/ver_lib
         file_name: VOTER.v
