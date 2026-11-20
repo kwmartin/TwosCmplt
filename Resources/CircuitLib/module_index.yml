@@ -1,15 +1,13 @@
-generated: '2026-11-20T19:24:18+00:00'
+generated: '2026-11-20T20:35:54+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: false
-        stale_reason: 'verilog step: input changed'
+        clean: true
     AB_ANC_BNC:
         directory: verilogParse/lib/std28_lib
         file_name: cstm_diglib28_vl.v
-        clean: false
-        stale_reason: 'verilog step: input changed'
+        clean: true
     Accum:
         directory: verilogParse/ver_lib
         file_name: accum.v
@@ -1018,11 +1016,13 @@ modules:
     KM_DLY:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: input changed'
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: input changed'
     KM_DRQ_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_DRQ_DIFF.v
@@ -1041,7 +1041,8 @@ modules:
     KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: input changed'
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
@@ -1636,15 +1637,18 @@ modules:
     TST_KM_DLY:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: cell:KM_DLY changed'
     TST_KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY_UP.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: cell:KM_DLY_UP changed'
     TST_KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR.v
-        clean: true
+        clean: false
+        stale_reason: 'mod step: cell:KM_ENBL_BFR changed'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v

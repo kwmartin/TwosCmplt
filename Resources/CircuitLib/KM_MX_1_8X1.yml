@@ -662,7 +662,7 @@ behav_blcks:
                     oper: 'Unot:'
                     args:
                     -   kind: ident
-                        name: SP0
+                        name: PDP
         iftrue:
         -   kind: noblckst
             lvalue:
@@ -671,4 +671,34 @@ behav_blcks:
             rvalue:
                 kind: ident
                 name: DP7
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_gate
+            gate:
+                kind: gt_expr
+                oper: 'BAnd:'
+                args:
+                -   kind: gt_expr
+                    oper: 'BAnd:'
+                    args:
+                    -   kind: ident
+                        name: PDP
+                    -   kind: uexpr
+                        oper: 'Unot:'
+                        args:
+                        -   kind: ident
+                            name: SP7
+                -   kind: uexpr
+                    oper: 'Unot:'
+                    args:
+                    -   kind: ident
+                        name: SP0
+        iftrue:
+        -   kind: noblckst
+            lvalue:
+                kind: ident
+                name: OUT
+            rvalue:
+                kind: ident
+                name: BP
 

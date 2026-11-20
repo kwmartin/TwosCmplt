@@ -115,15 +115,4 @@ behav_blcks:
         -   kind: int
             value: 1'B1
     delay: 5.8
--   kind: assign
-    lvalue:
-        kind: ident
-        name: QN
-    rvalue:
-        kind: uexpr
-        oper: 'Unot:'
-        args:
-        -   kind: ident
-            name: QP
-    delay: 0
 
