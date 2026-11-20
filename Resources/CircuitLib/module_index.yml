@@ -1,4 +1,4 @@
-generated: '2026-11-20T11:58:03+00:00'
+generated: '2026-11-20T15:03:32+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -23,7 +23,7 @@ modules:
         file_name: CAP.v
         clean: false
         stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
-            data:~/.xschem/proj_lib/pin/pinOrder.yml and 1 more changed'
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 4 more changed'
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -117,7 +117,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
@@ -762,7 +762,9 @@ modules:
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 5 more changed'
     DG_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR4_4X1.v
@@ -938,7 +940,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'missing: ast, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
@@ -1095,11 +1097,15 @@ modules:
     KM_INGAT:
         directory: verilogParse/ver_lib
         file_name: KM_INGAT.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 11 more changed'
     KM_MULTX4BTSC:
         directory: verilogParse/ver_lib
         file_name: KM_MULTX4BTSC.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 11 more changed'
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
@@ -1136,12 +1142,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
@@ -1416,6 +1422,12 @@ modules:
     TST_COEFF_GEN:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_GEN.v
+        clean: false
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 32 more changed'
+    TST_COEFF_MLTPLY:
+        directory: verilogParse/ver_lib
+        file_name: TST_COEFF_MLTPLY.v
         clean: true
     TST_DER_3X2:
         directory: verilogParse/ver_lib
@@ -1596,7 +1608,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 9 more changed'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
@@ -1766,7 +1779,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        stale_reason: 'missing: ast, mod, unl'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
@@ -1896,7 +1909,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: unl'
+        stale_reason: 'missing: ast, mod, unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -1976,7 +1989,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v

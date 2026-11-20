@@ -97,11 +97,11 @@ behav_blcks:
     module: KM_CNTR4E
     params: null
     ports:
-    -   port: CNT
+    -   port: L
         node:
             kind: ident
             name: LD
-    -   port: COUT
+    -   port: D
         node:
             kind: slice
             name: D
@@ -110,19 +110,19 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: None
+    -   port: CNT
         node:
             kind: ident
             name: VDD
-    -   port: D
-        node:
-            kind: ident
-            name: INIT
     -   port: INIT
         node:
             kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
             name: CP
-    -   port: L
+    -   port: QP
         node:
             kind: ident
             name: CN
@@ -135,7 +135,7 @@ behav_blcks:
                 value: 3
             -   kind: int
                 value: 0
-    -   port: QP
+    -   port: COUT
         node:
             kind: slice
             name: QN
@@ -161,11 +161,11 @@ behav_blcks:
     module: KM_CNTR4E
     params: null
     ports:
-    -   port: CNT
+    -   port: L
         node:
             kind: ident
             name: LD
-    -   port: COUT
+    -   port: D
         node:
             kind: slice
             name: D
@@ -174,19 +174,19 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
-    -   port: None
+    -   port: CNT
         node:
             kind: ident
             name: COUT0
-    -   port: D
-        node:
-            kind: ident
-            name: INIT
     -   port: INIT
         node:
             kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
             name: CP
-    -   port: L
+    -   port: QP
         node:
             kind: ident
             name: CN
@@ -199,7 +199,7 @@ behav_blcks:
                 value: 7
             -   kind: int
                 value: 4
-    -   port: QP
+    -   port: COUT
         node:
             kind: slice
             name: QN
