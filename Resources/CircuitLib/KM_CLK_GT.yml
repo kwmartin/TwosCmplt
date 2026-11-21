@@ -1,0 +1,239 @@
+kind: verilog
+module: KM_CLK_GT
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: CIP
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CIN
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: COP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: CON
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RUN
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: PDN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PDP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CBP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: D1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: D1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: sync
+    name: DR1
+    module: DG_DR_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: RUN
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CIP
+    -   port: None
+        node:
+            kind: ident
+            name: CIN
+    -   port: None
+        node:
+            kind: ident
+            name: D1P
+    -   port: None
+        node:
+            kind: ident
+            name: D1N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: DR2
+    module: DG_DR_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: D1P
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CIP
+    -   port: None
+        node:
+            kind: ident
+            name: CIN
+    -   port: None
+        node:
+            kind: ident
+            name: PDN
+    -   port: None
+        node:
+            kind: ident
+            name: PDP
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR2
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: ident
+            name: COP
+    -   port: None
+        node:
+            kind: ident
+            name: CON
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR1
+    module: ENBL_BFRC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CIP
+    -   port: None
+        node:
+            kind: ident
+            name: CIN
+    -   port: None
+        node:
+            kind: ident
+            name: PDN
+    -   port: None
+        node:
+            kind: ident
+            name: PDP
+    -   port: None
+        node:
+            kind: ident
+            name: CBP
+    -   port: None
+        node:
+            kind: ident
+            name: CBN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+

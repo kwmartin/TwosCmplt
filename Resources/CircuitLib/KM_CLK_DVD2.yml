@@ -1,0 +1,1751 @@
+kind: verilog
+module: KM_CLK_DVD2
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: DV
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: PH
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: QP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: QN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: RP
+    direct: 'Output:'
+    signed: 'False'
+-   kind: Wire
+    name: RN
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 3
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: SP
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 2
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: PH0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PH1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PH2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PH3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: RN1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: RN2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: RP1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: RP2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SN0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SN1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SN2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SP0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SP1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SP2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: RN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: RP
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: A1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: A2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: B2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PHB0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PHB1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PHB2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: PHB3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: SN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 2
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: MXQN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: MXQP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: MXRN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: MXRP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L0N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L0P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L1N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L1P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L2N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L2P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L3N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L3P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L4N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L4P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L5N
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: L5P
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MX3B
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP0
+    -   port: None
+        node:
+            kind: ident
+            name: SN0
+    -   port: None
+        node:
+            kind: ident
+            name: B2P
+    -   port: None
+        node:
+            kind: ident
+            name: B2N
+    -   port: None
+        node:
+            kind: ident
+            name: PH1
+    -   port: None
+        node:
+            kind: ident
+            name: PH3
+    -   port: None
+        node:
+            kind: ident
+            name: MXQP
+    -   port: None
+        node:
+            kind: ident
+            name: MXQN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX3A
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP0
+    -   port: None
+        node:
+            kind: ident
+            name: SN0
+    -   port: None
+        node:
+            kind: ident
+            name: A2P
+    -   port: None
+        node:
+            kind: ident
+            name: A2N
+    -   port: None
+        node:
+            kind: ident
+            name: PH0
+    -   port: None
+        node:
+            kind: ident
+            name: PH2
+    -   port: None
+        node:
+            kind: ident
+            name: MXRP
+    -   port: None
+        node:
+            kind: ident
+            name: MXRN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: DCDR1
+    module: KM_DCDR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: DV
+            sgmnts:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: SP
+            sgmnts:
+            -   kind: int
+                value: 2
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX2B
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP1
+    -   port: None
+        node:
+            kind: ident
+            name: SN1
+    -   port: None
+        node:
+            kind: ident
+            name: B1P
+    -   port: None
+        node:
+            kind: ident
+            name: B1N
+    -   port: None
+        node:
+            kind: ident
+            name: L1P
+    -   port: None
+        node:
+            kind: ident
+            name: L1N
+    -   port: None
+        node:
+            kind: ident
+            name: B2P
+    -   port: None
+        node:
+            kind: ident
+            name: B2N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX2A
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP1
+    -   port: None
+        node:
+            kind: ident
+            name: SN1
+    -   port: None
+        node:
+            kind: ident
+            name: A1P
+    -   port: None
+        node:
+            kind: ident
+            name: A1N
+    -   port: None
+        node:
+            kind: ident
+            name: L0P
+    -   port: None
+        node:
+            kind: ident
+            name: L0N
+    -   port: None
+        node:
+            kind: ident
+            name: A2P
+    -   port: None
+        node:
+            kind: ident
+            name: A2N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX1B
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP2
+    -   port: None
+        node:
+            kind: ident
+            name: SN2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: L5P
+    -   port: None
+        node:
+            kind: ident
+            name: L5N
+    -   port: None
+        node:
+            kind: ident
+            name: B1P
+    -   port: None
+        node:
+            kind: ident
+            name: B1N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX1A
+    module: KM_MX_DIFF
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: SP2
+    -   port: None
+        node:
+            kind: ident
+            name: SN2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VSS
+            -   kind: ident
+                name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: L3P
+    -   port: None
+        node:
+            kind: ident
+            name: L3N
+    -   port: None
+        node:
+            kind: ident
+            name: A1P
+    -   port: None
+        node:
+            kind: ident
+            name: A1N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L0
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L1N
+    -   port: None
+        node:
+            kind: ident
+            name: L1P
+    -   port: None
+        node:
+            kind: ident
+            name: RN1
+    -   port: None
+        node:
+            kind: ident
+            name: RP1
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: L0P
+    -   port: None
+        node:
+            kind: ident
+            name: L0N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L1
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L0P
+    -   port: None
+        node:
+            kind: ident
+            name: L0N
+    -   port: None
+        node:
+            kind: ident
+            name: RN1
+    -   port: None
+        node:
+            kind: ident
+            name: RP1
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: L1P
+    -   port: None
+        node:
+            kind: ident
+            name: L1N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L2
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L5N
+    -   port: None
+        node:
+            kind: ident
+            name: L5P
+    -   port: None
+        node:
+            kind: ident
+            name: RN2
+    -   port: None
+        node:
+            kind: ident
+            name: RP2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: L2P
+    -   port: None
+        node:
+            kind: ident
+            name: L2N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L3
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L2P
+    -   port: None
+        node:
+            kind: ident
+            name: L2N
+    -   port: None
+        node:
+            kind: ident
+            name: RN2
+    -   port: None
+        node:
+            kind: ident
+            name: RP2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: L3P
+    -   port: None
+        node:
+            kind: ident
+            name: L3N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L4
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L3P
+    -   port: None
+        node:
+            kind: ident
+            name: L3N
+    -   port: None
+        node:
+            kind: ident
+            name: RN2
+    -   port: None
+        node:
+            kind: ident
+            name: RP2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: L4P
+    -   port: None
+        node:
+            kind: ident
+            name: L4N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: L5
+    module: DG_LR6X2_DIFF
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: L4P
+    -   port: None
+        node:
+            kind: ident
+            name: L4N
+    -   port: None
+        node:
+            kind: ident
+            name: RN2
+    -   port: None
+        node:
+            kind: ident
+            name: RP2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: L5P
+    -   port: None
+        node:
+            kind: ident
+            name: L5N
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: DEC2
+    module: KM_DEC_2X4
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: DV
+            sgmnts:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: RP
+            sgmnts:
+            -   kind: int
+                value: 3
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2_3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: RN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: RN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: RN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: RP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: RN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR4
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: MXRP
+    -   port: None
+        node:
+            kind: ident
+            name: MXRN
+    -   port: None
+        node:
+            kind: ident
+            name: RP
+    -   port: None
+        node:
+            kind: ident
+            name: RN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: MXQP
+    -   port: None
+        node:
+            kind: ident
+            name: MXQN
+    -   port: None
+        node:
+            kind: ident
+            name: QP
+    -   port: None
+        node:
+            kind: ident
+            name: QN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR0
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: PH0
+    -   port: None
+        node:
+            kind: ident
+            name: PH2
+    -   port: None
+        node:
+            kind: ident
+            name: PHB0
+    -   port: None
+        node:
+            kind: ident
+            name: PHB2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR1
+    module: DG_DIFF_BFR
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: PH1
+    -   port: None
+        node:
+            kind: ident
+            name: PH3
+    -   port: None
+        node:
+            kind: ident
+            name: PHB1
+    -   port: None
+        node:
+            kind: ident
+            name: PHB3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: C_2
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: MXRN
+-   kind: async
+    name: C_3
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: MXRP
+-   kind: async
+    name: C_4
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: A2P
+-   kind: async
+    name: C_5
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: A2N
+-   kind: async
+    name: C_6
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L3N
+-   kind: async
+    name: C_7
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L3P
+-   kind: async
+    name: C_8
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L2P
+-   kind: async
+    name: C_9
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L2N
+-   kind: async
+    name: C_10
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L4N
+-   kind: async
+    name: C_11
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L4P
+-   kind: async
+    name: C_12
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L5P
+-   kind: async
+    name: CL5P
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L5N
+-   kind: async
+    name: C_13
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L0N
+-   kind: async
+    name: C_14
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L0P
+-   kind: async
+    name: C_15
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L1P
+-   kind: async
+    name: C_16
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 6F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: L1N
+-   kind: async
+    name: C_17
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: B2N
+-   kind: async
+    name: C_18
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: B2P
+-   kind: async
+    name: C_19
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: MXQP
+-   kind: async
+    name: C_20
+    module: CAP
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    -   kind: str
+        value: 4F
+        name: value
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: VSS
+    -   port: None
+        node:
+            kind: ident
+            name: MXQN
+

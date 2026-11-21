@@ -1,4 +1,4 @@
-generated: '2026-11-20T21:51:49+00:00'
+generated: '2026-11-21T12:27:45+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -115,17 +115,15 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     CNTRE4:
         directory: verilogParse/ver_lib
         file_name: CNTRE4.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     CNTRM8:
         directory: verilogParse/ver_lib
         file_name: CNTRM8.v
@@ -205,8 +203,7 @@ modules:
     DG_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF2_1X1.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF4_1X1.v
@@ -231,7 +228,8 @@ modules:
     DG_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DER_4X2 changed'
     DG_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DES_3X2.v
@@ -239,15 +237,18 @@ modules:
     DG_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DEUR_4X2 changed'
     DG_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUX_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DEUX_5X2 changed'
     DG_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEX_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DEX_4X2 changed'
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
@@ -271,25 +272,26 @@ modules:
     DG_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFR.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFRE.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLER_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DLER_5X2 changed'
     DG_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DLEUR_6X2 changed'
     DG_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUX_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DLEUX_7X2 changed'
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLR_5X2.v
@@ -523,7 +525,8 @@ modules:
     DG_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKES_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:JKES_4X2 changed'
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_4X2.v
@@ -545,8 +548,7 @@ modules:
     DG_LR6X2_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR6X2_DIFF.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     DG_LR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR_DIFF.v
@@ -641,7 +643,8 @@ modules:
     DG_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_8X1.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     DG_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: DG_NABC_ABD.v
@@ -730,9 +733,7 @@ modules:
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
-            data:~/.xschem/proj_lib/pin/pinOrder.yml and 5 more changed'
+        clean: true
     DG_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR4_4X1.v
@@ -785,7 +786,8 @@ modules:
     DG_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_REG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:REG_3X1 changed'
     DG_RG_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_2X1.v
@@ -811,7 +813,8 @@ modules:
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input changed'
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
@@ -838,7 +841,8 @@ modules:
     DG_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TER_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TER_3X2 changed'
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
@@ -850,7 +854,8 @@ modules:
     DG_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDER_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TLDER_5X2 changed'
     DG_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDR_5X2.v
@@ -898,12 +903,11 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, unl'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     EXOR_DIFF:
         directory: verilogParse/ver_lib
         file_name: EXOR_DIFF.v
@@ -916,11 +920,13 @@ modules:
     HADDRA:
         directory: verilogParse/ver_lib
         file_name: HADDRA.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:HADDRA changed'
     HADDRB:
         directory: verilogParse/ver_lib
         file_name: HADDRB.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:HADDRB changed'
     HADDRC:
         directory: verilogParse/ver_lib
         file_name: HADDRC.v
@@ -944,7 +950,8 @@ modules:
     KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: KM_BFR_ENBL.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:KM_BFR_ENBL changed'
     KM_BUF_HYST:
         directory: verilogParse/ver_lib
         file_name: KM_BUF_HYST.v
@@ -960,6 +967,14 @@ modules:
         file_name: KM_CAPN.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_CLK_DVD2:
+        directory: verilogParse/ver_lib
+        file_name: KM_CLK_DVD2.v
+        clean: true
+    KM_CLK_GT:
+        directory: verilogParse/ver_lib
+        file_name: KM_CLK_GT.v
+        clean: true
     KM_CMPL12:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL12.v
@@ -972,18 +987,15 @@ modules:
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     KM_CNTR4G:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4G.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     KM_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR8D.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     KM_COEFF_GEN2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN2.v
@@ -999,6 +1011,10 @@ modules:
     KM_CS_MULT1:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT1.v
+        clean: true
+    KM_DCDR:
+        directory: verilogParse/ver_lib
+        file_name: KM_DCDR.v
         clean: true
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
@@ -1017,7 +1033,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
         clean: false
-        stale_reason: 'mod step: input changed'
+        stale_reason: 'ast step: input changed'
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
@@ -1042,7 +1058,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'mod step: input changed'
+        stale_reason: 'ast step: input changed'
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
@@ -1053,13 +1069,13 @@ modules:
         file_name: KM_INGAT.v
         clean: false
         stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
-            data:~/.xschem/proj_lib/pin/pinOrder.yml and 11 more changed'
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 10 more changed'
     KM_MULTX4BTSC:
         directory: verilogParse/ver_lib
         file_name: KM_MULTX4BTSC.v
         clean: false
         stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
-            data:~/.xschem/proj_lib/pin/pinOrder.yml and 11 more changed'
+            data:~/.xschem/proj_lib/pin/pinOrder.yml and 10 more changed'
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
@@ -1096,17 +1112,16 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
     KM_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: KM_NAB_C2.v
@@ -1264,11 +1279,13 @@ modules:
     TST_AB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: TST_AB_AC_BC.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_AB_ANC_BNC:
         directory: verilogParse/ver_lib
         file_name: TST_AB_ANC_BNC.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_ACCUM3:
         directory: verilogParse/ver_lib
         file_name: TST_ACCUM3.v
@@ -1367,13 +1384,11 @@ modules:
     TST_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_CNTR8G:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8G.v
-        clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        clean: true
     TST_CNTRM8:
         directory: verilogParse/ver_lib
         file_name: TST_CNTRM8.v
@@ -1392,27 +1407,38 @@ modules:
     TST_DER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DER_4X2, pins:SNGL2DIFF_1X2, pins:TST_DER_4X2
+            changed'
     TST_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DES_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DEUR_4X2, pins:TST_DEUR_4X2 changed'
     TST_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUX_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DEUX_5X2, pins:DG_INV2_1X1 and 4 more
+            changed'
     TST_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEX_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DEX_4X2, pins:DG_INV2_1X1 and 3 more
+            changed'
     TST_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFR.v
@@ -1426,23 +1452,31 @@ modules:
     TST_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLER_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:DLER_5X2, pins:TST_DLER_5X2 changed'
     TST_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 4 more
+            changed'
     TST_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUX_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 4 more
+            changed'
     TST_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLR_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TST_DLR_5X2 changed'
     TST_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
@@ -1451,7 +1485,8 @@ modules:
     TST_DLUX_7X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_DLUX_7X2_CAL.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: input changed'
     TST_DRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DRB_3X2.v
@@ -1460,23 +1495,31 @@ modules:
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_DR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:SNGL2DIFF_1X2, pins:TST_DR_4X2 changed'
     TST_DS_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DS_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_DUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUR_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TST_DUR_4X2 changed'
     TST_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUX_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
@@ -1485,7 +1528,9 @@ modules:
     TST_DX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DX_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_D_FF_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_D_FF_3X2.v
@@ -1504,7 +1549,8 @@ modules:
     TST_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_2X1.v
@@ -1513,7 +1559,8 @@ modules:
     TST_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_FADDRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDRB_3X2.v
@@ -1522,15 +1569,21 @@ modules:
     TST_FADDR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_HADDRA:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRA.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_HADDRB:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRB.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_HADDRC:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRC.v
@@ -1555,12 +1608,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
         clean: false
-        stale_reason: 'ast step: data:~/.xschem/ast_modules/pinOrder.yml, data:~/.xschem/dig_lib/pin/pinOrder.yml,
-            data:~/.xschem/proj_lib/pin/pinOrder.yml and 9 more changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV20_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
@@ -1584,27 +1637,38 @@ modules:
     TST_JKDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDER_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TST_JKDER_6X2 changed'
     TST_JKDEUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_JKDEUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUS_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDR_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_JKDUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUR_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUS_7X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKER_4X2.v
@@ -1612,15 +1676,20 @@ modules:
     TST_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKES_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:JKES_4X2 changed'
     TST_JKR_4X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_JKR_4X2_CAL.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_JK_FF_R_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
@@ -1629,26 +1698,28 @@ modules:
     TST_KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: TST_KM_BFR_ENBL.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DEGLITCH.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DLY:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY.v
         clean: false
-        stale_reason: 'mod step: cell:KM_DLY changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY_UP.v
         clean: false
-        stale_reason: 'mod step: cell:KM_DLY_UP changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'mod step: cell:KM_ENBL_BFR changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
@@ -1667,7 +1738,8 @@ modules:
     TST_KM_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: TST_KM_NA_BC_BD.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
@@ -1747,15 +1819,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: input changed'
     TST_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_8X1.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: TST_NABC_ABD.v
@@ -1880,11 +1954,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'missing: unl'
     TST_OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: TST_OUT_SLCT.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -1908,11 +1983,15 @@ modules:
     TST_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_REG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_RG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     TST_S2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFFB_1X2.v
@@ -1941,7 +2020,8 @@ modules:
     TST_SW_INV:
         directory: verilogParse/ver_lib
         file_name: TST_SW_INV.v
-        clean: true
+        clean: false
+        stale_reason: 'missing: ast, mod, unl'
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
@@ -1950,7 +2030,8 @@ modules:
     TST_TDER_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_IN_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:SNGL2DIFF_1X2 changed'
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
@@ -1959,20 +2040,24 @@ modules:
     TST_TDR_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_IN_6X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:SNGL2DIFF_1X2 changed'
     TST_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 3 more
+            changed'
     TST_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_5X2.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:TLDER_5X2 changed'
     TST_TLDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_6X2.v
@@ -1982,10 +2067,16 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_5X2.v
         clean: true
+    TST_TLDR_6X2:
+        directory: verilogParse/ver_lib
+        file_name: TST_TLDR_6X2.v
+        clean: true
     TST_TR_FF:
         directory: verilogParse/ver_lib
         file_name: TST_TR_FF.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: input, pins:DG_INV2_1X1, pins:DG_INV4_1X1 and 2 more
+            changed'
     VOTER:
         directory: verilogParse/ver_lib
         file_name: VOTER.v

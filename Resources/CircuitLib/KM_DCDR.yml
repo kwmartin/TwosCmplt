@@ -1,0 +1,135 @@
+kind: verilog
+module: KM_DCDR
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: D
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 1
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: S
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 2
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+-   kind: async
+    name: OR_0
+    module: DG_OR2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: AND_2
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: D
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: S
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+
