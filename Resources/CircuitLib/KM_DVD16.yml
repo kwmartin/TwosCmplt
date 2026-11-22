@@ -21,23 +21,14 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 -   kind: Wire
-    name: OP
+    name: PH
     direct: 'Output:'
     signed: 'False'
     width:
     -   kind: int
         value: 0
     -   kind: int
-        value: 7
--   kind: Wire
-    name: 'ON'
-    direct: 'Output:'
-    signed: 'False'
-    width:
-    -   kind: int
-        value: 0
-    -   kind: int
-        value: 7
+        value: 15
 -   kind: Wire
     name: VDD
     direct: 'Input:'
@@ -47,6 +38,17 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
 decls:
+-   -   kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 6
+            -   kind: int
+                value: 0
+        length: []
 -   -   kind: Wire
         name: QN_0
         signed: 'False'
@@ -88,6 +90,17 @@ decls:
         width:
         - 0
         - 0
+        length: []
+-   -   kind: Wire
+        name: 'ON'
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 7
         length: []
 behav_blcks:
 -   kind: sync
@@ -199,15 +212,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 0
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 0
+            - 8
     -   port: None
         node:
             kind: concat
@@ -245,15 +258,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 1
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 1
+            - 9
     -   port: None
         node:
             kind: concat
@@ -291,15 +304,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 2
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 2
+            - 10
     -   port: None
         node:
             kind: concat
@@ -337,15 +350,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 3
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 3
+            - 11
     -   port: None
         node:
             kind: concat
@@ -383,15 +396,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 4
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 4
+            - 12
     -   port: None
         node:
             kind: concat
@@ -429,15 +442,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 5
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 5
+            - 13
     -   port: None
         node:
             kind: concat
@@ -475,15 +488,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 6
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 6
+            - 14
     -   port: None
         node:
             kind: concat
@@ -521,15 +534,15 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 7
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 7
+            - 15
     -   port: None
         node:
             kind: concat

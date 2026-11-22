@@ -1,4 +1,4 @@
-generated: '2026-11-22T19:10:24+00:00'
+generated: '2026-11-22T21:47:11+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -1564,7 +1564,8 @@ modules:
     TST_DVD16:
         directory: verilogParse/ver_lib
         file_name: TST_DVD16.v
-        clean: true
+        clean: false
+        stale_reason: 'ast step: pins:KM_DVD16 changed'
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v

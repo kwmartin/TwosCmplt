@@ -152,33 +152,22 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
-        name: CLN
-        signed: 'False'
-        width:
-            kind: width
-            width:
-              - kind: int
-                value: 7
-              - kind: int
-                value: 0
-        length: []
-  -   - kind: Wire
-        name: CLP
-        signed: 'False'
-        width:
-            kind: width
-            width:
-              - kind: int
-                value: 7
-              - kind: int
-                value: 0
-        length: []
-  -   - kind: Wire
         name: VDD_
         signed: 'False'
         width:
           - 0
           - 0
+        length: []
+  -   - kind: Wire
+        name: PH
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
         length: []
   -   - kind: Wire
         name: __concat_KM_COEFF_GEN2_0_2
@@ -387,9 +376,9 @@ behav_blcks:
       - port: None
         node:
             kind: bit
-            name: CLP
+            name: PH
             sgmnts:
-              - 7
+              - 15
       - port: None
         node:
             kind: slice
@@ -566,21 +555,12 @@ behav_blcks:
       - port: None
         node:
             kind: slice
-            name: CLP
+            name: PH
             sgmnts:
               - kind: int
                 value: 0
               - kind: int
-                value: 7
-      - port: None
-        node:
-            kind: slice
-            name: CLN
-            sgmnts:
-              - kind: int
-                value: 0
-              - kind: int
-                value: 7
+                value: 15
       - port: None
         node:
             kind: concat
