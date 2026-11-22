@@ -152,6 +152,28 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
+        name: CLN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 7
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: CLP
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 7
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
         name: VDD_
         signed: 'False'
         width:
@@ -364,8 +386,10 @@ behav_blcks:
     ports:
       - port: None
         node:
-            kind: ident
-            name: CLKB
+            kind: bit
+            name: CLP
+            sgmnts:
+              - 7
       - port: None
         node:
             kind: slice
@@ -517,6 +541,52 @@ behav_blcks:
             sgmnts:
               - kind: ident
                 name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: DVD
+    module: KM_DVD16
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: VDD
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CLKB
+      - port: None
+        node:
+            kind: slice
+            name: CLP
+            sgmnts:
+              - kind: int
+                value: 0
+              - kind: int
+                value: 7
+      - port: None
+        node:
+            kind: slice
+            name: CLN
+            sgmnts:
+              - kind: int
+                value: 0
+              - kind: int
+                value: 7
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD_
               - kind: ident
                 name: VSS
   - kind: assign

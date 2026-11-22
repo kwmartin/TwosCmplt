@@ -1,0 +1,92 @@
+kind: verilog
+module: TST_DVD16
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: CLN
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 0
+      - kind: int
+        value: 7
+  - kind: Wire
+    name: CLP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 0
+      - kind: int
+        value: 7
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+  - kind: sync
+    name: DVD
+    module: KM_DVD16
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: VDD
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: slice
+            name: CLP
+            sgmnts:
+              - kind: int
+                value: 0
+              - kind: int
+                value: 7
+      - port: None
+        node:
+            kind: slice
+            name: CLN
+            sgmnts:
+              - kind: int
+                value: 0
+              - kind: int
+                value: 7
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS

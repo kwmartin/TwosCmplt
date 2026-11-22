@@ -4,22 +4,537 @@ Clock:
   - clkNm: CLK
     per: PER
     initVal: 0
-FinishTime: 64*PER
+    activeEdge: fall
+FinishTime: 129*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [CLK, 0]
-      - [VDD_, 1]
-      - [VDD, 1]
-      - [VSS, 0]
-      - [INIT, 1]
-      - [COEF, '0x10000']
-      - [D0_, 0]
-      - [IN, '0x100000']
-      - [RG_23, 0]
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - COEF
+          - '0x3e7f1'
+      -   - D0_
+          - 0
+      -   - IN
+          - 0
   - tm: 0.1*PER
     vls:
-      - [INIT, 0]
+      -   - INIT
+          - 0
+  - tm: 0.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 1.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 2.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 3.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 4.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 5.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 6.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 7.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 8.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 9.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 10.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 11.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 12.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 13.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 14.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 15.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 16.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 17.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 18.5*PER
+    vls:
+      -   - IN
+          - '0xeea1c0'
+  - tm: 19.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 20.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 21.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 22.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 23.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 24.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 25.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 26.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 27.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 28.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 29.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 30.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 31.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 32.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 33.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 34.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 35.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 36.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 37.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 38.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 39.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 40.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 41.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 42.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 43.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 44.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 45.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 46.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 47.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 48.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 49.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 50.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 51.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 52.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 53.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 54.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 55.5*PER
+    vls:
+      -   - IN
+          - '0xeea1c0'
+  - tm: 56.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 57.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 58.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 59.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 60.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 61.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 62.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 63.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 64.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 65.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 66.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 67.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 68.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 69.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 70.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 71.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 72.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 73.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 74.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 75.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 76.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 77.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 78.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 79.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 80.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 81.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 82.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 83.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 84.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 85.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 86.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 87.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 88.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 89.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 90.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 91.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 92.5*PER
+    vls:
+      -   - IN
+          - '0xeea1c0'
+  - tm: 93.5*PER
+    vls:
+      -   - IN
+          - '0xeee1b0'
+  - tm: 94.5*PER
+    vls:
+      -   - IN
+          - '0xef9fb0'
+  - tm: 95.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
+  - tm: 96.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 97.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 98.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 99.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 100.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 101.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 102.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 103.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 104.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 105.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 106.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 107.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 108.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 109.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 110.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 111.5*PER
+    vls:
+      -   - IN
+          - '0x114e40'
+  - tm: 112.5*PER
+    vls:
+      -   - IN
+          - '0x10ced0'
+  - tm: 113.5*PER
+    vls:
+      -   - IN
+          - '0xfd390'
+  - tm: 114.5*PER
+    vls:
+      -   - IN
+          - '0xe63c0'
+  - tm: 115.5*PER
+    vls:
+      -   - IN
+          - '0xc8a00'
+  - tm: 116.5*PER
+    vls:
+      -   - IN
+          - '0xa53f0'
+  - tm: 117.5*PER
+    vls:
+      -   - IN
+          - '0x7d1b0'
+  - tm: 118.5*PER
+    vls:
+      -   - IN
+          - '0x51600'
+  - tm: 119.5*PER
+    vls:
+      -   - IN
+          - '0x234c0'
+  - tm: 120.5*PER
+    vls:
+      -   - IN
+          - '0xff4340'
+  - tm: 121.5*PER
+    vls:
+      -   - IN
+          - '0xfc5750'
+  - tm: 122.5*PER
+    vls:
+      -   - IN
+          - '0xf98630'
+  - tm: 123.5*PER
+    vls:
+      -   - IN
+          - '0xf6e4c0'
+  - tm: 124.5*PER
+    vls:
+      -   - IN
+          - '0xf48680'
+  - tm: 125.5*PER
+    vls:
+      -   - IN
+          - '0xf27ca0'
+  - tm: 126.5*PER
+    vls:
+      -   - IN
+          - '0xf0d660'
 SaveNds:
   - name: C_24
     format: b
@@ -35,3 +550,5 @@ SaveNds:
     format: h
   - name: RGN_
     format: h
+generated: true
+module: TST_COEFF_MLTPLY

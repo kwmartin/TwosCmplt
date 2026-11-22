@@ -6,6 +6,7 @@ Clock:
   - clkNm: CLK
     per: PER
     initVal: 0
+    activeEdge: fall
 FinishTime: 129*PER
 ResetRelease: 0.1*PER
 TimeSpcs:
@@ -22,9 +23,9 @@ TimeSpcs:
       -   - COEF
           - '0x3e7f1'
       -   - D0_
-          - '0x0'
+          - 0
       -   - IN
-          - '0x0'
+          - 0
   - tm: 0.1*PER
     vls:
       -   - INIT
@@ -576,3 +577,4 @@ Classifications:
 AnalogBuses:
   - SIG
   - RG_
+  - O

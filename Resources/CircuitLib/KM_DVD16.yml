@@ -1,0 +1,573 @@
+kind: verilog
+module: KM_DVD16
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: ENB
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: RST
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: OP
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 7
+-   kind: Wire
+    name: 'ON'
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 0
+    -   kind: int
+        value: 7
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: QN_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QN_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QP_0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QP_1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CP
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: sync
+    name: X0
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: QP_0
+    -   port: None
+        node:
+            kind: ident
+            name: QN_0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: X1
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: QP_0
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_0
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_1
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_2
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_3
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_4
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_5
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_6
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_7
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: ident
+            name: RST
+    -   port: None
+        node:
+            kind: ident
+            name: QP_1
+    -   port: None
+        node:
+            kind: ident
+            name: QN_1
+    -   port: None
+        node:
+            kind: bit
+            name: OP
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: 'ON'
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: S2DIFF
+    module: DG_SE2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: ENB
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+
