@@ -62,6 +62,17 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
+        name: PH_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
         name: RSUM
         signed: 'False'
         width:
@@ -80,7 +91,21 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
+        name: CN
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
         name: CO
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CP
         signed: 'False'
         width:
         - 0
@@ -510,7 +535,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 1
+            - 6
     -   port: None
         node:
             kind: ident
@@ -588,7 +613,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: PH
+            name: PH_
             sgmnts:
             -   kind: int
                 value: 0
@@ -1916,7 +1941,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 2
+            - 5
     -   port: None
         node:
             kind: ident
@@ -1955,7 +1980,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 3
+            - 4
     -   port: None
         node:
             kind: ident
@@ -1994,7 +2019,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 5
+            - 2
     -   port: None
         node:
             kind: ident
@@ -2033,7 +2058,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 6
+            - 1
     -   port: None
         node:
             kind: ident
@@ -2072,7 +2097,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 7
+            - 0
     -   port: None
         node:
             kind: ident
@@ -2111,7 +2136,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 4
+            - 3
     -   port: None
         node:
             kind: ident
@@ -2150,7 +2175,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 9
+            - 14
     -   port: None
         node:
             kind: ident
@@ -2189,7 +2214,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 10
+            - 13
     -   port: None
         node:
             kind: ident
@@ -2228,7 +2253,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 11
+            - 12
     -   port: None
         node:
             kind: ident
@@ -2267,7 +2292,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 8
+            - 15
     -   port: None
         node:
             kind: ident
@@ -2306,7 +2331,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 13
+            - 10
     -   port: None
         node:
             kind: ident
@@ -2345,7 +2370,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 14
+            - 9
     -   port: None
         node:
             kind: ident
@@ -2384,7 +2409,7 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 15
+            - 8
     -   port: None
         node:
             kind: ident
@@ -2423,11 +2448,411 @@ behav_blcks:
             kind: bit
             name: PH
             sgmnts:
-            - 12
+            - 11
     -   port: None
         node:
             kind: ident
             name: __concat_RG20_3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_0
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_1
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_2
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_3
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_4
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_5
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_6
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: D_7
+    module: DG_DER_4X2
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: bit
+            name: PH
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: S2DIFF
+    module: DG_SE2DIFF_1X2
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: VDD
+    -   port: None
+        node:
+            kind: ident
+            name: CP
+    -   port: None
+        node:
+            kind: ident
+            name: CN
     -   port: None
         node:
             kind: concat

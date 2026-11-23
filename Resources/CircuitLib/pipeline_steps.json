@@ -4845,66 +4845,76 @@
  "KM_COEFF_GEN3": {
   "ast": {
    "out": {
-    "mod": "4810e75a8173feb92ceb81deb6a6d58ab5c49f0e10d2c7edaf8d759cb9999b6c"
+    "mod": "92d8dbeb0dd11f4a69e8cfc74c2c0082509cbd21dad29b3a6fc21d1c636264bc"
    },
    "parts": {
     "code": "d3c73b30fba7124fa7c5611abddd88a25ed80e83e1cf3a3f7e4934421871c667",
-    "input": "4730bcc0db0e6316997fb34ff08dc20c314ef9c4d4eb3eed793f853d09d0e8fa",
+    "input": "4b3e40904dffbe2fc135d7c9a8d8fd96d52d374453be02a75b398d2f87d6b780",
     "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:BUF6_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DER_4X2": "fe91cc1139d96e5c8e14f0bfdda4be74be8cf1846c18699821c6b29cbcd8b422",
     "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
     "pins:DG_BUF6_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DER_4X2": "53497d5cd4349d9edfef25b1764fcb833d8a44e966a06de9ec82e75369148090",
+    "pins:DG_SE2DIFF_1X2": "fa7983514bfbc1be9ce97f1272bfdd8357324d23bcb9bf95406ee6a3e799f000",
     "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
     "pins:KM_COEFF_GEN3": "d8c1650b550f704f0efa3b154261562c27704e110f9d23f903ffd20295503f3a",
     "pins:KM_DVD16": "17beb76074b54ccbdcfe41e07902314d5eed04f48e91a93ae5248476256aed67",
     "pins:KM_DVDR4": "accc2e4f7e4123e70f667fa1e0b15dc0b305675166d695255401d939715fd495",
     "pins:KM_RG20": "48d17af2355223e38d006f027fe08255f7c2f0ba53931503c32c6d55f8e4fd92",
     "pins:KM_RG24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:SE2DIFF_1X2": "823ae3fbe6045a5ec4f0f0a6b94a2571eab980041c1abdcf25c66846396f0583",
     "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
    }
   },
   "mod": {
    "out": {
-    "circuit_lib": "c9cf0b835aaef70d8984b25404a030188ed5384c8c4ea263facc651bdee2c12e",
-    "unl": "4b41e543e3cf5e781ce7f5bce322189bc24d4cdc6df1886ea6cc66c132ef87da"
+    "circuit_lib": "d9312e003b4884970e7ca51985f43caf21b7d9119bdffbb7a3da6630fa1b116f",
+    "unl": "171e2726898f024561734ae68ba253f555bd4a5cba04948c35424c05c5b8b905"
    },
    "parts": {
     "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
     "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
     "cell:DG_BUF6_1X1": "209610dc1d5fac3ed691b7316d0ed5634d996cd9ce2b057595f1bbd8559e393f",
+    "cell:DG_DER_4X2": "6846ecda956349a73ea72f8d28b75e24cdca310418f0b6880cc2c7cf03f21617",
+    "cell:DG_SE2DIFF_1X2": "96073c238c0f8649f88677d6cd67c9a305ec080109441cf1ab9de152c85ff56e",
     "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
     "cell:KM_DVD16": "b05e595634ad759e79429880263f90cad5f75c24aca9c79bf60e4d3461b8e373",
     "cell:KM_DVDR4": "10f42924a9babb0ebe971920fc24c9c5f84d633e9df0edc4c36285d1e4259dd3",
     "cell:KM_RG20": "54480d9eb3a2e4399a1dbd668c1677ece624e3b3f80988520081a90730e73790",
     "cell:KM_RG24": "66bfedb3a21cde5bf84a255fa5e4b4a9ae8f867b3210755a6bfbb12d5727f6b6",
     "code": "9793021c0181133766a7200aeef360f405e33392d1f20f73fc06daab30fa692b",
-    "input": "4810e75a8173feb92ceb81deb6a6d58ab5c49f0e10d2c7edaf8d759cb9999b6c",
+    "input": "92d8dbeb0dd11f4a69e8cfc74c2c0082509cbd21dad29b3a6fc21d1c636264bc",
     "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:BUF6_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DER_4X2": "fe91cc1139d96e5c8e14f0bfdda4be74be8cf1846c18699821c6b29cbcd8b422",
     "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
     "pins:DG_BUF6_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DER_4X2": "53497d5cd4349d9edfef25b1764fcb833d8a44e966a06de9ec82e75369148090",
+    "pins:DG_SE2DIFF_1X2": "fa7983514bfbc1be9ce97f1272bfdd8357324d23bcb9bf95406ee6a3e799f000",
     "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
     "pins:KM_COEFF_GEN3": "d8c1650b550f704f0efa3b154261562c27704e110f9d23f903ffd20295503f3a",
     "pins:KM_DVD16": "17beb76074b54ccbdcfe41e07902314d5eed04f48e91a93ae5248476256aed67",
     "pins:KM_DVDR4": "accc2e4f7e4123e70f667fa1e0b15dc0b305675166d695255401d939715fd495",
     "pins:KM_RG20": "48d17af2355223e38d006f027fe08255f7c2f0ba53931503c32c6d55f8e4fd92",
     "pins:KM_RG24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:SE2DIFF_1X2": "823ae3fbe6045a5ec4f0f0a6b94a2571eab980041c1abdcf25c66846396f0583",
     "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
    }
   },
   "verilog": {
    "out": {
-    "ast": "4730bcc0db0e6316997fb34ff08dc20c314ef9c4d4eb3eed793f853d09d0e8fa",
-    "ast_yml": "447ba0d78ee70e27ffcf1d90f23d295f0dfcb7d00216dfd2546864a1bf0a415c"
+    "ast": "4b3e40904dffbe2fc135d7c9a8d8fd96d52d374453be02a75b398d2f87d6b780",
+    "ast_yml": "9d055aafcb28d81784a97091569dce76a536df7a1b7eecdf34e791ece0bb619c"
    },
    "parts": {
     "code": "1fcbf1130205e055c6afc1910ef0f692a4f1c0797463aca181fee3b4ddf744bf",
     "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "7eea9e5ce31fafc05af8be3542eb4d78afcd97dacb08fe9bfdfa30d66fa4dddb",
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "399655efc95046d312f7c3648161b5c371fb6a693c8db60037685ae485073514",
-    "input": "93c3b0e2f96d0177564af75e1f7cc88200a3596015d50d0da270ff9c5ffacea3"
+    "input": "ceb0a13b0f047a7ef52d74240438a9a2951cba1068370bce47923920332576d3"
    }
   }
  },
@@ -7399,11 +7409,11 @@
  "TST_COEFF_MLTPLY": {
   "ast": {
    "out": {
-    "mod": "45e47e225b25514f3d1f238ab8cecfd2968a3e02a71ff99fc4fc8c546831a0dc"
+    "mod": "5a8a1619fbdecad85b959b3639df3580ae80924b36a10fc4e152f08c1d451ef6"
    },
    "parts": {
     "code": "d3c73b30fba7124fa7c5611abddd88a25ed80e83e1cf3a3f7e4934421871c667",
-    "input": "aa9aa9a487f7f5423875333b263c97ca0c8c597da57557264322b25d70c483fe",
+    "input": "3c539ad60369d1dc5e60bb0d199f5d4675a265a84f21be8f4fb887dc6578ce09",
     "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
     "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
@@ -7433,51 +7443,46 @@
     "pins:KM_RG20": "48d17af2355223e38d006f027fe08255f7c2f0ba53931503c32c6d55f8e4fd92",
     "pins:KM_RG24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
     "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
-    "pins:RES": "7aec2030dd663356ec5bd92bb1cf98f22052de4b89d69038e1c2bb07baef4cc6",
     "pins:TST_COEFF_MLTPLY": "22689e4a709fae032d9e62ffa008805a9c1b963a154b1fd6ff5da0f2ddc6d6cc"
    }
   },
   "mod": {
    "out": {
-    "circuit_lib": "938d62e2c47daed6244fef8e3930417b76eefc430e67c984ecebfc71ff84131e",
-    "unl": "835181c4e94a5b4a071faaea345b6d47c5610c065075ef0af43ac1f048e58b6d"
+    "circuit_lib": "56bf3cc1c926a475ed68d69cad28203b58d393253fbda0fbdbbd12c1cc911369",
+    "unl": "db00cf9da8ace52f51fb8cdbd161a79e39a9f0bc44d94d64e4516b29dbce83de"
    },
    "parts": {
     "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
     "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
     "cell:KM_COEFF_GEN2": "e2fbc9fdf3749f448139533a8404d84586d353edc6aa9847d03a4581ccf28196",
-    "cell:KM_COEFF_GEN3": "4810e75a8173feb92ceb81deb6a6d58ab5c49f0e10d2c7edaf8d759cb9999b6c",
+    "cell:KM_COEFF_GEN3": "92d8dbeb0dd11f4a69e8cfc74c2c0082509cbd21dad29b3a6fc21d1c636264bc",
     "cell:KM_COEFF_MULT3": "1d0247d05644adde9d464e28c50e6eee5d09f247da320288e3953a63b636a2aa",
-    "cell:KM_DVD16": "b05e595634ad759e79429880263f90cad5f75c24aca9c79bf60e4d3461b8e373",
     "cell:KM_REGS24": "5594d25c00ec94a6d0aebe45191e6d7ae3eae51729b327fbf62b342d864167d0",
     "cell:OUT_BUS24": "aaa655bb28e481adb972b824e9dfcfcbc08e4c629271662e651eed231b0e3df8",
-    "cell:RES": "29b42cfb01ae9077f7b7b8ec5782929540de22eede0a8a5bb484e614aed1828a",
     "code": "9793021c0181133766a7200aeef360f405e33392d1f20f73fc06daab30fa692b",
-    "input": "45e47e225b25514f3d1f238ab8cecfd2968a3e02a71ff99fc4fc8c546831a0dc",
+    "input": "5a8a1619fbdecad85b959b3639df3580ae80924b36a10fc4e152f08c1d451ef6",
     "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
     "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
     "pins:KM_COEFF_GEN2": "6a04d58e3ae492bafc92ae23a6a37a925cd6bbe2eb3303307982c38ca24389e7",
     "pins:KM_COEFF_GEN3": "d8c1650b550f704f0efa3b154261562c27704e110f9d23f903ffd20295503f3a",
     "pins:KM_COEFF_MULT3": "a5d813707316d979c6755bf930d2a890212ce5a2d010fe30ae3b5a68c46b9111",
-    "pins:KM_DVD16": "17beb76074b54ccbdcfe41e07902314d5eed04f48e91a93ae5248476256aed67",
     "pins:KM_REGS24": "6a505151ddf420c24f55bbdc502f6249e1662532829e73b6481db9646a2625d2",
     "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
-    "pins:RES": "7aec2030dd663356ec5bd92bb1cf98f22052de4b89d69038e1c2bb07baef4cc6",
     "pins:TST_COEFF_MLTPLY": "22689e4a709fae032d9e62ffa008805a9c1b963a154b1fd6ff5da0f2ddc6d6cc"
    }
   },
   "verilog": {
    "out": {
-    "ast": "aa9aa9a487f7f5423875333b263c97ca0c8c597da57557264322b25d70c483fe",
-    "ast_yml": "1b211c78f5b09f88f96ec39671da96fad6f3fa50cde1f115da54e2ff09a9d3b4"
+    "ast": "3c539ad60369d1dc5e60bb0d199f5d4675a265a84f21be8f4fb887dc6578ce09",
+    "ast_yml": "b4ea4561cea2a6504d6096ee6194d6107e946130987f5f48df72793a6dd4a3e3"
    },
    "parts": {
     "code": "1fcbf1130205e055c6afc1910ef0f692a4f1c0797463aca181fee3b4ddf744bf",
     "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "7eea9e5ce31fafc05af8be3542eb4d78afcd97dacb08fe9bfdfa30d66fa4dddb",
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "399655efc95046d312f7c3648161b5c371fb6a693c8db60037685ae485073514",
-    "input": "fb2ebd1f70cb80915c02fee25b3312db537fe189ada817a9e922b7c926f4ad6a"
+    "input": "5a83d8ff5b15a898d61f46a5794167c1e3f612a7b18c5f9608cba383b8e42a1e"
    }
   }
  },
