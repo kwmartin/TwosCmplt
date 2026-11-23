@@ -256,11 +256,11 @@ modules:
     DG_DR_3X2:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_DR_3X2.v
         timestamps:
-            verilog: 1795127683.135683
-            ast: 1795201787.8986845
-            mod: 1795201788.61569
-            circuit_lib: 1795201789.3786957
-            unl: 1795201789.3876958
+            verilog: 1795293498.4523826
+            ast: 1795390485.0465477
+            mod: 1793145371.8403301
+            circuit_lib: 1793209671.354525
+            unl: 1793145373.1493468
         hashes:
             verilog: 7ccfa71eb1e49c8aa1e4725c708f246ae21d9d196d283d6a33a9087ef94ac20e
             scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
@@ -1686,8 +1686,8 @@ modules:
     DG_NOR2_2X1:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_NOR2_2X1.v
         timestamps:
-            verilog: 1795003353.2553408
-            ast: 1795049389.2815273
+            verilog: 1795293498.4483826
+            ast: 1795390485.6865602
             mod: 1795261851.6945221
             circuit_lib: 1795261852.6895363
             unl: 1795261852.7075365
@@ -4590,11 +4590,11 @@ modules:
     DG_TER_3X2:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/DG_TER_3X2.v
         timestamps:
-            verilog: 1795127683.136683
-            ast: 1795202020.8794644
-            mod: 1795202021.6644704
-            circuit_lib: 1795202022.4604766
-            unl: 1795202022.4744768
+            verilog: 1795293498.4533825
+            ast: 1795390486.3075721
+            mod: 1795390487.0015855
+            circuit_lib: 1795390487.962604
+            unl: 1795390487.9846046
         hashes:
             verilog: 51384b079115f9938f8b8ea31ed788911efef90020fcf7498f58b1601eeca1fd
             scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
@@ -5613,13 +5613,13 @@ modules:
     TST_COEFF_MLTPLY:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_COEFF_MLTPLY/verilog/TST_COEFF_MLTPLY.v
         timestamps:
-            verilog: 1795384000.0468273
-            ast: 1795384009.1629343
-            mod: 1795384011.8369658
-            circuit_lib: 1795384016.1830168
-            unl: 1795384016.2920182
+            verilog: 1795391171.369138
+            ast: 1795391178.2012424
+            mod: 1795391181.1392872
+            circuit_lib: 1795391186.0843627
+            unl: 1795391186.221365
         hashes:
-            verilog: 64f164221f48fe111fe92c0414bb92df97be194f91496567c9bfaa6c14ada342
+            verilog: 93637a2b00c644ca7b7943cfad4454c4c3a91cb541bf8d1451134b6f2662b4fe
             scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
     TST_INV20_1X1:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_INV20_1X1/verilog/TST_INV20_1X1.v
@@ -5833,13 +5833,13 @@ modules:
     KM_DVD16:
         verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_DVD16.v
         timestamps:
-            verilog: 1795384000.2108293
-            ast: 1795384001.5998456
-            mod: 1795384002.4618556
-            circuit_lib: 1795384003.5868688
-            unl: 1795384003.6168692
+            verilog: 1795390483.661521
+            ast: 1795390489.3446307
+            mod: 1795390490.0656447
+            circuit_lib: 1795390491.2146668
+            unl: 1795390491.2346673
         hashes:
-            verilog: ef7b954d018d783f402001b45ac7ae32358a356b7e003868bb1b15c9a8b88919
+            verilog: c9b7669ac3bbabb3bdf466cc22f6af4ece4e1fea434f90aabddbc7d948347762
             scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
     TST_DVD16:
         verilog: /home/martin/IC_Design/Testbenches/NgSpice/TST_DVD16/verilog/TST_DVD16.v
@@ -5851,4 +5851,26 @@ modules:
             unl: 1795310418.1691759
         hashes:
             verilog: 73486901f2f6ac3220e9f2a51e4f5161046b53aee6113b9fcf80fea723d195fa
+            scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
+    KM_RG20:
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_RG20.v
+        timestamps:
+            verilog: 1795390483.7335222
+            ast: 1795390492.3186882
+            mod: 1795390493.1997051
+            circuit_lib: 1795390494.1527236
+            unl: 1795390494.1897242
+        hashes:
+            verilog: c3e690fee6a1f540856b7a54c7fb52874a1a3f0f0a69eda2dd7d55e3bb4fbe03
+            scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d
+    KM_COEFF_GEN3:
+        verilog: /home/martin/.xschem/verilogParse/ver_lib/KM_COEFF_GEN3.v
+        timestamps:
+            verilog: 1795390933.5774071
+            ast: 1795390935.126432
+            mod: 1795390935.9744458
+            circuit_lib: 1795390937.241466
+            unl: 1795390937.3754683
+        hashes:
+            verilog: be4d8f24f33ae7bff890d2372bdfad35a9f2a2cdfe3a7978726bdca11a43e87a
             scripts: a78ddabfb5f2a2f3ed44d08cdf942ec54e112cbefeb5c7593f315b7f3c9d7b1d

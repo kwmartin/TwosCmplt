@@ -1,4 +1,4 @@
-generated: '2026-11-22T21:47:11+00:00'
+generated: '2026-11-22T23:46:32+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -341,8 +341,7 @@ modules:
     DG_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DR_3X2.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     DG_DR_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X1.v
@@ -760,8 +759,7 @@ modules:
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     DG_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR4_4X1.v
@@ -877,8 +875,7 @@ modules:
     DG_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TER_3X2.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
@@ -1044,6 +1041,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN2.v
         clean: true
+    KM_COEFF_GEN3:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_GEN3.v
+        clean: true
     KM_COEFF_MULT3:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT3.v
@@ -1099,6 +1100,11 @@ modules:
         file_name: KM_DVD2Q_DIFF.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_DVDR4:
+        directory: verilogParse/ver_lib
+        file_name: KM_DVDR4.v
+        clean: false
+        stale_reason: 'missing: ast, unl'
     KM_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: KM_EMX_4X1.v
@@ -1229,6 +1235,10 @@ modules:
     KM_REGS24:
         directory: verilogParse/ver_lib
         file_name: KM_REGS24.v
+        clean: true
+    KM_RG20:
+        directory: verilogParse/ver_lib
+        file_name: KM_RG20.v
         clean: true
     KM_RG24:
         directory: verilogParse/ver_lib

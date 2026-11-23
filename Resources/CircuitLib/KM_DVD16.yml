@@ -39,17 +39,6 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
-        name: OP
-        signed: 'False'
-        width:
-            kind: width
-            width:
-            -   kind: int
-                value: 6
-            -   kind: int
-                value: 0
-        length: []
--   -   kind: Wire
         name: QN_0
         signed: 'False'
         width:
@@ -90,17 +79,6 @@ decls:
         width:
         - 0
         - 0
-        length: []
--   -   kind: Wire
-        name: 'ON'
-        signed: 'False'
-        width:
-            kind: width
-            width:
-            -   kind: int
-                value: 7
-            -   kind: int
-                value: 7
         length: []
 behav_blcks:
 -   kind: sync
@@ -194,9 +172,9 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: 'ON'
+            name: PH
             sgmnts:
-            - 7
+            - 15
     -   port: None
         node:
             kind: ident
@@ -240,7 +218,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 0
     -   port: None
@@ -286,7 +264,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 1
     -   port: None
@@ -332,7 +310,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 2
     -   port: None
@@ -378,7 +356,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 3
     -   port: None
@@ -424,7 +402,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 4
     -   port: None
@@ -470,7 +448,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 5
     -   port: None
@@ -516,7 +494,7 @@ behav_blcks:
     -   port: None
         node:
             kind: bit
-            name: OP
+            name: PH
             sgmnts:
             - 6
     -   port: None
