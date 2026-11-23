@@ -1,4 +1,4 @@
-generated: '2026-11-22T23:46:32+00:00'
+generated: '2026-11-23T01:00:22+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -1103,8 +1103,7 @@ modules:
     KM_DVDR4:
         directory: verilogParse/ver_lib
         file_name: KM_DVDR4.v
-        clean: false
-        stale_reason: 'missing: ast, unl'
+        clean: true
     KM_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: KM_EMX_4X1.v

@@ -134,13 +134,6 @@ decls:
         - 0
         length: []
 -   -   kind: Wire
-        name: net1
-        signed: 'False'
-        width:
-        - 0
-        - 0
-        length: []
--   -   kind: Wire
         name: QN
         signed: 'False'
         width:
@@ -583,7 +576,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: net1
+            name: VDD
     -   port: None
         node:
             kind: ident
@@ -591,7 +584,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: UPD
+            name: CLKB
     -   port: None
         node:
             kind: slice
@@ -611,7 +604,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: X4
-    module: KM_DVD16
+    module: KM_DVDR4
     params:
     -   kind: str
         value: sync
