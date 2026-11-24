@@ -5,7 +5,7 @@ if Swift was a good language; might have been a real mistake. Some good, a lot b
 started I didn't want to stop until I had something usable. The Good: Swift has very good operator over-loading and these work well for doing TwosCmplt operations. The library is very good for doing very low
 level hand-crafted simulations. Many examples can be found in Examples, some documented, some not yet documented.
 
-Look at <project_dir>/scripts
+Documentation: see [docs/README.md](docs/README.md) — or just type `twosdocs` to open it in the browser.
 
 The bad: Swift is obtuse, non-intuitive, and terrible for decoding yaml representing somewhat arbitrary JSON. It's not really arbitrary, but since it is originally derived from Verilog, and Verilog includes the kitchen-sink, it's effectively arbitrary.
 
