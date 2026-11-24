@@ -72,7 +72,7 @@ extension TwoCmplt {
 
     /**
      * Similar to a carry-save adder but with an additional input (neg) to do operations
-     * requred when signal is negative. The third input should self.coeff. Do regular csAdd()
+     * requred when signal is negative. The third input should be self.coeff. Do regular csAdd()
      * with third input being self.coeff, invert both outputs, and then implement csAdd()
      * with third input being 0x1 to return output to a negative value.
      *
