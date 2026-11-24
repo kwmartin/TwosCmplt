@@ -72,15 +72,6 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: D7_
-    direct: 'Input:'
-    signed: 'False'
-    width:
-    -   kind: int
-        value: 23
-    -   kind: int
-        value: 0
--   kind: Wire
     name: D9_
     direct: 'Input:'
     signed: 'False'
@@ -91,6 +82,15 @@ io_ports:
         value: 0
 -   kind: Wire
     name: D8_
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: D7_
     direct: 'Input:'
     signed: 'False'
     width:

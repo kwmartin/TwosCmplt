@@ -8,7 +8,7 @@ import Yams
 /**
  * A Third-Order Filter with a Finite Zero. This filter has very good stop bands and only requires
  * simple shifts. It is implemented using carry-save techniques, (one csAdd(), and three CsA2S1()
- * i.e. (sout, cout) = (a _ b - c)) and 4 generate/propogate adders.
+ * i.e. (sout, cout) = (a + b - c)) and 4 generate/propogate adders.
  *
  */
 func Filter3E (){

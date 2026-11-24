@@ -2,11 +2,11 @@ kind: verilog
 module: OUT_BUS24
 params:
 -   kind: str
-    name: circuit
-    value: sync
--   kind: str
     name: FILENAME
     value: OUT_BUS24.dat
+-   kind: str
+    name: circuit
+    value: async
 -   kind: Int
     name: delay
     value: 5

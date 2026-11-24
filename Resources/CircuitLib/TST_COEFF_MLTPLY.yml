@@ -92,6 +92,10 @@ io_ports:
     direct: 'Input:'
     signed: 'False'
   - kind: Wire
+    name: UPD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
     name: VDD
     direct: 'Input:'
     signed: 'False'
@@ -163,18 +167,7 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
-        name: PH
-        signed: 'False'
-        width:
-            kind: width
-            width:
-              - kind: int
-                value: 15
-              - kind: int
-                value: 15
-        length: []
-  -   - kind: Wire
-        name: __concat_KM_COEFF_GEN2_0_2
+        name: __concat_KM_COEFF_GEN2_0_3
         signed: 'False'
         width:
             kind: width
@@ -374,10 +367,8 @@ behav_blcks:
     ports:
       - port: None
         node:
-            kind: bit
-            name: PH
-            sgmnts:
-              - 15
+            kind: ident
+            name: CLKB
       - port: None
         node:
             kind: slice
@@ -390,7 +381,11 @@ behav_blcks:
       - port: None
         node:
             kind: ident
-            name: __concat_KM_COEFF_GEN2_0_2
+            name: UPD
+      - port: None
+        node:
+            kind: ident
+            name: __concat_KM_COEFF_GEN2_0_3
       - port: None
         node:
             kind: ident
@@ -571,7 +566,7 @@ behav_blcks:
   - kind: assign
     lvalue:
         kind: ident
-        name: __concat_KM_COEFF_GEN2_0_2
+        name: __concat_KM_COEFF_GEN2_0_3
     rvalue:
         concats:
           - kind: bit

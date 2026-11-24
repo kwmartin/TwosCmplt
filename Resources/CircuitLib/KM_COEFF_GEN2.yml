@@ -22,6 +22,10 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
+    name: UPD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
     name: C
     direct: 'Output:'
     signed: 'False'
@@ -454,6 +458,20 @@ decls:
                 value: 23
             -   kind: int
                 value: 0
+        length: []
+-   -   kind: Wire
+        name: UPD_CLK
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: UPDN
+        signed: 'False'
+        width:
+        - 0
+        - 0
         length: []
 -   -   kind: Wire
         name: C_3
@@ -1103,7 +1121,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG5
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -1189,7 +1207,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG3
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -4427,7 +4445,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CLK
+            name: UPD_CLK
     -   port: None
         node:
             kind: ident
@@ -4451,7 +4469,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CLK
+            name: UPD_CLK
     -   port: None
         node:
             kind: ident
@@ -4475,7 +4493,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CLK
+            name: UPD_CLK
     -   port: None
         node:
             kind: ident
@@ -4499,7 +4517,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: CLK
+            name: UPD_CLK
     -   port: None
         node:
             kind: ident
@@ -4514,7 +4532,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG8
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -4551,7 +4569,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG4
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -4588,7 +4606,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG2
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -4625,7 +4643,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG1
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -5823,7 +5841,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG14
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -5965,7 +5983,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG15
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -6107,7 +6125,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG13
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -6193,7 +6211,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG12
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -6335,7 +6353,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG11
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -6421,7 +6439,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG10
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -6507,7 +6525,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG9
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -7313,7 +7331,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG7
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -7399,7 +7417,7 @@ behav_blcks:
                 name: VSS
 -   kind: sync
     name: RG6
-    module: KM_RG24
+    module: KM_RGE24
     params:
     -   kind: str
         value: sync
@@ -7434,6 +7452,43 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
+-   kind: instance
+    name: X2
+    module: DG_JKER_4X2
+    params: null
+    ports:
+    -   port: J
+        node:
+            kind: ident
+            name: UPD
+    -   port: K
+        node:
+            kind: ident
+            name: UPD_CLK
+    -   port: R
+        node:
+            kind: ident
+            name: INIT
+    -   port: CP
+        node:
+            kind: ident
+            name: CLK
+    -   port: QP
+        node:
+            kind: ident
+            name: UPD_CLK
+    -   port: QN
+        node:
+            kind: ident
+            name: UPDN
+    -   port: VDD
+        node:
+            kind: ident
+            name: VDD
+    -   port: VSS
+        node:
+            kind: ident
+            name: VSS
 -   kind: assign
     lvalue:
         kind: ident
