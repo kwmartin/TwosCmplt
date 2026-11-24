@@ -1,6 +1,15 @@
 {
     "configurations": [
         {
+            "type": "lldb",
+            "request": "launch",
+            "name": "CodeLLDB CoeffMltply",
+            "program": "${workspaceFolder}/.build/debug/CoeffMltply",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "swift: Build Debug CoeffMltply"
+        },
+        {
             "type": "swift",
             "request": "launch",
             "args": [],
@@ -1003,7 +1012,10 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": ["TST_DES_3X2", "Config.yaml"],
+            "args": [
+                "TST_DES_3X2",
+                "Config.yaml"
+            ],
             "cwd": "${workspaceFolder:TwosCmplt}",
             "name": "Debug SimRun",
             "target": "SimRun",
@@ -1013,7 +1025,10 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": ["QD_DDSF5", "Config.yaml"],
+            "args": [
+                "QD_DDSF5",
+                "Config.yaml"
+            ],
             "cwd": "${workspaceFolder:TwosCmplt}",
             "name": "Release SimRun",
             "target": "SimRun",
@@ -1023,7 +1038,11 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": ["TST_CNTRM8", "--config", "Config.yaml"],
+            "args": [
+                "TST_CNTRM8",
+                "--config",
+                "Config.yaml"
+            ],
             "cwd": "${workspaceFolder:TwosCmplt}",
             "name": "Debug CNTRM8",
             "target": "CNTRM8",
@@ -1033,12 +1052,36 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": ["TST_DR_3X2", "--config", "Config.yaml"],
+            "args": [
+                "TST_DR_3X2",
+                "--config",
+                "Config.yaml"
+            ],
             "cwd": "${workspaceFolder:TwosCmplt}",
             "name": "Debug DR_3X2",
             "target": "DR_3X2",
             "configuration": "debug",
             "preLaunchTask": "swift: Build Debug DR_3X2"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TwosCmplt}",
+            "name": "Release DR_3X2",
+            "target": "DR_3X2",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release DR_3X2"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TwosCmplt}",
+            "name": "Release CNTRM8",
+            "target": "CNTRM8",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release CNTRM8"
         }
     ]
 }

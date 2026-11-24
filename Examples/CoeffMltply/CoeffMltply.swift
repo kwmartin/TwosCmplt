@@ -789,6 +789,13 @@ struct Demo {
         let Out6: TwoCmplt = M3.csMlt(In3) // note: csMlt does the second minus operation differently
         print("Out6 from MltplyCoeff(signal: In4):\(Out6)  (\(Out6.toInt()))")
 
+        M0 = CoeffMlt(0xFFFFF, nbits: 24)
+        let Out7: TwoCmplt = M0.cs_mult(TwoCmplt(value: 0xFFFF, nbits: 20, signed: true))
+        print("Out7 from MltplyCoeff(signal: In4):\(Out7)  (\(Out7.toInt()))")
+        let Out8 = ~Out7
+        let Out9 = M0.cs_mult(Out8)
+        print("Out8, Out9: (\(Out8.toInt())) (\(Out9.toInt()))")
+
         // SimFltr(0x0A00)
         let clock = ContinuousClock()
         let elapsed = clock.measure {
