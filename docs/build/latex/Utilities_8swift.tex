@@ -1,0 +1,81 @@
+\doxysection{Sources/\+Twos\+Cmplt/\+Utilities.swift File Reference}
+\hypertarget{Utilities_8swift}{}\label{Utilities_8swift}\index{Sources/TwosCmplt/Utilities.swift@{Sources/TwosCmplt/Utilities.swift}}
+{\ttfamily import Foundation;}\newline
+{\ttfamily import "{}Unsupported JSON/\+YAML value for JSONValue"{};}\newline
+{\ttfamily import "{}Config.\+yaml"{};}\newline
+{\ttfamily import $<$T\+: Decodable$>$;}\newline
+{\ttfamily import "{}YAML decoding failed\+: \textbackslash{}(error)"{};}\newline
+{\ttfamily import $<$T\+: Encodable$>$;}\newline
+{\ttfamily import "{}Missing required key \textbackslash{}(key)"{};}\newline
+{\ttfamily import "{}Missing key \textbackslash{}(key) in dictionary"{};}\newline
+{\ttfamily import $<$T\+: Binary\+Integer$>$;}\newline
+{\ttfamily import "{}0"{};}\newline
+{\ttfamily import "{}-\/"{};}\newline
+{\ttfamily import "{}\textbackslash{}(sign)0x\textbackslash{}(hex)"{};}\newline
+{\ttfamily import "{}\textbackslash{}n"{};}\newline
+{\ttfamily import "{}w"{};}\newline
+{\ttfamily import $<$FILE$>$;}\newline
+{\ttfamily import "{}open failed\+: \textbackslash{}(path)"{};}\newline
+{\ttfamily import "{}\mbox{[}"{};}\newline
+{\ttfamily import "{}\mbox{]}"{};}\newline
+{\ttfamily import "{}\+:"{};}\newline
+{\ttfamily import "{}\textbackslash{}(label)\+: \textbackslash{}(end -\/ start) seconds"{};}\newline
+{\ttfamily import "{}."{};}\newline
+{\ttfamily import "{}rd\+Nds\+: top circuit \textquotesingle{}\textbackslash{}(names.\+first ?? "{};}\newline
+{\ttfamily import "{})\textquotesingle{} not found"{};}\newline
+{\ttfamily import "{}rd\+Nds\+: circuit \textquotesingle{}\textbackslash{}(name)\textquotesingle{} not found in \textquotesingle{}\textbackslash{}(current.\+name)\textquotesingle{}"{};}\newline
+{\ttfamily import "{}\textbackslash{}(\$0.\+name)\+: \textbackslash{}(\$0.\+node.\+value)"{};}\newline
+{\ttfamily import "{}dec"{};}\newline
+{\ttfamily import "{}sdec"{};}\newline
+{\ttfamily import "{}bin"{};}\newline
+{\ttfamily import "{}0b"{};}\newline
+{\ttfamily import "{}0x\%0\textbackslash{}(digits)X"{};}\newline
+{\ttfamily import "{}t=\textbackslash{}(nd\+Chng.\+upd\+Tm)  \textbackslash{}(nm)  \textbackslash{}(fmt\+Val(nd\+Chng.\+value, nbits\+: nd\+Chng.\+nbits, frmt\+: frmt))"{};}\newline
+{\ttfamily import "{}hex"{};}\newline
+{\ttfamily import "{}shw\+\_\+chngs\+: no changes found for \textquotesingle{}\textbackslash{}(circ\+Path)\textquotesingle{}"{};}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+return \mbox{\hyperlink{Utilities_8swift_ad9f30b4d3208dfa81afac777bcc19638}{emit\+Chngs}} (matches, frmt\+:frmt, to\+:"{}chngs.\+out"{}) \} public func shw\+\_\+outs(\+\_\+ circ\+Path
+\item 
+public func \mbox{\hyperlink{Utilities_8swift_a1f4a9be7921917b720224f239f8b790c}{chk\+\_\+stp\+Hld}} ()
+\item 
+private func \mbox{\hyperlink{Utilities_8swift_a8cbf1cda21c573653620ba91fe80aa71}{walk\+For\+Timing}} (\+\_\+ circ\+:\+Circuit, path\+:\+String, violations\+:inout\mbox{[}String\mbox{]})
+\item 
+private func \mbox{\hyperlink{Utilities_8swift_a7899a46e4a18e486a8eca92acfa5c985}{check\+Sync\+Timing}} (\+\_\+ circ\+:\+Circuit, path\+:\+String, clk\+Ports\+:\mbox{[}Port\+Def\mbox{]}, violations\+:inout\mbox{[}String\mbox{]})
+\item 
+public func \mbox{\hyperlink{Utilities_8swift_a6a779c4d5ba864e9ffc9e11eefe1cd9c}{shw\+\_\+ordr}} (\+\_\+ hierarchical\+Name\+:\+String)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Utilities_8swift_a7899a46e4a18e486a8eca92acfa5c985}\label{Utilities_8swift_a7899a46e4a18e486a8eca92acfa5c985} 
+\index{Utilities.swift@{Utilities.swift}!checkSyncTiming@{checkSyncTiming}}
+\index{checkSyncTiming@{checkSyncTiming}!Utilities.swift@{Utilities.swift}}
+\doxysubsubsection{\texorpdfstring{checkSyncTiming()}{checkSyncTiming()}}
+{\footnotesize\ttfamily private func check\+Sync\+Timing (\begin{DoxyParamCaption}\item[{\+\_\+ circ\+:\+Circuit}]{,  }\item[{path\+:\+String}]{,  }\item[{clk\+Ports\+:}]{\mbox{[}\+Port\+Def\mbox{]},  }\item[{violations\+:inout}]{\mbox{[}\+String\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{Utilities_8swift_a1f4a9be7921917b720224f239f8b790c}\label{Utilities_8swift_a1f4a9be7921917b720224f239f8b790c} 
+\index{Utilities.swift@{Utilities.swift}!chk\_stpHld@{chk\_stpHld}}
+\index{chk\_stpHld@{chk\_stpHld}!Utilities.swift@{Utilities.swift}}
+\doxysubsubsection{\texorpdfstring{chk\_stpHld()}{chk\_stpHld()}}
+{\footnotesize\ttfamily public func chk\+\_\+stp\+Hld (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{Utilities_8swift_ad9f30b4d3208dfa81afac777bcc19638}\label{Utilities_8swift_ad9f30b4d3208dfa81afac777bcc19638} 
+\index{Utilities.swift@{Utilities.swift}!emitChngs@{emitChngs}}
+\index{emitChngs@{emitChngs}!Utilities.swift@{Utilities.swift}}
+\doxysubsubsection{\texorpdfstring{emitChngs()}{emitChngs()}}
+{\footnotesize\ttfamily return emit\+Chngs (\begin{DoxyParamCaption}\item[{matches}]{,  }\item[{frmt\+:frmt}]{,  }\item[{to\+:"{}chngs.\+out"{}}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{Utilities_8swift_a6a779c4d5ba864e9ffc9e11eefe1cd9c}\label{Utilities_8swift_a6a779c4d5ba864e9ffc9e11eefe1cd9c} 
+\index{Utilities.swift@{Utilities.swift}!shw\_ordr@{shw\_ordr}}
+\index{shw\_ordr@{shw\_ordr}!Utilities.swift@{Utilities.swift}}
+\doxysubsubsection{\texorpdfstring{shw\_ordr()}{shw\_ordr()}}
+{\footnotesize\ttfamily public func shw\+\_\+ordr (\begin{DoxyParamCaption}\item[{\+\_\+ hierarchical\+Name\+:\+String}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{Utilities_8swift_a8cbf1cda21c573653620ba91fe80aa71}\label{Utilities_8swift_a8cbf1cda21c573653620ba91fe80aa71} 
+\index{Utilities.swift@{Utilities.swift}!walkForTiming@{walkForTiming}}
+\index{walkForTiming@{walkForTiming}!Utilities.swift@{Utilities.swift}}
+\doxysubsubsection{\texorpdfstring{walkForTiming()}{walkForTiming()}}
+{\footnotesize\ttfamily private func walk\+For\+Timing (\begin{DoxyParamCaption}\item[{\+\_\+ circ\+:\+Circuit}]{,  }\item[{path\+:\+String}]{,  }\item[{violations\+:inout}]{\mbox{[}\+String\mbox{]} }\end{DoxyParamCaption})}
+

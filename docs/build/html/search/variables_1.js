@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nbits_41',['nbits',['../structCoeffMlt.html#a278b669816f89c9aa2a6bce4b10fadd6',1,'CoeffMlt::nbits()'],['../Operators_8swift.html#a2283941b43780f85029b7e841a1b542a',1,'nbits():&#160;Operators.swift']]]
+  ['d0_0',['d0',['../Reg_8swift.html#a054c93926d49fd3fe2fc1a8f7f8f6b6c',1,'Reg.swift']]]
 ];

@@ -1,0 +1,161 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Topics}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Twos\textquotesingle {}s Complement Integers}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Operations}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}See Also}{1}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Docs}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt Class}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}See Also}{3}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Circ\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Def}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Part 1 — How RHS assignment expressions are parsed today}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}The two arenas\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}: $<$tt$>$exprs$<$/tt$>$ and $<$tt$>$stmts$<$/tt$>$}{5}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Why $<$tt$>$stmts$<$/tt$>$ can be empty while $<$tt$>$exprs$<$/tt$>$ keeps growing}{6}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}$<$tt$>$assgnst$<$/tt$>$ / $<$tt$>$concatst$<$/tt$>$, and why $<$tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assgn\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AST$<$/tt$>$/$<$tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Single\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Concat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AST$<$/tt$>$ were merged}{6}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}The $<$tt$>$gen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Assign\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stmt$<$/tt$>$ dropped-\/lvalue bug (fixed)}{7}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Slice/select expression representation}{7}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}The $<$tt$>$kind\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}: concat$<$/tt$>$ mis-\/decode in $<$tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Expr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}YAML$<$/tt$>$ (fixed)}{7}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}The tree-\/walking $<$tt$>$.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}select$<$/tt$>$ evaluator bug (fixed)}{8}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Write-\/side duplication (fixed in a later cleanup pass) and the $<$tt$>$gen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Concat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stmt$<$/tt$>$ stack-\/discipline bug (fixed)}{8}{subsection.3.2.8}%
+\contentsline {section}{\numberline {3.3}Part 2 — Evaluating the proposed slice/concat-\/gate algorithm}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Point-\/by-\/point evaluation against the current implementation}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Comparison with other simulators, and a recommendation}{10}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Part 3 — What was actually implemented, and what wasn\textquotesingle {}t}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Verification}{11}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Later cleanup pass}{12}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Part 4 — Kahn\textquotesingle {}s-\/order scheduling for continuous assigns}{12}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}What changed}{12}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}A dormant, separate bug found along the way}{13}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}The reactivity question, and why always-\/block-\/driven nodes need no special case}{13}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Verified regression-\/free}{14}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}Part 5 — $<$tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}RL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}$<$/tt$>$ stuck at 0 in $<$tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}TST\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ACCUM3$<$/tt$>$\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}: multi-\/bit output-\/port slices were never wired correctly}{14}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}The bug}{14}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}The fix}{15}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Verification}{15}{subsection.3.7.3}%
+\contentsline {chapter}{\numberline {4}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mlt}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Topics}{17}{subsection.4.1.1}%
+\contentsline {chapter}{\numberline {5}Filter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Intro}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Approach}{19}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Introduction}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Topics}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Summary}{21}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Overview}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Project introduction and summary.}{23}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Complement}{25}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt}{25}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Summary}{25}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Filters}{26}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mlt}{26}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Topics}{26}{section.8.2}%
+\contentsline {section}{\numberline {8.3}See Also}{26}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt}{27}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Topics}{27}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Twos\textquotesingle {}s Complement Integers}{27}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Summary}{27}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Class Index}{29}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Class List}{29}{section.10.1}%
+\contentsline {chapter}{\numberline {11}File Index}{31}{chapter.11}%
+\contentsline {section}{\numberline {11.1}File List}{31}{section.11.1}%
+\contentsline {chapter}{\numberline {12}Class Documentation}{33}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Dummy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Doc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}CAnchor Struct Reference}{33}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Detailed Description}{33}{subsection.12.1.1}%
+\contentsline {section}{\numberline {12.2}Port\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Deps\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Builder Struct Reference}{33}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Detailed Description}{34}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Method Documentation}{34}{subsection.12.2.2}%
+\contentsline {subsubsection}{\numberline {12.2.2.1}add}{34}{subsubsection.12.2.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2.2}contains}{34}{subsubsection.12.2.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}Member Data Documentation}{34}{subsection.12.2.3}%
+\contentsline {subsubsection}{\numberline {12.2.3.1}circ}{34}{subsubsection.12.2.3.1}%
+\contentsline {subsubsection}{\numberline {12.2.3.2}nR}{34}{subsubsection.12.2.3.2}%
+\contentsline {subsubsection}{\numberline {12.2.3.3}vdd}{34}{subsubsection.12.2.3.3}%
+\contentsline {subsubsection}{\numberline {12.2.3.4}VDD\_HI}{34}{subsubsection.12.2.3.4}%
+\contentsline {subsubsection}{\numberline {12.2.3.5}VDDA}{34}{subsubsection.12.2.3.5}%
+\contentsline {subsubsection}{\numberline {12.2.3.6}vdda}{35}{subsubsection.12.2.3.6}%
+\contentsline {subsubsection}{\numberline {12.2.3.7}VSS}{35}{subsubsection.12.2.3.7}%
+\contentsline {subsubsection}{\numberline {12.2.3.8}vss}{35}{subsubsection.12.2.3.8}%
+\contentsline {subsubsection}{\numberline {12.2.3.9}VSSA}{35}{subsubsection.12.2.3.9}%
+\contentsline {subsubsection}{\numberline {12.2.3.10}vssa}{35}{subsubsection.12.2.3.10}%
+\contentsline {section}{\numberline {12.3}States Class Reference}{35}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Member Enumeration Documentation}{35}{subsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.1.1}MultiplyModes}{35}{subsubsection.12.3.1.1}%
+\contentsline {subsection}{\numberline {12.3.2}Member Data Documentation}{36}{subsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.2.1}none}{36}{subsubsection.12.3.2.1}%
+\contentsline {subsubsection}{\numberline {12.3.2.2}oneNbl}{36}{subsubsection.12.3.2.2}%
+\contentsline {subsubsection}{\numberline {12.3.2.3}overflow}{36}{subsubsection.12.3.2.3}%
+\contentsline {subsubsection}{\numberline {12.3.2.4}round}{36}{subsubsection.12.3.2.4}%
+\contentsline {chapter}{\numberline {13}File Documentation}{37}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Debug\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main/main.swift File Reference}{37}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Testing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Runner/main.swift File Reference}{37}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glbls/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glbls.swift File Reference}{38}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glbls.swift File Reference}{38}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mixed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Value.swift File Reference}{38}{section.13.5}%
+\contentsline {subsection}{\numberline {13.5.1}Enumeration Type Documentation}{38}{subsection.13.5.1}%
+\contentsline {subsubsection}{\numberline {13.5.1.1}MixedValue}{38}{subsubsection.13.5.1.1}%
+\contentsline {section}{\numberline {13.6}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types.md File Reference}{39}{section.13.6}%
+\contentsline {section}{\numberline {13.7}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Docs.md File Reference}{39}{section.13.7}%
+\contentsline {section}{\numberline {13.8}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}States.swift File Reference}{39}{section.13.8}%
+\contentsline {section}{\numberline {13.9}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shared\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Types/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.swift File Reference}{39}{section.13.9}%
+\contentsline {section}{\numberline {13.10}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arithmetic.swift File Reference}{39}{section.13.10}%
+\contentsline {section}{\numberline {13.11}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arry\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Elem.swift File Reference}{39}{section.13.11}%
+\contentsline {subsection}{\numberline {13.11.1}Enumeration Type Documentation}{39}{subsection.13.11.1}%
+\contentsline {subsubsection}{\numberline {13.11.1.1}ArryElem}{39}{subsubsection.13.11.1.1}%
+\contentsline {section}{\numberline {13.12}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bus.swift File Reference}{40}{section.13.12}%
+\contentsline {section}{\numberline {13.13}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circ\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Def.swift File Reference}{40}{section.13.13}%
+\contentsline {section}{\numberline {13.14}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circuit.swift File Reference}{40}{section.13.14}%
+\contentsline {section}{\numberline {13.15}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circuit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO.swift File Reference}{42}{section.13.15}%
+\contentsline {section}{\numberline {13.16}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circuit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parse.swift File Reference}{43}{section.13.16}%
+\contentsline {subsection}{\numberline {13.16.1}Function Documentation}{44}{subsection.13.16.1}%
+\contentsline {subsubsection}{\numberline {13.16.1.1}inputNodes()}{44}{subsubsection.13.16.1.1}%
+\contentsline {section}{\numberline {13.17}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/cmplx\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mult.swift File Reference}{44}{section.13.17}%
+\contentsline {section}{\numberline {13.18}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mltply.swift File Reference}{45}{section.13.18}%
+\contentsline {section}{\numberline {13.19}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mult.swift File Reference}{45}{section.13.19}%
+\contentsline {section}{\numberline {13.20}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Compile.swift File Reference}{45}{section.13.20}%
+\contentsline {section}{\numberline {13.21}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Configuration.swift File Reference}{46}{section.13.21}%
+\contentsline {section}{\numberline {13.22}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dbg\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lggr.swift File Reference}{46}{section.13.22}%
+\contentsline {section}{\numberline {13.23}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dummy.swift File Reference}{46}{section.13.23}%
+\contentsline {section}{\numberline {13.24}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dynamic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}JSON.swift File Reference}{46}{section.13.24}%
+\contentsline {section}{\numberline {13.25}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Eval\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Order\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dump.swift File Reference}{47}{section.13.25}%
+\contentsline {section}{\numberline {13.26}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gate.swift File Reference}{47}{section.13.26}%
+\contentsline {section}{\numberline {13.27}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Gate\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config.swift File Reference}{47}{section.13.27}%
+\contentsline {section}{\numberline {13.28}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Arrays.swift File Reference}{48}{section.13.28}%
+\contentsline {section}{\numberline {13.29}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node.swift File Reference}{48}{section.13.29}%
+\contentsline {section}{\numberline {13.30}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Declarations.swift File Reference}{48}{section.13.30}%
+\contentsline {section}{\numberline {13.31}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Operators.swift File Reference}{48}{section.13.31}%
+\contentsline {section}{\numberline {13.32}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Place\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Holder.swift File Reference}{48}{section.13.32}%
+\contentsline {subsection}{\numberline {13.32.1}Function Documentation}{48}{subsection.13.32.1}%
+\contentsline {subsubsection}{\numberline {13.32.1.1}moduleLoaded()}{48}{subsubsection.13.32.1.1}%
+\contentsline {section}{\numberline {13.33}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Port\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Deps.swift File Reference}{49}{section.13.33}%
+\contentsline {subsection}{\numberline {13.33.1}Function Documentation}{49}{subsection.13.33.1}%
+\contentsline {subsubsection}{\numberline {13.33.1.1}closeFile()}{49}{subsubsection.13.33.1.1}%
+\contentsline {subsubsection}{\numberline {13.33.1.2}write()}{49}{subsubsection.13.33.1.2}%
+\contentsline {section}{\numberline {13.34}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reg.swift File Reference}{50}{section.13.34}%
+\contentsline {subsection}{\numberline {13.34.1}Variable Documentation}{50}{subsection.13.34.1}%
+\contentsline {subsubsection}{\numberline {13.34.1.1}d0}{50}{subsubsection.13.34.1.1}%
+\contentsline {subsubsection}{\numberline {13.34.1.2}nit}{50}{subsubsection.13.34.1.2}%
+\contentsline {section}{\numberline {13.35}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sim.swift File Reference}{50}{section.13.35}%
+\contentsline {subsection}{\numberline {13.35.1}Function Documentation}{51}{subsection.13.35.1}%
+\contentsline {subsubsection}{\numberline {13.35.1.1}else()}{51}{subsubsection.13.35.1.1}%
+\contentsline {section}{\numberline {13.36}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Circ\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Def.md File Reference}{51}{section.13.36}%
+\contentsline {section}{\numberline {13.37}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Coeff\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mlt.md File Reference}{51}{section.13.37}%
+\contentsline {section}{\numberline {13.38}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Filter\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Intro.md File Reference}{51}{section.13.38}%
+\contentsline {section}{\numberline {13.39}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Introduction.md File Reference}{51}{section.13.39}%
+\contentsline {section}{\numberline {13.40}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Overview.md File Reference}{51}{section.13.40}%
+\contentsline {section}{\numberline {13.41}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Two\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Complement.md File Reference}{51}{section.13.41}%
+\contentsline {section}{\numberline {13.42}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.docc/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.md File Reference}{51}{section.13.42}%
+\contentsline {section}{\numberline {13.43}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt.swift File Reference}{51}{section.13.43}%
+\contentsline {subsection}{\numberline {13.43.1}Detailed Description}{52}{subsection.13.43.1}%
+\contentsline {section}{\numberline {13.44}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Utilities.swift File Reference}{52}{section.13.44}%
+\contentsline {subsection}{\numberline {13.44.1}Function Documentation}{53}{subsection.13.44.1}%
+\contentsline {subsubsection}{\numberline {13.44.1.1}checkSyncTiming()}{53}{subsubsection.13.44.1.1}%
+\contentsline {subsubsection}{\numberline {13.44.1.2}chk\_stpHld()}{53}{subsubsection.13.44.1.2}%
+\contentsline {subsubsection}{\numberline {13.44.1.3}emitChngs()}{53}{subsubsection.13.44.1.3}%
+\contentsline {subsubsection}{\numberline {13.44.1.4}shw\_ordr()}{54}{subsubsection.13.44.1.4}%
+\contentsline {subsubsection}{\numberline {13.44.1.5}walkForTiming()}{54}{subsubsection.13.44.1.5}%
+\contentsline {section}{\numberline {13.45}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wave\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Display.swift File Reference}{54}{section.13.45}%
+\contentsline {section}{\numberline {13.46}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/write\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Vcd.swift File Reference}{54}{section.13.46}%
+\contentsline {section}{\numberline {13.47}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Yaml\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Load.swift File Reference}{55}{section.13.47}%
+\contentsline {section}{\numberline {13.48}Sources/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Twos\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cmplt/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Yaml\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test.swift File Reference}{56}{section.13.48}%
+\contentsline {chapter}{Index}{57}{section*.17}%

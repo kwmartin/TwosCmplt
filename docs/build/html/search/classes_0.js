@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coeffmlt_23',['CoeffMlt',['../structCoeffMlt.html',1,'']]]
+  ['dummydoccanchor_0',['DummyDocCAnchor',['../structDummyDocCAnchor.html',1,'']]]
 ];

@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['operators_2eswift_14',['Operators.swift',['../Operators_8swift.html',1,'']]]
+  ['a_20dormant_20separate_20bug_20found_20along_20the_20way_0',['A dormant, separate bug found along the way',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md28',1,'']]],
+  ['a_20later_20cleanup_20pass_20and_20the_20tt_20genconcatstmt_20tt_20stack_20discipline_20bug_20fixed_1',['Write-side duplication (fixed in a later cleanup pass) and the &lt;tt&gt;genConcatStmt&lt;/tt&gt; stack-discipline bug (fixed)',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md19',1,'']]],
+  ['a_20recommendation_2',['Comparison with other simulators, and a recommendation',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md22',1,'']]],
+  ['actually_20implemented_20and_20what_20wasn_20t_3',['Part 3 — What was actually implemented, and what wasn&apos;t',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md23',1,'']]],
+  ['add_4',['add',['../structPortDepsBuilder.html#a50b04e5857fed9c49ef231a2bad75843',1,'PortDepsBuilder']]],
+  ['against_20the_20current_20implementation_5',['Point-by-point evaluation against the current implementation',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md21',1,'']]],
+  ['algorithm_6',['Part 2 — Evaluating the proposed slice/concat-gate algorithm',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md20',1,'']]],
+  ['along_20the_20way_7',['A dormant, separate bug found along the way',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md28',1,'']]],
+  ['also_8',['also',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2TwoComplement.html#autotoc_md51',1,'See Also'],['../md_Sources_2SharedTypes_2SharedTypes_8docc_2TwoCmpltDocs.html#autotoc_md8',1,'See Also'],['../md_Sources_2SharedTypes_2SharedTypes_8docc_2SharedTypes.html#autotoc_md4',1,'See Also']]],
+  ['always_20block_20driven_20nodes_20need_20no_20special_20case_9',['The reactivity question, and why always-block-driven nodes need no special case',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md29',1,'']]],
+  ['and_20a_20recommendation_10',['Comparison with other simulators, and a recommendation',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md22',1,'']]],
+  ['and_20summary_11',['Project introduction and summary.',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2Overview.html#autotoc_md44',1,'']]],
+  ['and_20the_20tt_20genconcatstmt_20tt_20stack_20discipline_20bug_20fixed_12',['Write-side duplication (fixed in a later cleanup pass) and the &lt;tt&gt;genConcatStmt&lt;/tt&gt; stack-discipline bug (fixed)',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md19',1,'']]],
+  ['and_20tt_20stmts_20tt_13',['The two arenas: &lt;tt&gt;exprs&lt;/tt&gt; and &lt;tt&gt;stmts&lt;/tt&gt;',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md12',1,'']]],
+  ['and_20what_20wasn_20t_14',['Part 3 — What was actually implemented, and what wasn&apos;t',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md23',1,'']]],
+  ['and_20why_20always_20block_20driven_20nodes_20need_20no_20special_20case_15',['The reactivity question, and why always-block-driven nodes need no special case',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md29',1,'']]],
+  ['and_20why_20tt_20assgnast_20tt_20tt_20singleconcatast_20tt_20were_20merged_16',['&lt;tt&gt;assgnst&lt;/tt&gt; / &lt;tt&gt;concatst&lt;/tt&gt;, and why &lt;tt&gt;AssgnAST&lt;/tt&gt;/&lt;tt&gt;SingleConcatAST&lt;/tt&gt; were merged',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md14',1,'']]],
+  ['approach_17',['Approach',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2FilterIntro.html#autotoc_md39',1,'']]],
+  ['are_20parsed_20today_18',['Part 1 — How RHS assignment expressions are parsed today',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md11',1,'']]],
+  ['arenas_3a_20tt_20exprs_20tt_20and_20tt_20stmts_20tt_19',['The two arenas: &lt;tt&gt;exprs&lt;/tt&gt; and &lt;tt&gt;stmts&lt;/tt&gt;',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md12',1,'']]],
+  ['arithmetic_2eswift_20',['Arithmetic.swift',['../Arithmetic_8swift.html',1,'']]],
+  ['arryelem_21',['ArryElem',['../ArryElem_8swift.html#ac69fd86bd1dab5245df11210647f5375',1,'ArryElem.swift']]],
+  ['arryelem_2eswift_22',['ArryElem.swift',['../ArryElem_8swift.html',1,'']]],
+  ['assgnast_20tt_20tt_20singleconcatast_20tt_20were_20merged_23',['&lt;tt&gt;assgnst&lt;/tt&gt; / &lt;tt&gt;concatst&lt;/tt&gt;, and why &lt;tt&gt;AssgnAST&lt;/tt&gt;/&lt;tt&gt;SingleConcatAST&lt;/tt&gt; were merged',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md14',1,'']]],
+  ['assgnst_20tt_20tt_20concatst_20tt_20and_20why_20tt_20assgnast_20tt_20tt_20singleconcatast_20tt_20were_20merged_24',['&lt;tt&gt;assgnst&lt;/tt&gt; / &lt;tt&gt;concatst&lt;/tt&gt;, and why &lt;tt&gt;AssgnAST&lt;/tt&gt;/&lt;tt&gt;SingleConcatAST&lt;/tt&gt; were merged',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md14',1,'']]],
+  ['assignment_20expressions_20are_20parsed_20today_25',['Part 1 — How RHS assignment expressions are parsed today',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md11',1,'']]],
+  ['assigns_26',['Part 4 — Kahn&apos;s-order scheduling for continuous assigns',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md26',1,'']]],
+  ['at_200_20in_20tt_20tst_5faccum3_20tt_20_3a_20multi_20bit_20output_20port_20slices_20were_20never_20wired_20correctly_27',['Part 5 — &lt;tt&gt;RL_&lt;/tt&gt; stuck at 0 in &lt;tt&gt;TST_ACCUM3&lt;/tt&gt;: multi-bit output-port slices were never wired correctly',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md31',1,'']]]
 ];

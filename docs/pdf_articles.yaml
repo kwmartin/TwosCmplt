@@ -1,0 +1,30 @@
+# Articles collected into docs/TwosCmplt_Articles.pdf by scripts/docs_pdf.py.
+# Paths are relative to the repository root; order here is order in the PDF.
+title: "TwosCmplt: Examples and Library Articles"
+author: "Kenneth Martin"
+output: docs/TwosCmplt_Articles.pdf
+# Folders searched for images referenced by the articles.
+image_dirs:
+  - ExamplesDoc/ExamplesDoc.docc
+  - ExamplesDoc/ExamplesDoc.docc/Resources
+  - Sources/TwosCmplt/TwosCmplt.docc
+parts:
+  - name: "Examples"
+    articles:
+      - ExamplesDoc/ExamplesDoc.docc/ExamplesDoc.md
+      - ExamplesDoc/ExamplesDoc.docc/Filters.md
+      - ExamplesDoc/ExamplesDoc.docc/CoeffMlt.md
+      - ExamplesDoc/ExamplesDoc.docc/Cordics.md
+      - Examples/CoeffMltply/CoeffMltply.docc/CoeffMltply.md
+  - name: "TwosCmplt library"
+    articles:
+      - Sources/TwosCmplt/TwosCmplt.docc/TwosCmplt.md
+      - Sources/TwosCmplt/TwosCmplt.docc/Introduction.md
+      - Sources/TwosCmplt/TwosCmplt.docc/Overview.md
+      - Sources/TwosCmplt/TwosCmplt.docc/TwoComplement.md
+      - Sources/TwosCmplt/TwosCmplt.docc/FilterIntro.md
+      - Sources/TwosCmplt/TwosCmplt.docc/CircDef.md
+  - name: "SharedTypes"
+    articles:
+      - Sources/SharedTypes/SharedTypes.docc/SharedTypes.md
+      - Sources/SharedTypes/SharedTypes.docc/TwoCmpltDocs.md

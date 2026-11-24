@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['twocmplt_2eswift_33',['TwoCmplt.swift',['../TwoCmplt_8swift.html',1,'']]],
-  ['twoscmplt_2eswift_34',['TwosCmplt.swift',['../TwosCmplt_8swift.html',1,'']]]
+  ['gate_2eswift_0',['Gate.swift',['../Gate_8swift.html',1,'']]],
+  ['gateconfig_2eswift_1',['GateConfig.swift',['../GateConfig_8swift.html',1,'']]],
+  ['glbls_2eswift_2',['glbls.swift',['../Glbls_2Glbls_8swift.html',1,'(Global Namespace)'],['../TwosCmplt_2Glbls_8swift.html',1,'(Global Namespace)']]]
 ];

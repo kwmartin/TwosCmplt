@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nbits_13',['nbits',['../structCoeffMlt.html#a278b669816f89c9aa2a6bce4b10fadd6',1,'CoeffMlt::nbits()'],['../Operators_8swift.html#a2283941b43780f85029b7e841a1b542a',1,'nbits():&#160;Operators.swift']]]
+  ['_3a_20multi_20bit_20output_20port_20slices_20were_20never_20wired_20correctly_0',['Part 5 — &lt;tt&gt;RL_&lt;/tt&gt; stuck at 0 in &lt;tt&gt;TST_ACCUM3&lt;/tt&gt;: multi-bit output-port slices were never wired correctly',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md31',1,'']]]
 ];

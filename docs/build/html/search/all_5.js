@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['main_2eswift_9',['main.swift',['../DebugMain_2main_8swift.html',1,'(Global Namespace)'],['../TwosCmpltTestingRunner_2main_8swift.html',1,'(Global Namespace)']]],
-  ['mltplycoeff_10',['MltplyCoeff',['../TwosCmplt_2CoeffMltply_8swift.html#a03707f51d4687e1dd753675d8ad394d6',1,'CoeffMltply.swift']]],
-  ['moduleloaded_11',['moduleLoaded',['../PlaceHolder_8swift.html#aa29616b0c5eb549e7e6e0f981f0ab93a',1,'PlaceHolder.swift']]],
-  ['multiplymodes_12',['MultiplyModes',['../classStates.html#ac9269a8b10dbe7a7c74510a2fa4fb7c7',1,'States']]]
+  ['5_20—_20tt_20rl_5f_20tt_20stuck_20at_200_20in_20tt_20tst_5faccum3_20tt_20_3a_20multi_20bit_20output_20port_20slices_20were_20never_20wired_20correctly_0',['Part 5 — &lt;tt&gt;RL_&lt;/tt&gt; stuck at 0 in &lt;tt&gt;TST_ACCUM3&lt;/tt&gt;: multi-bit output-port slices were never wired correctly',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md31',1,'']]]
 ];

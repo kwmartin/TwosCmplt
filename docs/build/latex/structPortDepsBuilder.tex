@@ -1,0 +1,123 @@
+\doxysection{Port\+Deps\+Builder Struct Reference}
+\hypertarget{structPortDepsBuilder}{}\label{structPortDepsBuilder}\index{PortDepsBuilder@{PortDepsBuilder}}
+
+
+Builds a module\textquotesingle{}s Port\+Deps from the circuit Sim\+Run holds\+: node indices, gates, assigns\textquotesingle{} read/write sets, always blocks (from the Circ\+Def), and the children\textquotesingle{}s own Port\+Deps mapped through their port definitions.  
+
+
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+(let vdd\+\_\+hi) -\/ \mbox{\hyperlink{structPortDepsBuilder_a3003138bb73d006bbdea09c0883f4bc5}{contains}}
+\item 
+(mutating func) -\/ \mbox{\hyperlink{structPortDepsBuilder_a50b04e5857fed9c49ef231a2bad75843}{add}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_ab0bc4ceaf699a775eaf492341ed6956f}{circ}}\+: Circuit let deps\+: Port\+Deps var edges\+: \mbox{[}Int\+: \mbox{[}Int\+: Port\+Deps.\+Mask\mbox{]}\mbox{]} = \mbox{[}\+:\mbox{]} var roots\+: \mbox{[}Int\mbox{]} = \mbox{[}$\,$\mbox{]} let in\+Port\+Nodes\+: \mbox{[}Int\+: String\mbox{]} init(\+\_\+ circ\+: Circuit) \{ self.\+circ = circ self.\+deps = Port\+Deps(module\+: circ.\+module) var m\+: \mbox{[}Int\+: String\mbox{]} = \mbox{[}\+:\mbox{]} for p in circ.\+i\+Prts where !Port\+Deps\+Builder.\+is\+Supply(p.\+port) \&\& p.\+intl\+Indx $<$ circ.\+nodes.\+count \{ m\mbox{[}p.\+intl\+Indx\mbox{]} = p.\+port \} self.\+in\+Port\+Nodes = m \} static func is\+Supply(\+\_\+ name\+: String) -\/$>$ Bool \{ \mbox{[}"{}VDD"{}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_af952efbb8291171d8f6f728acbd62f16}{VSS}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a37db2ad31f2c71a22bb0d4d6921d19cd}{vdd}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a0be0156765fadd210900006100927b3b}{vss}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a0637c0c2493582c3e3415eb643924404}{VDDA}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a8e70ded29a56442bcbc41911b374a403}{VSSA}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a5ded5a45d9f3688e3ee2e74f3350c79a}{vdda}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_a6e251974f4267c044b72885ee0e68743}{vssa}}
+\item 
+let \mbox{\hyperlink{structPortDepsBuilder_ac3d7224bc9e1942984b5f0644da46f89}{VDD\+\_\+\+HI}}
+\item 
+var \mbox{\hyperlink{structPortDepsBuilder_ae7517013a7288dc8dc42c28113bba527}{nR}}\+: Int \{ roots.\+count \} var full\+R\+: Port\+Deps.\+Mask \{ Port\+Deps.\+full(nR) \} mutating func root\+Index(\+\_\+ n\+: Int) -\/$>$ Int? \{ if let i = roots.\+first\+Index(of\+: n) \{ return i \} guard roots.\+count $<$ Port\+Deps.\+max\+Phase \mbox{\hyperlink{Sim_8swift_a86f7c427338355ba7ee03ab0cf94632b}{else}} \{ return nil \} roots.\+append(n) return roots.\+count -\/ 1 \} func trace(\+\_\+ start\+: Int) -\/$>$ (Int
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Builds a module\textquotesingle{}s Port\+Deps from the circuit Sim\+Run holds\+: node indices, gates, assigns\textquotesingle{} read/write sets, always blocks (from the Circ\+Def), and the children\textquotesingle{}s own Port\+Deps mapped through their port definitions. 
+
+\doxysubsection{Method Documentation}
+\Hypertarget{structPortDepsBuilder_a50b04e5857fed9c49ef231a2bad75843}\label{structPortDepsBuilder_a50b04e5857fed9c49ef231a2bad75843} 
+\index{PortDepsBuilder@{PortDepsBuilder}!add@{add}}
+\index{add@{add}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{add}{add}}
+{\footnotesize\ttfamily -\/ (mutating func) add \begin{DoxyParamCaption}\item[{(\+\_\+ s\+:\+Int)}]{ }\item[{(\+\_\+ d\+:\+Int)}]{ }\item[{(\+\_\+ m\+:\+Port\+Deps.)}]{Mask }\end{DoxyParamCaption}}
+
+\Hypertarget{structPortDepsBuilder_a3003138bb73d006bbdea09c0883f4bc5}\label{structPortDepsBuilder_a3003138bb73d006bbdea09c0883f4bc5} 
+\index{PortDepsBuilder@{PortDepsBuilder}!contains@{contains}}
+\index{contains@{contains}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{contains}{contains}}
+{\footnotesize\ttfamily -\/ (let vdd\+\_\+hi) contains \begin{DoxyParamCaption}\item[{(name)}]{ }\end{DoxyParamCaption}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structPortDepsBuilder_ab0bc4ceaf699a775eaf492341ed6956f}\label{structPortDepsBuilder_ab0bc4ceaf699a775eaf492341ed6956f} 
+\index{PortDepsBuilder@{PortDepsBuilder}!circ@{circ}}
+\index{circ@{circ}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{circ}{circ}}
+{\footnotesize\ttfamily -\/ (let) circ\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_ae7517013a7288dc8dc42c28113bba527}\label{structPortDepsBuilder_ae7517013a7288dc8dc42c28113bba527} 
+\index{PortDepsBuilder@{PortDepsBuilder}!nR@{nR}}
+\index{nR@{nR}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{nR}{nR}}
+{\footnotesize\ttfamily -\/ (var) nR\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a37db2ad31f2c71a22bb0d4d6921d19cd}\label{structPortDepsBuilder_a37db2ad31f2c71a22bb0d4d6921d19cd} 
+\index{PortDepsBuilder@{PortDepsBuilder}!vdd@{vdd}}
+\index{vdd@{vdd}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{vdd}{vdd}}
+{\footnotesize\ttfamily -\/ (let) vdd\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_ac3d7224bc9e1942984b5f0644da46f89}\label{structPortDepsBuilder_ac3d7224bc9e1942984b5f0644da46f89} 
+\index{PortDepsBuilder@{PortDepsBuilder}!VDD\_HI@{VDD\_HI}}
+\index{VDD\_HI@{VDD\_HI}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{VDD\_HI}{VDD\_HI}}
+{\footnotesize\ttfamily -\/ (let) VDD\+\_\+\+HI\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a0637c0c2493582c3e3415eb643924404}\label{structPortDepsBuilder_a0637c0c2493582c3e3415eb643924404} 
+\index{PortDepsBuilder@{PortDepsBuilder}!VDDA@{VDDA}}
+\index{VDDA@{VDDA}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{VDDA}{VDDA}}
+{\footnotesize\ttfamily -\/ (let) VDDA\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a5ded5a45d9f3688e3ee2e74f3350c79a}\label{structPortDepsBuilder_a5ded5a45d9f3688e3ee2e74f3350c79a} 
+\index{PortDepsBuilder@{PortDepsBuilder}!vdda@{vdda}}
+\index{vdda@{vdda}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{vdda}{vdda}}
+{\footnotesize\ttfamily -\/ (let) vdda\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_af952efbb8291171d8f6f728acbd62f16}\label{structPortDepsBuilder_af952efbb8291171d8f6f728acbd62f16} 
+\index{PortDepsBuilder@{PortDepsBuilder}!VSS@{VSS}}
+\index{VSS@{VSS}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{VSS}{VSS}}
+{\footnotesize\ttfamily -\/ (let) VSS\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a0be0156765fadd210900006100927b3b}\label{structPortDepsBuilder_a0be0156765fadd210900006100927b3b} 
+\index{PortDepsBuilder@{PortDepsBuilder}!vss@{vss}}
+\index{vss@{vss}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{vss}{vss}}
+{\footnotesize\ttfamily -\/ (let) vss\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a8e70ded29a56442bcbc41911b374a403}\label{structPortDepsBuilder_a8e70ded29a56442bcbc41911b374a403} 
+\index{PortDepsBuilder@{PortDepsBuilder}!VSSA@{VSSA}}
+\index{VSSA@{VSSA}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{VSSA}{VSSA}}
+{\footnotesize\ttfamily -\/ (let) VSSA\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{structPortDepsBuilder_a6e251974f4267c044b72885ee0e68743}\label{structPortDepsBuilder_a6e251974f4267c044b72885ee0e68743} 
+\index{PortDepsBuilder@{PortDepsBuilder}!vssa@{vssa}}
+\index{vssa@{vssa}!PortDepsBuilder@{PortDepsBuilder}}
+\doxysubsubsection{\texorpdfstring{vssa}{vssa}}
+{\footnotesize\ttfamily -\/ (let) vssa\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Sources/\+Twos\+Cmplt/\mbox{\hyperlink{PortDeps_8swift}{Port\+Deps.\+swift}}\end{DoxyCompactItemize}

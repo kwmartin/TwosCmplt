@@ -1,0 +1,1145 @@
+---
+title: "TwosCmplt: Examples and Library Articles"
+author: "Kenneth Martin"
+documentclass: report
+toc: true
+toc-depth: 2
+geometry: margin=2.5cm
+colorlinks: true
+---
+
+
+\part{Examples}
+
+
+
+# `ExamplesDoc`
+
+High‑level overview of the examples documentation.
+
+## Topics
+
+### Articles
+
+- *Cordics*
+- *Filters*
+
+
+\newpage
+
+
+# FilterIntro
+When realizing digital filters in hardware, and when high-speed operation is important, a popular choice is to use two's complement arithmetic for the signal-processing operations. Often, the initial design debugging is done using a high-level simulation but with bit accurate operations.
+The TwoCmplt Library is intended to help simulate high-level, bit-accurate
+filters with minimal effort.
+
+## Approach
+
+The signal-flow-graph of a simple first-order filter is shown directly below
+
+![First-Order Filter](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Filter_3A.png)
+
+In this example, the muliplier is realized by a new approach for impementing a
+multiplication where the multiplication is by a fixed coefficient that either is
+a constant or changes only slowly. The multiplication is realized using the struct
+``TwosCmplt/CoeffMlt``. The example of using this struct is found in the swift executable file
+Filter3A.swift found in Examples/Filter3A/ in the main project directory. Note the other
+examples are also all under Examples from the main project directory. Additional documentation
+on the Examples can be found in ExamplesDoc/ExamplesDoc.docc. Some of the examples write their
+impulse response into the tools directory. The FFT magnitude of the impulse response can
+be displayed (and optionally saved to a png or pdf file) using python3 anal_functs <example_name.dat>
+
+Another illustrative example is:
+
+![Third-Order Elliptic Filter](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Filter_3C.png)
+
+This filter can be realized without using multipliers and can have its -3dB frequency changed over
+a wide range while it's shape remains constant. It and some similar architectures where used
+in early ADSL systems.
+
+The magnitude transfer function of this filter is easily found by simulating
+the filter with an impulse input signal, and then doing an FFT on the output impulse response.
+
+![Impulse Response of Third-Order](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Resources/ThrdOrdr_with_Zero.png)
+
+The slight anomoly at dc is interesting; it is not due to numerical inaccuracies. It is *real* and caused by the
+fact that the impulse response does not settle to zero as might be expected. When the internal states get small, the ouputs
+of the multipliers are zero even when the internal states are not exactly zero due to finite arithmetic truncation. Unless the design is modified to correct for this, an actual realization will have this behavior.
+
+## Topics
+
+- *CoeffMlt*
+
+
+
+\newpage
+
+
+# CoeffMlt
+
+## Introduction
+
+Many signal processing blocks have multiplications involving fixed coefficients.
+The fixed coefficients may never change or change or slowly. For this case, it is advantageous
+to realize the multiplications using a simpler and faster multiplier compared to a general-purpose
+multiplier. This example shows one possible approach developed by the author.
+
+This example uses a 16-bit signed signal path and 20-bit registers and adders
+The coefficients are assumed to be unsigned positive values between 0 and
+(1<<15) - 1. Each coefficient represents a fraction; the maximum of the coefficients is
+((1<<15)-1) / (1<<15). Sixteen 20-bit registers need to be pre-loaded with k \* coeff, k = 0,..,15
+At each multiplication, if the signal is negative, it is converted to a positive value, and then
+after an unsigned multiplication, it is converted back to a negative value.
+In the multiplication operation, 4 different values are added together to get the final result.
+In a hardware implementation, the first two additions would occur in parallel, followed by adding
+their outputs, so two cascaded levels of addition are required. In most hardware implementations,
+carry-save adders would be used; this approach has not yet been incorporated into the example.
+
+The values being added are determined by the unsigned signal nibbles, with each nibble being 4 bits.
+The 4-bit nibbles select one of the coefficient registers shifted right by rshift, for rshift = 0,4,8,12
+depending on the nibble, going from the most significant nibble to the least significant nibble.
+The rshift's are implemented using wiring and don't require additional hardware.
+The selection is done using 20-bit 16 to 1 multiplexors implemented using three levels of
+2 to 1 switched inverters.
+After the summation, 8 is added to the sum, to implement rounding, and then the final output is
+the sum shifted right by 4 bits, and possible negated if the signal input was originally negative.
+
+This example includes a relatively simple block to show how the coefficient registers could be slowly updated, once
+every 16 signal values, for applications were the coefficients might be slowly adapting. 
+
+### Topics
+
+- *Filters*
+	
+
+\newpage
+
+
+# Direct Digital Frequency Synthesizers
+A *Direct-Digital-Frequency-Synthesizer* is an integrated circuit digital block that realizes sine and cosine values using
+fixed-point arithmetic. This block is used in systems such as digital communication systems, phased-array receivers, and chirp-based radars.
+
+## DDFS Approaches
+
+There are many different architectures used to implement DDFS sytems; the early popular approach was to use ROM lookup tables. One of the first important seminal descriptions of an integrated realization is: 
+[Sunderland: DDFS](https://ieeexplore.ieee.org/document/1052173). This realization uses two ROM lookup tables: a 256x11 ROM, and a 256x4 ROM. The generated sine wave had a spurious free sprectral purity of -65dBc; the output was real, as opposed to complex quadrature. Another example of an integrated ROM-based DDFS is found in [Nicholas: -90dBc](https://ieeexplore.ieee.org/document/104190) which improved performance to -90dBc using very clever optimization techniques. A high level block diagram of a DDFS is shown:
+
+![DDFS](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Resources/DDFS_Cordic1.png)
+
+An alternative approach to realizing DDFS's is based on CORDIC transforms [Volder: Cordic](https://ieeexplore.ieee.org/document/5222693?arnumber=5222693). This approach seems to be the most popular currently as it doesn't require a relatively area hungry ROM (it's actually the ROM decoders that take the majority of the space, not the storage locations). The CORDIC approach to realizing DDFS's is based on using a number or "rotations" starting from a fixed location and terminating at the desired rotation phase. The main idea is when applying the rotations, the multiplications are constrained to be powers of two only which are implemented using shift rights, as opposed to area-hungry multipliers. Reported approaches include: the classical approach that constrains tan(phi) to be powers of two; and an alternative approach that constrains the phase shifts themselves to be powers of two [Madisetti: Cordic DDFS](https://ieeexplore.ieee.org/document/777100). The Cordic approaches typically achieve -100dBc spurious free outputs and normally generate both cosine and quadrature sine outputs.
+
+We will only superficially describe the how to implement DDFS's using the Cordic approach, as there are many excellent references in the literature that give many more details than we can give here-in without requiring way too much space. For any that are very interested in this subject, we will give a few references. Some easy to read references are by Steve Arar [DDFS: Arar](https://www.allaboutcircuits.com/technical-articles/an-introduction-to-the-cordic-algorithm/) and details of a verilog implementation by Gisselquist Techology, LLC [DDFS: Gisselquist](https://zipcpu.com/dsp/2017/08/30/cordic.html). Analog Devices uses the CORDIC approach to realize their very popular DDFS's [DDFS: ADI](https://archive.org/details/JL10239) with an example data sheet at [DDFS: ADI 9914s](https://www.mouser.ca/datasheet/2/609/ad9914s-2955786.pdf). A reference the author has high respect for is by Jouko Vankka [DDFS: Vankka](https://www.researchgate.net/publication/27515907_Direct_Digital_Synthesizers_Theory_Design_and_Applications).
+
+Two Cordic examples are simulated using the TwoCmplt library: the first example is based on the classic approach; the second example is based on a hybrid architecture that uses a 16:1 lookup-table similar to that used by Madisetti, but then uses the classic rotations; this hybrid approach eliminates the fixed multiplier used by Madisetti. The first example uses 16 *buterflys*, whereas the second example uses the looup-table and 13 *butterflys*. Both examples have better than -100dBc spurious free spectral purity (we have included a Python file in the tools directory at the top level for checking spectral purity using FFT's; see the README file for running the script).
+
+A plot of the output of example Cordic1 is shown.
+
+![Cordic1](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Resources/Cordic1_33.png)
+
+A plot of the output of example Cordic2 is shown.
+
+![Cordic2](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Resources/Cordic2_33.png)
+
+In both cases, the period is chosen to be 33 delays. The spectral density of Cordic2 is about 10dB better than the spectral purity of Cordic1 (for our particular designs).
+
+The examples presented are intended to accurately document the details of the algorithms; this is felt to be one of the benefits of first simulating at a high level but bit accurate.
+
+The aim of these DDFS examples is not to present the *best* solution for a DDFS; albeit they are both reaonable architectures. Rather, it is intended to show that when realizing a relatively complicated digital signal processing system, the TwoCmplt library is useful in getting the *details* correct. Indeed, in many digital systems: *The Devil is in the Details*. In the recommended approach, the system design is done at a high-level, but bit accurate so the degradation due to the finite accuracy can be properly assessed, before committing to the expense of an integrated realization. Also, when an actual integrated realization is being developed, the outputs of the verilog design can be matched to the outputs of the TwoCmplt based design during the verilog debug phase expediating the verilog debug. The spectral purity of the architectures described is shown to be approximately -100dBc; which is adequate for most applications (we also have a ROM-based solution with -120dBc spectral purity, but we are hoping to submit it to a conference and can't include it until after the conference presentation (or possibly submission rejection).
+
+We might also mention that often we first develop a high-level simulation using Python and not using TwoCmplt objects (although we do have them available). We have found Python easier to debug because of its interactive nature, and how easy it is to call functions at debug breakpoints. Once we have a Python solution, then we can use this to enable getting a Swift solution debugged. For simpler examples, we just implement directly in Swift without the Python intermediary. (We also have some simulations in Julia, which we also like, but this is on hold for now until the Swift project is further along.)
+
+
+\newpage
+
+
+# CoeffMltply Examples
+
+
+
+Examples of using the TwoCmplt structs in simulating two's complement systems
+
+## Topics
+
+### Fixed-Coefficient Multipler
+
+A fixed-point multiplier based on using 16-to-1 word multiplexors
+
+### Filters
+
+A number of different filters used as examples of using
+the TwoCmplt library for simulating filters. Currently, two
+different third-order filters are described. Both filters are low-pass
+and can have their -3dB frequencies changed over a wide range while
+prserving the filter shape. One filter has poles only and the other
+has a finite transmission zero. The filter examples are first given
+as "hard-wired" and secondly where the structures and coefficients
+are read from a yaml file. When they are simulated with an impulse
+response, their outputs are placed in ../tools which
+contains a Python file that will plot the FFT of the impulse response.
+
+## See Also
+
+- [Reference Guide](ReferenceGuide.md)
+
+
+\newpage
+
+
+\part{TwosCmplt library}
+
+
+
+# TwosCmplt
+
+
+
+Overview of TwosCmplt library. Will fill in once docc is working.
+
+## Topics
+
+- *Filters*
+- *CircDef*
+
+## Twos's Complement Integers
+
+- *Introduction*
+- *CoeffMlt*
+- `TwoCmplt`
+
+## Summary
+
+A Swift library for bit-accurate, two's complement digital design.  
+
+
+
+\newpage
+
+
+# Introduction
+
+A library to enable Swift when doing simulations of two's complement signal-processing blocks.
+
+## Topics
+
+- *TwoComplement*
+- *CoeffMlt*
+
+## Summary
+
+A TwoCmplt struct contains the value (called value, an Int) of the two's complement variable, and
+properties defining the variable. These properties describe the number of bits
+used for the variable (nbits, an Int), whether the variable is considered to be signed
+or unsigned (signed, a Bool), and the precision if it's not zero (prec, an Int). The precision
+determines how the value should be scaled when it is combined with other two's complement
+integers similar to how Matlab represents two's complement variables using it's "fi" objects.
+
+
+
+\newpage
+
+
+# Overview
+
+## Project introduction and summary.
+
+A TwoCmplt struct contains the value (called value, an Int) of the two's complement variable, and
+properties defining the variable. These properties describe the number of bits
+used for the variable (nbits, an Int), whether the variable is considered to be signed
+or unsigned (signed, a Bool), and the precision if it's not zero (prec, an Int). The precision
+determines how the value should be scaled when it is combined with other two's complement
+integer similar to how Matlab represents two's complement variables using it's "fi" objects.
+[Matlab Fixed-Point Arithmetic Documentation](https://www.mathworks.com/help/fixedpoint/ug/perform-fixed-point-arithmetic.html)
+
+\newpage
+
+
+# TwoComplement
+
+
+
+This library is intended to simplify using Swift to model signal processing blocks
+implemented using two's complement arithmetic. Think of it a start towards extending Swift
+to System-Swift, as an alternative to System-C. The library is a port from a Python library so
+much (but not all) of the debugging has been done.
+
+## TwoCmplt
+
+The intended use of this library is that when developing a fixed-point hardware system, the system
+is first simulated at a high level, but bit-accurate, to do most of the debugging. The author
+usually does this using Python, but ideally, Swift will make the simulations much faster.
+Once the bit-accurate systems are debugged and characterized (note: we are still using Python's
+numpy and scipy's FFT's and matplotlib.pyplot for characterization, for now) at a high level, then
+they would be translated into either verilog for FPGA's or custom silicon or CUDA. The Swift realization
+would be used to help verify the hardware implementation. The fantasy is
+to eventually have genertors do the translations (aside: this could be an interesting Master's thesis topic?)
+
+Most functions are methods in the TwoCmplt struct.
+Many signal processing systems, for example, fixed-point digital filters
+involve processing two's complement fixed-point integers of a specified bit length.
+This library makes public a large number of functions intended to be bit-accurate
+to hardware realizations of systems that use twos-complement operations. This library was
+implemented in Swift because a) it is relatively fast, and b) supports many types that make
+using the library much cleaner, such as operator over-loading. Swift is well suited for
+fast system level simulations of digital systems. This package is currently only supported
+in linux (but should port easily to macOS). The documentation and debugging are on-going.
+Doing the documentation using docc is perhaps a large mistake, but currently, it is too
+time-consuming to correct.
+
+### Summary
+
+A TwoCmplt struct contains the value (called value, an Int) of the two's complement variable, and
+properties defining the variable. These properties describe the number of bits
+used for the variable (nbits, an Int), whether the variable is considered to be signed
+or unsigned (signed, a Bool), and the precision if it's not zero (prec, an Int). The precision
+determines how the value should be scaled when it is combined with other two's complement
+integers similar to how Matlab represents two's complement variables using it's "fi" types.
+(https://www.mathworks.com/help/fixedpoint/ug/perform-fixed-point-arithmetic.html)
+
+### Filters
+
+There are a number of examples of simulating digital filters in the Examples module. Some of these use
+the Fixed Coefficient Multiplier, some assume a generic multiplier, and some are restricted to just using
+shifts. One of the examples show how a filter can be completely defined from a simple Yaml file; it's
+update order is determined using Kahn's Topological Sort algorithm.
+
+### CoeffMlt
+
+This is one of the examples showing the use of the TwoCmplt library.
+When doing two's complement signal processing, the mulitplication operation is expensive in terms
+of hardware size and speed. In many two's complement signal processing systems, many if not most,
+multiplications are by fixed coefficients, that either never change, or only change slowly over many
+clock periods. This library introduces a new approach for realizing fixed point multiplications that 
+is faster and requires less hardware. It is based on dividing the "signal" into nibbles of 4 bits each.
+Each nibble controls a 16 word to 1 word multiplexor. The inputs to the multipliers are multiples of the
+coefficient, or shifted right versions of multiples of the coefficients. The outputs of the multiplexors
+are added together, normally using carry-save adders (yet to be implemented - coming soon).
+
+
+## Topics
+
+- *Overview*
+- *TwosCmplt* 
+- *CoeffMlt*
+- *FilterIntro*
+
+## See Also
+
+- *FilterIntro*
+
+
+\newpage
+
+
+# FilterIntro
+When realizing digital filters in hardware, and when high-speed operation is important, a popular choice is to use two's complement arithmetic for the signal-processing operations. Often, the initial design debugging is done using a high-level simulation but with bit accurate operations.
+The TwoCmplt Library is intended to help simulate high-level, bit-accurate
+filters with minimal effort.
+
+## Approach
+
+The signal-flow-graph of a simple first-order filter is shown directly below
+
+![First-Order Filter](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Filter_3A.png)
+
+In this example, the muliplier is realized by a new approach for impementing a
+multiplication where the multiplication is by a fixed coefficient that either is
+a constant or changes only slowly. The multiplication is realized using the struct
+``TwosCmplt/CoeffMlt``. The example of using this struct is found in the swift executable file
+Filter3A.swift found in Examples/Filter3A/ in the main project directory. Note the other
+examples are also all under Examples from the main project directory. Additional documentation
+on the Examples can be found in ExamplesDoc/ExamplesDoc.docc. Some of the examples write their
+impulse response into the tools directory. The FFT magnitude of the impulse response can
+be displayed (and optionally saved to a png or pdf file) using python3 anal_functs <example_name.dat>
+
+Another illustrative example is:
+
+![Third-Order Elliptic Filter](/home/Dropbox/programming/Swift/TwosCmplt/ExamplesDoc/ExamplesDoc.docc/Filter_3C.png)
+
+This filter can be realized without using multipliers and can have its -3dB frequency changed over
+a wide range while it's shape remains constant. It and some similar architectures where used
+in early ADSL systems.
+
+
+\newpage
+
+
+# CircDef
+
+## Introduction
+
+`CircDef` (`Sources/TwosCmplt/CircDef.swift`) is the decoded, in-memory
+representation of a Verilog-derived module: its declarations, parameter
+list, and a `BehavAST` describing every `assign`/`always`/`initial`/instance
+block found in the module's YAML source. This page documents, in detail,
+how the right-hand side (RHS) of an assignment statement is parsed and
+turned into that representation, why `CircDef.exprs` and `CircDef.stmts`
+sometimes appear so lopsided (one full, the other empty) at a breakpoint,
+and evaluates a proposed algorithm for giving bit-slices and concatenation a
+real, structural presence in the simulated netlist.
+
+This document was written as the first step of a staged effort (see
+`ClaudeInstructions.md` in the repository root) to fix how slices and
+concatenation are handled during circuit parsing and simulation. A handful
+of bugs found during this investigation were fixed alongside writing this
+document (all "known issue" sections below say explicitly whether the
+associated bug was fixed or left for a later pass); the larger structural
+change described in Part 2 is **not** implemented yet and is left for a
+follow-up.
+
+## Part 1 — How RHS assignment expressions are parsed today
+
+### The two arenas: `exprs` and `stmts`
+
+`CircDef` holds two independent, append-only arrays (`CircDef.swift:665-693`):
+
+``swift
+public mutating func internExpr(_ e: Expr) -> ExprId { ... }   // appends to exprs
+public mutating func internStmt(_ s: StmntAST) -> StmtId { ... } // appends to stmts
+public func getExpr(_ id: ExprId) -> Expr { exprs[id.raw] }
+public func getStmt(_ id: StmtId) -> StmntAST { stmts[id.raw] }
+``
+
+`ExprId`/`StmtId` are just wrapped integer indices into these arrays —
+bump allocators, not trees. `StmntAST` cases hold `ExprId`s referencing into
+`exprs`; expressions never reference back into `stmts`. Every subexpression,
+including nested ones, gets its own entry in `exprs` — a single assignment
+with a 16-bit concatenation of single-bit selects (see below) can intern
+30+ expression entries.
+
+### Why `stmts` can be empty while `exprs` keeps growing
+
+This was the specific behavior observed at a debugger breakpoint that
+prompted this investigation, and it turns out to be by design, not a bug:
+
+`CircDef.stmts` is populated from exactly **one** call site in the entire
+codebase: `StmntYAML.compileStmt(in:)` (`CircuitParse.swift:1454-1482`),
+which is only reached while walking the body of a procedural block —
+`always`, `initial`, `if`, `case`, a loop, etc. Top-level **continuous**
+`assign` statements never go through this path. Instead,
+`AssgnBlckYAML.toAST` (`CircuitParse.swift:1557-1567`) builds an
+`AssgnBlckAST` directly and hands it to `CircDef.buildBehavAST()`
+(`CircDef.swift:726-730`), which stores it straight into `CircDef.behav` —
+`internStmt` is never called for it.
+
+So a module built entirely out of continuous assigns (no procedural blocks)
+will have an empty `stmts` array for its whole lifetime, while `exprs` grows
+with every RHS subexpression from every assign. A concrete example already
+in the resource library:
+`Resources/CircuitLib/M1M_QDACCUM5.yml:826-898` is a continuous assign whose
+RHS concatenates `C1R` with sixteen single-bit selects of `ADDR1R_`
+(`ADDR1R_[15]` down to `ADDR1R_[0]`) — each becomes its own interned
+`Expr.select`, but the whole statement never touches `stmts`.
+
+This means "an assignment" is represented by two structurally different
+mechanisms depending on where it appears (continuous vs. procedural) — a
+real architectural wart, and the underlying reason `AssgnAST` needed to
+exist in more than one shape (see next section). It was left as-is in this
+pass; unifying continuous assigns and procedural single-assigns onto one
+storage path would be a reasonable follow-up but is a larger change than
+the scope here.
+
+### `assgnst` / `concatst`, and why `AssgnAST`/`SingleConcatAST` were merged
+
+`StmntAST` (`CircuitParse.swift:2235-2248`) has two cases for procedural
+assignment-like statements:
+
+``swift
+case assgnst(AssgnBody)          // a single scalar-target procedural assign
+case concatst(ConcatStmntAST)    // an explicit multi-part / concat-target procedural assign
+``
+
+These are not fully redundant in intent — `assgnst` represents one plain
+target, `concatst` represents a statement whose target was written as an
+explicit list of parts (e.g. a Verilog `{a, b} = x;`-style concat target) —
+but their backing structs, `AssgnAST` and `SingleConcatAST`, were
+field-for-field identical:
+
+```swift
+public struct AssgnAST {
+    public let lvalue: LValueAST
+    public var lwidth: Int = 1
+    public let rvalue: ExprId
+    public let delay: Double?
+}
+public struct SingleConcatAST {   // removed in this pass
+    public let lvalue: LValueAST
+    public let lwidth: Int = 1    // was `let`, AssgnAST's was `var`
+    public let rvalue: ExprId
+    public let delay: Double?
+}
+```
+
+Both were genuinely instantiated — `AssgnAST` via `AssgnBlckYAML.toAST`
+(continuous assign) and `SingleAssgnYAML.toAST` (one per element of a
+procedural `AssgnStmntYAML.assgns` list), `SingleConcatAST` via
+`SingleConcatYAML.toAST` (one per element of a `ConcatStmntYAML.concats`
+list). **Fixed in this pass**: `SingleConcatAST` was deleted;
+`ConcatStmntAST.concats` now holds `[AssgnAST]` directly, and
+`SingleConcatYAML.toAST` constructs an `AssgnAST`. `assgnst`/`concatst`
+were kept as two separate `StmntAST` cases, since they still represent a
+meaningfully different statement shape (one target vs. an explicit list of
+targets) even after the underlying per-part struct was unified.
+
+### The `genAssignStmt` dropped-lvalue bug (fixed)
+
+The codegen consumer of `.assgnst` was `genAssignStmt`
+(`Compile.swift:1010-1024`). Before this pass, it only handled
+`LValueAST.net`:
+
+``swift
+if case .net(let nd_nm) = ast.lvalue {
+    ctx.code.append(Instruction(op: .storeSignal(nd_nm)))
+} else {
+    print("Not a net name")   // bitSelect/partSelect/indexedPartSelect/concat: silently emits nothing
+}
+``
+
+Any procedural assignment whose target was a bit-select, part-select,
+indexed-part-select, or concat would silently produce no bytecode at all.
+By contrast, `.concatst`'s consumer, `genConcatStmt`
+(`Compile.swift:1104-1111`), and the continuous-assign consumer,
+`genAssgnStmtCode` (`Compile.swift:853-868`, used via `generateAssignBlock`),
+both handle every lvalue kind correctly — `genAssgnStmtCode` does so by
+emitting a generic `.assgn(lvalue, delay)` opcode that the VM executes via
+`setLeftNet` (`Sim.swift:1255-1300`), which switches on every `LValueAST`
+case.
+
+**Fixed in this pass**: `genAssignStmt` now mirrors `genAssgnStmtCode` —
+it emits the same `.assgn(lvalue, delay)` opcode instead of a
+net-only special case, so it now correctly supports every lvalue kind via
+the already-proven `setLeftNet` path, rather than adding a third
+independent (and error-prone) implementation of lvalue dispatch.
+
+Note for future readers: as of this writing, **no YAML file anywhere in
+`Resources/CircuitLib` actually uses `kind: assgnst` or `kind: concatst`**
+(both are procedural-statement kinds; every procedural assignment in the
+current circuit library is written using `kind: blckst`/`noblckst`
+instead, i.e. plain blocking/non-blocking assignment statements, whose
+codegen — `genBlockStmtCode`/`genNonBlockStmtCode` — was never affected by
+this bug). So this was a live, real defect, but not one that has been
+silently corrupting any circuit in the current library; it's now fixed
+regardless, and a regression test (see Verification below) exercises the
+previously-broken path directly.
+
+### Slice/select expression representation
+
+There is no dedicated slice/bit-select case in `Expr`/`ExprYAML` — every
+bit access, part-select, and identifier-with-bounds funnels into one case:
+
+``swift
+case select(name: String, args: [ExprId])     // Expr
+case select(name: String, args: [ExprYAML])   // ExprYAML
+``
+
+The YAML `kind` tags `bit`, `slice`, and `ident` (when `ident` carries a
+non-empty `sgmnts` list) all decode into `.select` (`CircuitParse.swift:
+157-208`). A single-index bit access (`ADDR1R_[3]`) is normalized to a
+duplicated two-argument form (`[3, 3]`) at intern time
+(`CircuitParse.swift:472-476`, in `ExprYAML.toExprId`), so every downstream
+consumer of `Expr.select` can assume a uniform `(msb, lsb)` two-arg shape.
+
+### The `kind: concat` mis-decode in `ExprYAML` (fixed)
+
+`ExprYAML` has its own proper `.concat(args: [ExprYAML])` case (used, for
+example, by `RValueYAML`'s handling of an `rvalue: { concats: [...] }`
+block — see `M1M_QDACCUM5.yml:830-898` above, which is the common,
+correctly-working shape for a concatenated RHS). Separately, `ExprYAML`'s
+own YAML `Kind` enum also declares a `.concat` tag
+(`kind: concat` with sibling keys `name:` + `concats:`), whose decode body
+was:
+
+``swift
+case .concat:
+    let name  = try c.decode(String.self, forKey: .name)
+    let concats = try c.decode([ExprYAML].self, forKey: .concats)
+    self = .select(name: name, args: concats)   // wrong: builds a .select, not a .concat
+``
+
+This looks like a copy/paste error — it silently produced a `.select`
+expression carrying the concatenated parts as its `args`, instead of a
+`.concat` expression. **Investigated and fixed in this pass.** A repo-wide
+search confirmed this exact shape (`kind: concat` at the `ExprYAML` level,
+i.e. inside an expression position, together with a `name:` key) does not
+occur anywhere in `Resources/CircuitLib` today — every real `kind: concat`
+occurrence in the library (28 files) is a `PortNodeYAML` value inside an
+`instance`'s `ports:` list (a structural gate/port-wiring context, decoded
+by a separate, unrelated, and already-correct decoder,
+`CircuitParse.swift:847-934`), and every real *expression*-level concat
+uses the untagged `{ concats: [...] }` shape handled directly by
+`RValueYAML`. So this bug was unreachable with current data — but it was
+still wrong, and trivial to fix correctly:
+
+``swift
+case .concat:
+    let concats = try c.decode([ExprYAML].self, forKey: .concats)
+    self = .concat(args: concats)
+``
+
+### The tree-walking `.select` evaluator bug (fixed)
+
+There are two independent evaluators for expressions, and — before this
+pass — they disagreed about `.select`:
+
+- **Bytecode/VM path** (used for continuous assigns and, via
+  `genBlockStmtCode`/`genNonBlockStmtCode`, for `blckst`/`noblckst`
+  statements): `genExpr`'s `.select` case (`Compile.swift:924-929`) emits
+  a `.select(name, argCount)` opcode, executed by the VM
+  (`Sim.swift:1351-1372`) via `ctx.getSelect(name, msb:, lsb:)` — correct.
+- **Tree-walking interpreter path** (used by `evalStmt`/`doBlcklUpd`/
+  `doNoBlcklUpd` for statements reached via `.ifst`/`.whlst`/`.casest`
+  bodies): `evalExpr`'s `.select` case (`Compile.swift:247-249`) instead
+  called `ctx.syscall("select_\(name)", args:)`. `Context.syscall`
+  (`Sim.swift:766-778`) has no `"select_"`-prefixed case and falls through
+  to `default: return .int(-1)` — **any slice read evaluated through this
+  path silently returned `-1`** instead of the correct bits.
+
+**Fixed in this pass**: `evalExpr`'s `.select` case now evaluates its two
+arguments (`msb`, `lsb`) and calls `ctx.getSelect(name, msb:, lsb:)`
+directly, matching the VM path's already-correct behavior, instead of
+round-tripping through the syscall dispatcher.
+
+### Write-side duplication (fixed in a later cleanup pass) and the `genConcatStmt` stack-discipline bug (fixed)
+
+Writing to a slice/concat lvalue used to be implemented in two parallel,
+near-identical functions: `assignToLValue` (`Sim.swift`, used by the
+tree-walking interpreter and by `genConcatStmt`) and `setLeftNet`
+(`Sim.swift`, used by the VM's `.assgn`/`.blckAssign`/`.noblckAssign`
+opcodes). Both switched on every `LValueAST` case and did essentially the
+same bit-masking arithmetic against real circuit nodes
+(`ctx.circ!.setNode(...)`), and both were already correct — the duplication
+was in the arithmetic, not a bug.
+
+There was a plain-text, non-compiled design note in the repository,
+`Sources/TwosCmplt/Compose` (since deleted), that was worth understanding
+but was **not** a description of this duplication — it quoted an older,
+already-superseded version of `assignToLValue` that wrote into
+`ctx.vars: [String: Value]` instead of a real circuit node. That was a
+legitimate concern about *that* older code, already resolved by the time
+this investigation started; `Compose` was deleted once this distinction was
+captured here, since its concern no longer applies to any current code.
+
+**Fixed**: the duplicated per-case bit-masking arithmetic (`.bitSelect`/
+`.partSelect`/`.indexedPartSelect`) was extracted into one shared private
+helper, `applySliceWrite(_:val:updTm:ctx:)` (`Sim.swift`), which both
+`assignToLValue` and `setLeftNet` now call. The two public functions kept
+their own distinct contracts rather than being forced into one signature —
+`assignToLValue` takes an absolute timestamp and also advances
+`ctx.simTime` as a side effect (used by the tree-walking interpreter and
+scheduled-update processing); `setLeftNet` takes an optional delay relative
+to `ctx.simTime` (used by the VM's opcodes) and doesn't touch `ctx.simTime`
+itself. Unifying those two contracts would have been a real behavior
+change to core simulation timing, not a safe refactor, so only the
+genuinely-identical arithmetic was consolidated.
+
+A second, independent bug was found in `genConcatStmt` (`Compile.swift`),
+the consumer of `.concatst`: it called `genExpr` (which only appends
+`Instruction`s to `ctx.code` during code generation — it never pushes onto
+`ctx.stack`, the array `Context.push`/`pop` operate on, which is only
+meaningfully populated later during actual VM execution) and then
+immediately called `ctx.pop()`, which had nothing to legitimately pop.
+**Fixed**: `genConcatStmt` is now purely bytecode-emitting, mirroring
+`genAssgnStmtCode`/`genAssignStmt` — it emits a `.assgn` opcode per part
+instead of calling `assignToLValue` synchronously mid-codegen. As with
+`assgnst`/`concatst` themselves, no YAML file in `Resources/CircuitLib`
+currently uses `kind: concatst`, so this was a real, confirmed, but dormant
+defect — a synthetic test (`testGenConcatStmtWritesAllParts`) exercises it
+directly since no production circuit does.
+
+## Part 2 — Evaluating the proposed slice/concat-gate algorithm
+
+The following six-point algorithm was proposed (see `ClaudeInstructions.md`)
+as a way to give bit-slices and concatenation a first-class, structural
+presence in the simulated netlist, rather than being purely a parsing/VM
+concept:
+
+1. Each assignment statement is realized in a Circuit using a concat gate.
+2. Each concat gate has a single multi-bit output port.
+3. The output of a concat gate goes to a simple node connected directly to
+   one or more component input ports.
+4. The input ports of concat gates come from `.slice` nodes; each input
+   port comes from one `.slice` node.
+5. The sum of the bit counts of all the `.slice` nodes must equal the bit
+   count of the `.simple` node connected to the concat output.
+6. Each concat is an async gate, included in sorting, and ends up in
+   `evalOrder`.
+
+### Point-by-point evaluation against the current implementation
+
+- **Points 1-3** already match the existing `.join` gate kind
+  (`Gate.swift:158-171`): its `eval()` case loops over an arbitrary number
+  of input nodes, shift-ORs each one in by its own bit width, and writes a
+  single result to one output node — no truth table involved, and already
+  arbitrary-width/arity (it's used with 3 and 4 inputs today in
+  `Resources/CircuitLib/CNTR3.yml`/`CNTR4.yml`). No change to `.join`
+  itself is needed to satisfy points 1-3.
+- **Point 4 is not true today.** `.slice`-producing nodes exist (built via
+  `addSeg`/`circSeg`, `CircuitIO.swift:24-60`, backed by the async `.seg`
+  gate kind) but they commonly feed directly into an ordinary gate's input
+  — `inPort2Indxs`'s `.bus` case (`CircuitIO.swift:62-102`) mixes
+  `addSeg`-produced slice-node indices straight into a flat `inps` array
+  used by whatever ordinary gate the port belongs to. There is also no
+  `Nod.kind` field at all today — the `NdKind` enum (`.simple`/`.slice`,
+  `Circuit.swift:126-129`) that this proposal's vocabulary matches is
+  declared but completely unused anywhere in the codebase. Making point 4
+  true is genuinely new work, not a bug fix.
+- **Point 5** is a simple, cheap invariant to assert wherever a concat
+  gate's `inps` list is assembled — not implemented yet since it depends on
+  point 4 existing first.
+- **Point 6 is already true.** `initializeCmpCnts`/`sortCmpRefs`
+  (`Circuit.swift:431-613`) never special-case `.join` or `.seg` — they get
+  an ordinary `CmpRef(kind: .aCirc, ...)`, are ref-counted like any other
+  async gate, and are evaluated in the normal `evalOrder` loop. The
+  scheduler needs no changes to support this proposal.
+
+### Comparison with other simulators, and a recommendation
+
+Mainstream Verilog tools (Icarus Verilog, Verilator) generally do **not**
+reify every bit-select/concat as its own structural cell in the general
+case — a purely combinational, constant-indexed `{a, b[3:0], c}` is
+typically folded into one expression-level "select-and-merge" operation at
+compile time, since (from a synthesis/simulation-performance point of
+view) a plain value-level bit manipulation has no observable timing
+difference from a physical concat cell, and reifying one for every small
+select would explode gate/node counts for circuits like
+`M1M_QDACCUM5` (sixteen single-bit selects in one assignment).
+
+That comparison, however, is optimizing for a different goal than this
+project has. This simulator's central purpose is exposing a real,
+waveform-inspectable structural netlist (VCD output via
+`Glbls.nodeChngs`) — being able to individually name and probe a slice
+node in a waveform viewer has direct value here that a synthesis-focused
+tool's compiler pass doesn't care about. **Recommendation: adopt the
+proposed algorithm**, scoped specifically to Verilog-derived assignment
+statements, where there is a real gap to close today — those statements
+currently produce **no netlist-level representation of concatenation at
+all**. Concatenation there is purely a bytecode-VM value operation
+(`TwoCmplt.joinBts`, driving the `.concat` opcode, `Sim.swift` ~1290+),
+invisible to VCD output and to anything that walks the structural netlist.
+The existing gate-level `.join` mechanism (used today only by the native,
+non-Verilog `CNTR3.yml`/`CNTR4.yml`-style circuit YAML) is exactly the
+right building block to reuse for this — it should remain a single,
+separate mechanism from the VM-internal `joinBts` path, not be merged with
+it; the two serve different layers (structural netlist vs. procedural
+expression evaluation) and conflating them would be a mistake.
+
+One open design question this document originally surfaced without
+resolving: should **every** slice always get its own concat gate, even when
+a port is fed by exactly one slice (the literal reading of point 4), or only
+when a port's connection is a genuine concatenation of two or more slices
+(avoiding a degenerate one-input "concat" gate for the common single-bit-
+select case)? **Resolved: the latter ("Option B").** A port fed by exactly
+one slice wires that slice directly, with no gate in between; a port fed by
+two or more slices gets a real `.join` gate concatenating them.
+
+## Part 3 — What was actually implemented, and what wasn't
+
+Two follow-up investigations narrowed Part 2's recommendation further
+before any code was written:
+
+- **Verilog-derived circuits were excluded from this work entirely.**
+  Making Verilog-derived `assign`/`always` bodies produce real structural
+  nodes/gates would require inventing a new structural execution model for
+  that whole subsystem — today, *nothing* about their behavior is
+  structural (not just concatenation; every expression, binary op, and
+  conditional is opaque bytecode run by the VM each timestep, invisible to
+  `evalOrder`). That's a much larger project than "add slice/concat gates,"
+  so it was deliberately left out of scope. Only the native gate-level
+  format (`kind: subcirc` YAML, built via `Circuit.make`/`MakeCircuit` in
+  `CircuitIO.swift`) has any structural representation to retrofit at all.
+- **The native format's own scope is very small.** Only three files in the
+  entire circuit library use `kind: subcirc`: `CNTR3.yml`, `CNTR4.yml`, and
+  `JKFF.yml` — and none of them use bit-slices in their gate `inPrts:`, only
+  whole-node references. So this work has **zero observable effect on any
+  circuit that exists today**; it's forward-looking correctness work for a
+  code path that's real and reachable (`inPort2Indxs`'s `.segmented` case,
+  `CircuitIO.swift:62-102`) but currently dead.
+
+What was implemented, in `CircuitIO.swift`/`Node.swift`/`Circuit.swift`:
+
+- `Nod` (`Node.swift`) gained a real `kind: NdKind` field (default
+  `.simple`), reviving the previously-dead `NdKind` enum
+  (`Circuit.swift:126-129`).
+- `addSeg`/`circSeg` (`CircuitIO.swift`) now tag the slice node they produce
+  `.kind = .slice`, and — two latent bugs found while touching this code —
+  now correctly set that node's `nodeDrvr` and its source node's
+  `nodeSinks`, and now register the new node's name in `circuit.nodeLU`.
+  Previously neither the driver/sink edges nor the `nodeLU` entry were set
+  at all: since `initializeCmpCnts` (`Circuit.swift:558-561`) skips
+  ref-counting through a node whose driver is `.none`, nothing reading a
+  slice node was ever told it must wait for the `.seg` gate that produces
+  it; and since `Gate.eval()`'s `.seg`/`.join` cases write their output via
+  the name-based `circuit.setNode(name:...)`, a node missing from `nodeLU`
+  would silently fail to update at all (`setNode` prints a warning and
+  no-ops on an unknown name) — the slice/join node's value would have stuck
+  at its initial `0` forever. Both were genuine, if currently unexercised,
+  correctness hazards, caught by the new tests below.
+- A new helper, `addJoin(segIndices:circuit:)`, synthesizes a real `.join`
+  gate plus a `.simple`-kind output node whenever `inPort2Indxs`'s
+  `.segmented` case sees ≥2 segments that need concatenating — the output
+  node's `nbits` is the sum of the inputs' `nbits` by construction,
+  satisfying point 5 of the algorithm, and it registers the output node in
+  `nodeLU` the same way. `.bus`'s `.bit`/`.slc` sub-cases were left
+  unchanged: each element there already maps 1:1 to one input slot of the
+  *enclosing* gate (this is exactly how `.join`-kind gates like `CNTR3`'s
+  already declare real concatenation, e.g. `inPrts: [Q2, Q1, Q0]`), so no
+  gate-insertion logic was needed there.
+- No changes were needed to `Circuit.swift`'s Kahn's-algorithm sort — a gate
+  appended to `circuit.aCircs` with correct `nodeDrvr`/`nodeSinks` is picked
+  up generically by `makeCmpRefs`/`initializeCmpCnts`, exactly like any
+  other gate.
+- A third, more serious bug was found once the above made it possible to
+  actually exercise a `.seg` gate for the first time: `Gate.eval()`'s
+  `.seg` case (`Gate.swift`) never read `self.seg` (the stored `(msb, lsb)`
+  range) at all — it looped over the *source* node's full bit width and
+  rebuilt the output by reading bits `0, 1, 2, ...` in order, which
+  bit-*reverses* the entire source value rather than extracting `[msb:lsb]`.
+  A `.seg` gate never actually sliced anything. **Fixed**: it now computes
+  `nd.selBits(n1: msb, n2: lsb).value`, reusing the same correct,
+  already-used-elsewhere `TwoCmplt.selBits` helper (`SharedTypes/
+  TwoCmplt.swift:241-248`) that `Sim.swift`'s `extractSlice` also uses. This
+  bug was caught by a test with a genuine partial, asymmetric slice — a
+  full-width "slice" (the only kind exercised while first writing this
+  code) can't distinguish a reversal from a correct extraction, since
+  reversing all of a node's bits and extracting all of a node's bits differ
+  only when the requested range is a strict subset.
+
+`PortDef.sgmnts`/`resolveCircPort`'s `.segmented` case — sub-circuit
+*boundary* port wiring, a different layer from gate-level `inPrts:` — was
+left untouched in this pass; it was already confirmed dead in Part 1's
+investigation. (It was deleted in a later cleanup pass — see "Later cleanup
+pass" below.)
+
+## Verification
+
+New tests were added under `Tests/TwosCmpltTests/` covering:
+- The consolidated `AssgnAST` shape being produced consistently by all
+  three of its construction call sites (continuous assign, procedural
+  single-assign, procedural concat-assign).
+- `genAssignStmt` now correctly emitting code for a bit-select lvalue
+  (previously silently dropped).
+- The tree-walking `.select` evaluator now agreeing with the VM path for
+  the same slice read (previously returned `-1`).
+- A `CNTR3`/`CNTR4` regression check (the only current users of the
+  native-format `.join` gate) confirming the LogicLib YAML cleanup changed
+  no simulated behavior.
+- Synthetic (no real circuit exercises this path) coverage of `addSeg`'s
+  `.slice` tagging and `nodeDrvr`/`nodeSinks` wiring, and of
+  `inPort2Indxs`'s `.segmented` case under Option B: one segment wires
+  directly with no new gate, two or more produce exactly one `.join` gate
+  whose output is `.simple`-kind, correctly-sized, and evaluates to the
+  correct concatenation.
+- A regression check that `CNTR3`/`CNTR4`/`JKFF` — the only native-format
+  circuits — still load and simulate identically.
+- `testGenConcatStmtWritesAllParts`, exercising the fixed `genConcatStmt`
+  end-to-end against a synthetic `ConcatStmntAST` (no production circuit
+  uses `kind: concatst` today).
+
+### Later cleanup pass
+
+Alongside the above, several small, independently-diagnosed items were
+resolved with no known live-production impact:
+- `assignToLValue`/`setLeftNet` duplication reduced to one shared helper
+  (`applySliceWrite`), as described above.
+- `genConcatStmt`'s stack-discipline bug fixed, as described above.
+- `PortDef.sgmnts` and `resolveCircPort`'s `.segmented` case
+  (`Circuit.swift`) deleted — confirmed dead (written, never read), and the
+  `PortDef` it used to produce (`node: "", nbits: 0, extlIndx: -1`) was
+  never a usable value in the first place. Segmented sub-circuit-boundary
+  port connections now fail loudly (`preconditionFailure`) instead of
+  silently producing an inert `PortDef`.
+- `setOutNd` (`Circuit.swift`) deleted — confirmed zero callers anywhere in
+  the codebase. It mutated a local copy of a `Nod` read from
+  `circ.parent!.nodes[...]` and never wrote it back (a classic Swift
+  value-type bug), and called `saveChng` with the wrong circuit reference;
+  neither defect had any effect since nothing ever called it. The actually-
+  used output-propagation path is `Circuit.eval`'s own
+  `self.parent!.setNode`/`setNodeBit` calls, which are correct and
+  untouched.
+- `Sources/TwosCmplt/Compose` deleted (see above).
+
+## Part 4 — Kahn's-order scheduling for continuous assigns
+
+Gate/instance scheduling (`kind: instance`/`subcircblck`/`asyncblck`/
+`syncblck` entries inside a `kind: verilog` module) already used Kahn's
+algorithm — `CircDef.toCircuit()` wires each instance's ports and
+`makeCmpRefs`/`initializeCmpCnts`/`sortCmpRefs` build a real topological
+`evalOrder` across sibling instances. Continuous `assign` statements did
+not: they were compiled to bytecode (`CircDef.assgnBlcks`) and run
+unconditionally, in raw declaration order, every timestep
+(`runAllAssignBlcks`) — with no dependency ordering, and no relationship to
+the `evalOrder` scheduler at all.
+
+### What changed
+
+- `Nod`/`Circuit` gained no new per-node representation, but `Circuit`
+  gained `assgnBlkWrites: [[Int]]`/`assgnBlkReads: [[Int]]` — one entry per
+  continuous-assign block, recording which nodes it writes and reads.
+- `CmpType` gained a `.assgnBlk` case. `makeCmpRefs`, `getOutRefs`, and the
+  `shw_ordr` debug helper (`Utilities.swift`) were updated for it.
+- Two new pure functions in `Compile.swift`: `lvalueBaseNames(_:)` (like the
+  existing `lvalueBaseName`, but decomposes a `.concat` lvalue into every
+  node it writes instead of collapsing it to a placeholder) and
+  `referencedNodeNames(_:in:)` (walks an `Expr` tree via `ExprId`s,
+  collecting every `.node`/`.select` name referenced, recursing through
+  `.binary`/`.unary`/`.gate`/`.cndtn`/`.syscall`/`.concat` args).
+- `CircDef.toCircuit()` now has a wiring step, right after the existing
+  instance-wiring loop and before `gateSlots()`, that walks `self.behav`'s
+  `.assgnblck` entries (not `circDef.assgnBlcks`, which isn't populated
+  until `self.Compile(circ)` runs later in the same function — a
+  sequencing constraint that had to be worked around, not reordered, since
+  `Compile()` also populates `alwaysStates`/`initStates`), computes each
+  one's write/read node sets via the two functions above, and wires
+  `nodeDrvr`/`nodeSinks` exactly like the existing `aCircs`-wiring loop
+  does for ordinary gates. The `.assgnBlk` index assigned is "the Nth
+  `.assgnblck` encountered in `self.behav`" — confirmed to match
+  `copyBehav()`'s later population of `circDef.assgnBlcks` (a simple
+  append-in-encounter-order, always correct regardless of interleaving with
+  other behav-block kinds).
+- `runAllAssignBlcks` was replaced by `runAssignBlck(_:ctx:)`, which runs
+  one indexed assign block's compiled code. `Circuit.eval()`'s two
+  `evalOrder` dispatch loops gained a `.assgnBlk` case: the async branch
+  calls `runAssignBlck`; the sync branch is a no-op (continuous assigns are
+  combinational, like `.aCirc`, not re-evaluated on the sync pass). The
+  four old unconditional call sites (`eval()` before the dispatch loop,
+  `eval()` again after always-blocks fire, `simVrlgInits`, and a
+  presumed-dead call in `simVrlgAlwys`) were all removed.
+
+### A dormant, separate bug found along the way
+
+`generateAllBlcks` (`Compile.swift`) computes a `typeIdx` for writing
+compiled bytecode into `circDef.assgnBlcks`/`initBlcks`/`alwaysBlcks` by
+tracking *consecutive runs* of the same behav-block kind, not an overall
+per-kind counter — it resets to 0 whenever the kind changes. If a module's
+`behav_blcks` ever interleaved, say, `assign, instance, assign, assign`,
+the second and third assigns would both compute `typeIdx == 0`/`1`
+starting from the interleaved reset rather than continuing from the first
+assign's `typeIdx`, misassigning compiled code into the wrong
+`assgnBlcks[i]` slot. Checked all 203 `assign`-containing files in
+`Resources/CircuitLib`: every one has at most two contiguous groups of
+behav-block kinds (e.g. all instances then all assigns, or pure-assign-only)
+— never true interleaving — so this is real but currently dormant. Not
+fixed here (orthogonal to scheduling order); the new `.assgnBlk` wiring
+avoids inheriting it by counting assign blocks the simple, always-correct
+way `copyBehav()` does, not by copying `typeIdx`'s logic.
+
+### The reactivity question, and why always-block-driven nodes need no special case
+
+Continuous assigns are meant to react immediately to any input change,
+including one an always-block just made in the same timestep. The old
+"run every assign again after always-blocks fire" call existed to
+approximate this. Kahn's-order dispatch has no equivalent mechanism —
+each component runs once, at its sorted position — so simply deleting that
+second run risked silently dropping reactivity for an assign depending on
+an always-block's output.
+
+It turns out no special-casing was needed: a node is only ever given a
+structural `nodeDrvr` during build-time wiring (native gates, instance
+ports, `addSeg`/`addJoin`, and now assign blocks) — `setNode`, which is
+what an always-block's procedural writes go through at simulation time,
+never sets `nodeDrvr`. So a node written only by an always-block already
+has `nodeDrvr == .none`, and `initializeCmpCnts` already skips creating a
+dependency edge for `.none`-driven nodes (the same skip it already applies
+to `.iPrt`- and sync-driven nodes). An assign reading such a node simply
+isn't blocked by it — it runs at its own Kahn-sorted position and reads
+whatever value is currently there, "stale until next trigger," exactly
+matching how sync/register dependencies are already treated elsewhere.
+This is a deliberate, user-confirmed semantic choice, not an accident of
+the implementation.
+
+**Update (TwosCmplt `b857af8`, 2026-10-28): assigns are re-run after always
+blocks again.** "Stale until next trigger" left a latch's `assign QP = STR`
+(`STR <= #d D` in an always block) following `STR` only at the cell's next
+input event: TST_LTCHR_4X1's `QP` changed half a period late. So
+`Circuit.eval` now, after the always blocks run, re-runs the module's assigns
+in `evalOrder` while that changes something, and the always blocks woken by
+those changes, at most `loopIterCap` times (`Circuit.swift`, the always-block
+section of `eval`). The ordering described above is unchanged. Current
+description: `SIMULATION_ALGORITHM.md` §7.3, step 3.
+
+### Verified regression-free
+
+`MULT_25P125.yml` (`Resources/CircuitLib`) has three real continuous
+assigns with a genuine dependency — `OUT` reads `sum`, which an earlier
+assign writes. Confirmed via `AssignSchedulingTests.testRealCircuitAssignsScheduledInDependencyOrder`
+that the `sum`-writing
+assign is scheduled before the `OUT`-writing one. `TST_ACCUM3` (which
+instantiates `M1M_QDACCUM5`, the circuit with the 16-bit-concat-of-selects
+continuous assign cited in Part 1) was run end-to-end before and after this
+change (by temporarily stashing the `Circuit.swift`/`CircDef.swift`
+scheduling changes and re-running) and produced byte-for-byte identical
+results — `QD_` ends at value `0x30000`, `updTm=12`, in both cases. This is
+now a permanent regression test, `TSTACCUM3RegressionTest`.
+
+`QD_DDFS5`/`Sine5` (the circuit behind the still-open `FINE[7:0]`
+investigation) has **no** continuous assigns at all — its entire
+`COS_LU5`/`SIN_LU5` pipeline is built from structural instances — so this
+phase has no bearing on that investigation either way; confirmed its test
+output is byte-for-byte unchanged.
+
+## Part 5 — `RL_` stuck at 0 in `TST_ACCUM3`: multi-bit output-port slices were never wired correctly
+
+### The bug
+
+`TST_ACCUM3` never advanced its accumulator: `RL_` (an 18-bit register,
+`M1M_QDACCUM5`'s `REG0R`/`KM_REGS18`) stayed at its reset value `0` for an
+entire simulation run, even though its feedback adder (`ADDR0R`, module
+`CLA18`) received a genuinely nonzero input (`A = FRQ[33:16] = 16384` for
+`FRQ = 0x40000000`). Since `QD_` is purely combinational from `RL_`, it
+also appeared frozen — this is what `debug_utilities.md`/earlier sessions
+observed as "`RL_` never appears in `chngs.out`."
+
+Two plausible hypotheses from prior sessions — a wrong `circuit=sync`/
+`async` module parameter somewhere in the `M1M_QDACCUM5 → KM_REGS18 →
+DG_DR_3X2` chain, and the pre-existing `.vCirc` async/sync dispatch
+asymmetry in `Circuit.eval()` — were both directly checked against the
+real `Resources/CircuitLib/*.yml` files and the xschem `.sym` library, and
+both checked out correct. Runtime tracing (temporarily instrumenting
+`Circuit.eval()`, since removed) then isolated the actual fault: `CLA18`'s
+sum output (`S`) stayed `0` no matter what `A`/`B` were. `CLA18` is a
+carry-lookahead adder built from a hierarchy of smaller adders — `CLA18 →
+CLA8 + CLA10 → CLA4 → CLA2` — and at every level, two sibling instances
+each drive a different **slice** of the parent's own wider `S` bus, e.g.
+(`CLA4.yml`):
+
+``yaml
+-   name: CLA2_0
+    module: CLA2
+    ports:
+    - ...
+    -   port: None
+        node: { kind: slice, name: S, sgmnts: [1, 0] }   # drives S[1:0]
+-   name: CLA2_1
+    module: CLA2
+    ports:
+    - ...
+    -   port: None
+        node: { kind: slice, name: S, sgmnts: [3, 2] }   # drives S[3:2]
+``
+
+An isolated test confirmed the leaf-level `CLA2` instances themselves
+compute correctly (e.g. given `A=1`, correctly output `S=1`), but that
+correct value never survived being written back into the parent's `S`
+node. The cause was in the output-port wiring in `CircDef.toCircuit()`
+(`CircDef.swift`, the `isOutput` branch of the instance-port-wiring loop):
+
+``swift
+cir.oPrts[idx].extlBitIndex = parseSingleBitIndex(nd_nm)
+``
+
+`parseSingleBitIndex` correctly returns `nil` for a range like `"S[1:0]"`
+(it only recognizes single-bit indices like `"S[3]"`) — but `PortDef`
+(`Circuit.swift`) had no representation for a multi-bit range at all, only
+`extlBitIndex: Int?`. So a range connection fell through to the same case
+as a whole-node connection, and the propagation code at the tail of
+`Circuit.eval()` did:
+
+``swift
+self.parent!.setNode(prt.node, val: nd.node.value, tm: nd.updTm)
+``
+
+— an unmasked, unshifted overwrite of the **entire** parent `S` node with
+just this one child's own (unshifted) value. With two siblings each doing
+this for the same base name (`baseName("S[1:0]")` and `baseName("S[3:2]")`
+both collapse to `"S"`), each eval pass's result was simply clobbered by
+whichever sibling happened to be evaluated last in `evalOrder` — not
+combined, and not bit-shifted into its correct position even when it
+wasn't. This is a distinct, deeper bug than anything Part 1-4 touched:
+those phases were explicitly scoped to the *native* (`kind: subcirc`)
+format's slice/join handling; this is the analogous gap in the
+*Verilog-derived* (`kind: verilog`) format's instance **output**-port
+wiring — input-side slice extraction (`Circuit.eval()`'s `iPrts` handling)
+was already correct and unaffected.
+
+### The fix
+
+- `PortDef` (`Circuit.swift`) gained `extlBitRange: (msb: Int, lsb: Int)?`,
+  alongside the existing single-bit `extlBitIndex: Int?`.
+- A new `parseBitRange(_:)` helper (`Utilities.swift`, next to
+  `parseSingleBitIndex`) parses `"S[3:2]"`-style ranges.
+- `CircDef.toCircuit()`'s output-port wiring now tries `parseBitRange`
+  first, falling back to `parseSingleBitIndex` for true single-bit
+  connections.
+- A new `Circuit.setNodeBits(_:msb:lsb:val:tm:)` (mirroring the existing
+  `setNodeBit`) merges a value into a bit range of a node, preserving the
+  node's other bits — the multi-bit counterpart of `setNodeBit`.
+- `Circuit.eval()`'s tail-of-function output-port propagation now checks
+  `extlBitRange` first, then `extlBitIndex`, then falls back to a full
+  `setNode` overwrite (unchanged for genuinely whole-node connections).
+
+### Verification
+
+- `CLA18IsolationTest` (new, permanent): loads `CLA18` directly via
+  `genCirc`, drives `A=16384, B=0, CI=0`, and asserts `S == 16384` —
+  fails against the old code, passes after the fix.
+- `TSTACCUM3RegressionTest` (updated): its old expected values
+  (`QD_ == 0x30000` at `updTm=12`) described the *bug*, not correct
+  behavior, and needed updating. After the fix, `RL_` genuinely updates
+  throughout the run (asserted via `rl.updTm > 0`). `QD_`'s final value is
+  still `0x30000`, but now at `updTm=128011` (continuously updating, not
+  frozen) — this specific final value is a coincidence of the test's own
+  parameters (`FRQ=0x40000000` increments `RL_` by `16384` per clock, and
+  `128 clocks * 16384 = 2^21`, an exact multiple of `RL_`'s width `2^18`,
+  so `RL_` wraps back to exactly `0` right at this run's finish time), not
+  evidence the bug is still present.
+- Full `swift test`: all pass except the pre-existing, unrelated
+  `QDDFS5FineMltplyTests` failure (that circuit's `Sine5`/`COS_LU5` stuck-
+  at-zero issue does not involve multi-bit output-port slices anywhere in
+  its own structure, and this fix did not change its behavior).
+- The `.vCirc` async/sync dispatch asymmetry documented in earlier
+  investigation notes is still real (the `async == true` branch still
+  ignores a child's own `circ.sync`), but is now confirmed **not** to be
+  the cause of this bug — left as-is, no fix attempted, since it wasn't
+  shown to cause any observed incorrect behavior.
+
+
+\newpage
+
+
+\part{SharedTypes}
+
+
+
+# SharedTypes
+
+
+
+Overview of shared data structures.
+
+## Topics
+
+### Twos's Complement Integers
+
+- *TwoComplementDocumentation*
+- `TwoCmpltStruct`
+
+### Operations
+
+- `BasicOperations`
+- `AdditionalOperations`
+
+## See Also
+
+- [Reference Guide](ReferenceGuide.md)
+
+
+\newpage
+
+
+# TwosCmpltDocs
+
+Documentation of the methods and properties of the Two's Complement Integer Library
+
+## Overview
+
+TwosCmplt provides a Framework to simplify high level simulations of digital systems using two's complement arithmetic
+
+## TwoCmplt Class
+.
+- `TwoCmplt`: The library is structured as a class that contains a two's complement value and methods.
+
+## See Also
+
+- *SharedTypes*
+
+
+\newpage

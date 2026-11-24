@@ -46,6 +46,18 @@ Sources of these pages: `ExamplesDoc/ExamplesDoc.docc/`,
 `docs/build/html/index.html` opens directly in a browser (no server needed).
 Rebuild with `doxygen Doxyfile` from the repository root.
 
+## Printable PDFs
+
+`scripts/docs.sh pdf` (about a minute) makes both:
+
+- `docs/TwosCmplt_Articles.pdf`: the DocC articles (examples, filters,
+  CORDICs, library notes, CircDef) with figures. Which articles, and their
+  order, are set in `docs/pdf_articles.yaml`; built by `scripts/docs_pdf.py`.
+- `docs/build/latex/refman.pdf`: the Doxygen API reference.
+
+Unicode symbols pdflatex can't print (→, ≥, ✓, …) are mapped in
+`docs/unicode_chars.sty`; add a line there if a new one breaks the build.
+
 ## Running the examples
 
 ```bash

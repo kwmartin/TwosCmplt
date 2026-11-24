@@ -2,6 +2,7 @@
 # Build or view the TwosCmplt DocC documentation (see docs/README.md).
 #   scripts/docs.sh serve   start a local web server (if not running) and open the examples page
 #   scripts/docs.sh build   rebuild every DocC site into docs/<Target>/
+#   scripts/docs.sh pdf     make docs/TwosCmplt_Articles.pdf and docs/build/latex/refman.pdf
 set -e
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PORT=8123
@@ -25,6 +26,12 @@ case "${1:-serve}" in
       ./scripts/build-doc.sh "$t"
     done
     ;;
+  pdf)
+    cd "$ROOT"
+    ./scripts/docs_pdf.py
+    doxygen Doxyfile >/dev/null && make -C docs/build/latex >/dev/null
+    echo "$ROOT/docs/build/latex/refman.pdf"
+    ;;
   *)
-    echo "usage: $0 [serve|build]" >&2; exit 1 ;;
+    echo "usage: $0 [serve|build|pdf]" >&2; exit 1 ;;
 esac

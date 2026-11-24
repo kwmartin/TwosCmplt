@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['initcoeffarray_5',['InitCoeffArray',['../InitCoeffArrays_8swift.html#a0c2571a687ed15ef3016c468ad25682b',1,'InitCoeffArrays.swift']]],
-  ['initcoeffarrays_6',['InitCoeffArrays',['../InitCoeffArrays_8swift.html#ad4828f4b5dcb894650f3e384673ec1ad',1,'InitCoeffArrays.swift']]],
-  ['initcoeffarrays_2eswift_7',['InitCoeffArrays.swift',['../InitCoeffArrays_8swift.html',1,'']]]
+  ['3_20—_20what_20was_20actually_20implemented_20and_20what_20wasn_20t_0',['Part 3 — What was actually implemented, and what wasn&apos;t',['../md_Sources_2TwosCmplt_2TwosCmplt_8docc_2CircDef.html#autotoc_md23',1,'']]]
 ];

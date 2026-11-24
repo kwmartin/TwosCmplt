@@ -1,0 +1,57 @@
+\doxysection{Sources/\+Twos\+Cmplt/\+Port\+Deps.swift File Reference}
+\hypertarget{PortDeps_8swift}{}\label{PortDeps_8swift}\index{Sources/TwosCmplt/PortDeps.swift@{Sources/TwosCmplt/PortDeps.swift}}
+{\ttfamily import Foundation;}\newline
+{\ttfamily import $<$String$>$;}\newline
+{\ttfamily import $<$Int$>$;}\newline
+{\ttfamily import "{}SIMRUN\+\_\+\+PORTDEPS\+\_\+\+DUMP"{};}\newline
+{\ttfamily import "{}\textbackslash{}(circ.\+module)\#\textbackslash{}(circ.\+nodes.\+count)\#"{};}\newline
+{\ttfamily import "{},"{};}\newline
+{\ttfamily import "{}WARNING\+: \textbackslash{}(module)\+: combinational loop\+: "{};}\newline
+{\ttfamily import "{} -\/$>$ "{};}\newline
+{\ttfamily import "{}verilog"{};}\newline
+{\ttfamily import "{}WARNING\+: \textbackslash{}(module)\+: instantiated with circuit = \textbackslash{}"{};}\newline
+{\ttfamily import "{} but has no register or latch"{};}\newline
+{\ttfamily import "{} but has an edge-\/triggered register"{};}\newline
+{\ttfamily import "{}\textquotesingle{}\textbackslash{}(s)\textquotesingle{}"{};}\newline
+{\ttfamily import "{}-\/ module\+: \textbackslash{}(q(module))"{};}\newline
+{\ttfamily import "{}  phase\+: \mbox{[}\textbackslash{}(phase.\+map(q).\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}))\mbox{]}"{};}\newline
+{\ttfamily import "{}  sync\+: \textbackslash{}(sync)"{};}\newline
+{\ttfamily import "{}  registered\+: \textbackslash{}(registered)"{};}\newline
+{\ttfamily import "{}  latch\+: \textbackslash{}(is\+Latch)"{};}\newline
+{\ttfamily import "{}  clocks\+: \mbox{[}\textbackslash{}(clocks.\+sorted().\+map(q).\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}  async\+: \mbox{[}\textbackslash{}(async\+Ctrls.\+sorted().\+map(q).\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}  outputs\+:"{};}\newline
+{\ttfamily import "{}\textbackslash{}(q(\$0))\+: \textbackslash{}(arcs\mbox{[}o\mbox{]}!\mbox{[}\$0\mbox{]}!)"{};}\newline
+{\ttfamily import "{}    \textbackslash{}(q(o))\+: \{\textbackslash{}(masks.\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}))\}"{};}\newline
+{\ttfamily import "{}  launch\+\_\+assigns\+: \textbackslash{}(launch\+Assigns.\+sorted())"{};}\newline
+{\ttfamily import "{}  loops\+: \textbackslash{}(loops.\+count)"{};}\newline
+{\ttfamily import "{}\textbackslash{}n"{};}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPortDepsBuilder}{Port\+Deps\+Builder}}
+\begin{DoxyCompactList}\small\item\em Builds a module\textquotesingle{}s Port\+Deps from the circuit Sim\+Run holds\+: node indices, gates, assigns\textquotesingle{} read/write sets, always blocks (from the Circ\+Def), and the children\textquotesingle{}s own Port\+Deps mapped through their port definitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+h \mbox{\hyperlink{PortDeps_8swift_a9c09ce687e98e7d14de0be0225368489}{write}} (text.\+data(using\+:.\+utf8)!)
+\item 
+h \mbox{\hyperlink{PortDeps_8swift_a63bb80139ecfca788ba10b13baa4cf8e}{close\+File}} () \} \mbox{\hyperlink{Sim_8swift_a86f7c427338355ba7ee03ab0cf94632b}{else}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{PortDeps_8swift_a63bb80139ecfca788ba10b13baa4cf8e}\label{PortDeps_8swift_a63bb80139ecfca788ba10b13baa4cf8e} 
+\index{PortDeps.swift@{PortDeps.swift}!closeFile@{closeFile}}
+\index{closeFile@{closeFile}!PortDeps.swift@{PortDeps.swift}}
+\doxysubsubsection{\texorpdfstring{closeFile()}{closeFile()}}
+{\footnotesize\ttfamily h close\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{PortDeps_8swift_a9c09ce687e98e7d14de0be0225368489}\label{PortDeps_8swift_a9c09ce687e98e7d14de0be0225368489} 
+\index{PortDeps.swift@{PortDeps.swift}!write@{write}}
+\index{write@{write}!PortDeps.swift@{PortDeps.swift}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily h write (\begin{DoxyParamCaption}\item[{text.\+data(using\+:.\+utf8)!}]{ }\end{DoxyParamCaption})}
+

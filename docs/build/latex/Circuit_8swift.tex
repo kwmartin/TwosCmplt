@@ -1,0 +1,63 @@
+\doxysection{Sources/\+Twos\+Cmplt/\+Circuit.swift File Reference}
+\hypertarget{Circuit_8swift}{}\label{Circuit_8swift}\index{Sources/TwosCmplt/Circuit.swift@{Sources/TwosCmplt/Circuit.swift}}
+{\ttfamily import Foundation;}\newline
+{\ttfamily import "{}Missing node \textquotesingle{}\textbackslash{}(name)\textquotesingle{} in node\+LU"{};}\newline
+{\ttfamily import "{}Not a .\+bus port"{};}\newline
+{\ttfamily import "{}Expected .\+segmented port"{};}\newline
+{\ttfamily import "{}Expected .\+node port"{};}\newline
+{\ttfamily import "{}Expected .\+arry port"{};}\newline
+{\ttfamily import "{}verilog"{};}\newline
+{\ttfamily import "{}Unexpected Failure"{};}\newline
+{\ttfamily import "{}= \textbackslash{}(circ.\+module)\+: loop among \textbackslash{}(names.\+joined(separator\+: "{};}\newline
+{\ttfamily import "{})) -\/-\/ async pass repeats until stable"{};}\newline
+{\ttfamily import "{}order\+:"{};}\newline
+{\ttfamily import "{}WARNING\+: \textbackslash{}(circ.\+module)\+: evaluation order has a loop among \textbackslash{}(names.\+joined(separator\+: "{};}\newline
+{\ttfamily import "{})); the async pass repeats until stable"{};}\newline
+{\ttfamily import "{}VDD"{};}\newline
+{\ttfamily import "{}VSS"{};}\newline
+{\ttfamily import "{}Child \textquotesingle{}\textbackslash{}(ccirc.\+module)\textquotesingle{} output port \textquotesingle{}\textbackslash{}(prt.\+port)\textquotesingle{} is wired to parent node \textquotesingle{}\textbackslash{}(nd)\textquotesingle{}, "{};}\newline
+{\ttfamily import "{}but that node is not in parent \textquotesingle{}\textbackslash{}(circ.\+module)\textquotesingle{} node\+LU"{};}\newline
+{\ttfamily import "{}CLK\+\_\+"{};}\newline
+{\ttfamily import "{}= Time\+: \textbackslash{}(upd\+Tm), node\+: \textbackslash{}(nd\+Str), value\+: \textbackslash{}(val)"{};}\newline
+{\ttfamily import "{}Error\+: making Circ\+Def for \textbackslash{}(circ\+\_\+nm) failed"{};}\newline
+{\ttfamily import "{}nodes"{};}\newline
+{\ttfamily import "{}Could not determine YAML kind"{};}\newline
+{\ttfamily import "{}subcircuit"{};}\newline
+{\ttfamily import "{}subcirc"{};}\newline
+{\ttfamily import "{}make\+Circ\+Def should only called for kind=subcirc and not kind = \textbackslash{}(kind)"{};}\newline
+{\ttfamily import "{}module"{};}\newline
+{\ttfamily import "{}Circuit module must be present"{};}\newline
+{\ttfamily import "{}kind"{};}\newline
+{\ttfamily import "{}Circuit kind must be present"{};}\newline
+{\ttfamily import "{}Circuit \textquotesingle{}\textbackslash{}(circuit.\+module)\textquotesingle{} has empty eval\+Order but non-\/empty cmp\+Refs — evaluation order could not be determined"{};}\newline
+{\ttfamily import "{}circuit"{};}\newline
+{\ttfamily import "{}sync"{};}\newline
+{\ttfamily import "{}Error\+: failed to get contents of Yaml file"{};}\newline
+{\ttfamily import "{}Failed to load YAML for circuit \textbackslash{}(circ\+\_\+nm), yml\+Str\+: \textbackslash{}(yml\+Str)"{};}\newline
+{\ttfamily import "{}no nodes entry"{};}\newline
+{\ttfamily import "{}nodes entry is not .\+nodes"{};}\newline
+{\ttfamily import "{}⚠️ set\+Node\+: node \textquotesingle{}\textbackslash{}(nd\+Nm)\textquotesingle{} not found in circuit \textquotesingle{}\textbackslash{}(self.\+module)\textquotesingle{} — skipping"{};}\newline
+{\ttfamily import "{}Node not found\+: \textquotesingle{}\textbackslash{}(nd\+Nm)\textquotesingle{} in circuit \textquotesingle{}\textbackslash{}(self.\+module)\textquotesingle{}"{};}\newline
+{\ttfamily import "{}Integer"{};}\newline
+{\ttfamily import "{}= \textbackslash{}(self.\+module), name\+: \textbackslash{}(self.\+name), tm\+: \textbackslash{}(tm)"{};}\newline
+{\ttfamily import "{}\mbox{[}"{};}\newline
+{\ttfamily import "{}\+:"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), evaluating a\+Circ\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]}"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), evaluating v\+Circ\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]}"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), evaluating c\+Circ\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]} with name\+: \textbackslash{}(c\+Circs\mbox{[}cmp.\+index\mbox{]}.\+name)"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), evaluating assgn\+Blk\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]}"{};}\newline
+{\ttfamily import "{}WARNING\+: \textbackslash{}(self.\+module) \textbackslash{}(self.\+name)\+: async pass still changing after "{};}\newline
+{\ttfamily import "{}\textbackslash{}(\+Circuit.\+loop\+Iter\+Cap) repeats at t=\textbackslash{}(tm) -\/-\/ combinational loop?"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), not evaluating a\+Circ\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]}"{};}\newline
+{\ttfamily import "{}In\+: \textbackslash{}(self.\+name), not evaluating assgn\+Blk\mbox{[}\textbackslash{}(cmp.\+index)\mbox{]} (async only)"{};}\newline
+{\ttfamily import "{}Invalid supply value\+: \textbackslash{}(val)"{};}\newline
+{\ttfamily import "{}resolve\+Circ\+Port\+: segmented sub-\/circuit port connections are not supported"{};}\newline
+{\ttfamily import "{}Only .\+node or .\+segmented enums allowed fof Circuit Cmps"{};}\newline
+{\ttfamily import "{}Only .\+node enum allowed fof Circuit Out\+Port"{};}\newline
+{\ttfamily import "{}No \textquotesingle{}nodes\textquotesingle{} entry for subcircuit \textbackslash{}(file.\+module)"{};}\newline
+{\ttfamily import "{}Circuit must have a non-\/empty eval\+Order"{};}\newline
+{\ttfamily import "{}= module\+: \textbackslash{}(self.\+module),name\+: \textbackslash{}(self.\+name)"{};}\newline
+{\ttfamily import "{}Stack leak"{};}\newline
+{\ttfamily import "{}= module\+: \textbackslash{}(ctx.\+circ!.\+module), name\+: \textbackslash{}(ctx.\+circ!.\+name)"{};}\newline
+{\ttfamily import "{}\textbackslash{}(self.\+module)\+: more than 1000 always-\/block runs in one "{};}\newline
+{\ttfamily import "{}timestep\+: blocks keep waking each other"{};}\newline

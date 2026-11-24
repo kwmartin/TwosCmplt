@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['testinit_39',['testInit',['../DebugMain_2main_8swift.html#ad63d55e691bdcbf6170355a59b3d0466',1,'main.swift']]]
+  ['else_0',['else',['../Sim_8swift.html#a86f7c427338355ba7ee03ab0cf94632b',1,'Sim.swift']]],
+  ['emitchngs_1',['emitChngs',['../Utilities_8swift.html#ad9f30b4d3208dfa81afac777bcc19638',1,'Utilities.swift']]]
 ];

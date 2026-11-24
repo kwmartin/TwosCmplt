@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['placeholder_2eswift_32',['PlaceHolder.swift',['../PlaceHolder_8swift.html',1,'']]]
+  ['filterintro_2emd_0',['FilterIntro.md',['../FilterIntro_8md.html',1,'']]]
 ];

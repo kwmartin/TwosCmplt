@@ -1,0 +1,78 @@
+\doxysection{Sources/\+Twos\+Cmplt/\+Circuit\+Parse.swift File Reference}
+\hypertarget{CircuitParse_8swift}{}\label{CircuitParse_8swift}\index{Sources/TwosCmplt/CircuitParse.swift@{Sources/TwosCmplt/CircuitParse.swift}}
+{\ttfamily import Foundation;}\newline
+{\ttfamily import "{}\textquotesingle{}"{};}\newline
+{\ttfamily import "{}\+\_\+"{};}\newline
+{\ttfamily import "{}b"{};}\newline
+{\ttfamily import "{}o"{};}\newline
+{\ttfamily import "{}d"{};}\newline
+{\ttfamily import "{}h"{};}\newline
+{\ttfamily import "{}No root node"{};}\newline
+{\ttfamily import "{}Root is not a mapping"{};}\newline
+{\ttfamily import "{}behav\+\_\+blcks"{};}\newline
+{\ttfamily import "{}behav\+\_\+blcks\mbox{[}6\mbox{]} not found"{};}\newline
+{\ttfamily import "{}behav\+\_\+blcks\mbox{[}6\mbox{]} is not a mapping"{};}\newline
+{\ttfamily import "{}rvalue"{};}\newline
+{\ttfamily import "{}behav\+\_\+blcks\mbox{[}6\mbox{]}.\+rvalue not found"{};}\newline
+{\ttfamily import "{}=== raw rvalue node ==="{};}\newline
+{\ttfamily import "{}rvalue is a mapping"{};}\newline
+{\ttfamily import "{}keys\+:"{};}\newline
+{\ttfamily import "{}concats"{};}\newline
+{\ttfamily import "{}concats node\+:"{};}\newline
+{\ttfamily import "{}concats is sequence, count ="{};}\newline
+{\ttfamily import "{}concats\mbox{[}\textbackslash{}(i)\mbox{]} ="{};}\newline
+{\ttfamily import "{}  scalar\+:"{};}\newline
+{\ttfamily import "{}  mapping keys\+:"{};}\newline
+{\ttfamily import "{}concats is not a sequence"{};}\newline
+{\ttfamily import "{}rvalue is a sequence, count ="{};}\newline
+{\ttfamily import "{}rvalue\mbox{[}\textbackslash{}(i)\mbox{]} ="{};}\newline
+{\ttfamily import "{}rvalue is scalar\+:"{};}\newline
+{\ttfamily import "{}rvalue is some other node form"{};}\newline
+{\ttfamily import "{}debug\+Behav\+Block6\+RValue error\+:"{};}\newline
+{\ttfamily import "{}✓ Decoded bare array, count\+:"{};}\newline
+{\ttfamily import "{}✗ All decode attempts failed"{};}\newline
+{\ttfamily import "{}Expected rvalue as \{ concats\+: \mbox{[}\+String\mbox{]} \}, \mbox{[}\+Expr\+YAML\mbox{]}, or single expr"{};}\newline
+{\ttfamily import "{}specify"{};}\newline
+{\ttfamily import "{}initial"{};}\newline
+{\ttfamily import "{}always"{};}\newline
+{\ttfamily import "{}assign"{};}\newline
+{\ttfamily import "{}instance"{};}\newline
+{\ttfamily import "{}subcirc"{};}\newline
+{\ttfamily import "{}async"{};}\newline
+{\ttfamily import "{}sync"{};}\newline
+{\ttfamily import "{}gate"{};}\newline
+{\ttfamily import "{}Reg"{};}\newline
+{\ttfamily import "{}Integer"{};}\newline
+{\ttfamily import "{}Unknown behav\+\_\+blcks kind\+: \textbackslash{}(kind)"{};}\newline
+{\ttfamily import "{}Expected kind == \textbackslash{}"{};}\newline
+{\ttfamily import "{}, got \textbackslash{}(kind)"{};}\newline
+{\ttfamily import "{}lconcat"{};}\newline
+{\ttfamily import "{}ident"{};}\newline
+{\ttfamily import "{}concat"{};}\newline
+{\ttfamily import "{}slice"{};}\newline
+{\ttfamily import "{}bit"{};}\newline
+{\ttfamily import "{}bit node must have exactly one index"{};}\newline
+{\ttfamily import "{}int"{};}\newline
+{\ttfamily import "{}Unsupported port node kind\+: \textbackslash{}(kind)"{};}\newline
+{\ttfamily import "{}\{\textbackslash{}(parts.\+map(\textbackslash{}.\+as\+String).\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}))\}"{};}\newline
+{\ttfamily import "{}\textbackslash{}(name)\mbox{[}\textbackslash{}(indices\mbox{[}0\mbox{]})\+:\textbackslash{}(indices\mbox{[}1\mbox{]})\mbox{]}"{};}\newline
+{\ttfamily import "{}\textbackslash{}(name)\mbox{[}\textbackslash{}(indices.\+map(\+String.\+init).\+joined(separator\+: "{};}\newline
+{\ttfamily import "{}))\mbox{]}"{};}\newline
+{\ttfamily import "{}\textbackslash{}(name)\mbox{[}\textbackslash{}(index)\mbox{]}"{};}\newline
+{\ttfamily import "{}Port\+Node\+YAML.\+slice\+Expr \textquotesingle{}\textbackslash{}(name)\textquotesingle{}\+: could not resolve all bounds with params \textbackslash{}(params)"{};}\newline
+{\ttfamily import "{}None"{};}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+id \mbox{\hyperlink{CircuitParse_8swift_ab0ede09d1e0dc078d053047f6c1bcfdd}{input\+Nodes}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{CircuitParse_8swift_ab0ede09d1e0dc078d053047f6c1bcfdd}\label{CircuitParse_8swift_ab0ede09d1e0dc078d053047f6c1bcfdd} 
+\index{CircuitParse.swift@{CircuitParse.swift}!inputNodes@{inputNodes}}
+\index{inputNodes@{inputNodes}!CircuitParse.swift@{CircuitParse.swift}}
+\doxysubsubsection{\texorpdfstring{inputNodes()}{inputNodes()}}
+{\footnotesize\ttfamily id input\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [virtual]}}
+

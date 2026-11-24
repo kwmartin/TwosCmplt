@@ -1,0 +1,69 @@
+\doxysection{Sources/\+Twos\+Cmplt/\+Yaml\+Load.swift File Reference}
+\hypertarget{YamlLoad_8swift}{}\label{YamlLoad_8swift}\index{Sources/TwosCmplt/YamlLoad.swift@{Sources/TwosCmplt/YamlLoad.swift}}
+{\ttfamily import Foundation;}\newline
+{\ttfamily import "{}YAML parsing failed"{};}\newline
+{\ttfamily import "{}Failed to parse YAML\+: \textbackslash{}(error)"{};}\newline
+{\ttfamily import "{}params"{};}\newline
+{\ttfamily import "{}We caught a \textquotesingle{}params\textquotesingle{}\+: \textbackslash{}(prms)"{};}\newline
+{\ttfamily import "{}Ignoring unsupported param \textbackslash{}(k)\+: \textbackslash{}(type(of\+: v))"{};}\newline
+{\ttfamily import "{}sense"{};}\newline
+{\ttfamily import "{}We caught a \textquotesingle{}sens\textquotesingle{}\+: \textbackslash{}(sens)"{};}\newline
+{\ttfamily import "{}edge"{};}\newline
+{\ttfamily import "{}port"{};}\newline
+{\ttfamily import "{}rise"{};}\newline
+{\ttfamily import "{}Invalid sense object\+: \textbackslash{}(sens)"{};}\newline
+{\ttfamily import "{}nodes"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs nodes missing; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs nodes entry is not an object or string; skipping"{};}\newline
+{\ttfamily import "{}name"{};}\newline
+{\ttfamily import "{}nbits"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs has invalid node object; skipping"{};}\newline
+{\ttfamily import "{}s\+Circs"{};}\newline
+{\ttfamily import "{}YAML\+: s\+Circs element is not a mapping; skipping"{};}\newline
+{\ttfamily import "{}kind"{};}\newline
+{\ttfamily import "{}YAML\+: s\+Circs element missing name/kind; skipping"{};}\newline
+{\ttfamily import "{}value"{};}\newline
+{\ttfamily import "{}YAML\+: invalid params entry; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: s\+Circs doesn\textquotesingle{}t contain params"{};}\newline
+{\ttfamily import "{}in\+Prts"{};}\newline
+{\ttfamily import "{}YAML\+: s\+Circs element missing in\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: falling back to node/segmented parse"{};}\newline
+{\ttfamily import "{}YAML\+: invalid in\+Prts entry; skipping"{};}\newline
+{\ttfamily import "{}node"{};}\newline
+{\ttfamily import "{}supply"{};}\newline
+{\ttfamily import "{}segments"{};}\newline
+{\ttfamily import "{}width"{};}\newline
+{\ttfamily import "{}YAML\+: invalid node entry; skipping"{};}\newline
+{\ttfamily import "{}out\+Prts"{};}\newline
+{\ttfamily import "{}out\+Prts dynamic type\+:"{};}\newline
+{\ttfamily import "{}YAML\+: invalid first out\+Prts element\+: \textbackslash{}(oprt)"{};}\newline
+{\ttfamily import "{}YAML\+: s\+Circs element missing or invalid out\+Prts; skipping"{};}\newline
+{\ttfamily import "{}a\+Circs"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs element is not a mapping; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs element missing name/kind; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs doesn\textquotesingle{}t contain params"{};}\newline
+{\ttfamily import "{}delay"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs doesn\textquotesingle{}t contain delay"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs element missing in\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: a\+Circs element missing or invalid out\+Prts; skipping"{};}\newline
+{\ttfamily import "{}v\+Circs"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs element is not a mapping; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs element missing name/kind; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs doesn\textquotesingle{}t contain params"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs element missing in\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs doesn\textquotesingle{}t have out\+Prts as simple Bus names"{};}\newline
+{\ttfamily import "{}YAML\+: v\+Circs element missing out\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: out\+Ports not parsed for v\+Circ; skipping"{};}\newline
+{\ttfamily import "{}c\+Circs"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs element is not a mapping; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs element missing name/kind; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs doesn\textquotesingle{}t contain params"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs element missing in\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs doesn\textquotesingle{}t have out\+Prts as simple Bus names"{};}\newline
+{\ttfamily import "{}YAML\+: c\+Circs element missing out\+Prts; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: out\+Ports not parsed for c\+Circ; skipping"{};}\newline
+{\ttfamily import "{}YAML\+: empty array for key \textbackslash{}(k); storing empty list"{};}\newline
+{\ttfamily import "{}YAML\+: skipping key \textbackslash{}(k) in parsing loop"{};}\newline
+{\ttfamily import "{}YAML\+: invalid element in array for key \textbackslash{}(k); skipping key"{};}\newline
+{\ttfamily import "{}YAML\+: heterogeneous array for key \textbackslash{}(k); skipping key"{};}\newline
+{\ttfamily import "{}YAML\+: unsupported value type for key \textbackslash{}(k); skipping key"{};}\newline
