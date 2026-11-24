@@ -1,4 +1,4 @@
-generated: '2026-11-23T22:26:25+00:00'
+generated: '2026-11-24T08:01:31+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -21,8 +21,7 @@ modules:
     CAP:
         directory: verilogParse/ver_lib
         file_name: CAP.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -2035,13 +2034,11 @@ modules:
     TST_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_REG_3X1.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     TST_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_RG_3X1.v
-        clean: false
-        stale_reason: 'verilog step: include:TECH_DIG.inc changed'
+        clean: true
     TST_S2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFFB_1X2.v
