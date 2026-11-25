@@ -127,6 +127,17 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
+        name: CFF
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
         name: C2_
         signed: 'False'
         width:
@@ -178,17 +189,6 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
-        name: __concat_MULT_2
-        signed: 'False'
-        width:
-            kind: width
-            width:
-              - kind: int
-                value: 383
-              - kind: int
-                value: 0
-        length: []
-  -   - kind: Wire
         name: __concat_CGEN2_2
         signed: 'False'
         width:
@@ -199,7 +199,45 @@ decls:
               - kind: int
                 value: 0
         length: []
+  -   - kind: Wire
+        name: __concat_MULT_2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 383
+              - kind: int
+                value: 0
+        length: []
 behav_blcks:
+  - kind: assign
+    lvalue:
+      - select
+      - kind: slice
+        name: CFF
+        sgmnts:
+          - kind: int
+            value: 19
+          - kind: int
+            value: 0
+    rvalue:
+        kind: sexpr
+        oper: 'Sra:'
+        args:
+          - kind: syscall
+            name: signed
+            value:
+              - kind: slice
+                name: COEF
+                sgmnts:
+                  - kind: int
+                    value: 19
+                  - kind: int
+                    value: 0
+          - kind: int
+            value: 2
+    delay: 0
   - kind: async
     name: CLA24
     module: CLA24
@@ -398,50 +436,6 @@ behav_blcks:
                 name: VDD
               - kind: ident
                 name: VSS
-  - kind: async
-    name: MULT
-    module: KM_COEFF_MULT3
-    params:
-      - kind: str
-        value: async
-        name: circuit
-    ports:
-      - port: None
-        node:
-            kind: bit
-            name: RG_
-            sgmnts:
-              - 23
-      - port: None
-        node:
-            kind: slice
-            name: RG_
-            sgmnts:
-              - kind: int
-                value: 23
-              - kind: int
-                value: 4
-      - port: None
-        node:
-            kind: ident
-            name: __concat_MULT_2
-      - port: None
-        node:
-            kind: slice
-            name: O
-            sgmnts:
-              - kind: int
-                value: 23
-              - kind: int
-                value: 0
-      - port: None
-        node:
-            kind: concat
-            sgmnts:
-              - kind: ident
-                name: VDD
-              - kind: ident
-                name: VSS
   - kind: sync
     name: REG2
     module: KM_REGS24
@@ -555,6 +549,50 @@ behav_blcks:
         node:
             kind: ident
             name: INIT
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: MULT
+    module: KM_COEFF_MULT4
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: bit
+            name: RG_
+            sgmnts:
+              - 23
+      - port: None
+        node:
+            kind: slice
+            name: RG_
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 4
+      - port: None
+        node:
+            kind: ident
+            name: __concat_MULT_2
+      - port: None
+        node:
+            kind: slice
+            name: O
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
       - port: None
         node:
             kind: concat
@@ -2109,7 +2147,7 @@ behav_blcks:
   - kind: assign
     lvalue:
         kind: ident
-        name: __concat_MULT_2
+        name: __concat_CGEN2_2
     rvalue:
         concats:
           - kind: bit
@@ -3652,7 +3690,7 @@ behav_blcks:
   - kind: assign
     lvalue:
         kind: ident
-        name: __concat_CGEN2_2
+        name: __concat_MULT_2
     rvalue:
         concats:
           - kind: bit

@@ -1,0 +1,2592 @@
+kind: verilog
+module: CSSLCD
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CRY
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: C
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: ENBL
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: SUM
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 7
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: SUMB_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRYB_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SUMA_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRYA_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CN
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: ENBLB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: MX_7
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_6
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_5
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_4
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_3
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_1
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_0
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_7
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_6
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_5
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_4
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_3
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_2
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_1
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXNORB_3X1_0
+    module: DG_EXNOR1_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SUMA_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_7
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_6
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_5
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_4
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_3
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_1
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_0
+    module: DG_EXOR1_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: SUMB_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_CLK
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBL
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_7
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_6
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_5
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_4
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_3
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_2
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_1
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: MX_2_0
+    module: DG_MX4_3X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBLB
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_7
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_6
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_5
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_4
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_3
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_2
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_1
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: EXOR_2_0
+    module: DG_AND2_2X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CRYB_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_7
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_6
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_5
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_4
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_3
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_2
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_1
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: N_AB_AC_BC_0
+    module: DG_NAB_AC_BC
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: A
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: B
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CRYA_
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_22
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_21
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_20
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_19
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_18
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_17
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_16
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_15
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_14
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_13
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_12
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_11
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_10
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_9
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_8
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_7
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_6
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_5
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_4
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_3
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_2
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_1
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: INV_0
+    module: DG_INV2_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: C
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+

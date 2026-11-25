@@ -45,6 +45,28 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
+        name: net10
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net11
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 1
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
         name: Z
         signed: 'False'
         width:
@@ -52,6 +74,105 @@ decls:
             width:
             -   kind: int
                 value: 21
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 2
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net4
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net5
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net6
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net7
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net8
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: net9
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
             -   kind: int
                 value: 0
         length: []
@@ -1991,6 +2112,898 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
+-   kind: async
+    name: X1
+    module: KM_MX_16X24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: net1_2
+    -   port: None
+        node:
+            kind: ident
+            name: net1_1
+    -   port: None
+        node:
+            kind: ident
+            name: net1_0
+    -   port: None
+        node:
+            kind: ident
+            name: net2_23
+    -   port: None
+        node:
+            kind: ident
+            name: net2_22
+    -   port: None
+        node:
+            kind: ident
+            name: net2_21
+    -   port: None
+        node:
+            kind: ident
+            name: net2_20
+    -   port: None
+        node:
+            kind: ident
+            name: net2_19
+    -   port: None
+        node:
+            kind: ident
+            name: net2_18
+    -   port: None
+        node:
+            kind: ident
+            name: net2_17
+    -   port: None
+        node:
+            kind: ident
+            name: net2_16
+    -   port: None
+        node:
+            kind: ident
+            name: net2_15
+    -   port: None
+        node:
+            kind: ident
+            name: net2_14
+    -   port: None
+        node:
+            kind: ident
+            name: net2_13
+    -   port: None
+        node:
+            kind: ident
+            name: net2_12
+    -   port: None
+        node:
+            kind: ident
+            name: net2_11
+    -   port: None
+        node:
+            kind: ident
+            name: net2_10
+    -   port: None
+        node:
+            kind: ident
+            name: net2_9
+    -   port: None
+        node:
+            kind: ident
+            name: net2_8
+    -   port: None
+        node:
+            kind: ident
+            name: net2_7
+    -   port: None
+        node:
+            kind: ident
+            name: net2_6
+    -   port: None
+        node:
+            kind: ident
+            name: net2_5
+    -   port: None
+        node:
+            kind: ident
+            name: net2_4
+    -   port: None
+        node:
+            kind: ident
+            name: net2_3
+    -   port: None
+        node:
+            kind: ident
+            name: net2_2
+    -   port: None
+        node:
+            kind: ident
+            name: net2_1
+    -   port: None
+        node:
+            kind: ident
+            name: net2_0
+    -   port: None
+        node:
+            kind: ident
+            name: net3_23
+    -   port: None
+        node:
+            kind: ident
+            name: net3_22
+    -   port: None
+        node:
+            kind: ident
+            name: net3_21
+    -   port: None
+        node:
+            kind: ident
+            name: net3_20
+    -   port: None
+        node:
+            kind: ident
+            name: net3_19
+    -   port: None
+        node:
+            kind: ident
+            name: net3_18
+    -   port: None
+        node:
+            kind: ident
+            name: net3_17
+    -   port: None
+        node:
+            kind: ident
+            name: net3_16
+    -   port: None
+        node:
+            kind: ident
+            name: net3_15
+    -   port: None
+        node:
+            kind: ident
+            name: net3_14
+    -   port: None
+        node:
+            kind: ident
+            name: net3_13
+    -   port: None
+        node:
+            kind: ident
+            name: net3_12
+    -   port: None
+        node:
+            kind: ident
+            name: net3_11
+    -   port: None
+        node:
+            kind: ident
+            name: net3_10
+    -   port: None
+        node:
+            kind: ident
+            name: net3_9
+    -   port: None
+        node:
+            kind: ident
+            name: net3_8
+    -   port: None
+        node:
+            kind: ident
+            name: net3_7
+    -   port: None
+        node:
+            kind: ident
+            name: net3_6
+    -   port: None
+        node:
+            kind: ident
+            name: net3_5
+    -   port: None
+        node:
+            kind: ident
+            name: net3_4
+    -   port: None
+        node:
+            kind: ident
+            name: net3_3
+    -   port: None
+        node:
+            kind: ident
+            name: net3_2
+    -   port: None
+        node:
+            kind: ident
+            name: net3_1
+    -   port: None
+        node:
+            kind: ident
+            name: net3_0
+    -   port: None
+        node:
+            kind: ident
+            name: net4_23
+    -   port: None
+        node:
+            kind: ident
+            name: net4_22
+    -   port: None
+        node:
+            kind: ident
+            name: net4_21
+    -   port: None
+        node:
+            kind: ident
+            name: net4_20
+    -   port: None
+        node:
+            kind: ident
+            name: net4_19
+    -   port: None
+        node:
+            kind: ident
+            name: net4_18
+    -   port: None
+        node:
+            kind: ident
+            name: net4_17
+    -   port: None
+        node:
+            kind: ident
+            name: net4_16
+    -   port: None
+        node:
+            kind: ident
+            name: net4_15
+    -   port: None
+        node:
+            kind: ident
+            name: net4_14
+    -   port: None
+        node:
+            kind: ident
+            name: net4_13
+    -   port: None
+        node:
+            kind: ident
+            name: net4_12
+    -   port: None
+        node:
+            kind: ident
+            name: net4_11
+    -   port: None
+        node:
+            kind: ident
+            name: net4_10
+    -   port: None
+        node:
+            kind: ident
+            name: net4_9
+    -   port: None
+        node:
+            kind: ident
+            name: net4_8
+    -   port: None
+        node:
+            kind: ident
+            name: net4_7
+    -   port: None
+        node:
+            kind: ident
+            name: net4_6
+    -   port: None
+        node:
+            kind: ident
+            name: net4_5
+    -   port: None
+        node:
+            kind: ident
+            name: net4_4
+    -   port: None
+        node:
+            kind: ident
+            name: net4_3
+    -   port: None
+        node:
+            kind: ident
+            name: net4_2
+    -   port: None
+        node:
+            kind: ident
+            name: net4_1
+    -   port: None
+        node:
+            kind: ident
+            name: net4_0
+    -   port: None
+        node:
+            kind: ident
+            name: net5_23
+    -   port: None
+        node:
+            kind: ident
+            name: net5_22
+    -   port: None
+        node:
+            kind: ident
+            name: net5_21
+    -   port: None
+        node:
+            kind: ident
+            name: net5_20
+    -   port: None
+        node:
+            kind: ident
+            name: net5_19
+    -   port: None
+        node:
+            kind: ident
+            name: net5_18
+    -   port: None
+        node:
+            kind: ident
+            name: net5_17
+    -   port: None
+        node:
+            kind: ident
+            name: net5_16
+    -   port: None
+        node:
+            kind: ident
+            name: net5_15
+    -   port: None
+        node:
+            kind: ident
+            name: net5_14
+    -   port: None
+        node:
+            kind: ident
+            name: net5_13
+    -   port: None
+        node:
+            kind: ident
+            name: net5_12
+    -   port: None
+        node:
+            kind: ident
+            name: net5_11
+    -   port: None
+        node:
+            kind: ident
+            name: net5_10
+    -   port: None
+        node:
+            kind: ident
+            name: net5_9
+    -   port: None
+        node:
+            kind: ident
+            name: net5_8
+    -   port: None
+        node:
+            kind: ident
+            name: net5_7
+    -   port: None
+        node:
+            kind: ident
+            name: net5_6
+    -   port: None
+        node:
+            kind: ident
+            name: net5_5
+    -   port: None
+        node:
+            kind: ident
+            name: net5_4
+    -   port: None
+        node:
+            kind: ident
+            name: net5_3
+    -   port: None
+        node:
+            kind: ident
+            name: net5_2
+    -   port: None
+        node:
+            kind: ident
+            name: net5_1
+    -   port: None
+        node:
+            kind: ident
+            name: net5_0
+    -   port: None
+        node:
+            kind: ident
+            name: net6_23
+    -   port: None
+        node:
+            kind: ident
+            name: net6_22
+    -   port: None
+        node:
+            kind: ident
+            name: net6_21
+    -   port: None
+        node:
+            kind: ident
+            name: net6_20
+    -   port: None
+        node:
+            kind: ident
+            name: net6_19
+    -   port: None
+        node:
+            kind: ident
+            name: net6_18
+    -   port: None
+        node:
+            kind: ident
+            name: net6_17
+    -   port: None
+        node:
+            kind: ident
+            name: net6_16
+    -   port: None
+        node:
+            kind: ident
+            name: net6_15
+    -   port: None
+        node:
+            kind: ident
+            name: net6_14
+    -   port: None
+        node:
+            kind: ident
+            name: net6_13
+    -   port: None
+        node:
+            kind: ident
+            name: net6_12
+    -   port: None
+        node:
+            kind: ident
+            name: net6_11
+    -   port: None
+        node:
+            kind: ident
+            name: net6_10
+    -   port: None
+        node:
+            kind: ident
+            name: net6_9
+    -   port: None
+        node:
+            kind: ident
+            name: net6_8
+    -   port: None
+        node:
+            kind: ident
+            name: net6_7
+    -   port: None
+        node:
+            kind: ident
+            name: net6_6
+    -   port: None
+        node:
+            kind: ident
+            name: net6_5
+    -   port: None
+        node:
+            kind: ident
+            name: net6_4
+    -   port: None
+        node:
+            kind: ident
+            name: net6_3
+    -   port: None
+        node:
+            kind: ident
+            name: net6_2
+    -   port: None
+        node:
+            kind: ident
+            name: net6_1
+    -   port: None
+        node:
+            kind: ident
+            name: net6_0
+    -   port: None
+        node:
+            kind: ident
+            name: net7_23
+    -   port: None
+        node:
+            kind: ident
+            name: net7_22
+    -   port: None
+        node:
+            kind: ident
+            name: net7_21
+    -   port: None
+        node:
+            kind: ident
+            name: net7_20
+    -   port: None
+        node:
+            kind: ident
+            name: net7_19
+    -   port: None
+        node:
+            kind: ident
+            name: net7_18
+    -   port: None
+        node:
+            kind: ident
+            name: net7_17
+    -   port: None
+        node:
+            kind: ident
+            name: net7_16
+    -   port: None
+        node:
+            kind: ident
+            name: net7_15
+    -   port: None
+        node:
+            kind: ident
+            name: net7_14
+    -   port: None
+        node:
+            kind: ident
+            name: net7_13
+    -   port: None
+        node:
+            kind: ident
+            name: net7_12
+    -   port: None
+        node:
+            kind: ident
+            name: net7_11
+    -   port: None
+        node:
+            kind: ident
+            name: net7_10
+    -   port: None
+        node:
+            kind: ident
+            name: net7_9
+    -   port: None
+        node:
+            kind: ident
+            name: net7_8
+    -   port: None
+        node:
+            kind: ident
+            name: net7_7
+    -   port: None
+        node:
+            kind: ident
+            name: net7_6
+    -   port: None
+        node:
+            kind: ident
+            name: net7_5
+    -   port: None
+        node:
+            kind: ident
+            name: net7_4
+    -   port: None
+        node:
+            kind: ident
+            name: net7_3
+    -   port: None
+        node:
+            kind: ident
+            name: net7_2
+    -   port: None
+        node:
+            kind: ident
+            name: net7_1
+    -   port: None
+        node:
+            kind: ident
+            name: net7_0
+    -   port: None
+        node:
+            kind: ident
+            name: net8_23
+    -   port: None
+        node:
+            kind: ident
+            name: net8_22
+    -   port: None
+        node:
+            kind: ident
+            name: net8_21
+    -   port: None
+        node:
+            kind: ident
+            name: net8_20
+    -   port: None
+        node:
+            kind: ident
+            name: net8_19
+    -   port: None
+        node:
+            kind: ident
+            name: net8_18
+    -   port: None
+        node:
+            kind: ident
+            name: net8_17
+    -   port: None
+        node:
+            kind: ident
+            name: net8_16
+    -   port: None
+        node:
+            kind: ident
+            name: net8_15
+    -   port: None
+        node:
+            kind: ident
+            name: net8_14
+    -   port: None
+        node:
+            kind: ident
+            name: net8_13
+    -   port: None
+        node:
+            kind: ident
+            name: net8_12
+    -   port: None
+        node:
+            kind: ident
+            name: net8_11
+    -   port: None
+        node:
+            kind: ident
+            name: net8_10
+    -   port: None
+        node:
+            kind: ident
+            name: net8_9
+    -   port: None
+        node:
+            kind: ident
+            name: net8_8
+    -   port: None
+        node:
+            kind: ident
+            name: net8_7
+    -   port: None
+        node:
+            kind: ident
+            name: net8_6
+    -   port: None
+        node:
+            kind: ident
+            name: net8_5
+    -   port: None
+        node:
+            kind: ident
+            name: net8_4
+    -   port: None
+        node:
+            kind: ident
+            name: net8_3
+    -   port: None
+        node:
+            kind: ident
+            name: net8_2
+    -   port: None
+        node:
+            kind: ident
+            name: net8_1
+    -   port: None
+        node:
+            kind: ident
+            name: net8_0
+    -   port: None
+        node:
+            kind: ident
+            name: net9_23
+    -   port: None
+        node:
+            kind: ident
+            name: net9_22
+    -   port: None
+        node:
+            kind: ident
+            name: net9_21
+    -   port: None
+        node:
+            kind: ident
+            name: net9_20
+    -   port: None
+        node:
+            kind: ident
+            name: net9_19
+    -   port: None
+        node:
+            kind: ident
+            name: net9_18
+    -   port: None
+        node:
+            kind: ident
+            name: net9_17
+    -   port: None
+        node:
+            kind: ident
+            name: net9_16
+    -   port: None
+        node:
+            kind: ident
+            name: net9_15
+    -   port: None
+        node:
+            kind: ident
+            name: net9_14
+    -   port: None
+        node:
+            kind: ident
+            name: net9_13
+    -   port: None
+        node:
+            kind: ident
+            name: net9_12
+    -   port: None
+        node:
+            kind: ident
+            name: net9_11
+    -   port: None
+        node:
+            kind: ident
+            name: net9_10
+    -   port: None
+        node:
+            kind: ident
+            name: net9_9
+    -   port: None
+        node:
+            kind: ident
+            name: net9_8
+    -   port: None
+        node:
+            kind: ident
+            name: net9_7
+    -   port: None
+        node:
+            kind: ident
+            name: net9_6
+    -   port: None
+        node:
+            kind: ident
+            name: net9_5
+    -   port: None
+        node:
+            kind: ident
+            name: net9_4
+    -   port: None
+        node:
+            kind: ident
+            name: net9_3
+    -   port: None
+        node:
+            kind: ident
+            name: net9_2
+    -   port: None
+        node:
+            kind: ident
+            name: net9_1
+    -   port: None
+        node:
+            kind: ident
+            name: net9_0
+    -   port: None
+        node:
+            kind: ident
+            name: net10_23
+    -   port: None
+        node:
+            kind: ident
+            name: net10_22
+    -   port: None
+        node:
+            kind: ident
+            name: net10_21
+    -   port: None
+        node:
+            kind: ident
+            name: net10_20
+    -   port: None
+        node:
+            kind: ident
+            name: net10_19
+    -   port: None
+        node:
+            kind: ident
+            name: net10_18
+    -   port: None
+        node:
+            kind: ident
+            name: net10_17
+    -   port: None
+        node:
+            kind: ident
+            name: net10_16
+    -   port: None
+        node:
+            kind: ident
+            name: net10_15
+    -   port: None
+        node:
+            kind: ident
+            name: net10_14
+    -   port: None
+        node:
+            kind: ident
+            name: net10_13
+    -   port: None
+        node:
+            kind: ident
+            name: net10_12
+    -   port: None
+        node:
+            kind: ident
+            name: net10_11
+    -   port: None
+        node:
+            kind: ident
+            name: net10_10
+    -   port: None
+        node:
+            kind: ident
+            name: net10_9
+    -   port: None
+        node:
+            kind: ident
+            name: net10_8
+    -   port: None
+        node:
+            kind: ident
+            name: net10_7
+    -   port: None
+        node:
+            kind: ident
+            name: net10_6
+    -   port: None
+        node:
+            kind: ident
+            name: net10_5
+    -   port: None
+        node:
+            kind: ident
+            name: net10_4
+    -   port: None
+        node:
+            kind: ident
+            name: net10_3
+    -   port: None
+        node:
+            kind: ident
+            name: net10_2
+    -   port: None
+        node:
+            kind: ident
+            name: net10_1
+    -   port: None
+        node:
+            kind: ident
+            name: net10_0
+    -   port: None
+        node:
+            kind: ident
+            name: net11_1
+    -   port: None
+        node:
+            kind: ident
+            name: net11_0
 -   kind: assign
     lvalue:
         kind: ident
