@@ -1232,7 +1232,7 @@
     "unl": "f6162e118900653dd4bab9dd4db0dc8c68615b85dd5e9502b6eb9995e9b89d70"
    },
    "parts": {
-    "cell:CSSLCD": "2f700fdd89908ae9df8da11fae7a8c5fc5d3646a77558a2e0be0d005a486e5cd",
+    "cell:CSSLCD": "b1c38fcf48ed3720f4651b7bd7ddccdf26e10d265299e3c3538794309de32dbd",
     "cell:DG_BUF16_1X1": "2ab12a2120bf7ef797659df934d027a25c44d4eea6f9059e08da0e08575acdff",
     "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
     "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
@@ -1397,15 +1397,17 @@
  "CSSLCD": {
   "ast": {
    "out": {
-    "mod": "2f700fdd89908ae9df8da11fae7a8c5fc5d3646a77558a2e0be0d005a486e5cd"
+    "mod": "b1c38fcf48ed3720f4651b7bd7ddccdf26e10d265299e3c3538794309de32dbd"
    },
    "parts": {
     "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
-    "input": "ae35a7cfb4c087113d1f55d3b839c0c712dbfe22316dbe968e317236d7764fd8",
+    "input": "3308028cdbef8ddf84e8cf61dff191e055d0dca3e7430d640fe6410589963c96",
     "pins:AB_AC_BC": "938fcb37fc863425b9bb9fb67b866f6196e58815e8f6c991b5c1361a6f22aaf6",
     "pins:BUF16_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CSSLCD": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
     "pins:DG_BUF16_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
     "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
     "pins:DG_NAND1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
     "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
@@ -1414,20 +1416,23 @@
   },
   "mod": {
    "out": {
-    "circuit_lib": "79521096053a1b4ef0b9c55371bf82ec1b6090faab73600956c2c3295f0f0ab3",
-    "unl": "e5fb4e1c82d535bff7a3e4d866c4d9e1d035595d071af31d9bf799e4720b32bf"
+    "circuit_lib": "25f70028f644149a551f67ceac8bdd2a3f3c49bf4a1fc9261fa4a79f76b8cf41",
+    "unl": "afdc4df59b09c37c85884144fcf8d39668082e43b638de058f304cc974f812b5"
    },
    "parts": {
     "cell:AB_AC_BC": "eb39cc1ab1424596b3bb3e9f20d25698e034bd4c60d4d6ee12550cc4dc024a72",
     "cell:DG_BUF16_1X1": "2ab12a2120bf7ef797659df934d027a25c44d4eea6f9059e08da0e08575acdff",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
     "cell:DG_EXOR1_3X1": "9548df1c9969fe0688e98958498bb47368f0c32e23faf3ecf180be9758a45536",
     "cell:DG_NAND1_2X1": "624e63de721bcd1394fd3eb1fc9098f4e5386a1738238418f615c8658b7213e6",
     "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
-    "input": "2f700fdd89908ae9df8da11fae7a8c5fc5d3646a77558a2e0be0d005a486e5cd",
+    "input": "b1c38fcf48ed3720f4651b7bd7ddccdf26e10d265299e3c3538794309de32dbd",
     "pins:AB_AC_BC": "938fcb37fc863425b9bb9fb67b866f6196e58815e8f6c991b5c1361a6f22aaf6",
     "pins:BUF16_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CSSLCD": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
     "pins:DG_BUF16_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
     "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
     "pins:DG_NAND1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
     "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
@@ -1436,15 +1441,15 @@
   },
   "verilog": {
    "out": {
-    "ast": "ae35a7cfb4c087113d1f55d3b839c0c712dbfe22316dbe968e317236d7764fd8",
-    "ast_yml": "2dfeeb9eda16b7fa4a26309a2e48316bd1dd3095c28151e590a79a539c0d5e40"
+    "ast": "3308028cdbef8ddf84e8cf61dff191e055d0dca3e7430d640fe6410589963c96",
+    "ast_yml": "64057c4c9c81d6a81cd3ba6c5f70f2cfbb46f44bd69799f54baa4eba8a9ebfe6"
    },
    "parts": {
     "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
     "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "7eea9e5ce31fafc05af8be3542eb4d78afcd97dacb08fe9bfdfa30d66fa4dddb",
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
-    "input": "a55bc8b8572be91b76d13941063a267d8de9a132eea8f16f11b9c4ea9a124bc7"
+    "input": "1f3b95d6c9994aaecc018762a0e26b24bdf42bdfbfa119a285241e7a8d71ccdc"
    }
   }
  },
@@ -7855,7 +7860,7 @@
    },
    "parts": {
     "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
-    "input": "73a3f74ed123a20d4466f7f4d4c9da9d0b457a37155e8bc7b702796f8265b879",
+    "input": "3262e13251713818cdfcc434e65049cf1f48ea8e92b4788f1d92483b78be0452",
     "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
     "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
     "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
@@ -7916,15 +7921,15 @@
   },
   "verilog": {
    "out": {
-    "ast": "73a3f74ed123a20d4466f7f4d4c9da9d0b457a37155e8bc7b702796f8265b879",
-    "ast_yml": "e0a2301941b79234f36e8ce937311f13f12d24e69c7783bca2a55bc96b1c8925"
+    "ast": "3262e13251713818cdfcc434e65049cf1f48ea8e92b4788f1d92483b78be0452",
+    "ast_yml": "dcd5393528f41e21d515c329199c79be0e5807db8da937fb48a8e5031415220e"
    },
    "parts": {
     "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
     "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "7eea9e5ce31fafc05af8be3542eb4d78afcd97dacb08fe9bfdfa30d66fa4dddb",
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
-    "input": "e6220a4f8fb8aeb7321e959f01cf3a95a35c4f6d6ba117562b8839dd1e86286a"
+    "input": "a856189fd5ffbd2663147f6ad80aa06dcfa43095e7998a4b0e1a02f9d3131fe1"
    }
   }
  },

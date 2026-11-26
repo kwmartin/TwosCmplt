@@ -67,7 +67,7 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
-        name: net1
+        name: CB
         signed: 'False'
         width:
             kind: width
@@ -78,7 +78,7 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
-        name: net2
+        name: CN
         signed: 'False'
         width:
             kind: width
@@ -142,8 +142,10 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: net1_7
+            kind: bit
+            name: CB
+            sgmnts:
+            - 7
     -   port: None
         node:
             kind: bit
@@ -180,8 +182,10 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: net1_6
+            kind: bit
+            name: CB
+            sgmnts:
+            - 6
     -   port: None
         node:
             kind: bit
@@ -218,8 +222,10 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: net1_5
+            kind: bit
+            name: CB
+            sgmnts:
+            - 5
     -   port: None
         node:
             kind: bit
@@ -256,8 +262,10 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: net1_4
+            kind: bit
+            name: CB
+            sgmnts:
+            - 4
     -   port: None
         node:
             kind: bit
@@ -294,8 +302,10 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: net1_3
+            kind: bit
+            name: CB
+            sgmnts:
+            - 3
     -   port: None
         node:
             kind: bit
@@ -332,8 +342,10 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: net1_2
+            kind: bit
+            name: CB
+            sgmnts:
+            - 2
     -   port: None
         node:
             kind: bit
@@ -370,8 +382,10 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: net1_1
+            kind: bit
+            name: CB
+            sgmnts:
+            - 1
     -   port: None
         node:
             kind: bit
@@ -408,8 +422,10 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: net1_0
+            kind: bit
+            name: CB
+            sgmnts:
+            - 0
     -   port: None
         node:
             kind: bit
@@ -446,8 +462,10 @@ behav_blcks:
             - 7
     -   port: None
         node:
-            kind: ident
-            name: net2_7
+            kind: bit
+            name: CB
+            sgmnts:
+            - 7
     -   port: None
         node:
             kind: bit
@@ -484,8 +502,10 @@ behav_blcks:
             - 6
     -   port: None
         node:
-            kind: ident
-            name: net2_6
+            kind: bit
+            name: CB
+            sgmnts:
+            - 6
     -   port: None
         node:
             kind: bit
@@ -522,8 +542,10 @@ behav_blcks:
             - 5
     -   port: None
         node:
-            kind: ident
-            name: net2_5
+            kind: bit
+            name: CB
+            sgmnts:
+            - 5
     -   port: None
         node:
             kind: bit
@@ -560,8 +582,10 @@ behav_blcks:
             - 4
     -   port: None
         node:
-            kind: ident
-            name: net2_4
+            kind: bit
+            name: CB
+            sgmnts:
+            - 4
     -   port: None
         node:
             kind: bit
@@ -598,8 +622,10 @@ behav_blcks:
             - 3
     -   port: None
         node:
-            kind: ident
-            name: net2_3
+            kind: bit
+            name: CB
+            sgmnts:
+            - 3
     -   port: None
         node:
             kind: bit
@@ -636,8 +662,10 @@ behav_blcks:
             - 2
     -   port: None
         node:
-            kind: ident
-            name: net2_2
+            kind: bit
+            name: CB
+            sgmnts:
+            - 2
     -   port: None
         node:
             kind: bit
@@ -674,8 +702,10 @@ behav_blcks:
             - 1
     -   port: None
         node:
-            kind: ident
-            name: net2_1
+            kind: bit
+            name: CB
+            sgmnts:
+            - 1
     -   port: None
         node:
             kind: bit
@@ -712,8 +742,10 @@ behav_blcks:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: net2_0
+            kind: bit
+            name: CB
+            sgmnts:
+            - 0
     -   port: None
         node:
             kind: bit
@@ -748,8 +780,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_7
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
     -   port: None
         node:
             kind: concat
@@ -778,8 +812,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_6
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
     -   port: None
         node:
             kind: concat
@@ -808,8 +844,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_5
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
     -   port: None
         node:
             kind: concat
@@ -838,8 +876,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_4
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
     -   port: None
         node:
             kind: concat
@@ -868,8 +908,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_3
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
     -   port: None
         node:
             kind: concat
@@ -898,8 +940,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_2
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
     -   port: None
         node:
             kind: concat
@@ -928,8 +972,10 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_1
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
     -   port: None
         node:
             kind: concat
@@ -958,248 +1004,234 @@ behav_blcks:
             name: ENBLB
     -   port: None
         node:
-            kind: ident
-            name: net1_0
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_15
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
             kind: bit
-            name: C
-            sgmnts:
-            - 7
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_7
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_14
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 6
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_6
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_13
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 5
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_5
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_12
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 4
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_4
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_11
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 3
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_3
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_10
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 2
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_2
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_9
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: ident
-            name: ENBLB
-    -   port: None
-        node:
-            kind: ident
-            name: net2_1
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: ND_8
-    module: DG_NAND1_2X1
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: C
+            name: CN
             sgmnts:
             - 0
     -   port: None
         node:
-            kind: ident
-            name: ENBLB
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_7
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
     -   port: None
         node:
-            kind: ident
-            name: net2_0
+            kind: bit
+            name: CN
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_6
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_5
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_4
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_3
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_2
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_1
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BFR_0
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: CN
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: bit
+            name: CB
+            sgmnts:
+            - 0
     -   port: None
         node:
             kind: concat
