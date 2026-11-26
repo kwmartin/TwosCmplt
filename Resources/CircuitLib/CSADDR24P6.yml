@@ -67,7 +67,7 @@ io_ports:
     signed: 'False'
 decls:
 -   -   kind: Wire
-        name: Z0
+        name: H0
         signed: 'False'
         width:
         - 0
@@ -79,17 +79,6 @@ decls:
         width:
         - 0
         - 0
-        length: []
--   -   kind: Wire
-        name: __concat_CSSLC2_3
-        signed: 'False'
-        width:
-            kind: width
-            width:
-            -   kind: int
-                value: 7
-            -   kind: int
-                value: 0
         length: []
 behav_blcks:
 -   kind: async
@@ -157,8 +146,13 @@ behav_blcks:
                 value: 17
     -   port: None
         node:
-            kind: ident
-            name: __concat_CSSLC2_3
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 16
     -   port: None
         node:
             kind: ident
@@ -221,9 +215,9 @@ behav_blcks:
             name: C
             sgmnts:
             -   kind: int
-                value: 16
+                value: 15
             -   kind: int
-                value: 9
+                value: 8
     -   port: None
         node:
             kind: ident
@@ -286,9 +280,9 @@ behav_blcks:
             name: C
             sgmnts:
             -   kind: int
-                value: 8
+                value: 7
             -   kind: int
-                value: 1
+                value: 0
     -   port: None
         node:
             kind: ident
@@ -311,8 +305,8 @@ behav_blcks:
             -   kind: ident
                 name: VSS
 -   kind: async
-    name: TILO0
-    module: DG_TILO
+    name: TIHI0
+    module: DG_TIHI
     params:
     -   kind: str
         value: async
@@ -321,7 +315,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: Z0
+            name: H0
     -   port: None
         node:
             kind: concat
@@ -341,7 +335,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: Z0
+            name: H0
     -   port: None
         node:
             kind: bit
@@ -380,41 +374,4 @@ behav_blcks:
                 name: VDD
             -   kind: ident
                 name: VSS
--   kind: assign
-    lvalue:
-        kind: ident
-        name: __concat_CSSLC2_3
-    rvalue:
-        concats:
-        -   kind: ident
-            name: Z0
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 23
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 22
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 21
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 20
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 19
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 18
-        -   kind: bit
-            name: C
-            sgmnts:
-            - 17
-    delay: 0
 

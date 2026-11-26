@@ -9,10 +9,6 @@ params:
     value: 5
 io_ports:
 -   kind: Wire
-    name: INV
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: SIG
     direct: 'Input:'
     signed: 'False'
@@ -103,7 +99,7 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
-        name: __concat_MULT_2
+        name: __concat_MULT_1
         signed: 'False'
         width:
             kind: width
@@ -865,11 +861,7 @@ behav_blcks:
     -   port: None
         node:
             kind: ident
-            name: INV
-    -   port: None
-        node:
-            kind: ident
-            name: __concat_MULT_2
+            name: __concat_MULT_1
     -   port: None
         node:
             kind: slice
@@ -899,7 +891,7 @@ behav_blcks:
 -   kind: assign
     lvalue:
         kind: ident
-        name: __concat_MULT_2
+        name: __concat_MULT_1
     rvalue:
         concats:
         -   kind: bit

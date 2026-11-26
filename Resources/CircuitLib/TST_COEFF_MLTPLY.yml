@@ -200,7 +200,7 @@ decls:
                 value: 0
         length: []
   -   - kind: Wire
-        name: __concat_MULT_2
+        name: __concat_MULT_1
         signed: 'False'
         width:
             kind: width
@@ -567,12 +567,6 @@ behav_blcks:
     ports:
       - port: None
         node:
-            kind: bit
-            name: RG_
-            sgmnts:
-              - 23
-      - port: None
-        node:
             kind: slice
             name: RG_
             sgmnts:
@@ -583,7 +577,7 @@ behav_blcks:
       - port: None
         node:
             kind: ident
-            name: __concat_MULT_2
+            name: __concat_MULT_1
       - port: None
         node:
             kind: slice
@@ -3690,7 +3684,7 @@ behav_blcks:
   - kind: assign
     lvalue:
         kind: ident
-        name: __concat_MULT_2
+        name: __concat_MULT_1
     rvalue:
         concats:
           - kind: bit

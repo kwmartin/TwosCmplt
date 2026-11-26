@@ -18,10 +18,6 @@ io_ports:
     -   kind: int
         value: 0
 -   kind: Wire
-    name: INV
-    direct: 'Input:'
-    signed: 'False'
--   kind: Wire
     name: D
     direct: 'Input:'
     signed: 'False'
@@ -189,17 +185,6 @@ decls:
             width:
             -   kind: int
                 value: 23
-            -   kind: int
-                value: 0
-        length: []
--   -   kind: Wire
-        name: Z
-        signed: 'False'
-        width:
-            kind: width
-            width:
-            -   kind: int
-                value: 15
             -   kind: int
                 value: 0
         length: []
@@ -434,358 +419,6 @@ behav_blcks:
                 value: 24
             -   kind: int
                 value: 0
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_15
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 15
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_14
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 14
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_13
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 13
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_12
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 12
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_11
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 11
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_10
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 10
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_9
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 9
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_8
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 8
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_7
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 7
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_6
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 6
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_5
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 5
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_4
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 4
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_3
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 3
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_2
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 2
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_1
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 1
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
-    name: TILO_0
-    module: DG_TILO
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: Z
-            sgmnts:
-            - 0
     -   port: None
         node:
             kind: concat
@@ -3021,101 +2654,101 @@ behav_blcks:
     rvalue:
         concats:
         -   kind: bit
-            name: Z
+            name: D
             sgmnts:
-            - 15
+            - 215
         -   kind: bit
             name: D
             sgmnts:
-            - 46
+            - 214
         -   kind: bit
             name: D
             sgmnts:
-            - 45
+            - 213
         -   kind: bit
             name: D
             sgmnts:
-            - 44
+            - 212
         -   kind: bit
             name: D
             sgmnts:
-            - 43
+            - 211
         -   kind: bit
             name: D
             sgmnts:
-            - 42
+            - 210
         -   kind: bit
             name: D
             sgmnts:
-            - 41
+            - 209
         -   kind: bit
             name: D
             sgmnts:
-            - 40
+            - 208
         -   kind: bit
             name: D
             sgmnts:
-            - 39
+            - 207
         -   kind: bit
             name: D
             sgmnts:
-            - 38
+            - 206
         -   kind: bit
             name: D
             sgmnts:
-            - 37
+            - 205
         -   kind: bit
             name: D
             sgmnts:
-            - 36
+            - 204
         -   kind: bit
             name: D
             sgmnts:
-            - 35
+            - 203
         -   kind: bit
             name: D
             sgmnts:
-            - 34
+            - 202
         -   kind: bit
             name: D
             sgmnts:
-            - 33
+            - 201
         -   kind: bit
             name: D
             sgmnts:
-            - 32
+            - 200
         -   kind: bit
             name: D
             sgmnts:
-            - 31
+            - 199
         -   kind: bit
             name: D
             sgmnts:
-            - 30
+            - 198
         -   kind: bit
             name: D
             sgmnts:
-            - 29
+            - 197
         -   kind: bit
             name: D
             sgmnts:
-            - 28
+            - 196
         -   kind: bit
             name: D
             sgmnts:
-            - 27
+            - 195
         -   kind: bit
             name: D
             sgmnts:
-            - 26
+            - 194
         -   kind: bit
             name: D
             sgmnts:
-            - 25
+            - 193
         -   kind: bit
             name: D
             sgmnts:
-            - 24
+            - 192
     delay: 0
 -   kind: assign
     lvalue:

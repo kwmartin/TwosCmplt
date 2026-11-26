@@ -10,7 +10,8 @@ ResetRelease: 0.1*PER
 TimeSpcs:
   - tm: 0
     vls:
-      - [UPD, 0]
+      -   - UPD
+          - 0
       -   - CLK
           - 0
       -   - VDD
@@ -543,6 +544,7 @@ Signals:
     COEF: 20
     D0_: 24
     IN: 24
+    UPD: 1
 SaveNds:
   - name: C_24
     format: b
@@ -566,6 +568,7 @@ Classifications:
     COEF: data_inputs
     D0_: data_inputs
     IN: data_inputs
+    UPD: data_inputs
     C_24: outputs
     DATA_OUT: outputs
     G_24: outputs

@@ -1,18 +1,19 @@
-generated: '2026-11-26T02:07:29+00:00'
+generated: '2026-11-26T16:43:02+00:00'
 modules:
     AB_AC_BC:
-        directory: verilogParse/lib/std28_lib
-        file_name: cstm_diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: AB_AC_BC.v
         clean: true
     AB_ANC_BNC:
-        directory: verilogParse/lib/std28_lib
-        file_name: cstm_diglib28_vl.v
+        directory: verilogParse/ver_lib
+        file_name: AB_ANC_BNC.v
         clean: true
     Accum:
         directory: verilogParse/ver_lib
         file_name: accum.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     BUF_BIAS_VAMS:
         directory: verilogParse/ver_lib
         file_name: BUF_BIAS_VAMS.v
@@ -22,7 +23,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CAP.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -56,7 +58,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA10.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CLA16:
         directory: verilogParse/ver_lib
         file_name: CLA16.v
@@ -65,7 +68,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA18.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CLA2:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
@@ -82,7 +86,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA6.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CLA8:
         directory: verilogParse/ver_lib
         file_name: CLA8.v
@@ -111,27 +116,32 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CMPL_A4_INVIN:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CNTRE4:
         directory: verilogParse/ver_lib
         file_name: CNTRE4.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CNTRM8:
         directory: verilogParse/ver_lib
         file_name: CNTRM8.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     CSADDR24:
         directory: verilogParse/ver_lib
         file_name: CSADDR24.v
@@ -144,12 +154,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CSADDR24P4.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     CSADDR24P5:
         directory: verilogParse/ver_lib
         file_name: CSADDR24P5.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     CSADDR24P6:
         directory: verilogParse/ver_lib
         file_name: CSADDR24P6.v
@@ -158,12 +170,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CSSLCA.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     CSSLCB:
         directory: verilogParse/ver_lib
         file_name: CSSLCB.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     CSSLCD:
         directory: verilogParse/ver_lib
         file_name: CSSLCD.v
@@ -240,7 +254,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_4X2.v
@@ -249,22 +264,26 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DES_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
@@ -289,37 +308,44 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFRE.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUSR_7X2.v
@@ -334,7 +360,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DLUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DMMY:
         directory: verilogParse/ver_lib
         file_name: DG_DMMY.v
@@ -362,7 +389,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DR_DIFF.v
@@ -372,7 +400,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DS_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DS_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DS_4X2.v
@@ -382,12 +411,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_DVD2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_DVD2_2X1.v
@@ -421,7 +452,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     DG_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_3X1.v
@@ -429,7 +461,9 @@ modules:
     DG_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     DG_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_3X1.v
@@ -477,7 +511,9 @@ modules:
     DG_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV20_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     DG_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV2_1X1.v
@@ -514,22 +550,26 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDEUR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDEUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDEUS_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDEUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDS_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDS_6X2.v
@@ -539,17 +579,20 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKDUX_8X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUX_8X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKER_4X2.v
@@ -558,12 +601,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKES_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_5X2.v
@@ -573,7 +618,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_JKS_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_5X2.v
@@ -583,7 +629,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_LR6X2_DIFF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_LR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR_DIFF.v
@@ -623,7 +670,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_LTCHS_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_3X1.v
@@ -662,12 +710,15 @@ modules:
     DG_MX4_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     DG_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN2_3X1.v
@@ -685,7 +736,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_MX_8X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: DG_NABC_ABD.v
@@ -699,7 +751,9 @@ modules:
     DG_NAB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_AC_BC.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     DG_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_C2.v
@@ -793,7 +847,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_4X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        stale_reason: 'missing: circuit_lib'
     DG_OR4_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR4_2X1.v
@@ -855,17 +909,20 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_SNGL2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
@@ -875,7 +932,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TDUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDUR_6X2.v
@@ -902,12 +960,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TLDER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TL_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TL_FF.v
@@ -922,7 +982,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TR_FF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DG_TS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TS_3X2.v
@@ -932,7 +993,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -952,12 +1014,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'missing: ast, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     EXOR_DIFF:
         directory: verilogParse/ver_lib
         file_name: EXOR_DIFF.v
@@ -971,12 +1035,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: HADDRA.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     HADDRB:
         directory: verilogParse/ver_lib
         file_name: HADDRB.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     HADDRC:
         directory: verilogParse/ver_lib
         file_name: HADDRC.v
@@ -1001,7 +1067,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_BFR_ENBL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_BUF_HYST:
         directory: verilogParse/ver_lib
         file_name: KM_BUF_HYST.v
@@ -1021,36 +1088,42 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CLK_DVD2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_CLK_GT:
         directory: verilogParse/ver_lib
         file_name: KM_CLK_GT.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_CMPL12:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL12.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_CMPL20:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL20.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_CNTR4G:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4G.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR8D.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_COEFF_GEN2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN2.v
@@ -1063,7 +1136,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT3.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     KM_COEFF_MULT4:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT4.v
@@ -1072,7 +1146,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX1.v
         clean: false
-        stale_reason: 'verilog step: code, input changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            input changed'
     KM_COEFF_MUX2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX2.v
@@ -1081,7 +1156,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT1.v
         clean: false
-        stale_reason: 'verilog step: code changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     KM_CS_MULT2:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT2.v
@@ -1090,7 +1166,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DCDR.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
         file_name: KM_DEC_2X4.v
@@ -1099,7 +1175,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_DIFF2SNGL:
         directory: verilogParse/ver_lib
         file_name: KM_DIFF2SNGL.v
@@ -1109,12 +1186,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_DRQ_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_DRQ_DIFF.v
@@ -1124,7 +1203,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DVD16.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_DVD2Q_DIFF:
         directory: dig_lib
         file_name: KM_DVD2Q_DIFF.v
@@ -1143,7 +1223,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
@@ -1153,16 +1234,20 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_INGAT.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MULTX4BTSC:
         directory: verilogParse/ver_lib
         file_name: KM_MULTX4BTSC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
+            changed'
     KM_MXDIFF_5X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXDIFF_5X1.v
@@ -1172,7 +1257,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X16B.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MX_16X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1B.v
@@ -1181,7 +1267,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1C.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MX_16X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X24.v
@@ -1195,12 +1282,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_MX_8X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_8X1B.v
@@ -1213,7 +1302,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: KM_NAB_C2.v
@@ -1233,7 +1323,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_NA_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_NOR2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NOR2_DIFF.v
@@ -1248,7 +1339,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_BFR_GF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_GF2.v
@@ -1263,12 +1355,14 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_REGS17.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_REGS18:
         directory: verilogParse/ver_lib
         file_name: KM_REGS18.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     KM_REGS24:
         directory: verilogParse/ver_lib
         file_name: KM_REGS24.v
@@ -1299,7 +1393,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: M1M_QDACCUM5.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     MLTPLY_FINE2:
         directory: verilogParse/ver_lib
         file_name: MLTPLY_FINE2.v
@@ -1309,7 +1404,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: MTCH4.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     MX3X1_DIFF:
         directory: verilogParse/ver_lib
         file_name: MX3X1_DIFF.v
@@ -1328,7 +1424,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: OUT_SLCT.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     QD_ACCUM5:
         directory: verilogParse/ver_lib
         file_name: QD_ACCUM5.v
@@ -1358,7 +1455,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: RES.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     Sine:
         directory: verilogParse/ver_lib
         file_name: Sine.v
@@ -1383,102 +1481,122 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_AB_AC_BC.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AB_ANC_BNC:
         directory: verilogParse/ver_lib
         file_name: TST_AB_ANC_BNC.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_ACCUM3:
         directory: verilogParse/ver_lib
         file_name: TST_ACCUM3.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND2_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND4_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_AND4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF16_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF16_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF1_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF1_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF20_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF2_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF4_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF6_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF6_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF8_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CLA16:
         directory: verilogParse/ver_lib
         file_name: TST_CLA16.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CLA2:
         directory: verilogParse/ver_lib
         file_name: TST_CLA2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CLA4:
         directory: verilogParse/ver_lib
         file_name: TST_CLA4.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CLA8:
         directory: verilogParse/ver_lib
         file_name: TST_CLA8.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CMPL12:
         directory: verilogParse/ver_lib
         file_name: TST_CMPL12.v
@@ -1488,22 +1606,26 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc and 1 more changed'
     TST_CNTR8G:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8G.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_CNTRM8:
         directory: verilogParse/ver_lib
         file_name: TST_CNTRM8.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_COEFF_GEN:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_GEN.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_COEFF_MLTPLY:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_MLTPLY.v
@@ -1512,67 +1634,80 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DES_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFRE.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
@@ -1582,42 +1717,49 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DLUX_7X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc, input changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DRB_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DS_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DS_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_DVD16:
         directory: verilogParse/ver_lib
         file_name: TST_DVD16.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
@@ -1627,37 +1769,44 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_D_FF_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_EMX_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_EXNOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_3X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_3X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_FADDRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDRB_3X2.v
@@ -1667,507 +1816,609 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_FADDR_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_HADDRA:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRA.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_HADDRB:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRB.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_HADDRC:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV1:
         directory: verilogParse/ver_lib
         file_name: TST_INV1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV16:
         directory: verilogParse/ver_lib
         file_name: TST_INV16.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV2:
         directory: verilogParse/ver_lib
         file_name: TST_INV2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV20:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV20_1X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV4_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV4_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV6_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV6_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_INV8_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV8_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDEUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDEUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKER_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKES_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKR_4X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_JKR_4X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_JK_FF_R_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: TST_KM_BFR_ENBL.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DEGLITCH.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_DLY:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY_UP.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_HADDRC:
         directory: verilogParse/ver_lib
         file_name: TST_KM_HADDRC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_KM_MXB4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_KM_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: TST_KM_NA_BC_BD.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHR_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHR_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHR_BU_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_BU_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHSN_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHSN_5X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_5X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHSN_6X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHSR_6X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSR_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCHS_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHS_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_LTCH_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCH_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MX1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MX2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MX4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MXN1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MXN2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MX_16X16B:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        stale_reason: 'missing: ast, mod, unl'
+    TST_MX_2X1:
+        directory: verilogParse/ver_lib
+        file_name: TST_MX_2X1.v
+        clean: false
+        stale_reason: 'missing: circuit_lib'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc, input changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_8X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: TST_NABC_ABD.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAB_AC:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_AC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_AC_BC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAB_C:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_C.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_C2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAB_CDA_CDB:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_CDA_CDB.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAC_AD_BC_BD:
         directory: verilogParse/ver_lib
         file_name: TST_NAC_AD_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAND1_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAND2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NAND2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NA_BC:
         directory: verilogParse/ver_lib
         file_name: TST_NA_BC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NA_BCD:
         directory: verilogParse/ver_lib
         file_name: TST_NA_BCD.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NOR1_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OR2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OR2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OR2_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_4X1.v
         clean: false
-        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+        stale_reason: 'missing: circuit_lib'
     TST_OR4_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OR4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OR4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: unl'
+        stale_reason: 'missing: ast, mod, unl'
     TST_OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: TST_OUT_SLCT.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_PRPA:
         directory: verilogParse/ver_lib
         file_name: TST_PRPA.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_PRPB:
         directory: verilogParse/ver_lib
         file_name: TST_PRPB.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_PRPF:
         directory: verilogParse/ver_lib
         file_name: TST_PRPF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_REG_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_RG_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_S2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFFB_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_S2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_SE2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SE2DIFFB_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_SE2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SE2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_SNGL2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SNGL2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_SW_INV:
         directory: verilogParse/ver_lib
         file_name: TST_SW_INV.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TDER_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_IN_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TDR_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_IN_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TLDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     TST_TLDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_TR_FF:
         directory: verilogParse/ver_lib
         file_name: TST_TR_FF.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     VOTER:
         directory: verilogParse/ver_lib
         file_name: VOTER.v
@@ -2537,7 +2788,8 @@ modules:
         directory: verilogParse/ver_lib
         file_name: dg_mx_4x1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
+            include:TECH_DIG.inc changed'
     dg_mxn1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mxn1_3x1.v

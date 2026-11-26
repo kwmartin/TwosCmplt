@@ -56,17 +56,6 @@ decls:
                 value: 0
         length: []
 -   -   kind: Wire
-        name: USIG
-        signed: 'False'
-        width:
-            kind: width
-            width:
-            -   kind: int
-                value: 19
-            -   kind: int
-                value: 0
-        length: []
--   -   kind: Wire
         name: __concat_MX3_1
         signed: 'False'
         width:
@@ -915,46 +904,6 @@ decls:
         length: []
 behav_blcks:
 -   kind: async
-    name: CMPL0
-    module: KM_CMPL20
-    params:
-    -   kind: str
-        value: async
-        name: circuit
-    ports:
-    -   port: None
-        node:
-            kind: bit
-            name: SIG
-            sgmnts:
-            - 19
-    -   port: None
-        node:
-            kind: slice
-            name: SIG
-            sgmnts:
-            -   kind: int
-                value: 19
-            -   kind: int
-                value: 0
-    -   port: None
-        node:
-            kind: slice
-            name: USIG
-            sgmnts:
-            -   kind: int
-                value: 19
-            -   kind: int
-                value: 0
-    -   port: None
-        node:
-            kind: concat
-            sgmnts:
-            -   kind: ident
-                name: VDD
-            -   kind: ident
-                name: VSS
--   kind: async
     name: MX3
     module: KM_MX_16X24
     params:
@@ -965,7 +914,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: USIG
+            name: SIG
             sgmnts:
             -   kind: int
                 value: 15
@@ -1058,7 +1007,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: USIG
+            name: SIG
             sgmnts:
             -   kind: int
                 value: 11
@@ -1151,7 +1100,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: USIG
+            name: SIG
             sgmnts:
             -   kind: int
                 value: 7
@@ -1244,7 +1193,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: USIG
+            name: SIG
             sgmnts:
             -   kind: int
                 value: 3
@@ -1821,7 +1770,7 @@ behav_blcks:
     -   port: None
         node:
             kind: slice
-            name: USIG
+            name: SIG
             sgmnts:
             -   kind: int
                 value: 18
