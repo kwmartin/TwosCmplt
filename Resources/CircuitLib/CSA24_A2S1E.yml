@@ -1,0 +1,377 @@
+kind: verilog
+module: CSA24_A2S1E
+params:
+-   kind: str
+    name: circuit
+    value: async
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CRY
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: C
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: ENBL
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: SUM
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 24
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: H0
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: ENBC
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: BUF_0
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: bit
+            name: SUM
+            sgmnts:
+            - 24
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSSLC2
+    module: CSA8S_A2S1EM1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 16
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 16
+    -   port: None
+        node:
+            kind: slice
+            name: CRY
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 17
+    -   port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 16
+    -   port: None
+        node:
+            kind: ident
+            name: ENBC
+    -   port: None
+        node:
+            kind: slice
+            name: SUM
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 16
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSSLC3
+    module: CSA8S_A2S1EM1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: slice
+            name: CRY
+            sgmnts:
+            -   kind: int
+                value: 16
+            -   kind: int
+                value: 9
+    -   port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: ident
+            name: ENBC
+    -   port: None
+        node:
+            kind: slice
+            name: SUM
+            sgmnts:
+            -   kind: int
+                value: 15
+            -   kind: int
+                value: 8
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSSLC4
+    module: CSA8S_A2S1EM1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY
+            sgmnts:
+            -   kind: int
+                value: 8
+            -   kind: int
+                value: 1
+    -   port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: ENBC
+    -   port: None
+        node:
+            kind: slice
+            name: SUM
+            sgmnts:
+            -   kind: int
+                value: 7
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TIHI0
+    module: DG_TIHI
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: H0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_1
+    module: DG_BUF4_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: H0
+    -   port: None
+        node:
+            kind: bit
+            name: CRY
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_2
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: ENBL
+    -   port: None
+        node:
+            kind: ident
+            name: ENBC
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+

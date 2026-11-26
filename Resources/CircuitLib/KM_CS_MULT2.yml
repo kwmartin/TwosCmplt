@@ -246,7 +246,7 @@ decls:
 behav_blcks:
 -   kind: async
     name: CSADDR0
-    module: CSADDR24
+    module: CSA24_A3
     params:
     -   kind: str
         value: async
@@ -307,7 +307,7 @@ behav_blcks:
                 name: VSS
 -   kind: async
     name: CSADDR1
-    module: CSADDR24
+    module: CSA24_A3
     params:
     -   kind: str
         value: async
@@ -368,7 +368,7 @@ behav_blcks:
                 name: VSS
 -   kind: async
     name: CSADDR2
-    module: CSADDR24
+    module: CSA24_A3
     params:
     -   kind: str
         value: async
@@ -462,7 +462,7 @@ behav_blcks:
                 name: VSS
 -   kind: async
     name: CSADDR4
-    module: CSADDR24P6
+    module: CSA24_A2S1E
     params:
     -   kind: str
         value: async

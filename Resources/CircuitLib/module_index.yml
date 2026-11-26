@@ -1,4 +1,4 @@
-generated: '2026-11-26T16:43:02+00:00'
+generated: '2026-11-26T22:48:14+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/ver_lib
@@ -12,8 +12,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: accum.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     BUF_BIAS_VAMS:
         directory: verilogParse/ver_lib
         file_name: BUF_BIAS_VAMS.v
@@ -23,8 +22,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CAP.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CAP1:
         directory: verilogParse/ver_lib
         file_name: CAP1.v
@@ -58,8 +56,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA10.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CLA16:
         directory: verilogParse/ver_lib
         file_name: CLA16.v
@@ -68,8 +65,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA18.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CLA2:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
@@ -86,8 +82,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA6.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CLA8:
         directory: verilogParse/ver_lib
         file_name: CLA8.v
@@ -116,72 +111,65 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CMPL_A4_INVIN:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CNTRE4:
         directory: verilogParse/ver_lib
         file_name: CNTRE4.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     CNTRM8:
         directory: verilogParse/ver_lib
         file_name: CNTRM8.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
-    CSADDR24:
+        stale_reason: 'verilog step: no fingerprint recorded'
+    CSA24_A2P2E:
         directory: verilogParse/ver_lib
-        file_name: CSADDR24.v
-        clean: true
-    CSADDR24M:
-        directory: verilogParse/ver_lib
-        file_name: CSADDR24M.v
-        clean: true
-    CSADDR24P4:
-        directory: verilogParse/ver_lib
-        file_name: CSADDR24P4.v
+        file_name: CSA24_A2P2E.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
-    CSADDR24P5:
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    CSA24_A2S1:
         directory: verilogParse/ver_lib
-        file_name: CSADDR24P5.v
-        clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
-    CSADDR24P6:
-        directory: verilogParse/ver_lib
-        file_name: CSADDR24P6.v
+        file_name: CSA24_A2S1.v
         clean: true
-    CSSLCA:
+    CSA24_A2S1E:
         directory: verilogParse/ver_lib
-        file_name: CSSLCA.v
+        file_name: CSA24_A2S1E.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
-    CSSLCB:
+        stale_reason: 'verilog step: no fingerprint recorded'
+    CSA24_A2_NEGE:
         directory: verilogParse/ver_lib
-        file_name: CSSLCB.v
+        file_name: CSA24_A2_NEGE.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
-    CSSLCD:
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    CSA24_A3:
         directory: verilogParse/ver_lib
-        file_name: CSSLCD.v
+        file_name: CSA24_A3.v
         clean: true
+    CSA8S_A2S1EM1:
+        directory: verilogParse/ver_lib
+        file_name: CSA8S_A2S1EM1.v
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
+    CSA8S_A2_NEGE:
+        directory: verilogParse/ver_lib
+        file_name: CSA8S_A2_NEGE.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    CSA8S_A3_NEGE:
+        directory: verilogParse/ver_lib
+        file_name: CSA8S_A3_NEGE.v
+        clean: false
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
@@ -228,11 +216,13 @@ modules:
     DG_BUF20_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF20_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF2_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF4_1X1.v
@@ -240,11 +230,13 @@ modules:
     DG_BUF6_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF6_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_BUF8_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DER1_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER1_3X2.v
@@ -254,36 +246,32 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DER_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DES_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DEX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DFFCP_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DFFCP_3X2.v
@@ -308,44 +296,37 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: DG_DIFF_BFRE.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_DLUSR_7X2.v
@@ -360,12 +341,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DLUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DMMY:
         directory: verilogParse/ver_lib
         file_name: DG_DMMY.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DRC_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DRC_DIFF.v
@@ -379,7 +360,8 @@ modules:
     DG_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_DR_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DR_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X1.v
@@ -389,8 +371,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_DR_DIFF.v
@@ -400,8 +381,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DS_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DS_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_DS_4X2.v
@@ -411,14 +391,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_DUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_DUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_DVD2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_DVD2_2X1.v
@@ -452,8 +430,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXNOR1_3X1.v
@@ -462,8 +439,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_EXOR1_3X1.v
@@ -512,8 +488,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_INV20_1X1.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV2_1X1.v
@@ -526,7 +501,8 @@ modules:
     DG_INV4_1X1:
         directory: verilogParse/ver_lib
         file_name: DG_INV4_1X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_INV6:
         directory: verilogParse/ver_lib
         file_name: DG_INV6.v
@@ -550,26 +526,22 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDEUR_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDEUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDEUS_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDEUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDS_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDS_6X2.v
@@ -579,36 +551,32 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKDUX_8X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKDUX_8X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKER_4X2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKES_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKR_4X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKR_5X2.v
@@ -618,8 +586,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_JKS_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_JKS_5X2.v
@@ -629,8 +596,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_LR6X2_DIFF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_LR_DIFF:
         directory: verilogParse/ver_lib
         file_name: DG_LR_DIFF.v
@@ -670,8 +636,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHSN_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_LTCHS_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_LTCHS_3X1.v
@@ -711,14 +676,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_MX4_3X1.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_MXN2_3X1.v
@@ -727,17 +690,18 @@ modules:
     DG_MX_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_4X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: DG_MX_8X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: DG_NABC_ABD.v
@@ -752,8 +716,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_AC_BC.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: DG_NAB_C2.v
@@ -771,7 +734,8 @@ modules:
     DG_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_3X1.v
@@ -785,7 +749,8 @@ modules:
     DG_NAND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_NAND2_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND2_3X1.v
@@ -828,7 +793,8 @@ modules:
     DG_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR2_2X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: DG_NOR4_4X1.v
@@ -886,7 +852,8 @@ modules:
     DG_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_REG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_RG_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_2X1.v
@@ -895,7 +862,8 @@ modules:
     DG_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_RG_3X1.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_S2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_S2DIFF_1X2.v
@@ -904,25 +872,23 @@ modules:
     DG_SE2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SE2DIFF_1X2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_SNGL2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: DG_SNGL2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_SW_INV:
         directory: verilogParse/ver_lib
         file_name: DG_SW_INV.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_5X2.v
@@ -932,8 +898,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TDUR_6X2:
         directory: verilogParse/ver_lib
         file_name: DG_TDUR_6X2.v
@@ -947,7 +912,8 @@ modules:
     DG_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TER_3X2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TIHI:
         directory: verilogParse/ver_lib
         file_name: DG_TIHI.v
@@ -960,14 +926,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TLDER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: DG_TLDR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TL_FF:
         directory: verilogParse/ver_lib
         file_name: DG_TL_FF.v
@@ -982,8 +946,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_TR_FF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DG_TS_3X2:
         directory: verilogParse/ver_lib
         file_name: DG_TS_3X2.v
@@ -993,8 +956,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: DLUSR_7X2.v
@@ -1014,14 +976,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     EXOR_DIFF:
         directory: verilogParse/ver_lib
         file_name: EXOR_DIFF.v
@@ -1031,18 +991,20 @@ modules:
         directory: verilogParse/ver_lib
         file_name: FADDR_3X2.v
         clean: true
+    FILTER_3E:
+        directory: verilogParse/ver_lib
+        file_name: FILTER_3E.v
+        clean: true
     HADDRA:
         directory: verilogParse/ver_lib
         file_name: HADDRA.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     HADDRB:
         directory: verilogParse/ver_lib
         file_name: HADDRB.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     HADDRC:
         directory: verilogParse/ver_lib
         file_name: HADDRC.v
@@ -1067,8 +1029,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_BFR_ENBL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_BUF_HYST:
         directory: verilogParse/ver_lib
         file_name: KM_BUF_HYST.v
@@ -1098,70 +1059,67 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL12.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CMPL20:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL20.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CNTR4G:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4G.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR8D.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_GEN2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_GEN3:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_GEN3.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_MULT3:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT3.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_MULT4:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT4.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_MUX1:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            input changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_COEFF_MUX2:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CS_MULT1:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_CS_MULT2:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT2.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DCDR:
         directory: verilogParse/ver_lib
         file_name: KM_DCDR.v
@@ -1170,13 +1128,13 @@ modules:
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
         file_name: KM_DEC_2X4.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: KM_DEGLITCH.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DIFF2SNGL:
         directory: verilogParse/ver_lib
         file_name: KM_DIFF2SNGL.v
@@ -1186,14 +1144,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DLY.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: KM_DLY_UP.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DRQ_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_DRQ_DIFF.v
@@ -1203,8 +1159,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DVD16.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_DVD2Q_DIFF:
         directory: dig_lib
         file_name: KM_DVD2Q_DIFF.v
@@ -1213,7 +1168,8 @@ modules:
     KM_DVDR4:
         directory: verilogParse/ver_lib
         file_name: KM_DVDR4.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: KM_EMX_4X1.v
@@ -1223,8 +1179,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_ENBL_BFRB:
         directory: verilogParse/ver_lib
         file_name: KM_ENBL_BFRB.v
@@ -1234,20 +1189,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_INGAT.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MULTX4BTSC:
         directory: verilogParse/ver_lib
         file_name: KM_MULTX4BTSC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXB4_3X1.v
         clean: false
-        stale_reason: 'verilog step: data:~/.xschem/verilogParse/parse_verilog.cfg
-            changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MXDIFF_5X1:
         directory: verilogParse/ver_lib
         file_name: KM_MXDIFF_5X1.v
@@ -1257,22 +1209,22 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X16B.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_16X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1B.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_16X1C:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X1C.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_16X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_16X24.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_1_8X1:
         directory: verilogParse/ver_lib
         file_name: KM_MX_1_8X1.v
@@ -1282,28 +1234,27 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_8X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_8X1B.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_8X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_8X24.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_MX_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_MX_DIFF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: KM_NAB_C2.v
@@ -1323,8 +1274,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_NA_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_NOR2_DIFF:
         directory: verilogParse/ver_lib
         file_name: KM_NOR2_DIFF.v
@@ -1339,8 +1289,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_BFR_GF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: KM_OSC_GF2.v
@@ -1355,14 +1304,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_REGS17.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_REGS18:
         directory: verilogParse/ver_lib
         file_name: KM_REGS18.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_REGS24:
         directory: verilogParse/ver_lib
         file_name: KM_REGS24.v
@@ -1370,15 +1317,18 @@ modules:
     KM_RG20:
         directory: verilogParse/ver_lib
         file_name: KM_RG20.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_RG24:
         directory: verilogParse/ver_lib
         file_name: KM_RG24.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_RGE24:
         directory: verilogParse/ver_lib
         file_name: KM_RGE24.v
-        clean: true
+        clean: false
+        stale_reason: 'verilog step: no fingerprint recorded'
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
@@ -1393,8 +1343,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: M1M_QDACCUM5.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     MLTPLY_FINE2:
         directory: verilogParse/ver_lib
         file_name: MLTPLY_FINE2.v
@@ -1404,8 +1353,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: MTCH4.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     MX3X1_DIFF:
         directory: verilogParse/ver_lib
         file_name: MX3X1_DIFF.v
@@ -1424,8 +1372,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: OUT_SLCT.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     QD_ACCUM5:
         directory: verilogParse/ver_lib
         file_name: QD_ACCUM5.v
@@ -1455,8 +1402,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: RES.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     Sine:
         directory: verilogParse/ver_lib
         file_name: Sine.v
@@ -1481,122 +1427,102 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_AB_AC_BC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AB_ANC_BNC:
         directory: verilogParse/ver_lib
         file_name: TST_AB_ANC_BNC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_ACCUM3:
         directory: verilogParse/ver_lib
         file_name: TST_ACCUM3.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND2_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND2_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND4_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_AND4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_AND4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF16_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF16_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF1_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF1_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF20_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF2_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF4_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF4_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF6_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF6_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_BUF8_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_BUF8_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CLA16:
         directory: verilogParse/ver_lib
         file_name: TST_CLA16.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CLA2:
         directory: verilogParse/ver_lib
         file_name: TST_CLA2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CLA4:
         directory: verilogParse/ver_lib
         file_name: TST_CLA4.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CLA8:
         directory: verilogParse/ver_lib
         file_name: TST_CLA8.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CMPL12:
         directory: verilogParse/ver_lib
         file_name: TST_CMPL12.v
@@ -1606,26 +1532,22 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc and 1 more changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CNTR8G:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8G.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_CNTRM8:
         directory: verilogParse/ver_lib
         file_name: TST_CNTRM8.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_COEFF_GEN:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_GEN.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_COEFF_MLTPLY:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_MLTPLY.v
@@ -1634,80 +1556,67 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DER_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DES_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DES_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DEUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DEUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DEX_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DEX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DIFF_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DIFF_BFRE:
         directory: verilogParse/ver_lib
         file_name: TST_DIFF_BFRE.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLEUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLEUX_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLEUX_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLUR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DLUSR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_DLUSR_7X2.v
@@ -1717,44 +1626,37 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DLUX_7X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DRB_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DR_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DS_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DS_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DUR_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUR_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DUX_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_DUX_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_DVD16:
         directory: verilogParse/ver_lib
         file_name: TST_DVD16.v
@@ -1769,44 +1671,37 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DX_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_D_FF_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_EMX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_EMX_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_EXNOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_EXNOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_EXOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_FADDRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDRB_3X2.v
@@ -1816,290 +1711,246 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_FADDR_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
+    TST_FILTER_3E:
+        directory: verilogParse/ver_lib
+        file_name: TST_FILTER_3E.v
+        clean: true
     TST_HADDRA:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRA.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_HADDRB:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRB.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_HADDRC:
         directory: verilogParse/ver_lib
         file_name: TST_HADDRC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV1:
         directory: verilogParse/ver_lib
         file_name: TST_INV1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV16:
         directory: verilogParse/ver_lib
         file_name: TST_INV16.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV2:
         directory: verilogParse/ver_lib
         file_name: TST_INV2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV20:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV20_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV4_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV4_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV6_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV6_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_INV8_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV8_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDEUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDEUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDEUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDUR_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUR_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKDUS_7X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKDUS_7X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKER_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKER_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKES_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKES_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKR_4X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_JKR_4X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JKS_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JKS_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_JK_FF_R_4X2:
         directory: verilogParse/ver_lib
         file_name: TST_JK_FF_R_4X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_BFR_ENBL:
         directory: verilogParse/ver_lib
         file_name: TST_KM_BFR_ENBL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DEGLITCH.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_DLY:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY_UP.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_HADDRC:
         directory: verilogParse/ver_lib
         file_name: TST_KM_HADDRC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_MXB4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_KM_MXB4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_KM_NA_BC_BD:
         directory: verilogParse/ver_lib
         file_name: TST_KM_NA_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHR_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHR_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHR_BU_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHR_BU_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHSN_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHSN_5X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_5X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHSN_6X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSN_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHSR_6X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHSR_6X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCHS_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCHS_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_LTCH_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_LTCH_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MXN1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MXN1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MXN2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_MXN2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX_16X16B:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
@@ -2114,140 +1965,117 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_8X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: TST_NABC_ABD.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAB_AC:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_AC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAB_AC_BC:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_AC_BC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAB_C:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_C.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAB_C2:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_C2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAB_CDA_CDB:
         directory: verilogParse/ver_lib
         file_name: TST_NAB_CDA_CDB.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAC_AD_BC_BD:
         directory: verilogParse/ver_lib
         file_name: TST_NAC_AD_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAND1_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND1_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAND2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NAND2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NAND2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NA_BC:
         directory: verilogParse/ver_lib
         file_name: TST_NA_BC.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NA_BCD:
         directory: verilogParse/ver_lib
         file_name: TST_NA_BCD.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NOR1_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NOR1_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR1_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NOR2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_NOR4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_NOR4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OR2_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OR2_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OR2_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_4X1.v
@@ -2257,20 +2085,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_2X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OR4_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OR4_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_OSC_GF2:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
@@ -2280,134 +2105,112 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OUT_SLCT.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_PRPA:
         directory: verilogParse/ver_lib
         file_name: TST_PRPA.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_PRPB:
         directory: verilogParse/ver_lib
         file_name: TST_PRPB.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_PRPF:
         directory: verilogParse/ver_lib
         file_name: TST_PRPF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_REG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_REG_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_RG_3X1:
         directory: verilogParse/ver_lib
         file_name: TST_RG_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_S2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFFB_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_S2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_S2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_SE2DIFFB_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SE2DIFFB_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_SE2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SE2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_SNGL2DIFF_1X2:
         directory: verilogParse/ver_lib
         file_name: TST_SNGL2DIFF_1X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_SW_INV:
         directory: verilogParse/ver_lib
         file_name: TST_SW_INV.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TDER_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_IN_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TDR_IN_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDR_IN_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TER_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TLDER_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TLDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDER_6X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TLDR_5X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_5X2.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_TLDR_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_6X2.v
@@ -2417,8 +2220,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TR_FF.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     VOTER:
         directory: verilogParse/ver_lib
         file_name: VOTER.v
@@ -2788,8 +2590,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: dg_mx_4x1.v
         clean: false
-        stale_reason: 'verilog step: code, data:~/.xschem/verilogParse/parse_verilog.cfg,
-            include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: no fingerprint recorded'
     dg_mxn1_3x1:
         directory: verilogParse/ver_lib
         file_name: dg_mxn1_3x1.v
