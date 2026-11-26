@@ -1,4 +1,4 @@
-generated: '2026-11-25T22:59:43+00:00'
+generated: '2026-11-26T01:27:33+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/lib/std28_lib
@@ -116,7 +116,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     CNTR8G:
         directory: verilogParse/ver_lib
         file_name: CNTR8G.v
@@ -685,7 +685,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_MX_8X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     DG_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: DG_NABC_ABD.v
@@ -717,8 +717,7 @@ modules:
     DG_NAND1_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_2X1.v
-        clean: false
-        stale_reason: 'verilog step: code changed'
+        clean: true
     DG_NAND1_3X1:
         directory: verilogParse/ver_lib
         file_name: DG_NAND1_3X1.v
@@ -794,7 +793,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: DG_OR2_4X1.v
         clean: false
-        stale_reason: 'missing: circuit_lib'
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     DG_OR4_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_OR4_2X1.v
@@ -953,7 +952,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: D_FF_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, unl'
     ENBL_BFRC:
         directory: verilogParse/ver_lib
         file_name: ENBL_BFRC.v
@@ -1022,12 +1021,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_CLK_DVD2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     KM_CLK_GT:
         directory: verilogParse/ver_lib
         file_name: KM_CLK_GT.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     KM_CMPL12:
         directory: verilogParse/ver_lib
         file_name: KM_CMPL12.v
@@ -1091,7 +1090,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_DCDR.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     KM_DEC_2X4:
         directory: verilogParse/ver_lib
         file_name: KM_DEC_2X4.v
@@ -1196,12 +1195,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: KM_MX_2X25.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_4X24:
         directory: verilogParse/ver_lib
         file_name: KM_MX_4X24.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     KM_MX_8X1B:
         directory: verilogParse/ver_lib
         file_name: KM_MX_8X1B.v
@@ -1384,12 +1383,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_AB_AC_BC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_AB_ANC_BNC:
         directory: verilogParse/ver_lib
         file_name: TST_AB_ANC_BNC.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_ACCUM3:
         directory: verilogParse/ver_lib
         file_name: TST_ACCUM3.v
@@ -1489,7 +1488,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc, input changed'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     TST_CNTR8G:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8G.v
@@ -1583,7 +1582,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DLUX_7X2_CAL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc, input changed'
     TST_DRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_DRB_3X2.v
@@ -1618,7 +1617,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_DVD16.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     TST_DVDR4:
         directory: verilogParse/ver_lib
         file_name: TST_DVDR4.v
@@ -1648,7 +1647,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_EXNOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_EXOR1_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_2X1.v
@@ -1658,7 +1657,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_EXOR1_3X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_FADDRB_3X2:
         directory: verilogParse/ver_lib
         file_name: TST_FADDRB_3X2.v
@@ -1703,12 +1702,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_INV20.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_INV20_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV20_1X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_INV2_1X1:
         directory: verilogParse/ver_lib
         file_name: TST_INV2_1X1.v
@@ -1788,27 +1787,27 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_KM_BFR_ENBL.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DEGLITCH.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DLY:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_DLY_UP:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DLY_UP.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_ENBL_BFR:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_KM_ENBL_BFR2A:
         directory: verilogParse/ver_lib
         file_name: TST_KM_ENBL_BFR2A.v
@@ -1828,7 +1827,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_KM_NA_BC_BD.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
@@ -1908,17 +1907,17 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_MX_16X16B.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: no fingerprint recorded'
     TST_MX_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_4X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc, input changed'
     TST_MX_8X1:
         directory: verilogParse/ver_lib
         file_name: TST_MX_8X1.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_NABC_ABD:
         directory: verilogParse/ver_lib
         file_name: TST_NABC_ABD.v
@@ -2028,7 +2027,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OR2_4X1.v
         clean: false
-        stale_reason: 'missing: circuit_lib'
+        stale_reason: 'missing: ast, mod, circuit_lib, unl'
     TST_OR4_2X1:
         directory: verilogParse/ver_lib
         file_name: TST_OR4_2X1.v
@@ -2048,12 +2047,12 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_OSC_GF2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'missing: unl'
     TST_OUT_SLCT:
         directory: verilogParse/ver_lib
         file_name: TST_OUT_SLCT.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_PRGT4:
         directory: verilogParse/ver_lib
         file_name: TST_PRGT4.v
@@ -2113,7 +2112,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_SW_INV.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_TDER_6X2:
         directory: verilogParse/ver_lib
         file_name: TST_TDER_6X2.v
@@ -2138,7 +2137,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2.v
         clean: false
-        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
+        stale_reason: 'missing: ast, mod, unl'
     TST_TER_3X2_CAL:
         directory: verilogParse/ver_lib
         file_name: TST_TER_3X2_CAL.v
@@ -2163,7 +2162,7 @@ modules:
         directory: verilogParse/ver_lib
         file_name: TST_TLDR_6X2.v
         clean: false
-        stale_reason: 'missing: ast, mod, unl'
+        stale_reason: 'verilog step: code, include:TECH_DIG.inc changed'
     TST_TR_FF:
         directory: verilogParse/ver_lib
         file_name: TST_TR_FF.v
