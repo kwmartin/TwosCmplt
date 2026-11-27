@@ -1,0 +1,1096 @@
+kind: verilog
+module: TST_CMPLX_FLTR3C
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INITK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: RCOEF
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: QCOEF
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: XR
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: XQ
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: RG0
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 17
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: X3R
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: X3Q
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: CSCR
+    direct: 'Output:'
+    signed: 'False'
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+  -   - kind: Wire
+        name: X0Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: CLKB
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: X2Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: P0R
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: D_X3R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_RL
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_X2Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: X2R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: X0R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_X3Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_X1Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_X1R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: ADDR0R_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: RLN_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: D_X0Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: X1Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: RL_
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: C0R
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: CSCRN
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: D_X2R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: X1R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: G0R
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: D_X0R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_DAT_RL_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+behav_blcks:
+  - kind: async
+    name: BUF_0
+    module: DG_BUF20_1X1
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: ident
+            name: CLKB
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: FLTR
+    module: CMPLX_FLTR3G
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: XR
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: XQ
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: RCOEF
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: QCOEF
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: INITK
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CLKB
+      - port: None
+        node:
+            kind: slice
+            name: X0R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X0Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X1R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X1Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X2R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X2Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X3R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: X3Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: ADDR0R
+    module: CLA18
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: RG0
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: C0R
+      - port: None
+        node:
+            kind: ident
+            name: G0R
+      - port: None
+        node:
+            kind: ident
+            name: P0R
+      - port: None
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: REG0R
+    module: KM_REGS18
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: CLKB
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: slice
+            name: ADDR0R_
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: RLN_
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: RL_
+            sgmnts:
+              - kind: int
+                value: 17
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: subcirc
+    name: SCRMBL
+    module: KM_SCRMBLR
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: C0R
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CLKB
+      - port: None
+        node:
+            kind: ident
+            name: CSCR
+      - port: None
+        node:
+            kind: ident
+            name: CSCRN
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: instance
+    name: DAT_X0R
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X0R.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X0R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X0R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X0Q
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X0Q.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X0Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X0Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X1R
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X1R.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X1R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X1R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X1Q
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X1Q.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X1Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X1Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X2R
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X2R.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X2R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X2R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X2Q
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X2Q.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X2Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X2Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X3R
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X3R.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X3R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X3R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_X3Q
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_X3Q.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: slice
+            name: X3Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_X3Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: instance
+    name: DAT_RL
+    module: OUT_BUS20
+    params:
+      - kind: str
+        value: TST_CMPLX_FLTR3C_RL.dat
+        name: FILENAME
+    ports:
+      - port: BS
+        node:
+            kind: ident
+            name: __concat_DAT_RL_0
+      - port: DATA
+        node:
+            kind: slice
+            name: D_RL
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: CLK
+        node:
+            kind: ident
+            name: CLKB
+      - port: VDD
+        node:
+            kind: ident
+            name: VDD
+      - port: VSS
+        node:
+            kind: ident
+            name: VSS
+  - kind: async
+    name: TILO_Z
+    module: DG_TILO
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_DAT_RL_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 17
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 16
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 15
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 14
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 13
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 12
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 11
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 10
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 9
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 8
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 7
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 6
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 5
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 4
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 3
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 2
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 1
+          - kind: bit
+            name: RL_
+            sgmnts:
+              - 0
+    delay: 0

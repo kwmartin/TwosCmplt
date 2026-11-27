@@ -1,0 +1,451 @@
+kind: verilog
+module: TST_CSA16_A3
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: A
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: B
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: C
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 15
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: DATA_0
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_1
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+  -   - kind: Wire
+        name: CRY
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 16
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: SUM
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 16
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_0_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+behav_blcks:
+  - kind: async
+    name: DUT
+    module: CSA16_A3
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: A
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: B
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: C
+            sgmnts:
+              - kind: int
+                value: 15
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: SUM
+            sgmnts:
+              - kind: int
+                value: 16
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: CRY
+            sgmnts:
+              - kind: int
+                value: 16
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: TILO_Z
+    module: DG_TILO
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_0
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CSA16_A3_0.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_0_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_0
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_1
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CSA16_A3_1.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_1_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_1
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_0_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 16
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 15
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 14
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 13
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 12
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 11
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 10
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 9
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 8
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 7
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 6
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 5
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 4
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 3
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 2
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 1
+          - kind: bit
+            name: SUM
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_1_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 16
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 15
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 14
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 13
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 12
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 11
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 10
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 9
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 8
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 7
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 6
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 5
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 4
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 3
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 2
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 1
+          - kind: bit
+            name: CRY
+            sgmnts:
+              - 0
+    delay: 0

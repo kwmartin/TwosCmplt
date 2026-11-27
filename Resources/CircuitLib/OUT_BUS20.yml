@@ -1,0 +1,198 @@
+kind: verilog
+module: OUT_BUS20
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: str
+    name: FILENAME
+    value: OUT_BUS20.dat
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: BS
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Reg
+    name: DATA
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 19
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Integer
+        name: pout_file
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Integer
+        name: dat_file
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: nmb_read
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Integer
+        name: cnt
+        signed: integer
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+-   -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+    -   kind: Real
+        name: real
+        signed: real
+        width:
+        -   kind: int
+            value: 31
+        -   kind: int
+            value: 0
+behav_blcks:
+-   kind: initial
+    stmnts:
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: int
+            value: 20'hF0F0F
+    -   kind: blckst
+        lvalue:
+            kind: ident
+            name: pout_file
+        rvalue:
+            kind: int
+            value: 0
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_unary
+            arg:
+                kind: uexpr
+                oper: 'Ulnot:'
+                args:
+                -   kind: ident
+                    name: pout_file
+        iftrue:
+        -   kind: blckst
+            lvalue:
+                kind: ident
+                name: pout_file
+            rvalue:
+                kind: syscall
+                name: fopen
+                value:
+                -   kind: ident
+                    name: FILENAME
+                -   kind: str
+                    value: w
+    -   kind: ifst
+        cmpr_expr:
+            kind: cmpr_expr
+            oper: 'BEq:'
+            args:
+            -   kind: ident
+                name: pout_file
+            -   kind: int
+                value: 0
+        iftrue:
+        -   kind: syscall
+            name: display
+            value:
+            -   kind: str
+                value: File could not be opened
+        -   kind: disable
+            name: file_block
+-   kind: always
+    onlyif:
+    -   edge: negedge
+        node: CLK
+    stmnts:
+    -   kind: noblckst
+        lvalue:
+            kind: ident
+            name: DATA
+        rvalue:
+            kind: ident
+            name: BS
+    -   kind: syscall
+        name: display
+        value:
+        -   kind: str
+            value: 'BUS20: 0x%6h'
+        -   kind: ident
+            name: BS
+    -   kind: syscall
+        name: fdisplay
+        value:
+        -   kind: ident
+            name: pout_file
+        -   kind: str
+            value: '%6x'
+        -   kind: ident
+            name: BS
+    -   kind: syscall
+        name: fflush
+        value:
+        -   kind: ident
+            name: pout_file
+

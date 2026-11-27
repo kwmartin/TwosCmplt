@@ -1,4 +1,4 @@
-generated: '2026-11-27T08:01:01+00:00'
+generated: '2026-11-27T21:35:22+00:00'
 modules:
     AB_AC_BC:
         directory: verilogParse/ver_lib
@@ -72,6 +72,10 @@ modules:
         directory: verilogParse/ver_lib
         file_name: CLA2.v
         clean: true
+    CLA20:
+        directory: verilogParse/ver_lib
+        file_name: CLA20.v
+        clean: true
     CLA24:
         directory: verilogParse/ver_lib
         file_name: CLA24.v
@@ -114,6 +118,30 @@ modules:
         file_name: CMPL.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    CMPLX_FLTR3D:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_FLTR3D.v
+        clean: true
+    CMPLX_FLTR3E:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_FLTR3E.v
+        clean: true
+    CMPLX_FLTR3F:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_FLTR3F.v
+        clean: true
+    CMPLX_FLTR3G:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_FLTR3G.v
+        clean: true
+    CMPLX_REG2:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_REG2.v
+        clean: true
+    CMPLX_REG2A:
+        directory: verilogParse/ver_lib
+        file_name: CMPLX_REG2A.v
+        clean: true
     CMPL_A4_INVIN:
         directory: verilogParse/ver_lib
         file_name: CMPL_A4_INVIN.v
@@ -134,6 +162,18 @@ modules:
         file_name: CNTRM8.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    CSA16_A3:
+        directory: verilogParse/ver_lib
+        file_name: CSA16_A3.v
+        clean: true
+    CSA20_A2S1:
+        directory: verilogParse/ver_lib
+        file_name: CSA20_A2S1.v
+        clean: true
+    CSA20_A3:
+        directory: verilogParse/ver_lib
+        file_name: CSA20_A3.v
+        clean: true
     CSA24_A2P2E:
         directory: verilogParse/ver_lib
         file_name: CSA24_A2P2E.v
@@ -174,6 +214,18 @@ modules:
         file_name: CSA8S_A3_NEGE.v
         clean: false
         stale_reason: 'missing: ast, mod, circuit_lib, unl'
+    CX_CSA2M2:
+        directory: verilogParse/ver_lib
+        file_name: CX_CSA2M2.v
+        clean: true
+    CX_CSA2MC2:
+        directory: verilogParse/ver_lib
+        file_name: CX_CSA2MC2.v
+        clean: true
+    CX_CSADD2:
+        directory: verilogParse/ver_lib
+        file_name: CX_CSADD2.v
+        clean: true
     DG_AND2_2X1:
         directory: verilogParse/ver_lib
         file_name: DG_AND2_2X1.v
@@ -1075,6 +1127,10 @@ modules:
         file_name: KM_CMPL20.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_CMPLX_MULT4:
+        directory: verilogParse/ver_lib
+        file_name: KM_CMPLX_MULT4.v
+        clean: true
     KM_CNTR4E:
         directory: verilogParse/ver_lib
         file_name: KM_CNTR4E.v
@@ -1100,6 +1156,14 @@ modules:
         file_name: KM_COEFF_GEN3.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_COEFF_GEN5:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_GEN5.v
+        clean: true
+    KM_COEFF_GEN6:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_GEN6.v
+        clean: true
     KM_COEFF_MULT3:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MULT3.v
@@ -1110,6 +1174,10 @@ modules:
         file_name: KM_COEFF_MULT4.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_COEFF_MULT5:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_MULT5.v
+        clean: true
     KM_COEFF_MUX1:
         directory: verilogParse/ver_lib
         file_name: KM_COEFF_MUX1.v
@@ -1120,6 +1188,10 @@ modules:
         file_name: KM_COEFF_MUX2.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_COEFF_MUX3:
+        directory: verilogParse/ver_lib
+        file_name: KM_COEFF_MUX3.v
+        clean: true
     KM_CS_MULT1:
         directory: verilogParse/ver_lib
         file_name: KM_CS_MULT1.v
@@ -1130,6 +1202,11 @@ modules:
         file_name: KM_CS_MULT2.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_CS_MULT3:
+        directory: verilogParse/ver_lib
+        file_name: KM_CS_MULT3.v
+        clean: false
+        stale_reason: 'ast step: pins:CSA20_A3 changed'
     KM_DCDR:
         directory: verilogParse/ver_lib
         file_name: KM_DCDR.v
@@ -1318,8 +1395,11 @@ modules:
     KM_REGS18:
         directory: verilogParse/ver_lib
         file_name: KM_REGS18.v
-        clean: false
-        stale_reason: 'verilog step: no fingerprint recorded'
+        clean: true
+    KM_REGS20:
+        directory: verilogParse/ver_lib
+        file_name: KM_REGS20.v
+        clean: true
     KM_REGS24:
         directory: verilogParse/ver_lib
         file_name: KM_REGS24.v
@@ -1340,6 +1420,10 @@ modules:
         file_name: KM_RGE24.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    KM_SCRMBLR:
+        directory: verilogParse/ver_lib
+        file_name: KM_SCRMBLR.v
+        clean: true
     KM_SLTCH:
         directory: verilogParse/ver_lib
         file_name: KM_SLTCH.v
@@ -1375,6 +1459,11 @@ modules:
         file_name: NMOSCAP_18.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    OUT_BUS20:
+        directory: verilogParse/lib/std28_lib
+        file_name: OUT_BUS20.v
+        clean: false
+        stale_reason: 'missing: unl'
     OUT_BUS24:
         directory: verilogParse/lib/std28_lib
         file_name: OUT_BUS24.v
@@ -1540,6 +1629,38 @@ modules:
         file_name: TST_CMPL12.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    TST_CMPLX_FLTR3C:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_FLTR3C.v
+        clean: true
+    TST_CMPLX_FLTR3D:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_FLTR3D.v
+        clean: true
+    TST_CMPLX_FLTR3E:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_FLTR3E.v
+        clean: true
+    TST_CMPLX_FLTR3F:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_FLTR3F.v
+        clean: true
+    TST_CMPLX_FLTR3G:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_FLTR3G.v
+        clean: true
+    TST_CMPLX_MLTPLY2:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_MLTPLY2.v
+        clean: true
+    TST_CMPLX_REG2:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_REG2.v
+        clean: true
+    TST_CMPLX_REG2A:
+        directory: verilogParse/ver_lib
+        file_name: TST_CMPLX_REG2A.v
+        clean: true
     TST_CNTR8D:
         directory: verilogParse/ver_lib
         file_name: TST_CNTR8D.v
@@ -1563,6 +1684,26 @@ modules:
     TST_COEFF_MLTPLY:
         directory: verilogParse/ver_lib
         file_name: TST_COEFF_MLTPLY.v
+        clean: true
+    TST_COEFF_MLTPLY2:
+        directory: verilogParse/ver_lib
+        file_name: TST_COEFF_MLTPLY2.v
+        clean: true
+    TST_CSA16_A3:
+        directory: verilogParse/ver_lib
+        file_name: TST_CSA16_A3.v
+        clean: true
+    TST_CX_CSA2M2:
+        directory: verilogParse/ver_lib
+        file_name: TST_CX_CSA2M2.v
+        clean: true
+    TST_CX_CSA2MC2:
+        directory: verilogParse/ver_lib
+        file_name: TST_CX_CSA2MC2.v
+        clean: true
+    TST_CX_CSADD2:
+        directory: verilogParse/ver_lib
+        file_name: TST_CX_CSADD2.v
         clean: true
     TST_DER_3X2:
         directory: verilogParse/ver_lib
@@ -1852,6 +1993,34 @@ modules:
         file_name: TST_KM_BFR_ENBL.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    TST_KM_CMPLX_MULT4:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_CMPLX_MULT4.v
+        clean: true
+    TST_KM_COEFF_GEN3:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_COEFF_GEN3.v
+        clean: true
+    TST_KM_COEFF_GEN5:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_COEFF_GEN5.v
+        clean: true
+    TST_KM_COEFF_GEN6:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_COEFF_GEN6.v
+        clean: true
+    TST_KM_COEFF_MULT5:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_COEFF_MULT5.v
+        clean: true
+    TST_KM_COEFF_MUX3:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_COEFF_MUX3.v
+        clean: true
+    TST_KM_CS_MULT3:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_CS_MULT3.v
+        clean: true
     TST_KM_DEGLITCH:
         directory: verilogParse/ver_lib
         file_name: TST_KM_DEGLITCH.v
@@ -1892,6 +2061,18 @@ modules:
         file_name: TST_KM_NA_BC_BD.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
+    TST_KM_REGS18:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_REGS18.v
+        clean: true
+    TST_KM_REGS20:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_REGS20.v
+        clean: true
+    TST_KM_SCRMBLR:
+        directory: verilogParse/ver_lib
+        file_name: TST_KM_SCRMBLR.v
+        clean: true
     TST_LATCH_S_4X1:
         directory: verilogParse/ver_lib
         file_name: TST_LATCH_S_4X1.v
@@ -2244,7 +2425,7 @@ modules:
         stale_reason: 'verilog step: no fingerprint recorded'
     cntrl:
         directory: verilogParse/lib/std28_lib
-        file_name: OUT_BUS24.v
+        file_name: OUT_BUS20.v
         clean: false
         stale_reason: 'verilog step: no fingerprint recorded'
     coeffPre:
@@ -2746,3 +2927,4 @@ duplicates:
   - DG_BSMX8
   - KM_DVD2Q_DIFF
   - QD_DDFS5
+  - cntrl

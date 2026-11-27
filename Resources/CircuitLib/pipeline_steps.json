@@ -269,6 +269,63 @@
    }
   }
  },
+ "CLA20": {
+  "ast": {
+   "out": {
+    "mod": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "e0a7529e1d3ce9fef3513ecfae3d47320f2cf02ca6cfc36af2845652767e471e",
+    "pins:AND2_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:DG_AND2_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_INV2_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_NAB_C2": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:INV2_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:NAB_C2": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "0ed7b6941ca639ce4cc3f107f1fb64c8ab38d71bff4d9c97969f65101851bad9",
+    "unl": "e4c973847afff3c5e97085de7f687d2422da9c1a5dd5994c63573014e27de745"
+   },
+   "parts": {
+    "cell:CLA16": "6b0922d66e28337e008836bbb7d7363f3f51338d4fb908ac6947e1932cf12cc3",
+    "cell:CLA4": "b7490050eaa01fee0d70ca02d4ae6ac2c5574869ff2dfbe289bda8c07df9619b",
+    "cell:DG_AND2_2X1": "88c92ba00fc89b87c6236880438ee92b95e2a3b45d4c37bfe52fdeab7a69eadd",
+    "cell:DG_INV2_1X1": "7971ce989c52b1e01392475439669bc29e7d0739e23ccde419a15a3baaf8f5c8",
+    "cell:DG_NAB_C2": "40f862344614257520acfaf75c4762dd46fbfd9f25a327dcea87022e0a551e86",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "pins:AND2_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:DG_AND2_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_INV2_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_NAB_C2": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:INV2_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:NAB_C2": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "e0a7529e1d3ce9fef3513ecfae3d47320f2cf02ca6cfc36af2845652767e471e",
+    "ast_yml": "c1ce6784309455a3bdc146d69626d5fda0bda00880809deb661a2be20ff88ae5"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "e7138eee258597443d35229bfb7cd2988d99402cd8babb7734afba318bae3106"
+   }
+  }
+ },
  "CLA24": {
   "ast": {
    "out": {
@@ -434,6 +491,477 @@
    }
   }
  },
+ "CMPLX_FLTR3D": {
+  "ast": {
+   "out": {
+    "mod": "62993774497876481760d8c1f411704f7a447ce0f0f29bfd6904ebfb7bb26570"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "46bec5656f1447f062171545db4e491656c9fb2f26399b133aee527c44a5f776",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "bf4e2c782befaa604e9407e618b4843c53db9f928e753f96ef192a4fb9cf1168",
+    "unl": "795f696a2d6a30b9ec05dfe17ff8fc35eeb008c93fc676cb95b88883c7f07eeb"
+   },
+   "parts": {
+    "cell:CMPLX_REG2": "6b45ef4a8607167eceb2e7c4f20ca7bcaeb00bc15a5c10d30a2f3d2502f01fb0",
+    "cell:CX_CSA2M2": "e4b39a90cae03d213c104b473dc263f05f3d71e7497255e99c4751bd2a1271b9",
+    "cell:CX_CSA2MC2": "514fdbd0134a7e2d359ca3c1272c9631ad9869711ea40e0b003f7ae8bbf5fbfe",
+    "cell:CX_CSADD2": "8ff0c5fd22933e0956ed0e0388e4005cf11f1fd0d7dcf8263cbf1b73fda0f6e8",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "62993774497876481760d8c1f411704f7a447ce0f0f29bfd6904ebfb7bb26570",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "46bec5656f1447f062171545db4e491656c9fb2f26399b133aee527c44a5f776",
+    "ast_yml": "45e9933b3a96873ca35eed6c42671ba137ed46e70191ecfc75cc5895116db0a2"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "6d2c2443b43f0d831bb0f938c3050efbc6a7be74d90d30481cbd87c415d813e1"
+   }
+  }
+ },
+ "CMPLX_FLTR3E": {
+  "ast": {
+   "out": {
+    "mod": "816364db76abde9c9fe4f3fe4b3d7dace2fd74e36d6561edfc074a792fe3197c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "8bb9444c4e7620cb60a4e224f6eafdb18fbecc98e3d3f5a7efe57b6303b162cb",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3E": "671c8d446f480a3ad5e2ead303b5ab7d93be2dc4e50cb0243f4c1e3b0b2ed5df",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "82669170b8c6ad38f17d96d738e5d3e01d43ae439d2d106142320696705bfa85",
+    "unl": "fa7d19faa2c94508d8fc1aa0de261565c1799a6f39a3f77a503c95c50953b5f6"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3D": "62993774497876481760d8c1f411704f7a447ce0f0f29bfd6904ebfb7bb26570",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:KM_COEFF_GEN5": "7b37959e14cba1687f5ec5a4c95054dae490395b1c7a6a7a3fb2ece92ddcc504",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "816364db76abde9c9fe4f3fe4b3d7dace2fd74e36d6561edfc074a792fe3197c",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3E": "671c8d446f480a3ad5e2ead303b5ab7d93be2dc4e50cb0243f4c1e3b0b2ed5df",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "8bb9444c4e7620cb60a4e224f6eafdb18fbecc98e3d3f5a7efe57b6303b162cb",
+    "ast_yml": "80e96f58a65d5c7bdd80dde788cfbc11e607e770021995c44e8b66d96050d591"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "662853ddf21ed173eabc7b275ddfc62ff24e44f5e3eba8489f3dd5f3ea09eb27"
+   }
+  }
+ },
+ "CMPLX_FLTR3F": {
+  "ast": {
+   "out": {
+    "mod": "18fd92d643baafb257b0b131e1daee89dfde656ce3117b18c2d4fdacb0f61b7a"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "e076fd62aed99490d74dceb092485c5e98c02935b36957f0e75a43776787edbd",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "a566d9da1b605626138c4aa00af887b8cd98ca8c4cb51386ba069f6d16c11aa6",
+    "unl": "1d70df4418466ed234b6363a440c3eae843a57eb37dfe01b24d9409ccc9e6588"
+   },
+   "parts": {
+    "cell:CMPLX_REG2": "6b45ef4a8607167eceb2e7c4f20ca7bcaeb00bc15a5c10d30a2f3d2502f01fb0",
+    "cell:CX_CSA2M2": "e4b39a90cae03d213c104b473dc263f05f3d71e7497255e99c4751bd2a1271b9",
+    "cell:CX_CSA2MC2": "514fdbd0134a7e2d359ca3c1272c9631ad9869711ea40e0b003f7ae8bbf5fbfe",
+    "cell:CX_CSADD2": "8ff0c5fd22933e0956ed0e0388e4005cf11f1fd0d7dcf8263cbf1b73fda0f6e8",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "18fd92d643baafb257b0b131e1daee89dfde656ce3117b18c2d4fdacb0f61b7a",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "e076fd62aed99490d74dceb092485c5e98c02935b36957f0e75a43776787edbd",
+    "ast_yml": "d453b513e2178dfe8764bcf1964c00e13a9d20aaa5243ff9430c5d5c267b14a6"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "ca028304a238d7be37bb4bbf94b8fe6259e5ebd9841882423a55465549c7ac59"
+   }
+  }
+ },
+ "CMPLX_FLTR3G": {
+  "ast": {
+   "out": {
+    "mod": "7f1b726084bae9b8d46c670aca6e7d6f62f9f83206d5782ce6d8f7fa0a0307c4"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "1a1781f8aeeebeb6bd9bae1184a22991d043141b4a5d7e0713e7048d66252cbe",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "acb7a6955a5ebcf148337193f3197b3a13fa3b2dc1edecab9d65692d4350808a",
+    "unl": "fe3aaedbef5bafb43b125a5973aefa708837e17704712dae3587c6a639148bfc"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3F": "18fd92d643baafb257b0b131e1daee89dfde656ce3117b18c2d4fdacb0f61b7a",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:KM_COEFF_GEN6": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "7f1b726084bae9b8d46c670aca6e7d6f62f9f83206d5782ce6d8f7fa0a0307c4",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "1a1781f8aeeebeb6bd9bae1184a22991d043141b4a5d7e0713e7048d66252cbe",
+    "ast_yml": "8ee9f1fcd8616410882fb4e22174afc3ddee83d6bf145f601c072d432127fc43"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "21837c29ec7a25608bf4aaeadb56ac3f695bb63e9e52d555b5e550fdf1e02fa0"
+   }
+  }
+ },
+ "CMPLX_REG2": {
+  "ast": {
+   "out": {
+    "mod": "6b45ef4a8607167eceb2e7c4f20ca7bcaeb00bc15a5c10d30a2f3d2502f01fb0"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "3ef5b29e078c1480239f92814b57997575f747ab0b2b1c2eefc024a799fbb614",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "e98bd4513faccf2c0e9360e9d14d5314d5f7c31f8754ec71498e20f875c5bf20",
+    "unl": "fcd588f4fbcd8a9d5ed7ad2ad88872cfdc7dc0e6e006b739e3c5256097bddc9f"
+   },
+   "parts": {
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CMPLX_MULT4": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a",
+    "cell:KM_REGS20": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "6b45ef4a8607167eceb2e7c4f20ca7bcaeb00bc15a5c10d30a2f3d2502f01fb0",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "3ef5b29e078c1480239f92814b57997575f747ab0b2b1c2eefc024a799fbb614",
+    "ast_yml": "d9ac823f0f6e8a0b3b64d5dfcfa8a7486053aff5a745809c24bcd7d43724fc94"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "47921c7559d7d6137cea1d33bc316c7b7cfb6cbfad2f80c660cdca79e1b5bb46"
+   }
+  }
+ },
+ "CMPLX_REG2A": {
+  "ast": {
+   "out": {
+    "mod": "b2534dc678f42df2fb3b7dad5767f938d9a9b811905a07e850b2dc67c4559b98"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "02e25a6bcd0723bea11bdacdd80d847708c08d19940a84cb2450b0dc85639ee7",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_REG2A": "e4d9c992173fe950e1f483afa28fb1ebcd7f9b1765fc9bfcaff4e3d6fd0929aa",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "b99c6602e74a5ad3a693dba3dec91f78a4a51933d4ba280073f2e467f4abd11e",
+    "unl": "db78f36c20a35ad0db76094fdcee476fd3a7e7eaf39d0ded04bb54eb0be36854"
+   },
+   "parts": {
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CMPLX_MULT4": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a",
+    "cell:KM_REGS20": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "b2534dc678f42df2fb3b7dad5767f938d9a9b811905a07e850b2dc67c4559b98",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CMPLX_REG2A": "e4d9c992173fe950e1f483afa28fb1ebcd7f9b1765fc9bfcaff4e3d6fd0929aa",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "02e25a6bcd0723bea11bdacdd80d847708c08d19940a84cb2450b0dc85639ee7",
+    "ast_yml": "f74404a975aee85420153377cc04f32c8cf6ba4c0c39cddb8f7ca7c72f98dd93"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "b0eafc87f79dc81fc0e869322aed7db7680e9bb1ebb1607a229990aad82767ca"
+   }
+  }
+ },
+ "CSA16_A3": {
+  "ast": {
+   "out": {
+    "mod": "f89a92a7b37ac9f908e9e85724d430cf1a41ab37c3104c8c26d13fd1260e870d"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "f265b4cd41e5c04f7dd3843c334599795ecc3c23893e1f05e8b0cfe59e6c4fb0",
+    "pins:AB_AC_BC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "c071f2ba5fdd60921e6a5b1a939f38f235b6a1f1fb1dd9ab63011d42c61d6903",
+    "unl": "bb25744c9b04c37a77ea020622478d648303e452066768cd961070a1679fdf45"
+   },
+   "parts": {
+    "cell:AB_AC_BC": "eb39cc1ab1424596b3bb3e9f20d25698e034bd4c60d4d6ee12550cc4dc024a72",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
+    "cell:DG_EXOR1_3X1": "9548df1c9969fe0688e98958498bb47368f0c32e23faf3ecf180be9758a45536",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "f89a92a7b37ac9f908e9e85724d430cf1a41ab37c3104c8c26d13fd1260e870d",
+    "pins:AB_AC_BC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "f265b4cd41e5c04f7dd3843c334599795ecc3c23893e1f05e8b0cfe59e6c4fb0",
+    "ast_yml": "bac2e1d03a3075ebddd441129eab2cea481fabc9428899d099b681af50bfc1ba"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "fee60de66f61b8a270758cb55391a808f1103173f06ddeb560e352fdf2671226"
+   }
+  }
+ },
+ "CSA20_A2S1": {
+  "ast": {
+   "out": {
+    "mod": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "ae7a84eeffa0d1a877c64ca1024129e56ee159d5bc8e48f0bd23e2b2dc15cb73",
+    "pins:AB_ANC_BNC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXNOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXNOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "d4e39884a3ae90721c1812ba16a5f62f5b3f8879e459b41f4cf5ebf1d9caf075",
+    "unl": "83c91d126d5b4c4c5351890b2ed763c8be66044f216d39a9ee89af9918c2f22e"
+   },
+   "parts": {
+    "cell:AB_ANC_BNC": "c09cc3974f4e8b8712d09f1d65de62b2964680a987f7f61dee9f06f51e4f9162",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
+    "cell:DG_EXNOR1_3X1": "68afb5eb925e6160c3c47c2e790145d68f9ff84da61d807df2f12188339c80ec",
+    "cell:DG_TIHI": "74ac8e3426e52e587031932e0ebed30105f1ca24148f036704ad0997753f73bb",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93",
+    "pins:AB_ANC_BNC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXNOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXNOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "ae7a84eeffa0d1a877c64ca1024129e56ee159d5bc8e48f0bd23e2b2dc15cb73",
+    "ast_yml": "268f1582c396d95d8e35a7e2f43982f578467baf9e42b05e460f6725c7cf5df2"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "927c22792d015d55984afeb22ab5d7187a6f8469bc2cf21b15b19aa33ec57e6f"
+   }
+  }
+ },
+ "CSA20_A3": {
+  "ast": {
+   "out": {
+    "mod": "e354e776f2dba6a41c706df4ce4c47737eadbf7b7fa6e55b78ce297998c5dcce"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "7383a4cc7422962a2e90b84209d554cb8d5d2e5f33c1559492d36b084dac47be",
+    "pins:AB_AC_BC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "c2db12604ee7de917898127693d49f54b256bbdc2a821ed9bd1970212fe63ff1",
+    "unl": "01341e2d737ef225f3ed70f8461f20d780d82dd6a5c1b9c4cd31d41aa5d84567"
+   },
+   "parts": {
+    "cell:AB_AC_BC": "eb39cc1ab1424596b3bb3e9f20d25698e034bd4c60d4d6ee12550cc4dc024a72",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
+    "cell:DG_EXOR1_3X1": "9548df1c9969fe0688e98958498bb47368f0c32e23faf3ecf180be9758a45536",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "e354e776f2dba6a41c706df4ce4c47737eadbf7b7fa6e55b78ce297998c5dcce",
+    "pins:AB_AC_BC": "c1da20f7edd6c066d51c4a381be2df806512046bdd46d56e98973e04ecabcc8e",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_EXOR1_3X1": "c77e04003407cc9de421ba6ba2ec576b749e1555440ac2e083c841c890740442",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_3X1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "7383a4cc7422962a2e90b84209d554cb8d5d2e5f33c1559492d36b084dac47be",
+    "ast_yml": "a88ffa3d3ba64b076737f2765b62c40d58335fc6d26b291dd08c3af1bfe30be6"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "8e9252056d773def7021b0136475c2e9a6fffbb621f6933d1fb4d3c36364e2bf"
+   }
+  }
+ },
  "CSA24_A2S1": {
   "ast": {
    "out": {
@@ -539,6 +1067,278 @@
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
     "input": "9f1db28c89f2a16e78aea93e924adf9dea8957a4f513c7dc263d998dde99914a"
+   }
+  }
+ },
+ "CX_CSA2M": {
+  "ast": {
+   "out": {
+    "mod": "dfec50565b4771f47c4956f2fb70ac3a57d81b8557bb9067aee9b820ad6cd588"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "e37bff71c85dc9bbe1579fc39ce58c5458f7b1df539b2110c5889394b3bd235a",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:CX_CSA2M": "5e50a0d1b9d354aa650af5d8bdae205a169a918dd526b8821c37d03056bea28f"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "76780b6bb6be5c20c5656b32acdc38f5cd1d2b9351b917b0cdbd2a1cfda3ae2c",
+    "unl": "9927cbbb7082b4c90de63f12536be010ce2d5df64205da70ca557c8e492addc8"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A2S1": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "dfec50565b4771f47c4956f2fb70ac3a57d81b8557bb9067aee9b820ad6cd588",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2M": "5e50a0d1b9d354aa650af5d8bdae205a169a918dd526b8821c37d03056bea28f"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "e37bff71c85dc9bbe1579fc39ce58c5458f7b1df539b2110c5889394b3bd235a",
+    "ast_yml": "542afe4ae53de4aaee15dc100d2fc1cc7efbd23e2b667842e6c84675948d942f"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "1d99d515b99725ccc4594f41fe06ef8fa4a24c1193e289f7ca65f2b299e0164f"
+   }
+  }
+ },
+ "CX_CSA2M2": {
+  "ast": {
+   "out": {
+    "mod": "e4b39a90cae03d213c104b473dc263f05f3d71e7497255e99c4751bd2a1271b9"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "b077beab5e35e8067789482b76db4f7105570519895beeb5b0e8fe67c16f70a1",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "7a99af2fbde9f68bae3019e747b2f074b468fd8065d547b091c757c9d67fd0cb",
+    "unl": "082d7afb601271dd02d024f711577e023eb44d3e7f90a75300b9d6095f0da695"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A2S1": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "e4b39a90cae03d213c104b473dc263f05f3d71e7497255e99c4751bd2a1271b9",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "b077beab5e35e8067789482b76db4f7105570519895beeb5b0e8fe67c16f70a1",
+    "ast_yml": "0b1d9cf6ab0afb99c8be88aa4619d2c57e5c6f0aea7d62e6589a8c2ef1c29198"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "a823bc3e9a0f5bde47255a807eeb65bf82f091522e0f37f3af98fa934b5f39ef"
+   }
+  }
+ },
+ "CX_CSA2MC": {
+  "ast": {
+   "out": {
+    "mod": "6e81b97e066322fdfefce4fc1cfa8434d1008b847dbe95f39b976ae5d2fa88df"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "f4aba1322c9dccd157a781233d2f23ec6294344b7d79ec9a795243804d02fde4",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2MC": "a9e3c78d40121683ad03f8456b9d785ead66d312027c9d3e76e7d7bf5a6f20c9"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "60fc56440ba2565389687d2d6780debc86d51d3c326231bc05068d0c8cb5dad3",
+    "unl": "862a014b78d9a698012a9c4a9d36d08f0f31dbab0d02a841260ac38c8ae02c17"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A2S1": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "6e81b97e066322fdfefce4fc1cfa8434d1008b847dbe95f39b976ae5d2fa88df",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2MC": "a9e3c78d40121683ad03f8456b9d785ead66d312027c9d3e76e7d7bf5a6f20c9"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "f4aba1322c9dccd157a781233d2f23ec6294344b7d79ec9a795243804d02fde4",
+    "ast_yml": "b045e4a84c66ccb315a0c211018fe17da5b4d3bdb8e6db5b1f116e2972fc3447"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "27086a008349b9203bb10b8767bdda48f5fbd393a5f6c9ca6ecbec16839a5f60"
+   }
+  }
+ },
+ "CX_CSA2MC2": {
+  "ast": {
+   "out": {
+    "mod": "514fdbd0134a7e2d359ca3c1272c9631ad9869711ea40e0b003f7ae8bbf5fbfe"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "c99c86f957be4182df91d5a7628e22e30ec096ee5b1ea1c4808d57d2d58753ef",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "558eaebfbfceb257aa7ef5c277aa80ca3a65e5aaba95318e9493b2c78affcb2f",
+    "unl": "e9773d5db293beb2d25c06e6fe00095a0b213648a702b228c8d32e855054381b"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A2S1": "674417f98ed5fca64def1eea5f8738d2908695122311a3a4b12d8c4af9c57d93",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "514fdbd0134a7e2d359ca3c1272c9631ad9869711ea40e0b003f7ae8bbf5fbfe",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "c99c86f957be4182df91d5a7628e22e30ec096ee5b1ea1c4808d57d2d58753ef",
+    "ast_yml": "d85aa83a8c26d2609e8d5d22bb58258094231168eff93703d373c485646fe3bf"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "925654243685438055e866bf5ff6c1dfa088d0590431b2d3ec7ac7af3ca6a705"
+   }
+  }
+ },
+ "CX_CSADD": {
+  "ast": {
+   "out": {
+    "mod": "639368d9b68fb4174ee695d7306088bacb78ad7eb19c1183aa71da24b47703a1"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "606f9f2524123858c4e1362e9a545f976ba810e62bd523c2fa3a1f97aa3bd02e",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSADD": "5e50a0d1b9d354aa650af5d8bdae205a169a918dd526b8821c37d03056bea28f"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "fd1db32890caf94695cc27e53b02649edc37970c87628e8576e988c36191ce05",
+    "unl": "57fa45f487bf5c4294106767843a774ef308fc5486bdfed62dd7d08748dec490"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A3": "e354e776f2dba6a41c706df4ce4c47737eadbf7b7fa6e55b78ce297998c5dcce",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "639368d9b68fb4174ee695d7306088bacb78ad7eb19c1183aa71da24b47703a1",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSADD": "5e50a0d1b9d354aa650af5d8bdae205a169a918dd526b8821c37d03056bea28f"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "606f9f2524123858c4e1362e9a545f976ba810e62bd523c2fa3a1f97aa3bd02e",
+    "ast_yml": "f6cbbb6ec16e87af2a4943726d64a71bce89fbe0358189eaff086f8a5e12d770"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "d8f2b87189ce06d12595e6c18eb5c2c965ed04c16f3f908947ca4f4dfe465fa4"
+   }
+  }
+ },
+ "CX_CSADD2": {
+  "ast": {
+   "out": {
+    "mod": "8ff0c5fd22933e0956ed0e0388e4005cf11f1fd0d7dcf8263cbf1b73fda0f6e8"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "c9c36a39c21aab2a27ae50ca9b91d45da02521b8ef718bbcee1c5d58cf5557ea",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "768eac1f443cb67cfa5dd1a8372e0857b7d7b4ec5b99cecc66439507c8b37284",
+    "unl": "ec1753e89a10366487f6f92a8020adee3db8761976ec223e1900509c389a8eb4"
+   },
+   "parts": {
+    "cell:CLA20": "625ddbec452174d88d8f0ba0632166a1126e2a16985dbde5019438c1823f29e1",
+    "cell:CSA20_A3": "e354e776f2dba6a41c706df4ce4c47737eadbf7b7fa6e55b78ce297998c5dcce",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "8ff0c5fd22933e0956ed0e0388e4005cf11f1fd0d7dcf8263cbf1b73fda0f6e8",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "c9c36a39c21aab2a27ae50ca9b91d45da02521b8ef718bbcee1c5d58cf5557ea",
+    "ast_yml": "da903e6797fd5168f8111e2f543546c789a630cbec30518e1b382f1d6d29b36b"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "9a66effc9a691fc238b84c319ba3690e68691ec148c050b85c2972693f9acb91"
    }
   }
  },
@@ -1226,6 +2026,446 @@
    }
   }
  },
+ "KM_CMPLX_MULT4": {
+  "ast": {
+   "out": {
+    "mod": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "e75e9a4ec9343c4d60a707c16366e34e39fe9facd67ba8e007006d6ea18fc596",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:DG_EXOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "55ee896c5ce9655269ebbf1fb129241bd0329783aa210ac22a91507ff5e7dec4",
+    "unl": "383d27fdeccc23f29d5a20b965b6e638910d55560f2ea1ccac86ad53f5f2ce18"
+   },
+   "parts": {
+    "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
+    "cell:CSA24_A2S1": "73720760a7fca891f0e74212e0ec7c3b3bfa70464381b6cb876ca3a7462bfd45",
+    "cell:CSA24_A3": "3884e4405f81672409be644a41ac9c6da63687b8c24364eafd999c20e2aeb716",
+    "cell:DG_EXOR1_2X1": "0f14df1f617039c211b304764c6482d04bffe0c71a4ad0ad1cf9db2d86b30dff",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CS_MULT3": "abeea5a325c2671dcedc931ed585ffd966437aa3aacd033ff4564c02daf6f814",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:DG_EXOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:EXOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "e75e9a4ec9343c4d60a707c16366e34e39fe9facd67ba8e007006d6ea18fc596",
+    "ast_yml": "560f96bb22bddb0b640f7aacff8e187a3002e71e4cd0b7de59fcf28e5dbd7112"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "8fbacac575499af9ac50a65b3ac64fef136bb3124ed33e748cda2e0c0498aee7"
+   }
+  }
+ },
+ "KM_COEFF_GEN5": {
+  "ast": {
+   "out": {
+    "mod": "7b37959e14cba1687f5ec5a4c95054dae490395b1c7a6a7a3fb2ece92ddcc504"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "eb944602a0a2ae21308434a27c00ab5e8418a42ea58a37d3e2ea5bfa5e27222d",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_INV4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_JKER_4X2": "ae3b07f45de6ba7b211a5682beceeb60282c99d5be0f5cd5ec4b56d3665870c8",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:INV4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:JKER_4X2": "148d12fb59e2c1b60f1562dbe7e1d375e9d476fb1b9ecb994f345a555b5430d4",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757",
+    "pins:KM_RGE24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "00b2f555fa8c6a1aefddc1a3b645f95c70717576232e71e775a0c381421293c5",
+    "unl": "7015ca4c9fbf1c48b1307dbe45d4e5423f085998f1647715d2228600b8748fc4"
+   },
+   "parts": {
+    "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_INV4_1X1": "f92695d6fe7e60a4a63ea906d20732d67b77b3314e0c22191ecafbd655b16d21",
+    "cell:DG_JKER_4X2": "1b1b1b6bfc5b644a25afccd8d410ae269a47fc91bdfd838ce5c5435f2c71a33b",
+    "cell:DG_TIHI": "74ac8e3426e52e587031932e0ebed30105f1ca24148f036704ad0997753f73bb",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_RGE24": "b9cd7d4cef9e844626c0b172408af935a7fef3a38699d593c942d6845f520c2b",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "7b37959e14cba1687f5ec5a4c95054dae490395b1c7a6a7a3fb2ece92ddcc504",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_INV4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_JKER_4X2": "ae3b07f45de6ba7b211a5682beceeb60282c99d5be0f5cd5ec4b56d3665870c8",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:INV4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:JKER_4X2": "148d12fb59e2c1b60f1562dbe7e1d375e9d476fb1b9ecb994f345a555b5430d4",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757",
+    "pins:KM_RGE24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "eb944602a0a2ae21308434a27c00ab5e8418a42ea58a37d3e2ea5bfa5e27222d",
+    "ast_yml": "9ac106ab3e97e15902a77f897da2f4c6eed604461f461de0001fa513a5d2363d"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "9cefa1cc65c7194854185bc655667c3f6f65e65473362d91c58268420bc59199"
+   }
+  }
+ },
+ "KM_COEFF_GEN6": {
+  "ast": {
+   "out": {
+    "mod": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "24b68f255dbd03d679a739dc2f8598115a26d9dbc67145252f167ee9c8c40ee1",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DER_4X2": "1b3ee1ec5dc0ed55a5593b628d1904ebcfe9ede25ee4b1a509a64528aa262f75",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DER_4X2": "53497d5cd4349d9edfef25b1764fcb833d8a44e966a06de9ec82e75369148090",
+    "pins:DG_SE2DIFF_1X2": "fa7983514bfbc1be9ce97f1272bfdd8357324d23bcb9bf95406ee6a3e799f000",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:SE2DIFF_1X2": "823ae3fbe6045a5ec4f0f0a6b94a2571eab980041c1abdcf25c66846396f0583",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "c786a396507fca18ed3fc105ee50ca6648ade1919f5fda69fbbae665cd088713",
+    "unl": "4b03b72231ad77c70fa51514a078514eec2a8f807c7f58bf444837770c0b0deb"
+   },
+   "parts": {
+    "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_BUF4_1X1": "e0d216e6a68ef3c43312c6dcb2a870fe6ccf69930165f93ffe35bf6bdd8b985a",
+    "cell:DG_DER_4X2": "6846ecda956349a73ea72f8d28b75e24cdca310418f0b6880cc2c7cf03f21617",
+    "cell:DG_SE2DIFF_1X2": "96073c238c0f8649f88677d6cd67c9a305ec080109441cf1ab9de152c85ff56e",
+    "cell:DG_TIHI": "74ac8e3426e52e587031932e0ebed30105f1ca24148f036704ad0997753f73bb",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_DVDR4": "58f8d475f33be22459bcbe56e36bc7be034ec6de417d8d16be84e6b62837a185",
+    "cell:KM_RG20": "54480d9eb3a2e4399a1dbd668c1677ece624e3b3f80988520081a90730e73790",
+    "cell:KM_RG24": "66bfedb3a21cde5bf84a255fa5e4b4a9ae8f867b3210755a6bfbb12d5727f6b6",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:BUF4_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DER_4X2": "1b3ee1ec5dc0ed55a5593b628d1904ebcfe9ede25ee4b1a509a64528aa262f75",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_BUF4_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DER_4X2": "53497d5cd4349d9edfef25b1764fcb833d8a44e966a06de9ec82e75369148090",
+    "pins:DG_SE2DIFF_1X2": "fa7983514bfbc1be9ce97f1272bfdd8357324d23bcb9bf95406ee6a3e799f000",
+    "pins:DG_TIHI": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:SE2DIFF_1X2": "823ae3fbe6045a5ec4f0f0a6b94a2571eab980041c1abdcf25c66846396f0583",
+    "pins:TIHI": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "24b68f255dbd03d679a739dc2f8598115a26d9dbc67145252f167ee9c8c40ee1",
+    "ast_yml": "9daeb1730e9ae577ba3a2d13973d40c76982ad0672751892360a24ed32d1ee31"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "18f889ca9f553d6847656250c04d30d93ebfc8f7865a86e91e0ea12b895a9925"
+   }
+  }
+ },
+ "KM_COEFF_MULT5": {
+  "ast": {
+   "out": {
+    "mod": "dfd75c90a73e8d88ebb1007a42a29dbd998f975ccdac95d58ab6a47e6549bc21"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "a7fd0b10b9032cf5ac1d80ae68a937e834b94bd5bc08cf6823da375409b3989a",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "2fecd719349336de196480651b721cd78bc5dcadd56635478ef1d9074b81a63c",
+    "unl": "53b8fc00963707a5094226e9c7f6449968eccd9ba4642d6d32bca2c9999a2669"
+   },
+   "parts": {
+    "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CS_MULT3": "abeea5a325c2671dcedc931ed585ffd966437aa3aacd033ff4564c02daf6f814",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "dfd75c90a73e8d88ebb1007a42a29dbd998f975ccdac95d58ab6a47e6549bc21",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "a7fd0b10b9032cf5ac1d80ae68a937e834b94bd5bc08cf6823da375409b3989a",
+    "ast_yml": "ab3555e8112d2aab5c27fce85c25e80822dd67398b0dbd64a46cfce28e0f3c54"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "04370b18432c2d261e2e983b3098a8db73d87509a1365fc7d12195a6bf101272"
+   }
+  }
+ },
+ "KM_COEFF_MUX3": {
+  "ast": {
+   "out": {
+    "mod": "a172c6a187192b1bb0af491b9bff18d7c5a76f23acea0251741b70335549ba60"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "7adccc43dc2d099dd0ba0bb0f62a47f33bb482fdb83034bf7744644f43e7aec6",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "6e6cd131c8b3d56bf057039359a63b14d80774dbf5e028fd2170161bdacaf6bc",
+    "unl": "08a368b9d1e58cad22e50aae4f567f0c2ad18e2dd51a97c73a357e689b6cfb57"
+   },
+   "parts": {
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:KM_MX_16X1B": "492206c66f4ed2c866dbc0d8bae2c4451330a4901a09dd6f21fbec50e7d13ea7",
+    "cell:KM_MX_8X1B": "66c57014d5124612fbd6f30281dee9716f4d5c24ab74cce8a3247393b837e8ad",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "a172c6a187192b1bb0af491b9bff18d7c5a76f23acea0251741b70335549ba60",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "7adccc43dc2d099dd0ba0bb0f62a47f33bb482fdb83034bf7744644f43e7aec6",
+    "ast_yml": "b3bd7ca7ed8e407629d7a4de1742cb49c1f4dee936b497a166be78d70240d326"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "9e317eb88e9ae8c635c8728900f014e73517668fe095f6f149882978c56a3e05"
+   }
+  }
+ },
+ "KM_CS_MULT3": {
+  "ast": {
+   "out": {
+    "mod": "abeea5a325c2671dcedc931ed585ffd966437aa3aacd033ff4564c02daf6f814"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "a2cfa47896c0c7fc1871aebfb89cdba6381cfe50cd912ba89d202d67f25db234",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "b7e9f256b02153b0272c2915a803ac485564bf39660b5e196eb81fa5308e8baa",
+    "unl": "62d9be65a69a6ceb84c75564a341493fd0f50e8a50db78ce8ac81d450daa9fb5"
+   },
+   "parts": {
+    "cell:CSA16_A3": "f89a92a7b37ac9f908e9e85724d430cf1a41ab37c3104c8c26d13fd1260e870d",
+    "cell:CSA20_A3": "e354e776f2dba6a41c706df4ce4c47737eadbf7b7fa6e55b78ce297998c5dcce",
+    "cell:CSA24_A2S1E": "5596725e29b334e850fbb3a6d2925a091ae69ea1bd812cc561e09de1358a5a15",
+    "cell:CSA24_A3": "3884e4405f81672409be644a41ac9c6da63687b8c24364eafd999c20e2aeb716",
+    "cell:KM_COEFF_MUX3": "a172c6a187192b1bb0af491b9bff18d7c5a76f23acea0251741b70335549ba60",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "abeea5a325c2671dcedc931ed585ffd966437aa3aacd033ff4564c02daf6f814",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "a2cfa47896c0c7fc1871aebfb89cdba6381cfe50cd912ba89d202d67f25db234",
+    "ast_yml": "141bd1d127fad911a9707b31a925bbd0537e78f191ea393d026e19c7e8c24b8c"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "9aecc6fe091b7fd9be0718898652aef528065610c56400adc475f929c158993e"
+   }
+  }
+ },
+ "KM_REGS18": {
+  "ast": {
+   "out": {
+    "mod": "c87f3c31e2ee4b1434ad616e696c1b7a7eaed2544c8f32d4745260ebf2f47b05"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "f94d607fa401b1aa8c950c036e7143d3cc3d4177cc475a219b6a974c1ebd4150",
+    "pins:BUF8_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF8_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DX_4X2": "be644938380ab608cbe8e775d5bc1206890bd6507b4d5d710b46a4d2eca03f56",
+    "pins:DX_4X2": "5266c7d6c67af5b955a60a089c75fca9750360e262171fdb73607469982b3d72",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "43e08e6c0fdb9860555afcb5ac8960a5e521f72d1648837280337b5020b106a0",
+    "unl": "5bca4cf616d9e3beaafe225a02b644699962862ead34b1cf4aaca112aee5956d"
+   },
+   "parts": {
+    "cell:DG_BUF8_1X1": "c184e659c683152acdacbe74bb113bc78f8b25b9e1499bdee16b98f75904a871",
+    "cell:DG_DX_4X2": "6cce405664a6164fd06a7fb5b638d1c9be51af4baddc24306c8a5731745247d0",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "c87f3c31e2ee4b1434ad616e696c1b7a7eaed2544c8f32d4745260ebf2f47b05",
+    "pins:BUF8_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF8_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DX_4X2": "be644938380ab608cbe8e775d5bc1206890bd6507b4d5d710b46a4d2eca03f56",
+    "pins:DX_4X2": "5266c7d6c67af5b955a60a089c75fca9750360e262171fdb73607469982b3d72",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "f94d607fa401b1aa8c950c036e7143d3cc3d4177cc475a219b6a974c1ebd4150",
+    "ast_yml": "726b1b45910522f90a3c6a4147fa289b574c56a51213ae0f110b5704a055b76d"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "f50901f270ada8a107686bc0a60e5b9c47437027aa5dbd3266ddb9c7a722765a"
+   }
+  }
+ },
+ "KM_REGS20": {
+  "ast": {
+   "out": {
+    "mod": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "5ec8e9ecaa3cddc597e774b097375e7c9574f02101e01cb6d181566a0735f4aa",
+    "pins:BUF8_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF8_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DX_4X2": "be644938380ab608cbe8e775d5bc1206890bd6507b4d5d710b46a4d2eca03f56",
+    "pins:DX_4X2": "5266c7d6c67af5b955a60a089c75fca9750360e262171fdb73607469982b3d72",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "29fb5d3d063611f0e37b999fc7243d44f38773336035d0fc82bc9e6da34c51c3",
+    "unl": "d6db62e6208c57898636a14ac11439098e2581f7faf26ee7e012ad896c1208b2"
+   },
+   "parts": {
+    "cell:DG_BUF8_1X1": "c184e659c683152acdacbe74bb113bc78f8b25b9e1499bdee16b98f75904a871",
+    "cell:DG_DX_4X2": "6cce405664a6164fd06a7fb5b638d1c9be51af4baddc24306c8a5731745247d0",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c",
+    "pins:BUF8_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:DG_BUF8_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_DX_4X2": "be644938380ab608cbe8e775d5bc1206890bd6507b4d5d710b46a4d2eca03f56",
+    "pins:DX_4X2": "5266c7d6c67af5b955a60a089c75fca9750360e262171fdb73607469982b3d72",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "5ec8e9ecaa3cddc597e774b097375e7c9574f02101e01cb6d181566a0735f4aa",
+    "ast_yml": "5e1b0726212df9a4703ade454d6689ad1d675b9a6509c3bcfe696521cdc1c918"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "afdbce420e1eca75162000d4b11d98e060156f5dcae8aaa611713c7085393c38"
+   }
+  }
+ },
  "KM_REGS24": {
   "ast": {
    "out": {
@@ -1272,6 +2512,57 @@
    }
   }
  },
+ "KM_SCRMBLR": {
+  "ast": {
+   "out": {
+    "mod": "e06b57b8bfeb9cec30f1c0c74e576d16ef505b50803b22616ffc3aba1b1fd65f"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "4aa3124996e0432c6014733dc4e3eb205156eea8f04f3a31da00fc253943d3a5",
+    "pins:DG_DR_3X2": "a20f66b6a5b6e5f1a285abbb2d0dded632484d244ed4758c547c34e6f5f1743a",
+    "pins:DG_EXNOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_EXOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DR_3X2": "d5273b7add5277d304b12d1479de1c1d8b444e45dbe7e05a4668ab9ad19c09f3",
+    "pins:EXNOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:EXOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "cf3cb867e95b9fc46c0a3a2d0d8776d7d28d2e149eedbea0b09616c12b8cc157",
+    "unl": "e428b436e07bf27792c499bc053fa6d9cfeb5f57bd325f2854ab07c5b3e127d9"
+   },
+   "parts": {
+    "cell:DG_DR_3X2": "7e40919a1ebf0da9c301e11bbe76e18c817c56ef367a0153a891e2b742218735",
+    "cell:DG_EXNOR1_2X1": "bcfd15f6996c7c20a49801103b9e6f2e0b83ac35312af688902355fd265c426f",
+    "cell:DG_EXOR1_2X1": "0f14df1f617039c211b304764c6482d04bffe0c71a4ad0ad1cf9db2d86b30dff",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "e06b57b8bfeb9cec30f1c0c74e576d16ef505b50803b22616ffc3aba1b1fd65f",
+    "pins:DG_DR_3X2": "a20f66b6a5b6e5f1a285abbb2d0dded632484d244ed4758c547c34e6f5f1743a",
+    "pins:DG_EXNOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DG_EXOR1_2X1": "4ab278a478dc66c1d5aae3a9068f0c34654e081733f982e3f75e5c90eda6398f",
+    "pins:DR_3X2": "d5273b7add5277d304b12d1479de1c1d8b444e45dbe7e05a4668ab9ad19c09f3",
+    "pins:EXNOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:EXOR1_2X1": "9cd92d79e615ba3b12ee63d899e4ebb446f0ae0f6bc955c68fd4fb396c201956",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "4aa3124996e0432c6014733dc4e3eb205156eea8f04f3a31da00fc253943d3a5",
+    "ast_yml": "fa16160bc6ee03e0651bc54592a97b33a89c1cc9f09af8f12d6e0282a8936b0f"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "8f630913dc6bdce2edae662cd5f55a5a6b60038a6b22942ab43f6ac5adb7a670"
+   }
+  }
+ },
  "OUT_BUS24": {
   "ast": {
    "out": {
@@ -1306,6 +2597,613 @@
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
     "input": "18d6e71b305f6efab65ce1315d7eda7e551facabd60e8e665f6e2b6b46d68547"
+   }
+  }
+ },
+ "TST_CMPLX_FLTR3C": {
+  "ast": {
+   "out": {
+    "mod": "30229acf26242baa2bca196045eccae12eec58d6e61f156ce4f97f26aa39d671"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "968d6116fdc62de1e6975c8a817ed9b8b0c274caafc1483cbb082de48e2cbd49",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA10": "cbe1a0fb3e345359b33f0a1cbb8cc739ed022b4b41cab54043e52c7af33180fe",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA18": "aaf6dcf3c9443210a2b49fdad7f79ed6643a30f4ef248bf7227579b75b7e217a",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA6": "e22f8a8990ba76ec0466f1452d1ba15b68a8dbf16ea226d5cd13cea748cae30b",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45",
+    "pins:OUT_BUS20": "9d465020215aed4529952e43aa14519ecbacc13499cf680920542fbc27f61aa0",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3C": "ece777e5878eb78ede3556db8bad427b3425dfbe503c77be2776a9da0f6f166e"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "3e067d677355cab463e32f81590ca097141f417820b9de6c621635fd66786fcb",
+    "unl": "13e24c8d61bfde7b171b50d0205203b3276db9c6f05f36197725fceb9d30a410"
+   },
+   "parts": {
+    "cell:CLA18": "0fd8f77aa24a58fa4c4681898a6a1eb9e8896739ae2e662314405911d40b43db",
+    "cell:CMPLX_FLTR3G": "7f1b726084bae9b8d46c670aca6e7d6f62f9f83206d5782ce6d8f7fa0a0307c4",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_REGS18": "c87f3c31e2ee4b1434ad616e696c1b7a7eaed2544c8f32d4745260ebf2f47b05",
+    "cell:KM_SCRMBLR": "e06b57b8bfeb9cec30f1c0c74e576d16ef505b50803b22616ffc3aba1b1fd65f",
+    "cell:OUT_BUS20": "e5b435772ff604c5de514c717e9da5c1333941746681f2c5ce9b398a1c5d5bc9",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "30229acf26242baa2bca196045eccae12eec58d6e61f156ce4f97f26aa39d671",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA18": "aaf6dcf3c9443210a2b49fdad7f79ed6643a30f4ef248bf7227579b75b7e217a",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45",
+    "pins:OUT_BUS20": "9d465020215aed4529952e43aa14519ecbacc13499cf680920542fbc27f61aa0",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3C": "ece777e5878eb78ede3556db8bad427b3425dfbe503c77be2776a9da0f6f166e"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "968d6116fdc62de1e6975c8a817ed9b8b0c274caafc1483cbb082de48e2cbd49",
+    "ast_yml": "efba4486bfb8047a483095974cd974dc2594382aaceee1f759476e6f577a1e00"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "51c52c2ab7d9caae197d95b8a6d0594cbdd821e505dc1162b8d489193c6b84ad"
+   }
+  }
+ },
+ "TST_CMPLX_FLTR3D": {
+  "ast": {
+   "out": {
+    "mod": "4cf691289cac1b9829f2bc6006045a90a921007543d8fee35b9fa9834077d56d"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "24be70c07763146cdf1d52bc2b3678abcf805651485f28616ff95a939006a281",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3D": "fa7e0d8c95ee714fa91568b153c165f141d3f0d90058c46241afe475d3b52df5"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "d88d631cde242cc1a67c81f799289978b39c4b92d339a70c6e0404d5f48a1614",
+    "unl": "4282600b012390acad8d476564f9af5ea3121b53a3579c78e72732d403a01617"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3D": "62993774497876481760d8c1f411704f7a447ce0f0f29bfd6904ebfb7bb26570",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "4cf691289cac1b9829f2bc6006045a90a921007543d8fee35b9fa9834077d56d",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3D": "fa7e0d8c95ee714fa91568b153c165f141d3f0d90058c46241afe475d3b52df5"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "24be70c07763146cdf1d52bc2b3678abcf805651485f28616ff95a939006a281",
+    "ast_yml": "cbb02db18a933cc1bfd949a3c5215248e80f0010b0fdd4f7822306918aefc285"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "624fd0bc7178d78fd1aae368722d79151cb4028eff978fb0d0bf3d999daf6cf8"
+   }
+  }
+ },
+ "TST_CMPLX_FLTR3E": {
+  "ast": {
+   "out": {
+    "mod": "7cc6616947df896ca353d68be62c89930ba39d72dd379ca88d5ee37ad13e1e00"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "f5f84ec284ec9fd63df72021cd760c1084e3889df39e15adc819f05a248aba54",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_FLTR3D": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3E": "671c8d446f480a3ad5e2ead303b5ab7d93be2dc4e50cb0243f4c1e3b0b2ed5df",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:KM_RGE24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3E": "7f26ba3f4eef6e2758b3e453db131de6515a8e348183f0168520274406fcca5a"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "1523a7111387260ec3b93cdf79ffc58bfb260f87a55455bd839312f83a35ae6e",
+    "unl": "77d6479c2e1216e100ae32417760596a74d00b7468b9e8377304e6d1d214ae16"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3E": "816364db76abde9c9fe4f3fe4b3d7dace2fd74e36d6561edfc074a792fe3197c",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "7cc6616947df896ca353d68be62c89930ba39d72dd379ca88d5ee37ad13e1e00",
+    "pins:CMPLX_FLTR3E": "671c8d446f480a3ad5e2ead303b5ab7d93be2dc4e50cb0243f4c1e3b0b2ed5df",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3E": "7f26ba3f4eef6e2758b3e453db131de6515a8e348183f0168520274406fcca5a"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "f5f84ec284ec9fd63df72021cd760c1084e3889df39e15adc819f05a248aba54",
+    "ast_yml": "a546e886335fb996b6b721a907df8f2176f238a0e865a4af7c8654b8fb1e93e0"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "58836262188fed7d7e1cab23115a6b9175fd33eea9afa2458f8532cf124c8b3e"
+   }
+  }
+ },
+ "TST_CMPLX_FLTR3F": {
+  "ast": {
+   "out": {
+    "mod": "3dfd5462a4e19617c6c63a229b14dd97181acc45e810704da7c8622ee46c250c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "cd706567b6292a41b35bc0566ba0f102bd282752e533b6b3a7ab25b2b05a5366",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3F": "fa7e0d8c95ee714fa91568b153c165f141d3f0d90058c46241afe475d3b52df5"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "583b43ff1ca5a678e9663f207435b23df03f278269b1de258fe60c205a0f16b6",
+    "unl": "fc1f1bc0c33e1c9e9019c3b893cf38473a77350399a53be691ac4b377558298e"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3F": "18fd92d643baafb257b0b131e1daee89dfde656ce3117b18c2d4fdacb0f61b7a",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "3dfd5462a4e19617c6c63a229b14dd97181acc45e810704da7c8622ee46c250c",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3F": "fa7e0d8c95ee714fa91568b153c165f141d3f0d90058c46241afe475d3b52df5"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "cd706567b6292a41b35bc0566ba0f102bd282752e533b6b3a7ab25b2b05a5366",
+    "ast_yml": "53ba917ca7df09cc68e5ac77174e758e7c828171c251f02e293c8f7200b6119c"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "6f39ee0b556c5bdad17401495ae60d874dd3583bbc597c2dc40004306fb0fe07"
+   }
+  }
+ },
+ "TST_CMPLX_FLTR3G": {
+  "ast": {
+   "out": {
+    "mod": "1c45c75f55bb7c468f0137f9f590dc4791df5b32ed241744ab7f3b50e6e14b07"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "f2ce118f18187ed31103958f94c2686642cc7694798b725c694f1e28a6aa423b",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_FLTR3F": "62c0678da74e9a4305f2e69b68a4e52ff00a8d9a0eae7247a393856063b76972",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3G": "29f48f95843ac5b523e61eb6d6b62fb7c4ee8de24024f73cf3c24a3336523785"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "5cdbe3d3f3a3fc428f7056c4e5de890e37bb2a73bc15b41c4d9ac7ac93668322",
+    "unl": "1ff09dfe24a79325b832e2a3dfc24fff1dc4cb378ff2ab328269c8472d01384d"
+   },
+   "parts": {
+    "cell:CMPLX_FLTR3G": "7f1b726084bae9b8d46c670aca6e7d6f62f9f83206d5782ce6d8f7fa0a0307c4",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "1c45c75f55bb7c468f0137f9f590dc4791df5b32ed241744ab7f3b50e6e14b07",
+    "pins:CMPLX_FLTR3G": "5d6cbb7a98e74a0dc98dd9eb6911ccdb267c598ceed56be51d56fe1a4973b665",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_FLTR3G": "29f48f95843ac5b523e61eb6d6b62fb7c4ee8de24024f73cf3c24a3336523785"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "f2ce118f18187ed31103958f94c2686642cc7694798b725c694f1e28a6aa423b",
+    "ast_yml": "d4d8f9aac8fb75f5ead1a1c72aad573c49c863d944c623551fdee92109e23b83"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "5a881a2a1cbff7059a26ca6e70d56a8e4945504c5c2e857e59724e810ab865e3"
+   }
+  }
+ },
+ "TST_CMPLX_MLTPLY2": {
+  "ast": {
+   "out": {
+    "mod": "03da9d6208e3b5a32df1616a6f077358fcc7b17a11cef06cc919fb05f501207e"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "51a4289611dda0907ea030ac794a8358826d539c1f5666be9fa48c8302eeb290",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA10": "cbe1a0fb3e345359b33f0a1cbb8cc739ed022b4b41cab54043e52c7af33180fe",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA18": "aaf6dcf3c9443210a2b49fdad7f79ed6643a30f4ef248bf7227579b75b7e217a",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA6": "e22f8a8990ba76ec0466f1452d1ba15b68a8dbf16ea226d5cd13cea748cae30b",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:OUT_BUS20": "9d465020215aed4529952e43aa14519ecbacc13499cf680920542fbc27f61aa0",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_MLTPLY2": "7facd62784772b09c37ef8c0146957938e387587a60e1f384ba9dc544f3b8c90"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "43964e57626a9346d2abfa0c6de358bd1d57bb259c5668b8352a4ee2d8fdf289",
+    "unl": "fac5498af5ec500f029b4996161aa98708ac1fd6b0423ae0fcc1cabd7ad49470"
+   },
+   "parts": {
+    "cell:CLA18": "0fd8f77aa24a58fa4c4681898a6a1eb9e8896739ae2e662314405911d40b43db",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CMPLX_MULT4": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a",
+    "cell:KM_COEFF_GEN6": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91",
+    "cell:KM_REGS18": "c87f3c31e2ee4b1434ad616e696c1b7a7eaed2544c8f32d4745260ebf2f47b05",
+    "cell:KM_REGS20": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c",
+    "cell:OUT_BUS20": "e5b435772ff604c5de514c717e9da5c1333941746681f2c5ce9b398a1c5d5bc9",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "03da9d6208e3b5a32df1616a6f077358fcc7b17a11cef06cc919fb05f501207e",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA18": "aaf6dcf3c9443210a2b49fdad7f79ed6643a30f4ef248bf7227579b75b7e217a",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS20": "9d465020215aed4529952e43aa14519ecbacc13499cf680920542fbc27f61aa0",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_MLTPLY2": "7facd62784772b09c37ef8c0146957938e387587a60e1f384ba9dc544f3b8c90"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "51a4289611dda0907ea030ac794a8358826d539c1f5666be9fa48c8302eeb290",
+    "ast_yml": "8a55104893e8d119e1a04fcd784c5c7b1e947114de337e8e451f3ce5a52e4ad2"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "11fc76bf65a5a23935b74b9bcaf8c4dc6fa7eaaf1203d7e784034a0171299e85"
+   }
+  }
+ },
+ "TST_CMPLX_REG2": {
+  "ast": {
+   "out": {
+    "mod": "65e4c0648ec1df9efcedcc617c4bd70bdb7376d2513c7148a7bcd5962124db79"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "d010cb9006b3e7760a53d8aff3ba6030fef8498d02559016faee4d6b566ebec2",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_REG2": "6f25091dcd7acf2cbe5a61d48775ec84d48144a7a982426d8f8bfa0b7b92c9dd"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "ec12a0aee9e8e2a378198503d8119207980075c5c86a01ea84078bd24c422699",
+    "unl": "4c77b689bac7c23394327be7eeb5af9327850f8625c2dd740e49e069f1bec20c"
+   },
+   "parts": {
+    "cell:CMPLX_REG2": "6b45ef4a8607167eceb2e7c4f20ca7bcaeb00bc15a5c10d30a2f3d2502f01fb0",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "65e4c0648ec1df9efcedcc617c4bd70bdb7376d2513c7148a7bcd5962124db79",
+    "pins:CMPLX_REG2": "08be51db4cc19dec5dda92dd64c2f03314ad86c136e29bf89890bc8c3edcf127",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_REG2": "6f25091dcd7acf2cbe5a61d48775ec84d48144a7a982426d8f8bfa0b7b92c9dd"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "d010cb9006b3e7760a53d8aff3ba6030fef8498d02559016faee4d6b566ebec2",
+    "ast_yml": "297aadf886f79363378104529d6a3d015b81cbfe18fbd3da594ce7c0218cce34"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "a70dd82e76d5ad398b80ee687e9c9af3eb9515c0c58c4c8c48844f22d18095b1"
+   }
+  }
+ },
+ "TST_CMPLX_REG2A": {
+  "ast": {
+   "out": {
+    "mod": "d646089d79b2bdb08630990fa6745d8285a2413f952c7a60c745ab9a3687af3c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "e3316a0efe1e48403cf0d3a807f7114f99624607d88481ab1c682059e370149d",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CMPLX_REG2A": "e4d9c992173fe950e1f483afa28fb1ebcd7f9b1765fc9bfcaff4e3d6fd0929aa",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_REG2A": "6f25091dcd7acf2cbe5a61d48775ec84d48144a7a982426d8f8bfa0b7b92c9dd"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "8142247f602ff6442966c8cdac5af1e9ca0e74e6c14d42337f98e7dfa067bb2f",
+    "unl": "7b25a236966891e9e031fa0e26fd9105b2477b68ac316e451b71edf122ca06d7"
+   },
+   "parts": {
+    "cell:CMPLX_REG2A": "b2534dc678f42df2fb3b7dad5767f938d9a9b811905a07e850b2dc67c4559b98",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "d646089d79b2bdb08630990fa6745d8285a2413f952c7a60c745ab9a3687af3c",
+    "pins:CMPLX_REG2A": "e4d9c992173fe950e1f483afa28fb1ebcd7f9b1765fc9bfcaff4e3d6fd0929aa",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CMPLX_REG2A": "6f25091dcd7acf2cbe5a61d48775ec84d48144a7a982426d8f8bfa0b7b92c9dd"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "e3316a0efe1e48403cf0d3a807f7114f99624607d88481ab1c682059e370149d",
+    "ast_yml": "756a280188ff3219e2e6e1ef5ef9bca714c08790f09f94899893c44f24abe53c"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "6a346cc22441e28067de0018b122cf354dbf0f0034a9d97bd204775b90be740c"
    }
   }
  },
@@ -1385,6 +3283,294 @@
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
     "input": "f6673abe57779fc7ffa1a6b2cf387d656a874e6143b4920cd6d51dd243ce0d73"
+   }
+  }
+ },
+ "TST_COEFF_MLTPLY2": {
+  "ast": {
+   "out": {
+    "mod": "0c090a23c6e46d2d2de216689eb158ab7a8a1cf31fb7b072a7348f74ec7e5e3e"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "db0aa1768ec53beab95d4bc809db1049023296d6d4fb481fd52c5933f5d4346d",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:KM_REGS24": "df7759801be849245f4a2b127f2127037d4450a2f8a76b02af3c8ce6d6819f5a",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_COEFF_MLTPLY2": "e8012620e7575b6cc4df6df0100a5eb51b50816cd81cf49382954dfa693007a6"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "7fb991c06eb08dcc8d8dd492bb73eec18b52db9b1bc893378bf9172749883c45",
+    "unl": "3d3351fd309f11d9417428d2df727553126f2bfcb3571a14e68550c98d3afcf5"
+   },
+   "parts": {
+    "cell:CLA24": "45815ef77437341d17f5700d8f93822359faee6295b7c5e2185ec97d74b57dfb",
+    "cell:DG_BUF20_1X1": "c6ad6b70221a70ca984a6a7a53e540cfdf75e890627fcef8fa9c291cbc4acb9b",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_GEN6": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91",
+    "cell:KM_COEFF_MULT5": "dfd75c90a73e8d88ebb1007a42a29dbd998f975ccdac95d58ab6a47e6549bc21",
+    "cell:KM_REGS24": "5594d25c00ec94a6d0aebe45191e6d7ae3eae51729b327fbf62b342d864167d0",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "0c090a23c6e46d2d2de216689eb158ab7a8a1cf31fb7b072a7348f74ec7e5e3e",
+    "pins:BUF20_1X1": "7a05cc6956fe7ed97e5fba50ba4e374849d8e6fe740abcd661ce491443b9cfc2",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:DG_BUF20_1X1": "a958cb7c9d1529ec3b03c9dfdf456ae107c0c829db188466c597beafd3ae2f20",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:KM_REGS24": "df7759801be849245f4a2b127f2127037d4450a2f8a76b02af3c8ce6d6819f5a",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_COEFF_MLTPLY2": "e8012620e7575b6cc4df6df0100a5eb51b50816cd81cf49382954dfa693007a6"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "db0aa1768ec53beab95d4bc809db1049023296d6d4fb481fd52c5933f5d4346d",
+    "ast_yml": "d26f842c25c1054e1acc45fc129d20fbd1da4fc7e8d4b7248fbc311da2da420b"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "9a839e6ddc9132e07adb53f89774bb02a4a2c9a2eda117ffbb231b8207b4d919"
+   }
+  }
+ },
+ "TST_CSA16_A3": {
+  "ast": {
+   "out": {
+    "mod": "09f8eb59573566f2a40a1ca0e4747103aed6d1871b1a5e4e26db61818788fc51"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "95f695b3784422e8100b17bbadb18eeaeca3ae8964016dbc44900bc413d5a48f",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CSA16_A3": "70698af2f2856e1eb0739d8ffdae5bcf4fc31ccdab951d779cad107e2b9bff16"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "0e0164b34183c5f6fa94413cbdd2a697681c2d91205888eb3aa7ee2fb5292af8",
+    "unl": "aa6588f4928349978a88533804c3b00ced06b22cdf647fbd5c54520b09bca7f8"
+   },
+   "parts": {
+    "cell:CSA16_A3": "f89a92a7b37ac9f908e9e85724d430cf1a41ab37c3104c8c26d13fd1260e870d",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "09f8eb59573566f2a40a1ca0e4747103aed6d1871b1a5e4e26db61818788fc51",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CSA16_A3": "70698af2f2856e1eb0739d8ffdae5bcf4fc31ccdab951d779cad107e2b9bff16"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "95f695b3784422e8100b17bbadb18eeaeca3ae8964016dbc44900bc413d5a48f",
+    "ast_yml": "9e31f95b6bdb195150e7e50f3557945ffa43e6b206258ea3ae840672fcf62edd"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "8ee285917ac8d3d2b98014fea9eafbcad6086a4bda8b6cadd333d2b0535b7b32"
+   }
+  }
+ },
+ "TST_CX_CSA2M2": {
+  "ast": {
+   "out": {
+    "mod": "c439244a1ecbda3f77340669b182925c036f70674b2ebe66188c2c3e3501e24c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "47a2efcb070fadac2ff313dfb91ee95963c9a115f5eaf5176dd674a4aa825b1b",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSA2M2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "c777c259b941bbf6b8997e17cfba293e15e16096854ba7e6300d81d442946248",
+    "unl": "a0649bce67475f3545ddfbc28fc6a6c25076f2279e74e0e293cf260ad35ed759"
+   },
+   "parts": {
+    "cell:CX_CSA2M2": "e4b39a90cae03d213c104b473dc263f05f3d71e7497255e99c4751bd2a1271b9",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "c439244a1ecbda3f77340669b182925c036f70674b2ebe66188c2c3e3501e24c",
+    "pins:CX_CSA2M2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSA2M2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "47a2efcb070fadac2ff313dfb91ee95963c9a115f5eaf5176dd674a4aa825b1b",
+    "ast_yml": "26278ac5a946ed3575b6f29f0edf71a6fdb9122400385f130bda0a4bf76e52dd"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "3df17a7c66574d6aa0fe4b7e3a817c360b6d690ee5d588234795be415d544eda"
+   }
+  }
+ },
+ "TST_CX_CSA2MC2": {
+  "ast": {
+   "out": {
+    "mod": "707c0e06af4997c465eaa010ae93eb250588f59795ebb92bb0958c38d1abde93"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "a8416f6091a1db0803a8aa56cf511349d46cc7e338b08b047d29616da53fadbb",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA20_A2S1": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSA2MC2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "8f8b88a2ba6cb3a284eaaaf938488e20279ddf85da703879eb096e7ade981f13",
+    "unl": "4932353deb262556fdc2a8d9a426643a779d88d7b25443ebb5ba3257d83a7250"
+   },
+   "parts": {
+    "cell:CX_CSA2MC2": "514fdbd0134a7e2d359ca3c1272c9631ad9869711ea40e0b003f7ae8bbf5fbfe",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "707c0e06af4997c465eaa010ae93eb250588f59795ebb92bb0958c38d1abde93",
+    "pins:CX_CSA2MC2": "d711e466b24185a83d8daf493626b4d6fdc8572416835f7701a53fb1d6a8fae5",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSA2MC2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "a8416f6091a1db0803a8aa56cf511349d46cc7e338b08b047d29616da53fadbb",
+    "ast_yml": "a613ea5557a62d1941f6d3ef0151aca6f7db6cf86d385d4ea0c2de0d5c70a7e0"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "458b76c0d9e48121519e4b8fb33056b1d46b6ee92bffb5d3f7e1d93310bb5e46"
+   }
+  }
+ },
+ "TST_CX_CSADD2": {
+  "ast": {
+   "out": {
+    "mod": "f39a3bec2402f66e5fded9e32abadd2c57179e49dfbf5fbc39e01756ba885912"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "c0193c1207d6e42acfc5d5f3a63634e6a1cd513a956322a219365aa48bb1e2b8",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA20": "fc4d989787b821fd957b1d2c160e354a0a6effb94897e40b68c9bcc242b51faf",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSADD2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "4f198039bc0035c6d2b5383c15ca10bb46704ea59917dd959127dc2b5abc1904",
+    "unl": "6570a6e62ad3af1c2fb92461c302c2a02a2f13def85ad3eb4d42e0533c4f4c20"
+   },
+   "parts": {
+    "cell:CX_CSADD2": "8ff0c5fd22933e0956ed0e0388e4005cf11f1fd0d7dcf8263cbf1b73fda0f6e8",
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "f39a3bec2402f66e5fded9e32abadd2c57179e49dfbf5fbc39e01756ba885912",
+    "pins:CX_CSADD2": "b2dccf86e5cafb4b368bc89ffcd8976b607f0be039e85d30d8abdde7662a281a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_CX_CSADD2": "729f3522a66eb98d179b070988088a4244fef5b174cf1c409b2172b10a466c33"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "c0193c1207d6e42acfc5d5f3a63634e6a1cd513a956322a219365aa48bb1e2b8",
+    "ast_yml": "5ddc94829e05888bf6558df625202f1e64f9641a0ceb9bd629e093418e025aa8"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "0f907183c0384d27dcbcb307cb98a0dd6e5fcae2b1010f326e78113bc68dd1c0"
    }
   }
  },
@@ -1536,6 +3722,546 @@
     "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
     "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
     "input": "fb972c8a8964d60bb752f196b73188b64871d3c538ff9eb4628e9414d6b41f9b"
+   }
+  }
+ },
+ "TST_KM_CMPLX_MULT4": {
+  "ast": {
+   "out": {
+    "mod": "759daedcdffad241f6d6b8aa8dcf6408e74c07aaed7781c2cea9d03b108c3c07"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "793e2991797bdffb1d3448e60e47552cbd4e7d02055cd06400b431ed7cac94d0",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_CMPLX_MULT4": "42dd18a201d4c243fa21a9c3bbda5303ebf1138c84378bc7a8925c526fdb8c56"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "21fe4308a284ddd12f0ba38c21699ab6fef480f49a1527bf1de53efdc8f24591",
+    "unl": "f6398196289f21368d55e7bc998f32dfe2286f5afc1617db8ae1b10b9d327929"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CMPLX_MULT4": "0771a0afec6bad8442ab85923bbc8d8d5358591cbf0e9376f7168b815b45686a",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "759daedcdffad241f6d6b8aa8dcf6408e74c07aaed7781c2cea9d03b108c3c07",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CMPLX_MULT4": "542bb7a83ae918adfdb4714739e88ea80276c5820feda9522fb3d13b9e833cda",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_CMPLX_MULT4": "42dd18a201d4c243fa21a9c3bbda5303ebf1138c84378bc7a8925c526fdb8c56"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "793e2991797bdffb1d3448e60e47552cbd4e7d02055cd06400b431ed7cac94d0",
+    "ast_yml": "edff93c2486a39b6a9cfdd360f24dae4a75b7bac8b74aad54b8eef5b1d3b9b8f"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "b016685e4059396fa18b8f925b39838877295c93bcf472d2bbda182e577b1472"
+   }
+  }
+ },
+ "TST_KM_COEFF_GEN3": {
+  "ast": {
+   "out": {
+    "mod": "9df202da3c13e0cb51da0a1c99688466dab5155e60fc02a909c1ae012421fa4e"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "7d1c9f01d123302b619f7ce08a6a25c379158835da02593c11767c70e37b8a83",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN3": "d8c1650b550f704f0efa3b154261562c27704e110f9d23f903ffd20295503f3a",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN3": "a53ca5f5aba9029b288ae3feb5faacf32958c9c1ba4b81924227e9cd2b9c02a8"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "885100f8dfd4b885549e84cd5cbc366638039f8e68036052ba7b77fd68f301cd",
+    "unl": "35c41fbf2bfbdb12db3123c025e64337c84760849da0b4f219a6d473923b3dbe"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_GEN3": "6ce6439dac80bb2dcd8b1772a8c60ba2be068483b3de981fd43d919766ad9e8b",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "9df202da3c13e0cb51da0a1c99688466dab5155e60fc02a909c1ae012421fa4e",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN3": "d8c1650b550f704f0efa3b154261562c27704e110f9d23f903ffd20295503f3a",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN3": "a53ca5f5aba9029b288ae3feb5faacf32958c9c1ba4b81924227e9cd2b9c02a8"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "7d1c9f01d123302b619f7ce08a6a25c379158835da02593c11767c70e37b8a83",
+    "ast_yml": "bdf8b47f18c01405908d773f9b4b51895c4ad0ebf90fbc53e842ef2ae716b84e"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "5f8c2c07e14e6125471776e3effb826bbb8517234e0fd016165574bbdaa92c94"
+   }
+  }
+ },
+ "TST_KM_COEFF_GEN5": {
+  "ast": {
+   "out": {
+    "mod": "453443bb0f026a3cc9c70ff8fee8598d7a2d3bd55b4056adb754125ccc219777"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "7a8aa93d9923561bf5ee340188be49075bee5158e5bc516f0a54fca07f39c651",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757",
+    "pins:KM_RGE24": "4ed143b463b1ab5f81447ae5d828736dcc0b8b3d4762ef844b7e5fa890e66b3e",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN5": "6560f4d1d6ff488ebfc6ab14bbb4d0431d72dec2ffa8a592c98428c696c23160"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "bbdc76fe1cce0714745176471b687ed4c2189d355b2a5b2d71b81a675cce9847",
+    "unl": "119c16712c78031a44ff62fdf74b59f8a2bef257cc0ada7f5bce1a061a5140be"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_GEN5": "7b37959e14cba1687f5ec5a4c95054dae490395b1c7a6a7a3fb2ece92ddcc504",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "453443bb0f026a3cc9c70ff8fee8598d7a2d3bd55b4056adb754125ccc219777",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN5": "cfc15b6b3a0ef8e1fc6809e87c7a7027858de6daebbf80ee88fba8a22539c757",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN5": "6560f4d1d6ff488ebfc6ab14bbb4d0431d72dec2ffa8a592c98428c696c23160"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "7a8aa93d9923561bf5ee340188be49075bee5158e5bc516f0a54fca07f39c651",
+    "ast_yml": "8e88a977a27c5c2ecaf626b5f0c59155090cafd702336cb59f06462db8c1ca3e"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "e273fde710b1397b78c65e8552de2b71d0b6b6c59b0531d549ef2c6dba568208"
+   }
+  }
+ },
+ "TST_KM_COEFF_GEN6": {
+  "ast": {
+   "out": {
+    "mod": "aef73c5498e21cc5b1c3c8435dda6a17dc3651d4e1e260bf67364afbf6d6514c"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "2f01b0367eaaa28044fc474659d1c67190514f951a2ec9da17b8843d27f16c59",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:KM_DVDR4": "07096a66d673877468cba6184c39f5931ee4cf39c2acdf2e892d61c8f7041452",
+    "pins:KM_RG20": "04205c2cc1e1bd30c64592b72867fdc970990f964843ac32764f72e04c0dfdb5",
+    "pins:KM_RG24": "d4e3e631c7d2903fe78806555811031eda7b5c61b608e3d492964e4ac944d147",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN6": "a53ca5f5aba9029b288ae3feb5faacf32958c9c1ba4b81924227e9cd2b9c02a8"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "644c7dfe78fb896ed26324592a9d702640a78b97146408bcb4c02d3f64fd52fa",
+    "unl": "5d25bb51fa7294eba6d304510ad63de3247fafa947e7f9c07a547ca31cb3e590"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_GEN6": "7c3bdfaf56ab96728b667e6c39ea3893d1498359953e9ec6081670b430e31f91",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "aef73c5498e21cc5b1c3c8435dda6a17dc3651d4e1e260bf67364afbf6d6514c",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_GEN6": "4006a6136093e528d1863fe36286ba4980e0947d0f9c7cdf63f7381a1d476b7a",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_GEN6": "a53ca5f5aba9029b288ae3feb5faacf32958c9c1ba4b81924227e9cd2b9c02a8"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "2f01b0367eaaa28044fc474659d1c67190514f951a2ec9da17b8843d27f16c59",
+    "ast_yml": "fcbd808de59017e1bb39bcb438b18082394b9e35a9c772e2621493da86e530d1"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "6ce782e70eb2b6966ce0e244040b0b419adf7861abcb864949a71c674bf4189b"
+   }
+  }
+ },
+ "TST_KM_COEFF_MULT5": {
+  "ast": {
+   "out": {
+    "mod": "e4bf8a11b020bd51b416002bced492b9c1152eb02c841dcc64f950447d5649b6"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "88404f78d292acce6089b691916d1702ddd20cd13bbfaca872d9025c17b4b489",
+    "pins:CLA1": "35985ead0e6cfbe29854c42b53bf54fb19d73199be7e6044142d6f9d11336016",
+    "pins:CLA16": "5b0f04be5e46fa90cc9e7b18fc9a195f53373236072cdf05f78c493de0592aee",
+    "pins:CLA2": "815a06ab4d9fad1ef4560a9d171652dff97d77674a0a60bcdb8ae7bb5e8df11c",
+    "pins:CLA24": "201d8576ead84d9e9831600c00d57471816fcc515fb17f0f8d45547b85706855",
+    "pins:CLA4": "6bc4c1318d475a50f651d114374cc099d17d3ea91080cb95d034d754dd27aebc",
+    "pins:CLA8": "38cd9cb93ae9b59db3102c37735128baec5f84b9d90f0e1a21895a5fc8bd0807",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_MULT5": "2eddc29fd49e2adcf0b895974ec047c61b93ccd79bcf87dcd0741378c9ace2f7"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "74e03068f9b12603972dcee3bc06bd49c121ef4c6e8683a9cd1c58271f9d1c5d",
+    "unl": "1745ff31ae53a9b2a2da56d4ccdb1f82e676af919a9d786e0185517e6a862101"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_MULT5": "dfd75c90a73e8d88ebb1007a42a29dbd998f975ccdac95d58ab6a47e6549bc21",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "e4bf8a11b020bd51b416002bced492b9c1152eb02c841dcc64f950447d5649b6",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MULT5": "dd69e2ebca1c96fee92f4b1932f383dd4fa98bb1ef8f9e39f5af64e9483ff070",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_MULT5": "2eddc29fd49e2adcf0b895974ec047c61b93ccd79bcf87dcd0741378c9ace2f7"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "88404f78d292acce6089b691916d1702ddd20cd13bbfaca872d9025c17b4b489",
+    "ast_yml": "a9efc0afd022e2dd42e19dcfb615d2829da5e4ec84714edb5eac2911224865ac"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "c44786e2e0dc5a493aa2c851a8d12f6aa51549593eb7e198e51291d436bffd0b"
+   }
+  }
+ },
+ "TST_KM_COEFF_MUX3": {
+  "ast": {
+   "out": {
+    "mod": "4421ab64144926b4a82f74236fd5352e5cb3e526f21969192e39740ff1b0f9e7"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "9d9c7166866f5ec5f6f9ac8a403b402a0d004028104d8155df0a4dc9068f82bf",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_MUX3": "ed14288348a704a6fded9981af8ea486cb58465ead9a1d136b3c86a7e55ac410"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "89313f95bf14dc2623b7d6ba6ea6e7047294c32be12d83d0d061dd020b7ee094",
+    "unl": "bcb379df00c7c4c54cd17ee1bb16acc248b9e182a1dcf9f274fa2af2eafed99c"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_COEFF_MUX3": "a172c6a187192b1bb0af491b9bff18d7c5a76f23acea0251741b70335549ba60",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "4421ab64144926b4a82f74236fd5352e5cb3e526f21969192e39740ff1b0f9e7",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_COEFF_MUX3": "ed14288348a704a6fded9981af8ea486cb58465ead9a1d136b3c86a7e55ac410"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "9d9c7166866f5ec5f6f9ac8a403b402a0d004028104d8155df0a4dc9068f82bf",
+    "ast_yml": "a870d6d6d3a4aa024cb964731d748f21f7602732f3bfe987d94ebad8984d64ec"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "4b666f58794c3a4a7bfbe780d656a64a771ae0cec9ea956d1f7c38fc8af199a5"
+   }
+  }
+ },
+ "TST_KM_CS_MULT3": {
+  "ast": {
+   "out": {
+    "mod": "617b0a23243a0d0f89d308c9d3d13946989d1196012c01d8c97cb43d57ea055a"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "ae2a28daa04bed57a4c0e4e8cdc86131a2a5a4090ea4c8a3ab09e6970e32978b",
+    "pins:CSA16_A3": "95238e09b82e4a3b1e8fb62c20460e3c4855c3c00de41e007c91682b539f8eaf",
+    "pins:CSA20_A3": "cf9011cdd070664b58e974429a1659f5254cc36143aae9e73716956578879bf4",
+    "pins:CSA24_A2S1E": "7631809741fa439b857ceba5b060f9190d24d88ade24baffc90e538ecddc9ba7",
+    "pins:CSA24_A3": "c00dbc5bc9b7930f6fbea87277f7baec6d249e55deb8ff49cf62c4bc5e967596",
+    "pins:CSA8S_A2S1EM1": "8ffd49110c8841e2a08c7b8b87e10b8d7f629057c6605a491b321f516c84e3c3",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_COEFF_MUX3": "2d508d67d669716907c2060e072fae73171dd8a37ad66151683fff5d7c4fca2e",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:KM_DEC_2X4": "249112fea83b3fa8a0f2b7153d8f1e209768849a70ab34a6e6e9275d0afcfca2",
+    "pins:KM_MX_16X1B": "aa0deef8183b739125213576205d7366b82c1cd0e85d89c5b03ac1a0b832bc97",
+    "pins:KM_MX_8X1B": "86f28aefa7ba1515141245dccc18090b9c0be3d17e8e3676afc7cd1c3fae94d5",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_CS_MULT3": "91a9206b50d68466915cdb6f286d470f8634241afd839ae49b9e34a78f9cd3d6"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "9d01f61ec61ea3d0308519b53f28cba0862217852cca3dccc0f44e62dddac0f9",
+    "unl": "e2c4038e3c64924ad44d8e99acb98b4fc6bc17dfd2d84f87d649a5f34acf514b"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_CS_MULT3": "abeea5a325c2671dcedc931ed585ffd966437aa3aacd033ff4564c02daf6f814",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "617b0a23243a0d0f89d308c9d3d13946989d1196012c01d8c97cb43d57ea055a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_CS_MULT3": "c289dd7686a95b885cf28093d443de20d70e1141bb638eeaf952093474df8a27",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_CS_MULT3": "91a9206b50d68466915cdb6f286d470f8634241afd839ae49b9e34a78f9cd3d6"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "ae2a28daa04bed57a4c0e4e8cdc86131a2a5a4090ea4c8a3ab09e6970e32978b",
+    "ast_yml": "3484e6b535dbead58c8d968840d6c7ed721714a39dec49409af73efc8d223e80"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "050e169d97aec88d93b3e346665870f543e104213f07a129f224ac32b07d2a33"
+   }
+  }
+ },
+ "TST_KM_REGS18": {
+  "ast": {
+   "out": {
+    "mod": "ff9a6bd166278771d9f092ba58f0b3a212a2ef84ba53033b4dc4e3f77784a60d"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "cbd3bd9ced7bac38fad772a876af549a8e023bb89d9f92cdc8587a453582f983",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_REGS18": "45bc6998b53868ce2c638b7a885f5d343d7784b9d27a85730424b6e4f1baede1"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "5712547fc875ad138ae2373aeec0a978cc0b2fef9f84acf5cc95c97ee7885cd8",
+    "unl": "549fa85fadfe4813e5e41897fe01d0fe2f3aa80b50b0357894a49d2767eaea6c"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_REGS18": "c87f3c31e2ee4b1434ad616e696c1b7a7eaed2544c8f32d4745260ebf2f47b05",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "ff9a6bd166278771d9f092ba58f0b3a212a2ef84ba53033b4dc4e3f77784a60d",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_REGS18": "9cbb3bbf64d73f6f0c61608b15fa0d223c514f56ff4c99cee93d2c6dc3a2682e",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_REGS18": "45bc6998b53868ce2c638b7a885f5d343d7784b9d27a85730424b6e4f1baede1"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "cbd3bd9ced7bac38fad772a876af549a8e023bb89d9f92cdc8587a453582f983",
+    "ast_yml": "865b36f241fb03ee24a329f57117305e2724c7444706d167bc85076986f85bea"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "1150a92df31b7337cc5417b61b64ed7306104405238d48e89589e79a4b252ba2"
+   }
+  }
+ },
+ "TST_KM_REGS20": {
+  "ast": {
+   "out": {
+    "mod": "fb562fdc04f8127b7744d419f5a55685c2ca24d7483be3de175ef833ab24ed92"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "734ae1d452c27919f00dea4d3787b7c4bdb4b6189160534ff44b6cad3e0da56a",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_REGS20": "5b259432b36b789ff768dd835dde087ab579df26e1d14ef49e07cd490cf2be01"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "00eb44a33c08ea408da3b211c0ae1f7dfd0811094ad9345912201173048365bc",
+    "unl": "31a773f8fd91c9ef6be5673c523c994b4fa354ff5791af8e3804722fb072a3e3"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_REGS20": "a8c01346fd270fbf2a1e0cd14dcf065be3d3aa7910e10abf0b92443c9fa1d76c",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "fb562fdc04f8127b7744d419f5a55685c2ca24d7483be3de175ef833ab24ed92",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_REGS20": "a5cfd62dab438352ff88e567f346b5c02e6b920423d675dc9a3c3f9ac73db31f",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_REGS20": "5b259432b36b789ff768dd835dde087ab579df26e1d14ef49e07cd490cf2be01"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "734ae1d452c27919f00dea4d3787b7c4bdb4b6189160534ff44b6cad3e0da56a",
+    "ast_yml": "87922557dee969c71bccb0c350a7b82e08e592a6bda81d244ef29af84eb031b5"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "442ba4966a297f01a501b85b486d5f8b38ef289add62355c1fa69dfb12ebc8c3"
+   }
+  }
+ },
+ "TST_KM_SCRMBLR": {
+  "ast": {
+   "out": {
+    "mod": "59dd7d9366cbd8fa746c1a47a0e709da8740c7f185c1f1e7e9f56102cc9e8bf8"
+   },
+   "parts": {
+    "code": "c0cb392063ed43852e04140ffd7c806d7e8c5c00cf48b20dd0f02e2a1571c9c6",
+    "input": "84694fa2523a539675a4a0e27ded66ca5ad0878bec49ab716a1c034f6caa8f1b",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_SCRMBLR": "e7b2110292a13c580082b12e0798bb1c44897ef33db5d5fceb24e34fd99cc72a"
+   }
+  },
+  "mod": {
+   "out": {
+    "circuit_lib": "0c6e6dc883b3b04e02ded8813b82124c36e721083e03c87440dc3414f8c317cb",
+    "unl": "aad4102617b9f179437b8302327e0ccc3e2f6634869a99c3c53f928b32557ca9"
+   },
+   "parts": {
+    "cell:DG_TILO": "1b87d1edb9e94a7b5dcd4d09d87609d04a8011645a29f6a591868a2b9247fc60",
+    "cell:KM_SCRMBLR": "e06b57b8bfeb9cec30f1c0c74e576d16ef505b50803b22616ffc3aba1b1fd65f",
+    "cell:OUT_BUS24": "90aaf25c1a1d042a847999488a2f5d5e8cd61cc1d8b3dac9c35adca531a5be5c",
+    "code": "39a06248f6b220fa32fe057d53b99f79016f63068c4ca5074ca0022e3dd3f930",
+    "input": "59dd7d9366cbd8fa746c1a47a0e709da8740c7f185c1f1e7e9f56102cc9e8bf8",
+    "pins:DG_TILO": "1562b9c7a83e33cf069224448345b7e1e6b418d8e69dea71237a4efc6e9a47e2",
+    "pins:KM_SCRMBLR": "a6aa4e8be6cf9af14d239357595ee858681bb40e30479bbb0687626de98f8c45",
+    "pins:OUT_BUS24": "745437cdf40dbbd459e5fc97d7e1410c8f1f2fe59b39ab1dca301e238446fd52",
+    "pins:TILO": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91",
+    "pins:TST_KM_SCRMBLR": "e7b2110292a13c580082b12e0798bb1c44897ef33db5d5fceb24e34fd99cc72a"
+   }
+  },
+  "verilog": {
+   "out": {
+    "ast": "84694fa2523a539675a4a0e27ded66ca5ad0878bec49ab716a1c034f6caa8f1b",
+    "ast_yml": "1b8da2288b1b040e2766b823266008a7a7463af1c0ea9b82954fa6e3ecced798"
+   },
+   "parts": {
+    "code": "3e8fb966539302012bf686208fbd86ea3520cc9784637916af5d2a66bd59b11c",
+    "data:~/.xschem/verilogParse/lib/verilog_fixups.yml": "966ea35198c51632e54b42f0d64c99475570f4d83542dd30451196e954360106",
+    "data:~/.xschem/verilogParse/parse_verilog.cfg": "55dec8602273245501801079e93d7e442d8ba6cf5489257c530fb812616b6f34",
+    "include:TECH_DIG.inc": "f0281f34516a26a38b93b6f85cc6133557ef505bcd03f8624bb6e4e0d65556db",
+    "input": "0dd0f14937ce3b066b966b52f8626a90ba679abacedac509cc582a8c97d04d12"
    }
   }
  }

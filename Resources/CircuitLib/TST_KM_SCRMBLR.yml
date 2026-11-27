@@ -1,0 +1,246 @@
+kind: verilog
+module: TST_KM_SCRMBLR
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: DIN
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: DATA_0
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+  -   - kind: Wire
+        name: ON
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: OP
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+behav_blcks:
+  - kind: subcirc
+    name: DUT
+    module: KM_SCRMBLR
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: DIN
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: ident
+            name: OP
+      - port: None
+        node:
+            kind: ident
+            name: ON
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: TILO_Z
+    module: DG_TILO
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_0
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_SCRMBLR_0.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: ident
+            name: ON
+      - port: None
+        node:
+            kind: ident
+            name: OP
+      - port: None
+        node:
+            kind: slice
+            name: DATA_0
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS

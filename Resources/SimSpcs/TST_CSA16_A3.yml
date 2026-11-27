@@ -1,0 +1,9026 @@
+Constants:
+    PER: 2500
+Clock:
+  - clkNm: CLK
+    per: PER
+FinishTime: 1128*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 1.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 10.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0xffff'
+  - tm: 100.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0xffff'
+  - tm: 1000.5*PER
+    vls:
+      -   - A
+          - '0xf485'
+      -   - B
+          - '0x20fa'
+      -   - C
+          - '0x7bf2'
+  - tm: 1001.5*PER
+    vls:
+      -   - A
+          - '0x4f8b'
+      -   - B
+          - '0xd054'
+      -   - C
+          - '0xa8c0'
+  - tm: 1002.5*PER
+    vls:
+      -   - A
+          - '0x9976'
+      -   - B
+          - '0x28f1'
+      -   - C
+          - '0xd45b'
+  - tm: 1003.5*PER
+    vls:
+      -   - A
+          - '0x230f'
+      -   - B
+          - '0x9fa4'
+      -   - C
+          - '0x8c75'
+  - tm: 1004.5*PER
+    vls:
+      -   - A
+          - '0x226a'
+      -   - B
+          - '0xf471'
+      -   - C
+          - '0x3a18'
+  - tm: 1005.5*PER
+    vls:
+      -   - A
+          - '0xcb3f'
+      -   - B
+          - '0x46b7'
+      -   - C
+          - '0x6719'
+  - tm: 1006.5*PER
+    vls:
+      -   - A
+          - '0x389a'
+      -   - B
+          - '0x7c0'
+      -   - C
+          - '0x9768'
+  - tm: 1007.5*PER
+    vls:
+      -   - A
+          - '0x59de'
+      -   - B
+          - '0x6b07'
+      -   - C
+          - '0xdab4'
+  - tm: 1008.5*PER
+    vls:
+      -   - A
+          - '0x5d95'
+      -   - B
+          - '0x477b'
+      -   - C
+          - '0x528'
+  - tm: 1009.5*PER
+    vls:
+      -   - A
+          - '0xc7d3'
+      -   - B
+          - '0xfc8d'
+      -   - C
+          - '0x6976'
+  - tm: 101.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 1010.5*PER
+    vls:
+      -   - A
+          - '0x7c44'
+      -   - B
+          - '0x3194'
+      -   - C
+          - '0x3560'
+  - tm: 1011.5*PER
+    vls:
+      -   - A
+          - '0x5efd'
+      -   - B
+          - '0xa9a3'
+      -   - C
+          - '0xd89c'
+  - tm: 1012.5*PER
+    vls:
+      -   - A
+          - '0x1753'
+      -   - B
+          - '0x9647'
+      -   - C
+          - '0x2559'
+  - tm: 1013.5*PER
+    vls:
+      -   - A
+          - '0x288c'
+      -   - B
+          - '0xf17b'
+      -   - C
+          - '0xa897'
+  - tm: 1014.5*PER
+    vls:
+      -   - A
+          - '0xaac4'
+      -   - B
+          - '0x74aa'
+      -   - C
+          - '0x5bc1'
+  - tm: 1015.5*PER
+    vls:
+      -   - A
+          - '0x5de7'
+      -   - B
+          - '0x221e'
+      -   - C
+          - '0x2631'
+  - tm: 1016.5*PER
+    vls:
+      -   - A
+          - '0xb9de'
+      -   - B
+          - '0xf944'
+      -   - C
+          - '0x3dc4'
+  - tm: 1017.5*PER
+    vls:
+      -   - A
+          - '0x4693'
+      -   - B
+          - '0x53d5'
+      -   - C
+          - '0x4647'
+  - tm: 1018.5*PER
+    vls:
+      -   - A
+          - '0x47c0'
+      -   - B
+          - '0xb159'
+      -   - C
+          - '0xa140'
+  - tm: 1019.5*PER
+    vls:
+      -   - A
+          - '0xb234'
+      -   - B
+          - '0x3e51'
+      -   - C
+          - '0xa35e'
+  - tm: 102.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x1'
+  - tm: 1020.5*PER
+    vls:
+      -   - A
+          - '0xdee'
+      -   - B
+          - '0x19'
+      -   - C
+          - '0xd937'
+  - tm: 1021.5*PER
+    vls:
+      -   - A
+          - '0x8b26'
+      -   - B
+          - '0x8787'
+      -   - C
+          - '0xbe4f'
+  - tm: 1022.5*PER
+    vls:
+      -   - A
+          - '0x2056'
+      -   - B
+          - '0x5503'
+      -   - C
+          - '0x1034'
+  - tm: 1023.5*PER
+    vls:
+      -   - A
+          - '0xedae'
+      -   - B
+          - '0xe960'
+      -   - C
+          - '0xe46a'
+  - tm: 1024.5*PER
+    vls:
+      -   - A
+          - '0x8285'
+      -   - B
+          - '0x2baf'
+      -   - C
+          - '0x8cb0'
+  - tm: 1025.5*PER
+    vls:
+      -   - A
+          - '0x270c'
+      -   - B
+          - '0xe682'
+      -   - C
+          - '0xa3b5'
+  - tm: 1026.5*PER
+    vls:
+      -   - A
+          - '0x610'
+      -   - B
+          - '0x4ce4'
+      -   - C
+          - '0x1b47'
+  - tm: 1027.5*PER
+    vls:
+      -   - A
+          - '0x1aa1'
+      -   - B
+          - '0x3501'
+      -   - C
+          - '0x2552'
+  - tm: 1028.5*PER
+    vls:
+      -   - A
+          - '0xb314'
+      -   - B
+          - '0x115'
+      -   - C
+          - '0x1d07'
+  - tm: 1029.5*PER
+    vls:
+      -   - A
+          - '0x2b35'
+      -   - B
+          - '0x8fff'
+      -   - C
+          - '0x49cb'
+  - tm: 103.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x7fff'
+  - tm: 1030.5*PER
+    vls:
+      -   - A
+          - '0xcb1a'
+      -   - B
+          - '0x49d7'
+      -   - C
+          - '0x66c9'
+  - tm: 1031.5*PER
+    vls:
+      -   - A
+          - '0xbb3a'
+      -   - B
+          - '0xaa7a'
+      -   - C
+          - '0x4727'
+  - tm: 1032.5*PER
+    vls:
+      -   - A
+          - '0xad9'
+      -   - B
+          - '0xe675'
+      -   - C
+          - '0x7b7d'
+  - tm: 1033.5*PER
+    vls:
+      -   - A
+          - '0xed62'
+      -   - B
+          - '0x5fd0'
+      -   - C
+          - '0x7ac'
+  - tm: 1034.5*PER
+    vls:
+      -   - A
+          - '0xacce'
+      -   - B
+          - '0xa410'
+      -   - C
+          - '0x6477'
+  - tm: 1035.5*PER
+    vls:
+      -   - A
+          - '0x78b8'
+      -   - B
+          - '0xa940'
+      -   - C
+          - '0x5ccf'
+  - tm: 1036.5*PER
+    vls:
+      -   - A
+          - '0xe623'
+      -   - B
+          - '0x97a0'
+      -   - C
+          - '0xeea9'
+  - tm: 1037.5*PER
+    vls:
+      -   - A
+          - '0xc977'
+      -   - B
+          - '0xd008'
+      -   - C
+          - '0xb76c'
+  - tm: 1038.5*PER
+    vls:
+      -   - A
+          - '0xb4c9'
+      -   - B
+          - '0x42fa'
+      -   - C
+          - '0xf666'
+  - tm: 1039.5*PER
+    vls:
+      -   - A
+          - '0xd207'
+      -   - B
+          - '0x6e12'
+      -   - C
+          - '0x2fc4'
+  - tm: 104.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x8000'
+  - tm: 1040.5*PER
+    vls:
+      -   - A
+          - '0x53f'
+      -   - B
+          - '0xf62'
+      -   - C
+          - '0xce00'
+  - tm: 1041.5*PER
+    vls:
+      -   - A
+          - '0x8feb'
+      -   - B
+          - '0x5c18'
+      -   - C
+          - '0x6f90'
+  - tm: 1042.5*PER
+    vls:
+      -   - A
+          - '0x55ca'
+      -   - B
+          - '0x509d'
+      -   - C
+          - '0xf2d5'
+  - tm: 1043.5*PER
+    vls:
+      -   - A
+          - '0x4a89'
+      -   - B
+          - '0x667c'
+      -   - C
+          - '0xac16'
+  - tm: 1044.5*PER
+    vls:
+      -   - A
+          - '0x221a'
+      -   - B
+          - '0x6a76'
+      -   - C
+          - '0xe7ca'
+  - tm: 1045.5*PER
+    vls:
+      -   - A
+          - '0x149a'
+      -   - B
+          - '0xc2'
+      -   - C
+          - '0x4c8b'
+  - tm: 1046.5*PER
+    vls:
+      -   - A
+          - '0xd4e'
+      -   - B
+          - '0x72c7'
+      -   - C
+          - '0xb32c'
+  - tm: 1047.5*PER
+    vls:
+      -   - A
+          - '0xee44'
+      -   - B
+          - '0x2c2f'
+      -   - C
+          - '0x1d6c'
+  - tm: 1048.5*PER
+    vls:
+      -   - A
+          - '0xb8aa'
+      -   - B
+          - '0x5764'
+      -   - C
+          - '0xd4'
+  - tm: 1049.5*PER
+    vls:
+      -   - A
+          - '0x512b'
+      -   - B
+          - '0x4ab1'
+      -   - C
+          - '0x51ac'
+  - tm: 105.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0xffff'
+  - tm: 1050.5*PER
+    vls:
+      -   - A
+          - '0x654c'
+      -   - B
+          - '0x7a94'
+      -   - C
+          - '0xa07b'
+  - tm: 1051.5*PER
+    vls:
+      -   - A
+          - '0xd20d'
+      -   - B
+          - '0xbe84'
+      -   - C
+          - '0x7a67'
+  - tm: 1052.5*PER
+    vls:
+      -   - A
+          - '0xad6f'
+      -   - B
+          - '0x8d35'
+      -   - C
+          - '0x31b4'
+  - tm: 1053.5*PER
+    vls:
+      -   - A
+          - '0x39b1'
+      -   - B
+          - '0xda8e'
+      -   - C
+          - '0x3f6'
+  - tm: 1054.5*PER
+    vls:
+      -   - A
+          - '0xdbc'
+      -   - B
+          - '0xf8d3'
+      -   - C
+          - '0x708b'
+  - tm: 1055.5*PER
+    vls:
+      -   - A
+          - '0x9559'
+      -   - B
+          - '0xce9'
+      -   - C
+          - '0x150'
+  - tm: 1056.5*PER
+    vls:
+      -   - A
+          - '0xc4ee'
+      -   - B
+          - '0x6ae8'
+      -   - C
+          - '0x78d4'
+  - tm: 1057.5*PER
+    vls:
+      -   - A
+          - '0xe923'
+      -   - B
+          - '0x7084'
+      -   - C
+          - '0x192f'
+  - tm: 1058.5*PER
+    vls:
+      -   - A
+          - '0xef87'
+      -   - B
+          - '0x815d'
+      -   - C
+          - '0x3e10'
+  - tm: 1059.5*PER
+    vls:
+      -   - A
+          - '0xc71c'
+      -   - B
+          - '0xa770'
+      -   - C
+          - '0x209d'
+  - tm: 106.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x0'
+  - tm: 1060.5*PER
+    vls:
+      -   - A
+          - '0xb286'
+      -   - B
+          - '0xf4f2'
+      -   - C
+          - '0x122c'
+  - tm: 1061.5*PER
+    vls:
+      -   - A
+          - '0x2d9e'
+      -   - B
+          - '0xc533'
+      -   - C
+          - '0x26d7'
+  - tm: 1062.5*PER
+    vls:
+      -   - A
+          - '0x574b'
+      -   - B
+          - '0x2d8e'
+      -   - C
+          - '0xbb23'
+  - tm: 1063.5*PER
+    vls:
+      -   - A
+          - '0x8986'
+      -   - B
+          - '0xc0cd'
+      -   - C
+          - '0x5bf6'
+  - tm: 1064.5*PER
+    vls:
+      -   - A
+          - '0x55d1'
+      -   - B
+          - '0x39ef'
+      -   - C
+          - '0x650a'
+  - tm: 1065.5*PER
+    vls:
+      -   - A
+          - '0xd7ab'
+      -   - B
+          - '0x6930'
+      -   - C
+          - '0x26c5'
+  - tm: 1066.5*PER
+    vls:
+      -   - A
+          - '0x19a8'
+      -   - B
+          - '0x743d'
+      -   - C
+          - '0x9116'
+  - tm: 1067.5*PER
+    vls:
+      -   - A
+          - '0x4ab4'
+      -   - B
+          - '0xb9b2'
+      -   - C
+          - '0x6924'
+  - tm: 1068.5*PER
+    vls:
+      -   - A
+          - '0xf5ac'
+      -   - B
+          - '0x2aad'
+      -   - C
+          - '0x71b6'
+  - tm: 1069.5*PER
+    vls:
+      -   - A
+          - '0x2341'
+      -   - B
+          - '0x8c47'
+      -   - C
+          - '0xe87c'
+  - tm: 107.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x1'
+  - tm: 1070.5*PER
+    vls:
+      -   - A
+          - '0xa3c8'
+      -   - B
+          - '0x91d'
+      -   - C
+          - '0xc34b'
+  - tm: 1071.5*PER
+    vls:
+      -   - A
+          - '0xd6b7'
+      -   - B
+          - '0xa9f9'
+      -   - C
+          - '0xb43e'
+  - tm: 1072.5*PER
+    vls:
+      -   - A
+          - '0xf4f9'
+      -   - B
+          - '0x5a62'
+      -   - C
+          - '0xd77c'
+  - tm: 1073.5*PER
+    vls:
+      -   - A
+          - '0xccf9'
+      -   - B
+          - '0xf6f2'
+      -   - C
+          - '0x83de'
+  - tm: 1074.5*PER
+    vls:
+      -   - A
+          - '0x713e'
+      -   - B
+          - '0xd35f'
+      -   - C
+          - '0x8c2a'
+  - tm: 1075.5*PER
+    vls:
+      -   - A
+          - '0x55d8'
+      -   - B
+          - '0x2b00'
+      -   - C
+          - '0xf5fe'
+  - tm: 1076.5*PER
+    vls:
+      -   - A
+          - '0x8362'
+      -   - B
+          - '0xaf2b'
+      -   - C
+          - '0x8325'
+  - tm: 1077.5*PER
+    vls:
+      -   - A
+          - '0x143c'
+      -   - B
+          - '0x5b15'
+      -   - C
+          - '0x3ce9'
+  - tm: 1078.5*PER
+    vls:
+      -   - A
+          - '0xeed3'
+      -   - B
+          - '0x49bd'
+      -   - C
+          - '0xe0d0'
+  - tm: 1079.5*PER
+    vls:
+      -   - A
+          - '0x4857'
+      -   - B
+          - '0xd1fc'
+      -   - C
+          - '0x4c9c'
+  - tm: 108.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x7fff'
+  - tm: 1080.5*PER
+    vls:
+      -   - A
+          - '0x4c8a'
+      -   - B
+          - '0x1c3a'
+      -   - C
+          - '0x94ab'
+  - tm: 1081.5*PER
+    vls:
+      -   - A
+          - '0xe9ad'
+      -   - B
+          - '0xdb4a'
+      -   - C
+          - '0xe4af'
+  - tm: 1082.5*PER
+    vls:
+      -   - A
+          - '0x6424'
+      -   - B
+          - '0x8917'
+      -   - C
+          - '0x95e4'
+  - tm: 1083.5*PER
+    vls:
+      -   - A
+          - '0x3cb0'
+      -   - B
+          - '0x312f'
+      -   - C
+          - '0xafa5'
+  - tm: 1084.5*PER
+    vls:
+      -   - A
+          - '0xf0e3'
+      -   - B
+          - '0x6a56'
+      -   - C
+          - '0x9292'
+  - tm: 1085.5*PER
+    vls:
+      -   - A
+          - '0xcd7c'
+      -   - B
+          - '0x732f'
+      -   - C
+          - '0x1461'
+  - tm: 1086.5*PER
+    vls:
+      -   - A
+          - '0xdbe9'
+      -   - B
+          - '0xd726'
+      -   - C
+          - '0x455a'
+  - tm: 1087.5*PER
+    vls:
+      -   - A
+          - '0x91b3'
+      -   - B
+          - '0x880c'
+      -   - C
+          - '0xfb8c'
+  - tm: 1088.5*PER
+    vls:
+      -   - A
+          - '0x68dc'
+      -   - B
+          - '0x625b'
+      -   - C
+          - '0xe5b7'
+  - tm: 1089.5*PER
+    vls:
+      -   - A
+          - '0x20a2'
+      -   - B
+          - '0x8003'
+      -   - C
+          - '0x5d9b'
+  - tm: 109.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x8000'
+  - tm: 1090.5*PER
+    vls:
+      -   - A
+          - '0xf218'
+      -   - B
+          - '0x7e05'
+      -   - C
+          - '0xd260'
+  - tm: 1091.5*PER
+    vls:
+      -   - A
+          - '0x3400'
+      -   - B
+          - '0x1c99'
+      -   - C
+          - '0x358f'
+  - tm: 1092.5*PER
+    vls:
+      -   - A
+          - '0x9626'
+      -   - B
+          - '0xe8c2'
+      -   - C
+          - '0x7db1'
+  - tm: 1093.5*PER
+    vls:
+      -   - A
+          - '0xa570'
+      -   - B
+          - '0x270d'
+      -   - C
+          - '0x13be'
+  - tm: 1094.5*PER
+    vls:
+      -   - A
+          - '0xe054'
+      -   - B
+          - '0x310b'
+      -   - C
+          - '0xd137'
+  - tm: 1095.5*PER
+    vls:
+      -   - A
+          - '0xcc04'
+      -   - B
+          - '0xf888'
+      -   - C
+          - '0xc799'
+  - tm: 1096.5*PER
+    vls:
+      -   - A
+          - '0x7d04'
+      -   - B
+          - '0xac6f'
+      -   - C
+          - '0x24e6'
+  - tm: 1097.5*PER
+    vls:
+      -   - A
+          - '0x1a70'
+      -   - B
+          - '0xa793'
+      -   - C
+          - '0xb364'
+  - tm: 1098.5*PER
+    vls:
+      -   - A
+          - '0xd67f'
+      -   - B
+          - '0x9f95'
+      -   - C
+          - '0x455a'
+  - tm: 1099.5*PER
+    vls:
+      -   - A
+          - '0x5374'
+      -   - B
+          - '0xc262'
+      -   - C
+          - '0x34a9'
+  - tm: 11.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x0'
+  - tm: 110.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0xffff'
+  - tm: 1100.5*PER
+    vls:
+      -   - A
+          - '0x7b71'
+      -   - B
+          - '0xbdde'
+      -   - C
+          - '0x62f6'
+  - tm: 1101.5*PER
+    vls:
+      -   - A
+          - '0x8d05'
+      -   - B
+          - '0xfba7'
+      -   - C
+          - '0x99c3'
+  - tm: 1102.5*PER
+    vls:
+      -   - A
+          - '0xb2de'
+      -   - B
+          - '0x49e9'
+      -   - C
+          - '0xf859'
+  - tm: 1103.5*PER
+    vls:
+      -   - A
+          - '0xe7'
+      -   - B
+          - '0xc662'
+      -   - C
+          - '0xe9c0'
+  - tm: 1104.5*PER
+    vls:
+      -   - A
+          - '0xd430'
+      -   - B
+          - '0xc41e'
+      -   - C
+          - '0x3651'
+  - tm: 1105.5*PER
+    vls:
+      -   - A
+          - '0x6f03'
+      -   - B
+          - '0xbecf'
+      -   - C
+          - '0x4f17'
+  - tm: 1106.5*PER
+    vls:
+      -   - A
+          - '0x1968'
+      -   - B
+          - '0x415d'
+      -   - C
+          - '0xc487'
+  - tm: 1107.5*PER
+    vls:
+      -   - A
+          - '0x70'
+      -   - B
+          - '0xb034'
+      -   - C
+          - '0xd742'
+  - tm: 1108.5*PER
+    vls:
+      -   - A
+          - '0x665e'
+      -   - B
+          - '0x3417'
+      -   - C
+          - '0x9500'
+  - tm: 1109.5*PER
+    vls:
+      -   - A
+          - '0xaa7d'
+      -   - B
+          - '0xf66d'
+      -   - C
+          - '0xb822'
+  - tm: 111.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x0'
+  - tm: 1110.5*PER
+    vls:
+      -   - A
+          - '0xaf0f'
+      -   - B
+          - '0xd3b1'
+      -   - C
+          - '0x4c01'
+  - tm: 1111.5*PER
+    vls:
+      -   - A
+          - '0x27c3'
+      -   - B
+          - '0xf6b1'
+      -   - C
+          - '0x9f54'
+  - tm: 1112.5*PER
+    vls:
+      -   - A
+          - '0xc809'
+      -   - B
+          - '0xf899'
+      -   - C
+          - '0x4d60'
+  - tm: 1113.5*PER
+    vls:
+      -   - A
+          - '0xfb2'
+      -   - B
+          - '0x6adb'
+      -   - C
+          - '0xa8f2'
+  - tm: 1114.5*PER
+    vls:
+      -   - A
+          - '0x5823'
+      -   - B
+          - '0xe89b'
+      -   - C
+          - '0x7172'
+  - tm: 1115.5*PER
+    vls:
+      -   - A
+          - '0xdda4'
+      -   - B
+          - '0xd694'
+      -   - C
+          - '0xdad'
+  - tm: 1116.5*PER
+    vls:
+      -   - A
+          - '0x6155'
+      -   - B
+          - '0x6dab'
+      -   - C
+          - '0xf166'
+  - tm: 1117.5*PER
+    vls:
+      -   - A
+          - '0xc94d'
+      -   - B
+          - '0x4e94'
+      -   - C
+          - '0x1c9d'
+  - tm: 1118.5*PER
+    vls:
+      -   - A
+          - '0x5ad5'
+      -   - B
+          - '0xd21d'
+      -   - C
+          - '0x4b51'
+  - tm: 1119.5*PER
+    vls:
+      -   - A
+          - '0xe042'
+      -   - B
+          - '0xc9bb'
+      -   - C
+          - '0xc719'
+  - tm: 112.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x1'
+  - tm: 1120.5*PER
+    vls:
+      -   - A
+          - '0x1c07'
+      -   - B
+          - '0x8038'
+      -   - C
+          - '0x2852'
+  - tm: 1121.5*PER
+    vls:
+      -   - A
+          - '0x307d'
+      -   - B
+          - '0xcf5a'
+      -   - C
+          - '0xee92'
+  - tm: 1122.5*PER
+    vls:
+      -   - A
+          - '0xbe9e'
+      -   - B
+          - '0x245'
+      -   - C
+          - '0x2753'
+  - tm: 1123.5*PER
+    vls:
+      -   - A
+          - '0xbc77'
+      -   - B
+          - '0x6c4f'
+      -   - C
+          - '0x3957'
+  - tm: 1124.5*PER
+    vls:
+      -   - A
+          - '0xf32'
+      -   - B
+          - '0xace9'
+      -   - C
+          - '0xd858'
+  - tm: 1125.5*PER
+    vls:
+      -   - A
+          - '0x349a'
+      -   - B
+          - '0xe090'
+      -   - C
+          - '0x3ba7'
+  - tm: 113.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x7fff'
+  - tm: 114.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x8000'
+  - tm: 115.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0xffff'
+  - tm: 116.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x0'
+  - tm: 117.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x1'
+  - tm: 118.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x7fff'
+  - tm: 119.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x8000'
+  - tm: 12.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x1'
+  - tm: 120.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0xffff'
+  - tm: 121.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x0'
+  - tm: 122.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x1'
+  - tm: 123.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x7fff'
+  - tm: 124.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x8000'
+  - tm: 125.5*PER
+    vls:
+      -   - A
+          - '0xffff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0xffff'
+  - tm: 126.5*PER
+    vls:
+      -   - A
+          - '0x424e'
+      -   - B
+          - '0x4a6f'
+      -   - C
+          - '0xaf6d'
+  - tm: 127.5*PER
+    vls:
+      -   - A
+          - '0xe8d7'
+      -   - B
+          - '0xaf1f'
+      -   - C
+          - '0xcd50'
+  - tm: 128.5*PER
+    vls:
+      -   - A
+          - '0xd96e'
+      -   - B
+          - '0xe3d6'
+      -   - C
+          - '0x2f8b'
+  - tm: 129.5*PER
+    vls:
+      -   - A
+          - '0xa6ea'
+      -   - B
+          - '0x3b05'
+      -   - C
+          - '0xaa8b'
+  - tm: 13.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x7fff'
+  - tm: 130.5*PER
+    vls:
+      -   - A
+          - '0x25ac'
+      -   - B
+          - '0xde85'
+      -   - C
+          - '0x39a4'
+  - tm: 131.5*PER
+    vls:
+      -   - A
+          - '0xa415'
+      -   - B
+          - '0xbbe8'
+      -   - C
+          - '0x2ff7'
+  - tm: 132.5*PER
+    vls:
+      -   - A
+          - '0x2155'
+      -   - B
+          - '0x1221'
+      -   - C
+          - '0x8804'
+  - tm: 133.5*PER
+    vls:
+      -   - A
+          - '0xd885'
+      -   - B
+          - '0x36c2'
+      -   - C
+          - '0xbea4'
+  - tm: 134.5*PER
+    vls:
+      -   - A
+          - '0x4b6e'
+      -   - B
+          - '0x7ac'
+      -   - C
+          - '0x6e7c'
+  - tm: 135.5*PER
+    vls:
+      -   - A
+          - '0x2054'
+      -   - B
+          - '0xd670'
+      -   - C
+          - '0xaf25'
+  - tm: 136.5*PER
+    vls:
+      -   - A
+          - '0x9bc0'
+      -   - B
+          - '0xff7d'
+      -   - C
+          - '0x3b1'
+  - tm: 137.5*PER
+    vls:
+      -   - A
+          - '0xfe33'
+      -   - B
+          - '0x469d'
+      -   - C
+          - '0xd59a'
+  - tm: 138.5*PER
+    vls:
+      -   - A
+          - '0x258e'
+      -   - B
+          - '0x15bf'
+      -   - C
+          - '0xdf0c'
+  - tm: 139.5*PER
+    vls:
+      -   - A
+          - '0xcb4a'
+      -   - B
+          - '0xcf4b'
+      -   - C
+          - '0xe36b'
+  - tm: 14.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x8000'
+  - tm: 140.5*PER
+    vls:
+      -   - A
+          - '0xce59'
+      -   - B
+          - '0x432f'
+      -   - C
+          - '0xd38c'
+  - tm: 141.5*PER
+    vls:
+      -   - A
+          - '0x7379'
+      -   - B
+          - '0xbea7'
+      -   - C
+          - '0x6fcf'
+  - tm: 142.5*PER
+    vls:
+      -   - A
+          - '0xf306'
+      -   - B
+          - '0x23b6'
+      -   - C
+          - '0xcb34'
+  - tm: 143.5*PER
+    vls:
+      -   - A
+          - '0xe084'
+      -   - B
+          - '0x41b7'
+      -   - C
+          - '0x5b11'
+  - tm: 144.5*PER
+    vls:
+      -   - A
+          - '0xd995'
+      -   - B
+          - '0x3be9'
+      -   - C
+          - '0x7c9d'
+  - tm: 145.5*PER
+    vls:
+      -   - A
+          - '0xe5f3'
+      -   - B
+          - '0xc147'
+      -   - C
+          - '0x8cb9'
+  - tm: 146.5*PER
+    vls:
+      -   - A
+          - '0x906b'
+      -   - B
+          - '0xfb3e'
+      -   - C
+          - '0x6df8'
+  - tm: 147.5*PER
+    vls:
+      -   - A
+          - '0xabb4'
+      -   - B
+          - '0x5d3c'
+      -   - C
+          - '0xe37d'
+  - tm: 148.5*PER
+    vls:
+      -   - A
+          - '0x6e08'
+      -   - B
+          - '0xa37e'
+      -   - C
+          - '0x5052'
+  - tm: 149.5*PER
+    vls:
+      -   - A
+          - '0xa7be'
+      -   - B
+          - '0x1e0b'
+      -   - C
+          - '0x5892'
+  - tm: 15.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0xffff'
+  - tm: 150.5*PER
+    vls:
+      -   - A
+          - '0xd1d4'
+      -   - B
+          - '0x983c'
+      -   - C
+          - '0xcc5a'
+  - tm: 151.5*PER
+    vls:
+      -   - A
+          - '0xa23f'
+      -   - B
+          - '0xfc55'
+      -   - C
+          - '0x434c'
+  - tm: 152.5*PER
+    vls:
+      -   - A
+          - '0xb0e0'
+      -   - B
+          - '0x72c8'
+      -   - C
+          - '0x8de1'
+  - tm: 153.5*PER
+    vls:
+      -   - A
+          - '0x9c76'
+      -   - B
+          - '0xbf97'
+      -   - C
+          - '0xfcb6'
+  - tm: 154.5*PER
+    vls:
+      -   - A
+          - '0x2285'
+      -   - B
+          - '0x70bc'
+      -   - C
+          - '0xad44'
+  - tm: 155.5*PER
+    vls:
+      -   - A
+          - '0xba9c'
+      -   - B
+          - '0x7182'
+      -   - C
+          - '0x8935'
+  - tm: 156.5*PER
+    vls:
+      -   - A
+          - '0x2d37'
+      -   - B
+          - '0x4b16'
+      -   - C
+          - '0x33df'
+  - tm: 157.5*PER
+    vls:
+      -   - A
+          - '0x2ded'
+      -   - B
+          - '0x85cf'
+      -   - C
+          - '0x5b33'
+  - tm: 158.5*PER
+    vls:
+      -   - A
+          - '0x40d9'
+      -   - B
+          - '0x5f01'
+      -   - C
+          - '0x759f'
+  - tm: 159.5*PER
+    vls:
+      -   - A
+          - '0x4302'
+      -   - B
+          - '0x9b01'
+      -   - C
+          - '0x47b7'
+  - tm: 16.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x0'
+  - tm: 160.5*PER
+    vls:
+      -   - A
+          - '0x6550'
+      -   - B
+          - '0xe3a7'
+      -   - C
+          - '0x217a'
+  - tm: 161.5*PER
+    vls:
+      -   - A
+          - '0x93c3'
+      -   - B
+          - '0x7da8'
+      -   - C
+          - '0x8cce'
+  - tm: 162.5*PER
+    vls:
+      -   - A
+          - '0x3c46'
+      -   - B
+          - '0x90bb'
+      -   - C
+          - '0x3c55'
+  - tm: 163.5*PER
+    vls:
+      -   - A
+          - '0xe2f9'
+      -   - B
+          - '0x31c8'
+      -   - C
+          - '0xb398'
+  - tm: 164.5*PER
+    vls:
+      -   - A
+          - '0x5dcf'
+      -   - B
+          - '0x218f'
+      -   - C
+          - '0x12c2'
+  - tm: 165.5*PER
+    vls:
+      -   - A
+          - '0x6e2d'
+      -   - B
+          - '0xa6b7'
+      -   - C
+          - '0xa10b'
+  - tm: 166.5*PER
+    vls:
+      -   - A
+          - '0xf423'
+      -   - B
+          - '0x76b1'
+      -   - C
+          - '0x63c2'
+  - tm: 167.5*PER
+    vls:
+      -   - A
+          - '0x8e'
+      -   - B
+          - '0xb808'
+      -   - C
+          - '0x6c9f'
+  - tm: 168.5*PER
+    vls:
+      -   - A
+          - '0xeed7'
+      -   - B
+          - '0xde14'
+      -   - C
+          - '0xb0f'
+  - tm: 169.5*PER
+    vls:
+      -   - A
+          - '0x3993'
+      -   - B
+          - '0x2449'
+      -   - C
+          - '0x7f7e'
+  - tm: 17.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x1'
+  - tm: 170.5*PER
+    vls:
+      -   - A
+          - '0xce5c'
+      -   - B
+          - '0xb2b8'
+      -   - C
+          - '0xd690'
+  - tm: 171.5*PER
+    vls:
+      -   - A
+          - '0x71f3'
+      -   - B
+          - '0xa399'
+      -   - C
+          - '0x40f2'
+  - tm: 172.5*PER
+    vls:
+      -   - A
+          - '0x28e5'
+      -   - B
+          - '0xbbaf'
+      -   - C
+          - '0x69da'
+  - tm: 173.5*PER
+    vls:
+      -   - A
+          - '0xbc7b'
+      -   - B
+          - '0xde45'
+      -   - C
+          - '0x4053'
+  - tm: 174.5*PER
+    vls:
+      -   - A
+          - '0xe2dd'
+      -   - B
+          - '0xc28c'
+      -   - C
+          - '0xcd9c'
+  - tm: 175.5*PER
+    vls:
+      -   - A
+          - '0x59c0'
+      -   - B
+          - '0x33fb'
+      -   - C
+          - '0xb494'
+  - tm: 176.5*PER
+    vls:
+      -   - A
+          - '0xda89'
+      -   - B
+          - '0xa168'
+      -   - C
+          - '0x5ff0'
+  - tm: 177.5*PER
+    vls:
+      -   - A
+          - '0x8535'
+      -   - B
+          - '0xb76d'
+      -   - C
+          - '0xa827'
+  - tm: 178.5*PER
+    vls:
+      -   - A
+          - '0x2312'
+      -   - B
+          - '0xe6c4'
+      -   - C
+          - '0xf8a7'
+  - tm: 179.5*PER
+    vls:
+      -   - A
+          - '0xb432'
+      -   - B
+          - '0x9a7e'
+      -   - C
+          - '0x3cd7'
+  - tm: 18.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x7fff'
+  - tm: 180.5*PER
+    vls:
+      -   - A
+          - '0xb903'
+      -   - B
+          - '0x7f10'
+      -   - C
+          - '0x3632'
+  - tm: 181.5*PER
+    vls:
+      -   - A
+          - '0xdc8f'
+      -   - B
+          - '0x9e03'
+      -   - C
+          - '0xae5'
+  - tm: 182.5*PER
+    vls:
+      -   - A
+          - '0x94b4'
+      -   - B
+          - '0xb3a8'
+      -   - C
+          - '0x975a'
+  - tm: 183.5*PER
+    vls:
+      -   - A
+          - '0x9e4'
+      -   - B
+          - '0x5bfe'
+      -   - C
+          - '0x9541'
+  - tm: 184.5*PER
+    vls:
+      -   - A
+          - '0xba4a'
+      -   - B
+          - '0x91e4'
+      -   - C
+          - '0x5761'
+  - tm: 185.5*PER
+    vls:
+      -   - A
+          - '0x2ea1'
+      -   - B
+          - '0x4b9a'
+      -   - C
+          - '0x3160'
+  - tm: 186.5*PER
+    vls:
+      -   - A
+          - '0x2a1b'
+      -   - B
+          - '0xc993'
+      -   - C
+          - '0xaf1c'
+  - tm: 187.5*PER
+    vls:
+      -   - A
+          - '0x8e27'
+      -   - B
+          - '0x1cbd'
+      -   - C
+          - '0xe68e'
+  - tm: 188.5*PER
+    vls:
+      -   - A
+          - '0x39be'
+      -   - B
+          - '0x2ad6'
+      -   - C
+          - '0x11b3'
+  - tm: 189.5*PER
+    vls:
+      -   - A
+          - '0x6ddc'
+      -   - B
+          - '0xa4be'
+      -   - C
+          - '0x9859'
+  - tm: 19.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x8000'
+  - tm: 190.5*PER
+    vls:
+      -   - A
+          - '0x8e60'
+      -   - B
+          - '0xce98'
+      -   - C
+          - '0x8b16'
+  - tm: 191.5*PER
+    vls:
+      -   - A
+          - '0xb1f5'
+      -   - B
+          - '0x9f0'
+      -   - C
+          - '0xf89a'
+  - tm: 192.5*PER
+    vls:
+      -   - A
+          - '0x7089'
+      -   - B
+          - '0xd34a'
+      -   - C
+          - '0x57d2'
+  - tm: 193.5*PER
+    vls:
+      -   - A
+          - '0xa524'
+      -   - B
+          - '0x17b8'
+      -   - C
+          - '0x86ce'
+  - tm: 194.5*PER
+    vls:
+      -   - A
+          - '0xc2'
+      -   - B
+          - '0x2061'
+      -   - C
+          - '0xff77'
+  - tm: 195.5*PER
+    vls:
+      -   - A
+          - '0x4f82'
+      -   - B
+          - '0x1f1b'
+      -   - C
+          - '0x6875'
+  - tm: 196.5*PER
+    vls:
+      -   - A
+          - '0x4d2f'
+      -   - B
+          - '0xe81f'
+      -   - C
+          - '0x44d9'
+  - tm: 197.5*PER
+    vls:
+      -   - A
+          - '0x90a6'
+      -   - B
+          - '0x98e5'
+      -   - C
+          - '0xb2f2'
+  - tm: 198.5*PER
+    vls:
+      -   - A
+          - '0x13d2'
+      -   - B
+          - '0xf03b'
+      -   - C
+          - '0x784a'
+  - tm: 199.5*PER
+    vls:
+      -   - A
+          - '0x85a3'
+      -   - B
+          - '0x5ddf'
+      -   - C
+          - '0xda04'
+  - tm: 2.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x1'
+  - tm: 20.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0xffff'
+  - tm: 200.5*PER
+    vls:
+      -   - A
+          - '0xd5a2'
+      -   - B
+          - '0x929'
+      -   - C
+          - '0x176'
+  - tm: 201.5*PER
+    vls:
+      -   - A
+          - '0x51d6'
+      -   - B
+          - '0x55b2'
+      -   - C
+          - '0x27b2'
+  - tm: 202.5*PER
+    vls:
+      -   - A
+          - '0x7f1e'
+      -   - B
+          - '0x8f4c'
+      -   - C
+          - '0xf843'
+  - tm: 203.5*PER
+    vls:
+      -   - A
+          - '0x8863'
+      -   - B
+          - '0x8445'
+      -   - C
+          - '0xd308'
+  - tm: 204.5*PER
+    vls:
+      -   - A
+          - '0x7966'
+      -   - B
+          - '0x3919'
+      -   - C
+          - '0xab64'
+  - tm: 205.5*PER
+    vls:
+      -   - A
+          - '0x350c'
+      -   - B
+          - '0x4beb'
+      -   - C
+          - '0xcc7e'
+  - tm: 206.5*PER
+    vls:
+      -   - A
+          - '0x820'
+      -   - B
+          - '0x604c'
+      -   - C
+          - '0x805a'
+  - tm: 207.5*PER
+    vls:
+      -   - A
+          - '0xb6d7'
+      -   - B
+          - '0xe910'
+      -   - C
+          - '0x2836'
+  - tm: 208.5*PER
+    vls:
+      -   - A
+          - '0xbd06'
+      -   - B
+          - '0x2578'
+      -   - C
+          - '0x4220'
+  - tm: 209.5*PER
+    vls:
+      -   - A
+          - '0x6ce4'
+      -   - B
+          - '0xaf1d'
+      -   - C
+          - '0xd2fe'
+  - tm: 21.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x0'
+  - tm: 210.5*PER
+    vls:
+      -   - A
+          - '0xd95f'
+      -   - B
+          - '0x3715'
+      -   - C
+          - '0x4230'
+  - tm: 211.5*PER
+    vls:
+      -   - A
+          - '0x6cc3'
+      -   - B
+          - '0x9687'
+      -   - C
+          - '0x3c5b'
+  - tm: 212.5*PER
+    vls:
+      -   - A
+          - '0x5b06'
+      -   - B
+          - '0xc5dd'
+      -   - C
+          - '0x3e87'
+  - tm: 213.5*PER
+    vls:
+      -   - A
+          - '0x9793'
+      -   - B
+          - '0x4990'
+      -   - C
+          - '0x6d8a'
+  - tm: 214.5*PER
+    vls:
+      -   - A
+          - '0x342f'
+      -   - B
+          - '0xa405'
+      -   - C
+          - '0x59cf'
+  - tm: 215.5*PER
+    vls:
+      -   - A
+          - '0x6ce8'
+      -   - B
+          - '0x9c1'
+      -   - C
+          - '0x5122'
+  - tm: 216.5*PER
+    vls:
+      -   - A
+          - '0x65cb'
+      -   - B
+          - '0x75ee'
+      -   - C
+          - '0x1635'
+  - tm: 217.5*PER
+    vls:
+      -   - A
+          - '0x118e'
+      -   - B
+          - '0xc215'
+      -   - C
+          - '0xbac'
+  - tm: 218.5*PER
+    vls:
+      -   - A
+          - '0x998d'
+      -   - B
+          - '0xebda'
+      -   - C
+          - '0x10c'
+  - tm: 219.5*PER
+    vls:
+      -   - A
+          - '0xa741'
+      -   - B
+          - '0xc61b'
+      -   - C
+          - '0x4e6e'
+  - tm: 22.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x1'
+  - tm: 220.5*PER
+    vls:
+      -   - A
+          - '0x30bf'
+      -   - B
+          - '0x7312'
+      -   - C
+          - '0x7b11'
+  - tm: 221.5*PER
+    vls:
+      -   - A
+          - '0xfdd2'
+      -   - B
+          - '0x8dfc'
+      -   - C
+          - '0x63c2'
+  - tm: 222.5*PER
+    vls:
+      -   - A
+          - '0x5536'
+      -   - B
+          - '0xfb1'
+      -   - C
+          - '0x4a18'
+  - tm: 223.5*PER
+    vls:
+      -   - A
+          - '0x872e'
+      -   - B
+          - '0x6f59'
+      -   - C
+          - '0xf399'
+  - tm: 224.5*PER
+    vls:
+      -   - A
+          - '0x2311'
+      -   - B
+          - '0x25fb'
+      -   - C
+          - '0xdd12'
+  - tm: 225.5*PER
+    vls:
+      -   - A
+          - '0xd77'
+      -   - B
+          - '0x1ca7'
+      -   - C
+          - '0x5e59'
+  - tm: 226.5*PER
+    vls:
+      -   - A
+          - '0xd2d1'
+      -   - B
+          - '0x2800'
+      -   - C
+          - '0x37e0'
+  - tm: 227.5*PER
+    vls:
+      -   - A
+          - '0x4ed6'
+      -   - B
+          - '0x4da8'
+      -   - C
+          - '0x9a6d'
+  - tm: 228.5*PER
+    vls:
+      -   - A
+          - '0x636a'
+      -   - B
+          - '0x4a7a'
+      -   - C
+          - '0x88b'
+  - tm: 229.5*PER
+    vls:
+      -   - A
+          - '0x58fc'
+      -   - B
+          - '0x20d6'
+      -   - C
+          - '0x1983'
+  - tm: 23.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x7fff'
+  - tm: 230.5*PER
+    vls:
+      -   - A
+          - '0x5c6c'
+      -   - B
+          - '0x7dab'
+      -   - C
+          - '0x711e'
+  - tm: 231.5*PER
+    vls:
+      -   - A
+          - '0x95d2'
+      -   - B
+          - '0xe05e'
+      -   - C
+          - '0x9552'
+  - tm: 232.5*PER
+    vls:
+      -   - A
+          - '0xfd67'
+      -   - B
+          - '0x6f2b'
+      -   - C
+          - '0xb27'
+  - tm: 233.5*PER
+    vls:
+      -   - A
+          - '0x59dd'
+      -   - B
+          - '0x88f9'
+      -   - C
+          - '0x4ba4'
+  - tm: 234.5*PER
+    vls:
+      -   - A
+          - '0x211d'
+      -   - B
+          - '0xf7b4'
+      -   - C
+          - '0xcdbd'
+  - tm: 235.5*PER
+    vls:
+      -   - A
+          - '0xc96'
+      -   - B
+          - '0x529d'
+      -   - C
+          - '0x2aa8'
+  - tm: 236.5*PER
+    vls:
+      -   - A
+          - '0xe494'
+      -   - B
+          - '0xe31f'
+      -   - C
+          - '0x8b9f'
+  - tm: 237.5*PER
+    vls:
+      -   - A
+          - '0xbd5a'
+      -   - B
+          - '0x2029'
+      -   - C
+          - '0xe6ff'
+  - tm: 238.5*PER
+    vls:
+      -   - A
+          - '0x143'
+      -   - B
+          - '0xe500'
+      -   - C
+          - '0x3f84'
+  - tm: 239.5*PER
+    vls:
+      -   - A
+          - '0xe98f'
+      -   - B
+          - '0xde38'
+      -   - C
+          - '0xae7c'
+  - tm: 24.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x8000'
+  - tm: 240.5*PER
+    vls:
+      -   - A
+          - '0x2655'
+      -   - B
+          - '0x16f5'
+      -   - C
+          - '0x7a9a'
+  - tm: 241.5*PER
+    vls:
+      -   - A
+          - '0xee8f'
+      -   - B
+          - '0x5f24'
+      -   - C
+          - '0x1203'
+  - tm: 242.5*PER
+    vls:
+      -   - A
+          - '0x5850'
+      -   - B
+          - '0x4399'
+      -   - C
+          - '0xcd41'
+  - tm: 243.5*PER
+    vls:
+      -   - A
+          - '0xd24f'
+      -   - B
+          - '0x36b8'
+      -   - C
+          - '0xc04'
+  - tm: 244.5*PER
+    vls:
+      -   - A
+          - '0xb7e7'
+      -   - B
+          - '0x3ce0'
+      -   - C
+          - '0xaaa5'
+  - tm: 245.5*PER
+    vls:
+      -   - A
+          - '0xd3f0'
+      -   - B
+          - '0xef72'
+      -   - C
+          - '0x3d1c'
+  - tm: 246.5*PER
+    vls:
+      -   - A
+          - '0x8517'
+      -   - B
+          - '0xc943'
+      -   - C
+          - '0xeba2'
+  - tm: 247.5*PER
+    vls:
+      -   - A
+          - '0xc373'
+      -   - B
+          - '0x70c6'
+      -   - C
+          - '0x31ee'
+  - tm: 248.5*PER
+    vls:
+      -   - A
+          - '0x92c2'
+      -   - B
+          - '0x64a1'
+      -   - C
+          - '0x9edf'
+  - tm: 249.5*PER
+    vls:
+      -   - A
+          - '0xde1'
+      -   - B
+          - '0xd6f3'
+      -   - C
+          - '0x8c0f'
+  - tm: 25.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0xffff'
+  - tm: 250.5*PER
+    vls:
+      -   - A
+          - '0xe5c7'
+      -   - B
+          - '0xd4c'
+      -   - C
+          - '0x1d88'
+  - tm: 251.5*PER
+    vls:
+      -   - A
+          - '0x9d02'
+      -   - B
+          - '0x231d'
+      -   - C
+          - '0xf14c'
+  - tm: 252.5*PER
+    vls:
+      -   - A
+          - '0x88aa'
+      -   - B
+          - '0xc28e'
+      -   - C
+          - '0xcffa'
+  - tm: 253.5*PER
+    vls:
+      -   - A
+          - '0x5ee9'
+      -   - B
+          - '0x8899'
+      -   - C
+          - '0x6584'
+  - tm: 254.5*PER
+    vls:
+      -   - A
+          - '0x4cac'
+      -   - B
+          - '0x2625'
+      -   - C
+          - '0xf63c'
+  - tm: 255.5*PER
+    vls:
+      -   - A
+          - '0x8ba4'
+      -   - B
+          - '0x4c40'
+      -   - C
+          - '0x42c1'
+  - tm: 256.5*PER
+    vls:
+      -   - A
+          - '0x163e'
+      -   - B
+          - '0x5f67'
+      -   - C
+          - '0xd55'
+  - tm: 257.5*PER
+    vls:
+      -   - A
+          - '0xee84'
+      -   - B
+          - '0x7c8'
+      -   - C
+          - '0x2ac2'
+  - tm: 258.5*PER
+    vls:
+      -   - A
+          - '0xba18'
+      -   - B
+          - '0x3fd'
+      -   - C
+          - '0x1b6e'
+  - tm: 259.5*PER
+    vls:
+      -   - A
+          - '0x862c'
+      -   - B
+          - '0xb754'
+      -   - C
+          - '0x4572'
+  - tm: 26.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 260.5*PER
+    vls:
+      -   - A
+          - '0xddc8'
+      -   - B
+          - '0x1747'
+      -   - C
+          - '0xffe7'
+  - tm: 261.5*PER
+    vls:
+      -   - A
+          - '0x5569'
+      -   - B
+          - '0xcf1e'
+      -   - C
+          - '0xa09c'
+  - tm: 262.5*PER
+    vls:
+      -   - A
+          - '0x6ca2'
+      -   - B
+          - '0x2919'
+      -   - C
+          - '0x9f44'
+  - tm: 263.5*PER
+    vls:
+      -   - A
+          - '0xfaac'
+      -   - B
+          - '0xd54a'
+      -   - C
+          - '0xac9c'
+  - tm: 264.5*PER
+    vls:
+      -   - A
+          - '0xb74d'
+      -   - B
+          - '0xb369'
+      -   - C
+          - '0x4a59'
+  - tm: 265.5*PER
+    vls:
+      -   - A
+          - '0xeb18'
+      -   - B
+          - '0xc312'
+      -   - C
+          - '0xa71'
+  - tm: 266.5*PER
+    vls:
+      -   - A
+          - '0x1c02'
+      -   - B
+          - '0x183c'
+      -   - C
+          - '0x4ef7'
+  - tm: 267.5*PER
+    vls:
+      -   - A
+          - '0x67df'
+      -   - B
+          - '0xff03'
+      -   - C
+          - '0x633f'
+  - tm: 268.5*PER
+    vls:
+      -   - A
+          - '0x78a2'
+      -   - B
+          - '0x63dd'
+      -   - C
+          - '0x448b'
+  - tm: 269.5*PER
+    vls:
+      -   - A
+          - '0x269e'
+      -   - B
+          - '0xc8ea'
+      -   - C
+          - '0x2645'
+  - tm: 27.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x1'
+  - tm: 270.5*PER
+    vls:
+      -   - A
+          - '0x733f'
+      -   - B
+          - '0x4d09'
+      -   - C
+          - '0xf0'
+  - tm: 271.5*PER
+    vls:
+      -   - A
+          - '0x86bd'
+      -   - B
+          - '0x77d'
+      -   - C
+          - '0x883e'
+  - tm: 272.5*PER
+    vls:
+      -   - A
+          - '0x424f'
+      -   - B
+          - '0x46b8'
+      -   - C
+          - '0x54fa'
+  - tm: 273.5*PER
+    vls:
+      -   - A
+          - '0x39f3'
+      -   - B
+          - '0xefef'
+      -   - C
+          - '0xfe00'
+  - tm: 274.5*PER
+    vls:
+      -   - A
+          - '0x3f4f'
+      -   - B
+          - '0xf438'
+      -   - C
+          - '0xd99f'
+  - tm: 275.5*PER
+    vls:
+      -   - A
+          - '0xf3d1'
+      -   - B
+          - '0xda80'
+      -   - C
+          - '0x5ffe'
+  - tm: 276.5*PER
+    vls:
+      -   - A
+          - '0x6a88'
+      -   - B
+          - '0x2815'
+      -   - C
+          - '0xfe45'
+  - tm: 277.5*PER
+    vls:
+      -   - A
+          - '0xd603'
+      -   - B
+          - '0xc308'
+      -   - C
+          - '0xcd09'
+  - tm: 278.5*PER
+    vls:
+      -   - A
+          - '0x7bea'
+      -   - B
+          - '0x68c0'
+      -   - C
+          - '0x42ee'
+  - tm: 279.5*PER
+    vls:
+      -   - A
+          - '0x27b2'
+      -   - B
+          - '0x7608'
+      -   - C
+          - '0x9405'
+  - tm: 28.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x7fff'
+  - tm: 280.5*PER
+    vls:
+      -   - A
+          - '0xe6ec'
+      -   - B
+          - '0xf541'
+      -   - C
+          - '0x8964'
+  - tm: 281.5*PER
+    vls:
+      -   - A
+          - '0x7691'
+      -   - B
+          - '0x31a3'
+      -   - C
+          - '0xc42a'
+  - tm: 282.5*PER
+    vls:
+      -   - A
+          - '0x6025'
+      -   - B
+          - '0xb6cf'
+      -   - C
+          - '0x79e1'
+  - tm: 283.5*PER
+    vls:
+      -   - A
+          - '0xd4d6'
+      -   - B
+          - '0x30d2'
+      -   - C
+          - '0x770'
+  - tm: 284.5*PER
+    vls:
+      -   - A
+          - '0x92ab'
+      -   - B
+          - '0xe7dd'
+      -   - C
+          - '0x8c0'
+  - tm: 285.5*PER
+    vls:
+      -   - A
+          - '0x7b60'
+      -   - B
+          - '0xd23c'
+      -   - C
+          - '0x8033'
+  - tm: 286.5*PER
+    vls:
+      -   - A
+          - '0x2dc0'
+      -   - B
+          - '0x2012'
+      -   - C
+          - '0x1a56'
+  - tm: 287.5*PER
+    vls:
+      -   - A
+          - '0x168'
+      -   - B
+          - '0x96c0'
+      -   - C
+          - '0x2207'
+  - tm: 288.5*PER
+    vls:
+      -   - A
+          - '0x4ea9'
+      -   - B
+          - '0x14a6'
+      -   - C
+          - '0xe29b'
+  - tm: 289.5*PER
+    vls:
+      -   - A
+          - '0xe753'
+      -   - B
+          - '0x7f37'
+      -   - C
+          - '0x9238'
+  - tm: 29.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x8000'
+  - tm: 290.5*PER
+    vls:
+      -   - A
+          - '0x8579'
+      -   - B
+          - '0xb984'
+      -   - C
+          - '0xd5a3'
+  - tm: 291.5*PER
+    vls:
+      -   - A
+          - '0xe2e'
+      -   - B
+          - '0x36dc'
+      -   - C
+          - '0xb495'
+  - tm: 292.5*PER
+    vls:
+      -   - A
+          - '0xbecf'
+      -   - B
+          - '0xe93f'
+      -   - C
+          - '0xa627'
+  - tm: 293.5*PER
+    vls:
+      -   - A
+          - '0xb0f9'
+      -   - B
+          - '0x6dae'
+      -   - C
+          - '0x6ea'
+  - tm: 294.5*PER
+    vls:
+      -   - A
+          - '0xf596'
+      -   - B
+          - '0x8819'
+      -   - C
+          - '0x5a3'
+  - tm: 295.5*PER
+    vls:
+      -   - A
+          - '0xc6e2'
+      -   - B
+          - '0xdcbd'
+      -   - C
+          - '0xae5f'
+  - tm: 296.5*PER
+    vls:
+      -   - A
+          - '0x24b6'
+      -   - B
+          - '0x4c53'
+      -   - C
+          - '0xd6f8'
+  - tm: 297.5*PER
+    vls:
+      -   - A
+          - '0x9e93'
+      -   - B
+          - '0x275b'
+      -   - C
+          - '0xa67c'
+  - tm: 298.5*PER
+    vls:
+      -   - A
+          - '0xdb7'
+      -   - B
+          - '0xbb62'
+      -   - C
+          - '0x802c'
+  - tm: 299.5*PER
+    vls:
+      -   - A
+          - '0x6d8e'
+      -   - B
+          - '0xed04'
+      -   - C
+          - '0xc037'
+  - tm: 3.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x7fff'
+  - tm: 30.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0xffff'
+  - tm: 300.5*PER
+    vls:
+      -   - A
+          - '0x41e5'
+      -   - B
+          - '0x39c8'
+      -   - C
+          - '0x7c8a'
+  - tm: 301.5*PER
+    vls:
+      -   - A
+          - '0x581'
+      -   - B
+          - '0x9ba8'
+      -   - C
+          - '0x180c'
+  - tm: 302.5*PER
+    vls:
+      -   - A
+          - '0x3e61'
+      -   - B
+          - '0x50fa'
+      -   - C
+          - '0x87c5'
+  - tm: 303.5*PER
+    vls:
+      -   - A
+          - '0x8106'
+      -   - B
+          - '0x274'
+      -   - C
+          - '0x9241'
+  - tm: 304.5*PER
+    vls:
+      -   - A
+          - '0x730b'
+      -   - B
+          - '0xe45a'
+      -   - C
+          - '0xc280'
+  - tm: 305.5*PER
+    vls:
+      -   - A
+          - '0xe833'
+      -   - B
+          - '0x5705'
+      -   - C
+          - '0xa727'
+  - tm: 306.5*PER
+    vls:
+      -   - A
+          - '0x386e'
+      -   - B
+          - '0x9bae'
+      -   - C
+          - '0xd02'
+  - tm: 307.5*PER
+    vls:
+      -   - A
+          - '0x864d'
+      -   - B
+          - '0xb35a'
+      -   - C
+          - '0xfe18'
+  - tm: 308.5*PER
+    vls:
+      -   - A
+          - '0x6d5c'
+      -   - B
+          - '0x3c44'
+      -   - C
+          - '0xea00'
+  - tm: 309.5*PER
+    vls:
+      -   - A
+          - '0x8290'
+      -   - B
+          - '0xbd94'
+      -   - C
+          - '0x341'
+  - tm: 31.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x0'
+  - tm: 310.5*PER
+    vls:
+      -   - A
+          - '0x19b3'
+      -   - B
+          - '0x5e75'
+      -   - C
+          - '0xea06'
+  - tm: 311.5*PER
+    vls:
+      -   - A
+          - '0x25fb'
+      -   - B
+          - '0xee8e'
+      -   - C
+          - '0x777e'
+  - tm: 312.5*PER
+    vls:
+      -   - A
+          - '0xd126'
+      -   - B
+          - '0x5a3b'
+      -   - C
+          - '0xd4cf'
+  - tm: 313.5*PER
+    vls:
+      -   - A
+          - '0x2221'
+      -   - B
+          - '0xae6d'
+      -   - C
+          - '0x5843'
+  - tm: 314.5*PER
+    vls:
+      -   - A
+          - '0xb888'
+      -   - B
+          - '0x3a02'
+      -   - C
+          - '0xaacc'
+  - tm: 315.5*PER
+    vls:
+      -   - A
+          - '0x4893'
+      -   - B
+          - '0x9738'
+      -   - C
+          - '0x17c5'
+  - tm: 316.5*PER
+    vls:
+      -   - A
+          - '0x41d7'
+      -   - B
+          - '0xb67d'
+      -   - C
+          - '0x222e'
+  - tm: 317.5*PER
+    vls:
+      -   - A
+          - '0x2017'
+      -   - B
+          - '0xb9e8'
+      -   - C
+          - '0x2dad'
+  - tm: 318.5*PER
+    vls:
+      -   - A
+          - '0x98b5'
+      -   - B
+          - '0x1abf'
+      -   - C
+          - '0xe74'
+  - tm: 319.5*PER
+    vls:
+      -   - A
+          - '0x8bf8'
+      -   - B
+          - '0xa446'
+      -   - C
+          - '0x2446'
+  - tm: 32.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x1'
+  - tm: 320.5*PER
+    vls:
+      -   - A
+          - '0x9c2c'
+      -   - B
+          - '0xbc3f'
+      -   - C
+          - '0x82f5'
+  - tm: 321.5*PER
+    vls:
+      -   - A
+          - '0x6ab'
+      -   - B
+          - '0xc668'
+      -   - C
+          - '0x7642'
+  - tm: 322.5*PER
+    vls:
+      -   - A
+          - '0xe057'
+      -   - B
+          - '0x5b36'
+      -   - C
+          - '0x6190'
+  - tm: 323.5*PER
+    vls:
+      -   - A
+          - '0x93fb'
+      -   - B
+          - '0xd091'
+      -   - C
+          - '0x9230'
+  - tm: 324.5*PER
+    vls:
+      -   - A
+          - '0x7fcf'
+      -   - B
+          - '0xce0c'
+      -   - C
+          - '0x9268'
+  - tm: 325.5*PER
+    vls:
+      -   - A
+          - '0x8364'
+      -   - B
+          - '0x69f3'
+      -   - C
+          - '0x1141'
+  - tm: 326.5*PER
+    vls:
+      -   - A
+          - '0xeed9'
+      -   - B
+          - '0xdbef'
+      -   - C
+          - '0x71c7'
+  - tm: 327.5*PER
+    vls:
+      -   - A
+          - '0x86fa'
+      -   - B
+          - '0xf3d0'
+      -   - C
+          - '0x47cd'
+  - tm: 328.5*PER
+    vls:
+      -   - A
+          - '0x5697'
+      -   - B
+          - '0x612a'
+      -   - C
+          - '0xac1c'
+  - tm: 329.5*PER
+    vls:
+      -   - A
+          - '0x1fe4'
+      -   - B
+          - '0xe9a3'
+      -   - C
+          - '0x34a7'
+  - tm: 33.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x7fff'
+  - tm: 330.5*PER
+    vls:
+      -   - A
+          - '0xaf02'
+      -   - B
+          - '0x53cd'
+      -   - C
+          - '0x6013'
+  - tm: 331.5*PER
+    vls:
+      -   - A
+          - '0x9477'
+      -   - B
+          - '0x13e5'
+      -   - C
+          - '0xc407'
+  - tm: 332.5*PER
+    vls:
+      -   - A
+          - '0x7a76'
+      -   - B
+          - '0xee82'
+      -   - C
+          - '0x6a0f'
+  - tm: 333.5*PER
+    vls:
+      -   - A
+          - '0x4cd6'
+      -   - B
+          - '0xd065'
+      -   - C
+          - '0xed97'
+  - tm: 334.5*PER
+    vls:
+      -   - A
+          - '0xc8cb'
+      -   - B
+          - '0x6b7'
+      -   - C
+          - '0xfc75'
+  - tm: 335.5*PER
+    vls:
+      -   - A
+          - '0xb68c'
+      -   - B
+          - '0x729d'
+      -   - C
+          - '0x63b8'
+  - tm: 336.5*PER
+    vls:
+      -   - A
+          - '0x6917'
+      -   - B
+          - '0x7b40'
+      -   - C
+          - '0x906e'
+  - tm: 337.5*PER
+    vls:
+      -   - A
+          - '0xe4fa'
+      -   - B
+          - '0xbfed'
+      -   - C
+          - '0xf99'
+  - tm: 338.5*PER
+    vls:
+      -   - A
+          - '0x1475'
+      -   - B
+          - '0x401b'
+      -   - C
+          - '0x372a'
+  - tm: 339.5*PER
+    vls:
+      -   - A
+          - '0xd3'
+      -   - B
+          - '0x2552'
+      -   - C
+          - '0x884a'
+  - tm: 34.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x8000'
+  - tm: 340.5*PER
+    vls:
+      -   - A
+          - '0x5319'
+      -   - B
+          - '0xfd83'
+      -   - C
+          - '0x4cc6'
+  - tm: 341.5*PER
+    vls:
+      -   - A
+          - '0xd713'
+      -   - B
+          - '0xf7df'
+      -   - C
+          - '0x87ea'
+  - tm: 342.5*PER
+    vls:
+      -   - A
+          - '0x352e'
+      -   - B
+          - '0x6e73'
+      -   - C
+          - '0xeef8'
+  - tm: 343.5*PER
+    vls:
+      -   - A
+          - '0x8fbf'
+      -   - B
+          - '0x4b6a'
+      -   - C
+          - '0x2e3'
+  - tm: 344.5*PER
+    vls:
+      -   - A
+          - '0x342e'
+      -   - B
+          - '0xa102'
+      -   - C
+          - '0xf96e'
+  - tm: 345.5*PER
+    vls:
+      -   - A
+          - '0xe054'
+      -   - B
+          - '0x16cf'
+      -   - C
+          - '0xbfe7'
+  - tm: 346.5*PER
+    vls:
+      -   - A
+          - '0x1ce5'
+      -   - B
+          - '0xa7f4'
+      -   - C
+          - '0x20eb'
+  - tm: 347.5*PER
+    vls:
+      -   - A
+          - '0xf4b5'
+      -   - B
+          - '0x1121'
+      -   - C
+          - '0x8df8'
+  - tm: 348.5*PER
+    vls:
+      -   - A
+          - '0x62fb'
+      -   - B
+          - '0xa0c0'
+      -   - C
+          - '0x365e'
+  - tm: 349.5*PER
+    vls:
+      -   - A
+          - '0x503a'
+      -   - B
+          - '0x28bb'
+      -   - C
+          - '0xfddb'
+  - tm: 35.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0xffff'
+  - tm: 350.5*PER
+    vls:
+      -   - A
+          - '0x403'
+      -   - B
+          - '0x28f5'
+      -   - C
+          - '0xb2bf'
+  - tm: 351.5*PER
+    vls:
+      -   - A
+          - '0x2f6a'
+      -   - B
+          - '0xc9d'
+      -   - C
+          - '0xe39'
+  - tm: 352.5*PER
+    vls:
+      -   - A
+          - '0x3b3e'
+      -   - B
+          - '0x6ffd'
+      -   - C
+          - '0x90c1'
+  - tm: 353.5*PER
+    vls:
+      -   - A
+          - '0xfc3d'
+      -   - B
+          - '0xe22d'
+      -   - C
+          - '0x2d9d'
+  - tm: 354.5*PER
+    vls:
+      -   - A
+          - '0xa8d1'
+      -   - B
+          - '0xc512'
+      -   - C
+          - '0xb574'
+  - tm: 355.5*PER
+    vls:
+      -   - A
+          - '0x68cf'
+      -   - B
+          - '0xb357'
+      -   - C
+          - '0x14a7'
+  - tm: 356.5*PER
+    vls:
+      -   - A
+          - '0xcc11'
+      -   - B
+          - '0x7ca6'
+      -   - C
+          - '0xda61'
+  - tm: 357.5*PER
+    vls:
+      -   - A
+          - '0x8365'
+      -   - B
+          - '0x27b0'
+      -   - C
+          - '0x1c80'
+  - tm: 358.5*PER
+    vls:
+      -   - A
+          - '0xdd5'
+      -   - B
+          - '0x5942'
+      -   - C
+          - '0x9ef4'
+  - tm: 359.5*PER
+    vls:
+      -   - A
+          - '0xd43'
+      -   - B
+          - '0x84d1'
+      -   - C
+          - '0xd1fb'
+  - tm: 36.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x0'
+  - tm: 360.5*PER
+    vls:
+      -   - A
+          - '0x855e'
+      -   - B
+          - '0xc754'
+      -   - C
+          - '0xc827'
+  - tm: 361.5*PER
+    vls:
+      -   - A
+          - '0xbffb'
+      -   - B
+          - '0x2c9a'
+      -   - C
+          - '0x176e'
+  - tm: 362.5*PER
+    vls:
+      -   - A
+          - '0xb4c2'
+      -   - B
+          - '0xc680'
+      -   - C
+          - '0x6d2d'
+  - tm: 363.5*PER
+    vls:
+      -   - A
+          - '0x4e0a'
+      -   - B
+          - '0x6bef'
+      -   - C
+          - '0x4c24'
+  - tm: 364.5*PER
+    vls:
+      -   - A
+          - '0x3ea4'
+      -   - B
+          - '0x4321'
+      -   - C
+          - '0x4814'
+  - tm: 365.5*PER
+    vls:
+      -   - A
+          - '0xce56'
+      -   - B
+          - '0x9436'
+      -   - C
+          - '0xb71f'
+  - tm: 366.5*PER
+    vls:
+      -   - A
+          - '0x8dd1'
+      -   - B
+          - '0x6aed'
+      -   - C
+          - '0xe820'
+  - tm: 367.5*PER
+    vls:
+      -   - A
+          - '0x486d'
+      -   - B
+          - '0x47b9'
+      -   - C
+          - '0xbe43'
+  - tm: 368.5*PER
+    vls:
+      -   - A
+          - '0xb733'
+      -   - B
+          - '0x3637'
+      -   - C
+          - '0x18d2'
+  - tm: 369.5*PER
+    vls:
+      -   - A
+          - '0xd6de'
+      -   - B
+          - '0xa6e9'
+      -   - C
+          - '0x15a0'
+  - tm: 37.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x1'
+  - tm: 370.5*PER
+    vls:
+      -   - A
+          - '0x2922'
+      -   - B
+          - '0xc0a'
+      -   - C
+          - '0xdb8b'
+  - tm: 371.5*PER
+    vls:
+      -   - A
+          - '0x1e90'
+      -   - B
+          - '0xf719'
+      -   - C
+          - '0xc0a8'
+  - tm: 372.5*PER
+    vls:
+      -   - A
+          - '0x4120'
+      -   - B
+          - '0x2649'
+      -   - C
+          - '0xcee6'
+  - tm: 373.5*PER
+    vls:
+      -   - A
+          - '0xff31'
+      -   - B
+          - '0x383a'
+      -   - C
+          - '0x9fe2'
+  - tm: 374.5*PER
+    vls:
+      -   - A
+          - '0x4e2e'
+      -   - B
+          - '0x19a5'
+      -   - C
+          - '0x1a6b'
+  - tm: 375.5*PER
+    vls:
+      -   - A
+          - '0x7e37'
+      -   - B
+          - '0x7107'
+      -   - C
+          - '0x9949'
+  - tm: 376.5*PER
+    vls:
+      -   - A
+          - '0x1ab5'
+      -   - B
+          - '0xbc0'
+      -   - C
+          - '0xb452'
+  - tm: 377.5*PER
+    vls:
+      -   - A
+          - '0xe52f'
+      -   - B
+          - '0x9354'
+      -   - C
+          - '0x8b89'
+  - tm: 378.5*PER
+    vls:
+      -   - A
+          - '0x6b8b'
+      -   - B
+          - '0x2306'
+      -   - C
+          - '0xb5bb'
+  - tm: 379.5*PER
+    vls:
+      -   - A
+          - '0x7a44'
+      -   - B
+          - '0x3bbc'
+      -   - C
+          - '0x7a67'
+  - tm: 38.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x7fff'
+  - tm: 380.5*PER
+    vls:
+      -   - A
+          - '0x54e9'
+      -   - B
+          - '0xd756'
+      -   - C
+          - '0x5d11'
+  - tm: 381.5*PER
+    vls:
+      -   - A
+          - '0x1ff9'
+      -   - B
+          - '0x85'
+      -   - C
+          - '0xb666'
+  - tm: 382.5*PER
+    vls:
+      -   - A
+          - '0xe30a'
+      -   - B
+          - '0x7d6e'
+      -   - C
+          - '0x1697'
+  - tm: 383.5*PER
+    vls:
+      -   - A
+          - '0xb244'
+      -   - B
+          - '0x19e3'
+      -   - C
+          - '0xc4f6'
+  - tm: 384.5*PER
+    vls:
+      -   - A
+          - '0xcc40'
+      -   - B
+          - '0xdb0b'
+      -   - C
+          - '0xd183'
+  - tm: 385.5*PER
+    vls:
+      -   - A
+          - '0x44d2'
+      -   - B
+          - '0x7290'
+      -   - C
+          - '0x3eb'
+  - tm: 386.5*PER
+    vls:
+      -   - A
+          - '0x6be0'
+      -   - B
+          - '0xeb9a'
+      -   - C
+          - '0x23a3'
+  - tm: 387.5*PER
+    vls:
+      -   - A
+          - '0xb4c8'
+      -   - B
+          - '0x4f'
+      -   - C
+          - '0xa1d0'
+  - tm: 388.5*PER
+    vls:
+      -   - A
+          - '0x853e'
+      -   - B
+          - '0x23e9'
+      -   - C
+          - '0x3e6a'
+  - tm: 389.5*PER
+    vls:
+      -   - A
+          - '0x590c'
+      -   - B
+          - '0x26a9'
+      -   - C
+          - '0x6db6'
+  - tm: 39.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x8000'
+  - tm: 390.5*PER
+    vls:
+      -   - A
+          - '0xe7d8'
+      -   - B
+          - '0x6fb0'
+      -   - C
+          - '0x4ef'
+  - tm: 391.5*PER
+    vls:
+      -   - A
+          - '0x5b5c'
+      -   - B
+          - '0x5cbf'
+      -   - C
+          - '0x5415'
+  - tm: 392.5*PER
+    vls:
+      -   - A
+          - '0xc066'
+      -   - B
+          - '0x5956'
+      -   - C
+          - '0xbf29'
+  - tm: 393.5*PER
+    vls:
+      -   - A
+          - '0x3161'
+      -   - B
+          - '0x1b60'
+      -   - C
+          - '0x25e0'
+  - tm: 394.5*PER
+    vls:
+      -   - A
+          - '0xbdfb'
+      -   - B
+          - '0x28f2'
+      -   - C
+          - '0x903d'
+  - tm: 395.5*PER
+    vls:
+      -   - A
+          - '0x2b59'
+      -   - B
+          - '0xa145'
+      -   - C
+          - '0x6d64'
+  - tm: 396.5*PER
+    vls:
+      -   - A
+          - '0xf17d'
+      -   - B
+          - '0xe83'
+      -   - C
+          - '0xcc73'
+  - tm: 397.5*PER
+    vls:
+      -   - A
+          - '0xf4f3'
+      -   - B
+          - '0x996b'
+      -   - C
+          - '0x6ea7'
+  - tm: 398.5*PER
+    vls:
+      -   - A
+          - '0xc516'
+      -   - B
+          - '0x1f89'
+      -   - C
+          - '0x7de7'
+  - tm: 399.5*PER
+    vls:
+      -   - A
+          - '0x6906'
+      -   - B
+          - '0x8d39'
+      -   - C
+          - '0x3556'
+  - tm: 4.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x8000'
+  - tm: 40.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0xffff'
+  - tm: 400.5*PER
+    vls:
+      -   - A
+          - '0xd143'
+      -   - B
+          - '0x2778'
+      -   - C
+          - '0x9e93'
+  - tm: 401.5*PER
+    vls:
+      -   - A
+          - '0xf326'
+      -   - B
+          - '0x6060'
+      -   - C
+          - '0xccb7'
+  - tm: 402.5*PER
+    vls:
+      -   - A
+          - '0x538'
+      -   - B
+          - '0x65ea'
+      -   - C
+          - '0xca27'
+  - tm: 403.5*PER
+    vls:
+      -   - A
+          - '0x64ce'
+      -   - B
+          - '0x5716'
+      -   - C
+          - '0xe969'
+  - tm: 404.5*PER
+    vls:
+      -   - A
+          - '0x6dd5'
+      -   - B
+          - '0x6673'
+      -   - C
+          - '0x499c'
+  - tm: 405.5*PER
+    vls:
+      -   - A
+          - '0x1494'
+      -   - B
+          - '0x8e2b'
+      -   - C
+          - '0x3e0a'
+  - tm: 406.5*PER
+    vls:
+      -   - A
+          - '0x66a4'
+      -   - B
+          - '0x2b21'
+      -   - C
+          - '0xd581'
+  - tm: 407.5*PER
+    vls:
+      -   - A
+          - '0xf4ee'
+      -   - B
+          - '0x9817'
+      -   - C
+          - '0xc046'
+  - tm: 408.5*PER
+    vls:
+      -   - A
+          - '0x8ef1'
+      -   - B
+          - '0xc99'
+      -   - C
+          - '0xc873'
+  - tm: 409.5*PER
+    vls:
+      -   - A
+          - '0x761b'
+      -   - B
+          - '0x70c2'
+      -   - C
+          - '0x1a5b'
+  - tm: 41.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x0'
+  - tm: 410.5*PER
+    vls:
+      -   - A
+          - '0x8951'
+      -   - B
+          - '0xda36'
+      -   - C
+          - '0xc015'
+  - tm: 411.5*PER
+    vls:
+      -   - A
+          - '0x832c'
+      -   - B
+          - '0xb8f6'
+      -   - C
+          - '0x73cc'
+  - tm: 412.5*PER
+    vls:
+      -   - A
+          - '0xbe5f'
+      -   - B
+          - '0x2498'
+      -   - C
+          - '0xe412'
+  - tm: 413.5*PER
+    vls:
+      -   - A
+          - '0xc77c'
+      -   - B
+          - '0x8ed9'
+      -   - C
+          - '0xb1b'
+  - tm: 414.5*PER
+    vls:
+      -   - A
+          - '0x8e1f'
+      -   - B
+          - '0xb903'
+      -   - C
+          - '0x303c'
+  - tm: 415.5*PER
+    vls:
+      -   - A
+          - '0x6e1'
+      -   - B
+          - '0x3dbf'
+      -   - C
+          - '0xf8dd'
+  - tm: 416.5*PER
+    vls:
+      -   - A
+          - '0x6f3b'
+      -   - B
+          - '0xb72'
+      -   - C
+          - '0x7fb1'
+  - tm: 417.5*PER
+    vls:
+      -   - A
+          - '0x45de'
+      -   - B
+          - '0xe637'
+      -   - C
+          - '0x6cb1'
+  - tm: 418.5*PER
+    vls:
+      -   - A
+          - '0xae9'
+      -   - B
+          - '0xc659'
+      -   - C
+          - '0x5981'
+  - tm: 419.5*PER
+    vls:
+      -   - A
+          - '0x30d0'
+      -   - B
+          - '0xbd7a'
+      -   - C
+          - '0xe881'
+  - tm: 42.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x1'
+  - tm: 420.5*PER
+    vls:
+      -   - A
+          - '0x757e'
+      -   - B
+          - '0x6678'
+      -   - C
+          - '0xd92f'
+  - tm: 421.5*PER
+    vls:
+      -   - A
+          - '0x9da9'
+      -   - B
+          - '0x28ea'
+      -   - C
+          - '0x7097'
+  - tm: 422.5*PER
+    vls:
+      -   - A
+          - '0xc566'
+      -   - B
+          - '0x34be'
+      -   - C
+          - '0x6e66'
+  - tm: 423.5*PER
+    vls:
+      -   - A
+          - '0xc10a'
+      -   - B
+          - '0x914a'
+      -   - C
+          - '0x64ad'
+  - tm: 424.5*PER
+    vls:
+      -   - A
+          - '0xe94'
+      -   - B
+          - '0x6409'
+      -   - C
+          - '0x6721'
+  - tm: 425.5*PER
+    vls:
+      -   - A
+          - '0x38c4'
+      -   - B
+          - '0xcd85'
+      -   - C
+          - '0xa98c'
+  - tm: 426.5*PER
+    vls:
+      -   - A
+          - '0xbc33'
+      -   - B
+          - '0x30f8'
+      -   - C
+          - '0x9061'
+  - tm: 427.5*PER
+    vls:
+      -   - A
+          - '0xe10e'
+      -   - B
+          - '0x6c45'
+      -   - C
+          - '0x3461'
+  - tm: 428.5*PER
+    vls:
+      -   - A
+          - '0x9fc'
+      -   - B
+          - '0x97c'
+      -   - C
+          - '0xb2fe'
+  - tm: 429.5*PER
+    vls:
+      -   - A
+          - '0x440'
+      -   - B
+          - '0x7244'
+      -   - C
+          - '0x8652'
+  - tm: 43.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x7fff'
+  - tm: 430.5*PER
+    vls:
+      -   - A
+          - '0xb95b'
+      -   - B
+          - '0xaf69'
+      -   - C
+          - '0x9ca9'
+  - tm: 431.5*PER
+    vls:
+      -   - A
+          - '0x64a2'
+      -   - B
+          - '0x66ee'
+      -   - C
+          - '0xea7b'
+  - tm: 432.5*PER
+    vls:
+      -   - A
+          - '0xdfe4'
+      -   - B
+          - '0x8129'
+      -   - C
+          - '0x21d3'
+  - tm: 433.5*PER
+    vls:
+      -   - A
+          - '0xdd93'
+      -   - B
+          - '0xf585'
+      -   - C
+          - '0x740e'
+  - tm: 434.5*PER
+    vls:
+      -   - A
+          - '0x1606'
+      -   - B
+          - '0x7e08'
+      -   - C
+          - '0xf81a'
+  - tm: 435.5*PER
+    vls:
+      -   - A
+          - '0x7d57'
+      -   - B
+          - '0x963a'
+      -   - C
+          - '0xa0fa'
+  - tm: 436.5*PER
+    vls:
+      -   - A
+          - '0x729f'
+      -   - B
+          - '0x14d5'
+      -   - C
+          - '0xef90'
+  - tm: 437.5*PER
+    vls:
+      -   - A
+          - '0x88e2'
+      -   - B
+          - '0x8324'
+      -   - C
+          - '0xb081'
+  - tm: 438.5*PER
+    vls:
+      -   - A
+          - '0x8228'
+      -   - B
+          - '0x368'
+      -   - C
+          - '0xf56'
+  - tm: 439.5*PER
+    vls:
+      -   - A
+          - '0xb5ff'
+      -   - B
+          - '0xcc31'
+      -   - C
+          - '0x7d3a'
+  - tm: 44.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x8000'
+  - tm: 440.5*PER
+    vls:
+      -   - A
+          - '0xa3a3'
+      -   - B
+          - '0x2d5b'
+      -   - C
+          - '0x3d56'
+  - tm: 441.5*PER
+    vls:
+      -   - A
+          - '0xb93a'
+      -   - B
+          - '0x1d19'
+      -   - C
+          - '0x702'
+  - tm: 442.5*PER
+    vls:
+      -   - A
+          - '0x6b89'
+      -   - B
+          - '0xb3aa'
+      -   - C
+          - '0xef68'
+  - tm: 443.5*PER
+    vls:
+      -   - A
+          - '0x8f64'
+      -   - B
+          - '0xdedb'
+      -   - C
+          - '0x341a'
+  - tm: 444.5*PER
+    vls:
+      -   - A
+          - '0x7727'
+      -   - B
+          - '0x7af0'
+      -   - C
+          - '0x929'
+  - tm: 445.5*PER
+    vls:
+      -   - A
+          - '0x6a1e'
+      -   - B
+          - '0xd435'
+      -   - C
+          - '0xaab'
+  - tm: 446.5*PER
+    vls:
+      -   - A
+          - '0x33bf'
+      -   - B
+          - '0x46ed'
+      -   - C
+          - '0xbb1e'
+  - tm: 447.5*PER
+    vls:
+      -   - A
+          - '0xcd3c'
+      -   - B
+          - '0x7fda'
+      -   - C
+          - '0x86a4'
+  - tm: 448.5*PER
+    vls:
+      -   - A
+          - '0xf6b2'
+      -   - B
+          - '0x2601'
+      -   - C
+          - '0x25cc'
+  - tm: 449.5*PER
+    vls:
+      -   - A
+          - '0x27bb'
+      -   - B
+          - '0xcb2f'
+      -   - C
+          - '0xd2fc'
+  - tm: 45.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0xffff'
+  - tm: 450.5*PER
+    vls:
+      -   - A
+          - '0xb862'
+      -   - B
+          - '0xf916'
+      -   - C
+          - '0x46a'
+  - tm: 451.5*PER
+    vls:
+      -   - A
+          - '0x2d77'
+      -   - B
+          - '0x90bc'
+      -   - C
+          - '0x1112'
+  - tm: 452.5*PER
+    vls:
+      -   - A
+          - '0x4b79'
+      -   - B
+          - '0x2b3c'
+      -   - C
+          - '0xb201'
+  - tm: 453.5*PER
+    vls:
+      -   - A
+          - '0x79d9'
+      -   - B
+          - '0xf61a'
+      -   - C
+          - '0x31b0'
+  - tm: 454.5*PER
+    vls:
+      -   - A
+          - '0xaa86'
+      -   - B
+          - '0xfe4b'
+      -   - C
+          - '0x7e77'
+  - tm: 455.5*PER
+    vls:
+      -   - A
+          - '0x7f'
+      -   - B
+          - '0x9a8f'
+      -   - C
+          - '0xb797'
+  - tm: 456.5*PER
+    vls:
+      -   - A
+          - '0x3fa3'
+      -   - B
+          - '0x1162'
+      -   - C
+          - '0x77b7'
+  - tm: 457.5*PER
+    vls:
+      -   - A
+          - '0xc7d8'
+      -   - B
+          - '0x1dce'
+      -   - C
+          - '0x1088'
+  - tm: 458.5*PER
+    vls:
+      -   - A
+          - '0xb879'
+      -   - B
+          - '0x985c'
+      -   - C
+          - '0x10d4'
+  - tm: 459.5*PER
+    vls:
+      -   - A
+          - '0x633f'
+      -   - B
+          - '0x86e8'
+      -   - C
+          - '0xb27d'
+  - tm: 46.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x0'
+  - tm: 460.5*PER
+    vls:
+      -   - A
+          - '0x2df5'
+      -   - B
+          - '0x3127'
+      -   - C
+          - '0x902c'
+  - tm: 461.5*PER
+    vls:
+      -   - A
+          - '0xea2c'
+      -   - B
+          - '0xe7c'
+      -   - C
+          - '0xbb65'
+  - tm: 462.5*PER
+    vls:
+      -   - A
+          - '0x707'
+      -   - B
+          - '0x61bf'
+      -   - C
+          - '0x9ff8'
+  - tm: 463.5*PER
+    vls:
+      -   - A
+          - '0x3494'
+      -   - B
+          - '0xb830'
+      -   - C
+          - '0xffc0'
+  - tm: 464.5*PER
+    vls:
+      -   - A
+          - '0xe365'
+      -   - B
+          - '0x736f'
+      -   - C
+          - '0xad62'
+  - tm: 465.5*PER
+    vls:
+      -   - A
+          - '0xcde8'
+      -   - B
+          - '0xfee4'
+      -   - C
+          - '0x5414'
+  - tm: 466.5*PER
+    vls:
+      -   - A
+          - '0x2487'
+      -   - B
+          - '0x72b8'
+      -   - C
+          - '0xa0fc'
+  - tm: 467.5*PER
+    vls:
+      -   - A
+          - '0x99a8'
+      -   - B
+          - '0xa2e4'
+      -   - C
+          - '0xc46f'
+  - tm: 468.5*PER
+    vls:
+      -   - A
+          - '0x2ce4'
+      -   - B
+          - '0xe1f6'
+      -   - C
+          - '0x23ce'
+  - tm: 469.5*PER
+    vls:
+      -   - A
+          - '0xd6d5'
+      -   - B
+          - '0x3d8d'
+      -   - C
+          - '0x9455'
+  - tm: 47.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x1'
+  - tm: 470.5*PER
+    vls:
+      -   - A
+          - '0x85f9'
+      -   - B
+          - '0xf012'
+      -   - C
+          - '0xc984'
+  - tm: 471.5*PER
+    vls:
+      -   - A
+          - '0xb3c8'
+      -   - B
+          - '0xb603'
+      -   - C
+          - '0xcab0'
+  - tm: 472.5*PER
+    vls:
+      -   - A
+          - '0x9265'
+      -   - B
+          - '0xb29b'
+      -   - C
+          - '0x13d7'
+  - tm: 473.5*PER
+    vls:
+      -   - A
+          - '0x80fc'
+      -   - B
+          - '0xb8cb'
+      -   - C
+          - '0x6dfe'
+  - tm: 474.5*PER
+    vls:
+      -   - A
+          - '0x832c'
+      -   - B
+          - '0xcff4'
+      -   - C
+          - '0x2b69'
+  - tm: 475.5*PER
+    vls:
+      -   - A
+          - '0x664b'
+      -   - B
+          - '0x9e45'
+      -   - C
+          - '0x69e7'
+  - tm: 476.5*PER
+    vls:
+      -   - A
+          - '0x3ee2'
+      -   - B
+          - '0xc730'
+      -   - C
+          - '0x4f0e'
+  - tm: 477.5*PER
+    vls:
+      -   - A
+          - '0x4964'
+      -   - B
+          - '0x7387'
+      -   - C
+          - '0xc57f'
+  - tm: 478.5*PER
+    vls:
+      -   - A
+          - '0xc052'
+      -   - B
+          - '0x1a9'
+      -   - C
+          - '0x1b59'
+  - tm: 479.5*PER
+    vls:
+      -   - A
+          - '0xc3a5'
+      -   - B
+          - '0x7143'
+      -   - C
+          - '0x751a'
+  - tm: 48.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x7fff'
+  - tm: 480.5*PER
+    vls:
+      -   - A
+          - '0x3c31'
+      -   - B
+          - '0xb68b'
+      -   - C
+          - '0xabc6'
+  - tm: 481.5*PER
+    vls:
+      -   - A
+          - '0xce59'
+      -   - B
+          - '0xd0d7'
+      -   - C
+          - '0x2f74'
+  - tm: 482.5*PER
+    vls:
+      -   - A
+          - '0x439d'
+      -   - B
+          - '0x535'
+      -   - C
+          - '0xb841'
+  - tm: 483.5*PER
+    vls:
+      -   - A
+          - '0xc53c'
+      -   - B
+          - '0x76c8'
+      -   - C
+          - '0xf571'
+  - tm: 484.5*PER
+    vls:
+      -   - A
+          - '0x37b7'
+      -   - B
+          - '0x8f62'
+      -   - C
+          - '0x468f'
+  - tm: 485.5*PER
+    vls:
+      -   - A
+          - '0x9b0a'
+      -   - B
+          - '0x89b8'
+      -   - C
+          - '0xe951'
+  - tm: 486.5*PER
+    vls:
+      -   - A
+          - '0xce89'
+      -   - B
+          - '0xb48c'
+      -   - C
+          - '0x9a10'
+  - tm: 487.5*PER
+    vls:
+      -   - A
+          - '0xe5ea'
+      -   - B
+          - '0x22'
+      -   - C
+          - '0xa984'
+  - tm: 488.5*PER
+    vls:
+      -   - A
+          - '0xc80c'
+      -   - B
+          - '0xeba9'
+      -   - C
+          - '0x9486'
+  - tm: 489.5*PER
+    vls:
+      -   - A
+          - '0x20b4'
+      -   - B
+          - '0x6c2c'
+      -   - C
+          - '0x5481'
+  - tm: 49.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x8000'
+  - tm: 490.5*PER
+    vls:
+      -   - A
+          - '0x3db9'
+      -   - B
+          - '0xfbc5'
+      -   - C
+          - '0x70d9'
+  - tm: 491.5*PER
+    vls:
+      -   - A
+          - '0x499'
+      -   - B
+          - '0xb12c'
+      -   - C
+          - '0x6655'
+  - tm: 492.5*PER
+    vls:
+      -   - A
+          - '0x4567'
+      -   - B
+          - '0x19b1'
+      -   - C
+          - '0x236d'
+  - tm: 493.5*PER
+    vls:
+      -   - A
+          - '0x919'
+      -   - B
+          - '0xe0f5'
+      -   - C
+          - '0x5408'
+  - tm: 494.5*PER
+    vls:
+      -   - A
+          - '0x712c'
+      -   - B
+          - '0x73f'
+      -   - C
+          - '0x1213'
+  - tm: 495.5*PER
+    vls:
+      -   - A
+          - '0xd86e'
+      -   - B
+          - '0xe409'
+      -   - C
+          - '0x1359'
+  - tm: 496.5*PER
+    vls:
+      -   - A
+          - '0x1c04'
+      -   - B
+          - '0xefea'
+      -   - C
+          - '0x5d67'
+  - tm: 497.5*PER
+    vls:
+      -   - A
+          - '0x15bc'
+      -   - B
+          - '0x9e7d'
+      -   - C
+          - '0xc3d5'
+  - tm: 498.5*PER
+    vls:
+      -   - A
+          - '0xaa0e'
+      -   - B
+          - '0xc54a'
+      -   - C
+          - '0xe623'
+  - tm: 499.5*PER
+    vls:
+      -   - A
+          - '0xfdf1'
+      -   - B
+          - '0x2d0b'
+      -   - C
+          - '0xbf0e'
+  - tm: 5.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0xffff'
+  - tm: 50.5*PER
+    vls:
+      -   - A
+          - '0x1'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0xffff'
+  - tm: 500.5*PER
+    vls:
+      -   - A
+          - '0x91c6'
+      -   - B
+          - '0x7c69'
+      -   - C
+          - '0xe11e'
+  - tm: 501.5*PER
+    vls:
+      -   - A
+          - '0x9256'
+      -   - B
+          - '0x77ab'
+      -   - C
+          - '0x9348'
+  - tm: 502.5*PER
+    vls:
+      -   - A
+          - '0xb6f0'
+      -   - B
+          - '0x2e'
+      -   - C
+          - '0x7770'
+  - tm: 503.5*PER
+    vls:
+      -   - A
+          - '0x82f6'
+      -   - B
+          - '0xb768'
+      -   - C
+          - '0x49f'
+  - tm: 504.5*PER
+    vls:
+      -   - A
+          - '0xf53e'
+      -   - B
+          - '0x9e5a'
+      -   - C
+          - '0x56fe'
+  - tm: 505.5*PER
+    vls:
+      -   - A
+          - '0x8d93'
+      -   - B
+          - '0xbcb0'
+      -   - C
+          - '0xf67b'
+  - tm: 506.5*PER
+    vls:
+      -   - A
+          - '0x5849'
+      -   - B
+          - '0x1457'
+      -   - C
+          - '0xe33b'
+  - tm: 507.5*PER
+    vls:
+      -   - A
+          - '0x680f'
+      -   - B
+          - '0xc395'
+      -   - C
+          - '0x68c0'
+  - tm: 508.5*PER
+    vls:
+      -   - A
+          - '0xdb99'
+      -   - B
+          - '0xe53f'
+      -   - C
+          - '0xdfb2'
+  - tm: 509.5*PER
+    vls:
+      -   - A
+          - '0x150d'
+      -   - B
+          - '0x9867'
+      -   - C
+          - '0x359a'
+  - tm: 51.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 510.5*PER
+    vls:
+      -   - A
+          - '0xf351'
+      -   - B
+          - '0x5749'
+      -   - C
+          - '0x27cc'
+  - tm: 511.5*PER
+    vls:
+      -   - A
+          - '0x1e5d'
+      -   - B
+          - '0x92e7'
+      -   - C
+          - '0x278c'
+  - tm: 512.5*PER
+    vls:
+      -   - A
+          - '0x1306'
+      -   - B
+          - '0x635d'
+      -   - C
+          - '0x954a'
+  - tm: 513.5*PER
+    vls:
+      -   - A
+          - '0x4ad3'
+      -   - B
+          - '0xafe4'
+      -   - C
+          - '0x7ef6'
+  - tm: 514.5*PER
+    vls:
+      -   - A
+          - '0x4902'
+      -   - B
+          - '0xbe93'
+      -   - C
+          - '0xcfe2'
+  - tm: 515.5*PER
+    vls:
+      -   - A
+          - '0xab20'
+      -   - B
+          - '0x6ad9'
+      -   - C
+          - '0xd0db'
+  - tm: 516.5*PER
+    vls:
+      -   - A
+          - '0x328a'
+      -   - B
+          - '0x7f32'
+      -   - C
+          - '0x3180'
+  - tm: 517.5*PER
+    vls:
+      -   - A
+          - '0x1a7a'
+      -   - B
+          - '0x93fc'
+      -   - C
+          - '0x8947'
+  - tm: 518.5*PER
+    vls:
+      -   - A
+          - '0x625c'
+      -   - B
+          - '0x4d4c'
+      -   - C
+          - '0xbfc'
+  - tm: 519.5*PER
+    vls:
+      -   - A
+          - '0x13e5'
+      -   - B
+          - '0x4e49'
+      -   - C
+          - '0x7381'
+  - tm: 52.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x1'
+  - tm: 520.5*PER
+    vls:
+      -   - A
+          - '0xf97e'
+      -   - B
+          - '0x328a'
+      -   - C
+          - '0x78ec'
+  - tm: 521.5*PER
+    vls:
+      -   - A
+          - '0x20f'
+      -   - B
+          - '0xaee3'
+      -   - C
+          - '0xc1e'
+  - tm: 522.5*PER
+    vls:
+      -   - A
+          - '0x6d2c'
+      -   - B
+          - '0x8533'
+      -   - C
+          - '0x1235'
+  - tm: 523.5*PER
+    vls:
+      -   - A
+          - '0x7931'
+      -   - B
+          - '0x9cb6'
+      -   - C
+          - '0x4e46'
+  - tm: 524.5*PER
+    vls:
+      -   - A
+          - '0x35ca'
+      -   - B
+          - '0xa42b'
+      -   - C
+          - '0x1f44'
+  - tm: 525.5*PER
+    vls:
+      -   - A
+          - '0x9a22'
+      -   - B
+          - '0x9df6'
+      -   - C
+          - '0xb08a'
+  - tm: 526.5*PER
+    vls:
+      -   - A
+          - '0xacf5'
+      -   - B
+          - '0x52b4'
+      -   - C
+          - '0x2bc'
+  - tm: 527.5*PER
+    vls:
+      -   - A
+          - '0x4d1e'
+      -   - B
+          - '0xf235'
+      -   - C
+          - '0x7896'
+  - tm: 528.5*PER
+    vls:
+      -   - A
+          - '0x54e'
+      -   - B
+          - '0xa61f'
+      -   - C
+          - '0x2a7f'
+  - tm: 529.5*PER
+    vls:
+      -   - A
+          - '0x86ed'
+      -   - B
+          - '0x5427'
+      -   - C
+          - '0x9bc'
+  - tm: 53.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x7fff'
+  - tm: 530.5*PER
+    vls:
+      -   - A
+          - '0xcc20'
+      -   - B
+          - '0x4ab6'
+      -   - C
+          - '0xbe18'
+  - tm: 531.5*PER
+    vls:
+      -   - A
+          - '0xc89e'
+      -   - B
+          - '0xbe45'
+      -   - C
+          - '0xcea9'
+  - tm: 532.5*PER
+    vls:
+      -   - A
+          - '0x6e04'
+      -   - B
+          - '0x39'
+      -   - C
+          - '0xe976'
+  - tm: 533.5*PER
+    vls:
+      -   - A
+          - '0x6c55'
+      -   - B
+          - '0x2231'
+      -   - C
+          - '0xaefa'
+  - tm: 534.5*PER
+    vls:
+      -   - A
+          - '0xf5fc'
+      -   - B
+          - '0x6c0c'
+      -   - C
+          - '0xcda'
+  - tm: 535.5*PER
+    vls:
+      -   - A
+          - '0x5eae'
+      -   - B
+          - '0x2751'
+      -   - C
+          - '0x2a9f'
+  - tm: 536.5*PER
+    vls:
+      -   - A
+          - '0xc03d'
+      -   - B
+          - '0x5d5b'
+      -   - C
+          - '0xc50f'
+  - tm: 537.5*PER
+    vls:
+      -   - A
+          - '0xe464'
+      -   - B
+          - '0xac4f'
+      -   - C
+          - '0x6233'
+  - tm: 538.5*PER
+    vls:
+      -   - A
+          - '0x3fa0'
+      -   - B
+          - '0x4c9d'
+      -   - C
+          - '0xdde5'
+  - tm: 539.5*PER
+    vls:
+      -   - A
+          - '0xb91b'
+      -   - B
+          - '0x83dc'
+      -   - C
+          - '0x7ae1'
+  - tm: 54.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x8000'
+  - tm: 540.5*PER
+    vls:
+      -   - A
+          - '0x34cf'
+      -   - B
+          - '0x5e2'
+      -   - C
+          - '0x18b1'
+  - tm: 541.5*PER
+    vls:
+      -   - A
+          - '0x507b'
+      -   - B
+          - '0xfd2d'
+      -   - C
+          - '0x2b3c'
+  - tm: 542.5*PER
+    vls:
+      -   - A
+          - '0xe49'
+      -   - B
+          - '0x3f0f'
+      -   - C
+          - '0x3840'
+  - tm: 543.5*PER
+    vls:
+      -   - A
+          - '0x4808'
+      -   - B
+          - '0x5b38'
+      -   - C
+          - '0xcb25'
+  - tm: 544.5*PER
+    vls:
+      -   - A
+          - '0xe4af'
+      -   - B
+          - '0x9806'
+      -   - C
+          - '0xd4aa'
+  - tm: 545.5*PER
+    vls:
+      -   - A
+          - '0x6637'
+      -   - B
+          - '0xd778'
+      -   - C
+          - '0x84ef'
+  - tm: 546.5*PER
+    vls:
+      -   - A
+          - '0xa184'
+      -   - B
+          - '0x4963'
+      -   - C
+          - '0x2f5'
+  - tm: 547.5*PER
+    vls:
+      -   - A
+          - '0x3ac'
+      -   - B
+          - '0xbcf0'
+      -   - C
+          - '0xea86'
+  - tm: 548.5*PER
+    vls:
+      -   - A
+          - '0x30c2'
+      -   - B
+          - '0xc17a'
+      -   - C
+          - '0xf282'
+  - tm: 549.5*PER
+    vls:
+      -   - A
+          - '0x4227'
+      -   - B
+          - '0xf866'
+      -   - C
+          - '0xebca'
+  - tm: 55.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0xffff'
+  - tm: 550.5*PER
+    vls:
+      -   - A
+          - '0x10e1'
+      -   - B
+          - '0x8cd8'
+      -   - C
+          - '0xbb33'
+  - tm: 551.5*PER
+    vls:
+      -   - A
+          - '0xbb54'
+      -   - B
+          - '0x3dde'
+      -   - C
+          - '0x2368'
+  - tm: 552.5*PER
+    vls:
+      -   - A
+          - '0x1abc'
+      -   - B
+          - '0x6aae'
+      -   - C
+          - '0xdff6'
+  - tm: 553.5*PER
+    vls:
+      -   - A
+          - '0x64cf'
+      -   - B
+          - '0x7143'
+      -   - C
+          - '0xd0af'
+  - tm: 554.5*PER
+    vls:
+      -   - A
+          - '0x4b69'
+      -   - B
+          - '0x5086'
+      -   - C
+          - '0x8f64'
+  - tm: 555.5*PER
+    vls:
+      -   - A
+          - '0x416d'
+      -   - B
+          - '0x1080'
+      -   - C
+          - '0xb155'
+  - tm: 556.5*PER
+    vls:
+      -   - A
+          - '0x6c7c'
+      -   - B
+          - '0x4891'
+      -   - C
+          - '0xa644'
+  - tm: 557.5*PER
+    vls:
+      -   - A
+          - '0x3a39'
+      -   - B
+          - '0xdd49'
+      -   - C
+          - '0x6f37'
+  - tm: 558.5*PER
+    vls:
+      -   - A
+          - '0x1f5f'
+      -   - B
+          - '0x7b64'
+      -   - C
+          - '0xe4cc'
+  - tm: 559.5*PER
+    vls:
+      -   - A
+          - '0x3ede'
+      -   - B
+          - '0x1af9'
+      -   - C
+          - '0x1111'
+  - tm: 56.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x0'
+  - tm: 560.5*PER
+    vls:
+      -   - A
+          - '0x34d9'
+      -   - B
+          - '0x1dfa'
+      -   - C
+          - '0x556d'
+  - tm: 561.5*PER
+    vls:
+      -   - A
+          - '0x37e2'
+      -   - B
+          - '0x2b3d'
+      -   - C
+          - '0xad80'
+  - tm: 562.5*PER
+    vls:
+      -   - A
+          - '0x174f'
+      -   - B
+          - '0xf844'
+      -   - C
+          - '0xa7c9'
+  - tm: 563.5*PER
+    vls:
+      -   - A
+          - '0x58a3'
+      -   - B
+          - '0x6615'
+      -   - C
+          - '0x3f74'
+  - tm: 564.5*PER
+    vls:
+      -   - A
+          - '0x3090'
+      -   - B
+          - '0x97a1'
+      -   - C
+          - '0x83c3'
+  - tm: 565.5*PER
+    vls:
+      -   - A
+          - '0x51af'
+      -   - B
+          - '0x1fb8'
+      -   - C
+          - '0x1438'
+  - tm: 566.5*PER
+    vls:
+      -   - A
+          - '0xae69'
+      -   - B
+          - '0x53dc'
+      -   - C
+          - '0xf6d6'
+  - tm: 567.5*PER
+    vls:
+      -   - A
+          - '0x6973'
+      -   - B
+          - '0x7794'
+      -   - C
+          - '0xb013'
+  - tm: 568.5*PER
+    vls:
+      -   - A
+          - '0x6bf3'
+      -   - B
+          - '0x6331'
+      -   - C
+          - '0x660c'
+  - tm: 569.5*PER
+    vls:
+      -   - A
+          - '0x1350'
+      -   - B
+          - '0x5dd8'
+      -   - C
+          - '0x9148'
+  - tm: 57.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x1'
+  - tm: 570.5*PER
+    vls:
+      -   - A
+          - '0x69dc'
+      -   - B
+          - '0x8202'
+      -   - C
+          - '0x2dab'
+  - tm: 571.5*PER
+    vls:
+      -   - A
+          - '0x42f7'
+      -   - B
+          - '0x4bd4'
+      -   - C
+          - '0xc820'
+  - tm: 572.5*PER
+    vls:
+      -   - A
+          - '0xb0c9'
+      -   - B
+          - '0x600e'
+      -   - C
+          - '0x7ac6'
+  - tm: 573.5*PER
+    vls:
+      -   - A
+          - '0x8bcf'
+      -   - B
+          - '0x1167'
+      -   - C
+          - '0x880b'
+  - tm: 574.5*PER
+    vls:
+      -   - A
+          - '0x252f'
+      -   - B
+          - '0xe8dd'
+      -   - C
+          - '0xd749'
+  - tm: 575.5*PER
+    vls:
+      -   - A
+          - '0x10e6'
+      -   - B
+          - '0x5a65'
+      -   - C
+          - '0xa7f5'
+  - tm: 576.5*PER
+    vls:
+      -   - A
+          - '0xd47d'
+      -   - B
+          - '0xb6f6'
+      -   - C
+          - '0x9dfa'
+  - tm: 577.5*PER
+    vls:
+      -   - A
+          - '0x353'
+      -   - B
+          - '0xa01f'
+      -   - C
+          - '0x551f'
+  - tm: 578.5*PER
+    vls:
+      -   - A
+          - '0x5b0c'
+      -   - B
+          - '0x6aea'
+      -   - C
+          - '0x9466'
+  - tm: 579.5*PER
+    vls:
+      -   - A
+          - '0xe21c'
+      -   - B
+          - '0x6a36'
+      -   - C
+          - '0xbeee'
+  - tm: 58.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x7fff'
+  - tm: 580.5*PER
+    vls:
+      -   - A
+          - '0x843c'
+      -   - B
+          - '0x631b'
+      -   - C
+          - '0xf1de'
+  - tm: 581.5*PER
+    vls:
+      -   - A
+          - '0x283f'
+      -   - B
+          - '0x1b81'
+      -   - C
+          - '0xa768'
+  - tm: 582.5*PER
+    vls:
+      -   - A
+          - '0x36af'
+      -   - B
+          - '0xf469'
+      -   - C
+          - '0xe73e'
+  - tm: 583.5*PER
+    vls:
+      -   - A
+          - '0xb86e'
+      -   - B
+          - '0xed58'
+      -   - C
+          - '0x65e9'
+  - tm: 584.5*PER
+    vls:
+      -   - A
+          - '0xd012'
+      -   - B
+          - '0xa1b7'
+      -   - C
+          - '0xdc48'
+  - tm: 585.5*PER
+    vls:
+      -   - A
+          - '0x80fa'
+      -   - B
+          - '0x1a91'
+      -   - C
+          - '0x9b59'
+  - tm: 586.5*PER
+    vls:
+      -   - A
+          - '0xb7ec'
+      -   - B
+          - '0x34d1'
+      -   - C
+          - '0x1fd5'
+  - tm: 587.5*PER
+    vls:
+      -   - A
+          - '0xab0b'
+      -   - B
+          - '0xd912'
+      -   - C
+          - '0xa1ee'
+  - tm: 588.5*PER
+    vls:
+      -   - A
+          - '0x655f'
+      -   - B
+          - '0x68f0'
+      -   - C
+          - '0x7d3a'
+  - tm: 589.5*PER
+    vls:
+      -   - A
+          - '0xac39'
+      -   - B
+          - '0x851f'
+      -   - C
+          - '0xdddb'
+  - tm: 59.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x8000'
+  - tm: 590.5*PER
+    vls:
+      -   - A
+          - '0x34ae'
+      -   - B
+          - '0x6733'
+      -   - C
+          - '0x90fe'
+  - tm: 591.5*PER
+    vls:
+      -   - A
+          - '0x127e'
+      -   - B
+          - '0xdcbe'
+      -   - C
+          - '0x453a'
+  - tm: 592.5*PER
+    vls:
+      -   - A
+          - '0x72e6'
+      -   - B
+          - '0xb20e'
+      -   - C
+          - '0x705a'
+  - tm: 593.5*PER
+    vls:
+      -   - A
+          - '0x1d7'
+      -   - B
+          - '0x5dda'
+      -   - C
+          - '0xd359'
+  - tm: 594.5*PER
+    vls:
+      -   - A
+          - '0x30c9'
+      -   - B
+          - '0xd2ea'
+      -   - C
+          - '0x48da'
+  - tm: 595.5*PER
+    vls:
+      -   - A
+          - '0x7f71'
+      -   - B
+          - '0xd67d'
+      -   - C
+          - '0x465d'
+  - tm: 596.5*PER
+    vls:
+      -   - A
+          - '0xf708'
+      -   - B
+          - '0x2e76'
+      -   - C
+          - '0x5fe8'
+  - tm: 597.5*PER
+    vls:
+      -   - A
+          - '0xae8e'
+      -   - B
+          - '0x498c'
+      -   - C
+          - '0xb902'
+  - tm: 598.5*PER
+    vls:
+      -   - A
+          - '0x564f'
+      -   - B
+          - '0xde51'
+      -   - C
+          - '0xdd1c'
+  - tm: 599.5*PER
+    vls:
+      -   - A
+          - '0xc547'
+      -   - B
+          - '0x432d'
+      -   - C
+          - '0xd28a'
+  - tm: 6.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x0'
+  - tm: 60.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0xffff'
+  - tm: 600.5*PER
+    vls:
+      -   - A
+          - '0x2eba'
+      -   - B
+          - '0xb38'
+      -   - C
+          - '0x50b8'
+  - tm: 601.5*PER
+    vls:
+      -   - A
+          - '0xefde'
+      -   - B
+          - '0x1624'
+      -   - C
+          - '0xc24e'
+  - tm: 602.5*PER
+    vls:
+      -   - A
+          - '0x259f'
+      -   - B
+          - '0xf78b'
+      -   - C
+          - '0x3b66'
+  - tm: 603.5*PER
+    vls:
+      -   - A
+          - '0xc141'
+      -   - B
+          - '0xa6bc'
+      -   - C
+          - '0xdd8a'
+  - tm: 604.5*PER
+    vls:
+      -   - A
+          - '0xedd5'
+      -   - B
+          - '0xe59d'
+      -   - C
+          - '0x4241'
+  - tm: 605.5*PER
+    vls:
+      -   - A
+          - '0xe863'
+      -   - B
+          - '0x4b09'
+      -   - C
+          - '0xdcc1'
+  - tm: 606.5*PER
+    vls:
+      -   - A
+          - '0x9640'
+      -   - B
+          - '0x5d93'
+      -   - C
+          - '0x79e'
+  - tm: 607.5*PER
+    vls:
+      -   - A
+          - '0x7a55'
+      -   - B
+          - '0x16cc'
+      -   - C
+          - '0x2d58'
+  - tm: 608.5*PER
+    vls:
+      -   - A
+          - '0x92d6'
+      -   - B
+          - '0x6140'
+      -   - C
+          - '0x76f7'
+  - tm: 609.5*PER
+    vls:
+      -   - A
+          - '0x6c5b'
+      -   - B
+          - '0x59f2'
+      -   - C
+          - '0xfb28'
+  - tm: 61.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x0'
+  - tm: 610.5*PER
+    vls:
+      -   - A
+          - '0x6a50'
+      -   - B
+          - '0x1929'
+      -   - C
+          - '0x507'
+  - tm: 611.5*PER
+    vls:
+      -   - A
+          - '0xf2a0'
+      -   - B
+          - '0x4281'
+      -   - C
+          - '0xf778'
+  - tm: 612.5*PER
+    vls:
+      -   - A
+          - '0x2d5f'
+      -   - B
+          - '0xfa03'
+      -   - C
+          - '0x3d1d'
+  - tm: 613.5*PER
+    vls:
+      -   - A
+          - '0xcafd'
+      -   - B
+          - '0x11e3'
+      -   - C
+          - '0xd8d4'
+  - tm: 614.5*PER
+    vls:
+      -   - A
+          - '0xd0d6'
+      -   - B
+          - '0x251'
+      -   - C
+          - '0x429'
+  - tm: 615.5*PER
+    vls:
+      -   - A
+          - '0x1b62'
+      -   - B
+          - '0x6a19'
+      -   - C
+          - '0x3cf2'
+  - tm: 616.5*PER
+    vls:
+      -   - A
+          - '0x2c02'
+      -   - B
+          - '0xfee5'
+      -   - C
+          - '0x3414'
+  - tm: 617.5*PER
+    vls:
+      -   - A
+          - '0x742d'
+      -   - B
+          - '0xc270'
+      -   - C
+          - '0xbde0'
+  - tm: 618.5*PER
+    vls:
+      -   - A
+          - '0xf60b'
+      -   - B
+          - '0x2fea'
+      -   - C
+          - '0xf726'
+  - tm: 619.5*PER
+    vls:
+      -   - A
+          - '0xb400'
+      -   - B
+          - '0x54c4'
+      -   - C
+          - '0x1b5d'
+  - tm: 62.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x1'
+  - tm: 620.5*PER
+    vls:
+      -   - A
+          - '0x8aa8'
+      -   - B
+          - '0xca97'
+      -   - C
+          - '0x6e85'
+  - tm: 621.5*PER
+    vls:
+      -   - A
+          - '0x8674'
+      -   - B
+          - '0x147d'
+      -   - C
+          - '0x1eb3'
+  - tm: 622.5*PER
+    vls:
+      -   - A
+          - '0x6c44'
+      -   - B
+          - '0x9533'
+      -   - C
+          - '0x9c83'
+  - tm: 623.5*PER
+    vls:
+      -   - A
+          - '0xe5da'
+      -   - B
+          - '0x6616'
+      -   - C
+          - '0xd4cf'
+  - tm: 624.5*PER
+    vls:
+      -   - A
+          - '0xc8ef'
+      -   - B
+          - '0xddc'
+      -   - C
+          - '0x7240'
+  - tm: 625.5*PER
+    vls:
+      -   - A
+          - '0xef1a'
+      -   - B
+          - '0x4b3c'
+      -   - C
+          - '0x103b'
+  - tm: 626.5*PER
+    vls:
+      -   - A
+          - '0xe535'
+      -   - B
+          - '0xa0f6'
+      -   - C
+          - '0x91fa'
+  - tm: 627.5*PER
+    vls:
+      -   - A
+          - '0x4fb1'
+      -   - B
+          - '0x4156'
+      -   - C
+          - '0x345b'
+  - tm: 628.5*PER
+    vls:
+      -   - A
+          - '0xe780'
+      -   - B
+          - '0x1ccd'
+      -   - C
+          - '0x7ad1'
+  - tm: 629.5*PER
+    vls:
+      -   - A
+          - '0xfaf6'
+      -   - B
+          - '0x9a5e'
+      -   - C
+          - '0x12b3'
+  - tm: 63.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x7fff'
+  - tm: 630.5*PER
+    vls:
+      -   - A
+          - '0x77e6'
+      -   - B
+          - '0x96c'
+      -   - C
+          - '0xdbde'
+  - tm: 631.5*PER
+    vls:
+      -   - A
+          - '0x4b6c'
+      -   - B
+          - '0xbb4e'
+      -   - C
+          - '0xa3f7'
+  - tm: 632.5*PER
+    vls:
+      -   - A
+          - '0x713f'
+      -   - B
+          - '0x2b5e'
+      -   - C
+          - '0x5d85'
+  - tm: 633.5*PER
+    vls:
+      -   - A
+          - '0x7f3f'
+      -   - B
+          - '0xc5b0'
+      -   - C
+          - '0xd766'
+  - tm: 634.5*PER
+    vls:
+      -   - A
+          - '0xd65d'
+      -   - B
+          - '0x32a6'
+      -   - C
+          - '0x9a31'
+  - tm: 635.5*PER
+    vls:
+      -   - A
+          - '0x427d'
+      -   - B
+          - '0xdf72'
+      -   - C
+          - '0x77ea'
+  - tm: 636.5*PER
+    vls:
+      -   - A
+          - '0x871b'
+      -   - B
+          - '0xea9f'
+      -   - C
+          - '0x6a3e'
+  - tm: 637.5*PER
+    vls:
+      -   - A
+          - '0xbb4d'
+      -   - B
+          - '0x5118'
+      -   - C
+          - '0xdb3d'
+  - tm: 638.5*PER
+    vls:
+      -   - A
+          - '0x44e8'
+      -   - B
+          - '0x6001'
+      -   - C
+          - '0x2731'
+  - tm: 639.5*PER
+    vls:
+      -   - A
+          - '0x5282'
+      -   - B
+          - '0xec51'
+      -   - C
+          - '0xa1c8'
+  - tm: 64.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x8000'
+  - tm: 640.5*PER
+    vls:
+      -   - A
+          - '0x8d73'
+      -   - B
+          - '0x869'
+      -   - C
+          - '0x155e'
+  - tm: 641.5*PER
+    vls:
+      -   - A
+          - '0x7d7b'
+      -   - B
+          - '0x356f'
+      -   - C
+          - '0xd2c9'
+  - tm: 642.5*PER
+    vls:
+      -   - A
+          - '0x6c92'
+      -   - B
+          - '0xd17e'
+      -   - C
+          - '0xce5b'
+  - tm: 643.5*PER
+    vls:
+      -   - A
+          - '0x89aa'
+      -   - B
+          - '0xdb25'
+      -   - C
+          - '0xd262'
+  - tm: 644.5*PER
+    vls:
+      -   - A
+          - '0xc26e'
+      -   - B
+          - '0xd4c1'
+      -   - C
+          - '0x4af0'
+  - tm: 645.5*PER
+    vls:
+      -   - A
+          - '0x5857'
+      -   - B
+          - '0x6d55'
+      -   - C
+          - '0x9d54'
+  - tm: 646.5*PER
+    vls:
+      -   - A
+          - '0xf28a'
+      -   - B
+          - '0x341a'
+      -   - C
+          - '0x633a'
+  - tm: 647.5*PER
+    vls:
+      -   - A
+          - '0x9157'
+      -   - B
+          - '0xa648'
+      -   - C
+          - '0xe38b'
+  - tm: 648.5*PER
+    vls:
+      -   - A
+          - '0xce0'
+      -   - B
+          - '0xc2f9'
+      -   - C
+          - '0x7ad8'
+  - tm: 649.5*PER
+    vls:
+      -   - A
+          - '0x682f'
+      -   - B
+          - '0x81a4'
+      -   - C
+          - '0xe391'
+  - tm: 65.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0xffff'
+  - tm: 650.5*PER
+    vls:
+      -   - A
+          - '0xe8d1'
+      -   - B
+          - '0x9125'
+      -   - C
+          - '0xf5f0'
+  - tm: 651.5*PER
+    vls:
+      -   - A
+          - '0x28d'
+      -   - B
+          - '0xc09c'
+      -   - C
+          - '0xb52e'
+  - tm: 652.5*PER
+    vls:
+      -   - A
+          - '0x54f9'
+      -   - B
+          - '0x4746'
+      -   - C
+          - '0xdf4e'
+  - tm: 653.5*PER
+    vls:
+      -   - A
+          - '0xee2d'
+      -   - B
+          - '0xea62'
+      -   - C
+          - '0x4e20'
+  - tm: 654.5*PER
+    vls:
+      -   - A
+          - '0x1384'
+      -   - B
+          - '0x9e39'
+      -   - C
+          - '0x6cba'
+  - tm: 655.5*PER
+    vls:
+      -   - A
+          - '0x14a3'
+      -   - B
+          - '0x8d18'
+      -   - C
+          - '0xd98'
+  - tm: 656.5*PER
+    vls:
+      -   - A
+          - '0x4e17'
+      -   - B
+          - '0xbc65'
+      -   - C
+          - '0x3d9f'
+  - tm: 657.5*PER
+    vls:
+      -   - A
+          - '0xab0e'
+      -   - B
+          - '0xc8ec'
+      -   - C
+          - '0xae4f'
+  - tm: 658.5*PER
+    vls:
+      -   - A
+          - '0x359f'
+      -   - B
+          - '0x12f2'
+      -   - C
+          - '0x8db2'
+  - tm: 659.5*PER
+    vls:
+      -   - A
+          - '0x7091'
+      -   - B
+          - '0x51b'
+      -   - C
+          - '0x20cb'
+  - tm: 66.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x0'
+  - tm: 660.5*PER
+    vls:
+      -   - A
+          - '0x7637'
+      -   - B
+          - '0x7cd5'
+      -   - C
+          - '0xf6e0'
+  - tm: 661.5*PER
+    vls:
+      -   - A
+          - '0x35a5'
+      -   - B
+          - '0xf5'
+      -   - C
+          - '0x30e'
+  - tm: 662.5*PER
+    vls:
+      -   - A
+          - '0x1b8c'
+      -   - B
+          - '0xf64b'
+      -   - C
+          - '0xe694'
+  - tm: 663.5*PER
+    vls:
+      -   - A
+          - '0x2ec5'
+      -   - B
+          - '0xea19'
+      -   - C
+          - '0x99d'
+  - tm: 664.5*PER
+    vls:
+      -   - A
+          - '0x8184'
+      -   - B
+          - '0x2024'
+      -   - C
+          - '0x4b86'
+  - tm: 665.5*PER
+    vls:
+      -   - A
+          - '0xdaf8'
+      -   - B
+          - '0x4c52'
+      -   - C
+          - '0x99d'
+  - tm: 666.5*PER
+    vls:
+      -   - A
+          - '0xbbcd'
+      -   - B
+          - '0xcec2'
+      -   - C
+          - '0x9496'
+  - tm: 667.5*PER
+    vls:
+      -   - A
+          - '0xaebf'
+      -   - B
+          - '0x724a'
+      -   - C
+          - '0xf50a'
+  - tm: 668.5*PER
+    vls:
+      -   - A
+          - '0xb0ee'
+      -   - B
+          - '0x71cc'
+      -   - C
+          - '0x1966'
+  - tm: 669.5*PER
+    vls:
+      -   - A
+          - '0x4bdf'
+      -   - B
+          - '0x6394'
+      -   - C
+          - '0x3b9d'
+  - tm: 67.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x1'
+  - tm: 670.5*PER
+    vls:
+      -   - A
+          - '0xe0d9'
+      -   - B
+          - '0x93e'
+      -   - C
+          - '0xe986'
+  - tm: 671.5*PER
+    vls:
+      -   - A
+          - '0x328'
+      -   - B
+          - '0x7c5c'
+      -   - C
+          - '0x4643'
+  - tm: 672.5*PER
+    vls:
+      -   - A
+          - '0xc842'
+      -   - B
+          - '0xa233'
+      -   - C
+          - '0xe272'
+  - tm: 673.5*PER
+    vls:
+      -   - A
+          - '0x7a25'
+      -   - B
+          - '0x8583'
+      -   - C
+          - '0x2f24'
+  - tm: 674.5*PER
+    vls:
+      -   - A
+          - '0x2492'
+      -   - B
+          - '0x2f1b'
+      -   - C
+          - '0x1aad'
+  - tm: 675.5*PER
+    vls:
+      -   - A
+          - '0x7d4'
+      -   - B
+          - '0xabd1'
+      -   - C
+          - '0xed70'
+  - tm: 676.5*PER
+    vls:
+      -   - A
+          - '0x5763'
+      -   - B
+          - '0x8ba2'
+      -   - C
+          - '0x86c6'
+  - tm: 677.5*PER
+    vls:
+      -   - A
+          - '0x6f6'
+      -   - B
+          - '0xace'
+      -   - C
+          - '0x4523'
+  - tm: 678.5*PER
+    vls:
+      -   - A
+          - '0xf295'
+      -   - B
+          - '0x29eb'
+      -   - C
+          - '0x471c'
+  - tm: 679.5*PER
+    vls:
+      -   - A
+          - '0x51fb'
+      -   - B
+          - '0xa25d'
+      -   - C
+          - '0xa2e2'
+  - tm: 68.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x7fff'
+  - tm: 680.5*PER
+    vls:
+      -   - A
+          - '0x9f59'
+      -   - B
+          - '0x6236'
+      -   - C
+          - '0x5b1e'
+  - tm: 681.5*PER
+    vls:
+      -   - A
+          - '0x3a1c'
+      -   - B
+          - '0x3591'
+      -   - C
+          - '0x4878'
+  - tm: 682.5*PER
+    vls:
+      -   - A
+          - '0x8fd8'
+      -   - B
+          - '0x39a4'
+      -   - C
+          - '0x53a2'
+  - tm: 683.5*PER
+    vls:
+      -   - A
+          - '0x5300'
+      -   - B
+          - '0x13ab'
+      -   - C
+          - '0x61ce'
+  - tm: 684.5*PER
+    vls:
+      -   - A
+          - '0x2d11'
+      -   - B
+          - '0xde43'
+      -   - C
+          - '0xa06'
+  - tm: 685.5*PER
+    vls:
+      -   - A
+          - '0x21f5'
+      -   - B
+          - '0xe5e6'
+      -   - C
+          - '0x8868'
+  - tm: 686.5*PER
+    vls:
+      -   - A
+          - '0x33e4'
+      -   - B
+          - '0xf5df'
+      -   - C
+          - '0xeb61'
+  - tm: 687.5*PER
+    vls:
+      -   - A
+          - '0xab12'
+      -   - B
+          - '0x9e67'
+      -   - C
+          - '0x77c6'
+  - tm: 688.5*PER
+    vls:
+      -   - A
+          - '0xf4e4'
+      -   - B
+          - '0xf294'
+      -   - C
+          - '0x7837'
+  - tm: 689.5*PER
+    vls:
+      -   - A
+          - '0xac77'
+      -   - B
+          - '0x414f'
+      -   - C
+          - '0xb8a'
+  - tm: 69.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x8000'
+  - tm: 690.5*PER
+    vls:
+      -   - A
+          - '0x1598'
+      -   - B
+          - '0xea6'
+      -   - C
+          - '0x9f0f'
+  - tm: 691.5*PER
+    vls:
+      -   - A
+          - '0xad8a'
+      -   - B
+          - '0xb1f7'
+      -   - C
+          - '0x127a'
+  - tm: 692.5*PER
+    vls:
+      -   - A
+          - '0xade2'
+      -   - B
+          - '0x4458'
+      -   - C
+          - '0xe8eb'
+  - tm: 693.5*PER
+    vls:
+      -   - A
+          - '0x7939'
+      -   - B
+          - '0x1934'
+      -   - C
+          - '0x78de'
+  - tm: 694.5*PER
+    vls:
+      -   - A
+          - '0xa535'
+      -   - B
+          - '0xe6e2'
+      -   - C
+          - '0xb41d'
+  - tm: 695.5*PER
+    vls:
+      -   - A
+          - '0x9da2'
+      -   - B
+          - '0xf0fe'
+      -   - C
+          - '0x5878'
+  - tm: 696.5*PER
+    vls:
+      -   - A
+          - '0x4026'
+      -   - B
+          - '0x7916'
+      -   - C
+          - '0xee5e'
+  - tm: 697.5*PER
+    vls:
+      -   - A
+          - '0x9724'
+      -   - B
+          - '0x690'
+      -   - C
+          - '0xc76b'
+  - tm: 698.5*PER
+    vls:
+      -   - A
+          - '0x96c9'
+      -   - B
+          - '0x208d'
+      -   - C
+          - '0x53fc'
+  - tm: 699.5*PER
+    vls:
+      -   - A
+          - '0xe510'
+      -   - B
+          - '0x84cf'
+      -   - C
+          - '0x4a52'
+  - tm: 7.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x1'
+  - tm: 70.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0xffff'
+  - tm: 700.5*PER
+    vls:
+      -   - A
+          - '0x2c98'
+      -   - B
+          - '0x4a2b'
+      -   - C
+          - '0x6278'
+  - tm: 701.5*PER
+    vls:
+      -   - A
+          - '0x40f7'
+      -   - B
+          - '0x594e'
+      -   - C
+          - '0x6b2a'
+  - tm: 702.5*PER
+    vls:
+      -   - A
+          - '0x76a8'
+      -   - B
+          - '0x887d'
+      -   - C
+          - '0x67cf'
+  - tm: 703.5*PER
+    vls:
+      -   - A
+          - '0x2b4d'
+      -   - B
+          - '0x37e2'
+      -   - C
+          - '0x1034'
+  - tm: 704.5*PER
+    vls:
+      -   - A
+          - '0x2b2e'
+      -   - B
+          - '0xc61d'
+      -   - C
+          - '0x77b2'
+  - tm: 705.5*PER
+    vls:
+      -   - A
+          - '0x3d92'
+      -   - B
+          - '0xfdc9'
+      -   - C
+          - '0x8477'
+  - tm: 706.5*PER
+    vls:
+      -   - A
+          - '0xd92e'
+      -   - B
+          - '0x6d17'
+      -   - C
+          - '0x265a'
+  - tm: 707.5*PER
+    vls:
+      -   - A
+          - '0xd74b'
+      -   - B
+          - '0xa256'
+      -   - C
+          - '0x9cad'
+  - tm: 708.5*PER
+    vls:
+      -   - A
+          - '0x2576'
+      -   - B
+          - '0xbaa'
+      -   - C
+          - '0x534d'
+  - tm: 709.5*PER
+    vls:
+      -   - A
+          - '0x2440'
+      -   - B
+          - '0xfee5'
+      -   - C
+          - '0xa4d5'
+  - tm: 71.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x0'
+  - tm: 710.5*PER
+    vls:
+      -   - A
+          - '0x56c5'
+      -   - B
+          - '0xccd5'
+      -   - C
+          - '0x1a38'
+  - tm: 711.5*PER
+    vls:
+      -   - A
+          - '0xb1e8'
+      -   - B
+          - '0x8fbb'
+      -   - C
+          - '0xe445'
+  - tm: 712.5*PER
+    vls:
+      -   - A
+          - '0x964b'
+      -   - B
+          - '0xb5e8'
+      -   - C
+          - '0x82bb'
+  - tm: 713.5*PER
+    vls:
+      -   - A
+          - '0x7320'
+      -   - B
+          - '0xf28a'
+      -   - C
+          - '0x56ae'
+  - tm: 714.5*PER
+    vls:
+      -   - A
+          - '0x8340'
+      -   - B
+          - '0x90a8'
+      -   - C
+          - '0x5d39'
+  - tm: 715.5*PER
+    vls:
+      -   - A
+          - '0x4d'
+      -   - B
+          - '0x355e'
+      -   - C
+          - '0x258'
+  - tm: 716.5*PER
+    vls:
+      -   - A
+          - '0x94d1'
+      -   - B
+          - '0x84ae'
+      -   - C
+          - '0xbe7e'
+  - tm: 717.5*PER
+    vls:
+      -   - A
+          - '0x6b48'
+      -   - B
+          - '0x80e0'
+      -   - C
+          - '0x4c0c'
+  - tm: 718.5*PER
+    vls:
+      -   - A
+          - '0x63ff'
+      -   - B
+          - '0x276f'
+      -   - C
+          - '0x4051'
+  - tm: 719.5*PER
+    vls:
+      -   - A
+          - '0x83d7'
+      -   - B
+          - '0xd860'
+      -   - C
+          - '0x950'
+  - tm: 72.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x1'
+  - tm: 720.5*PER
+    vls:
+      -   - A
+          - '0xfddf'
+      -   - B
+          - '0xd56'
+      -   - C
+          - '0x95ce'
+  - tm: 721.5*PER
+    vls:
+      -   - A
+          - '0x69e4'
+      -   - B
+          - '0xb5f7'
+      -   - C
+          - '0x39f9'
+  - tm: 722.5*PER
+    vls:
+      -   - A
+          - '0x531d'
+      -   - B
+          - '0xd7be'
+      -   - C
+          - '0x2862'
+  - tm: 723.5*PER
+    vls:
+      -   - A
+          - '0x1c51'
+      -   - B
+          - '0xe86'
+      -   - C
+          - '0x1d45'
+  - tm: 724.5*PER
+    vls:
+      -   - A
+          - '0x9df9'
+      -   - B
+          - '0xb96f'
+      -   - C
+          - '0xeacc'
+  - tm: 725.5*PER
+    vls:
+      -   - A
+          - '0x79e2'
+      -   - B
+          - '0xb0c0'
+      -   - C
+          - '0x2cde'
+  - tm: 726.5*PER
+    vls:
+      -   - A
+          - '0xac47'
+      -   - B
+          - '0x2036'
+      -   - C
+          - '0xdbfd'
+  - tm: 727.5*PER
+    vls:
+      -   - A
+          - '0xdff3'
+      -   - B
+          - '0x6984'
+      -   - C
+          - '0x2863'
+  - tm: 728.5*PER
+    vls:
+      -   - A
+          - '0x6dbf'
+      -   - B
+          - '0x93ed'
+      -   - C
+          - '0x42aa'
+  - tm: 729.5*PER
+    vls:
+      -   - A
+          - '0xb5bd'
+      -   - B
+          - '0xd4c6'
+      -   - C
+          - '0x3683'
+  - tm: 73.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x7fff'
+  - tm: 730.5*PER
+    vls:
+      -   - A
+          - '0xb0b2'
+      -   - B
+          - '0xbeea'
+      -   - C
+          - '0x8620'
+  - tm: 731.5*PER
+    vls:
+      -   - A
+          - '0x833a'
+      -   - B
+          - '0xc771'
+      -   - C
+          - '0xa7ed'
+  - tm: 732.5*PER
+    vls:
+      -   - A
+          - '0xe99a'
+      -   - B
+          - '0x178'
+      -   - C
+          - '0xbbe'
+  - tm: 733.5*PER
+    vls:
+      -   - A
+          - '0x692c'
+      -   - B
+          - '0x383d'
+      -   - C
+          - '0xafbe'
+  - tm: 734.5*PER
+    vls:
+      -   - A
+          - '0x77b6'
+      -   - B
+          - '0xffeb'
+      -   - C
+          - '0xb6dc'
+  - tm: 735.5*PER
+    vls:
+      -   - A
+          - '0xb989'
+      -   - B
+          - '0x3de5'
+      -   - C
+          - '0xc126'
+  - tm: 736.5*PER
+    vls:
+      -   - A
+          - '0x715a'
+      -   - B
+          - '0x4775'
+      -   - C
+          - '0xa9dc'
+  - tm: 737.5*PER
+    vls:
+      -   - A
+          - '0x8713'
+      -   - B
+          - '0x4b49'
+      -   - C
+          - '0x3452'
+  - tm: 738.5*PER
+    vls:
+      -   - A
+          - '0xab62'
+      -   - B
+          - '0x7da0'
+      -   - C
+          - '0xf74'
+  - tm: 739.5*PER
+    vls:
+      -   - A
+          - '0xd160'
+      -   - B
+          - '0x6996'
+      -   - C
+          - '0xf7e4'
+  - tm: 74.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x8000'
+  - tm: 740.5*PER
+    vls:
+      -   - A
+          - '0xa382'
+      -   - B
+          - '0xb749'
+      -   - C
+          - '0xdd13'
+  - tm: 741.5*PER
+    vls:
+      -   - A
+          - '0x45c1'
+      -   - B
+          - '0x82d9'
+      -   - C
+          - '0x1ce6'
+  - tm: 742.5*PER
+    vls:
+      -   - A
+          - '0xaa34'
+      -   - B
+          - '0x5b29'
+      -   - C
+          - '0xa9ed'
+  - tm: 743.5*PER
+    vls:
+      -   - A
+          - '0x5252'
+      -   - B
+          - '0xa5cf'
+      -   - C
+          - '0x735b'
+  - tm: 744.5*PER
+    vls:
+      -   - A
+          - '0x738e'
+      -   - B
+          - '0x3c49'
+      -   - C
+          - '0x511f'
+  - tm: 745.5*PER
+    vls:
+      -   - A
+          - '0xd641'
+      -   - B
+          - '0x20b4'
+      -   - C
+          - '0x54cb'
+  - tm: 746.5*PER
+    vls:
+      -   - A
+          - '0xe314'
+      -   - B
+          - '0xb224'
+      -   - C
+          - '0xc678'
+  - tm: 747.5*PER
+    vls:
+      -   - A
+          - '0x3a66'
+      -   - B
+          - '0xa6b8'
+      -   - C
+          - '0x4371'
+  - tm: 748.5*PER
+    vls:
+      -   - A
+          - '0xc0c9'
+      -   - B
+          - '0x31db'
+      -   - C
+          - '0x507f'
+  - tm: 749.5*PER
+    vls:
+      -   - A
+          - '0x620e'
+      -   - B
+          - '0x2d3c'
+      -   - C
+          - '0x57a9'
+  - tm: 75.5*PER
+    vls:
+      -   - A
+          - '0x7fff'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0xffff'
+  - tm: 750.5*PER
+    vls:
+      -   - A
+          - '0x8844'
+      -   - B
+          - '0x575b'
+      -   - C
+          - '0x77b0'
+  - tm: 751.5*PER
+    vls:
+      -   - A
+          - '0xe099'
+      -   - B
+          - '0xa614'
+      -   - C
+          - '0x985'
+  - tm: 752.5*PER
+    vls:
+      -   - A
+          - '0xdf8c'
+      -   - B
+          - '0x7694'
+      -   - C
+          - '0x6470'
+  - tm: 753.5*PER
+    vls:
+      -   - A
+          - '0xcd5c'
+      -   - B
+          - '0x5fa8'
+      -   - C
+          - '0xed9e'
+  - tm: 754.5*PER
+    vls:
+      -   - A
+          - '0xb46b'
+      -   - B
+          - '0xdabd'
+      -   - C
+          - '0xe201'
+  - tm: 755.5*PER
+    vls:
+      -   - A
+          - '0x6432'
+      -   - B
+          - '0x90ef'
+      -   - C
+          - '0x1ebd'
+  - tm: 756.5*PER
+    vls:
+      -   - A
+          - '0x9815'
+      -   - B
+          - '0xf292'
+      -   - C
+          - '0xe449'
+  - tm: 757.5*PER
+    vls:
+      -   - A
+          - '0xe6b5'
+      -   - B
+          - '0xeba3'
+      -   - C
+          - '0x7d46'
+  - tm: 758.5*PER
+    vls:
+      -   - A
+          - '0xb7f'
+      -   - B
+          - '0x1e93'
+      -   - C
+          - '0xf950'
+  - tm: 759.5*PER
+    vls:
+      -   - A
+          - '0xfd10'
+      -   - B
+          - '0x1852'
+      -   - C
+          - '0x8617'
+  - tm: 76.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x0'
+  - tm: 760.5*PER
+    vls:
+      -   - A
+          - '0x8d33'
+      -   - B
+          - '0xb2f4'
+      -   - C
+          - '0x7ffc'
+  - tm: 761.5*PER
+    vls:
+      -   - A
+          - '0xdfdc'
+      -   - B
+          - '0xfa9c'
+      -   - C
+          - '0x18db'
+  - tm: 762.5*PER
+    vls:
+      -   - A
+          - '0x3bcb'
+      -   - B
+          - '0xdb48'
+      -   - C
+          - '0xb54'
+  - tm: 763.5*PER
+    vls:
+      -   - A
+          - '0x173b'
+      -   - B
+          - '0xf571'
+      -   - C
+          - '0xa16b'
+  - tm: 764.5*PER
+    vls:
+      -   - A
+          - '0x74f7'
+      -   - B
+          - '0x162b'
+      -   - C
+          - '0x7551'
+  - tm: 765.5*PER
+    vls:
+      -   - A
+          - '0xff47'
+      -   - B
+          - '0x6d44'
+      -   - C
+          - '0x8adb'
+  - tm: 766.5*PER
+    vls:
+      -   - A
+          - '0x46f6'
+      -   - B
+          - '0x1f12'
+      -   - C
+          - '0x783'
+  - tm: 767.5*PER
+    vls:
+      -   - A
+          - '0xdafc'
+      -   - B
+          - '0x8e73'
+      -   - C
+          - '0xfef1'
+  - tm: 768.5*PER
+    vls:
+      -   - A
+          - '0x3750'
+      -   - B
+          - '0x5776'
+      -   - C
+          - '0x7fdb'
+  - tm: 769.5*PER
+    vls:
+      -   - A
+          - '0xa0a1'
+      -   - B
+          - '0xfee4'
+      -   - C
+          - '0xa6d'
+  - tm: 77.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x1'
+  - tm: 770.5*PER
+    vls:
+      -   - A
+          - '0xfbc0'
+      -   - B
+          - '0x8beb'
+      -   - C
+          - '0x4eec'
+  - tm: 771.5*PER
+    vls:
+      -   - A
+          - '0xb288'
+      -   - B
+          - '0x559a'
+      -   - C
+          - '0xf3d8'
+  - tm: 772.5*PER
+    vls:
+      -   - A
+          - '0x1f40'
+      -   - B
+          - '0xcf6b'
+      -   - C
+          - '0x9b7f'
+  - tm: 773.5*PER
+    vls:
+      -   - A
+          - '0x4542'
+      -   - B
+          - '0x2de7'
+      -   - C
+          - '0x96d3'
+  - tm: 774.5*PER
+    vls:
+      -   - A
+          - '0x2057'
+      -   - B
+          - '0xd5dd'
+      -   - C
+          - '0xea47'
+  - tm: 775.5*PER
+    vls:
+      -   - A
+          - '0x8b77'
+      -   - B
+          - '0x8f04'
+      -   - C
+          - '0xd08b'
+  - tm: 776.5*PER
+    vls:
+      -   - A
+          - '0xe3c6'
+      -   - B
+          - '0x66be'
+      -   - C
+          - '0x36f9'
+  - tm: 777.5*PER
+    vls:
+      -   - A
+          - '0x20f0'
+      -   - B
+          - '0x2d3a'
+      -   - C
+          - '0xe399'
+  - tm: 778.5*PER
+    vls:
+      -   - A
+          - '0x93ed'
+      -   - B
+          - '0xbaf8'
+      -   - C
+          - '0xb10b'
+  - tm: 779.5*PER
+    vls:
+      -   - A
+          - '0xe4bf'
+      -   - B
+          - '0x2da3'
+      -   - C
+          - '0x40d2'
+  - tm: 78.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x7fff'
+  - tm: 780.5*PER
+    vls:
+      -   - A
+          - '0x808b'
+      -   - B
+          - '0x9560'
+      -   - C
+          - '0x8fda'
+  - tm: 781.5*PER
+    vls:
+      -   - A
+          - '0x8443'
+      -   - B
+          - '0x7fdf'
+      -   - C
+          - '0x332d'
+  - tm: 782.5*PER
+    vls:
+      -   - A
+          - '0x5071'
+      -   - B
+          - '0x42d8'
+      -   - C
+          - '0x725b'
+  - tm: 783.5*PER
+    vls:
+      -   - A
+          - '0x9e33'
+      -   - B
+          - '0x1c39'
+      -   - C
+          - '0x5bc3'
+  - tm: 784.5*PER
+    vls:
+      -   - A
+          - '0x192e'
+      -   - B
+          - '0x5cbb'
+      -   - C
+          - '0xf19'
+  - tm: 785.5*PER
+    vls:
+      -   - A
+          - '0x3df1'
+      -   - B
+          - '0xd56b'
+      -   - C
+          - '0x54ae'
+  - tm: 786.5*PER
+    vls:
+      -   - A
+          - '0x3fdb'
+      -   - B
+          - '0x751'
+      -   - C
+          - '0xacad'
+  - tm: 787.5*PER
+    vls:
+      -   - A
+          - '0x940e'
+      -   - B
+          - '0x1d6f'
+      -   - C
+          - '0x573a'
+  - tm: 788.5*PER
+    vls:
+      -   - A
+          - '0xe247'
+      -   - B
+          - '0x35e4'
+      -   - C
+          - '0x74b'
+  - tm: 789.5*PER
+    vls:
+      -   - A
+          - '0x86e1'
+      -   - B
+          - '0xce39'
+      -   - C
+          - '0xd4e0'
+  - tm: 79.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0x8000'
+  - tm: 790.5*PER
+    vls:
+      -   - A
+          - '0x880e'
+      -   - B
+          - '0xa5d4'
+      -   - C
+          - '0xe86b'
+  - tm: 791.5*PER
+    vls:
+      -   - A
+          - '0xe625'
+      -   - B
+          - '0xe3cf'
+      -   - C
+          - '0xcbec'
+  - tm: 792.5*PER
+    vls:
+      -   - A
+          - '0x327'
+      -   - B
+          - '0x48e8'
+      -   - C
+          - '0xcfd'
+  - tm: 793.5*PER
+    vls:
+      -   - A
+          - '0x1dfa'
+      -   - B
+          - '0x3fcb'
+      -   - C
+          - '0x2c5e'
+  - tm: 794.5*PER
+    vls:
+      -   - A
+          - '0xb49'
+      -   - B
+          - '0xd18c'
+      -   - C
+          - '0xdd72'
+  - tm: 795.5*PER
+    vls:
+      -   - A
+          - '0x71dd'
+      -   - B
+          - '0x24e0'
+      -   - C
+          - '0x55ab'
+  - tm: 796.5*PER
+    vls:
+      -   - A
+          - '0xad14'
+      -   - B
+          - '0x10ef'
+      -   - C
+          - '0xf204'
+  - tm: 797.5*PER
+    vls:
+      -   - A
+          - '0x88a0'
+      -   - B
+          - '0xb3ba'
+      -   - C
+          - '0x172e'
+  - tm: 798.5*PER
+    vls:
+      -   - A
+          - '0xfece'
+      -   - B
+          - '0xb874'
+      -   - C
+          - '0xa5e9'
+  - tm: 799.5*PER
+    vls:
+      -   - A
+          - '0xcddc'
+      -   - B
+          - '0x637c'
+      -   - C
+          - '0x56b3'
+  - tm: 8.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x7fff'
+  - tm: 80.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x0'
+      -   - C
+          - '0xffff'
+  - tm: 800.5*PER
+    vls:
+      -   - A
+          - '0xf935'
+      -   - B
+          - '0x9312'
+      -   - C
+          - '0x377f'
+  - tm: 801.5*PER
+    vls:
+      -   - A
+          - '0xd90a'
+      -   - B
+          - '0x8de3'
+      -   - C
+          - '0x571f'
+  - tm: 802.5*PER
+    vls:
+      -   - A
+          - '0x6a33'
+      -   - B
+          - '0x296b'
+      -   - C
+          - '0x8b8b'
+  - tm: 803.5*PER
+    vls:
+      -   - A
+          - '0xc60'
+      -   - B
+          - '0x4c43'
+      -   - C
+          - '0x5a0e'
+  - tm: 804.5*PER
+    vls:
+      -   - A
+          - '0xf5c3'
+      -   - B
+          - '0xfe8b'
+      -   - C
+          - '0xfdbe'
+  - tm: 805.5*PER
+    vls:
+      -   - A
+          - '0xdb7e'
+      -   - B
+          - '0xb2dd'
+      -   - C
+          - '0x386f'
+  - tm: 806.5*PER
+    vls:
+      -   - A
+          - '0x7f3e'
+      -   - B
+          - '0xfe38'
+      -   - C
+          - '0xf36c'
+  - tm: 807.5*PER
+    vls:
+      -   - A
+          - '0x48'
+      -   - B
+          - '0xf289'
+      -   - C
+          - '0x945a'
+  - tm: 808.5*PER
+    vls:
+      -   - A
+          - '0xc6a'
+      -   - B
+          - '0x216f'
+      -   - C
+          - '0xe292'
+  - tm: 809.5*PER
+    vls:
+      -   - A
+          - '0x728b'
+      -   - B
+          - '0x1bb5'
+      -   - C
+          - '0xa6a0'
+  - tm: 81.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x0'
+  - tm: 810.5*PER
+    vls:
+      -   - A
+          - '0x17e3'
+      -   - B
+          - '0x1340'
+      -   - C
+          - '0x40c5'
+  - tm: 811.5*PER
+    vls:
+      -   - A
+          - '0x35bd'
+      -   - B
+          - '0x5ef0'
+      -   - C
+          - '0xad52'
+  - tm: 812.5*PER
+    vls:
+      -   - A
+          - '0x7bf9'
+      -   - B
+          - '0x790c'
+      -   - C
+          - '0xf43e'
+  - tm: 813.5*PER
+    vls:
+      -   - A
+          - '0x4d67'
+      -   - B
+          - '0x2638'
+      -   - C
+          - '0x5703'
+  - tm: 814.5*PER
+    vls:
+      -   - A
+          - '0xa588'
+      -   - B
+          - '0xe02e'
+      -   - C
+          - '0x80e1'
+  - tm: 815.5*PER
+    vls:
+      -   - A
+          - '0xcd04'
+      -   - B
+          - '0x2043'
+      -   - C
+          - '0xc3b9'
+  - tm: 816.5*PER
+    vls:
+      -   - A
+          - '0xff00'
+      -   - B
+          - '0xaa0e'
+      -   - C
+          - '0xea67'
+  - tm: 817.5*PER
+    vls:
+      -   - A
+          - '0xa401'
+      -   - B
+          - '0x5889'
+      -   - C
+          - '0x8919'
+  - tm: 818.5*PER
+    vls:
+      -   - A
+          - '0xdece'
+      -   - B
+          - '0x18e9'
+      -   - C
+          - '0x736a'
+  - tm: 819.5*PER
+    vls:
+      -   - A
+          - '0xfd6c'
+      -   - B
+          - '0xac66'
+      -   - C
+          - '0x1bea'
+  - tm: 82.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x1'
+  - tm: 820.5*PER
+    vls:
+      -   - A
+          - '0xed8c'
+      -   - B
+          - '0x7424'
+      -   - C
+          - '0xa39e'
+  - tm: 821.5*PER
+    vls:
+      -   - A
+          - '0x1d29'
+      -   - B
+          - '0x5c71'
+      -   - C
+          - '0x8901'
+  - tm: 822.5*PER
+    vls:
+      -   - A
+          - '0xd6f'
+      -   - B
+          - '0xe985'
+      -   - C
+          - '0x7767'
+  - tm: 823.5*PER
+    vls:
+      -   - A
+          - '0xf663'
+      -   - B
+          - '0x941d'
+      -   - C
+          - '0x7c02'
+  - tm: 824.5*PER
+    vls:
+      -   - A
+          - '0x45d2'
+      -   - B
+          - '0xbf5c'
+      -   - C
+          - '0x9398'
+  - tm: 825.5*PER
+    vls:
+      -   - A
+          - '0xa92e'
+      -   - B
+          - '0x41d'
+      -   - C
+          - '0x3eb2'
+  - tm: 826.5*PER
+    vls:
+      -   - A
+          - '0x40b7'
+      -   - B
+          - '0xd20'
+      -   - C
+          - '0x7b43'
+  - tm: 827.5*PER
+    vls:
+      -   - A
+          - '0xba69'
+      -   - B
+          - '0x7b67'
+      -   - C
+          - '0x7684'
+  - tm: 828.5*PER
+    vls:
+      -   - A
+          - '0xb4bf'
+      -   - B
+          - '0x4c05'
+      -   - C
+          - '0x3b4c'
+  - tm: 829.5*PER
+    vls:
+      -   - A
+          - '0xc8d3'
+      -   - B
+          - '0x47dc'
+      -   - C
+          - '0x82e2'
+  - tm: 83.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x7fff'
+  - tm: 830.5*PER
+    vls:
+      -   - A
+          - '0xbb91'
+      -   - B
+          - '0xb28'
+      -   - C
+          - '0x4891'
+  - tm: 831.5*PER
+    vls:
+      -   - A
+          - '0x7550'
+      -   - B
+          - '0x267a'
+      -   - C
+          - '0x5138'
+  - tm: 832.5*PER
+    vls:
+      -   - A
+          - '0x9f4b'
+      -   - B
+          - '0xd721'
+      -   - C
+          - '0x599b'
+  - tm: 833.5*PER
+    vls:
+      -   - A
+          - '0xfe6c'
+      -   - B
+          - '0x96cf'
+      -   - C
+          - '0xe8c8'
+  - tm: 834.5*PER
+    vls:
+      -   - A
+          - '0xf81d'
+      -   - B
+          - '0x3a04'
+      -   - C
+          - '0xf888'
+  - tm: 835.5*PER
+    vls:
+      -   - A
+          - '0xe258'
+      -   - B
+          - '0xca8c'
+      -   - C
+          - '0xfff6'
+  - tm: 836.5*PER
+    vls:
+      -   - A
+          - '0xf90d'
+      -   - B
+          - '0xdcab'
+      -   - C
+          - '0xcb01'
+  - tm: 837.5*PER
+    vls:
+      -   - A
+          - '0x48d'
+      -   - B
+          - '0x5c1d'
+      -   - C
+          - '0x834f'
+  - tm: 838.5*PER
+    vls:
+      -   - A
+          - '0xeed6'
+      -   - B
+          - '0x32a9'
+      -   - C
+          - '0x203e'
+  - tm: 839.5*PER
+    vls:
+      -   - A
+          - '0xada1'
+      -   - B
+          - '0x3585'
+      -   - C
+          - '0xb3ae'
+  - tm: 84.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x8000'
+  - tm: 840.5*PER
+    vls:
+      -   - A
+          - '0x8170'
+      -   - B
+          - '0x1d6a'
+      -   - C
+          - '0x1f96'
+  - tm: 841.5*PER
+    vls:
+      -   - A
+          - '0x4787'
+      -   - B
+          - '0x9a74'
+      -   - C
+          - '0xebf0'
+  - tm: 842.5*PER
+    vls:
+      -   - A
+          - '0x8ba1'
+      -   - B
+          - '0xc91f'
+      -   - C
+          - '0x356f'
+  - tm: 843.5*PER
+    vls:
+      -   - A
+          - '0xf509'
+      -   - B
+          - '0xbe4f'
+      -   - C
+          - '0xf55e'
+  - tm: 844.5*PER
+    vls:
+      -   - A
+          - '0x1562'
+      -   - B
+          - '0x8b38'
+      -   - C
+          - '0x7d09'
+  - tm: 845.5*PER
+    vls:
+      -   - A
+          - '0xd7e9'
+      -   - B
+          - '0x4646'
+      -   - C
+          - '0x973a'
+  - tm: 846.5*PER
+    vls:
+      -   - A
+          - '0xf012'
+      -   - B
+          - '0x4c93'
+      -   - C
+          - '0x2505'
+  - tm: 847.5*PER
+    vls:
+      -   - A
+          - '0x6a24'
+      -   - B
+          - '0x6166'
+      -   - C
+          - '0x98f0'
+  - tm: 848.5*PER
+    vls:
+      -   - A
+          - '0xb69f'
+      -   - B
+          - '0x6088'
+      -   - C
+          - '0x4d9b'
+  - tm: 849.5*PER
+    vls:
+      -   - A
+          - '0xd4ba'
+      -   - B
+          - '0xd3e2'
+      -   - C
+          - '0x2399'
+  - tm: 85.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0xffff'
+  - tm: 850.5*PER
+    vls:
+      -   - A
+          - '0x1cf8'
+      -   - B
+          - '0x54e1'
+      -   - C
+          - '0x1363'
+  - tm: 851.5*PER
+    vls:
+      -   - A
+          - '0x42d7'
+      -   - B
+          - '0x350'
+      -   - C
+          - '0x2848'
+  - tm: 852.5*PER
+    vls:
+      -   - A
+          - '0x8e5d'
+      -   - B
+          - '0xfe4e'
+      -   - C
+          - '0x7ac1'
+  - tm: 853.5*PER
+    vls:
+      -   - A
+          - '0x9a5a'
+      -   - B
+          - '0x8917'
+      -   - C
+          - '0x1f9f'
+  - tm: 854.5*PER
+    vls:
+      -   - A
+          - '0x78df'
+      -   - B
+          - '0x34eb'
+      -   - C
+          - '0xe0a4'
+  - tm: 855.5*PER
+    vls:
+      -   - A
+          - '0x82e3'
+      -   - B
+          - '0x3760'
+      -   - C
+          - '0x63ca'
+  - tm: 856.5*PER
+    vls:
+      -   - A
+          - '0x258b'
+      -   - B
+          - '0x5daf'
+      -   - C
+          - '0x3f88'
+  - tm: 857.5*PER
+    vls:
+      -   - A
+          - '0xb868'
+      -   - B
+          - '0xd546'
+      -   - C
+          - '0x2bed'
+  - tm: 858.5*PER
+    vls:
+      -   - A
+          - '0xcfb5'
+      -   - B
+          - '0xf7ab'
+      -   - C
+          - '0x1cea'
+  - tm: 859.5*PER
+    vls:
+      -   - A
+          - '0x7a59'
+      -   - B
+          - '0x40'
+      -   - C
+          - '0x6245'
+  - tm: 86.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x0'
+  - tm: 860.5*PER
+    vls:
+      -   - A
+          - '0xfd37'
+      -   - B
+          - '0x5c20'
+      -   - C
+          - '0xf7f6'
+  - tm: 861.5*PER
+    vls:
+      -   - A
+          - '0x7e2a'
+      -   - B
+          - '0x4696'
+      -   - C
+          - '0x3f5c'
+  - tm: 862.5*PER
+    vls:
+      -   - A
+          - '0x882c'
+      -   - B
+          - '0x3c10'
+      -   - C
+          - '0xc0c'
+  - tm: 863.5*PER
+    vls:
+      -   - A
+          - '0x42c3'
+      -   - B
+          - '0x825a'
+      -   - C
+          - '0xcfed'
+  - tm: 864.5*PER
+    vls:
+      -   - A
+          - '0x2c1b'
+      -   - B
+          - '0xb6c'
+      -   - C
+          - '0xaeb9'
+  - tm: 865.5*PER
+    vls:
+      -   - A
+          - '0x381d'
+      -   - B
+          - '0x27d3'
+      -   - C
+          - '0x635b'
+  - tm: 866.5*PER
+    vls:
+      -   - A
+          - '0x908e'
+      -   - B
+          - '0xac83'
+      -   - C
+          - '0x5439'
+  - tm: 867.5*PER
+    vls:
+      -   - A
+          - '0xd4b5'
+      -   - B
+          - '0x7b63'
+      -   - C
+          - '0xf3f7'
+  - tm: 868.5*PER
+    vls:
+      -   - A
+          - '0xf33a'
+      -   - B
+          - '0x7404'
+      -   - C
+          - '0x85fa'
+  - tm: 869.5*PER
+    vls:
+      -   - A
+          - '0xbffb'
+      -   - B
+          - '0xf97e'
+      -   - C
+          - '0xf49e'
+  - tm: 87.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x1'
+  - tm: 870.5*PER
+    vls:
+      -   - A
+          - '0xb873'
+      -   - B
+          - '0x8739'
+      -   - C
+          - '0x3a06'
+  - tm: 871.5*PER
+    vls:
+      -   - A
+          - '0x7355'
+      -   - B
+          - '0x40be'
+      -   - C
+          - '0x8e34'
+  - tm: 872.5*PER
+    vls:
+      -   - A
+          - '0xd137'
+      -   - B
+          - '0xf847'
+      -   - C
+          - '0xc6d7'
+  - tm: 873.5*PER
+    vls:
+      -   - A
+          - '0x2401'
+      -   - B
+          - '0x24cf'
+      -   - C
+          - '0xcf2b'
+  - tm: 874.5*PER
+    vls:
+      -   - A
+          - '0xcf4c'
+      -   - B
+          - '0xd59c'
+      -   - C
+          - '0x4c40'
+  - tm: 875.5*PER
+    vls:
+      -   - A
+          - '0x485c'
+      -   - B
+          - '0x9130'
+      -   - C
+          - '0x8914'
+  - tm: 876.5*PER
+    vls:
+      -   - A
+          - '0xe45f'
+      -   - B
+          - '0x1401'
+      -   - C
+          - '0xeb12'
+  - tm: 877.5*PER
+    vls:
+      -   - A
+          - '0x1150'
+      -   - B
+          - '0x2ca7'
+      -   - C
+          - '0x812b'
+  - tm: 878.5*PER
+    vls:
+      -   - A
+          - '0x2484'
+      -   - B
+          - '0x9d02'
+      -   - C
+          - '0x4445'
+  - tm: 879.5*PER
+    vls:
+      -   - A
+          - '0x4b57'
+      -   - B
+          - '0x9b09'
+      -   - C
+          - '0x439a'
+  - tm: 88.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x7fff'
+  - tm: 880.5*PER
+    vls:
+      -   - A
+          - '0xf713'
+      -   - B
+          - '0xeeeb'
+      -   - C
+          - '0xa73b'
+  - tm: 881.5*PER
+    vls:
+      -   - A
+          - '0x4f5f'
+      -   - B
+          - '0xc34b'
+      -   - C
+          - '0x8508'
+  - tm: 882.5*PER
+    vls:
+      -   - A
+          - '0xd275'
+      -   - B
+          - '0xbc41'
+      -   - C
+          - '0x799e'
+  - tm: 883.5*PER
+    vls:
+      -   - A
+          - '0x838b'
+      -   - B
+          - '0x603d'
+      -   - C
+          - '0x27e8'
+  - tm: 884.5*PER
+    vls:
+      -   - A
+          - '0xcc4b'
+      -   - B
+          - '0xc29'
+      -   - C
+          - '0x9eeb'
+  - tm: 885.5*PER
+    vls:
+      -   - A
+          - '0xc60a'
+      -   - B
+          - '0xe253'
+      -   - C
+          - '0x5cdb'
+  - tm: 886.5*PER
+    vls:
+      -   - A
+          - '0xff45'
+      -   - B
+          - '0x1728'
+      -   - C
+          - '0x772f'
+  - tm: 887.5*PER
+    vls:
+      -   - A
+          - '0x8ed6'
+      -   - B
+          - '0x582c'
+      -   - C
+          - '0x6952'
+  - tm: 888.5*PER
+    vls:
+      -   - A
+          - '0x20ee'
+      -   - B
+          - '0x49c8'
+      -   - C
+          - '0x95a9'
+  - tm: 889.5*PER
+    vls:
+      -   - A
+          - '0xc0a1'
+      -   - B
+          - '0x50bb'
+      -   - C
+          - '0x6034'
+  - tm: 89.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0x8000'
+  - tm: 890.5*PER
+    vls:
+      -   - A
+          - '0x50b2'
+      -   - B
+          - '0x829d'
+      -   - C
+          - '0x81a6'
+  - tm: 891.5*PER
+    vls:
+      -   - A
+          - '0x6173'
+      -   - B
+          - '0xba80'
+      -   - C
+          - '0xfef8'
+  - tm: 892.5*PER
+    vls:
+      -   - A
+          - '0xae5d'
+      -   - B
+          - '0x1855'
+      -   - C
+          - '0x75c7'
+  - tm: 893.5*PER
+    vls:
+      -   - A
+          - '0x49ac'
+      -   - B
+          - '0xa6ac'
+      -   - C
+          - '0xc71b'
+  - tm: 894.5*PER
+    vls:
+      -   - A
+          - '0xa0b8'
+      -   - B
+          - '0x9aea'
+      -   - C
+          - '0xe9eb'
+  - tm: 895.5*PER
+    vls:
+      -   - A
+          - '0x7044'
+      -   - B
+          - '0xaee3'
+      -   - C
+          - '0x9180'
+  - tm: 896.5*PER
+    vls:
+      -   - A
+          - '0xd93b'
+      -   - B
+          - '0x706e'
+      -   - C
+          - '0x3daa'
+  - tm: 897.5*PER
+    vls:
+      -   - A
+          - '0xff42'
+      -   - B
+          - '0xd9e7'
+      -   - C
+          - '0xd706'
+  - tm: 898.5*PER
+    vls:
+      -   - A
+          - '0x18b'
+      -   - B
+          - '0x9945'
+      -   - C
+          - '0xd066'
+  - tm: 899.5*PER
+    vls:
+      -   - A
+          - '0x9f70'
+      -   - B
+          - '0x3b8'
+      -   - C
+          - '0x2d40'
+  - tm: 9.5*PER
+    vls:
+      -   - A
+          - '0x0'
+      -   - B
+          - '0x1'
+      -   - C
+          - '0x8000'
+  - tm: 90.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x7fff'
+      -   - C
+          - '0xffff'
+  - tm: 900.5*PER
+    vls:
+      -   - A
+          - '0x9bea'
+      -   - B
+          - '0x10c2'
+      -   - C
+          - '0x462d'
+  - tm: 901.5*PER
+    vls:
+      -   - A
+          - '0xb2d5'
+      -   - B
+          - '0x29a3'
+      -   - C
+          - '0xfab2'
+  - tm: 902.5*PER
+    vls:
+      -   - A
+          - '0xbe2d'
+      -   - B
+          - '0x2708'
+      -   - C
+          - '0x231c'
+  - tm: 903.5*PER
+    vls:
+      -   - A
+          - '0x2b9e'
+      -   - B
+          - '0xae2c'
+      -   - C
+          - '0xc5a7'
+  - tm: 904.5*PER
+    vls:
+      -   - A
+          - '0x1511'
+      -   - B
+          - '0xd43'
+      -   - C
+          - '0x3545'
+  - tm: 905.5*PER
+    vls:
+      -   - A
+          - '0xc78'
+      -   - B
+          - '0x6553'
+      -   - C
+          - '0xf250'
+  - tm: 906.5*PER
+    vls:
+      -   - A
+          - '0x9216'
+      -   - B
+          - '0x7396'
+      -   - C
+          - '0xa8a5'
+  - tm: 907.5*PER
+    vls:
+      -   - A
+          - '0x55b6'
+      -   - B
+          - '0x5c1c'
+      -   - C
+          - '0x61f5'
+  - tm: 908.5*PER
+    vls:
+      -   - A
+          - '0xddc9'
+      -   - B
+          - '0xe15e'
+      -   - C
+          - '0x742'
+  - tm: 909.5*PER
+    vls:
+      -   - A
+          - '0xf4bd'
+      -   - B
+          - '0x3153'
+      -   - C
+          - '0x6566'
+  - tm: 91.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x0'
+  - tm: 910.5*PER
+    vls:
+      -   - A
+          - '0x64a7'
+      -   - B
+          - '0xd389'
+      -   - C
+          - '0x9caa'
+  - tm: 911.5*PER
+    vls:
+      -   - A
+          - '0x2b22'
+      -   - B
+          - '0xa783'
+      -   - C
+          - '0xde52'
+  - tm: 912.5*PER
+    vls:
+      -   - A
+          - '0xe30c'
+      -   - B
+          - '0x62ad'
+      -   - C
+          - '0x599e'
+  - tm: 913.5*PER
+    vls:
+      -   - A
+          - '0xde94'
+      -   - B
+          - '0xa425'
+      -   - C
+          - '0x1d2d'
+  - tm: 914.5*PER
+    vls:
+      -   - A
+          - '0xb0ba'
+      -   - B
+          - '0xa361'
+      -   - C
+          - '0x28f8'
+  - tm: 915.5*PER
+    vls:
+      -   - A
+          - '0x157b'
+      -   - B
+          - '0x5e2c'
+      -   - C
+          - '0xaea8'
+  - tm: 916.5*PER
+    vls:
+      -   - A
+          - '0x7164'
+      -   - B
+          - '0x6de7'
+      -   - C
+          - '0x9997'
+  - tm: 917.5*PER
+    vls:
+      -   - A
+          - '0x6564'
+      -   - B
+          - '0x8769'
+      -   - C
+          - '0x96e7'
+  - tm: 918.5*PER
+    vls:
+      -   - A
+          - '0x2375'
+      -   - B
+          - '0x3994'
+      -   - C
+          - '0x3415'
+  - tm: 919.5*PER
+    vls:
+      -   - A
+          - '0x6e11'
+      -   - B
+          - '0x5405'
+      -   - C
+          - '0xde45'
+  - tm: 92.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x1'
+  - tm: 920.5*PER
+    vls:
+      -   - A
+          - '0x1644'
+      -   - B
+          - '0x1cd3'
+      -   - C
+          - '0xc567'
+  - tm: 921.5*PER
+    vls:
+      -   - A
+          - '0xd917'
+      -   - B
+          - '0xe556'
+      -   - C
+          - '0x4c2b'
+  - tm: 922.5*PER
+    vls:
+      -   - A
+          - '0xbbd8'
+      -   - B
+          - '0x9c7'
+      -   - C
+          - '0x3849'
+  - tm: 923.5*PER
+    vls:
+      -   - A
+          - '0x8041'
+      -   - B
+          - '0x967b'
+      -   - C
+          - '0x9d38'
+  - tm: 924.5*PER
+    vls:
+      -   - A
+          - '0x83b'
+      -   - B
+          - '0x1269'
+      -   - C
+          - '0x3610'
+  - tm: 925.5*PER
+    vls:
+      -   - A
+          - '0x9cff'
+      -   - B
+          - '0x4125'
+      -   - C
+          - '0x5f8'
+  - tm: 926.5*PER
+    vls:
+      -   - A
+          - '0x9913'
+      -   - B
+          - '0x2f1c'
+      -   - C
+          - '0x9516'
+  - tm: 927.5*PER
+    vls:
+      -   - A
+          - '0x607f'
+      -   - B
+          - '0x8a9c'
+      -   - C
+          - '0xaa58'
+  - tm: 928.5*PER
+    vls:
+      -   - A
+          - '0x2926'
+      -   - B
+          - '0xea8b'
+      -   - C
+          - '0x8096'
+  - tm: 929.5*PER
+    vls:
+      -   - A
+          - '0xd8f5'
+      -   - B
+          - '0xbf5d'
+      -   - C
+          - '0x629d'
+  - tm: 93.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x7fff'
+  - tm: 930.5*PER
+    vls:
+      -   - A
+          - '0xdf7d'
+      -   - B
+          - '0x7b1e'
+      -   - C
+          - '0x5e7f'
+  - tm: 931.5*PER
+    vls:
+      -   - A
+          - '0x5495'
+      -   - B
+          - '0x72f0'
+      -   - C
+          - '0xfa0f'
+  - tm: 932.5*PER
+    vls:
+      -   - A
+          - '0xdeed'
+      -   - B
+          - '0xed9c'
+      -   - C
+          - '0xb94'
+  - tm: 933.5*PER
+    vls:
+      -   - A
+          - '0xb186'
+      -   - B
+          - '0x9a90'
+      -   - C
+          - '0x709e'
+  - tm: 934.5*PER
+    vls:
+      -   - A
+          - '0x1a2b'
+      -   - B
+          - '0xcc79'
+      -   - C
+          - '0xcdf6'
+  - tm: 935.5*PER
+    vls:
+      -   - A
+          - '0x95a5'
+      -   - B
+          - '0xacf7'
+      -   - C
+          - '0x1f63'
+  - tm: 936.5*PER
+    vls:
+      -   - A
+          - '0x1257'
+      -   - B
+          - '0xad38'
+      -   - C
+          - '0xb27'
+  - tm: 937.5*PER
+    vls:
+      -   - A
+          - '0xdd3e'
+      -   - B
+          - '0xf0d1'
+      -   - C
+          - '0xde43'
+  - tm: 938.5*PER
+    vls:
+      -   - A
+          - '0x4e8a'
+      -   - B
+          - '0xfc80'
+      -   - C
+          - '0x94d2'
+  - tm: 939.5*PER
+    vls:
+      -   - A
+          - '0xc057'
+      -   - B
+          - '0x9492'
+      -   - C
+          - '0xca00'
+  - tm: 94.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0x8000'
+  - tm: 940.5*PER
+    vls:
+      -   - A
+          - '0x61e8'
+      -   - B
+          - '0xda5f'
+      -   - C
+          - '0x1974'
+  - tm: 941.5*PER
+    vls:
+      -   - A
+          - '0xd4b'
+      -   - B
+          - '0xb95a'
+      -   - C
+          - '0xa678'
+  - tm: 942.5*PER
+    vls:
+      -   - A
+          - '0x55b3'
+      -   - B
+          - '0x6582'
+      -   - C
+          - '0x6d63'
+  - tm: 943.5*PER
+    vls:
+      -   - A
+          - '0x96e0'
+      -   - B
+          - '0xcd19'
+      -   - C
+          - '0x1b9a'
+  - tm: 944.5*PER
+    vls:
+      -   - A
+          - '0xf031'
+      -   - B
+          - '0xe1a1'
+      -   - C
+          - '0x4945'
+  - tm: 945.5*PER
+    vls:
+      -   - A
+          - '0x74e3'
+      -   - B
+          - '0x555d'
+      -   - C
+          - '0x83ca'
+  - tm: 946.5*PER
+    vls:
+      -   - A
+          - '0xc679'
+      -   - B
+          - '0x803c'
+      -   - C
+          - '0x7334'
+  - tm: 947.5*PER
+    vls:
+      -   - A
+          - '0x69f3'
+      -   - B
+          - '0xe496'
+      -   - C
+          - '0x96c1'
+  - tm: 948.5*PER
+    vls:
+      -   - A
+          - '0x5f85'
+      -   - B
+          - '0x85e8'
+      -   - C
+          - '0xddb'
+  - tm: 949.5*PER
+    vls:
+      -   - A
+          - '0xc69f'
+      -   - B
+          - '0x48fe'
+      -   - C
+          - '0x3d68'
+  - tm: 95.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0x8000'
+      -   - C
+          - '0xffff'
+  - tm: 950.5*PER
+    vls:
+      -   - A
+          - '0xe603'
+      -   - B
+          - '0xcfd5'
+      -   - C
+          - '0x9426'
+  - tm: 951.5*PER
+    vls:
+      -   - A
+          - '0x52ea'
+      -   - B
+          - '0xf97c'
+      -   - C
+          - '0x57de'
+  - tm: 952.5*PER
+    vls:
+      -   - A
+          - '0xd25c'
+      -   - B
+          - '0xf837'
+      -   - C
+          - '0xae3c'
+  - tm: 953.5*PER
+    vls:
+      -   - A
+          - '0x81c0'
+      -   - B
+          - '0x2de1'
+      -   - C
+          - '0x7de3'
+  - tm: 954.5*PER
+    vls:
+      -   - A
+          - '0x6a61'
+      -   - B
+          - '0xdb16'
+      -   - C
+          - '0x536'
+  - tm: 955.5*PER
+    vls:
+      -   - A
+          - '0x9649'
+      -   - B
+          - '0x559f'
+      -   - C
+          - '0x9b4e'
+  - tm: 956.5*PER
+    vls:
+      -   - A
+          - '0x37eb'
+      -   - B
+          - '0x38dd'
+      -   - C
+          - '0xeffb'
+  - tm: 957.5*PER
+    vls:
+      -   - A
+          - '0xdbb2'
+      -   - B
+          - '0x27e5'
+      -   - C
+          - '0xffaf'
+  - tm: 958.5*PER
+    vls:
+      -   - A
+          - '0x586c'
+      -   - B
+          - '0x7a50'
+      -   - C
+          - '0x5e5'
+  - tm: 959.5*PER
+    vls:
+      -   - A
+          - '0x779d'
+      -   - B
+          - '0x2749'
+      -   - C
+          - '0x4469'
+  - tm: 96.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x0'
+  - tm: 960.5*PER
+    vls:
+      -   - A
+          - '0xb235'
+      -   - B
+          - '0x52b9'
+      -   - C
+          - '0x674e'
+  - tm: 961.5*PER
+    vls:
+      -   - A
+          - '0xea7c'
+      -   - B
+          - '0x8156'
+      -   - C
+          - '0x2303'
+  - tm: 962.5*PER
+    vls:
+      -   - A
+          - '0xd204'
+      -   - B
+          - '0x8678'
+      -   - C
+          - '0xb21c'
+  - tm: 963.5*PER
+    vls:
+      -   - A
+          - '0xce20'
+      -   - B
+          - '0x3654'
+      -   - C
+          - '0x4415'
+  - tm: 964.5*PER
+    vls:
+      -   - A
+          - '0xbf19'
+      -   - B
+          - '0x1829'
+      -   - C
+          - '0xaf19'
+  - tm: 965.5*PER
+    vls:
+      -   - A
+          - '0xec2c'
+      -   - B
+          - '0x96ac'
+      -   - C
+          - '0x70e7'
+  - tm: 966.5*PER
+    vls:
+      -   - A
+          - '0x8055'
+      -   - B
+          - '0x9ff5'
+      -   - C
+          - '0xea49'
+  - tm: 967.5*PER
+    vls:
+      -   - A
+          - '0x8749'
+      -   - B
+          - '0x9989'
+      -   - C
+          - '0xd306'
+  - tm: 968.5*PER
+    vls:
+      -   - A
+          - '0xf85'
+      -   - B
+          - '0xf2fb'
+      -   - C
+          - '0xd6e4'
+  - tm: 969.5*PER
+    vls:
+      -   - A
+          - '0x6384'
+      -   - B
+          - '0xa8e1'
+      -   - C
+          - '0x2371'
+  - tm: 97.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x1'
+  - tm: 970.5*PER
+    vls:
+      -   - A
+          - '0x4448'
+      -   - B
+          - '0x9989'
+      -   - C
+          - '0xc5df'
+  - tm: 971.5*PER
+    vls:
+      -   - A
+          - '0x7c5c'
+      -   - B
+          - '0xee75'
+      -   - C
+          - '0x9249'
+  - tm: 972.5*PER
+    vls:
+      -   - A
+          - '0xbbbb'
+      -   - B
+          - '0x7b92'
+      -   - C
+          - '0x7a14'
+  - tm: 973.5*PER
+    vls:
+      -   - A
+          - '0x45e1'
+      -   - B
+          - '0xd3d4'
+      -   - C
+          - '0xcffd'
+  - tm: 974.5*PER
+    vls:
+      -   - A
+          - '0x14ba'
+      -   - B
+          - '0x48a4'
+      -   - C
+          - '0xd6f'
+  - tm: 975.5*PER
+    vls:
+      -   - A
+          - '0x1237'
+      -   - B
+          - '0x678f'
+      -   - C
+          - '0xdd12'
+  - tm: 976.5*PER
+    vls:
+      -   - A
+          - '0x84b6'
+      -   - B
+          - '0xca51'
+      -   - C
+          - '0xa489'
+  - tm: 977.5*PER
+    vls:
+      -   - A
+          - '0x3943'
+      -   - B
+          - '0xa86b'
+      -   - C
+          - '0x7182'
+  - tm: 978.5*PER
+    vls:
+      -   - A
+          - '0x84a0'
+      -   - B
+          - '0xa553'
+      -   - C
+          - '0x5f79'
+  - tm: 979.5*PER
+    vls:
+      -   - A
+          - '0x73da'
+      -   - B
+          - '0xbbbd'
+      -   - C
+          - '0xfa62'
+  - tm: 98.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x7fff'
+  - tm: 980.5*PER
+    vls:
+      -   - A
+          - '0x8ee4'
+      -   - B
+          - '0x197b'
+      -   - C
+          - '0x3533'
+  - tm: 981.5*PER
+    vls:
+      -   - A
+          - '0x39df'
+      -   - B
+          - '0x93b1'
+      -   - C
+          - '0x18e9'
+  - tm: 982.5*PER
+    vls:
+      -   - A
+          - '0x7556'
+      -   - B
+          - '0x4047'
+      -   - C
+          - '0xcb39'
+  - tm: 983.5*PER
+    vls:
+      -   - A
+          - '0xf60c'
+      -   - B
+          - '0xb3ce'
+      -   - C
+          - '0x3c8d'
+  - tm: 984.5*PER
+    vls:
+      -   - A
+          - '0xfc2d'
+      -   - B
+          - '0x5f01'
+      -   - C
+          - '0xc3a0'
+  - tm: 985.5*PER
+    vls:
+      -   - A
+          - '0x2718'
+      -   - B
+          - '0x8312'
+      -   - C
+          - '0x19'
+  - tm: 986.5*PER
+    vls:
+      -   - A
+          - '0xab93'
+      -   - B
+          - '0x5de6'
+      -   - C
+          - '0x4b07'
+  - tm: 987.5*PER
+    vls:
+      -   - A
+          - '0xa625'
+      -   - B
+          - '0x8db7'
+      -   - C
+          - '0xce92'
+  - tm: 988.5*PER
+    vls:
+      -   - A
+          - '0xfdb6'
+      -   - B
+          - '0xc569'
+      -   - C
+          - '0x1ed6'
+  - tm: 989.5*PER
+    vls:
+      -   - A
+          - '0x58d4'
+      -   - B
+          - '0x6ccd'
+      -   - C
+          - '0xb2bc'
+  - tm: 99.5*PER
+    vls:
+      -   - A
+          - '0x8000'
+      -   - B
+          - '0xffff'
+      -   - C
+          - '0x8000'
+  - tm: 990.5*PER
+    vls:
+      -   - A
+          - '0x6e4a'
+      -   - B
+          - '0x67be'
+      -   - C
+          - '0xb6e4'
+  - tm: 991.5*PER
+    vls:
+      -   - A
+          - '0x35f5'
+      -   - B
+          - '0x309a'
+      -   - C
+          - '0x81c8'
+  - tm: 992.5*PER
+    vls:
+      -   - A
+          - '0xaefa'
+      -   - B
+          - '0x2f9e'
+      -   - C
+          - '0x1cc2'
+  - tm: 993.5*PER
+    vls:
+      -   - A
+          - '0x389a'
+      -   - B
+          - '0xf69c'
+      -   - C
+          - '0x8f2c'
+  - tm: 994.5*PER
+    vls:
+      -   - A
+          - '0x14ad'
+      -   - B
+          - '0xb962'
+      -   - C
+          - '0xa526'
+  - tm: 995.5*PER
+    vls:
+      -   - A
+          - '0x5b55'
+      -   - B
+          - '0xbfb1'
+      -   - C
+          - '0x3bc'
+  - tm: 996.5*PER
+    vls:
+      -   - A
+          - '0x8db1'
+      -   - B
+          - '0x3630'
+      -   - C
+          - '0x44ea'
+  - tm: 997.5*PER
+    vls:
+      -   - A
+          - '0x9ab9'
+      -   - B
+          - '0x5c9e'
+      -   - C
+          - '0x79b'
+  - tm: 998.5*PER
+    vls:
+      -   - A
+          - '0xe490'
+      -   - B
+          - '0x2895'
+      -   - C
+          - '0x755a'
+  - tm: 999.5*PER
+    vls:
+      -   - A
+          - '0xade3'
+      -   - B
+          - '0x8fee'
+      -   - C
+          - '0x2889'
+SaveNds:
+  - name: DATA_0
+    format: h
+  - name: DATA_1
+    format: h

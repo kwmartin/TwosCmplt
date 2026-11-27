@@ -1,0 +1,1201 @@
+kind: verilog
+module: TST_CX_CSA2MC2
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: S0R
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: S1R
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: S2R
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: S0Q
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: S1Q
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: S2Q
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: DATA_0
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_1
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_2
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_3
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_4
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_5
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+  -   - kind: Wire
+        name: S4R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: S4Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: SMR
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: C4Q
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: SMQ
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: C4R
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_0_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_2_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_3_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_4_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_5_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+behav_blcks:
+  - kind: async
+    name: DUT
+    module: CX_CSA2MC2
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: S0R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S1R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S2R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S0Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S1Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S2Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: SMR
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: SMQ
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S4R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: C4R
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: S4Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: C4Q
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: TILO_Z
+    module: DG_TILO
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_0
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_0.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_0_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_0
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_1
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_1.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_1_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_1
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_2
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_2.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_2_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_2
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_3
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_3.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_3_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_3
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_4
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_4.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_4_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_4
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_5
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_CX_CSA2MC2_5.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_5_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_5
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_0_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 19
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 18
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 17
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 16
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 15
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 14
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 13
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 12
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 11
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 10
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 9
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 8
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 7
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 6
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 5
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 4
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 3
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 2
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 1
+          - kind: bit
+            name: SMR
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_1_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 19
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 18
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 17
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 16
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 15
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 14
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 13
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 12
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 11
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 10
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 9
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 8
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 7
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 6
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 5
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 4
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 3
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 2
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 1
+          - kind: bit
+            name: SMQ
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_2_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 19
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 18
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 17
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 16
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 15
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 14
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 13
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 12
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 11
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 10
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 9
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 8
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 7
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 6
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 5
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 4
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 3
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 2
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 1
+          - kind: bit
+            name: S4R
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_3_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 19
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 18
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 17
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 16
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 15
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 14
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 13
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 12
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 11
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 10
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 9
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 8
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 7
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 6
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 5
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 4
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 3
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 2
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 1
+          - kind: bit
+            name: C4R
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_4_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 19
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 18
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 17
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 16
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 15
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 14
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 13
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 12
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 11
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 10
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 9
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 8
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 7
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 6
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 5
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 4
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 3
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 2
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 1
+          - kind: bit
+            name: S4Q
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_5_0
+    rvalue:
+        concats:
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: ident
+            name: Z
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 19
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 18
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 17
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 16
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 15
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 14
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 13
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 12
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 11
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 10
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 9
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 8
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 7
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 6
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 5
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 4
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 3
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 2
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 1
+          - kind: bit
+            name: C4Q
+            sgmnts:
+              - 0
+    delay: 0

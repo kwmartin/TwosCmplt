@@ -1,0 +1,4210 @@
+kind: verilog
+module: TST_KM_COEFF_GEN3
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: COEFF
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 19
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: DATA_0
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_1
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_2
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_3
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_4
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_5
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_6
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_7
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_8
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_9
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_10
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_11
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_12
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_13
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_14
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_15
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+  -   - kind: Wire
+        name: C
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 383
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+          - 0
+          - 0
+        length: []
+  -   - kind: Wire
+        name: __concat_DUT_2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 383
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_0_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_1_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_2_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_3_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_4_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_5_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_6_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_7_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_8_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_9_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_10_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_11_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_12_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_13_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_14_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+  -   - kind: Wire
+        name: __concat_BS24_15_0
+        signed: 'False'
+        width:
+            kind: width
+            width:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+        length: []
+behav_blcks:
+  - kind: subcirc
+    name: DUT
+    module: KM_COEFF_GEN3
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: slice
+            name: COEFF
+            sgmnts:
+              - kind: int
+                value: 19
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: __concat_DUT_2
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: async
+    name: TILO_Z
+    module: DG_TILO
+    params:
+      - kind: str
+        value: async
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: Z
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_0
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_0.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_0_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_0
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_1
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_1.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_1_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_1
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_2
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_2.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_2_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_2
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_3
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_3.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_3_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_3
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_4
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_4.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_4_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_4
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_5
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_5.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_5_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_5
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_6
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_6.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_6_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_6
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_7
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_7.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_7_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_7
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_8
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_8.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_8_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_8
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_9
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_9.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_9_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_9
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_10
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_10.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_10_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_10
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_11
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_11.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_11_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_11
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_12
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_12.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_12_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_12
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_13
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_13.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_13_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_13
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_14
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_14.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_14_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_14
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24_15
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: TST_KM_COEFF_GEN3_15.dat
+        name: FILENAME
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: ident
+            name: __concat_BS24_15_0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_15
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_DUT_2
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 383
+          - kind: bit
+            name: C
+            sgmnts:
+              - 382
+          - kind: bit
+            name: C
+            sgmnts:
+              - 381
+          - kind: bit
+            name: C
+            sgmnts:
+              - 380
+          - kind: bit
+            name: C
+            sgmnts:
+              - 379
+          - kind: bit
+            name: C
+            sgmnts:
+              - 378
+          - kind: bit
+            name: C
+            sgmnts:
+              - 377
+          - kind: bit
+            name: C
+            sgmnts:
+              - 376
+          - kind: bit
+            name: C
+            sgmnts:
+              - 375
+          - kind: bit
+            name: C
+            sgmnts:
+              - 374
+          - kind: bit
+            name: C
+            sgmnts:
+              - 373
+          - kind: bit
+            name: C
+            sgmnts:
+              - 372
+          - kind: bit
+            name: C
+            sgmnts:
+              - 371
+          - kind: bit
+            name: C
+            sgmnts:
+              - 370
+          - kind: bit
+            name: C
+            sgmnts:
+              - 369
+          - kind: bit
+            name: C
+            sgmnts:
+              - 368
+          - kind: bit
+            name: C
+            sgmnts:
+              - 367
+          - kind: bit
+            name: C
+            sgmnts:
+              - 366
+          - kind: bit
+            name: C
+            sgmnts:
+              - 365
+          - kind: bit
+            name: C
+            sgmnts:
+              - 364
+          - kind: bit
+            name: C
+            sgmnts:
+              - 363
+          - kind: bit
+            name: C
+            sgmnts:
+              - 362
+          - kind: bit
+            name: C
+            sgmnts:
+              - 361
+          - kind: bit
+            name: C
+            sgmnts:
+              - 360
+          - kind: bit
+            name: C
+            sgmnts:
+              - 359
+          - kind: bit
+            name: C
+            sgmnts:
+              - 358
+          - kind: bit
+            name: C
+            sgmnts:
+              - 357
+          - kind: bit
+            name: C
+            sgmnts:
+              - 356
+          - kind: bit
+            name: C
+            sgmnts:
+              - 355
+          - kind: bit
+            name: C
+            sgmnts:
+              - 354
+          - kind: bit
+            name: C
+            sgmnts:
+              - 353
+          - kind: bit
+            name: C
+            sgmnts:
+              - 352
+          - kind: bit
+            name: C
+            sgmnts:
+              - 351
+          - kind: bit
+            name: C
+            sgmnts:
+              - 350
+          - kind: bit
+            name: C
+            sgmnts:
+              - 349
+          - kind: bit
+            name: C
+            sgmnts:
+              - 348
+          - kind: bit
+            name: C
+            sgmnts:
+              - 347
+          - kind: bit
+            name: C
+            sgmnts:
+              - 346
+          - kind: bit
+            name: C
+            sgmnts:
+              - 345
+          - kind: bit
+            name: C
+            sgmnts:
+              - 344
+          - kind: bit
+            name: C
+            sgmnts:
+              - 343
+          - kind: bit
+            name: C
+            sgmnts:
+              - 342
+          - kind: bit
+            name: C
+            sgmnts:
+              - 341
+          - kind: bit
+            name: C
+            sgmnts:
+              - 340
+          - kind: bit
+            name: C
+            sgmnts:
+              - 339
+          - kind: bit
+            name: C
+            sgmnts:
+              - 338
+          - kind: bit
+            name: C
+            sgmnts:
+              - 337
+          - kind: bit
+            name: C
+            sgmnts:
+              - 336
+          - kind: bit
+            name: C
+            sgmnts:
+              - 335
+          - kind: bit
+            name: C
+            sgmnts:
+              - 334
+          - kind: bit
+            name: C
+            sgmnts:
+              - 333
+          - kind: bit
+            name: C
+            sgmnts:
+              - 332
+          - kind: bit
+            name: C
+            sgmnts:
+              - 331
+          - kind: bit
+            name: C
+            sgmnts:
+              - 330
+          - kind: bit
+            name: C
+            sgmnts:
+              - 329
+          - kind: bit
+            name: C
+            sgmnts:
+              - 328
+          - kind: bit
+            name: C
+            sgmnts:
+              - 327
+          - kind: bit
+            name: C
+            sgmnts:
+              - 326
+          - kind: bit
+            name: C
+            sgmnts:
+              - 325
+          - kind: bit
+            name: C
+            sgmnts:
+              - 324
+          - kind: bit
+            name: C
+            sgmnts:
+              - 323
+          - kind: bit
+            name: C
+            sgmnts:
+              - 322
+          - kind: bit
+            name: C
+            sgmnts:
+              - 321
+          - kind: bit
+            name: C
+            sgmnts:
+              - 320
+          - kind: bit
+            name: C
+            sgmnts:
+              - 319
+          - kind: bit
+            name: C
+            sgmnts:
+              - 318
+          - kind: bit
+            name: C
+            sgmnts:
+              - 317
+          - kind: bit
+            name: C
+            sgmnts:
+              - 316
+          - kind: bit
+            name: C
+            sgmnts:
+              - 315
+          - kind: bit
+            name: C
+            sgmnts:
+              - 314
+          - kind: bit
+            name: C
+            sgmnts:
+              - 313
+          - kind: bit
+            name: C
+            sgmnts:
+              - 312
+          - kind: bit
+            name: C
+            sgmnts:
+              - 311
+          - kind: bit
+            name: C
+            sgmnts:
+              - 310
+          - kind: bit
+            name: C
+            sgmnts:
+              - 309
+          - kind: bit
+            name: C
+            sgmnts:
+              - 308
+          - kind: bit
+            name: C
+            sgmnts:
+              - 307
+          - kind: bit
+            name: C
+            sgmnts:
+              - 306
+          - kind: bit
+            name: C
+            sgmnts:
+              - 305
+          - kind: bit
+            name: C
+            sgmnts:
+              - 304
+          - kind: bit
+            name: C
+            sgmnts:
+              - 303
+          - kind: bit
+            name: C
+            sgmnts:
+              - 302
+          - kind: bit
+            name: C
+            sgmnts:
+              - 301
+          - kind: bit
+            name: C
+            sgmnts:
+              - 300
+          - kind: bit
+            name: C
+            sgmnts:
+              - 299
+          - kind: bit
+            name: C
+            sgmnts:
+              - 298
+          - kind: bit
+            name: C
+            sgmnts:
+              - 297
+          - kind: bit
+            name: C
+            sgmnts:
+              - 296
+          - kind: bit
+            name: C
+            sgmnts:
+              - 295
+          - kind: bit
+            name: C
+            sgmnts:
+              - 294
+          - kind: bit
+            name: C
+            sgmnts:
+              - 293
+          - kind: bit
+            name: C
+            sgmnts:
+              - 292
+          - kind: bit
+            name: C
+            sgmnts:
+              - 291
+          - kind: bit
+            name: C
+            sgmnts:
+              - 290
+          - kind: bit
+            name: C
+            sgmnts:
+              - 289
+          - kind: bit
+            name: C
+            sgmnts:
+              - 288
+          - kind: bit
+            name: C
+            sgmnts:
+              - 287
+          - kind: bit
+            name: C
+            sgmnts:
+              - 286
+          - kind: bit
+            name: C
+            sgmnts:
+              - 285
+          - kind: bit
+            name: C
+            sgmnts:
+              - 284
+          - kind: bit
+            name: C
+            sgmnts:
+              - 283
+          - kind: bit
+            name: C
+            sgmnts:
+              - 282
+          - kind: bit
+            name: C
+            sgmnts:
+              - 281
+          - kind: bit
+            name: C
+            sgmnts:
+              - 280
+          - kind: bit
+            name: C
+            sgmnts:
+              - 279
+          - kind: bit
+            name: C
+            sgmnts:
+              - 278
+          - kind: bit
+            name: C
+            sgmnts:
+              - 277
+          - kind: bit
+            name: C
+            sgmnts:
+              - 276
+          - kind: bit
+            name: C
+            sgmnts:
+              - 275
+          - kind: bit
+            name: C
+            sgmnts:
+              - 274
+          - kind: bit
+            name: C
+            sgmnts:
+              - 273
+          - kind: bit
+            name: C
+            sgmnts:
+              - 272
+          - kind: bit
+            name: C
+            sgmnts:
+              - 271
+          - kind: bit
+            name: C
+            sgmnts:
+              - 270
+          - kind: bit
+            name: C
+            sgmnts:
+              - 269
+          - kind: bit
+            name: C
+            sgmnts:
+              - 268
+          - kind: bit
+            name: C
+            sgmnts:
+              - 267
+          - kind: bit
+            name: C
+            sgmnts:
+              - 266
+          - kind: bit
+            name: C
+            sgmnts:
+              - 265
+          - kind: bit
+            name: C
+            sgmnts:
+              - 264
+          - kind: bit
+            name: C
+            sgmnts:
+              - 263
+          - kind: bit
+            name: C
+            sgmnts:
+              - 262
+          - kind: bit
+            name: C
+            sgmnts:
+              - 261
+          - kind: bit
+            name: C
+            sgmnts:
+              - 260
+          - kind: bit
+            name: C
+            sgmnts:
+              - 259
+          - kind: bit
+            name: C
+            sgmnts:
+              - 258
+          - kind: bit
+            name: C
+            sgmnts:
+              - 257
+          - kind: bit
+            name: C
+            sgmnts:
+              - 256
+          - kind: bit
+            name: C
+            sgmnts:
+              - 255
+          - kind: bit
+            name: C
+            sgmnts:
+              - 254
+          - kind: bit
+            name: C
+            sgmnts:
+              - 253
+          - kind: bit
+            name: C
+            sgmnts:
+              - 252
+          - kind: bit
+            name: C
+            sgmnts:
+              - 251
+          - kind: bit
+            name: C
+            sgmnts:
+              - 250
+          - kind: bit
+            name: C
+            sgmnts:
+              - 249
+          - kind: bit
+            name: C
+            sgmnts:
+              - 248
+          - kind: bit
+            name: C
+            sgmnts:
+              - 247
+          - kind: bit
+            name: C
+            sgmnts:
+              - 246
+          - kind: bit
+            name: C
+            sgmnts:
+              - 245
+          - kind: bit
+            name: C
+            sgmnts:
+              - 244
+          - kind: bit
+            name: C
+            sgmnts:
+              - 243
+          - kind: bit
+            name: C
+            sgmnts:
+              - 242
+          - kind: bit
+            name: C
+            sgmnts:
+              - 241
+          - kind: bit
+            name: C
+            sgmnts:
+              - 240
+          - kind: bit
+            name: C
+            sgmnts:
+              - 239
+          - kind: bit
+            name: C
+            sgmnts:
+              - 238
+          - kind: bit
+            name: C
+            sgmnts:
+              - 237
+          - kind: bit
+            name: C
+            sgmnts:
+              - 236
+          - kind: bit
+            name: C
+            sgmnts:
+              - 235
+          - kind: bit
+            name: C
+            sgmnts:
+              - 234
+          - kind: bit
+            name: C
+            sgmnts:
+              - 233
+          - kind: bit
+            name: C
+            sgmnts:
+              - 232
+          - kind: bit
+            name: C
+            sgmnts:
+              - 231
+          - kind: bit
+            name: C
+            sgmnts:
+              - 230
+          - kind: bit
+            name: C
+            sgmnts:
+              - 229
+          - kind: bit
+            name: C
+            sgmnts:
+              - 228
+          - kind: bit
+            name: C
+            sgmnts:
+              - 227
+          - kind: bit
+            name: C
+            sgmnts:
+              - 226
+          - kind: bit
+            name: C
+            sgmnts:
+              - 225
+          - kind: bit
+            name: C
+            sgmnts:
+              - 224
+          - kind: bit
+            name: C
+            sgmnts:
+              - 223
+          - kind: bit
+            name: C
+            sgmnts:
+              - 222
+          - kind: bit
+            name: C
+            sgmnts:
+              - 221
+          - kind: bit
+            name: C
+            sgmnts:
+              - 220
+          - kind: bit
+            name: C
+            sgmnts:
+              - 219
+          - kind: bit
+            name: C
+            sgmnts:
+              - 218
+          - kind: bit
+            name: C
+            sgmnts:
+              - 217
+          - kind: bit
+            name: C
+            sgmnts:
+              - 216
+          - kind: bit
+            name: C
+            sgmnts:
+              - 215
+          - kind: bit
+            name: C
+            sgmnts:
+              - 214
+          - kind: bit
+            name: C
+            sgmnts:
+              - 213
+          - kind: bit
+            name: C
+            sgmnts:
+              - 212
+          - kind: bit
+            name: C
+            sgmnts:
+              - 211
+          - kind: bit
+            name: C
+            sgmnts:
+              - 210
+          - kind: bit
+            name: C
+            sgmnts:
+              - 209
+          - kind: bit
+            name: C
+            sgmnts:
+              - 208
+          - kind: bit
+            name: C
+            sgmnts:
+              - 207
+          - kind: bit
+            name: C
+            sgmnts:
+              - 206
+          - kind: bit
+            name: C
+            sgmnts:
+              - 205
+          - kind: bit
+            name: C
+            sgmnts:
+              - 204
+          - kind: bit
+            name: C
+            sgmnts:
+              - 203
+          - kind: bit
+            name: C
+            sgmnts:
+              - 202
+          - kind: bit
+            name: C
+            sgmnts:
+              - 201
+          - kind: bit
+            name: C
+            sgmnts:
+              - 200
+          - kind: bit
+            name: C
+            sgmnts:
+              - 199
+          - kind: bit
+            name: C
+            sgmnts:
+              - 198
+          - kind: bit
+            name: C
+            sgmnts:
+              - 197
+          - kind: bit
+            name: C
+            sgmnts:
+              - 196
+          - kind: bit
+            name: C
+            sgmnts:
+              - 195
+          - kind: bit
+            name: C
+            sgmnts:
+              - 194
+          - kind: bit
+            name: C
+            sgmnts:
+              - 193
+          - kind: bit
+            name: C
+            sgmnts:
+              - 192
+          - kind: bit
+            name: C
+            sgmnts:
+              - 191
+          - kind: bit
+            name: C
+            sgmnts:
+              - 190
+          - kind: bit
+            name: C
+            sgmnts:
+              - 189
+          - kind: bit
+            name: C
+            sgmnts:
+              - 188
+          - kind: bit
+            name: C
+            sgmnts:
+              - 187
+          - kind: bit
+            name: C
+            sgmnts:
+              - 186
+          - kind: bit
+            name: C
+            sgmnts:
+              - 185
+          - kind: bit
+            name: C
+            sgmnts:
+              - 184
+          - kind: bit
+            name: C
+            sgmnts:
+              - 183
+          - kind: bit
+            name: C
+            sgmnts:
+              - 182
+          - kind: bit
+            name: C
+            sgmnts:
+              - 181
+          - kind: bit
+            name: C
+            sgmnts:
+              - 180
+          - kind: bit
+            name: C
+            sgmnts:
+              - 179
+          - kind: bit
+            name: C
+            sgmnts:
+              - 178
+          - kind: bit
+            name: C
+            sgmnts:
+              - 177
+          - kind: bit
+            name: C
+            sgmnts:
+              - 176
+          - kind: bit
+            name: C
+            sgmnts:
+              - 175
+          - kind: bit
+            name: C
+            sgmnts:
+              - 174
+          - kind: bit
+            name: C
+            sgmnts:
+              - 173
+          - kind: bit
+            name: C
+            sgmnts:
+              - 172
+          - kind: bit
+            name: C
+            sgmnts:
+              - 171
+          - kind: bit
+            name: C
+            sgmnts:
+              - 170
+          - kind: bit
+            name: C
+            sgmnts:
+              - 169
+          - kind: bit
+            name: C
+            sgmnts:
+              - 168
+          - kind: bit
+            name: C
+            sgmnts:
+              - 167
+          - kind: bit
+            name: C
+            sgmnts:
+              - 166
+          - kind: bit
+            name: C
+            sgmnts:
+              - 165
+          - kind: bit
+            name: C
+            sgmnts:
+              - 164
+          - kind: bit
+            name: C
+            sgmnts:
+              - 163
+          - kind: bit
+            name: C
+            sgmnts:
+              - 162
+          - kind: bit
+            name: C
+            sgmnts:
+              - 161
+          - kind: bit
+            name: C
+            sgmnts:
+              - 160
+          - kind: bit
+            name: C
+            sgmnts:
+              - 159
+          - kind: bit
+            name: C
+            sgmnts:
+              - 158
+          - kind: bit
+            name: C
+            sgmnts:
+              - 157
+          - kind: bit
+            name: C
+            sgmnts:
+              - 156
+          - kind: bit
+            name: C
+            sgmnts:
+              - 155
+          - kind: bit
+            name: C
+            sgmnts:
+              - 154
+          - kind: bit
+            name: C
+            sgmnts:
+              - 153
+          - kind: bit
+            name: C
+            sgmnts:
+              - 152
+          - kind: bit
+            name: C
+            sgmnts:
+              - 151
+          - kind: bit
+            name: C
+            sgmnts:
+              - 150
+          - kind: bit
+            name: C
+            sgmnts:
+              - 149
+          - kind: bit
+            name: C
+            sgmnts:
+              - 148
+          - kind: bit
+            name: C
+            sgmnts:
+              - 147
+          - kind: bit
+            name: C
+            sgmnts:
+              - 146
+          - kind: bit
+            name: C
+            sgmnts:
+              - 145
+          - kind: bit
+            name: C
+            sgmnts:
+              - 144
+          - kind: bit
+            name: C
+            sgmnts:
+              - 143
+          - kind: bit
+            name: C
+            sgmnts:
+              - 142
+          - kind: bit
+            name: C
+            sgmnts:
+              - 141
+          - kind: bit
+            name: C
+            sgmnts:
+              - 140
+          - kind: bit
+            name: C
+            sgmnts:
+              - 139
+          - kind: bit
+            name: C
+            sgmnts:
+              - 138
+          - kind: bit
+            name: C
+            sgmnts:
+              - 137
+          - kind: bit
+            name: C
+            sgmnts:
+              - 136
+          - kind: bit
+            name: C
+            sgmnts:
+              - 135
+          - kind: bit
+            name: C
+            sgmnts:
+              - 134
+          - kind: bit
+            name: C
+            sgmnts:
+              - 133
+          - kind: bit
+            name: C
+            sgmnts:
+              - 132
+          - kind: bit
+            name: C
+            sgmnts:
+              - 131
+          - kind: bit
+            name: C
+            sgmnts:
+              - 130
+          - kind: bit
+            name: C
+            sgmnts:
+              - 129
+          - kind: bit
+            name: C
+            sgmnts:
+              - 128
+          - kind: bit
+            name: C
+            sgmnts:
+              - 127
+          - kind: bit
+            name: C
+            sgmnts:
+              - 126
+          - kind: bit
+            name: C
+            sgmnts:
+              - 125
+          - kind: bit
+            name: C
+            sgmnts:
+              - 124
+          - kind: bit
+            name: C
+            sgmnts:
+              - 123
+          - kind: bit
+            name: C
+            sgmnts:
+              - 122
+          - kind: bit
+            name: C
+            sgmnts:
+              - 121
+          - kind: bit
+            name: C
+            sgmnts:
+              - 120
+          - kind: bit
+            name: C
+            sgmnts:
+              - 119
+          - kind: bit
+            name: C
+            sgmnts:
+              - 118
+          - kind: bit
+            name: C
+            sgmnts:
+              - 117
+          - kind: bit
+            name: C
+            sgmnts:
+              - 116
+          - kind: bit
+            name: C
+            sgmnts:
+              - 115
+          - kind: bit
+            name: C
+            sgmnts:
+              - 114
+          - kind: bit
+            name: C
+            sgmnts:
+              - 113
+          - kind: bit
+            name: C
+            sgmnts:
+              - 112
+          - kind: bit
+            name: C
+            sgmnts:
+              - 111
+          - kind: bit
+            name: C
+            sgmnts:
+              - 110
+          - kind: bit
+            name: C
+            sgmnts:
+              - 109
+          - kind: bit
+            name: C
+            sgmnts:
+              - 108
+          - kind: bit
+            name: C
+            sgmnts:
+              - 107
+          - kind: bit
+            name: C
+            sgmnts:
+              - 106
+          - kind: bit
+            name: C
+            sgmnts:
+              - 105
+          - kind: bit
+            name: C
+            sgmnts:
+              - 104
+          - kind: bit
+            name: C
+            sgmnts:
+              - 103
+          - kind: bit
+            name: C
+            sgmnts:
+              - 102
+          - kind: bit
+            name: C
+            sgmnts:
+              - 101
+          - kind: bit
+            name: C
+            sgmnts:
+              - 100
+          - kind: bit
+            name: C
+            sgmnts:
+              - 99
+          - kind: bit
+            name: C
+            sgmnts:
+              - 98
+          - kind: bit
+            name: C
+            sgmnts:
+              - 97
+          - kind: bit
+            name: C
+            sgmnts:
+              - 96
+          - kind: bit
+            name: C
+            sgmnts:
+              - 95
+          - kind: bit
+            name: C
+            sgmnts:
+              - 94
+          - kind: bit
+            name: C
+            sgmnts:
+              - 93
+          - kind: bit
+            name: C
+            sgmnts:
+              - 92
+          - kind: bit
+            name: C
+            sgmnts:
+              - 91
+          - kind: bit
+            name: C
+            sgmnts:
+              - 90
+          - kind: bit
+            name: C
+            sgmnts:
+              - 89
+          - kind: bit
+            name: C
+            sgmnts:
+              - 88
+          - kind: bit
+            name: C
+            sgmnts:
+              - 87
+          - kind: bit
+            name: C
+            sgmnts:
+              - 86
+          - kind: bit
+            name: C
+            sgmnts:
+              - 85
+          - kind: bit
+            name: C
+            sgmnts:
+              - 84
+          - kind: bit
+            name: C
+            sgmnts:
+              - 83
+          - kind: bit
+            name: C
+            sgmnts:
+              - 82
+          - kind: bit
+            name: C
+            sgmnts:
+              - 81
+          - kind: bit
+            name: C
+            sgmnts:
+              - 80
+          - kind: bit
+            name: C
+            sgmnts:
+              - 79
+          - kind: bit
+            name: C
+            sgmnts:
+              - 78
+          - kind: bit
+            name: C
+            sgmnts:
+              - 77
+          - kind: bit
+            name: C
+            sgmnts:
+              - 76
+          - kind: bit
+            name: C
+            sgmnts:
+              - 75
+          - kind: bit
+            name: C
+            sgmnts:
+              - 74
+          - kind: bit
+            name: C
+            sgmnts:
+              - 73
+          - kind: bit
+            name: C
+            sgmnts:
+              - 72
+          - kind: bit
+            name: C
+            sgmnts:
+              - 71
+          - kind: bit
+            name: C
+            sgmnts:
+              - 70
+          - kind: bit
+            name: C
+            sgmnts:
+              - 69
+          - kind: bit
+            name: C
+            sgmnts:
+              - 68
+          - kind: bit
+            name: C
+            sgmnts:
+              - 67
+          - kind: bit
+            name: C
+            sgmnts:
+              - 66
+          - kind: bit
+            name: C
+            sgmnts:
+              - 65
+          - kind: bit
+            name: C
+            sgmnts:
+              - 64
+          - kind: bit
+            name: C
+            sgmnts:
+              - 63
+          - kind: bit
+            name: C
+            sgmnts:
+              - 62
+          - kind: bit
+            name: C
+            sgmnts:
+              - 61
+          - kind: bit
+            name: C
+            sgmnts:
+              - 60
+          - kind: bit
+            name: C
+            sgmnts:
+              - 59
+          - kind: bit
+            name: C
+            sgmnts:
+              - 58
+          - kind: bit
+            name: C
+            sgmnts:
+              - 57
+          - kind: bit
+            name: C
+            sgmnts:
+              - 56
+          - kind: bit
+            name: C
+            sgmnts:
+              - 55
+          - kind: bit
+            name: C
+            sgmnts:
+              - 54
+          - kind: bit
+            name: C
+            sgmnts:
+              - 53
+          - kind: bit
+            name: C
+            sgmnts:
+              - 52
+          - kind: bit
+            name: C
+            sgmnts:
+              - 51
+          - kind: bit
+            name: C
+            sgmnts:
+              - 50
+          - kind: bit
+            name: C
+            sgmnts:
+              - 49
+          - kind: bit
+            name: C
+            sgmnts:
+              - 48
+          - kind: bit
+            name: C
+            sgmnts:
+              - 47
+          - kind: bit
+            name: C
+            sgmnts:
+              - 46
+          - kind: bit
+            name: C
+            sgmnts:
+              - 45
+          - kind: bit
+            name: C
+            sgmnts:
+              - 44
+          - kind: bit
+            name: C
+            sgmnts:
+              - 43
+          - kind: bit
+            name: C
+            sgmnts:
+              - 42
+          - kind: bit
+            name: C
+            sgmnts:
+              - 41
+          - kind: bit
+            name: C
+            sgmnts:
+              - 40
+          - kind: bit
+            name: C
+            sgmnts:
+              - 39
+          - kind: bit
+            name: C
+            sgmnts:
+              - 38
+          - kind: bit
+            name: C
+            sgmnts:
+              - 37
+          - kind: bit
+            name: C
+            sgmnts:
+              - 36
+          - kind: bit
+            name: C
+            sgmnts:
+              - 35
+          - kind: bit
+            name: C
+            sgmnts:
+              - 34
+          - kind: bit
+            name: C
+            sgmnts:
+              - 33
+          - kind: bit
+            name: C
+            sgmnts:
+              - 32
+          - kind: bit
+            name: C
+            sgmnts:
+              - 31
+          - kind: bit
+            name: C
+            sgmnts:
+              - 30
+          - kind: bit
+            name: C
+            sgmnts:
+              - 29
+          - kind: bit
+            name: C
+            sgmnts:
+              - 28
+          - kind: bit
+            name: C
+            sgmnts:
+              - 27
+          - kind: bit
+            name: C
+            sgmnts:
+              - 26
+          - kind: bit
+            name: C
+            sgmnts:
+              - 25
+          - kind: bit
+            name: C
+            sgmnts:
+              - 24
+          - kind: bit
+            name: C
+            sgmnts:
+              - 23
+          - kind: bit
+            name: C
+            sgmnts:
+              - 22
+          - kind: bit
+            name: C
+            sgmnts:
+              - 21
+          - kind: bit
+            name: C
+            sgmnts:
+              - 20
+          - kind: bit
+            name: C
+            sgmnts:
+              - 19
+          - kind: bit
+            name: C
+            sgmnts:
+              - 18
+          - kind: bit
+            name: C
+            sgmnts:
+              - 17
+          - kind: bit
+            name: C
+            sgmnts:
+              - 16
+          - kind: bit
+            name: C
+            sgmnts:
+              - 15
+          - kind: bit
+            name: C
+            sgmnts:
+              - 14
+          - kind: bit
+            name: C
+            sgmnts:
+              - 13
+          - kind: bit
+            name: C
+            sgmnts:
+              - 12
+          - kind: bit
+            name: C
+            sgmnts:
+              - 11
+          - kind: bit
+            name: C
+            sgmnts:
+              - 10
+          - kind: bit
+            name: C
+            sgmnts:
+              - 9
+          - kind: bit
+            name: C
+            sgmnts:
+              - 8
+          - kind: bit
+            name: C
+            sgmnts:
+              - 7
+          - kind: bit
+            name: C
+            sgmnts:
+              - 6
+          - kind: bit
+            name: C
+            sgmnts:
+              - 5
+          - kind: bit
+            name: C
+            sgmnts:
+              - 4
+          - kind: bit
+            name: C
+            sgmnts:
+              - 3
+          - kind: bit
+            name: C
+            sgmnts:
+              - 2
+          - kind: bit
+            name: C
+            sgmnts:
+              - 1
+          - kind: bit
+            name: C
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_0_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 23
+          - kind: bit
+            name: C
+            sgmnts:
+              - 22
+          - kind: bit
+            name: C
+            sgmnts:
+              - 21
+          - kind: bit
+            name: C
+            sgmnts:
+              - 20
+          - kind: bit
+            name: C
+            sgmnts:
+              - 19
+          - kind: bit
+            name: C
+            sgmnts:
+              - 18
+          - kind: bit
+            name: C
+            sgmnts:
+              - 17
+          - kind: bit
+            name: C
+            sgmnts:
+              - 16
+          - kind: bit
+            name: C
+            sgmnts:
+              - 15
+          - kind: bit
+            name: C
+            sgmnts:
+              - 14
+          - kind: bit
+            name: C
+            sgmnts:
+              - 13
+          - kind: bit
+            name: C
+            sgmnts:
+              - 12
+          - kind: bit
+            name: C
+            sgmnts:
+              - 11
+          - kind: bit
+            name: C
+            sgmnts:
+              - 10
+          - kind: bit
+            name: C
+            sgmnts:
+              - 9
+          - kind: bit
+            name: C
+            sgmnts:
+              - 8
+          - kind: bit
+            name: C
+            sgmnts:
+              - 7
+          - kind: bit
+            name: C
+            sgmnts:
+              - 6
+          - kind: bit
+            name: C
+            sgmnts:
+              - 5
+          - kind: bit
+            name: C
+            sgmnts:
+              - 4
+          - kind: bit
+            name: C
+            sgmnts:
+              - 3
+          - kind: bit
+            name: C
+            sgmnts:
+              - 2
+          - kind: bit
+            name: C
+            sgmnts:
+              - 1
+          - kind: bit
+            name: C
+            sgmnts:
+              - 0
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_1_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 47
+          - kind: bit
+            name: C
+            sgmnts:
+              - 46
+          - kind: bit
+            name: C
+            sgmnts:
+              - 45
+          - kind: bit
+            name: C
+            sgmnts:
+              - 44
+          - kind: bit
+            name: C
+            sgmnts:
+              - 43
+          - kind: bit
+            name: C
+            sgmnts:
+              - 42
+          - kind: bit
+            name: C
+            sgmnts:
+              - 41
+          - kind: bit
+            name: C
+            sgmnts:
+              - 40
+          - kind: bit
+            name: C
+            sgmnts:
+              - 39
+          - kind: bit
+            name: C
+            sgmnts:
+              - 38
+          - kind: bit
+            name: C
+            sgmnts:
+              - 37
+          - kind: bit
+            name: C
+            sgmnts:
+              - 36
+          - kind: bit
+            name: C
+            sgmnts:
+              - 35
+          - kind: bit
+            name: C
+            sgmnts:
+              - 34
+          - kind: bit
+            name: C
+            sgmnts:
+              - 33
+          - kind: bit
+            name: C
+            sgmnts:
+              - 32
+          - kind: bit
+            name: C
+            sgmnts:
+              - 31
+          - kind: bit
+            name: C
+            sgmnts:
+              - 30
+          - kind: bit
+            name: C
+            sgmnts:
+              - 29
+          - kind: bit
+            name: C
+            sgmnts:
+              - 28
+          - kind: bit
+            name: C
+            sgmnts:
+              - 27
+          - kind: bit
+            name: C
+            sgmnts:
+              - 26
+          - kind: bit
+            name: C
+            sgmnts:
+              - 25
+          - kind: bit
+            name: C
+            sgmnts:
+              - 24
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_2_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 71
+          - kind: bit
+            name: C
+            sgmnts:
+              - 70
+          - kind: bit
+            name: C
+            sgmnts:
+              - 69
+          - kind: bit
+            name: C
+            sgmnts:
+              - 68
+          - kind: bit
+            name: C
+            sgmnts:
+              - 67
+          - kind: bit
+            name: C
+            sgmnts:
+              - 66
+          - kind: bit
+            name: C
+            sgmnts:
+              - 65
+          - kind: bit
+            name: C
+            sgmnts:
+              - 64
+          - kind: bit
+            name: C
+            sgmnts:
+              - 63
+          - kind: bit
+            name: C
+            sgmnts:
+              - 62
+          - kind: bit
+            name: C
+            sgmnts:
+              - 61
+          - kind: bit
+            name: C
+            sgmnts:
+              - 60
+          - kind: bit
+            name: C
+            sgmnts:
+              - 59
+          - kind: bit
+            name: C
+            sgmnts:
+              - 58
+          - kind: bit
+            name: C
+            sgmnts:
+              - 57
+          - kind: bit
+            name: C
+            sgmnts:
+              - 56
+          - kind: bit
+            name: C
+            sgmnts:
+              - 55
+          - kind: bit
+            name: C
+            sgmnts:
+              - 54
+          - kind: bit
+            name: C
+            sgmnts:
+              - 53
+          - kind: bit
+            name: C
+            sgmnts:
+              - 52
+          - kind: bit
+            name: C
+            sgmnts:
+              - 51
+          - kind: bit
+            name: C
+            sgmnts:
+              - 50
+          - kind: bit
+            name: C
+            sgmnts:
+              - 49
+          - kind: bit
+            name: C
+            sgmnts:
+              - 48
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_3_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 95
+          - kind: bit
+            name: C
+            sgmnts:
+              - 94
+          - kind: bit
+            name: C
+            sgmnts:
+              - 93
+          - kind: bit
+            name: C
+            sgmnts:
+              - 92
+          - kind: bit
+            name: C
+            sgmnts:
+              - 91
+          - kind: bit
+            name: C
+            sgmnts:
+              - 90
+          - kind: bit
+            name: C
+            sgmnts:
+              - 89
+          - kind: bit
+            name: C
+            sgmnts:
+              - 88
+          - kind: bit
+            name: C
+            sgmnts:
+              - 87
+          - kind: bit
+            name: C
+            sgmnts:
+              - 86
+          - kind: bit
+            name: C
+            sgmnts:
+              - 85
+          - kind: bit
+            name: C
+            sgmnts:
+              - 84
+          - kind: bit
+            name: C
+            sgmnts:
+              - 83
+          - kind: bit
+            name: C
+            sgmnts:
+              - 82
+          - kind: bit
+            name: C
+            sgmnts:
+              - 81
+          - kind: bit
+            name: C
+            sgmnts:
+              - 80
+          - kind: bit
+            name: C
+            sgmnts:
+              - 79
+          - kind: bit
+            name: C
+            sgmnts:
+              - 78
+          - kind: bit
+            name: C
+            sgmnts:
+              - 77
+          - kind: bit
+            name: C
+            sgmnts:
+              - 76
+          - kind: bit
+            name: C
+            sgmnts:
+              - 75
+          - kind: bit
+            name: C
+            sgmnts:
+              - 74
+          - kind: bit
+            name: C
+            sgmnts:
+              - 73
+          - kind: bit
+            name: C
+            sgmnts:
+              - 72
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_4_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 119
+          - kind: bit
+            name: C
+            sgmnts:
+              - 118
+          - kind: bit
+            name: C
+            sgmnts:
+              - 117
+          - kind: bit
+            name: C
+            sgmnts:
+              - 116
+          - kind: bit
+            name: C
+            sgmnts:
+              - 115
+          - kind: bit
+            name: C
+            sgmnts:
+              - 114
+          - kind: bit
+            name: C
+            sgmnts:
+              - 113
+          - kind: bit
+            name: C
+            sgmnts:
+              - 112
+          - kind: bit
+            name: C
+            sgmnts:
+              - 111
+          - kind: bit
+            name: C
+            sgmnts:
+              - 110
+          - kind: bit
+            name: C
+            sgmnts:
+              - 109
+          - kind: bit
+            name: C
+            sgmnts:
+              - 108
+          - kind: bit
+            name: C
+            sgmnts:
+              - 107
+          - kind: bit
+            name: C
+            sgmnts:
+              - 106
+          - kind: bit
+            name: C
+            sgmnts:
+              - 105
+          - kind: bit
+            name: C
+            sgmnts:
+              - 104
+          - kind: bit
+            name: C
+            sgmnts:
+              - 103
+          - kind: bit
+            name: C
+            sgmnts:
+              - 102
+          - kind: bit
+            name: C
+            sgmnts:
+              - 101
+          - kind: bit
+            name: C
+            sgmnts:
+              - 100
+          - kind: bit
+            name: C
+            sgmnts:
+              - 99
+          - kind: bit
+            name: C
+            sgmnts:
+              - 98
+          - kind: bit
+            name: C
+            sgmnts:
+              - 97
+          - kind: bit
+            name: C
+            sgmnts:
+              - 96
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_5_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 143
+          - kind: bit
+            name: C
+            sgmnts:
+              - 142
+          - kind: bit
+            name: C
+            sgmnts:
+              - 141
+          - kind: bit
+            name: C
+            sgmnts:
+              - 140
+          - kind: bit
+            name: C
+            sgmnts:
+              - 139
+          - kind: bit
+            name: C
+            sgmnts:
+              - 138
+          - kind: bit
+            name: C
+            sgmnts:
+              - 137
+          - kind: bit
+            name: C
+            sgmnts:
+              - 136
+          - kind: bit
+            name: C
+            sgmnts:
+              - 135
+          - kind: bit
+            name: C
+            sgmnts:
+              - 134
+          - kind: bit
+            name: C
+            sgmnts:
+              - 133
+          - kind: bit
+            name: C
+            sgmnts:
+              - 132
+          - kind: bit
+            name: C
+            sgmnts:
+              - 131
+          - kind: bit
+            name: C
+            sgmnts:
+              - 130
+          - kind: bit
+            name: C
+            sgmnts:
+              - 129
+          - kind: bit
+            name: C
+            sgmnts:
+              - 128
+          - kind: bit
+            name: C
+            sgmnts:
+              - 127
+          - kind: bit
+            name: C
+            sgmnts:
+              - 126
+          - kind: bit
+            name: C
+            sgmnts:
+              - 125
+          - kind: bit
+            name: C
+            sgmnts:
+              - 124
+          - kind: bit
+            name: C
+            sgmnts:
+              - 123
+          - kind: bit
+            name: C
+            sgmnts:
+              - 122
+          - kind: bit
+            name: C
+            sgmnts:
+              - 121
+          - kind: bit
+            name: C
+            sgmnts:
+              - 120
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_6_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 167
+          - kind: bit
+            name: C
+            sgmnts:
+              - 166
+          - kind: bit
+            name: C
+            sgmnts:
+              - 165
+          - kind: bit
+            name: C
+            sgmnts:
+              - 164
+          - kind: bit
+            name: C
+            sgmnts:
+              - 163
+          - kind: bit
+            name: C
+            sgmnts:
+              - 162
+          - kind: bit
+            name: C
+            sgmnts:
+              - 161
+          - kind: bit
+            name: C
+            sgmnts:
+              - 160
+          - kind: bit
+            name: C
+            sgmnts:
+              - 159
+          - kind: bit
+            name: C
+            sgmnts:
+              - 158
+          - kind: bit
+            name: C
+            sgmnts:
+              - 157
+          - kind: bit
+            name: C
+            sgmnts:
+              - 156
+          - kind: bit
+            name: C
+            sgmnts:
+              - 155
+          - kind: bit
+            name: C
+            sgmnts:
+              - 154
+          - kind: bit
+            name: C
+            sgmnts:
+              - 153
+          - kind: bit
+            name: C
+            sgmnts:
+              - 152
+          - kind: bit
+            name: C
+            sgmnts:
+              - 151
+          - kind: bit
+            name: C
+            sgmnts:
+              - 150
+          - kind: bit
+            name: C
+            sgmnts:
+              - 149
+          - kind: bit
+            name: C
+            sgmnts:
+              - 148
+          - kind: bit
+            name: C
+            sgmnts:
+              - 147
+          - kind: bit
+            name: C
+            sgmnts:
+              - 146
+          - kind: bit
+            name: C
+            sgmnts:
+              - 145
+          - kind: bit
+            name: C
+            sgmnts:
+              - 144
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_7_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 191
+          - kind: bit
+            name: C
+            sgmnts:
+              - 190
+          - kind: bit
+            name: C
+            sgmnts:
+              - 189
+          - kind: bit
+            name: C
+            sgmnts:
+              - 188
+          - kind: bit
+            name: C
+            sgmnts:
+              - 187
+          - kind: bit
+            name: C
+            sgmnts:
+              - 186
+          - kind: bit
+            name: C
+            sgmnts:
+              - 185
+          - kind: bit
+            name: C
+            sgmnts:
+              - 184
+          - kind: bit
+            name: C
+            sgmnts:
+              - 183
+          - kind: bit
+            name: C
+            sgmnts:
+              - 182
+          - kind: bit
+            name: C
+            sgmnts:
+              - 181
+          - kind: bit
+            name: C
+            sgmnts:
+              - 180
+          - kind: bit
+            name: C
+            sgmnts:
+              - 179
+          - kind: bit
+            name: C
+            sgmnts:
+              - 178
+          - kind: bit
+            name: C
+            sgmnts:
+              - 177
+          - kind: bit
+            name: C
+            sgmnts:
+              - 176
+          - kind: bit
+            name: C
+            sgmnts:
+              - 175
+          - kind: bit
+            name: C
+            sgmnts:
+              - 174
+          - kind: bit
+            name: C
+            sgmnts:
+              - 173
+          - kind: bit
+            name: C
+            sgmnts:
+              - 172
+          - kind: bit
+            name: C
+            sgmnts:
+              - 171
+          - kind: bit
+            name: C
+            sgmnts:
+              - 170
+          - kind: bit
+            name: C
+            sgmnts:
+              - 169
+          - kind: bit
+            name: C
+            sgmnts:
+              - 168
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_8_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 215
+          - kind: bit
+            name: C
+            sgmnts:
+              - 214
+          - kind: bit
+            name: C
+            sgmnts:
+              - 213
+          - kind: bit
+            name: C
+            sgmnts:
+              - 212
+          - kind: bit
+            name: C
+            sgmnts:
+              - 211
+          - kind: bit
+            name: C
+            sgmnts:
+              - 210
+          - kind: bit
+            name: C
+            sgmnts:
+              - 209
+          - kind: bit
+            name: C
+            sgmnts:
+              - 208
+          - kind: bit
+            name: C
+            sgmnts:
+              - 207
+          - kind: bit
+            name: C
+            sgmnts:
+              - 206
+          - kind: bit
+            name: C
+            sgmnts:
+              - 205
+          - kind: bit
+            name: C
+            sgmnts:
+              - 204
+          - kind: bit
+            name: C
+            sgmnts:
+              - 203
+          - kind: bit
+            name: C
+            sgmnts:
+              - 202
+          - kind: bit
+            name: C
+            sgmnts:
+              - 201
+          - kind: bit
+            name: C
+            sgmnts:
+              - 200
+          - kind: bit
+            name: C
+            sgmnts:
+              - 199
+          - kind: bit
+            name: C
+            sgmnts:
+              - 198
+          - kind: bit
+            name: C
+            sgmnts:
+              - 197
+          - kind: bit
+            name: C
+            sgmnts:
+              - 196
+          - kind: bit
+            name: C
+            sgmnts:
+              - 195
+          - kind: bit
+            name: C
+            sgmnts:
+              - 194
+          - kind: bit
+            name: C
+            sgmnts:
+              - 193
+          - kind: bit
+            name: C
+            sgmnts:
+              - 192
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_9_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 239
+          - kind: bit
+            name: C
+            sgmnts:
+              - 238
+          - kind: bit
+            name: C
+            sgmnts:
+              - 237
+          - kind: bit
+            name: C
+            sgmnts:
+              - 236
+          - kind: bit
+            name: C
+            sgmnts:
+              - 235
+          - kind: bit
+            name: C
+            sgmnts:
+              - 234
+          - kind: bit
+            name: C
+            sgmnts:
+              - 233
+          - kind: bit
+            name: C
+            sgmnts:
+              - 232
+          - kind: bit
+            name: C
+            sgmnts:
+              - 231
+          - kind: bit
+            name: C
+            sgmnts:
+              - 230
+          - kind: bit
+            name: C
+            sgmnts:
+              - 229
+          - kind: bit
+            name: C
+            sgmnts:
+              - 228
+          - kind: bit
+            name: C
+            sgmnts:
+              - 227
+          - kind: bit
+            name: C
+            sgmnts:
+              - 226
+          - kind: bit
+            name: C
+            sgmnts:
+              - 225
+          - kind: bit
+            name: C
+            sgmnts:
+              - 224
+          - kind: bit
+            name: C
+            sgmnts:
+              - 223
+          - kind: bit
+            name: C
+            sgmnts:
+              - 222
+          - kind: bit
+            name: C
+            sgmnts:
+              - 221
+          - kind: bit
+            name: C
+            sgmnts:
+              - 220
+          - kind: bit
+            name: C
+            sgmnts:
+              - 219
+          - kind: bit
+            name: C
+            sgmnts:
+              - 218
+          - kind: bit
+            name: C
+            sgmnts:
+              - 217
+          - kind: bit
+            name: C
+            sgmnts:
+              - 216
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_10_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 263
+          - kind: bit
+            name: C
+            sgmnts:
+              - 262
+          - kind: bit
+            name: C
+            sgmnts:
+              - 261
+          - kind: bit
+            name: C
+            sgmnts:
+              - 260
+          - kind: bit
+            name: C
+            sgmnts:
+              - 259
+          - kind: bit
+            name: C
+            sgmnts:
+              - 258
+          - kind: bit
+            name: C
+            sgmnts:
+              - 257
+          - kind: bit
+            name: C
+            sgmnts:
+              - 256
+          - kind: bit
+            name: C
+            sgmnts:
+              - 255
+          - kind: bit
+            name: C
+            sgmnts:
+              - 254
+          - kind: bit
+            name: C
+            sgmnts:
+              - 253
+          - kind: bit
+            name: C
+            sgmnts:
+              - 252
+          - kind: bit
+            name: C
+            sgmnts:
+              - 251
+          - kind: bit
+            name: C
+            sgmnts:
+              - 250
+          - kind: bit
+            name: C
+            sgmnts:
+              - 249
+          - kind: bit
+            name: C
+            sgmnts:
+              - 248
+          - kind: bit
+            name: C
+            sgmnts:
+              - 247
+          - kind: bit
+            name: C
+            sgmnts:
+              - 246
+          - kind: bit
+            name: C
+            sgmnts:
+              - 245
+          - kind: bit
+            name: C
+            sgmnts:
+              - 244
+          - kind: bit
+            name: C
+            sgmnts:
+              - 243
+          - kind: bit
+            name: C
+            sgmnts:
+              - 242
+          - kind: bit
+            name: C
+            sgmnts:
+              - 241
+          - kind: bit
+            name: C
+            sgmnts:
+              - 240
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_11_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 287
+          - kind: bit
+            name: C
+            sgmnts:
+              - 286
+          - kind: bit
+            name: C
+            sgmnts:
+              - 285
+          - kind: bit
+            name: C
+            sgmnts:
+              - 284
+          - kind: bit
+            name: C
+            sgmnts:
+              - 283
+          - kind: bit
+            name: C
+            sgmnts:
+              - 282
+          - kind: bit
+            name: C
+            sgmnts:
+              - 281
+          - kind: bit
+            name: C
+            sgmnts:
+              - 280
+          - kind: bit
+            name: C
+            sgmnts:
+              - 279
+          - kind: bit
+            name: C
+            sgmnts:
+              - 278
+          - kind: bit
+            name: C
+            sgmnts:
+              - 277
+          - kind: bit
+            name: C
+            sgmnts:
+              - 276
+          - kind: bit
+            name: C
+            sgmnts:
+              - 275
+          - kind: bit
+            name: C
+            sgmnts:
+              - 274
+          - kind: bit
+            name: C
+            sgmnts:
+              - 273
+          - kind: bit
+            name: C
+            sgmnts:
+              - 272
+          - kind: bit
+            name: C
+            sgmnts:
+              - 271
+          - kind: bit
+            name: C
+            sgmnts:
+              - 270
+          - kind: bit
+            name: C
+            sgmnts:
+              - 269
+          - kind: bit
+            name: C
+            sgmnts:
+              - 268
+          - kind: bit
+            name: C
+            sgmnts:
+              - 267
+          - kind: bit
+            name: C
+            sgmnts:
+              - 266
+          - kind: bit
+            name: C
+            sgmnts:
+              - 265
+          - kind: bit
+            name: C
+            sgmnts:
+              - 264
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_12_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 311
+          - kind: bit
+            name: C
+            sgmnts:
+              - 310
+          - kind: bit
+            name: C
+            sgmnts:
+              - 309
+          - kind: bit
+            name: C
+            sgmnts:
+              - 308
+          - kind: bit
+            name: C
+            sgmnts:
+              - 307
+          - kind: bit
+            name: C
+            sgmnts:
+              - 306
+          - kind: bit
+            name: C
+            sgmnts:
+              - 305
+          - kind: bit
+            name: C
+            sgmnts:
+              - 304
+          - kind: bit
+            name: C
+            sgmnts:
+              - 303
+          - kind: bit
+            name: C
+            sgmnts:
+              - 302
+          - kind: bit
+            name: C
+            sgmnts:
+              - 301
+          - kind: bit
+            name: C
+            sgmnts:
+              - 300
+          - kind: bit
+            name: C
+            sgmnts:
+              - 299
+          - kind: bit
+            name: C
+            sgmnts:
+              - 298
+          - kind: bit
+            name: C
+            sgmnts:
+              - 297
+          - kind: bit
+            name: C
+            sgmnts:
+              - 296
+          - kind: bit
+            name: C
+            sgmnts:
+              - 295
+          - kind: bit
+            name: C
+            sgmnts:
+              - 294
+          - kind: bit
+            name: C
+            sgmnts:
+              - 293
+          - kind: bit
+            name: C
+            sgmnts:
+              - 292
+          - kind: bit
+            name: C
+            sgmnts:
+              - 291
+          - kind: bit
+            name: C
+            sgmnts:
+              - 290
+          - kind: bit
+            name: C
+            sgmnts:
+              - 289
+          - kind: bit
+            name: C
+            sgmnts:
+              - 288
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_13_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 335
+          - kind: bit
+            name: C
+            sgmnts:
+              - 334
+          - kind: bit
+            name: C
+            sgmnts:
+              - 333
+          - kind: bit
+            name: C
+            sgmnts:
+              - 332
+          - kind: bit
+            name: C
+            sgmnts:
+              - 331
+          - kind: bit
+            name: C
+            sgmnts:
+              - 330
+          - kind: bit
+            name: C
+            sgmnts:
+              - 329
+          - kind: bit
+            name: C
+            sgmnts:
+              - 328
+          - kind: bit
+            name: C
+            sgmnts:
+              - 327
+          - kind: bit
+            name: C
+            sgmnts:
+              - 326
+          - kind: bit
+            name: C
+            sgmnts:
+              - 325
+          - kind: bit
+            name: C
+            sgmnts:
+              - 324
+          - kind: bit
+            name: C
+            sgmnts:
+              - 323
+          - kind: bit
+            name: C
+            sgmnts:
+              - 322
+          - kind: bit
+            name: C
+            sgmnts:
+              - 321
+          - kind: bit
+            name: C
+            sgmnts:
+              - 320
+          - kind: bit
+            name: C
+            sgmnts:
+              - 319
+          - kind: bit
+            name: C
+            sgmnts:
+              - 318
+          - kind: bit
+            name: C
+            sgmnts:
+              - 317
+          - kind: bit
+            name: C
+            sgmnts:
+              - 316
+          - kind: bit
+            name: C
+            sgmnts:
+              - 315
+          - kind: bit
+            name: C
+            sgmnts:
+              - 314
+          - kind: bit
+            name: C
+            sgmnts:
+              - 313
+          - kind: bit
+            name: C
+            sgmnts:
+              - 312
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_14_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 359
+          - kind: bit
+            name: C
+            sgmnts:
+              - 358
+          - kind: bit
+            name: C
+            sgmnts:
+              - 357
+          - kind: bit
+            name: C
+            sgmnts:
+              - 356
+          - kind: bit
+            name: C
+            sgmnts:
+              - 355
+          - kind: bit
+            name: C
+            sgmnts:
+              - 354
+          - kind: bit
+            name: C
+            sgmnts:
+              - 353
+          - kind: bit
+            name: C
+            sgmnts:
+              - 352
+          - kind: bit
+            name: C
+            sgmnts:
+              - 351
+          - kind: bit
+            name: C
+            sgmnts:
+              - 350
+          - kind: bit
+            name: C
+            sgmnts:
+              - 349
+          - kind: bit
+            name: C
+            sgmnts:
+              - 348
+          - kind: bit
+            name: C
+            sgmnts:
+              - 347
+          - kind: bit
+            name: C
+            sgmnts:
+              - 346
+          - kind: bit
+            name: C
+            sgmnts:
+              - 345
+          - kind: bit
+            name: C
+            sgmnts:
+              - 344
+          - kind: bit
+            name: C
+            sgmnts:
+              - 343
+          - kind: bit
+            name: C
+            sgmnts:
+              - 342
+          - kind: bit
+            name: C
+            sgmnts:
+              - 341
+          - kind: bit
+            name: C
+            sgmnts:
+              - 340
+          - kind: bit
+            name: C
+            sgmnts:
+              - 339
+          - kind: bit
+            name: C
+            sgmnts:
+              - 338
+          - kind: bit
+            name: C
+            sgmnts:
+              - 337
+          - kind: bit
+            name: C
+            sgmnts:
+              - 336
+    delay: 0
+  - kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_BS24_15_0
+    rvalue:
+        concats:
+          - kind: bit
+            name: C
+            sgmnts:
+              - 383
+          - kind: bit
+            name: C
+            sgmnts:
+              - 382
+          - kind: bit
+            name: C
+            sgmnts:
+              - 381
+          - kind: bit
+            name: C
+            sgmnts:
+              - 380
+          - kind: bit
+            name: C
+            sgmnts:
+              - 379
+          - kind: bit
+            name: C
+            sgmnts:
+              - 378
+          - kind: bit
+            name: C
+            sgmnts:
+              - 377
+          - kind: bit
+            name: C
+            sgmnts:
+              - 376
+          - kind: bit
+            name: C
+            sgmnts:
+              - 375
+          - kind: bit
+            name: C
+            sgmnts:
+              - 374
+          - kind: bit
+            name: C
+            sgmnts:
+              - 373
+          - kind: bit
+            name: C
+            sgmnts:
+              - 372
+          - kind: bit
+            name: C
+            sgmnts:
+              - 371
+          - kind: bit
+            name: C
+            sgmnts:
+              - 370
+          - kind: bit
+            name: C
+            sgmnts:
+              - 369
+          - kind: bit
+            name: C
+            sgmnts:
+              - 368
+          - kind: bit
+            name: C
+            sgmnts:
+              - 367
+          - kind: bit
+            name: C
+            sgmnts:
+              - 366
+          - kind: bit
+            name: C
+            sgmnts:
+              - 365
+          - kind: bit
+            name: C
+            sgmnts:
+              - 364
+          - kind: bit
+            name: C
+            sgmnts:
+              - 363
+          - kind: bit
+            name: C
+            sgmnts:
+              - 362
+          - kind: bit
+            name: C
+            sgmnts:
+              - 361
+          - kind: bit
+            name: C
+            sgmnts:
+              - 360
+    delay: 0
