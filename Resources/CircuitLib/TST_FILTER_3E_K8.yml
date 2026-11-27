@@ -1,0 +1,135 @@
+kind: verilog
+module: TST_FILTER_3E_K8
+params:
+  - kind: Int
+    name: delay
+    value: 5
+  - kind: str
+    name: circuit
+    value: sync
+io_ports:
+  - kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: DATA_OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: X
+    direct: 'Input:'
+    signed: 'False'
+    width:
+      - kind: int
+        value: 23
+      - kind: int
+        value: 0
+  - kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+  - kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls: []
+behav_blcks:
+  - kind: sync
+    name: DUT
+    module: FILTER_3E_K8
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: X
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: ident
+            name: INIT
+      - port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS
+  - kind: sync
+    name: BS24
+    module: OUT_BUS24
+    params:
+      - kind: str
+        value: sync
+        name: circuit
+    ports:
+      - port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: slice
+            name: DATA_OUT
+            sgmnts:
+              - kind: int
+                value: 23
+              - kind: int
+                value: 0
+      - port: None
+        node:
+            kind: ident
+            name: CLK
+      - port: None
+        node:
+            kind: concat
+            sgmnts:
+              - kind: ident
+                name: VDD
+              - kind: ident
+                name: VSS

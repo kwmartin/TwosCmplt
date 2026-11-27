@@ -1,0 +1,2460 @@
+kind: verilog
+module: FILTER_3E_K8
+params:
+-   kind: str
+    name: circuit
+    value: sync
+-   kind: Int
+    name: delay
+    value: 5
+io_ports:
+-   kind: Wire
+    name: X
+    direct: 'Input:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: CLK
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: INIT
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: OUT
+    direct: 'Output:'
+    signed: 'False'
+    width:
+    -   kind: int
+        value: 23
+    -   kind: int
+        value: 0
+-   kind: Wire
+    name: VDD
+    direct: 'Input:'
+    signed: 'False'
+-   kind: Wire
+    name: VSS
+    direct: 'Input:'
+    signed: 'False'
+decls:
+-   -   kind: Wire
+        name: S2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S4
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SUM4
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRY1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: QN3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SUM2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRY4
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRY2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: R1B
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: R3B
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: R4B
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QN4
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CRY3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: G1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: G4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: P4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: XB
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: R2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: QN1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: S1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: Z
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SUM1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: SUM3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: CO1
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO2
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO3
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: CO4
+        signed: 'False'
+        width:
+        - 0
+        - 0
+        length: []
+-   -   kind: Wire
+        name: QN2
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA1_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA1_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA2_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA2_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA3_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA4_1
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+-   -   kind: Wire
+        name: __concat_CSA4_3
+        signed: 'False'
+        width:
+            kind: width
+            width:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+        length: []
+behav_blcks:
+-   kind: async
+    name: CSA1
+    module: CSA24_A2S1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: R1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA1_1
+    -   port: None
+        node:
+            kind: slice
+            name: CRY1
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA1_3
+    -   port: None
+        node:
+            kind: slice
+            name: SUM1
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CPA1
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SUM1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: CO1
+    -   port: None
+        node:
+            kind: ident
+            name: G1
+    -   port: None
+        node:
+            kind: ident
+            name: P1
+    -   port: None
+        node:
+            kind: slice
+            name: S1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: REG1
+    module: KM_REGS24
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: S1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: QN1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R1
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Z
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSA2
+    module: CSA24_A2S1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: R2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA2_1
+    -   port: None
+        node:
+            kind: slice
+            name: CRY2
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA2_3
+    -   port: None
+        node:
+            kind: slice
+            name: SUM2
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CPA2
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SUM2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: CO2
+    -   port: None
+        node:
+            kind: ident
+            name: G2
+    -   port: None
+        node:
+            kind: ident
+            name: P2
+    -   port: None
+        node:
+            kind: slice
+            name: S2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: REG2
+    module: KM_REGS24
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: S2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: QN2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Z
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSA3
+    module: CSA24_A3
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SUM2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY2
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY3
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA3_3
+    -   port: None
+        node:
+            kind: slice
+            name: SUM3
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CPA3
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SUM3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: CO3
+    -   port: None
+        node:
+            kind: ident
+            name: G3
+    -   port: None
+        node:
+            kind: ident
+            name: P3
+    -   port: None
+        node:
+            kind: slice
+            name: S3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: REG3
+    module: KM_REGS24
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: S3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: QN3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: R3
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Z
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CSA4
+    module: CSA24_A2S1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA4_1
+    -   port: None
+        node:
+            kind: slice
+            name: CRY4
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: ident
+            name: __concat_CSA4_3
+    -   port: None
+        node:
+            kind: slice
+            name: SUM4
+            sgmnts:
+            -   kind: int
+                value: 24
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: CPA4
+    module: CLA24
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: slice
+            name: SUM4
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: CRY4
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: ident
+            name: CO4
+    -   port: None
+        node:
+            kind: ident
+            name: G4
+    -   port: None
+        node:
+            kind: ident
+            name: P4
+    -   port: None
+        node:
+            kind: slice
+            name: S4
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: sync
+    name: REG4
+    module: KM_REGS24
+    params:
+    -   kind: str
+        value: sync
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: ident
+            name: CLK
+    -   port: None
+        node:
+            kind: ident
+            name: INIT
+    -   port: None
+        node:
+            kind: slice
+            name: S4
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: QN4
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: OUT
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: slice
+            name: Z
+            sgmnts:
+            -   kind: int
+                value: 23
+            -   kind: int
+                value: 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_X
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: X
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: XB
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_R3
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: R3
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: R3B
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_R1
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: R1
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: R1B
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: BUF_R4
+    module: DG_BUF16_1X1
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: OUT
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: ident
+            name: R4B
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_23
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 23
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_22
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 22
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_21
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 21
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_20
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 20
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_19
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 19
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_18
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 18
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_17
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 17
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_16
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 16
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_15
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 15
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_14
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 14
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_13
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 13
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_12
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 12
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_11
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 11
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_10
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 10
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_9
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 9
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_8
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 8
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_7
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 7
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_6
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 6
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_5
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 5
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_4
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 4
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_3
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 3
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_2
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 2
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_1
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 1
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: async
+    name: TILO_0
+    module: DG_TILO
+    params:
+    -   kind: str
+        value: async
+        name: circuit
+    ports:
+    -   port: None
+        node:
+            kind: bit
+            name: Z
+            sgmnts:
+            - 0
+    -   port: None
+        node:
+            kind: concat
+            sgmnts:
+            -   kind: ident
+                name: VDD
+            -   kind: ident
+                name: VSS
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA1_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: XB
+        -   kind: ident
+            name: XB
+        -   kind: ident
+            name: XB
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA1_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA2_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: R1B
+        -   kind: ident
+            name: R1B
+        -   kind: ident
+            name: R1B
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: R1
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA2_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA3_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: XB
+        -   kind: ident
+            name: XB
+        -   kind: ident
+            name: XB
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: X
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA4_1
+    rvalue:
+        concats:
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: ident
+            name: R3B
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: R3
+            sgmnts:
+            - 3
+    delay: 0
+-   kind: assign
+    lvalue:
+        kind: ident
+        name: __concat_CSA4_3
+    rvalue:
+        concats:
+        -   kind: ident
+            name: R4B
+        -   kind: ident
+            name: R4B
+        -   kind: ident
+            name: R4B
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 23
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 22
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 21
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 20
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 19
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 18
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 17
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 16
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 15
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 14
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 13
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 12
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 11
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 10
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 9
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 8
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 7
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 6
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 5
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 4
+        -   kind: bit
+            name: OUT
+            sgmnts:
+            - 3
+    delay: 0
+

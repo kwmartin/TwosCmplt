@@ -1,0 +1,52 @@
+module: TST_FILTER_3E_K8
+generated: true
+Constants:
+    PER: 1
+Clock:
+  - clkNm: CLK
+    per: PER
+    initVal: 0
+FinishTime: 515*PER
+ResetRelease: 1.1*PER
+TimeSpcs:
+  - tm: 0
+    vls:
+      -   - CLK
+          - 0
+      -   - VDD
+          - 1
+      -   - VSS
+          - 0
+      -   - INIT
+          - 1
+      -   - X
+          - 0
+  - tm: 1.1*PER
+    vls:
+      -   - INIT
+          - 0
+  - tm: 1.5*PER
+    vls:
+      -   - X
+          - 1048576
+  - tm: 2.5*PER
+    vls:
+      -   - X
+          - 0
+Signals:
+    CLK: 1
+    INIT: 1
+    X: 24
+SaveNds:
+  - name: OUT
+    format: h
+  - name: DATA_OUT
+    format: h
+Classifications:
+    CLK: clocks
+    VDD: power
+    VSS: power
+    INIT: resets
+    X: data_inputs
+    OUT: outputs
+    DATA_OUT: outputs
